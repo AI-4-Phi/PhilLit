@@ -136,6 +136,7 @@ Output brief status after each search phase. Users should see progress every 2-3
 → Stage 5: Verifying 18 DOIs...
 ✓ Verified: 18
 → Stage 5.5: Resolving abstracts...
+✓ Stage 5.5: 16 abstracts, 2 INCOMPLETE
 ✓ Domain complete: literature-domain-1.bib (18 papers)
 ```
 
@@ -145,7 +146,7 @@ Output brief status after each search phase. Users should see progress every 2-3
 
 Use the `philosophy-research` skill scripts via Bash. Invoke every bundled script through the plugin wrapper: `bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/<script>.py [args]` (the script path is relative to the plugin root). The literature-review scripts live under `skills/literature-review/scripts/`.
 
-> **CRITICAL: `$PHILLIT_ROOT` is already set** (by the SessionStart bootstrap). Do NOT probe it — no `echo "$PHILLIT_ROOT"`, no `ls`, no setup call of its own: your first Bash call is Stage 1's discovery call. If that call fails with `No such file or directory` on `/bin/phillit-run`, the variable is empty — **STOP and report the error to the orchestrator**; do not try to set it or fix it. The wrapper resolves the Python environment on its own; never call `python` directly.
+> **CRITICAL: `$PHILLIT_ROOT` is already set** (by the SessionStart bootstrap). Do NOT probe it — no `echo "$PHILLIT_ROOT"`, no `ls`, no setup call of its own: your first Bash call is Stage 1's discovery call. If that call fails with `No such file or directory` on `/bin/phillit-run`, the variable is empty or the plugin root is wrong — **STOP and report the error to the orchestrator**; do not try to set it or fix it. The wrapper resolves the Python environment on its own; never call `python` directly.
 
 **The review directory is set up inside each Bash call that writes files** — the worked examples below start with these lines; never run them as a call of their own:
 ```bash
@@ -238,7 +239,7 @@ grep -m1 '"status"' "$JSON_DIR"/sep_<domain>_*.json "$JSON_DIR"/iep_<domain>_*.j
 - Read preamble and key sections for domain overview
 - Parse bibliography for foundational works cited
 - Use bibliography entries as seeds for further search
-- **The slug file** `encyclopedia_entries-domain-N.json` (same N as your `literature-domain-N.bib`) is written by the fetch call above — every slug you fetch, SEP and IEP, in `{"sep_entries": [...], "iep_entries": [...]}`. **If you found nothing to fetch, write the valid-empty file** `{"sep_entries": [], "iep_entries": []}` as the one line of a call of its own — the one standalone no-script call this prose asks for: a missing file marks this domain's encyclopedia acquisition incomplete and demotes its entries. The orchestrator's evidence barrier reads these files to acquire citation context mechanically, and the Write that CREATES your `literature-domain-N.bib` is DENIED while the file is missing or malformed.
+- **The slug file** `encyclopedia_entries-domain-N.json` (same N as your `literature-domain-N.bib`) is written by the fetch call above — every slug you fetch, SEP and IEP, in `{"sep_entries": [...], "iep_entries": [...]}`. **If you found nothing to fetch, write the valid-empty file** `{"sep_entries": [], "iep_entries": []}` in a call of its own — `REVIEW_DIR=...; JSON_DIR=...; mkdir -p "$JSON_DIR"` then the write — the one standalone no-script call this prose asks for: a missing file marks this domain's encyclopedia acquisition incomplete and demotes its entries. The orchestrator's evidence barrier reads these files to acquire citation context mechanically, and the Write that CREATES your `literature-domain-N.bib` is DENIED while the file is missing or malformed. The barrier fetches context from this list itself, so list the slugs you chose; a fetch that fails on your side costs nothing there.
 
 ### Stage 2: PhilPapers
 
@@ -332,21 +333,25 @@ baseline) is re-opening already-fetched JSON with `cat`, `python3 -c`, or
 Stage 4 runs in every domain. Seeds are the most foundational works
 Stages 1–3 surfaced (SEP bibliography staples, the most-cited Stage 3
 hits) plus every seed paper the orchestrator named; a seed is usable when
-you hold its Semantic Scholar paper ID or DOI. Chaining is the one
-discovery mechanism here with no substitute: keyword search cannot reach a
-paper whose title shares no words with the topic, the citation graph can.
-Three cases, and only these:
+you hold its Semantic Scholar paper ID or its DOI (pass a DOI as
+`DOI:10.…`). Chaining is the one discovery mechanism here with no
+substitute: keyword search cannot reach a paper whose title shares no
+words with the topic, the citation graph can. Four cases, and only these:
 
 - Two or more usable seeds: chain at least two and feed the same seeds to
   the recommender.
 - Exactly one usable seed: chain it and run the recommender with it; note
   `Stage 4: one seed available` in NOTABLE_GAPS.
-- No usable seed after Stages 1–3 succeeded (rare — every Stage 3 S2 hit
-  carries an ID): write `Stage 4 skipped: no resolvable seeds (S2 status:
+- No usable seed after Stages 1–3 have run (rare — every Stage 3 S2 hit
+  carries an ID; valid even if S2 errored, record the actual status):
+  write `Stage 4 skipped: no resolvable seeds (S2 status:
   <status from the Stage 3 tail>, candidates inspected: <N>)` in
   NOTABLE_GAPS. Only that evidenced line is a complete skip; a silent skip
   leaves the domain incomplete, and so does a skip while Stage 3 returned
   results.
+- Seeds existed but every chaining call errored (S2 down): write
+  `Stage 4 attempted: chaining failed (status: <status from the Stage 4 tail>)`
+  in NOTABLE_GAPS after one re-run of the failed script.
 
 ```bash
 # One call: chain citations for ALL seed papers (sequential -- every line
@@ -400,6 +405,8 @@ CrossRef returns:
 **Other verification tools**:
 
 ```bash
+REVIEW_DIR="$PWD/reviews/[project-name]"
+
 # Efficiently fetch metadata for multiple papers from S2
 bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/s2_batch.py --ids "{id1},{id2},DOI:10.xxx/yyy"
 
@@ -426,6 +433,7 @@ anti-pattern is a run per added entry (up to 17 in one domain), which
 wastes turns and API calls alike.
 
 ```bash
+REVIEW_DIR="$PWD/reviews/[project-name]"
 bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/enrich_bibliography.py "$REVIEW_DIR/literature-domain-N.bib"
 ```
 
@@ -436,7 +444,7 @@ This script automatically:
 4. Marks entries `INCOMPLETE` (adds to keywords) if no abstract available
 
 The script's inline summary is your result — `Enriched: N` and
-`Marked INCOMPLETE: N`; when that count is nonzero the next line,
+`Marked INCOMPLETE: N`; whenever any entry is INCOMPLETE the next line,
 `INCOMPLETE entries: key1, key2`, names them. Do not grep, count, or
 re-read the bib to check it. Copy the named keys into the
 NOTABLE_GAPS section of your @comment block.
@@ -513,6 +521,7 @@ A web source has no API abstract, so without a fetch it stamps
 `EVIDENCE-NONE` and the writer cannot cite it at all. Run:
 
 ```bash
+REVIEW_DIR="$PWD/reviews/[project-name]"
 bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_web.py \
     --url "https://example.com/path" --citekey authorYYYYkeyword --review-dir "$REVIEW_DIR"
 ```
@@ -541,6 +550,7 @@ If the script cannot get the page but you can read it (JS-rendered hosts),
 read it with WebFetch and pipe what you read to the same script:
 
 ```bash
+REVIEW_DIR="$PWD/reviews/[project-name]"
 bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_web.py \
     --stdin --url "https://example.com/path" --citekey authorYYYYkeyword --review-dir "$REVIEW_DIR"
 ```
@@ -615,17 +625,19 @@ searches hit four different APIs, which is why they parallelize.
 | Stage 4 | 1 |
 | Stage 5 verification | 1 per ~6 DOIs |
 | Stage 5.5 enrichment | 1 (2 if you added entries after it) |
+| Stage 6 web fetch | 1 per web source kept |
 | follow-up rounds | 1 per round; as many rounds as the results warrant |
 
 About ten calls before follow-ups, not one per script invocation. The
-table caps ceremony, never follow-up rounds. Bash calls that run no
-script are not in the budget at all — probing variables, `mkdir` or `ls`
-on their own, counting bib entries, grepping the bib for INCOMPLETE or
-abstract_source, `python3 -c`/`grep`/`jq` over result JSON you already
-Read: the worked examples carry their own setup, the hooks validate the
-bib, the enrichment summary prints its counts and keys, and read-once
-means once. The one exception is the valid-empty slug file when Stage 1
-fetched nothing — that single-line write stands alone and is required.
+table caps ceremony, never follow-up rounds.
+**Do not make Bash calls that run no script**: no probing variables, no
+`mkdir` or `ls` on their own, no counting bib entries, no grepping the
+bib for INCOMPLETE or abstract_source, no `python3 -c`/`grep`/`jq` over
+result JSON you already Read. The worked examples carry their own setup,
+the hooks validate the bib, the enrichment summary prints its counts and
+keys, and read-once means once. The one exception is the
+valid-empty slug file when Stage 1 fetched nothing — that two-line call
+(`mkdir -p "$JSON_DIR"`, then the write) stands alone and is required.
 
 > **Why `--output` matters most here.** Running four searches concurrently interleaves their stderr progress lines. With a bare `> file` redirect you might be tempted to add `2>&1` to tame that noise — which merges the progress lines into the JSON and corrupts every file. `--output` sidesteps the problem entirely: each script writes its own clean JSON file regardless of what happens on stdout/stderr, and the interleaved progress simply scrolls past on your terminal.
 
@@ -735,7 +747,7 @@ See `$PHILLIT_ROOT/docs/conventions.md` for citation key format, author name for
 - [ ] Each JSON file has `status: "success"` (or failures noted in completion message)
 
 ✅ **Citation Chaining**:
-- [ ] Stage 4 ran: seeds chained (`cites_<domain>_*.json` present) and `recommendations_<domain>.json` written, works they surfaced considered — or NOTABLE_GAPS carries the evidenced `Stage 4 skipped: no resolvable seeds (S2 status: …, candidates inspected: …)` line
+- [ ] Stage 4 ran: seeds chained (`cites_<domain>_*.json` present) and `recommendations_<domain>.json` written, works they surfaced considered — or NOTABLE_GAPS carries the evidenced `Stage 4 skipped: …` or `Stage 4 attempted: …` line
 
 ✅ **Encyclopedia Context**:
 - [ ] `encyclopedia_entries-domain-N.json` saved in Stage 1 (valid-empty `{"sep_entries": [], "iep_entries": []}` if none found)

@@ -278,13 +278,19 @@ def test_researcher_prose_makes_citation_chaining_required():
     assert "Stage 4 runs in every domain" in stage4
     assert "Stage 4 skipped: no resolvable seeds (S2 status:" in stage4
     assert "Exactly one" in stage4  # the one-seed case has an action
+    # A chaining run that errored is not a skip: it has its own evidenced line.
+    assert "Stage 4 attempted: chaining failed" in stage4
     checklist = _section(text, "## Before Submitting — Quality Checklist", "## Error Checking")
     assert "Stage 4 ran" in checklist
     # The status example must model every stage, not a subset.
     status = _section(text, "## Status Updates", "## Search Process")
-    example = re.search(r"```\n(.*?)```", status, re.S).group(1)
+    m = re.search(r"```\n(.*?)```", status, re.S)
+    assert m, "status section has no fenced example block"
+    example = m.group(1)
     for stage in ("Stage 1", "Stage 2", "Stage 3", "Stage 4", "Stage 5"):
         assert stage in example, f"status example omits {stage}"
+    # Enrichment reports its own result line, like every other stage.
+    assert "✓ Stage 5.5:" in example
 
 
 def test_researcher_prose_budgets_calls_and_forbids_probing():
@@ -295,9 +301,11 @@ def test_researcher_prose_budgets_calls_and_forbids_probing():
         encoding="utf-8")
     assert "Do NOT probe it" in text
     batching = _section(text, "## One Bash Call Per Stage (REQUIRED)", "## BibTeX File Structure")
-    assert "roughly 6" not in batching
     assert "Budget per domain" in batching
     assert "| Stage 4 |" in batching
+    assert "| Stage 6 web fetch |" in batching  # the fetch is mandatory for citability
+    # The no-script rule is an instruction, not a description of the budget.
+    assert "Do not make Bash calls that run no script" in batching
     assert "as many rounds as the results warrant" in batching
     assert "one follow-up call per round" in batching
     assert "Marked INCOMPLETE" in text  # prose reads the conditional summary line
@@ -310,8 +318,10 @@ def test_researcher_prose_budgets_calls_and_forbids_probing():
     assert '{"sep_entries": [], "iep_entries": []}' in stage1
     # Stage 3's worked example still chains all four searches in one block.
     stage3 = _section(text, "### Stage 3: Extended Academic Search", "### Consuming results without re-reading them")
-    block = re.search(r"```bash\n(.*?)```", stage3, re.S).group(1)
-    assert "python3 -c" in stage3  # the read-once clause sits in Stage 3's own paragraph
+    m = re.search(r"```bash\n(.*?)```", stage3, re.S)
+    assert m, "Stage 3 has no fenced bash block"
+    block = m.group(1)
+    assert "No `python3 -c`" in stage3  # the read-once clause sits in Stage 3's own paragraph
     for script in ("s2_search.py", "search_openalex.py", "search_core.py", "search_arxiv.py"):
         assert script in block
     # Task 4's DOI-safe chain filenames and its batching sentence stay pinned.

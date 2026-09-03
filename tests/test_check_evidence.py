@@ -332,5 +332,7 @@ def test_the_web_tier_is_not_low_trust():
 
 
 def test_rc_surname_is_brace_aware_and_keeps_comma_less_names_whole():
+    # A braced return never matches prose; parity with the pre-change rule,
+    # census 0 of 9,157 such fields -- accepted residual.
     assert check_evidence.rc_surname("{Smith and Jones Institute} and Doe, Jane") == "{Smith and Jones Institute}"
     assert check_evidence.rc_surname("Willem van der Deijl and Doe, Jane") == "Willem van der Deijl"

@@ -657,6 +657,8 @@ class TestFetchPassDeadline:
 
 
 def test_first_author_surname_is_brace_aware_and_keeps_comma_less_names_whole():
+    # A braced return never matches prose; parity with the pre-change rule,
+    # census 0 of 9,157 such fields -- accepted residual.
     assert first_author_surname("{Smith and Jones Institute} and Doe, Jane") == "{Smith and Jones Institute}"
     assert first_author_surname("Doe, Jane and Smith, John") == "Doe"
     # Parity with the pre-change rule: no comma -> the whole first name.
