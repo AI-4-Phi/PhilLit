@@ -32,6 +32,7 @@ import unicodedata
 
 from pybtex.bibtex.utils import split_name_list
 from pybtex.database import Person
+from pybtex.exceptions import PybtexError
 
 from bib_validator import LATEX_ESCAPES
 
@@ -635,9 +636,9 @@ def first_author_surname(author: str | None, editor: str | None = "") -> str:
     Undecoded and braces kept, so it agrees with `generate_bibliography`'s
     `_raw_surname` and, through `year_suffix._first_surname_raw`, feeds
     `fallback_key` and `same_work_key` the same text the Phase 6 advisory
-    does. Callers pass RAW field values (see the module scope note). A name
-    pybtex's `Person` cannot parse degrades to the comma/whitespace split
-    rather than raising.
+    does. Callers pass RAW field values (see the module scope note). The
+    comma/whitespace fallback runs when pybtex's Person raises a
+    PybtexError (too many commas) or yields no surname.
     """
     first = first_author_name(author, editor)
     if not first:
@@ -647,7 +648,7 @@ def first_author_surname(author: str | None, editor: str | None = "") -> str:
         surname = " ".join(person.prelast_names + person.last_names).strip()
         if surname:
             return surname
-    except Exception:
+    except PybtexError:
         pass
     if "," in first:
         return first.split(",")[0].strip()

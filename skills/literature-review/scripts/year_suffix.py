@@ -118,7 +118,8 @@ from pathlib import Path
 
 _hook_dir = Path(__file__).resolve().parent.parent.parent.parent / "hooks"
 sys.path.insert(0, str(_hook_dir))
-from bib_identity import fallback_key, normalize_doi, title_key  # noqa: E402
+from bib_identity import (fallback_key, first_author_surname,  # noqa: E402
+                          normalize_doi, split_author_list, title_key)
 
 sys.path.pop(0)
 
@@ -164,8 +165,7 @@ def author_signature(author: str, editor: str = "") -> tuple[tuple[str, str], ..
     field = (author or "").strip() or (editor or "").strip()
     if not field:
         return ()
-    sig = tuple(_person_signature(part.strip())
-                for part in field.split(" and ") if part.strip())
+    sig = tuple(_person_signature(part) for part in split_author_list(field))
     return () if any(not s[0] for s in sig) else sig
 
 
@@ -182,33 +182,11 @@ def work_identity_keys(fields: dict) -> tuple[str | None, tuple | None]:
 
 def _first_surname_raw(fields: dict) -> str:
     """The first author's FULL surname, parsed the way the rest of the
-    pipeline parses it.
-
-    This feeds `fallback_key`, so it must agree with `dedupe_bib` and
-    `generate_bibliography`, both of which take pybtex's prelast+last names.
-    A naive comma/whitespace split disagrees on particled surnames written
-    without a comma ("Willem van der Deijl" -> "Deijl" instead of "van der
-    Deijl"), which would make this pass and the Phase 6 merge disagree about
-    work identity: two copies of one work would take two letters and then be
-    merged into one entry carrying one of them, leaving the prose citing a
-    letter that no reference shows.
+    pipeline parses it -- `bib_identity.first_author_surname`, which agrees
+    with `generate_bibliography`'s `_raw_surname`. Dict adapter only; the
+    parse lives in bib_identity.
     """
-    field = (fields.get("author") or "").strip() or (fields.get("editor") or "").strip()
-    first = field.split(" and ")[0].strip()
-    if not first:
-        return ""
-    try:
-        from pybtex.database import Person
-        person = Person(first)
-        surname = " ".join(person.prelast_names + person.last_names).strip()
-        if surname:
-            return surname
-    except Exception:
-        pass
-    if "," in first:
-        return first.split(",")[0].strip()
-    parts = first.split()
-    return parts[-1] if parts else ""
+    return first_author_surname(fields.get("author") or "", fields.get("editor") or "")
 
 
 # Public alias to the shared object (repo convention: sites keep historic

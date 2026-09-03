@@ -54,6 +54,16 @@ class TestAuthorSignature:
     def test_empty_is_empty(self):
         assert ys.author_signature("") == ()
 
+    def test_braced_corporate_author_containing_and_is_one_slot(self):
+        sig = ys.author_signature("{Smith and Jones Institute} and Doe, Jane")
+        assert len(sig) == 2
+        assert sig[1] == ("doe", "j")
+
+
+def test_first_surname_raw_keeps_braced_corporate_author_whole():
+    fields = {"author": "{Smith and Jones Institute} and Doe, Jane", "title": "T"}
+    assert ys._first_surname_raw(fields) == "{Smith and Jones Institute}"
+
 
 class TestAssignSuffixes:
     def test_two_works_same_author_year_get_letters(self):

@@ -19,6 +19,8 @@ import pytest
 import sys
 sys.path.insert(0, str(Path(__file__).parent.parent / "skills" / "literature-review" / "scripts"))
 
+import enrich_bibliography as eb
+
 
 # =============================================================================
 # Sample BibTeX Data
@@ -1835,3 +1837,18 @@ def test_ndpr_receives_title_and_author_only():
     args_or_kwargs = stubs["ndpr"].kwargs_seen[0]
     assert args_or_kwargs.get("title") == "A Test Paper"
     assert args_or_kwargs.get("author") == "Doe"
+
+
+def test_get_author_last_name_fixes_the_split_and_braces_only():
+    g = lambda a: eb.get_author_last_name({"fields": {"author": a}})
+    assert g("{Smith and Jones Institute} and Doe, Jane") == "Smith and Jones Institute"
+    assert g("{{ACM} and IEEE Committee}") == "ACM and IEEE Committee"
+    assert g("{Research {and} Development Council}") == "Research and Development Council"
+    assert g("{B}rown, John") == "Brown"
+    # Braced personal names: pybtex keeps them whole; the comma rule applies.
+    assert g("{Doe, Jane}") == "Doe"
+    assert g("{van der Deijl, Willem}") == "van der Deijl"
+    assert g("Doe, Jane and Smith, John") == "Doe"
+    # Unchanged token rule for ordinary comma-less names.
+    assert g("Willem van der Deijl") == "Deijl"
+    assert g("") is None

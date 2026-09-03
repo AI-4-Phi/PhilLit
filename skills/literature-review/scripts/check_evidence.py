@@ -35,6 +35,12 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 import stamp_evidence as se
 
+_hook_dir = Path(__file__).resolve().parent.parent.parent.parent / "hooks"
+sys.path.insert(0, str(_hook_dir))
+from bib_identity import first_author_name  # noqa: E402
+
+sys.path.pop(0)
+
 _MATCH_WINDOW = 60  # mirrors generate_bibliography._MATCH_WINDOW
 
 _TIER_RE = re.compile(r"EVIDENCE-[A-Za-z0-9_-]+")
@@ -108,11 +114,9 @@ _LOW_TRUST_TIERS = (se.TIER_EXISTENCE, se.TIER_NONE, None)
 
 
 def rc_surname(author_field: str) -> str:
-    """First author's surname. Duplicated from
-    resolve_context.first_author_surname (one-liner; not worth a
-    cross-module import for this)."""
-    first = (author_field or "").split(" and ")[0]
-    return first.split(",")[0].strip()
+    """First author's surname as resolve_context.first_author_surname
+    computes it (part before the first comma), brace-aware on the split."""
+    return first_author_name(author_field).split(",")[0].strip()
 
 
 def find_cites(md: str, surname: str, year: str, suffix: str = "") -> list[int]:

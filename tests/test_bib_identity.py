@@ -360,3 +360,13 @@ class TestAuthorListSplit:
 
     def test_first_author_surname_empty(self):
         assert bi.first_author_surname("") == ""
+
+    def test_first_author_surname_characterizes_odd_inputs_end_to_end(self):
+        # Documented behaviour, not endorsement: same strings the literal split produced.
+        # pybtex reads the leading "and" as a prelast particle (Person("and
+        # Smith").prelast_names == ["and"]), so Person succeeds with a
+        # non-empty surname and the comma/whitespace fallback never runs.
+        assert bi.first_author_surname("and Smith") == "and Smith"
+        assert bi.first_author_surname("Smith, John and\nDoe, Jane") == "Smith"
+        # Person raises InvalidNameString (a PybtexError) -> comma fallback.
+        assert bi.first_author_surname("a, b, c, d") == "a"

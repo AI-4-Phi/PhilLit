@@ -42,6 +42,13 @@ from rate_limiter import ExponentialBackoff, get_limiter
 # stamp_evidence lives alongside this script (same skills/literature-review/scripts dir).
 sys.path.insert(0, str(Path(__file__).parent))
 import bib_fields  # noqa: E402 - same directory
+
+_hook_dir = Path(__file__).resolve().parent.parent.parent.parent / "hooks"
+sys.path.insert(0, str(_hook_dir))
+from bib_identity import first_author_name  # noqa: E402
+
+sys.path.pop(0)
+
 from stamp_evidence import (
     ATTESTED_ABSTRACT_SOURCES,
     abstract_hash,
@@ -160,19 +167,43 @@ def get_doi(entry: dict) -> Optional[str]:
     return None
 
 
+def _is_one_brace_group(name: str) -> bool:
+    """True when the first `{` closes only at the final character, i.e. the
+    whole name is one outer brace group (nested groups allowed)."""
+    if len(name) < 2 or name[0] != '{' or name[-1] != '}':
+        return False
+    depth = 0
+    for i, ch in enumerate(name):
+        if ch == '{':
+            depth += 1
+        elif ch == '}':
+            depth -= 1
+            if depth == 0 and i != len(name) - 1:
+                return False
+    return depth == 0
+
+
 def get_author_last_name(entry: dict) -> Optional[str]:
-    """Extract first author's last name from entry."""
-    author = entry['fields'].get('author', '')
-    if not author:
+    """First author's surname as search text for abstract matching.
+
+    Brace-aware on the list split (bib_identity). A first name that is one
+    outer brace group with no comma inside is a corporate author and is
+    returned whole; otherwise the token rule stands: text before the first
+    comma (a braced personal name `{Doe, Jane}` lands here), else the last
+    whitespace token. All braces are removed from the result because it is
+    used as search text."""
+    first = first_author_name(entry['fields'].get('author', ''))
+    if not first:
         return None
-    # Handle "Last, First" or "First Last" formats
-    # BibTeX typically uses "Last, First and Last2, First2"
-    first_author = author.split(' and ')[0].strip()
-    if ',' in first_author:
-        return first_author.split(',')[0].strip()
+    if _is_one_brace_group(first) and ',' not in first:
+        surname = first[1:-1]
+    elif ',' in first:
+        surname = first.split(',')[0]
     else:
-        parts = first_author.split()
-        return parts[-1] if parts else None
+        parts = first.split()
+        surname = parts[-1] if parts else ''
+    surname = surname.replace('{', '').replace('}', '').strip()
+    return surname or None
 
 
 def get_year(entry: dict) -> Optional[int]:

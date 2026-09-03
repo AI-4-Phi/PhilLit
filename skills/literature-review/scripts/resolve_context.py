@@ -25,6 +25,12 @@ import bib_fields  # noqa: E402 - sibling module
 
 sys.path.pop(0)
 
+_hook_dir = Path(__file__).resolve().parent.parent.parent.parent / "hooks"
+sys.path.insert(0, str(_hook_dir))
+from bib_identity import first_author_name  # noqa: E402
+
+sys.path.pop(0)
+
 sys.path.insert(0, str(Path(__file__).parent.parent.parent / "philosophy-research" / "scripts"))
 
 TITLE_MATCH_THRESHOLD = 0.5
@@ -62,8 +68,10 @@ def load_slug_files(paths):
 
 
 def first_author_surname(author_field: str) -> str:
-    first = (author_field or "").split(" and ")[0]
-    return first.split(",")[0].strip()
+    """Surname text used to match the SEP passage: the part before the
+    first comma of the first name (a comma-less name stays whole);
+    brace-aware on the list split."""
+    return first_author_name(author_field).split(",")[0].strip()
 
 
 def _title_tokens(text: str) -> set:

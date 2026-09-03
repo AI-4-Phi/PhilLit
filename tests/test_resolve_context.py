@@ -654,3 +654,10 @@ class TestFetchPassDeadline:
                 "entry_name": slug, "bibliography": []})
         resolve_context.fetch_articles({"sep": ["aaa"]}, deadline_seconds=600.0)
         assert capsys.readouterr().err == ""
+
+
+def test_first_author_surname_is_brace_aware_and_keeps_comma_less_names_whole():
+    assert first_author_surname("{Smith and Jones Institute} and Doe, Jane") == "{Smith and Jones Institute}"
+    assert first_author_surname("Doe, Jane and Smith, John") == "Doe"
+    # Parity with the pre-change rule: no comma -> the whole first name.
+    assert first_author_surname("Willem van der Deijl and Doe, Jane") == "Willem van der Deijl"

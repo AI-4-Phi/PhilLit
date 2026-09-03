@@ -3148,6 +3148,9 @@ class TestSameWorkCitedAdvisory:
                             ("author", "Willem van der Deijl"),
                             ("author", "Sogaard-Smith, Anne"),
                             ("author", "M{\\\"u}ller, Eva"),
+                            # Braced corporate author containing "and": one
+                            # name to pybtex, so both sides must key it whole.
+                            ("author", "{Smith and Jones Institute} and Doe, Jane"),
                             # editor-only entry: both sides must apply the
                             # same editor fallback (first_surname_raw does,
                             # line ~196 of year_suffix.py - pinned here).
