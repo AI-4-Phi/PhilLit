@@ -229,6 +229,35 @@ class TestNdprEnrichmentPass:
 
     @patch("enrich_bibliography.resolve_abstract_for_entry")
     @patch("enrich_bibliography.resolve_ndpr_abstract")
+    def test_ndpr_unmark_removes_the_key_from_incomplete_keys(self, mock_ndpr, mock_resolve):
+        """When NDPR succeeds, the un-mark path must also drop the key from
+        stats['incomplete_keys'] -- otherwise a stale key would be copied
+        into NOTABLE_GAPS with the grep now discouraged."""
+        mock_resolve.return_value = (None, None)
+        mock_ndpr.return_value = ("NDPR book summary text here.", "ndpr")
+
+        import enrich_bibliography
+
+        with tempfile.NamedTemporaryFile(mode='w', suffix='.bib', delete=False) as f:
+            f.write(SAMPLE_BOOK_NO_ABSTRACT)
+            input_path = Path(f.name)
+
+        output_path = input_path.with_suffix('.enriched.bib')
+
+        try:
+            stats = enrich_bibliography.enrich_bibliography(
+                input_path, output_path, None, None, None
+            )
+
+            assert stats['incomplete_keys'] == []  # the NDPR un-mark also removes the key
+
+        finally:
+            input_path.unlink()
+            if output_path.exists():
+                output_path.unlink()
+
+    @patch("enrich_bibliography.resolve_abstract_for_entry")
+    @patch("enrich_bibliography.resolve_ndpr_abstract")
     def test_ndpr_failure_leaves_incomplete(self, mock_ndpr, mock_resolve):
         """When NDPR fails, entry should remain INCOMPLETE."""
         mock_resolve.return_value = (None, None)

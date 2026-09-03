@@ -737,6 +737,7 @@ def enrich_bibliography(
         'already_had_abstract': 0,
         'enriched': 0,
         'marked_incomplete': 0,
+        'incomplete_keys': [],
         'skipped': 0,
         'prefilled_attested': 0,
         'prefilled_unverified': 0,
@@ -807,6 +808,7 @@ def enrich_bibliography(
             stats['sources'][source] = stats['sources'].get(source, 0) + 1
         else:
             stats['marked_incomplete'] += 1
+            stats['incomplete_keys'].append(entry['key'])
 
     # --- NDPR enrichment pass for books without abstracts ---
     # Only attempt NDPR for @book entries that:
@@ -845,6 +847,8 @@ def enrich_bibliography(
                 # Stats: enriched/marked_incomplete are cumulative across all passes
                 stats['enriched'] += 1
                 stats['marked_incomplete'] -= 1
+                if entry['key'] in stats['incomplete_keys']:
+                    stats['incomplete_keys'].remove(entry['key'])
                 stats['sources']['ndpr'] += 1
                 log_progress(f"  Added NDPR abstract for: {entry['key']}")
 
@@ -1039,6 +1043,8 @@ def main():
         print(f"  Already had abstract: {stats['already_had_abstract']}")
         print(f"  Enriched: {stats['enriched']}")
         print(f"  Marked INCOMPLETE: {stats['marked_incomplete']}")
+        if stats.get('incomplete_keys'):
+            print(f"  INCOMPLETE entries: {', '.join(stats['incomplete_keys'])}")
         if stats['enriched'] > 0:
             print(f"  Sources: {stats['sources']}")
 

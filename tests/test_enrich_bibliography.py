@@ -626,6 +626,21 @@ class TestBatchProcessing:
         assert 'abstract_source = {core}' in output_content
 
     @patch("enrich_bibliography.resolve_abstract_for_entry")
+    def test_stats_name_the_incomplete_keys(self, mock_resolve, tmp_path):
+        """The Stage 5.5 prose used to send the researcher to grep the bib
+        for INCOMPLETE; the summary now names the keys instead."""
+        mock_resolve.side_effect = [("Found abstract", "core"), (None, None)]
+        import enrich_bibliography
+        content = f"{SAMPLE_ENTRY_NO_ABSTRACT}\n\n{SAMPLE_ENTRY_INCOMPLETE}"
+        input_path = tmp_path / "test.bib"
+        input_path.write_text(content, encoding='utf-8')
+        output_path = tmp_path / "output.bib"
+        stats = enrich_bibliography.enrich_bibliography(
+            input_path, output_path, None, None, None)
+        assert stats['marked_incomplete'] == 1
+        assert stats['incomplete_keys'] == ["test2020paper"]
+
+    @patch("enrich_bibliography.resolve_abstract_for_entry")
     def test_enrich_bibliography_preserves_comments(self, mock_resolve, tmp_path):
         """Should preserve @comment entries."""
         mock_resolve.return_value = ("Abstract", "s2")
