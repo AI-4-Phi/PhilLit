@@ -1176,22 +1176,10 @@ def test_stale_venue_status_is_removed_when_vetting_is_skipped(tmp_path, monkeyp
 
 
 def test_hand_written_venue_status_is_removed(tmp_path, monkeypatch):
-    """A braced- or quoted-value venue_status is stripped before the pass and
-    only re-added on this run's own verdict. Narrower than "cannot inject
-    the flag" in general: _strip_derived_fields's regex covers only these two
-    forms (single-nesting-level braced, or quoted) -- a bare-token value
-    (`venue_status = low-visibility,`) or a nested-brace value
-    (`venue_status = {low {x} vis}`) are accepted, documented limits of the
-    regex (see _strip_derived_fields's docstring) that this test does not
-    cover.
-
-    A THIRD accepted limit, orthogonal to those two and about POSITION rather
-    than value shape: the regex is anchored to `\\n[ \\t]*`, so it only matches
-    a field that OPENS its line. A `venue_status` sharing a line with anything
-    else -- on the `@article{key,` header line, or trailing after another
-    field -- survives the strip. The fixture below puts the forged field on
-    its own line, so this test does not cover that case either. All three
-    limits apply identically to `year_suffix`."""
+    """A hand-written venue_status is stripped before the pass and only
+    re-added on this run's own verdict. The quoted form here; bare, nested
+    and non-line-initial shapes are covered by
+    test_strip_reaches_bare_nested_and_compact_derived_fields."""
     sys.path.insert(0, str(SCRIPTS_DIR))
     import evidence_barrier
     rd = tmp_path / "review"
@@ -1527,11 +1515,13 @@ def test_suffix_error_path_still_carries_every_list_key(tmp_path, monkeypatch):
 
 # --- A stale COMPACT year_suffix ---
 #
-# `_strip_derived_fields` only matches a field OPENING its line -- an accepted,
-# documented limit. For `venue_status` a survivor is a stale metadata problem;
-# for `year_suffix` it is a correctness one, because generate_bibliography ACTS
-# on the value. The fixtures below put the field mid-line, which is exactly the
-# position the stripper cannot reach.
+# `_strip_derived_fields` used to match only a field OPENING its line, so a
+# mid-line or header-line letter survived it. For `venue_status` a survivor
+# is a stale metadata problem; for `year_suffix` it is a correctness one,
+# because generate_bibliography ACTS on the value. The strip now locates
+# fields structurally and reaches these shapes; the fixtures below pin that,
+# and -- with the strip monkeypatched to a no-op -- the residual-neutralisation
+# pass that remains behind it as defence in depth.
 
 # Two DIFFERENT people sharing a surname and a year: the case the letter
 # assigner deliberately refuses to letter (it is a surname collision, resolved
@@ -1551,9 +1541,9 @@ STALE_COMPACT_D1 = """@article{johnson2024algorithms,
   journal = {Synthese}, year_suffix = {b}, year = {2024}
 }"""
 
-# The one shape the neutralising splice cannot land: no whitespace before the
-# field, so add_field_to_entry's `(\s+)year_suffix\s*=` locator misses it and
-# the "add" path would insert a SECOND one -- which pybtex rejects outright.
+# No whitespace before the field: the shape both the old strip and the old
+# `(\s+)year_suffix\s*=` locator in add_field_to_entry missed, so the "add"
+# path would have inserted a SECOND one, which pybtex rejects outright.
 STALE_NO_SPACE_D1 = """@article{johnson2024algorithms,year_suffix={a},
   author = {Johnson, Gabbrielle},
   title = {Are Algorithms Value-Free},
@@ -1561,12 +1551,37 @@ STALE_NO_SPACE_D1 = """@article{johnson2024algorithms,year_suffix={a},
 }"""
 
 
-def test_stale_compact_year_suffix_is_neutralized(tmp_path):
-    """The barrier owns this field. A value it did not derive and cannot
-    strip is overwritten with its own decision for the entry -- here, no
-    letter -- and named in the report."""
+def test_stale_compact_year_suffix_is_stripped(tmp_path):
+    """The barrier owns this field: a mid-line stale letter is stripped
+    before assignment like any other, so nothing is left to neutralise --
+    the assigner letters nothing here, and the entries carry no letter."""
     sys.path.insert(0, str(SCRIPTS_DIR))
     import evidence_barrier
+    rd = tmp_path / "review"
+    _domain(rd, 1, STALE_COMPACT_D1, cleaning=_cleaning(1, {}),
+            enrichment=_enrichment(1))
+    assert evidence_barrier.execute(rd, 1) == 0
+    content = (rd / "literature-domain-1.bib").read_text(encoding="utf-8")
+    assert "year_suffix" not in content
+    suffixes = _report(rd)["year_suffixes"]
+    assert suffixes["assigned"] == 0        # the assigner still letters nothing
+    assert suffixes["residual_neutralized"] == []
+    assert suffixes["residual_unresolved"] == []
+
+
+def _disable_strip(monkeypatch, evidence_barrier):
+    """Defence-in-depth fixture: pretend the strip missed everything, so the
+    residual-neutralisation pass behind it has something to act on."""
+    monkeypatch.setattr(evidence_barrier, "_strip_derived_fields", lambda t: t)
+
+
+def test_a_residual_the_strip_missed_is_neutralized(tmp_path, monkeypatch):
+    """A value the barrier did not derive and (here, by monkeypatch) could not
+    strip is overwritten with its own decision for the entry -- no letter --
+    and named in the report."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    _disable_strip(monkeypatch, evidence_barrier)
     rd = tmp_path / "review"
     _domain(rd, 1, STALE_COMPACT_D1, cleaning=_cleaning(1, {}),
             enrichment=_enrichment(1))
@@ -1576,7 +1591,7 @@ def test_stale_compact_year_suffix_is_neutralized(tmp_path):
     assert "year_suffix = {b}" not in content
     assert content.count("year_suffix = {unassigned}") == 2
     suffixes = _report(rd)["year_suffixes"]
-    assert suffixes["assigned"] == 0        # the assigner still letters nothing
+    assert suffixes["assigned"] == 0
     assert sorted(suffixes["residual_neutralized"]) == [
         "literature-domain-1.bib:johnson2024algorithms",
         "literature-domain-1.bib:johnson2024judgement"]
@@ -1610,15 +1625,38 @@ def test_a_stale_compact_letter_cannot_license_a_phase_6_drop(tmp_path):
     assert cited == ["johnson2024algorithms", "johnson2024judgement"]
 
 
-def test_a_residual_the_splice_cannot_neutralize_is_reported(tmp_path, capsys):
-    """The accepted residual, and the reason the splice is verified rather
-    than trusted: neutralising this shape would insert a DUPLICATE field and
-    hand dedupe_bib a bibliography pybtex refuses to parse. The barrier
-    reverts instead and says so -- on the console line too, since this is the
-    one shape that stays a live drop hazard."""
+def test_a_no_space_year_suffix_on_the_header_line_is_stripped(tmp_path):
+    """The shape that used to be the one live drop hazard: unreachable by the
+    old strip and by the old add_field_to_entry locator alike. Structural
+    location reaches it, so it is simply gone."""
     sys.path.insert(0, str(SCRIPTS_DIR))
     import evidence_barrier
     from pybtex.database import parse_string
+    rd = tmp_path / "review"
+    _domain(rd, 1, STALE_NO_SPACE_D1, cleaning=_cleaning(1, {}),
+            enrichment=_enrichment(1))
+    assert evidence_barrier.execute(rd, 1) == 0
+    content = (rd / "literature-domain-1.bib").read_text(encoding="utf-8")
+    parse_string(content, "bibtex")
+    assert "year_suffix" not in content
+    suffixes = _report(rd)["year_suffixes"]
+    assert suffixes["residual_neutralized"] == []
+    assert suffixes["residual_unresolved"] == []
+
+
+def test_a_residual_the_splice_cannot_neutralize_is_reported(tmp_path, capsys,
+                                                             monkeypatch):
+    """The splice is verified rather than trusted: when neutralising a
+    residual does not land (here the strip AND the splice are both disabled
+    by monkeypatch, standing in for a shape neither can reach), the barrier
+    keeps the pre-splice text, reports the entry unresolved, and says so on
+    the console line too."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    from pybtex.database import parse_string
+    _disable_strip(monkeypatch, evidence_barrier)
+    monkeypatch.setattr(evidence_barrier, "add_field_to_entry",
+                        lambda text, field, value: text)
     rd = tmp_path / "review"
     _domain(rd, 1, STALE_NO_SPACE_D1, cleaning=_cleaning(1, {}),
             enrichment=_enrichment(1))
@@ -1649,6 +1687,7 @@ def test_a_residual_is_neutralized_even_when_assignment_raises(tmp_path,
         raise RuntimeError("assignment blew up")
 
     monkeypatch.setattr(evidence_barrier.ys, "assign_suffixes", boom)
+    _disable_strip(monkeypatch, evidence_barrier)
     rd = tmp_path / "review"
     _domain(rd, 1, STALE_COMPACT_D1, cleaning=_cleaning(1, {}),
             enrichment=_enrichment(1))
@@ -1660,14 +1699,17 @@ def test_a_residual_is_neutralized_even_when_assignment_raises(tmp_path,
     assert len(suffixes["residual_neutralized"]) == 2
 
 
-def test_a_residual_on_a_lettered_entry_is_overwritten_by_this_run(tmp_path):
+def test_a_residual_on_a_lettered_entry_is_overwritten_by_this_run(tmp_path,
+                                                                    monkeypatch):
     """Why the refusal is a WRITE and not a suppression. An entry the
     assigner letters already has its residual overwritten in place, so
     suppressing this run's letters on detection would leave MORE untrusted
     values standing, not fewer -- it removes the overwrite that cleans them.
-    The stale value here is 'z', which no two-work group can ever produce."""
+    The stale value here is 'z', which no two-work group can ever produce.
+    (Strip disabled by monkeypatch so a residual exists to overwrite.)"""
     sys.path.insert(0, str(SCRIPTS_DIR))
     import evidence_barrier
+    _disable_strip(monkeypatch, evidence_barrier)
     rd = tmp_path / "review"
     forged = MENARY_D1.replace(
         "  doi = {10.7551/mitpress/1.001},",
@@ -1838,11 +1880,10 @@ def test_stale_line_initial_year_suffix_is_stripped(tmp_path):
     that "all three limits apply identically to year_suffix" pinned the
     sentence, not the behaviour.
 
-    A stale LINE-INITIAL letter is the case the regex does reach, so the
-    barrier must re-derive it: `menaryStale` is a single Menary 2011 work,
+    A stale LINE-INITIAL letter: `menaryStale` is a single Menary 2011 work,
     which needs no letter at all, so a correct run leaves it with none. (The
-    compact, non-line-initial case is a documented limit of the regex and is
-    covered separately by test_stale_compact_year_suffix_is_neutralized.)
+    compact, non-line-initial case is covered by
+    test_stale_compact_year_suffix_is_stripped.)
     """
     sys.path.insert(0, str(SCRIPTS_DIR))
     import evidence_barrier
@@ -2326,13 +2367,11 @@ def test_a_swallowed_web_splice_is_reported_not_silent(tmp_path, monkeypatch):
     assert report["web_sources"]["gate_passed"] == {"script": 1, "agent": 0}
 
 
-def test_a_duplicate_urldate_is_reverted_and_the_archiveurl_still_lands(tmp_path, monkeypatch):
-    """A compact pre-existing urldate survives _strip_derived_fields (it only
-    reaches a field OPENING its line) and add_field_to_entry cannot find a
-    field with no whitespace before it — the add path would insert a SECOND
-    urldate and pybtex raises DuplicateField, taking down all of Phase 6.
-    Revert THAT splice, report it, keep the bib parseable — and the sibling
-    archiveurl splice must land independently."""
+def test_a_compact_stale_urldate_is_stripped_and_the_fresh_one_lands(tmp_path, monkeypatch):
+    """A urldate written on the header line with no whitespace before it used
+    to survive the strip and defeat add_field_to_entry's locator, so the add
+    path inserted a SECOND one and the splice had to be reverted. Structural
+    location strips it, and this run's own urldate lands cleanly."""
     from pybtex.database import parse_string
     eb_mod = _stub_net(monkeypatch, snapshot="https://web.archive.org/web/2024/x")
     compact = _WEB_ENTRY.replace("@misc{k,",
@@ -2340,9 +2379,33 @@ def test_a_duplicate_urldate_is_reverted_and_the_archiveurl_still_lands(tmp_path
     rd = _web_review(tmp_path, entry=compact)
     report, outputs = eb_mod.run_barrier(rd, 1)
     text = list(outputs.values())[0]
-    assert text.count("urldate") == 1                  # the stale one, not two
-    assert "1999-01-01" in text                        # revert kept pre-splice text
-    parse_string(text, bib_format="bibtex")            # and it still parses
+    assert text.count("urldate") == 1                  # this run's, not two
+    assert "1999-01-01" not in text                    # the stale one is gone
+    parse_string(text, bib_format="bibtex")
+    assert report["web_sources"]["splice_failed"] == []
+    assert sorted(report["web_sources"]["stamped_entries"]) == [
+        "literature-domain-1.bib:k:archiveurl", "literature-domain-1.bib:k:urldate"]
+
+
+def test_a_failed_urldate_splice_is_reverted_and_the_archiveurl_still_lands(tmp_path, monkeypatch):
+    """Each web splice is verified and reverted independently: a urldate
+    splice that produces a duplicate (simulated) is reverted and reported,
+    the bib stays parseable, and the sibling archiveurl still lands."""
+    from pybtex.database import parse_string
+    eb_mod = _stub_net(monkeypatch, snapshot="https://web.archive.org/web/2024/x")
+    real = eb_mod._stamp_optional_field
+
+    def _double_urldate(text, field, value):
+        if field != "urldate":
+            return real(text, field, value)
+        return text.replace("@misc{k,", "@misc{k,\n  urldate = {%s},\n  urldate = {%s},"
+                            % (value, value), 1)
+    monkeypatch.setattr(eb_mod, "_stamp_optional_field", _double_urldate)
+    rd = _web_review(tmp_path)
+    report, outputs = eb_mod.run_barrier(rd, 1)
+    text = list(outputs.values())[0]
+    assert "urldate" not in text                       # reverted, not emitted twice
+    parse_string(text, bib_format="bibtex")
     assert report["web_sources"]["splice_failed"] == [
         "literature-domain-1.bib:k:urldate"]
     assert report["web_sources"]["stamped_entries"] == [
@@ -3805,6 +3868,40 @@ def test_incomplete_entries_are_skipped_not_poisoning(tmp_path):
     assert len(report["same_work"]["groups"]) == 1
     assert len(report["same_work"]["groups"][0]["members"]) == 2
     assert len(report["same_work"]["stamped_entries"]) == 2
+
+
+def test_strip_reaches_bare_nested_and_compact_derived_fields():
+    """The three shapes the regex strip documented as accepted residuals --
+    a bare-token value, a nested-brace value, and a field not opening its
+    line (on the header line, or trailing another field) -- are all removed
+    now that the strip locates fields structurally (bib_fields). Every owned
+    field, every shape; the neighbours survive byte for byte."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    from evidence_barrier import _strip_derived_fields
+    from pybtex.database import parse_string
+    entry = ("@article{k,venue_status = low-visibility,\n"
+             "  author = {A}, year_suffix = {a},\n"
+             "  title = {T},\n"
+             "  same_work_group = {x {nested {deep}} y},\n"
+             '  urldate = "2024-01-01", archiveurl = {https://a/b},\n'
+             "  year = {2020}\n}")
+    out = _strip_derived_fields(entry)
+    for name in ("venue_status", "year_suffix", "same_work_group",
+                 "urldate", "archiveurl"):
+        assert name not in out, name
+    assert "author = {A}" in out and "title = {T}" in out and "year = {2020}" in out
+    parse_string(out, "bibtex")
+
+
+def test_strip_does_not_touch_field_shaped_text_inside_a_value():
+    """The reason the regex was never widened: a looser anchor could begin a
+    match INSIDE an abstract. A structural locator cannot."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    from evidence_barrier import _strip_derived_fields
+    entry = ("@article{k,\n"
+             "  abstract = {We set venue_status = {low} and year_suffix = {a} here.},\n"
+             "  year = {2020}\n}")
+    assert _strip_derived_fields(entry) == entry
 
 
 def test_strip_regex_covers_same_work_group():

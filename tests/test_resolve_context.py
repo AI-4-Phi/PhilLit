@@ -407,6 +407,22 @@ class TestContextFieldWrite:
         assert "QUOTED FORGERY" not in out and "sep_context" not in out
 
 
+    def test_strip_context_fields_reaches_nested_bare_and_compact_forms(self):
+        """The regex this replaced matched one nesting level, braced or
+        quoted, and only a field opening its line; the three shapes below
+        each survived it. Located structurally now (bib_fields), so a forged
+        context field cannot hide in any delimiter or position."""
+        entry = ('@book{k, sep_context = {FORGED {nested {deep}} CLAIM},\n'
+                 '  author = {A}, iep_context = bare_macro,\n'
+                 '  year = {1962}\n}')
+        out = strip_context_fields(entry)
+        assert "sep_context" not in out and "iep_context" not in out
+        assert "FORGED" not in out and "bare_macro" not in out
+        assert "author = {A}" in out and "year = {1962}" in out
+        from pybtex.database import parse_string
+        parse_string(out, "bibtex")
+
+
 class TestAcquireContext:
     def test_matched_entry_gets_sep_context(self):
         art = _article(

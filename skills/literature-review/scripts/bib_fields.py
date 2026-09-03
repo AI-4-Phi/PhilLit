@@ -1,4 +1,4 @@
-"""Locate fields in raw BibTeX text: the owner of the shared read path.
+"""Locate fields in raw BibTeX text: the one owner of that job.
 
 The barrier pipeline edits bibliographies as TEXT -- it splices, strips and
 re-stamps individual fields inside chunks it otherwise leaves byte-for-byte
@@ -9,9 +9,12 @@ corporate author as a person name on output, and rejects a chunk outright
 on a duplicate field, where a lenient reader should still return the rest.
 pybtex stays the STRICT gate (the barrier validates every domain bib with it
 before doing anything else, SubagentStop re-validates, `_derived_field_took`
-re-parses a spliced chunk); this module is the lenient reader beside it. Four
-edit-side locators still carry their own one-level regex and are queued to
-move here (roadmap: locator consolidation).
+re-parses a spliced chunk); this module is the lenient reader beside it.
+Every field VALUE read, edited or stripped in this directory is located
+here. Outside it, by design: the barrier's `\\b<name>\\s*=` presence counters
+(they count assignments in a splice check, not bound values), dedupe_bib's
+line-based duplicate-field warning, and dedupe_bib's field remover, which
+keeps its own scan for a reason recorded on the roadmap.
 
 The reader it replaced was a regex whose value alternation admitted a brace
 group containing no braces -- ONE level of nesting. The standard LaTeX accent

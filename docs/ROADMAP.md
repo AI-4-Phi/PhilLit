@@ -10,29 +10,25 @@ that a recurrence is recognized where it would be read.
 
 ## Queue
 
-**Raw-text field locators still on one-level regexes** — the shared read
-path now goes through `bib_fields.iter_fields` (depth-counting, braced /
-quoted / bare / concatenated): `parse_entry_fields`, the enrichment reader,
-the keywords stamp and the keywords editors. Four EDIT-side locators keep
-their own regex, each with the one-level wall the read side lost:
-`dedupe_bib._field_value_re` (keywords, abstract, year_suffix);
-`evidence_barrier._DERIVED_FIELD_RE` (the strip before re-derivation, whose
-docstring lists three accepted residuals); `resolve_context._CONTEXT_FIELD_RE`;
-and the quoted branch of `enrich_bibliography._field_value_end` (`find('"')`,
-not brace-aware). Measured exposure at `bib_fields`' landing over 13,757
-engine-written field values in `reviews/` (keywords, abstract, year_suffix,
-venue_status, same_work_group, sep/iep_context, urldate, archiveurl): no
-value nests two deep, no keywords value nests at all, 211 abstracts nest one
-deep (within every site's tolerance). So this is consistency and robustness,
-not a measured defect: the engine writes these fields flat, and only an
-agent- or hand-written value reaches the wall. At the three strip/extract
-sites a miss ends as a duplicate or surviving field pybtex rejects or the
-next run overwrites; `_field_value_end`'s quoted branch is the one that can
-instead cut a value SHORT (`"The {"Q"} result"` ends at the protected
-quote), so take it first. Do it site by site with a RED test per site; the tests that pin
-`_strip_derived_fields`' residuals (compact / bare / nested values
-surviving) are pinning the wall itself and flip to asserting the better
-behaviour. `bib_fields.remove_field` is the edit primitive to build on.
+**`dedupe_bib._remove_fields_text` still bounds values with its own scan** —
+every other raw-text field locator now goes through `bib_fields` (read path,
+keywords stamp and editors, `add_field_to_entry`, the barrier's derived-field
+strip, the context strip, dedupe's extractors). This one remover keeps a
+private depth scan whose quoted branch is `find('"')` (a `"` protected by
+braces cuts the value short) and whose presence test is a `\b<field>\s*=`
+regex. Converting it is mechanical (`bib_fields.iter_fields` +
+`remove_field`, with the neighbour-vanished guard re-expressed as a
+before/after comparison of scanned field names), but three tests pin a
+policy the conversion would overturn:
+`tests/test_dedupe_bib.py::test_c1_real_field_first_fake_later_reports_failed`
+and its two C1 siblings require that a field-name-shaped substring inside
+ANOTHER value (`abstract = {We discuss pages = 12}`) make the removal of the
+real `pages` field report FAILED and leave the entry untouched — "do not
+improve this into a success", a review-verified trade-off from when the scan
+was textual and could not tell the two apart. A structural locator can,
+so the conservative policy no longer buys safety; whether to keep it is a
+decision, not a fix. Exposure today: engine-written values never carry a
+protected quote (measured 2026-09-03), so this is consistency, not a defect.
 
 **Dynamic-workflow orchestration for Phases 3–5** — unstarted, and two gates
 stand before implementation: whether the service's run path can reach a

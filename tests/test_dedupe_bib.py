@@ -1218,6 +1218,85 @@ QUOTED_ENTRY = '''@article{q,
 }'''
 
 
+class TestExtractorsReadThroughTheSharedScanner:
+    """dedupe_bib carried its own `_field_value_re` -- one nesting level,
+    braced or quoted -- for keywords, abstract and year_suffix, plus a
+    `doi = [{"]...` regex. All read through bib_fields now: nested to any
+    depth, bare values, and never fooled by field-shaped text inside another
+    value."""
+
+    NESTED = ('@article{n,\n'
+              '  author = {Mendon{\\c{c}}a, R.},\n'
+              '  abstract = {A perfectly substantial abstract with {\\\'{e}}lan and length.},\n'
+              '  keywords = {on {K}alon, {\\\'{e}}thics, Medium, INCOMPLETE},\n'
+              '  year_suffix = {b}, year = {2020},\n'
+              '  note = {see doi = {10.9999/fake} in the abstract}\n'
+              '}')
+
+    def test_keywords_value_nested_two_deep(self):
+        from dedupe_bib import _extract_keywords_value, parse_importance
+        assert "Medium" in _extract_keywords_value(self.NESTED)
+        assert parse_importance(self.NESTED) == "Medium"
+
+    def test_has_abstract_nested_two_deep(self):
+        from dedupe_bib import has_abstract
+        assert has_abstract(self.NESTED) is True
+
+    def test_year_suffix_compact(self):
+        from dedupe_bib import _extract_year_suffix_value
+        assert _extract_year_suffix_value(self.NESTED) == "b"
+
+    def test_upgrade_importance_keeps_nested_tokens(self):
+        from dedupe_bib import upgrade_importance, _extract_keywords_value
+        out = upgrade_importance(self.NESTED, "High")
+        assert _extract_keywords_value(out) == "on {K}alon, {\\\'{e}}thics, High, INCOMPLETE"
+        assert out.count("keywords") == 1
+
+    def test_rewrite_preserves_quoted_delimiter(self):
+        from dedupe_bib import upgrade_importance
+        entry = '@article{q,\n  keywords = "Low, x",\n  year = {2020}\n}'
+        assert 'keywords = "High, x"' in upgrade_importance(entry, "High")
+
+    def test_extract_doi_ignores_doi_shaped_text_inside_a_value(self):
+        from dedupe_bib import extract_doi
+        assert extract_doi(self.NESTED) is None
+        entry = self.NESTED.replace("year = {2020},", "year = {2020}, doi = {10.1000/Real},")
+        assert extract_doi(entry) == "10.1000/real"
+
+    def test_rewrite_replaces_a_concatenated_value_whole(self):
+        # Pinned, not endorsed: `"Low" # {extra}` is one value of two pieces;
+        # the rewrite renders the transformed JOINED value as one braced
+        # literal, so the concatenation (and the macro form) does not
+        # survive. The old regex rewrote only the first piece and left
+        # ` # {extra}` dangling. The engine never writes concatenated or
+        # bare keywords.
+        from dedupe_bib import upgrade_importance
+        entry = '@article{q,\n  keywords = "Low" # {, extra},\n  year = {2020}\n}'
+        out = upgrade_importance(entry, "High")
+        assert 'keywords = "High, extra"' in out
+        assert "#" not in out
+
+    def test_truncation_before_the_abstract_hands_the_merge_to_the_other_copy(self):
+        # Pins the scanner's fail-lenient contract at the merge: nothing after
+        # an unclosed brace is read, so an abstract behind one does not count
+        # and the intact copy wins. A future "resync after an unbalanced
+        # brace" change must fail here by name, not alter merge winners
+        # silently.
+        from dedupe_bib import has_abstract, merge_entries
+        truncated = UNCLEANED_COPY.replace(
+            "booktitle = {International Conference on Learning Representations},",
+            "booktitle = {International {Conference on Learning Representations,")
+        assert has_abstract(truncated) is False
+        _merged, _reason, winner = merge_entries(CLEANED_COPY, truncated)
+        assert winner == 1
+
+    def test_no_private_field_regex_left(self):
+        import dedupe_bib
+        src = Path(dedupe_bib.__file__).read_text(encoding="utf-8")
+        assert "_field_value_re" not in src
+        assert r"[^{}]*\}" not in src
+
+
 class TestQuotedFormExtractors:
     """pybtex Writer emits quoted fields; the extractors must read them
     (prerequisite - cleaned bibs are quoted-form)."""
@@ -1397,11 +1476,20 @@ class TestCleanerVerdictPropagation:
         # so the strip must fail honestly rather than let a regex-miss
         # masquerade as a successful removal - and the
         # failed scan must not have eaten neighboring fields.
+        #
+        # The truncated field sits AFTER the abstract here. bib_fields reads
+        # nothing past a value that opens and never closes (nothing after it
+        # is structurally trustworthy), so a truncation BEFORE the abstract
+        # would hide the abstract from has_abstract and hand the merge to the
+        # other copy -- a different, legitimate outcome, but not the one this
+        # test is about.
         from dedupe_bib import merge_entries, _extract_keywords_value
         from metadata_cleaner import marker_removed_fields
         truncated = UNCLEANED_COPY.replace(
-            "booktitle = {International Conference on Learning Representations},",
-            "booktitle = {International {Conference on Learning Representations,")
+            "    booktitle = {International Conference on Learning Representations},\n"
+            "    abstract = {A substantial abstract that makes this copy win the merge.},",
+            "    abstract = {A substantial abstract that makes this copy win the merge.},\n"
+            "    booktitle = {International {Conference on Learning Representations,")
         merged, reason, winner = merge_entries(CLEANED_COPY, truncated)
         assert winner == 2  # truncated copy still wins (it has the abstract)
         err = capsys.readouterr().err

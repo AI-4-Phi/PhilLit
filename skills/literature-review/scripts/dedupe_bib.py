@@ -23,6 +23,12 @@ from metadata_cleaner import marker_removed_fields  # noqa: E402
 
 sys.path.pop(0)
 
+# Sibling module, same insert/pop idiom so a file-path load also works.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import bib_fields  # noqa: E402
+
+sys.path.pop(0)
+
 # Alias, not a copy - pinned by tests/test_dedupe_bib.py.
 _normalize_title = title_key
 
@@ -99,38 +105,30 @@ def check_intra_entry_duplicates(content: str) -> list[str]:
     return warnings
 
 
-def _field_value_re(field: str) -> re.Pattern:
-    """Regex matching `field = {value}` OR `field = "value"` (pybtex Writer
-    emits quoted on round-trip). Group 'braced' or 'quoted' carries the value.
-    The \\b prefix stops `keywords` matching inside e.g. `otherkeywords`."""
-    return re.compile(
-        r'\b' + field + r'\s*=\s*(?:\{(?P<braced>(?:[^{}]|\{[^{}]*\})*)\}'
-                        r'|"(?P<quoted>[^"]*)")',
-        re.IGNORECASE | re.DOTALL,
-    )
-
-
-_KEYWORDS_RE = _field_value_re("keywords")
-_ABSTRACT_RE = _field_value_re("abstract")
-_YEAR_SUFFIX_RE = _field_value_re("year_suffix")
+def _field(entry: str, name: str):
+    """The FIRST field called `name` in the raw entry text, located by the
+    shared scanner (bib_fields) -- braced at any depth, quoted, or bare; a
+    field-shaped substring inside another value is never matched. Replaces
+    the private one-level regex family this file carried for keywords,
+    abstract and year_suffix. One difference from those regexes: a BARE value
+    (`keywords = High`) is returned as its macro name, unexpanded, where the
+    regexes skipped it -- the engine writes braced or quoted values, so this
+    only reaches an agent-written @string macro."""
+    return next((f for f in bib_fields.iter_fields(entry)
+                 if f.name.lower() == name), None)
 
 
 def _extract_keywords_value(entry: str) -> str:
     """Extract the value of the keywords field from a BibTeX entry."""
-    m = _KEYWORDS_RE.search(entry)
-    if not m:
-        return ''
-    return m.group('braced') if m.group('braced') is not None else m.group('quoted')
+    f = _field(entry, "keywords")
+    return f.value if f is not None else ''
 
 
 def _extract_year_suffix_value(entry: str) -> str:
     """Extract the value of the year_suffix field from a BibTeX entry, or
     '' if the entry carries none."""
-    m = _YEAR_SUFFIX_RE.search(entry)
-    if not m:
-        return ''
-    value = m.group('braced') if m.group('braced') is not None else m.group('quoted')
-    return value.strip()
+    f = _field(entry, "year_suffix")
+    return f.value.strip() if f is not None else ''
 
 
 def _entry_key(entry_text: str) -> str:
@@ -150,14 +148,13 @@ def _entry_key(entry_text: str) -> str:
 def _rewrite_keywords(entry: str, transform) -> str:
     """Apply `transform(value) -> value` to the keywords field's value,
     preserving its original delimiter form (braces or quotes)."""
-    def _sub(m: re.Match) -> str:
-        braced = m.group('braced')
-        value = braced if braced is not None else m.group('quoted')
-        new = transform(value)
-        if braced is not None:
-            return f"keywords = {{{new}}}"
-        return f'keywords = "{new}"'
-    return _KEYWORDS_RE.sub(_sub, entry, count=1)
+    f = _field(entry, "keywords")
+    if f is None:
+        return entry
+    new = transform(f.value)
+    quoted = entry[f.value_start] == '"'
+    rendered = f'keywords = "{new}"' if quoted else f"keywords = {{{new}}}"
+    return entry[:f.name_start] + rendered + entry[f.value_end:]
 
 
 def parse_importance(entry: str) -> str:
@@ -190,20 +187,18 @@ def extract_doi(entry: str) -> str | None:
     prefix list here used to miss `doi:` and bare `doi.org/`, so the same DOI
     keyed two different ways across the pipeline.
     """
-    match = re.search(r'doi\s*=\s*[{"]([^}"]+)["}]', entry, re.IGNORECASE)
-    if not match:
+    f = _field(entry, "doi")
+    if f is None or not f.value.strip():
         return None
-    return normalize_doi(match.group(1))
+    return normalize_doi(f.value.strip())
 
 
 def has_abstract(entry: str) -> bool:
     """Check if entry has a non-empty abstract field."""
-    match = _ABSTRACT_RE.search(entry)
-    if match:
-        value = match.group('braced') if match.group('braced') is not None else match.group('quoted')
-        abstract_content = value.strip()
-        return len(abstract_content) > 10  # Filter out trivial abstracts
-    return False
+    f = _field(entry, "abstract")
+    if f is None:
+        return False
+    return len(f.value.strip()) > 10  # Filter out trivial abstracts
 
 
 def has_incomplete_flag(entry: str) -> bool:
@@ -533,10 +528,9 @@ def _fold_removals_into_marker(entry_text: str, removed: set[str]) -> str:
 def _fallback_key(entry_text: str) -> tuple[str, str, str] | None:
     """Title-axis dedup key: (normalized_title, year, first-author surname).
 
-    Parsed with pybtex so quoted values (title = "...") and nested braces
-    ({The {AI} Problem}) are handled — the regex extractors elsewhere in this
-    file are brace-only and non-nested. The key itself is built by
-    bib_identity.fallback_key, which generate_bibliography also uses.
+    Parsed with pybtex because the surname comes from pybtex's own name
+    split (prelast + last), which generate_bibliography also uses; the key
+    itself is built by bib_identity.fallback_key.
     """
     try:
         db = parse_string(entry_text, "bibtex")

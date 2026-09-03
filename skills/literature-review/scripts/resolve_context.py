@@ -20,6 +20,11 @@ import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import bib_fields  # noqa: E402 - sibling module
+
+sys.path.pop(0)
+
 sys.path.insert(0, str(Path(__file__).parent.parent.parent / "philosophy-research" / "scripts"))
 
 TITLE_MATCH_THRESHOLD = 0.5
@@ -228,13 +233,7 @@ def format_context_value(slug, passage):
     return f"Cited in '{slug}' entry: \"{cleaned}\""
 
 
-# Braced (one nesting level) OR quoted values -- a forging agent may use
-# either form; both must be stripped for sole-author to hold.
-_CONTEXT_FIELD_RE = re.compile(
-    r"\n\s*(sep_context|iep_context)\s*=\s*"
-    r"(\{(?:[^{}]|\{[^{}]*\})*\}|\"[^\"]*\")\s*,?",
-    re.IGNORECASE,
-)
+_CONTEXT_FIELDS = frozenset({"sep_context", "iep_context"})
 
 # Expected fetch failures only; anything else is a programming error and must
 # propagate (the barrier turns it into a run-level failure, not a silent
@@ -243,10 +242,16 @@ _FETCH_ERRORS = (LookupError, RuntimeError, OSError)
 
 
 def strip_context_fields(entry_text):
-    # Limits: the field must start on its own line (newline-anchored) and
-    # braced values match one nesting level only; the barrier's value-hash
-    # binding is the backstop for anything that slips through.
-    return _CONTEXT_FIELD_RE.sub("", entry_text)
+    """Remove every pre-existing sep_context / iep_context field, whatever
+    its delimiter, nesting or position: the barrier is the sole author of
+    these fields, so a value already present is forged or stale. Located
+    structurally (bib_fields), where a regex used to reach only a braced
+    one-level or quoted value opening its own line; the barrier's value-hash
+    binding remains the backstop."""
+    for f in reversed([f for f in bib_fields.iter_fields(entry_text)
+                       if f.name.lower() in _CONTEXT_FIELDS]):
+        entry_text = bib_fields.remove_field(entry_text, f)
+    return entry_text
 
 
 # A WORK-ADMISSION BUDGET for the encyclopedia-acquisition pass, not a

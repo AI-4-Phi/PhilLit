@@ -27,6 +27,7 @@ import enrich_bibliography as eb
 from enrich_bibliography import add_field_to_entry
 import resolve_context as rc
 import stamp_evidence as se
+import bib_fields  # noqa: E402
 import web_evidence as wv
 import year_suffix as ys
 
@@ -451,74 +452,40 @@ def _corroboration_summary(report: dict) -> dict:
     return {"candidates": total, **counts}
 
 
-_DERIVED_FIELD_RE = re.compile(
-    r"\n[ \t]*(?:venue_status|year_suffix|urldate|archiveurl|same_work_group)"
-    r"\s*=\s*"
-    r"(?:\{[^{}]*\}|\"[^\"]*\")\s*,?",
-    re.IGNORECASE)
+_DERIVED_FIELDS = frozenset({"venue_status", "year_suffix", "urldate",
+                             "archiveurl", "same_work_group"})
 
 
 def _strip_derived_fields(entry_text: str) -> str:
-    """Remove every pre-existing derived field it can find.
+    """Remove every pre-existing derived field.
 
     The barrier OWNS all five (venue_status, year_suffix, urldate,
-    archiveurl and same_work_group): each is re-derived from
-    scratch on every run -- venue_status from OpenAlex, year_suffix from the
-    current union of every domain bibliography, urldate from the capture's
-    retrieved_at, archiveurl from the archive lookup and same_work_group from
-    the current union's title/surname grouping -- so a value already
-    in the file is either stale or
-    hand-written, and both must go before this run decides. Without this, a
-    flag or letter survives a later run that had no API key, or whose domain
-    set changed -- a false discredit or a wrong letter that no later pass can
-    clear.
+    archiveurl and same_work_group): each is re-derived from scratch on every
+    run -- venue_status from OpenAlex, year_suffix from the current union of
+    every domain bibliography, urldate from the capture's retrieved_at,
+    archiveurl from the archive lookup and same_work_group from the current
+    union's title/surname grouping -- so a value already in the file is
+    either stale or hand-written, and both must go before this run decides.
+    Without this, a flag or letter survives a later run that had no API key,
+    or whose domain set changed -- a false discredit or a wrong letter that
+    no later pass can clear.
 
-    THREE documented limits, accepted rather than fixed. Two are about the
-    field's VALUE (single-nesting-level shape, same reasoning as
-    resolve_context.strip_context_fields); the third is orthogonal and about
-    its POSITION. All three apply identically to every owned field.
-
-    1. VALUE, bare token: `venue_status = low-visibility,` is NOT stripped --
-       the pattern requires a braced or quoted value.
-    2. VALUE, nested braces: `venue_status = {low {x} vis}` is NOT stripped --
-       the braced alternative is `\\{[^{}]*\\}`, one nesting level only.
-    3. POSITION, not line-initial: the pattern is anchored to `\\n[ \\t]*`, so
-       it only matches a field that OPENS its line. An occurrence sharing a
-       line with anything else survives -- verified through the real
-       execute(): `@article{k, venue_status = {low-visibility},` on the
-       header line, `author = {A}, venue_status = {low-visibility},`
-       mid-entry, and `year = {2020}, venue_status = {low-visibility}`
-       trailing, all three kept the field.
-
-    Deliberately NOT fixed by widening the anchor. This pattern has no
-    brace-nesting awareness at all, so any start alternative looser than
-    `\\n` (e.g. `[\\n,]`) can begin a match INSIDE a braced value -- an
-    abstract or note containing `, venue_status = {...}` would be silently
-    truncated. Trading a cosmetic miss for value corruption in a fail-closed
-    accuracy gate is the wrong trade; closing it properly means locating the
-    field structurally. `bib_fields.iter_fields` now does exactly that for
-    the shared read path (parse_entry_fields, the enrichment reader, the
-    keywords stamp and editors); moving this strip and the remaining regex
-    locators onto it is the roadmap's locator-consolidation item.
-
-    What the limits do and do not cost: none of these shapes is ever produced
-    by this barrier (add_field_to_entry always inserts the field on its own
-    line), by pybtex's writer, or by dedupe_bib's text scanner, so reaching
-    any of them takes a hand edit or an agent writing a compact multi-field
-    line. Even then the barrier's own decision this run governs what is
-    re-added: a run that DOES flag the entry overwrites the surviving value
-    in place (add_field_to_entry's head_pattern matches on any leading
-    whitespace), so only an UNFLAGGED run leaves a forged or stale value
-    standing, and no duplicate-field corruption results either way.
-
-    ACCEPTED RESIDUAL: that surviving `venue_status` is never re-flagged, and
-    both the synthesis planner and the writer act on the field -- so the strip
-    asymmetry their prose documents is not fully honest. The SPLICE half of
-    this shape is fixed (a swallowed or duplicate-producing splice reverts and
-    is reported, see _derived_field_took); this half is not, for the
-    widening-the-anchor reason above.
+    Located structurally (bib_fields.iter_fields), so the field is found in
+    any delimiter (braced at any depth, quoted, bare) and any position (on
+    the header line, mid-line after another field, trailing). The regex this
+    replaced reached only a one-level braced or quoted value that OPENED its
+    line, and could not be widened because a looser anchor could begin a
+    match INSIDE an abstract; a structural locator cannot, which is what made
+    the three documented residuals closable. The residual-neutralisation
+    pass downstream (see the year_suffix splice) remains as a guard against a
+    future change that separates the strip from the parse -- NOT as a
+    backstop for the scanner, since its detection reads through the same
+    scanner and would miss whatever this strip missed.
     """
-    return _DERIVED_FIELD_RE.sub("", entry_text)
+    for f in reversed([f for f in bib_fields.iter_fields(entry_text)
+                       if f.name.lower() in _DERIVED_FIELDS]):
+        entry_text = bib_fields.remove_field(entry_text, f)
+    return entry_text
 
 
 # What the barrier writes OVER a `year_suffix` value it did not derive and
@@ -574,19 +541,16 @@ def _derived_field_took(chunk: str, pre_splice: str, field: str, intended: str,
     2. **The field now carries THIS run's value**, by a field PARSE rather than
        a substring test -- an abstract containing the literal text
        `venue_status = {low-visibility}` must not be mistaken for the field.
-    3. **Exactly one instance, and pybtex accepts the chunk.**
-       `add_field_to_entry` locates an existing field by `(\\s+)<field>\\s*=`,
-       so a value written with NO whitespace before it
-       (`@article{k,venue_status={x},`) is not found and the "add" path inserts
-       a SECOND one -- and pybtex raises `DuplicateField` on that, which would
-       hand dedupe_bib an unparseable bibliography and take down all of Phase
-       6. Losing a flag is survivable; emitting a bib the real parser rejects
-       is not.
-
-    Condition 3 is why this matters for `venue_status` and not only for
-    `year_suffix`: `_strip_derived_fields` only reaches a field that OPENS its
-    line, so a compact pre-existing `venue_status` survives the strip and a
-    duplicate becomes possible on the very next splice.
+    3. **Exactly one instance, and pybtex accepts the chunk.** Both the strip
+       and `add_field_to_entry` now locate fields structurally, so the shape
+       that used to produce a duplicate (`@article{k,venue_status={x},`, no
+       whitespace before the name, unreachable by the old regex strip and
+       the old `(\\s+)<field>\\s*=` locator alike) is stripped and, if
+       re-added, replaced in place. The check stays as the gate's own proof:
+       a duplicate field makes pybtex raise `DuplicateField`, which would
+       hand dedupe_bib an unparseable bibliography and take down all of
+       Phase 6. Losing a flag is survivable; emitting a bib the real parser
+       rejects is not.
     """
     if chunk is pre_splice:
         return False
@@ -1163,12 +1127,13 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
     # `b` all the way into the output bib.
     #
     # Detection is by se.parse_entry_fields -- a FIELD parse, not a substring
-    # scan. That is the whole reason detecting is safe where stripping is
-    # not: the stripper's veto is that a looser text anchor can begin a match
-    # INSIDE a braced value and truncate an abstract, and a field parse
-    # cannot (verified: an abstract containing the literal text
-    # `year_suffix = {a}` is not detected). Not claimed to be complete --
-    # a value the parser mis-bounds may slip past, which is harmless, since
+    # scan (an abstract containing the literal text `year_suffix = {a}` is
+    # not detected). The strip now locates fields the same structural way,
+    # so in parseable text it reaches every shape and this pass finds
+    # nothing. It stays as a guard against a future change that separates
+    # the strip from the parse (tests exercise it by disabling the strip);
+    # it is NOT a backstop for the scanner, which both sides share -- a
+    # value the scanner mis-bounds slips past both, which is harmless, since
     # nothing that is not a single a-z letter reads as a letter downstream.
     #
     # OUTSIDE the assignment try/except below, deliberately: nested inside
@@ -1437,12 +1402,12 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
             if letter or stale:
                 # One splice, two jobs. With a letter this run is the
                 # ordinary stamp, and it OVERWRITES a residual in place
-                # (add_field_to_entry matches on any leading whitespace) --
-                # so an entry the assigner letters is already safe. Without
+                # (add_field_to_entry locates the field structurally) -- so
+                # an entry the assigner letters is already safe. Without
                 # one, the splice is the REFUSAL: the barrier owns this
-                # field, it did not derive this value and cannot strip it,
-                # so it overwrites it with its own decision for this entry,
-                # which is "no letter".
+                # field, it did not derive this value and the strip did not
+                # remove it, so it overwrites it with its own decision for
+                # this entry, which is "no letter".
                 #
                 # Note the refusal is NOT "suppress this run's letters".
                 # That option was measured and is strictly worse: it removes

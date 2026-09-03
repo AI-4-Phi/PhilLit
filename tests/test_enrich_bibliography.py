@@ -1026,6 +1026,28 @@ def test_add_field_replace_is_backslash_safe():
     assert value in out
 
 
+def test_add_field_finds_a_compact_field_with_no_leading_whitespace():
+    """`@article{k,venue_status={x},` -- no whitespace before the name, so the
+    old `(\\s+)<field>\\s*=` locator missed it and the add path inserted a
+    SECOND field (pybtex: DuplicateField). Located structurally now."""
+    from enrich_bibliography import add_field_to_entry
+    entry = "@article{k,venue_status={x},\n  title = {T}\n}"
+    out = add_field_to_entry(entry, "venue_status", "low-visibility")
+    assert out.count("venue_status") == 1
+    assert "venue_status = {low-visibility}" in out
+    from pybtex.database import parse_string
+    parse_string(out, "bibtex")
+
+
+def test_add_field_replaces_a_quoted_value_with_a_protected_quote_whole():
+    """The old quoted branch was `find('"')`, which stopped at the `"` inside
+    `{"Q"}` and cut the value short, leaving `Q"} result"` behind."""
+    from enrich_bibliography import add_field_to_entry
+    entry = '@article{k,\n  abstract = "The {"Q"} result",\n  title = {T}\n}'
+    out = add_field_to_entry(entry, "abstract", "New")
+    assert out == '@article{k,\n  abstract = {New},\n  title = {T}\n}'
+
+
 def test_add_field_replaces_braced_value_with_nested_braces():
     import enrich_bibliography
 
