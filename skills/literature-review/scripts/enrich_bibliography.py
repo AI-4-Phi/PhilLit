@@ -716,13 +716,14 @@ def enrich_bibliography(
 
     Returns:
         Stats dict with keys: total, already_had_abstract, enriched,
-        marked_incomplete, skipped, sources. If pybtex validation fails,
-        the original file is left unchanged and stats['validation_failed']
-        is set to True. If a non-empty input parses to ZERO entries, the
-        run returns early with stats['parse_failed'] = True, having written
-        neither the bib nor the ledger. Both failure markers are advisory
-        in the same way: main() reports and exits 0 either way, so a caller
-        that cares has to read the stats (or the stderr warning).
+        marked_incomplete, incomplete_keys, skipped, sources. If pybtex
+        validation fails, the original file is left unchanged and
+        stats['validation_failed'] is set to True. If a non-empty input
+        parses to ZERO entries, the run returns early with
+        stats['parse_failed'] = True, having written neither the bib nor
+        the ledger. Both failure markers are advisory in the same way:
+        main() reports and exits 0 either way, so a caller that cares has
+        to read the stats (or the stderr warning).
     """
     if not input_path.exists():
         raise FileNotFoundError(f"Input file not found: {input_path}")
@@ -988,6 +989,23 @@ def _update_enrichment_ledger(output_path: Path, ledger_writes: dict, current_ke
     os.replace(str(tmp), str(final))
 
 
+def summary_lines(stats: dict) -> list:
+    """The lines main() prints after 'Enrichment complete:'. The researcher
+    prose reads these instead of grepping the bib, so the INCOMPLETE keys
+    are named here whenever any entry was marked."""
+    lines = [
+        f"  Total entries: {stats['total']}",
+        f"  Already had abstract: {stats['already_had_abstract']}",
+        f"  Enriched: {stats['enriched']}",
+        f"  Marked INCOMPLETE: {stats['marked_incomplete']}",
+    ]
+    if stats.get('incomplete_keys'):
+        lines.append(f"  INCOMPLETE entries: {', '.join(stats['incomplete_keys'])}")
+    if stats['enriched'] > 0:
+        lines.append(f"  Sources: {stats['sources']}")
+    return lines
+
+
 def main():
     load_dotenv(find_dotenv(usecwd=True), override=True)  # must run before argparse defaults read os.environ
     parser = argparse.ArgumentParser(
@@ -1039,14 +1057,8 @@ def main():
 
         # Print summary
         print(f"\nEnrichment complete:")
-        print(f"  Total entries: {stats['total']}")
-        print(f"  Already had abstract: {stats['already_had_abstract']}")
-        print(f"  Enriched: {stats['enriched']}")
-        print(f"  Marked INCOMPLETE: {stats['marked_incomplete']}")
-        if stats.get('incomplete_keys'):
-            print(f"  INCOMPLETE entries: {', '.join(stats['incomplete_keys'])}")
-        if stats['enriched'] > 0:
-            print(f"  Sources: {stats['sources']}")
+        for line in summary_lines(stats):
+            print(line)
 
         sys.exit(0)
 

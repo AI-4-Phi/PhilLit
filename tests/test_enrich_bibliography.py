@@ -641,6 +641,33 @@ class TestBatchProcessing:
         assert stats['incomplete_keys'] == ["test2020paper"]
 
     @patch("enrich_bibliography.resolve_abstract_for_entry")
+    def test_rerun_relists_an_entry_already_flagged_incomplete(self, mock_resolve, tmp_path):
+        """The summary replaces a grep that counted EVERY INCOMPLETE line, so a
+        re-run must name entries flagged by the previous run too."""
+        mock_resolve.return_value = (None, None)
+        import enrich_bibliography
+        content = (
+            "@article{old2019flag,\n  author = {Roe, Rick},\n  title = {Old},\n"
+            "  journal = {J},\n  year = {2019},\n  keywords = {INCOMPLETE, no-abstract},\n}\n"
+        )
+        input_path = tmp_path / "test.bib"
+        input_path.write_text(content, encoding='utf-8')
+        output_path = tmp_path / "output.bib"
+        stats = enrich_bibliography.enrich_bibliography(
+            input_path, output_path, None, None, None)
+        assert stats['incomplete_keys'] == ["old2019flag"]
+
+    def test_summary_lines_name_keys_only_when_present(self):
+        import enrich_bibliography
+        base = {'total': 2, 'already_had_abstract': 0, 'enriched': 1,
+                'marked_incomplete': 1, 'sources': {'core': 1},
+                'incomplete_keys': ['k1', 'k2']}
+        lines = enrich_bibliography.summary_lines(base)
+        assert "  INCOMPLETE entries: k1, k2" in lines
+        empty = dict(base, marked_incomplete=0, incomplete_keys=[])
+        assert not any("INCOMPLETE entries" in l for l in enrich_bibliography.summary_lines(empty))
+
+    @patch("enrich_bibliography.resolve_abstract_for_entry")
     def test_enrich_bibliography_preserves_comments(self, mock_resolve, tmp_path):
         """Should preserve @comment entries."""
         mock_resolve.return_value = ("Abstract", "s2")
