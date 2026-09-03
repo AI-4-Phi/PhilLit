@@ -343,7 +343,7 @@ hits) plus every seed paper the orchestrator named; a seed is usable when
 you hold its Semantic Scholar paper ID or its DOI (pass a DOI as
 `DOI:10.…`). Chaining is the one discovery mechanism here with no
 substitute: keyword search cannot reach a paper whose title shares no
-words with the topic, the citation graph can. Four cases, and only these:
+words with the topic, the citation graph can. Three seed cases, plus one for failed calls:
 
 - Two or more usable seeds: chain at least two and feed the same seeds to
   the recommender.
