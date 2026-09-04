@@ -82,6 +82,20 @@ the CLI reads neither, so the gate had blocked nothing since it was ported.
 Fixing that payload is what surfaced the disagreement — this repo's shell hook
 never had that bug, so the exposure here is live and unmitigated.
 
+**`rc_surname`'s keyword name changed, and nothing says so.** Low priority,
+no local change wanted here — recording it because it is a real API break and
+the mirror cannot document it into this file. `check_evidence.rc_surname` kept
+its NAME across `165eafc` and became an alias of
+`first_author_prose_surname`, so its parameter went from `author_field` to
+`author`: `rc_surname(author_field=...)` now raises `TypeError`, and
+`__name__`, `__doc__` and the annotations changed with it. LATENT, not live —
+every call site in this repo and in the phillit-service mirror is positional
+(measured 2026-09-04, both trees). The options are a one-line delegating
+wrapper (`def rc_surname(author_field): return
+first_author_prose_surname(author_field)`), which keeps one rule owner and no
+copy, or leaving it and treating the keyword as unsupported. Filed from the
+mirror, which cannot decide it — the alias is this repo's design choice.
+
 ## Checked and deliberately NOT filed
 
 Not a queue — a register, so these are not re-found. Each was a live candidate
