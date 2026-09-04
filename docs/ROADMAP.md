@@ -39,9 +39,9 @@ field.** Do not census a textual shape — run
 `first_author_prose_surname(author)` against `first_author_surname(author)`
 over each `author` field in the delivered corpus and classify the
 disagreements. That measures the exposure directly and picks up any shape,
-including the two the owner's docstring names (a multi-token comma-less name,
-and a braced name with an internal comma) and anything neither of us thought
-of. Both are pre-existing and neither raises — `check_evidence.find_cites`
+including every class the owner's docstring names as an example and any it
+does not. Enumerating the shapes is exactly what failed twice here, which is
+why this is specified as a comparison and not as a count. Both are pre-existing and neither raises — `check_evidence.find_cites`
 returns no positions and `resolve_context`'s SEP match finds no candidate line
 — so the cost is false "uncited" telemetry on two recall-floor checkers, never
 a block. Measure the identity rule's behaviour on the same corpus too, not just

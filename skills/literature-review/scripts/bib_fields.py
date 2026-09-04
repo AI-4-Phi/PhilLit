@@ -54,8 +54,8 @@ closes the scan stops and returns what it has read: fail lenient, never
 loud, because the strict gate is pybtex's.
 
 There is NO `%` handling, and the reason it costs nothing is worth stating
-precisely, because five external reviewers have now reasoned about it and
-three got the premise wrong. **`%` has no line-comment semantics in the
+precisely, because external reviewers keep reasoning about it and keep
+arriving at a false premise. **`%` has no line-comment semantics in the
 BibTeX data syntax pybtex implements.** It is not that a comment is handled
 leniently here; there is no `%` comment to handle. The convention only looks
 like one because text outside an entry is skipped until the next `@` -- which
