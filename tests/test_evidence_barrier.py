@@ -4068,3 +4068,142 @@ def test_the_field_scan_spy_is_actually_wired(tmp_path, monkeypatch):
     assert any("smith2020data" in c for c in scanned), (
         "the spy never fired on a parseable bib: it is not on the barrier's "
         "field-scanning path, so the call-order test beside it is vacuous")
+
+
+# --- The prose-surname rule decides the delivered tier ------------------------
+# resolve_context matches a bib entry to an SEP bibliography line with the
+# PROSE surname rule (`rc.prose_surname = bib_identity.first_author_prose_
+# surname`). On outcome "matched" the barrier writes a `sep_context` field and
+# sets `context_written`, and only that pair earns EVIDENCE-CONTEXT. So a
+# matcher miss is a demotion in the bib that actually ships.
+
+HOOKS_DIR = Path(__file__).parent.parent / "hooks"
+
+VF = """@book{vf1980,
+  author = {van~Fraassen, Bas C.},
+  title = {The Scientific Image},
+  publisher = {Clarendon Press},
+  year = {1980}
+}"""
+
+VF_SLUGS = '{"sep_entries": ["scientific-realism"], "iep_entries": []}'
+
+
+def _vf_article(spelling):
+    """A SEP-shaped article whose bibliography line and body passage both
+    spell the surname `spelling`. SEP prints `van Fraassen` (a space); the
+    bib field carries `van~Fraassen` (a LaTeX tie)."""
+    return {
+        "entry_name": "scientific-realism",
+        "title": "Scientific Realism",
+        "preamble": "",
+        "sections": {"2": {"id": "2", "title": "Acceptance", "content":
+                     f"{spelling} (1980) argues for acceptance without belief."}},
+        "bibliography": [{
+            "raw": f"{spelling}, Bas C., 1980, The Scientific Image, "
+                   "Oxford: Clarendon Press.",
+            "parsed": None, "confidence": "low"}],
+    }
+
+
+def _vf_domain(review_dir):
+    """Domain 1 with vf1980 EXISTENCE-eligible via the publisher identifier,
+    exactly as CLEAN_KUHN is: the ledger value is what the barrier binds
+    verbatim into the attestation, so it must be the normalized form the
+    module's own normalizer produces."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import stamp_evidence as se
+    _domain(review_dir, 1, VF,
+            cleaning=_cleaning(1, {"vf1980": {
+                "api_matched": True, "verified_identifier": "publisher",
+                "verified_identifier_value": se.normalize_publisher(
+                    "Clarendon Press"),
+                "entry_type": "book"}}),
+            enrichment=_enrichment(1), slugs=VF_SLUGS)
+
+
+def _run_vf(review_dir, spelling, monkeypatch):
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    _vf_domain(review_dir)
+    article = _vf_article(spelling)
+    monkeypatch.setattr(
+        evidence_barrier.rc, "fetch_articles",
+        lambda union, debug=False: ({"sep:scientific-realism": article}, []))
+    assert evidence_barrier.execute(review_dir, 1) == 0
+    return evidence_barrier, article, _report(review_dir), (
+        review_dir / "literature-domain-1.bib").read_text(encoding="utf-8")
+
+
+def test_tie_spelled_bibliography_line_earns_the_context_tier(tmp_path, monkeypatch):
+    """Control arm: when the article spells the surname the way the bib field
+    does, the whole chain fires -- matched, sep_context written, CONTEXT."""
+    rd = tmp_path / "review"
+    _, _, report, content = _run_vf(rd, "van~Fraassen", monkeypatch)
+    acq = report["acquisition"]["literature-domain-1.bib"]["vf1980"]
+    assert acq["outcome"] == "matched"
+    assert acq["encyclopedia"] == "sep" and acq["slug"] == "scientific-realism"
+    assert report["stamps"]["literature-domain-1.bib"]["vf1980"] == "EVIDENCE-CONTEXT"
+    assert "sep_context" in content
+    assert "acceptance without belief" in content
+    att = report["attestations"]["literature-domain-1.bib"]["vf1980"]
+    assert att["context_written"] is True
+    assert att["context_field"] == "sep_context"
+
+
+def test_space_spelled_bibliography_line_demotes_to_existence(tmp_path, monkeypatch):
+    """The spelling SEP actually prints. `_candidate_lines` searches the
+    bibliography with `\\b<surname>\\b` built from whatever surname it is
+    handed, so the tie the prose rule returns is searched for literally and
+    finds nothing on a line that prints a space there. No candidate line ->
+    no match -> no sep_context -> the entry keeps only the tier its verified
+    publisher already earned.
+
+    The second half of this test rules out a generic miss: fed the surname the
+    IDENTITY rule returns, the very same article yields candidate lines and a
+    matched outcome. So what costs this entry its tier is the divergence
+    between the two rules, not a fixture that simply cannot match. Which
+    inputs make them diverge is a question about the two functions, not about
+    a class of names -- `first_author_prose_surname`'s docstring transcribes
+    the branches.
+    """
+    rd = tmp_path / "review"
+    evidence_barrier, article, report, content = _run_vf(
+        rd, "van Fraassen", monkeypatch)
+    assert report["acquisition"]["literature-domain-1.bib"]["vf1980"] == {
+        "outcome": "unmatched"}
+    assert report["stamps"]["literature-domain-1.bib"]["vf1980"] == "EVIDENCE-EXISTENCE"
+    assert "sep_context" not in content
+    assert report["attestations"]["literature-domain-1.bib"]["vf1980"][
+        "context_written"] is False
+
+    # Only now -- patching before execute() would flip the claim above.
+    sys.path.insert(0, str(HOOKS_DIR))
+    from bib_identity import first_author_prose_surname, first_author_surname
+    rc = evidence_barrier.rc
+    author = "van~Fraassen, Bas C."
+    assert rc._candidate_lines(
+        article, first_author_prose_surname(author), "1980") == []
+    assert rc._candidate_lines(article, first_author_surname(author), "1980")
+
+    monkeypatch.setattr(rc, "prose_surname", first_author_surname)
+    res = rc.acquire_context(
+        {"vf1980": {"entry_type": "book",
+                    "fields": {"author": author, "year": "1980",
+                               "title": "The Scientific Image"}}},
+        {"sep:scientific-realism": article})
+    assert res["vf1980"]["outcome"] == "matched"
+    assert res["vf1980"]["field"] == "sep_context"
+
+
+def test_an_absent_surname_also_stays_at_existence(tmp_path, monkeypatch):
+    """Generic control: a bibliography line naming someone else misses for the
+    ordinary reason, and lands on the same tier. Without this arm the demotion
+    above could be read as "unmatched entries lose everything" rather than as
+    a one-rung drop off CONTEXT."""
+    rd = tmp_path / "review"
+    _, _, report, content = _run_vf(rd, "Different", monkeypatch)
+    assert report["acquisition"]["literature-domain-1.bib"]["vf1980"] == {
+        "outcome": "unmatched"}
+    assert report["stamps"]["literature-domain-1.bib"]["vf1980"] == "EVIDENCE-EXISTENCE"
+    assert "sep_context" not in content

@@ -437,3 +437,92 @@ class TestParseEntryFieldsIsTheSharedScanner:
         fields = parse_entry_fields(entry)
         assert fields["author"] == r"Garc{\'{i}}a-Ferrero, Iker"
         assert fields["year"] == "2016"
+
+
+class TestContextTierOnAnExistenceEligibleEntry:
+    """The CONTEXT rule, and the tier ladder, on a base that already earns
+    EXISTENCE on its own.
+
+    Two things this pins that the NONE-based cases above cannot.
+
+    First, the iff: CONTEXT is granted only when a context FIELD is present
+    AND `att.context_written` is set. Neither half suffices. The field alone
+    being inert is what makes an agent-forged `sep_context` worthless -- the
+    barrier strips every pre-existing context field before it stamps, so a
+    forged value never survives to be read, and even if it did the flag comes
+    from the barrier's own acquisition outcome, not from the bib.
+
+    Second, the ORDER. Every non-CONTEXT cell here lands on exactly
+    EVIDENCE-EXISTENCE, not EVIDENCE-NONE: the entry keeps the tier its
+    verified DOI already earned. So a context-acquisition miss is a
+    DEMOTION -- CONTEXT (3) down to EXISTENCE (1) -- and not a wipe, and not
+    a sideways move. That is the cost a matcher miss imposes on the
+    delivered bibliography.
+    """
+
+    # EXISTENCE-eligible on its own: api_matched, no breaker, and a verified
+    # DOI value that the field below still carries (value binding).
+    BASE_FIELDS = {"doi": "10.1/x"}
+
+    @staticmethod
+    def _att(**kw):
+        return EntryAttestation(
+            api_matched=True, breaker_tripped=False,
+            verified_identifier="doi",
+            verified_identifier_value=normalize_doi("10.1/x"),
+            web_gate_passed=False, abstract_attested=False, **kw)
+
+    def test_the_base_alone_earns_existence(self):
+        assert compute_tier("article", dict(self.BASE_FIELDS),
+                            self._att()) == TIER_EXISTENCE
+
+    # (label, extra fields) x context_written -- the full 4x2 table.
+    CONTEXT_FIELDS = [
+        ("sep only", {"sep_context": "Cited in 'x' entry: \"...\""}),
+        ("iep only", {"iep_context": "Cited in 'y' entry: \"...\""}),
+        ("both", {"sep_context": "Cited in 'x' entry: \"...\"",
+                  "iep_context": "Cited in 'y' entry: \"...\""}),
+        ("neither", {}),
+    ]
+
+    def test_context_table(self):
+        for label, extra in self.CONTEXT_FIELDS:
+            for flag in (True, False):
+                fields = dict(self.BASE_FIELDS, **extra)
+                tier = compute_tier("article", fields, self._att(context_written=flag))
+                expected = TIER_CONTEXT if (extra and flag) else TIER_EXISTENCE
+                assert tier == expected, f"{label}, context_written={flag} -> {tier}"
+
+    def test_a_forged_context_field_without_the_flag_only_demotes(self):
+        # The half of the iff that closes the forgery: field, no attestation.
+        fields = dict(self.BASE_FIELDS, sep_context="FORGED CLAIM")
+        assert compute_tier("article", fields,
+                            self._att(context_written=False)) == TIER_EXISTENCE
+
+    def test_the_flag_without_a_field_is_equally_inert(self):
+        # The other half: a flag set with no field left in the bib (e.g. the
+        # field stripped after the fact) cannot hold CONTEXT open either.
+        assert compute_tier("article", dict(self.BASE_FIELDS),
+                            self._att(context_written=True)) == TIER_EXISTENCE
+
+    def test_an_attested_abstract_outranks_context(self):
+        fields = dict(self.BASE_FIELDS, abstract="text", abstract_source="s2",
+                      sep_context="c")
+        att = self._att(context_written=True)
+        att.abstract_attested = True
+        assert compute_tier("article", fields, att) == TIER_ABSTRACT
+
+    def test_context_outranks_the_web_gate(self):
+        fields = dict(self.BASE_FIELDS, sep_context="c")
+        att = self._att(context_written=True)
+        att.web_gate_passed = True
+        assert compute_tier("article", fields, att) == TIER_CONTEXT
+
+    def test_the_web_gate_takes_over_when_context_is_missing(self):
+        att = self._att()
+        att.web_gate_passed = True
+        assert compute_tier("article", dict(self.BASE_FIELDS), att) == TIER_WEB
+
+    def test_the_ladder_makes_a_context_miss_a_demotion(self):
+        # Relative only -- no absolute rank is persisted anywhere.
+        assert TIER_RANK[TIER_CONTEXT] > TIER_RANK[TIER_WEB] > TIER_RANK[TIER_EXISTENCE]

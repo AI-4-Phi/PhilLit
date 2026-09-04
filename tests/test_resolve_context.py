@@ -663,3 +663,120 @@ def test_prose_surname_is_brace_aware_and_keeps_comma_less_names_whole():
     assert prose_surname("Doe, Jane and Smith, John") == "Doe"
     # Parity with the pre-change rule: no comma -> the whole first name.
     assert prose_surname("Willem van der Deijl and Doe, Jane") == "Willem van der Deijl"
+
+
+# The two surname rules under one roof. `resolve_context` binds the PROSE rule
+# (`prose_surname = bib_identity.first_author_prose_surname`) at module level,
+# and BOTH of its call sites -- `match_entry_to_article` and `acquire_context`
+# (feeding `extract_passage`) -- read that one module global, so rebinding the
+# attribute is exactly how a real switch of rules would land.
+import resolve_context as mod  # noqa: E402
+
+PR_SCRIPTS_DIR = (Path(__file__).parent.parent / "skills"
+                  / "philosophy-research" / "scripts")
+sys.path.insert(0, str(PR_SCRIPTS_DIR))
+# Explicit, not inherited: resolve_context POPS its hooks insert after
+# importing bib_identity, so without this line the import below would resolve
+# only off sys.modules caching -- and would break the whole file the day that
+# import moves to call time. (Its philosophy-research insert is never popped,
+# so PR_SCRIPTS_DIR above is belt-and-braces by comparison.)
+HOOKS_DIR = Path(__file__).parent.parent / "hooks"
+sys.path.insert(0, str(HOOKS_DIR))
+from bib_identity import first_author_surname  # noqa: E402
+from citation_context import build_citation_patterns, find_citations  # noqa: E402
+
+VF_AUTHOR = "van~Fraassen, Bas C."
+VF_ENTRIES = {"vf1980": {
+    "entry_type": "book",
+    "fields": {"author": VF_AUTHOR, "year": "1980",
+               "title": "The Scientific Image"}}}
+
+
+def _vf_article(spelling):
+    """A SEP-shaped article whose bibliography line and body passage both
+    spell the surname `spelling`. SEP prints `van Fraassen` (a space); the
+    bib field is `van~Fraassen` (a LaTeX tie)."""
+    return {
+        "entry_name": "scientific-realism",
+        "title": "Scientific Realism",
+        "preamble": "",
+        "sections": {"2": {"id": "2", "title": "Acceptance", "content":
+                     f"{spelling} (1980) argues for acceptance without belief."}},
+        "bibliography": [{
+            "raw": f"{spelling}, Bas C., 1980, The Scientific Image, "
+                   "Oxford: Clarendon Press.",
+            "parsed": None, "confidence": "low"}],
+    }
+
+
+class TestSurnameRuleGatesContextAcquisition:
+    """Which surname rule `resolve_context` uses decides whether an entry
+    reaches EVIDENCE-CONTEXT at all.
+
+    The prose rule returns text to search FOR in prose; the identity rule
+    returns text that has to agree with what `generate_bibliography` renders.
+    They are different functions with different jobs -- see
+    `first_author_prose_surname`'s docstring for the branch-by-branch account
+    of where they come apart; do not read the case below as a rule about a
+    shape of name.
+
+    What this case shows is the consequence: `_candidate_lines` searches the
+    bibliography with a word-bounded regex built from whatever surname it is
+    handed, so a returned surname carrying a LaTeX tie is searched for
+    literally, tie and all. Against a bibliography line that prints a space
+    there, the search finds nothing, `match_entry_to_article` returns None,
+    and the entry is unmatched -- no `sep_context`, no CONTEXT tier.
+    """
+
+    def test_tie_spelled_article_matches_as_shipped(self):
+        res = acquire_context(dict(VF_ENTRIES), {"sep:scientific-realism":
+                                                 _vf_article("van~Fraassen")})
+        r = res["vf1980"]
+        assert r["outcome"] == "matched"
+        assert r["field"] == "sep_context"
+        assert "acceptance without belief" in r["value"]
+
+    def test_the_match_site_gates_the_outcome(self, monkeypatch):
+        # A surname that appears nowhere: the matcher never gets a candidate
+        # line, so the outcome is decided before any passage is looked for.
+        monkeypatch.setattr(mod, "prose_surname", lambda a: "Nobody")
+        res = acquire_context(dict(VF_ENTRIES), {"sep:scientific-realism":
+                                                 _vf_article("van~Fraassen")})
+        assert res["vf1980"] == {"outcome": "unmatched"}
+
+    def test_space_spelled_article_misses_as_shipped(self):
+        # How SEP actually prints the name.
+        res = acquire_context(dict(VF_ENTRIES), {"sep:scientific-realism":
+                                                 _vf_article("van Fraassen")})
+        assert res["vf1980"] == {"outcome": "unmatched"}
+
+    def test_the_identity_rule_would_have_matched_the_space_spelling(
+            self, monkeypatch):
+        # Rebinding the module attribute is how a real switch would land: both
+        # call sites read this one global.
+        monkeypatch.setattr(mod, "prose_surname", first_author_surname)
+        assert mod.prose_surname(VF_AUTHOR) == "van Fraassen"
+        res = acquire_context(dict(VF_ENTRIES), {"sep:scientific-realism":
+                                                 _vf_article("van Fraassen")})
+        r = res["vf1980"]
+        assert r["outcome"] == "matched"
+        assert r["field"] == "sep_context"
+        assert "acceptance without belief" in r["value"]
+
+    def test_the_passage_site_is_not_inert_it_is_masked(self):
+        """The match site gates first, so on a space-spelled article the
+        passage site is never reached -- which is why it looks inert. It is
+        not: given the same tie-spelled surname, `find_citations` misses the
+        space-spelled passage in exactly the same way. Tie-spelled fixtures
+        hid this because a tie-spelled passage matches both spellings."""
+        space_art = _vf_article("van Fraassen")
+        assert find_citations(
+            space_art, build_citation_patterns("van~Fraassen", "1980")) == []
+        assert len(find_citations(
+            space_art, build_citation_patterns("van Fraassen", "1980"))) == 1
+
+        tie_art = _vf_article("van~Fraassen")
+        assert len(find_citations(
+            tie_art, build_citation_patterns("van~Fraassen", "1980"))) == 1
+        assert len(find_citations(
+            tie_art, build_citation_patterns("van Fraassen", "1980"))) == 1
