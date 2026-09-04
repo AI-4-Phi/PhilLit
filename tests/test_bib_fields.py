@@ -446,6 +446,19 @@ class TestPercentIsNotAComment:
                   '@article{k, title = a # b, year = {2020}}')
         assert self._pybtex_fields(concat)["k"]["title"] == "XY"
         assert parse_entry_fields(concat)["title"] == "ab"
+        # It COMPOSES with `%`: an expansion carrying one makes the two
+        # readers differ on accepted text containing a `%`. The `%` is in the
+        # @string body, never at a placement in the entry, so this is the
+        # @string difference -- but the scoped sentence invites the check.
+        pct = '@string{pct = "50%"}\n@article{k, title = pct, year = {2020}}'
+        assert self._pybtex_fields(pct)["k"]["title"] == "50%"
+        assert parse_entry_fields(pct)["title"] == "pct"
+        # Third difference: field names are lowercased here, source-cased
+        # there. Same value, different key -- which is also why this class's
+        # invariant test compares against pybtex only on lowercase input.
+        upper = '@article{k, TITLE = {A}, YEAR = {2020}}'
+        assert self._pybtex_fields(upper)["k"] == {"TITLE": "A", "YEAR": "2020"}
+        assert parse_entry_fields(upper) == {"title": "A", "year": "2020"}
 
     def test_percent_in_an_entry_key_is_accepted_and_scanned_correctly(self):
         # The one position that is neither inside a value nor at field

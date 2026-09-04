@@ -359,7 +359,7 @@ Then take the case matching that count — three seed cases, plus one for failed
 calls:
 
 - Two or more usable seeds: chain at least two and feed the same seeds to
-  the recommender.
+  the recommender; note `Stage 4: <N> candidates inspected` in NOTABLE_GAPS.
 - Exactly one usable seed: chain it and run the recommender with it; note
   `Stage 4: one seed available (candidates inspected: <N>)` in NOTABLE_GAPS,
   with `<N>` from the inventory. The count rides this case too because it is

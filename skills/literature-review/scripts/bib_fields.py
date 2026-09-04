@@ -75,15 +75,26 @@ around `#` concatenation, and in the parenthesised entry form:
     Of those placements, every one pybtex ACCEPTED this scanner read the same
     way; the disagreements are all on text pybtex REFUSES.
 
-Read the scope literally: that is a statement about `%` placement, NOT about
-scanner/pybtex equivalence in general, which is FALSE and deliberately so.
-Two intentional differences on text pybtex accepts, both documented above and
-neither involving `%`: no @string table is read, so a defined macro comes back
-as its own bare text where pybtex substitutes the expansion
-(`@string{x = "Expanded"}` + `title = x` gives `x` here and `Expanded` there,
-and macro `#` concatenation likewise); and pybtex moves author/editor out of
-`Entry.fields` into `.persons` where this reports them as the text fields they
-are. A general equivalence claim here was an overclaim, caught in review; the
+Read the scope literally: it is a statement about where a `%` SITS in the
+entry text, NOT about scanner/pybtex equivalence in general, which is FALSE
+and deliberately so. Three intentional differences on text pybtex accepts,
+all of them documented above:
+
+- No @string table is read, so a defined macro comes back as its own bare
+  text where pybtex substitutes the expansion (`@string{x = "Expanded"}` +
+  `title = x` gives `x` here and `Expanded` there); macro `#` concatenation
+  likewise. Note this COMPOSES with `%`: if the expansion carries one
+  (`@string{pct = "50%"}` + `title = pct` gives `pct` here and `50%` there),
+  the two readers differ on accepted text with a `%` in it. That is the
+  @string difference, not a `%`-placement one -- the `%` never sits in the
+  entry at all -- but say it, because the sentence above invites the check.
+- Field names are lowercased here; pybtex keeps the source case in
+  `Entry.fields` (and looks up case-insensitively), so `TITLE = {A}` is
+  `title` here and `TITLE` there. Same value, different key.
+- pybtex moves author/editor out of `Entry.fields` into `.persons`, where
+  this reports them as the text fields they are.
+
+A general equivalence claim here was an overclaim, caught in review; the
 sentence above is the one the measurement supports.
 
 The scan of REFUSED text is meaningless -- it may read a comment word as a

@@ -4015,6 +4015,35 @@ def test_unparseable_bib_is_never_field_scanned(tmp_path, monkeypatch):
     assert (rd / "literature-domain-1.bib").read_text(encoding="utf-8") == bad
 
 
+def test_a_mixed_run_scans_the_good_domain_and_not_the_refused_one(tmp_path,
+                                                                    monkeypatch):
+    """The single-domain spy shows the scanner is silent when the ONLY bib is
+    refused -- consistent with "the run bailed early" rather than "the gate
+    selects". Run one parseable domain beside one refused domain: the scanner
+    must see the good entry and never the refused one."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    import stamp_evidence as se
+
+    rd = tmp_path / "review"
+    _domain(rd, 1, DOI_ENTRY, cleaning=_cleaning(1, []), enrichment=EMPTY_ENRICH)
+    bad = '@article{refused2020key,\n  title = {B},\n  year = {2020} % }\n'
+    _domain(rd, 2, bad, cleaning=_cleaning(2, []), enrichment=EMPTY_ENRICH)
+
+    scanned = []
+    real = se.parse_entry_fields
+    monkeypatch.setattr(se, "parse_entry_fields",
+                        lambda c: (scanned.append(c), real(c))[1])
+
+    evidence_barrier.execute(rd, 2)
+    assert any("smith2020data" in c for c in scanned), "the good domain was not scanned"
+    assert not any("refused2020key" in c for c in scanned), (
+        f"the refused domain was field-scanned anyway: {scanned!r}")
+    report = _report(rd)
+    assert report["domains"]["1"]["bib"] == "present"
+    assert report["domains"]["2"]["bib"] == "malformed"
+
+
 def test_the_field_scan_spy_is_actually_wired(tmp_path, monkeypatch):
     """Guard against the sibling test above passing vacuously. If the spy is
     not hooked into the path the barrier really uses, `scanned` is empty for

@@ -518,8 +518,12 @@ class TestProseSurnameIsTheOwner:
         full = "Jane Doe (2020) argues that p. See also Jane Doe 2020."
         assert check_evidence.find_cites(full, "Jane Doe", "2020")
         article = {"bibliography": [{"raw": "Doe, Jane, 2020, A Title, A Journal."}]}
+        # The braced-comma class can leave regex metacharacters in the
+        # search string, so the no-raise property is measured on those too
+        # rather than assumed: `find_cites` escapes, so they miss, not crash.
         for lost in ("Jane Doe", "{Doe", "Doe~Jane", "van~Fraassen",
-                     "van  Fraassen", "van\nFraassen", "{Doe}"):
+                     "van  Fraassen", "van\nFraassen", "{Doe}",
+                     "{Doe (Jane", "Doe(", "Doe[", "Doe)", "Doe*", "Doe+"):
             assert check_evidence.find_cites(md, lost, "2020") == []
             # resolve_context reaches no candidate line rather than raising.
             assert resolve_context.match_entry_to_article(

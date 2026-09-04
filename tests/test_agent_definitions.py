@@ -283,6 +283,9 @@ def test_researcher_prose_makes_citation_chaining_required():
     # enforcement: `<N>` is still self-reported, but a bare "one seed
     # available" leaves an undercount invisible in the deliverable.
     assert "Stage 4: one seed available (candidates inspected: <N>)" in stage4
+    # The count rides EVERY seed case, so an undercount is visible whichever
+    # case it lands the model in -- the one-vs-two boundary was the bug.
+    assert "Stage 4: <N> candidates inspected" in stage4
     # A chaining run that errored is not a skip: it has its own evidenced line.
     assert "Stage 4 attempted: chaining incomplete" in stage4
     checklist = _section(text, "## Before Submitting — Quality Checklist", "## Error Checking")
