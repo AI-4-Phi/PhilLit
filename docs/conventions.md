@@ -345,7 +345,7 @@ The cleaner is a backstop against metadata that contradicts the APIs, not a lice
 1. Scans the .bib's own directory AND `intermediate_files/json/` for API output files (S2, OpenAlex, CrossRef, arXiv, PhilPapers, CORE) — both feed ONE index, so directory shadowing cannot starve verification
 2. Builds a presence-based index of all metadata values from API responses, each file ingested transactionally so one malformed file costs only its own records
 3. Finds each entry's OWN API record (DOI, else normalized title+year); an entry with no affirmative match is left completely untouched
-4. Applies each field class's removal rule (above), then downgrades the entry type if a required field is gone, and tags the entry `METADATA_CLEANED`
+4. Applies each field class's removal rule (above), then downgrades the entry type if a required field is gone (except an `@article` that keeps a DOI matching its API record: it stays `@article` without a `journal`, and `bib_validator` accepts that one state because the `METADATA_CLEANED` marker names the removed field), and tags the entry `METADATA_CLEANED`
 5. Records, per entry in the cleaning ledger (`schema_version` 2), which detail fields no record corroborated (`unverified_fields`) and which venue fields were removed for want of evidence (`venue_stripped_no_evidence`) — owner-facing measurement, never a control: the ledger is agent-writable, so nothing downstream may gate on either key
 
 **Value normalization**: values are normalized before comparison:
