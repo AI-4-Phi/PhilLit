@@ -11,15 +11,28 @@ that a recurrence is recognized where it would be read.
 ## Queue
 
 **Re-vendor the engine in phillit-service at this repo's HEAD.** Its
-`tools/revendor.py` carries `7ea0021` (the researcher's Stage 1/4/5 prose) and
-`165eafc` (the `first_author_prose_surname` owner, the `bib_fields` `%` clause)
-downstream; both are engine files, so nothing arrives there until the pin
-moves. Run it from a session launched in that repo. Two known trips: its
-scope-guard test
-`test_a_braced_corporate_author_containing_and_is_a_KNOWN_DIVERGENCE` still
-carries the divergence brace-aware author splitting removed upstream, and the
-five findings this queue held were filed FROM that mirror — re-reading them
-there after the pin should now find them fixed.
+`tools/revendor.py` carries the researcher's Stage 1/4/5 prose, the
+`first_author_prose_surname` owner and the `bib_fields` `%` clause downstream;
+all are engine files, so nothing arrives there until the pin moves. Run it from
+a session launched in that repo. Three things to expect:
+
+- Its scope-guard test
+  `test_a_braced_corporate_author_containing_and_is_a_KNOWN_DIVERGENCE` still
+  carries the divergence brace-aware author splitting removed upstream.
+- The five findings this queue held were filed FROM that mirror — re-reading
+  them there after the pin should now find them fixed.
+- **The pins do NOT travel.** `revendor.py`'s `EXCLUDE_PREFIX` contains
+  `tests/`, so every test added upstream for this work stays here: the Stage 4
+  complement pin and its retired-clause negative pin, the whole-file
+  `$JSON_DIR` scan, the Stage 1 slug-specific-status pin, the two
+  surname-divergence pins with the single-token boundary and the
+  `Person`-fallback agreement, and the `%` positional pins including the
+  top-level agreement case. The service has the parallel files
+  (`test_engine_bib_identity.py`, `test_engine_bib_fields.py`,
+  `test_engine_check_evidence.py`, `test_engine_resolve_context.py`,
+  `test_engine_dispatch_prose.py`) — the equivalents have to be written into
+  them there, or the mirror carries the fixes with none of the guards that
+  keep them fixed.
 
 **Census the two surname rules' DISAGREEMENT over every delivered author
 field.** Do not census a textual shape — run
