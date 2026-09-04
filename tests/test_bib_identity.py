@@ -455,6 +455,26 @@ class TestProseSurnameIsTheOwner:
         assert (bi.first_author_prose_surname("van Fraassen, Bas C.")
                 == bi.first_author_surname("van Fraassen, Bas C."))
 
+    def test_a_protected_group_agrees_and_falsifies_any_whitespace(self):
+        # The claim "any whitespace variation diverges" was itself an
+        # overclaim: a braced group is ONE token to pybtex, so the tie or
+        # space inside it survives on both sides.
+        for field in ("{van~Fraassen}, Bas", "{van Fraassen}, Bas",
+                      "{de~la~Cruz}, Ana"):
+            assert bi.first_author_prose_surname(field) == bi.first_author_surname(field)
+
+    def test_the_editor_fallback_is_outside_the_mechanism(self):
+        # `first_author_surname` has a parameter this rule does not, so this
+        # difference is not an instance of "prefix vs pybtex's parts" -- the
+        # docstring scopes the mechanism to author-only calls for this reason.
+        assert bi.first_author_prose_surname("") == ""
+        assert bi.first_author_surname("", "Roe, Rick") == "Roe"
+
+    def test_the_prefix_is_stripped_not_raw_bytes(self):
+        # "RAW, byte for byte" was wrong: `.strip()` runs, and the list split
+        # normalises the surrounding whitespace.
+        assert bi.first_author_prose_surname("  Doe  , Jane") == "Doe"
+
     def test_a_single_token_comma_less_name_does_not_diverge(self):
         # The divergence needs a name pybtex can SPLIT: it is multi-token
         # comma-less names, not comma-less names, so the docstring and the
@@ -481,8 +501,14 @@ class TestProseSurnameIsTheOwner:
             sys.path.pop(0)
         md = "As Doe (2020) argues, see Doe 2020."
         assert check_evidence.find_cites(md, "Doe", "2020")  # the shape that works
+        # A divergent value is not guaranteed to miss -- it misses the prose
+        # form Chicago normally uses. Pinned so the docstring cannot drift
+        # back to claiming a divergence never matches.
+        full = "Jane Doe (2020) argues that p. See also Jane Doe 2020."
+        assert check_evidence.find_cites(full, "Jane Doe", "2020")
         article = {"bibliography": [{"raw": "Doe, Jane, 2020, A Title, A Journal."}]}
-        for lost in ("Jane Doe", "{Doe", "Doe~Jane", "van~Fraassen"):
+        for lost in ("Jane Doe", "{Doe", "Doe~Jane", "van~Fraassen",
+                     "van  Fraassen", "van\nFraassen", "{Doe}"):
             assert check_evidence.find_cites(md, lost, "2020") == []
             # resolve_context reaches no candidate line rather than raising.
             assert resolve_context.match_entry_to_article(

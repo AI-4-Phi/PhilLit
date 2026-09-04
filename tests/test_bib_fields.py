@@ -434,6 +434,19 @@ class TestPercentIsNotAComment:
         assert [(f.name, f.value) for f in iter_fields(commented_out)] == [
             ("title", "S"), ("year", "1999"), ("title", "B"), ("year", "2020")]
 
+    def test_the_invariant_is_about_percent_not_general_equivalence(self):
+        """The scoped claim's other half: scanner/pybtex equivalence in
+        GENERAL is false, by design and documented above. Pinned so the `%`
+        sentence cannot drift back into a general invariant, which is the
+        overclaim review caught."""
+        macro = '@string{x = "Expanded"}\n@article{k, title = x, year = {2020}}'
+        assert self._pybtex_fields(macro)["k"]["title"] == "Expanded"
+        assert parse_entry_fields(macro)["title"] == "x"  # no @string table read
+        concat = ('@string{a = "X"}\n@string{b = "Y"}\n'
+                  '@article{k, title = a # b, year = {2020}}')
+        assert self._pybtex_fields(concat)["k"]["title"] == "XY"
+        assert parse_entry_fields(concat)["title"] == "ab"
+
     def test_percent_in_an_entry_key_is_accepted_and_scanned_correctly(self):
         # The one position that is neither inside a value nor at field
         # position. pybtex takes it as part of the key; field scanning begins

@@ -65,22 +65,34 @@ that surprise people: a `%` does NOT comment an entry out (pybtex parses
 AGREE), and a comment-aware reader would be the one diverging from the strict
 gate.
 
-Rather than enumerate positions, the property measured over 21 placements --
-in values (braced, quoted, escaped `50\\%`), at top level, in `@comment`
+Rather than enumerate positions, the property measured over 21 `%` placements
+-- in values (braced, quoted, escaped `50\\%`), at top level, in `@comment`
 payloads carrying braces or an `@`, in `@preamble`, in `@string`, at field
 position, between a field name and its `=`, after the `=`, swallowing an
 entry's closing brace, in the entry key, in the entry type, in a bare value,
 around `#` concatenation, and in the parenthesised entry form:
 
-    Wherever pybtex ACCEPTS the text, this scanner reports the same fields.
-    Every divergence is confined to text pybtex REFUSES.
+    Of those placements, every one pybtex ACCEPTED this scanner read the same
+    way; the disagreements are all on text pybtex REFUSES.
 
-The scan of refused text is meaningless -- it may read a comment word as a
+Read the scope literally: that is a statement about `%` placement, NOT about
+scanner/pybtex equivalence in general, which is FALSE and deliberately so.
+Two intentional differences on text pybtex accepts, both documented above and
+neither involving `%`: no @string table is read, so a defined macro comes back
+as its own bare text where pybtex substitutes the expansion
+(`@string{x = "Expanded"}` + `title = x` gives `x` here and `Expanded` there,
+and macro `#` concatenation likewise); and pybtex moves author/editor out of
+`Entry.fields` into `.persons` where this reports them as the text fields they
+are. A general equivalence claim here was an overclaim, caught in review; the
+sentence above is the one the measurement supports.
+
+The scan of REFUSED text is meaningless -- it may read a comment word as a
 field name, or stop early -- and that is harmless only because of a CALL-ORDER
 property, not a property of this module: `validate_bib_write` parses through
-this same pybtex, and the barrier validates every domain bib with it before
-doing anything else, so nothing downstream ever acts on a scan of text the
-gate refused. If that ordering ever changes, this paragraph stops being true.
+this same pybtex, and the barrier's `_parseable_bib` marks an unparseable
+domain bib `malformed` and drops it before any field is scanned. If that
+ordering ever changes, this paragraph stops being true, which is why
+`test_unparseable_bib_is_dropped_before_any_field_is_scanned` pins it.
 
 `test_percent_at_field_position_is_refused_by_the_strict_gate` pins the
 refusal half; the agreement half is pinned beside it. If a pybtex release

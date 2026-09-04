@@ -375,11 +375,16 @@ def test_stage4_skip_is_keyed_on_seeds_the_agent_holds():
             "paper ID or a DOI") in flat
     # Holdings must be enumerated before the case applies, or `<N>` evidences
     # nothing: a model may not inspect one file and call the domain seedless.
-    # The mandate must quantify over the SAME set the licence does, or a model
-    # can truthfully inspect everything asked and miss a held Stage 1 DOI.
-    assert "check every candidate you hold from Stages 1-3" in flat
+    # The inventory must precede ALL THREE cases, not just the zero case: an
+    # agent holding one S2 id plus an uninspected DOI-bearing SEP entry would
+    # otherwise pick "exactly one seed" and never trigger the mandate.
+    assert "Before you pick a case, inventory your holdings" in flat
     assert "not the S2 hits alone" in flat
     assert "A Stage 1 bibliography entry can carry a DOI" in flat
+    # Distinct WORKS, or two records of one paper count as two seeds.
+    assert "Count DISTINCT WORKS: two records of the same paper are one" in flat
+    # The inventory sits ahead of the case list in the section, not inside it.
+    assert flat.index("inventory your holdings") < flat.index("Two or more usable seeds")
     # "Most foundational" ranks seeds; it must not gate them, or an ID-bearing
     # candidate judged tangential re-opens the no-case-applies state.
     assert "RANKS your usable seeds, it does not gate" in flat

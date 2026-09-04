@@ -677,39 +677,65 @@ def first_author_prose_surname(author: str | None) -> str:
     matches it against an SEP passage. A comma in that string finds nothing.
 
     Where the two rules differ is ONE mechanism, not a list of shapes, and
-    reading it that way is load-bearing: two attempts to enumerate the shapes
-    here were both wrong, each time by asserting a universal from sampled
-    inputs. The mechanism: this rule returns the RAW pre-comma text, byte for
-    byte; `first_author_surname` returns pybtex's PARSED name parts, re-joined
-    with single spaces. So they agree exactly when the raw pre-comma text
-    already equals pybtex's normalised rendering of it, and every divergence
-    is an instance of that one difference. Known classes, as EXAMPLES and not
-    an exhaustive set -- all pre-date this owner:
+    reading it that way is load-bearing: three attempts to enumerate the
+    shapes here were wrong, each by asserting a universal over sampled inputs.
+    Read from the code rather than from samples, and scoped to the call path
+    both prose consumers use -- ONE author field, no editor:
+
+        This rule returns the stripped pre-comma prefix of
+        `first_author_name(author)`. `first_author_surname` returns pybtex's
+        SELECTED surname parts (prelast + last) joined by single spaces when
+        that parse succeeds and yields a surname, and otherwise falls back to
+        that same pre-comma prefix. So on this path they diverge exactly when
+        a successful pybtex surname differs from the prefix.
+
+    Note what pybtex's side does, since "normalisation" undersells it: it
+    classifies tokens by name role and keeps only the surname ones, so
+    dropping `Jane` from `Jane Doe` is a semantic projection, and it re-joins
+    the parts it keeps with single spaces. Two operations, either of which can
+    make its result differ from the prefix.
+
+    Outside that scope the relation does not hold and is not claimed:
+    `first_author_surname` takes an editor fallback this rule has no parameter
+    for, so `first_author_surname("", editor)` returns a surname where this
+    returns `""`. That is a difference in what the functions are FOR, not an
+    instance of the mechanism.
+
+    Known divergence classes, as EXAMPLES and not an exhaustive set -- all
+    pre-date this owner:
 
     - A comma-less name pybtex can split (MULTI-token): `Jane Doe` yields
       `Jane Doe` here and `Doe` there. Single-token names do not diverge --
       `Aristotle` is `Aristotle` from both.
     - A comma-less name whose tokens are tie-separated: `Doe~Jane` gives
       `Doe~Jane` here and `Jane` there (a tie separates for pybtex).
-    - Any whitespace VARIATION inside the surname: `van~Fraassen, Bas C.`,
-      `van  Fraassen, Bas C.` and a newline-separated one all give the raw
-      text here and `van Fraassen` there. Plain `van Fraassen, Bas C.` agrees
-      only because its raw text already is the normalised form.
+    - An UNPROTECTED separator inside the surname that is not a single space:
+      `van~Fraassen, Bas C.`, `van  Fraassen, Bas C.` and a newline-separated
+      one give the prefix here and `van Fraassen` there. Two things this is
+      NOT: it is not "any whitespace variation" -- a PROTECTED group is one
+      token to pybtex, so `{van~Fraassen}, Bas` AGREES from both -- and plain
+      `van Fraassen, Bas C.` agrees only because its prefix already is what
+      pybtex renders.
     - A braced name with a comma INSIDE the group. The list split is
       brace-aware but this comma split is not, so `{Doe, Jane}` yields the
       brace-unbalanced `{Doe`, where the identity rule keeps `{Doe, Jane}`
       whole.
 
-    Each hands the prose consumers a search string real Chicago prose does not
-    contain, and none raises: `find_cites` returns no positions and
-    `resolve_context` finds no candidate line, so the cost is a silent
-    under-report on two recall-floor checkers -- false "uncited" telemetry,
-    never a block. Do NOT "fix" any of them by switching to the identity rule
-    or by stripping braces without measuring first: the switch is not a clean
-    fix (Chicago prose writes neither `{Doe, Jane}` nor `{Doe`), and the rate
-    at which any of these forms reaches a delivered bib is unknown. The
-    roadmap's census compares the two rules over the delivered corpus rather
-    than counting shapes, for exactly the reason this paragraph opens with.
+    What a divergence COSTS, stated no more strongly than it is measured: the
+    two rules hand the consumers different search strings, and recall drops
+    when the string does not match the form the target prose uses. It is not
+    true that a divergent value never matches -- `find_cites` DOES find
+    `Jane Doe` in prose that writes the full name. The bet is on Chicago
+    author-date normally writing the surname alone, which makes the typical
+    cost a silent under-report; every divergence measured so far fails closed
+    (no positions, no candidate line) rather than raising, so the cost lands
+    as false "uncited" telemetry on two recall-floor checkers, never a block.
+    Do NOT "fix" any of them by switching to the identity rule or by stripping
+    braces without measuring first: the switch is not a clean fix (Chicago
+    prose writes neither `{Doe, Jane}` nor `{Doe`), and the rate at which any
+    of these forms reaches a delivered bib is unknown. The roadmap's census
+    compares the two rules over the delivered corpus rather than counting
+    shapes, for exactly the reason this docstring opens with.
 
     No editor fallback, unlike `first_author_surname`: both callers read the
     author field alone, and `check_evidence`'s module docstring records

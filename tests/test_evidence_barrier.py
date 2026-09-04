@@ -3973,3 +3973,29 @@ def test_accented_same_author_same_year_gets_letters(tmp_path):
     assert "year_suffix = {a}" in content
     assert "year_suffix = {b}" in content
     assert _report(rd)["year_suffixes"]["assigned"] == 2
+
+
+def test_unparseable_bib_is_dropped_before_any_field_is_scanned(tmp_path):
+    """`bib_fields`' safety argument rests on a CALL-ORDER property, not on
+    anything in that module: its scan of text pybtex refuses is meaningless,
+    and harmless only because the strict gate runs first. Two independent
+    reviewers noted the ordering was asserted in prose and pinned by nothing,
+    so a refactor could silently invalidate the docstring. Pin it here, where
+    the ordering lives: an unparseable domain bib is `malformed`, is excluded
+    from the stamped outputs, and is left byte-for-byte alone."""
+    rd = tmp_path / "review"
+    # A `%` at field position -- exactly the form bib_fields' docstring says
+    # pybtex refuses and the scan reads meaninglessly.
+    bad = '@article{smith2020data,\n  title = {A},\n  year = {2020} % }\n'
+    _domain(rd, 1, bad, cleaning=_cleaning(1, []), enrichment=EMPTY_ENRICH)
+    r = _run(rd, 1)
+    report = _report(rd)
+    assert report["domains"]["1"]["bib"] == "malformed"
+    # Fail CLOSED, not merely degraded: nonzero exit is what stops the
+    # orchestrator advancing to Phase 4 (SKILL.md), so the scan of refused
+    # text never reaches a decision.
+    assert r.returncode != 0
+    assert report["status"] == "failed"
+    # Never scanned, so never stamped -- and never rewritten.
+    assert "literature-domain-1.bib" not in report.get("stamps", {})
+    assert (rd / "literature-domain-1.bib").read_text(encoding="utf-8") == bad

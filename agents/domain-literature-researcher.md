@@ -346,7 +346,17 @@ them: any candidate you hold with a Semantic Scholar paper ID or a DOI can
 serve as a seed, so judging one tangential is never what makes a domain
 seedless. Chaining is the one discovery mechanism here with no
 substitute: keyword search cannot reach a paper whose title shares no
-words with the topic, the citation graph can. Three seed cases, plus one for failed calls:
+words with the topic, the citation graph can.
+
+**Before you pick a case, inventory your holdings.** Go through every candidate
+you hold from Stages 1-3 — SEP and IEP bibliography entries, PhilPapers hits,
+and every Stage 3 source (S2, OpenAlex, CORE, arXiv), not the S2 hits alone —
+plus every orchestrator-named seed, and note which carry a Semantic Scholar
+paper ID or a DOI. Count DISTINCT WORKS: two records of the same paper are one
+seed. A Stage 1 bibliography entry can carry a DOI, so inventorying the S2 hits
+alone can undercount and land you in a smaller case than you are actually in.
+Then take the case matching that count — three seed cases, plus one for failed
+calls:
 
 - Two or more usable seeds: chain at least two and feed the same seeds to
   the recommender.
@@ -355,12 +365,8 @@ words with the topic, the citation graph can. Three seed cases, plus one for fai
 - No usable seed after Stages 1–3 have run: no candidate you HOLD carries
   a Semantic Scholar paper ID or a DOI. Judge that on your holdings, not
   on what Stage 3 returned — a hit whose `paperId` came back `null` hands
-  you no seed. Before this case applies, check every candidate you hold from
-  Stages 1-3 — SEP and IEP bibliography entries, PhilPapers hits, and every
-  Stage 3 source (S2, OpenAlex, CORE, arXiv), not the S2 hits alone — plus
-  every orchestrator-named seed, for a Semantic Scholar paper ID or a DOI. A
-  Stage 1 bibliography entry can carry a DOI, so `<N>` must count that whole
-  set, not the subset you happened to open. Valid even if S2 errored: write
+  you no seed. `<N>` is the size of the inventory above — the whole set, not
+  the subset you happened to open. Valid even if S2 errored: write
   `Stage 4 skipped: no resolvable seeds (S2 status:
   <status from the Stage 3 tail>, candidates inspected: <N>)` in
   NOTABLE_GAPS, with the actual status and the number you checked. Only
