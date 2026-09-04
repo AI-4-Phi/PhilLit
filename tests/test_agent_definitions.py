@@ -307,7 +307,11 @@ def test_researcher_prose_budgets_calls_and_forbids_probing():
     # The no-script rule is an instruction, not a description of the budget.
     assert "Do not make Bash calls that run no script" in batching
     assert "as many rounds as the results warrant" in batching
-    assert "one follow-up call per round" in batching
+    # Dropped 2026-09-04: two validation runs on the shipped prose left split
+    # follow-up rounds at baseline (3/15, 4/21 vs 2/20) while every other bar
+    # cleared, so the "one follow-up call per round" rule was inert noise.
+    assert "one follow-up call per round" not in text
+    assert "not budgeted" in batching
     assert "Marked INCOMPLETE" in text  # prose reads the conditional summary line
     assert "valid-empty slug-file call" in batching  # the one exempt standalone call
     assert "result JSON" in batching  # pokes named as out of budget

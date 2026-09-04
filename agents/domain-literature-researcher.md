@@ -181,10 +181,9 @@ Substitute `[project-name]` with the actual directory name from the orchestrator
 > consume its inline stdout). If an inline result comes back truncated,
 > re-run that one script with `--output` and Read the file once.
 > Follow-ups stay first-class: a thin or empty result deserves a
-> reformulated query. Batch them too — after reading a stage's results,
-> put EVERY reformulated query you now want into one follow-up call per
-> round (same chaining rules, fresh filenames), not one call per query.
-> Batching cuts turns, never curiosity.
+> reformulated query, in as many calls as the results warrant (same
+> chaining rules, fresh filenames). Batching caps the fixed stages, never
+> curiosity.
 
 > **Namespace every result file you write with your `<domain>` stem**
 > (`s2_<domain>_results.json`, `cites_<domain>_seed1.json`, ...): all
@@ -615,12 +614,10 @@ searches hit four different APIs, which is why they parallelize.
 - A follow-up round reacting to results (empty/thin result → reformulated
   queries; a discovered seed paper → its citation chase). Adaptive
   follow-ups are the point of a researcher — never skip one to save a
-  turn — but they batch like a stage: one follow-up call per round,
-  carrying every reformulated query that round produced, different APIs
-  in parallel and same-API lines sequential. A file-writing follow-up
-  writes to a FRESH filename (`s2_<domain>_results2.json`) — never
-  overwrite a results file you already read, or a crash mid-script leaves
-  the old file reporting success.
+  turn, and they are not budgeted. A file-writing follow-up writes to a
+  FRESH filename (`s2_<domain>_results2.json`) — never overwrite a
+  results file you already read, or a crash mid-script leaves the old
+  file reporting success.
 - A later stage that needs an earlier stage's results to compose its
   queries (Stage 2 uses SEP findings; Stage 4 needs chosen seeds).
   Separate is not optional: Stage 4 runs in every domain.
@@ -637,7 +634,7 @@ searches hit four different APIs, which is why they parallelize.
 | Stage 5 verification | 1 per ~6 DOIs |
 | Stage 5.5 enrichment | 1 (2 if you added entries after it) |
 | Stage 6 web fetch | 1 per web source kept |
-| follow-up rounds | 1 per round; as many rounds as the results warrant |
+| follow-up rounds | not budgeted; as many rounds as the results warrant |
 
 About ten calls before follow-ups, not one per script invocation. The
 table caps ceremony, never follow-up rounds.
