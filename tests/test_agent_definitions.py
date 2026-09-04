@@ -279,9 +279,15 @@ def test_researcher_prose_makes_citation_chaining_required():
     assert "Stage 4 skipped: no resolvable seeds (S2 status:" in stage4
     assert "Exactly one" in stage4  # the one-seed case has an action
     # ...and it carries the inventory count, because the one-seed case is the
-    # one an undercounted inventory lands you in wrongly. Detection, not
-    # enforcement: `<N>` is still self-reported, but a bare "one seed
-    # available" leaves an undercount invisible in the deliverable.
+    # one an undercounted inventory lands you in wrongly.
+    #
+    # ACCEPTED RESIDUAL, decided 2026-09-04 and not queued: `<N>` is
+    # self-reported, so this is DETECTION, not enforcement -- an agent that
+    # undercounts and reports the undercount honestly still passes. Two
+    # external reviewers raised it; the count on every seed case makes an
+    # undercount visible in the deliverable, and that was judged enough. A
+    # runtime check is the only thing that would close it, and it is NOT
+    # wanted for now -- do not re-open this with more prompt text.
     assert "Stage 4: one seed available (candidates inspected: <N>)" in stage4
     # The count rides EVERY seed case, so an undercount is visible whichever
     # case it lands the model in -- the one-vs-two boundary was the bug.

@@ -68,12 +68,13 @@ def load_slug_files(paths):
 
 
 # The prose-matching surname rule, owned by bib_identity. This site's historic
-# name was `first_author_surname` -- DELIBERATELY not kept, the one exception to
-# CLAUDE.md's keep-the-historic-name rule: `bib_identity` exports a function of
-# that exact name implementing the OTHER (identity) rule, and `year_suffix.py`
-# in this very directory imports it. Same name, same directory, two rules is the
-# confusion this owner exists to remove, and a comment does not remove it.
-# Still an alias to the shared object, never a copy; tests pin `is` identity.
+# name was `first_author_surname`, renamed because `bib_identity` exports a
+# function of that exact name implementing the OTHER (identity) rule, and
+# `year_suffix.py` in this very directory imports it. Same name, same
+# directory, two rules is the confusion this owner exists to remove, and a
+# comment does not remove it -- so an alias must never shadow a different
+# shared object's name (CLAUDE.md). Still an alias, never a copy; tests pin
+# `is` identity, and the absence of the old name.
 prose_surname = first_author_prose_surname
 
 
