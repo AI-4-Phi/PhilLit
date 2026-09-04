@@ -594,6 +594,170 @@ class TestCheckRequiredFields:
         errors = check_required_fields(bib_file)
         assert errors == []  # Unknown types have no required fields
 
+    # -------------------------------------------------------------------
+    # The cleaner-guard exemption: metadata_cleaner._plan_type_downgrade
+    # deliberately KEEPS an @article that lost its unverifiable `journal`
+    # when the entry retains a DOI matching its own API record. Without a
+    # matching exemption here the same hook blocks the NEXT researcher for a
+    # file it never touched.
+    # -------------------------------------------------------------------
+
+    def _article(self, tmp_path, keywords=None, doi="10.1/x", name="x.bib"):
+        """@article complete except `journal`, with an optional marker."""
+        lines = ["@article{cleaned2020,",
+                 "  author = {Test, Author},",
+                 "  title = {A Cleaned Paper},",
+                 "  year = {2020},"]
+        if doi is not None:
+            lines.append("  doi = {%s}," % doi)
+        if keywords is not None:
+            lines.append('  keywords = "%s",' % keywords)
+        content = "\n".join(lines).rstrip(",") + "\n}"
+        bib_file = tmp_path / name
+        bib_file.write_text(content, encoding='utf-8')
+        return bib_file
+
+    @pytest.mark.parametrize("keywords", [
+        "High, METADATA_CLEANED: journal",
+        # Change tokens either side of the name
+        "METADATA_CLEANED: journal, year:2007->2019",
+        "METADATA_CLEANED: year:2007->2019, journal",
+    ])
+    def test_marker_named_journal_is_exempt(self, tmp_path, keywords):
+        assert check_required_fields(self._article(tmp_path, keywords)) == []
+
+    @pytest.mark.parametrize("spelling", [r"METADATA\_CLEANED",
+                                          r"METADATA\\_CLEANED"])
+    def test_pybtex_escaped_marker_is_exempt(self, tmp_path, spelling):
+        """pybtex's Writer escapes '_' on every round-trip, so a cleaned bib
+        that has been re-written carries the escaped spelling. Assert the
+        parsed value REALLY contains a backslash first - otherwise this test
+        would pass through the plain spelling and prove nothing."""
+        bib_file = self._article(tmp_path, spelling + ": journal")
+        from pybtex.database import parse_file as _pf
+        parsed = _pf(str(bib_file), bib_format="bibtex")
+        assert "\\" in parsed.entries["cleaned2020"].fields["keywords"]
+
+        assert check_required_fields(bib_file) == []
+
+    @pytest.mark.parametrize("keywords,doi", [
+        (None, "10.1/x"),                                  # baseline: no marker
+        ("METADATA_CLEANED: pages", "10.1/x"),             # marker names another field
+        ("METADATA_CLEANED: journal, type:@article->@misc", "10.1/x"),
+        ("METADATA_CLEANED: journal", None),               # no doi at all
+        ("METADATA_CLEANED: journal", ""),                 # empty doi
+    ])
+    def test_journal_still_reported(self, tmp_path, keywords, doi):
+        errors = check_required_fields(self._article(tmp_path, keywords, doi))
+        assert any("journal" in e for e in errors), errors
+
+    def test_exemption_is_per_name_not_per_entry(self, tmp_path):
+        """An article missing journal AND year, marker naming only journal:
+        the year error must survive the discard."""
+        content = """@article{halfcleaned,
+  author = {Test, Author},
+  title = {A Cleaned Paper},
+  doi = {10.1/x},
+  keywords = "METADATA_CLEANED: journal"
+}"""
+        bib_file = tmp_path / "halfcleaned.bib"
+        bib_file.write_text(content, encoding='utf-8')
+
+        errors = check_required_fields(bib_file)
+        assert len(errors) == 1, errors
+        assert "year" in errors[0]
+
+    def test_exemption_does_not_reach_other_types(self, tmp_path):
+        """@incollection missing only booktitle, marker naming booktitle."""
+        content = """@incollection{chapter2020,
+  author = {Test, Author},
+  title = {A Chapter},
+  publisher = {A Press},
+  year = {2020},
+  doi = {10.1/x},
+  keywords = "METADATA_CLEANED: booktitle"
+}"""
+        bib_file = tmp_path / "incollection.bib"
+        bib_file.write_text(content, encoding='utf-8')
+
+        errors = check_required_fields(bib_file)
+        assert any("booktitle" in e for e in errors), errors
+
+    @pytest.mark.parametrize("drop", ["author", "year"])
+    def test_exemption_does_not_reach_other_fields(self, tmp_path, drop):
+        """Only `journal` is exempt - the cleaner never removes the others."""
+        lines = ["@article{partial2020,",
+                 "  author = {Test, Author},",
+                 "  title = {A Paper},",
+                 "  journal = {A Journal},",
+                 "  year = {2020},",
+                 "  doi = {10.1/x},",
+                 '  keywords = "METADATA_CLEANED: %s"' % drop,
+                 "}"]
+        content = "\n".join(ln for ln in lines
+                            if not ln.strip().startswith(drop + " ="))
+        bib_file = tmp_path / "partial.bib"
+        bib_file.write_text(content, encoding='utf-8')
+
+        errors = check_required_fields(bib_file)
+        assert any(drop in e for e in errors), errors
+
+    def test_exemption_is_per_entry(self, tmp_path):
+        """One exempt article and one plain one in the same file: exactly one
+        error, naming the plain entry."""
+        content = """@article{cleaned2020,
+  author = {Test, Author},
+  title = {A Cleaned Paper},
+  year = {2020},
+  doi = {10.1/x},
+  keywords = "METADATA_CLEANED: journal"
+}
+
+@article{plain2021,
+  author = {Other, Author},
+  title = {An Uncleaned Paper},
+  year = {2021},
+  doi = {10.1/y}
+}"""
+        bib_file = tmp_path / "two.bib"
+        bib_file.write_text(content, encoding='utf-8')
+
+        errors = check_required_fields(bib_file)
+        assert len(errors) == 1, errors
+        assert errors[0].startswith("plain2021:")
+        assert "journal" in errors[0]
+
+
+class TestCheckRequiredFieldsExceptionPolicy:
+    """`check_required_fields` is an accuracy gate and must fail CLOSED on a
+    crash: only the ALREADY-REPORTED syntax error (check_bibtex_syntax owns
+    reporting it) is swallowed here. Every other exception must propagate,
+    never be silently absorbed into an empty-errors "pass"."""
+
+    def test_pybtex_syntax_error_is_swallowed(self, tmp_path, monkeypatch):
+        import types
+        import bib_validator
+        from pybtex.scanner import PybtexSyntaxError
+
+        def boom(*args, **kwargs):
+            fake_parser = types.SimpleNamespace(
+                filename="x.bib", lineno=1,
+                get_error_context_info=lambda: None)
+            raise PybtexSyntaxError("bad syntax", fake_parser)
+
+        monkeypatch.setattr(bib_validator, "parse_file", boom)
+        assert bib_validator.check_required_fields(tmp_path / "x.bib") == []
+
+    def test_other_exceptions_propagate(self, tmp_path, monkeypatch):
+        import bib_validator
+
+        def boom(*args, **kwargs):
+            raise ValueError("boom")
+
+        monkeypatch.setattr(bib_validator, "parse_file", boom)
+        with pytest.raises(ValueError):
+            bib_validator.check_required_fields(tmp_path / "x.bib")
+
 
 # =============================================================================
 # Tests for check_biblatex_fields

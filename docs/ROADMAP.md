@@ -35,47 +35,6 @@ and `test_a_matched_context_earns_EVIDENCE_CONTEXT_and_a_miss_DEMOTES`;
 sooner if `find_cites` output ever feeds something read as a coverage VERDICT
 rather than a floor.
 
-**`_plan_type_downgrade`'s verified-DOI guard and `check_required_fields`
-disagree, and the stop hook blocks on the disagreement.** The cleaner has a
-downgrade path for an entry that loses a required field (`REQUIRED_FIELDS` in
-`metadata_cleaner.py`, "if missing after cleaning, downgrade to @misc") and a
-DOCUMENTED exemption from it: "an article that would lose its required
-'journal' is NOT demoted when it retains a DOI matching its own API record — a
-verified DOI proves the work is identifiable and @article degrades cleanly to
-author/year/title." That ruling is deliberate and reads as right. But
-`bib_validator.REQUIRED_FIELDS['article']` still contains `journal`, so the
-entry the guard deliberately preserved is reported as `missing required field
-'journal' for @article` by the validator in the same repo — and
-`subagent_stop_bib.sh` accumulates `.errors[]` in FULL into `SYNTAX_ERRORS`
-and blocks on it. The cleaner runs in that same hook, AFTER validation, so the
-file it leaves blocks the NEXT researcher to stop, and the one after that. One
-resumed pass each; `stop_hook_active` caps it at one per subagent, not one per
-review.
-
-**Measured, not inferred**: replayed `validate_bib` over all 71 `.bib` files in
-the service's delivered production reviews (2026-09-04). Three fail the full
-validator; **zero fail any structural check** (encoding, duplicate key,
-duplicate field, pybtex). Two of the three are this — `blessenohl2015selfexempting`,
-carrying both `METADATA_CLEANED: journal` in its keywords and the DOI
-`10.1515/krt-2015-290304` that fires the guard. The third is the same class
-from a different check: `konigs2022artificial: 'author' contains LaTeX escape
-\"o`, on an entry that parses correctly.
-
-Both halves are live at `191bde5`. The service contained it by narrowing its
-own SubagentStop gate to the structural subset and logging the policy findings
-instead (`_structural_bib_errors` in `reviews/hooks.py`), which is a service-side
-mitigation and not a fix — the disagreement is between two files here. The
-shape of the fix is upstream's call: exempting an entry whose `keywords` carry
-a `METADATA_CLEANED` marker naming the missing field would be narrow and would
-keep the check honest for everything else, but so would dropping the guard and
-accepting the `@misc` demotion the docstring argues against.
-
-**Note the service could not have found this before now.** Its ported
-SubagentStop hook nested `decision`/`reason` inside `hookSpecificOutput`, where
-the CLI reads neither, so the gate had blocked nothing since it was ported.
-Fixing that payload is what surfaced the disagreement — this repo's shell hook
-never had that bug, so the exposure here is live and unmitigated.
-
 ## Checked and deliberately NOT filed
 
 Not a queue — a register, so these are not re-found. Each was a live candidate

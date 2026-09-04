@@ -45,6 +45,18 @@ from bib_identity import (
     venue_key,
     year_key,
 )
+# The marker GRAMMAR lives in its own leaf module (bib_validator reads markers
+# too, and cannot import this one - see cleaning_marker's docstring). This
+# module still owns the marker FORMAT, written by _apply_cleaned_marker below.
+# These are aliases, not copies; `marker_removed_fields` stays importable from
+# here because several tests already reach it through this module.
+from cleaning_marker import (  # noqa: F401 - re-exported for existing callers
+    MARKER_BODY_RE,
+    MARKER_STRIP_RE,
+    marker_removed_fields,
+    marker_type_target,
+    marker_type_token,
+)
 
 # Historic private names, kept so existing call sites and tests are unchanged.
 # These are aliases, not copies: tests assert `is` identity.
@@ -71,38 +83,6 @@ DETAIL_FIELDS = frozenset({'volume', 'number', 'pages', 'publisher'})
 # data). Constants, not config - thresholds are a safety floor, not a knob.
 BREAKER_MIN_ENTRIES = 5
 BREAKER_FRACTION = 0.30
-
-# A6: strip any existing METADATA_CLEANED marker before writing a fresh one.
-# pybtex round-trips the underscore as \_ (and \\_ on a second pass), so match
-# METADATA + any run of backslashes + _CLEANED. All markers are appended at the
-# keywords tail, so removing from the first marker to end drops them all.
-_MARKER_RE = re.compile(r",?\s*METADATA\\*_CLEANED:.*$", re.DOTALL)
-
-# The marker's removed-field grammar, shared with dedupe_bib.py and
-# generate_bibliography.py. This module owns the marker
-# format (_apply_cleaned_marker writes it); parse it here, in one place.
-_MARKER_BODY_RE = re.compile(r"METADATA\\*_CLEANED:\s*(.*)$", re.DOTALL)
-
-
-def marker_removed_fields(keywords: str) -> frozenset[str]:
-    """Lowercase field names a METADATA_CLEANED marker records as REMOVED.
-
-    Change tokens (`year:2007->2019`, `type:@a->@b`) contain ':' and are not
-    removals. Tolerates pybtex's backslash-escaped form (METADATA\\_CLEANED)
-    - the Writer escapes '_' on round-trip. Empty/absent marker -> empty set.
-    """
-    if not keywords:
-        return frozenset()
-    m = _MARKER_BODY_RE.search(keywords)
-    if not m:
-        return frozenset()
-    names = set()
-    for token in m.group(1).split(","):
-        token = token.strip()
-        if token and ":" not in token:
-            names.add(token.lower())
-    return frozenset(names)
-
 
 # Fields exempt from cleaning (LLM-generated content is OK)
 EXEMPT_FIELDS = {
@@ -1354,7 +1334,32 @@ def plan_entry_cleaning(entry, index: MetadataIndex, api_entry: dict) -> dict:
 def _apply_cleaned_marker(entry, plan: dict) -> None:
     """Set a single METADATA_CLEANED tag on keywords, REPLACING any existing
     marker(s) rather than appending - a re-parsed bib re-cleaned
-    on a second SubagentStop must not accumulate duplicate markers."""
+    on a second SubagentStop must not accumulate duplicate markers.
+
+    The replacement CARRIES FORWARD what the prior marker still attests:
+    every removed name whose field is STILL absent from the entry (checked
+    against both entry.fields AND entry.persons - author/editor live in the
+    latter, and pybtex never puts them in the former), and a prior `type:`
+    token when this run records no demotion of its own AND the entry's
+    CURRENT type still equals the token's target (marker_type_target). That
+    second condition matters: once a researcher edits the type back (e.g.
+    @misc -> @article, with a fresh API-matching DOI), the token's recorded
+    demotion is no longer true of this entry, and carrying it forward would
+    make bib_validator's @article exemption refuse the very correction the
+    researcher made (marker_type_changed would read True for an entry that
+    was, in fact, re-cleaned). A replacement without the field-name
+    carry-forward erased the record on the second run - `journal` cannot
+    appear in this run's `removed_field_names` once it is already gone, so an
+    unrelated year correction dropped it - and bib_validator's
+    @article-without-journal exemption reads exactly that record. A name
+    whose field the researcher re-added and this run verified IS dropped,
+    but only when the marker is rewritten: the early return below means a
+    run with no changes of its own rewrites nothing, so a stale name for an
+    already re-added field survives until the next rewrite (that is the
+    validator's documented stale-record residual).
+
+    The early return stands: a run with no changes of its own rewrites
+    nothing, so an untouched marker is never reordered or re-escaped."""
     all_changes = list(plan["removed_field_names"])
     if plan["year_corrected"]:
         all_changes.append(f"year:{plan['year_corrected'][0]}->{plan['year_corrected'][1]}")
@@ -1362,10 +1367,30 @@ def _apply_cleaned_marker(entry, plan: dict) -> None:
         all_changes.append(f"type:@{plan['type_downgraded'][0]}->@{plan['type_downgraded'][1]}")
     if not all_changes:
         return
-    cleaned_tag = f"METADATA_CLEANED: {', '.join(all_changes)}"
     existing = entry.fields.get('keywords')
     if existing:
-        base = _MARKER_RE.sub("", existing).rstrip().rstrip(",")
+        # Carry forward AFTER the early return, so carried content can never
+        # by itself make a no-change run rewrite the marker.
+        seen = {name.lower() for name in all_changes}
+        for name in sorted(marker_removed_fields(existing)):
+            if (name not in seen and name not in entry.fields
+                    and name not in entry.persons):
+                all_changes.append(name)
+                seen.add(name)
+        if not plan["type_downgraded"]:
+            # A demoted entry is a @misc, which the cleaner's REQUIRED_FIELDS
+            # does not cover, so a later run can never re-derive the
+            # demotion it recorded. Carry the token verbatim - but ONLY when
+            # it still describes this entry: a token demoting to @misc that
+            # this entry no longer is (the researcher edited it back) is
+            # stale, and carrying it would block the correction instead of
+            # recording it.
+            prior_type = marker_type_token(existing)
+            if prior_type and marker_type_target(existing) == entry.type.lower():
+                all_changes.append(prior_type)
+    cleaned_tag = f"METADATA_CLEANED: {', '.join(all_changes)}"
+    if existing:
+        base = MARKER_STRIP_RE.sub("", existing).rstrip().rstrip(",")
         entry.fields['keywords'] = f"{base}, {cleaned_tag}" if base else cleaned_tag
     else:
         entry.fields['keywords'] = cleaned_tag

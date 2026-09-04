@@ -25,7 +25,7 @@ from bib_identity import (  # noqa: E402
     ascii_variants, contract_fold, fallback_key, normalize_doi,
     same_work_key, same_work_year, title_key, translit_fold,
 )
-from metadata_cleaner import marker_removed_fields  # noqa: E402
+from cleaning_marker import has_marker, marker_removed_fields  # noqa: E402
 
 sys.path.pop(0)
 
@@ -487,7 +487,7 @@ def _apply_cleaner_verdicts(winner, loser) -> None:
     if not to_add:
         return
     kw = (winner.fields.get("keywords", "") or "").rstrip().rstrip(",")
-    if "_CLEANED" in kw.replace("\\", ""):
+    if has_marker(kw):
         winner.fields["keywords"] = kw + ", " + ", ".join(to_add)
     else:
         marker = "METADATA_CLEANED: " + ", ".join(to_add)

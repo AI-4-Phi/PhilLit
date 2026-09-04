@@ -19,7 +19,7 @@ from pybtex.database import parse_string
 _hook_dir = Path(__file__).resolve().parent.parent.parent.parent / "hooks"
 sys.path.insert(0, str(_hook_dir))
 from bib_identity import fallback_key, normalize_doi, title_key  # noqa: E402,F401
-from metadata_cleaner import marker_removed_fields  # noqa: E402
+from cleaning_marker import has_marker, marker_removed_fields  # noqa: E402
 
 sys.path.pop(0)
 
@@ -468,9 +468,9 @@ def _fold_removals_into_marker(entry_text: str, removed: set[str]) -> str:
     to_add = sorted(set(removed) - set(already))
     if not to_add:
         return entry_text
-    if "METADATA" in current and "_CLEANED" in current.replace("\\", ""):
+    if has_marker(current):
         # Append names to the existing marker's change list (marker is
-        # always the keywords tail - _MARKER_RE contract).
+        # always the keywords tail - MARKER_STRIP_RE contract).
         new_value = current.rstrip() + ", " + ", ".join(to_add)
         return _rewrite_keywords(entry_text, lambda _v: new_value)
     marker = "METADATA_CLEANED: " + ", ".join(to_add)

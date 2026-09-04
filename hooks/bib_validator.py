@@ -22,6 +22,18 @@ from pathlib import Path
 from pybtex.database import parse_file
 from pybtex.scanner import PybtexSyntaxError
 
+# Sibling module, imported through an explicit path insert (the same idiom
+# stamp_evidence.py uses) so this file also works when a caller loads it by
+# file path without putting hooks/ on sys.path itself. cleaning_marker is a
+# `re`-only leaf on purpose: metadata_cleaner owns the marker FORMAT but
+# imports bib_identity, which imports THIS module, so reading the grammar
+# out of the cleaner here would close an import cycle.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+try:
+    from cleaning_marker import marker_removed_fields, marker_type_changed  # noqa: E402
+finally:
+    sys.path.pop(0)
+
 
 # LaTeX diacritic escapes and their Unicode replacements
 LATEX_ESCAPES = {
@@ -258,36 +270,85 @@ def check_bibtex_syntax(path):
 
 
 def check_required_fields(path):
-    """Check 5: Verify required fields are present for each entry type."""
+    """Check 5: Verify required fields are present for each entry type.
+
+    ONE EXEMPTION, mirroring `metadata_cleaner._plan_type_downgrade`'s
+    @article guard: an @article missing `journal` is not reported when its
+    keywords carry a METADATA_CLEANED marker NAMING journal, the marker
+    records no `type:` change, and the entry still has a non-empty `doi`.
+    That is exactly the state the guard leaves behind - it keeps an @article
+    whose unverifiable venue was stripped but whose DOI still matches its own
+    API record, because a verified DOI proves the work is identifiable and
+    @article degrades cleanly to author/year/title. Without the exemption the
+    two files disagree inside one hook: `subagent_stop_bib.sh` validates,
+    then cleans, so the file the cleaner deliberately left blocks the NEXT
+    researcher to stop - for a file it never touched - and the block's
+    remedy tells that researcher to re-add a venue the cleaner removed as
+    unverifiable. `validate_bib_write.py` runs this same check, so the owning
+    researcher cannot Write or Edit its own cleaned bib either.
+
+    A `type:` token means the cleaner DID demote the entry; an @article
+    still carrying one was edited back to @article and not re-cleaned since
+    (a re-clean drops a token whose target is no longer the entry's type),
+    so the guard's state does not apply and the exemption is refused.
+
+    This is a GUARDRAIL, not a security boundary: a researcher can forge the
+    marker in its own keywords. So can it run `Bash`, which is allowed
+    broadly and bypasses every hook here.
+
+    Three accepted residuals:
+      * `marker_removed_fields` reads every comma token after the marker as a
+        removed name, so a plain trailing keyword literally spelled `journal`
+        would excuse the field.
+      * The record can go stale. Only a cleaning run rewrites the marker, so
+        a `journal` re-added by the researcher and then deleted BY HAND
+        leaves a marker still naming it - and the exemption still applies,
+        though nothing verified this absence.
+      * The DOI is checked for PRESENCE only, never re-verified against the
+        API record - this validator has no metadata index to check it
+        against. A DOI swapped for a different one after cleaning still
+        satisfies the exemption.
+    """
     errors = []
     try:
         bib_data = parse_file(path, bib_format='bibtex')
-        for key, entry in bib_data.entries.items():
-            entry_type = entry.type.lower()
-            if entry_type not in REQUIRED_FIELDS:
-                continue
+    except PybtexSyntaxError:
+        # Already reported by check_bibtex_syntax, and nothing parsed to
+        # check. Every OTHER exception propagates: these hooks are accuracy
+        # gates and must fail CLOSED on a crash, never silently pass a file.
+        return errors
 
-            required = REQUIRED_FIELDS[entry_type]
-            present = set(entry.fields.keys())
+    for key, entry in bib_data.entries.items():
+        entry_type = entry.type.lower()
+        if entry_type not in REQUIRED_FIELDS:
+            continue
 
-            # Add persons fields (author, editor)
-            if entry.persons.get('author'):
-                present.add('author')
-            if entry.persons.get('editor'):
-                present.add('editor')
+        required = REQUIRED_FIELDS[entry_type]
+        present = set(entry.fields.keys())
 
-            # Special case: book requires author OR editor
-            if entry_type == 'book':
-                if 'author' not in present and 'editor' not in present:
-                    errors.append(f"{key}: missing required field 'author' or 'editor' for @book")
-                missing = required - present - {'author'}  # remove author since we checked it specially
-            else:
-                missing = required - present
+        # Add persons fields (author, editor)
+        if entry.persons.get('author'):
+            present.add('author')
+        if entry.persons.get('editor'):
+            present.add('editor')
 
-            for field in sorted(missing):
-                errors.append(f"{key}: missing required field '{field}' for @{entry_type}")
-    except Exception:
-        pass  # Syntax errors already caught in check_bibtex_syntax
+        # Special case: book requires author OR editor
+        if entry_type == 'book':
+            if 'author' not in present and 'editor' not in present:
+                errors.append(f"{key}: missing required field 'author' or 'editor' for @book")
+            missing = required - present - {'author'}  # remove author since we checked it specially
+        else:
+            missing = required - present
+
+        if entry_type == 'article' and 'journal' in missing:
+            keywords = entry.fields.get('keywords', '') or ''
+            if ('journal' in marker_removed_fields(keywords)
+                    and not marker_type_changed(keywords)
+                    and (entry.fields.get('doi') or '').strip()):
+                missing = missing - {'journal'}
+
+        for field in sorted(missing):
+            errors.append(f"{key}: missing required field '{field}' for @{entry_type}")
 
     return errors
 

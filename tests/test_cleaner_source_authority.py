@@ -23,6 +23,7 @@ from metadata_cleaner import (
     clean_bibtex,
     find_api_entry_by_doi,
     find_doi_year_conflicts,
+    marker_removed_fields,
     _year_key,
 )
 
@@ -34,8 +35,8 @@ def assert_no_cleaned_marker(content: str) -> None:
     NOT `assert "METADATA_CLEANED" not in content`: pybtex escapes the
     underscore on write (`METADATA\\_CLEANED`, and `METADATA\\\\_CLEANED` on a
     second round-trip), so the plain-string form never appears and that
-    assertion can never fail. Match the same backslash-tolerant shape the
-    module's own _MARKER_RE uses.
+    assertion can never fail. Match the same backslash-tolerant shape
+    cleaning_marker.MARKER_STRIP_RE uses.
     """
     assert not re.search(r"METADATA\\*_CLEANED", content), content
 
@@ -449,6 +450,223 @@ class TestTypeDowngradeDoiGuard:
         result, text = self._case(tmp_path, "10.1/same", "10.1/same")
         assert result["types_downgraded"] == 0
         assert "@article" in text
+
+
+GUARD_DOI = "10.1/real"
+
+# Entry-scoped CrossRef record for the guard fixture: single result +
+# source "crossref" is what makes it entry_scoped, and `year_basis` is what
+# licenses a year OVERWRITE. A broad s2 dump has neither, so a year
+# correction would never fire and the re-clean would have nothing to record.
+GUARD_VERIFY = {
+    "status": "success",
+    "source": "crossref",
+    "results": [
+        {
+            "title": "A Paper",
+            "container_title": "Real Journal",
+            "year": 2020,
+            "year_basis": "published-print",
+            "doi": GUARD_DOI,
+        }
+    ],
+}
+
+
+def make_guard_case(tmp_path):
+    """The type-downgrade guard's state: an @article whose fabricated
+    `journal` the cleaner strips and whose matching DOI blocks the demotion.
+
+    Returns (bib_path, json_dir) and leaves the file text UNMODIFIED -
+    TestTypeDowngradeDoiGuard._case lowercases what it returns, which
+    destroys the case-sensitive METADATA_CLEANED marker.
+    """
+    json_dir = make_json_dir(tmp_path, {"verify_k.json": GUARD_VERIFY})
+    bib_file = tmp_path / "test.bib"
+    bib_file.write_text(
+        "@article{k, author = {A, B}, title = {A Paper}, year = {2020}, "
+        "journal = {Fake Journal}, doi = {%s}}" % GUARD_DOI, encoding="utf-8")
+    return bib_file, json_dir
+
+
+def _set_year(bib_file, year):
+    """Rewrite the entry's year, whatever quoting the last write used."""
+    text = bib_file.read_text(encoding="utf-8")
+    new = re.sub(r'year\s*=\s*[{"]\d+[}"]', 'year = {%s}' % year, text)
+    assert new != text, text
+    bib_file.write_text(new, encoding="utf-8")
+
+
+class TestMarkerCarriesForwardAcrossRuns:
+    """`_apply_cleaned_marker` REPLACES the marker with this run's changes.
+    On a re-clean the already-removed `journal` cannot be in
+    removed_field_names, so any other change in run 2 erased the record that
+    bib_validator's @article exemption reads - and the researcher was blocked
+    one SubagentStop later for a file nobody had touched."""
+
+    def test_prior_removal_survives_a_later_year_correction(self, tmp_path):
+        bib_file, json_dir = make_guard_case(tmp_path)
+        first = clean_bibtex(bib_file, json_dir)
+        assert first["types_downgraded"] == 0
+        assert marker_removed_fields(_keywords_of(bib_file)) == {"journal"}
+
+        # Force a second rewrite with a change of its own.
+        _set_year(bib_file, 2019)
+        clean_bibtex(bib_file, json_dir)
+
+        kw = _keywords_of(bib_file)
+        assert "journal" in marker_removed_fields(kw)
+        assert "year:2019->2020" in kw.replace("\\", "")
+        final_text = bib_file.read_text(encoding="utf-8")
+        assert "@article" in final_text
+        assert "Fake Journal" not in final_text
+
+    def test_readded_and_verified_field_leaves_the_marker(self, tmp_path):
+        bib_file, json_dir = make_guard_case(tmp_path)
+        clean_bibtex(bib_file, json_dir)
+
+        # The researcher re-adds the journal, this time the real one.
+        text = bib_file.read_text(encoding="utf-8")
+        text = text.replace("    title =", '    journal = "Real Journal",\n    title =')
+        bib_file.write_text(text, encoding="utf-8")
+        _set_year(bib_file, 2019)
+        clean_bibtex(bib_file, json_dir)
+
+        kw = _keywords_of(bib_file)
+        assert "journal" not in marker_removed_fields(kw)
+        assert "year:2019->2020" in kw.replace("\\", "")
+        assert "Real Journal" in bib_file.read_text(encoding="utf-8")
+
+    def test_stale_type_token_not_carried_once_edited_back_to_article(self, tmp_path):
+        """A demoted @article the researcher edits BACK to @article, with a
+        real API-matching DOI and the unverifiable venue still present, must
+        not have `journal` blocked on the next stop by a marker still
+        claiming @misc. The marker's `type:` token target (`misc`) no longer
+        equals the entry's current type (`article`), so a re-clean must drop
+        it rather than carry it forward verbatim."""
+        import bib_validator
+
+        json_dir = make_json_dir(tmp_path, {"s2.json": {
+            "status": "success", "source": "semantic_scholar",
+            "results": [{"title": "A Paper", "year": 2020,
+                         "journal": {"name": "Real Journal"}}],
+        }})
+        bib_file = tmp_path / "test.bib"
+        bib_file.write_text(
+            "@article{k, author = {A, B}, title = {A Paper}, year = {2020}, "
+            "journal = {Fake Journal}}", encoding="utf-8")
+
+        first = clean_bibtex(bib_file, json_dir)
+        assert first["types_downgraded"] == 1
+        assert "@misc" in bib_file.read_text(encoding="utf-8")
+
+        # The researcher edits it back to @article with a real, targeted
+        # CrossRef lookup this time (entry-scoped), not the broad dump above.
+        (json_dir / "verify_k.json").write_text(json.dumps({
+            "status": "success", "source": "crossref",
+            "results": [{"title": "A Paper", "year": 2020,
+                         "container_title": "Real Journal",
+                         "year_basis": "published-print",
+                         "doi": "10.1/real"}],
+        }), encoding="utf-8")
+        text = bib_file.read_text(encoding="utf-8")
+        rewritten = text.replace("@misc{k,", "@article{k,")
+        rewritten = rewritten.replace(
+            "    title =",
+            '    journal = "Fake Journal",\n    doi = "10.1/real",\n    title =')
+        assert rewritten != text
+        bib_file.write_text(rewritten, encoding="utf-8")
+
+        second = clean_bibtex(bib_file, json_dir)
+        assert second["types_downgraded"] == 0
+
+        final_text = bib_file.read_text(encoding="utf-8")
+        assert "@article" in final_text
+        assert "journal =" not in final_text
+
+        kw = _keywords_of(bib_file)
+        assert marker_removed_fields(kw) == frozenset({"journal"})
+        assert "type:" not in kw.replace("\\", "")
+        assert bib_validator.validate_bib(bib_file)["errors"] == []
+
+    def test_type_token_carried_when_target_matches_current_type(self):
+        """Direct unit test of `_apply_cleaned_marker`: when the marker's
+        `type:` target DOES equal the entry's current type (the ordinary
+        re-clean-of-a-@misc-entry case), the token is still carried - only a
+        MISMATCHING target is refused."""
+        from pybtex.database import parse_string
+        from metadata_cleaner import _apply_cleaned_marker
+
+        e = parse_string(
+            '@misc{k, author="A,B", title="T",\n'
+            '  keywords="METADATA_CLEANED: journal, type:@article->@misc"}\n',
+            "bibtex").entries["k"]
+        plan = {"removed_field_names": ["doi"], "removed_fields": ["doi=x"],
+                "year_corrected": None, "type_downgraded": None}
+        _apply_cleaned_marker(e, plan)
+        kw = e.fields["keywords"]
+        assert "type:@article->@misc" in kw
+        assert marker_removed_fields(kw) == frozenset({"journal", "doi"})
+
+
+class TestCleanerAndValidatorAgree:
+    """The cleaner and the validator run in the SAME SubagentStop hook, in
+    that order. Whatever state the cleaner leaves behind must pass the
+    validator on the next stop - otherwise the hook blocks a researcher for
+    a file it never touched, and tells it to re-add a venue the cleaner
+    removed as unverifiable."""
+
+    def test_cleaned_article_passes_every_gate(self, tmp_path):
+        import bib_validator
+        import validate_bib_write
+
+        bib_file, json_dir = make_guard_case(tmp_path)
+        result = clean_bibtex(bib_file, json_dir)
+
+        # What the cleaner leaves: @article, no journal, marker naming it.
+        assert result["types_downgraded"] == 0
+        text = bib_file.read_text(encoding="utf-8")
+        assert "@article" in text
+        assert "journal =" not in text
+        assert marker_removed_fields(_keywords_of(bib_file)) == frozenset({"journal"})
+
+        # ... and what the two validators make of it.
+        verdict = bib_validator.validate_bib(bib_file)
+        assert verdict["errors"] == []
+        assert verdict["valid"] is True
+        assert validate_bib_write.validate_content(text, str(bib_file)) == []
+
+    def test_without_the_marker_the_check_still_fires(self, tmp_path):
+        """Negative control: strip the marker the cleaner wrote and the
+        journal error comes back - so the check really runs on this file and
+        only the exemption changed the outcome. Checked against BOTH
+        validators - the write gate (validate_bib_write) runs the same
+        check_required_fields, so the marker's absence must block the
+        researcher's OWN Write/Edit too, not just the next SubagentStop."""
+        import bib_validator
+        import validate_bib_write
+
+        bib_file, json_dir = make_guard_case(tmp_path)
+        clean_bibtex(bib_file, json_dir)
+        text = bib_file.read_text(encoding="utf-8")
+        stripped = "\n".join(ln for ln in text.splitlines()
+                             if "CLEANED" not in ln)
+        assert stripped != text
+        bib_file.write_text(stripped, encoding="utf-8")
+
+        errors = bib_validator.validate_bib(bib_file)["errors"]
+        assert any("journal" in e for e in errors), errors
+
+        write_errors = validate_bib_write.validate_content(stripped, str(bib_file))
+        assert any("journal" in e for e in write_errors), write_errors
+
+
+def _keywords_of(bib_file):
+    """The single entry's parsed keywords value."""
+    from pybtex.database import parse_file
+    db = parse_file(str(bib_file), bib_format="bibtex")
+    (entry,) = db.entries.values()
+    return entry.fields.get("keywords", "")
 
 
 MALFORMED_DOI_DUMP = {

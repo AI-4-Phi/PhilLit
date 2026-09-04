@@ -138,7 +138,7 @@ from pathlib import Path
 IMPORTANCE_TOKENS = {"High", "Medium", "Low"}
 DROP_TOKENS = {"INCOMPLETE", "no-abstract"}
 
-# Same footgun handling as hooks/metadata_cleaner.py:_MARKER_RE -- pybtex
+# Same footgun handling as hooks/cleaning_marker.py:MARKER_STRIP_RE -- pybtex
 # escapes the underscore on round-trip, so match any run of backslashes.
 _MARKER_RE = re.compile(r",?\s*(METADATA\\*_CLEANED:.*)$", re.DOTALL)
 # Strip ANY evidence-shaped token (unknown/mixed-case included); only the
