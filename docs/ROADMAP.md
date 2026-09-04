@@ -11,8 +11,10 @@ that a recurrence is recognized where it would be read.
 ## Queue
 
 **Re-vendor phillit-service at `1ed2bba` (v0.5.16: the `find_cites` search-rule switch), then
-deploy, from a session launched in that repo.** Requested of that session on 2026-09-04 16:15 EDT;
-the box runs `ebe8a2b`, so the deploy also carries run #12 (cleaner/validator fix). The service's
+deploy, from a session launched in that repo.** The re-vendor was requested of that session on
+2026-09-04 16:20 EDT; the deploy request must come from Johannes in that session (a cross-session
+relay of it was refused by the permission classifier). The box runs `ebe8a2b`, so the deploy also
+carries run #12 (cleaner/validator fix). The service's
 roadmap records what the run must do — its `TestProseSurnameIsTheOwner` goes red on the
 `check_evidence` side by design; port
 `tests/test_bib_identity.py::TestProseSurnameIsTheOwner::test_each_site_is_an_alias_of_its_owner`
