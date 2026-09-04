@@ -34,6 +34,23 @@ Loose end: the box census run predates the script's discovery fix and read
 works again; the key has to be re-added to the agent from an interactive
 shell.
 
+**Re-vendor phillit-service at `bcc80b7` (v0.5.15), from a session launched in that
+repo.** Four things that session must know. (1) `hooks/cleaning_marker.py` is a NEW file
+in the vendored engine region; if `tools/revendor.py` enumerates files rather than copying
+the tree, the service's `bib_validator` dies at import with `ModuleNotFoundError:
+cleaning_marker`. (2) The service's `_structural_bib_errors` narrowing of its SubagentStop
+gate was a mitigation for the cleaner/validator disagreement this pin fixes; decide there
+whether to keep it. (3) The service's known-issue file
+`prose-surname-divergence-demotes-a-tier.md` and its test
+`test_acquire_context_END_TO_END_is_gated_by_the_MATCH_site_only` say the passage site is
+INERT for the divergence. It is not: `citation_context.normalize_author` keeps a tie, so
+on space-spelled prose the passage site misses the same way — the match site gates first
+and MASKS it. This repo's `tests/test_resolve_context.py::
+TestSurnameRuleGatesContextAcquisition` pins the true facts; the census file above
+closes that known issue's "what closes this" clause. (4) The box's SEP mirror (`sum2026`)
+lacks `ethics-care` and `wisdom-analytic`, which delivered reviews used; adding them
+restores 75 of 146 attempted rows to the census.
+
 ## Checked and deliberately NOT filed
 
 Not a queue — a register, so these are not re-found. Each was a live candidate
