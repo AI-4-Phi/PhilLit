@@ -34,7 +34,28 @@ acquisition is the only route. Still never a block. **This matters to the
 census rather than only to the wording**: a census weighed against a
 telemetry-only cost will under-value the switch for the consumer whose
 divergence actually changes a delivered artifact, so measure the two
-consumers' consequences separately. Measure the identity rule's behaviour on the same corpus too, not just
+consumers' consequences separately.
+
+Two things measured downstream after that filing, both narrowing what the
+census has to cover. **Only ONE of `resolve_context`'s two `prose_surname`
+sites is exposed.** `match_entry_to_article` computes its own and gates the
+outcome; `acquire_context` computes a second for `extract_passage`, and that
+one is INERT for every divergence class the owner's docstring names, because
+`citation_context.normalize_author` re-derives its own surname (pre-comma
+prefix, else last whitespace token) and lands both rules on a matching token
+— `van~Fraassen` normalises to `van~fraassen` and `van Fraassen` to
+`fraassen`, and `\b` sits before `Fraassen` inside the tilde-joined token, so
+both hit. Measured by mutating each site alone. So the census only needs the
+match-site exposure, not both. **And the tier chain is pinned rather than
+traced**, in the mirror: `test_engine_stamp_evidence.py::
+test_TIER_CONTEXT_requires_the_barriers_own_context_written_flag` for the
+consumer half and `test_engine_evidence_barrier.py::
+test_a_matched_context_earns_EVIDENCE_CONTEXT_and_a_miss_DEMOTES` for the
+producer half — two `execute()` runs differing only in how the SEP source
+spells the first author, one earning `EVIDENCE-CONTEXT` and the other
+stamping strictly lower. Those tests live only downstream (`EXCLUDE_PREFIX`
+carries `tests/`), so if this repo wants the same protection it has to write
+them here. Measure the identity rule's behaviour on the same corpus too, not just
 the disagreement rate: the census has to be able to decide the switch, and the
 switch is not a clean fix — it repairs the comma-less shape and NOT the braced
 one, since Chicago prose writes neither `{Doe, Jane}` nor `{Doe`. Do not change
