@@ -151,7 +151,8 @@ Use the `philosophy-research` skill scripts via Bash. Invoke every bundled scrip
 **The review directory is set up inside each Bash call that writes files** — the worked examples below start with these lines; never run them as a call of their own (the valid-empty slug-file call in Stage 1 is the one exception):
 ```bash
 REVIEW_DIR="$PWD/reviews/[project-name]"
-mkdir -p "$REVIEW_DIR/intermediate_files/json"
+JSON_DIR="$REVIEW_DIR/intermediate_files/json"
+mkdir -p "$JSON_DIR"
 ```
 Substitute `[project-name]` with the actual directory name from the orchestrator prompt (e.g., `epistemic-normativity`).
 
@@ -245,7 +246,7 @@ grep -m1 '"status"' "$JSON_DIR"/sep_<domain>_*.json "$JSON_DIR"/iep_<domain>_*.j
   printf '%s\n' '{"sep_entries": [], "iep_entries": []}' > "$JSON_DIR/encyclopedia_entries-domain-N.json"
   ```
 
-  If your assigned output is `literature-domain-3.bib`, this file is `encyclopedia_entries-domain-3.json` — never a literal `domain-N`. A missing file marks this domain's encyclopedia acquisition incomplete and demotes its entries. The orchestrator's evidence barrier reads these files to acquire citation context mechanically, and the Write that CREATES your `literature-domain-N.bib` is DENIED while the file is missing or malformed. The barrier re-fetches every listed slug itself, so list the slugs you chose — but a fetch that fails on your side still gets one re-run: you need its text and bibliography for Stages 1–4.
+  If your assigned output is `literature-domain-3.bib`, this file is `encyclopedia_entries-domain-3.json` — never a literal `domain-N`. A missing file marks this domain's encyclopedia acquisition incomplete and demotes its entries. The orchestrator's evidence barrier reads these files to acquire citation context mechanically, and the Write that CREATES your `literature-domain-N.bib` is DENIED while the file is missing or malformed. The barrier re-fetches every listed slug itself, so list the slugs you chose — but a fetch that fails on your side still gets one re-run: you need its text and bibliography for Stages 1–4. If the re-run also fails, keep the slug listed and write `Stage 1 fetch failed: <slug> (status: <status from the tail above>)` in NOTABLE_GAPS — you then work Stages 1–4 without that entry's text, and the deliverable has to say so.
 
 ### Stage 2: PhilPapers
 
@@ -348,13 +349,16 @@ words with the topic, the citation graph can. Three seed cases, plus one for fai
   the recommender.
 - Exactly one usable seed: chain it and run the recommender with it; note
   `Stage 4: one seed available` in NOTABLE_GAPS.
-- No usable seed after Stages 1–3 have run (rare — every Stage 3 S2 hit
-  carries an ID; valid even if S2 errored, record the actual status):
-  write `Stage 4 skipped: no resolvable seeds (S2 status:
+- No usable seed after Stages 1–3 have run: no candidate you inspected
+  yields a Semantic Scholar paper ID or a DOI. Judge that on what you
+  HOLD, not on what Stage 3 returned — a hit whose `paperId` came back
+  `null` hands you no seed. Rare, and valid even if S2 errored: write
+  `Stage 4 skipped: no resolvable seeds (S2 status:
   <status from the Stage 3 tail>, candidates inspected: <N>)` in
-  NOTABLE_GAPS. Only that evidenced line is a complete skip; a silent skip
-  leaves the domain incomplete, and so does a skip while Stage 3's S2
-  search returned a hit.
+  NOTABLE_GAPS, with the actual status and the number you checked. Only
+  that evidenced line is a complete skip; a silent skip leaves the domain
+  incomplete, and so does a skip while you hold any candidate carrying an
+  ID or a DOI.
 - One or more Stage 4 calls still failed after one re-run of each failed
   invocation (e.g. S2 down): keep and Read the results that succeeded, and
   write `Stage 4 attempted: chaining incomplete (failed: <scripts>;
@@ -388,15 +392,16 @@ For every paper with a DOI, use CrossRef to get authoritative publication metada
 # Repeat the verify line once per paper -- EVERY paper with a DOI, about
 # six verify lines per Bash call (sequential: one shared CrossRef limiter)
 REVIEW_DIR="$PWD/reviews/[project-name]"
-mkdir -p "$REVIEW_DIR/intermediate_files/json"
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/verify_paper.py --doi "10.xxxx/aaaa" --output "$REVIEW_DIR/intermediate_files/json/verify_<domain>_<citekey1>.json"
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/verify_paper.py --doi "10.yyyy/bbbb" --output "$REVIEW_DIR/intermediate_files/json/verify_<domain>_<citekey2>.json"
+JSON_DIR="$REVIEW_DIR/intermediate_files/json"
+mkdir -p "$JSON_DIR"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/verify_paper.py --doi "10.xxxx/aaaa" --output "$JSON_DIR/verify_<domain>_<citekey1>.json"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/verify_paper.py --doi "10.yyyy/bbbb" --output "$JSON_DIR/verify_<domain>_<citekey2>.json"
 ```
 
 Batch verifications in groups of about six per call — payloads print
 inline, and one call's output should stay readable.
 
-> **CRITICAL: verification output MUST be written with `--output`.** Never redirect verify_paper.py's stdout to a file, and never `2>&1` into a `.json` file — its stderr carries progress logs, not data, so a redirected file is corrupted and the downstream metadata cleaner silently skips it (destroying the verified metadata it should protect). Use `--output "$REVIEW_DIR/intermediate_files/json/verify_<domain>_<citekey>.json"` instead.
+> **CRITICAL: verification output MUST be written with `--output`.** Never redirect verify_paper.py's stdout to a file, and never `2>&1` into a `.json` file — its stderr carries progress logs, not data, so a redirected file is corrupted and the downstream metadata cleaner silently skips it (destroying the verified metadata it should protect). Use `--output "$JSON_DIR/verify_<domain>_<citekey>.json"` instead.
 >
 > **CRITICAL: namespace your verify files with `<domain>` to avoid collisions.** All parallel domain researchers write into the *same shared* `intermediate_files/json/` directory. If you use a bare `verify_<citekey>.json`, a sibling researcher covering an overlapping paper will silently overwrite your CrossRef record with theirs (a different paper's data) — destroying the verified metadata that protects your `journal` field from being stripped. Set `<domain>` to the unique stem of your assigned output bib filename **after** `literature-domain-` (e.g. output `literature-domain-1.bib` → `<domain>` = `1`, so `verify_1_<citekey>.json`). This is unique per researcher, so no two agents ever collide. The metadata cleaner still indexes these — it globs `*.json` and recognizes any filename containing `verify_`. (Optional future hardening: append a short DOI/title hash if the same citekey could recur within one domain.)
 
@@ -759,6 +764,7 @@ See `$PHILLIT_ROOT/docs/conventions.md` for citation key format, author name for
 
 ✅ **Encyclopedia Context**:
 - [ ] `encyclopedia_entries-domain-N.json` saved in Stage 1 (valid-empty `{"sep_entries": [], "iep_entries": []}` if none found)
+- [ ] Every chosen slug either fetched, or NOTABLE_GAPS carries its evidenced `Stage 1 fetch failed: …` line
 
 ✅ **Citation Verification**:
 - [ ] Every paper verified through skill scripts

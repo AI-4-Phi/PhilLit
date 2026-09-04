@@ -349,3 +349,72 @@ def test_researcher_prose_budgets_calls_and_forbids_probing():
     stage55 = _section(text, "### Stage 5.5: Abstract Resolution", "### Stage 6: Web Search Fallback (When Needed)")
     assert "grep -c INCOMPLETE" not in stage55
     assert "INCOMPLETE entries:" in stage55
+
+
+def test_stage4_skip_is_keyed_on_seeds_the_agent_holds():
+    """Stage 4's case list partitioned the space only while an unenforced
+    data assertion held: case 3 licensed a skip for "no usable seed" and
+    then forbade "a skip while Stage 3's S2 search returned a hit". Those
+    are exhaustive iff every hit carries an ID, and `s2_formatters.
+    format_paper` writes `paper.get("paperId")` — a `null` is expressible,
+    and in that state no case applied, in a REQUIRED stage. Pin the guard
+    as a decision procedure over what the agent HOLDS."""
+    text = (REPO_ROOT / "agents" / "domain-literature-researcher.md").read_text(
+        encoding="utf-8")
+    stage4 = _section(text, "### Stage 4: Citation Chaining (REQUIRED)",
+                      "### Stage 5: Metadata Enrichment & Verification")
+    # The skip is licensed by what was inspected, not by Stage 3's return.
+    assert "no candidate you inspected" in stage4
+    assert "what you\n  HOLD" in stage4
+    assert "`null` hands you no seed" in stage4
+    # The deterrent survives, re-expressed over holdings.
+    assert "a skip while you hold any candidate carrying an\n  ID or a DOI" in stage4
+    # The retired clause must not come back: it is the data assertion itself.
+    assert "skip while Stage 3's S2" not in stage4
+    # The emitted NOTABLE_GAPS line keeps its shape (the checklist reads it).
+    assert "Stage 4 skipped: no resolvable seeds (S2 status:" in stage4
+
+
+def test_stage1_double_fetch_failure_has_an_evidenced_record():
+    """Stage 1 gave a failed fetch one re-run and said nothing about the
+    second failure — the one required-stage failure with no evidenced
+    record, while Stage 4 mandates a line for exactly this class. The
+    researcher then works Stages 1-4 without the encyclopedia text it was
+    told it needs, and the deliverable does not say so."""
+    text = (REPO_ROOT / "agents" / "domain-literature-researcher.md").read_text(
+        encoding="utf-8")
+    stage1 = _section(text, "### Stage 1: SEP & IEP (Most Authoritative)",
+                      "### Stage 2: PhilPapers")
+    assert "Stage 1 fetch failed: <slug> (status:" in stage1
+    assert "NOTABLE_GAPS" in stage1
+    # The slug stays listed: the barrier re-fetches it independently.
+    assert "keep the slug listed" in stage1
+    # And the checklist carries the row, as Stage 4's evidenced line does.
+    checklist = _section(text, "## Before Submitting — Quality Checklist",
+                         "## Error Checking")
+    assert "Stage 1 fetch failed: …" in checklist
+
+
+def test_every_researcher_json_path_goes_through_json_dir():
+    """`36fa390` gave the stages a `JSON_DIR`; Stage 5's verification block
+    and the canonical prologue that teaches the convention kept writing the
+    long path. A file that teaches a convention and then departs from it in
+    the stage issuing the most calls leaves a researcher two forms to
+    pattern-match. One form only."""
+    text = (REPO_ROOT / "agents" / "domain-literature-researcher.md").read_text(
+        encoding="utf-8")
+    for block in re.findall(r"```bash\n(.*?)```", text, re.S):
+        for line in block.splitlines():
+            if "intermediate_files/json" not in line:
+                continue
+            assert line.strip().startswith("JSON_DIR=") or "JSON_DIR=" in line, (
+                f"a bash line writes the long json path instead of $JSON_DIR: {line!r}")
+    # Stage 5's verification writes through JSON_DIR, and defines it first.
+    stage5 = _section(text, "### Stage 5: Metadata Enrichment & Verification",
+                      "### Stage 5.5: Abstract Resolution")
+    verify_block = [b for b in re.findall(r"```bash\n(.*?)```", stage5, re.S)
+                    if "--doi" in b]
+    assert len(verify_block) == 1, "Stage 5 has no single DOI verification block"
+    assert 'JSON_DIR="$REVIEW_DIR/intermediate_files/json"' in verify_block[0]
+    assert 'mkdir -p "$JSON_DIR"' in verify_block[0]
+    assert "$JSON_DIR/verify_<domain>_<citekey1>.json" in verify_block[0]
