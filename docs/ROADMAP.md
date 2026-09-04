@@ -10,34 +10,6 @@ that a recurrence is recognized where it would be read.
 
 ## Queue
 
-**Re-vendor the engine in phillit-service at this repo's HEAD.** Its
-`tools/revendor.py` carries the researcher's Stage 1/4/5 prose, the
-`first_author_prose_surname` owner and the `bib_fields` `%` clause downstream;
-all are engine files, so nothing arrives there until the pin moves. Run it from
-a session launched in that repo. Three things to expect:
-
-- Its scope-guard test
-  `test_a_braced_corporate_author_containing_and_is_a_KNOWN_DIVERGENCE` still
-  carries the divergence brace-aware author splitting removed upstream.
-- The five findings this queue held were filed FROM that mirror — re-reading
-  them there after the pin should now find them fixed.
-- **The pins do NOT travel, and there are now ~25 of them.**
-  `revendor.py`'s `EXCLUDE_PREFIX` contains `tests/`, so every test this work
-  added stays here while every fix it guards goes downstream. Read them off
-  `git log d532abd..HEAD -- tests/` rather than from a list here, which would
-  rot: they sit in `test_agent_definitions.py` (Stage 4's inventory and
-  complement pins, Stage 1's three status values, the whole-file `$JSON_DIR`
-  scan), `test_bib_identity.py` (the surname divergence classes, the
-  protected-group and single-token boundaries, the three fallback branches),
-  `test_bib_fields.py` (the 21 `%` placements, the three accepted-text
-  differences) and `test_evidence_barrier.py` (the call-order spy plus its
-  own anti-vacuity guard). The service has parallel files for each
-  (`test_engine_bib_identity.py`, `test_engine_bib_fields.py`,
-  `test_engine_check_evidence.py`, `test_engine_resolve_context.py`,
-  `test_engine_dispatch_prose.py`, `test_engine_evidence_barrier.py`) — the
-  equivalents have to be written into them there, or the mirror carries the
-  fixes with none of the guards that keep them fixed.
-
 **Census the two surname rules' DISAGREEMENT over every delivered author
 field.** Do not census a textual shape — run
 `first_author_prose_surname(author)` against `first_author_surname(author)`
@@ -46,9 +18,23 @@ disagreements. That measures the exposure directly and picks up any shape,
 including every class the owner's docstring names as an example and any it
 does not. Enumerating the shapes is exactly what failed twice here, which is
 why this is specified as a comparison and not as a count. Both are pre-existing and neither raises — `check_evidence.find_cites`
-returns no positions and `resolve_context`'s SEP match finds no candidate line
-— so the cost is false "uncited" telemetry on two recall-floor checkers, never
-a block. Measure the identity rule's behaviour on the same corpus too, not just
+returns no positions and `resolve_context`'s SEP match finds no candidate line.
+**But the cost is NOT the same on both sides, and this item used to say it
+was** (filed from the phillit-service mirror, 2026-09-04, while writing that
+pin's guards; `first_author_prose_surname`'s own docstring carries the same
+sentence and needs the same correction). For `check_evidence` it is a false
+"uncited" reading on a recall-floor checker — telemetry, as stated. For
+`resolve_context` it is not: an unmatched SEP passage means
+`evidence_barrier` never sets `att.context_written`, so
+`stamp_evidence.compute_tier` cannot return `TIER_CONTEXT` (rank 3, above
+`TIER_WEB`) and the entry is stamped at a LOWER tier in the DELIVERED
+bibliography, with no recovery path — `strip_context_fields` removes an
+agent-written context field before stamping, so the barrier's own
+acquisition is the only route. Still never a block. **This matters to the
+census rather than only to the wording**: a census weighed against a
+telemetry-only cost will under-value the switch for the consumer whose
+divergence actually changes a delivered artifact, so measure the two
+consumers' consequences separately. Measure the identity rule's behaviour on the same corpus too, not just
 the disagreement rate: the census has to be able to decide the switch, and the
 switch is not a clean fix — it repairs the comma-less shape and NOT the braced
 one, since Chicago prose writes neither `{Doe, Jane}` nor `{Doe`. Do not change
