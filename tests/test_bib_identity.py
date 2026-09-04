@@ -393,7 +393,8 @@ class TestAuthorListSplit:
 class TestProseSurnameIsTheOwner:
     """`first_author_prose_surname` is the second of this module's two
     surname rules. `check_evidence.rc_surname` and
-    `resolve_context.first_author_surname` were byte-identical copies of it,
+    `resolve_context.prose_surname` (then `first_author_surname`) were
+    byte-identical copies of it,
     and `rc_surname`'s docstring asserted the agreement in prose -- the shape
     `f0440fa`-`05efb94` spent five versions removing everywhere else."""
 
@@ -406,7 +407,10 @@ class TestProseSurnameIsTheOwner:
         finally:
             sys.path.pop(0)
         assert check_evidence.rc_surname is bi.first_author_prose_surname
-        assert resolve_context.first_author_surname is bi.first_author_prose_surname
+        assert resolve_context.prose_surname is bi.first_author_prose_surname
+        # The historic name must NOT come back: it collides with this
+        # module's identity rule, which year_suffix.py imports.
+        assert not hasattr(resolve_context, "first_author_surname")
 
     def test_takes_the_part_before_the_first_comma(self):
         assert bi.first_author_prose_surname("Doe, Jane and Roe, Rick") == "Doe"
@@ -435,6 +439,22 @@ class TestProseSurnameIsTheOwner:
         assert bi.first_author_prose_surname("Doe~Jane") == "Doe~Jane"
         assert bi.first_author_surname("Doe~Jane") == "Jane"
 
+    def test_intra_surname_whitespace_variation_diverges(self):
+        # The class two enumeration attempts missed: the prose rule returns the
+        # RAW pre-comma text, the identity rule pybtex's parts re-joined with
+        # single spaces, so any separator that is not already a single space
+        # diverges -- tie, doubled space, newline.
+        for field, ident in (("van~Fraassen, Bas C.", "van Fraassen"),
+                             ("van  Fraassen, Bas C.", "van Fraassen"),
+                             ("van\nFraassen, Bas C.", "van Fraassen"),
+                             ("de~la~Cruz, Ana", "de la Cruz")):
+            raw = field.split(",")[0]
+            assert bi.first_author_prose_surname(field) == raw
+            assert bi.first_author_surname(field) == ident
+        # Agreement when the raw text already IS the normalised form.
+        assert (bi.first_author_prose_surname("van Fraassen, Bas C.")
+                == bi.first_author_surname("van Fraassen, Bas C."))
+
     def test_a_single_token_comma_less_name_does_not_diverge(self):
         # The divergence needs a name pybtex can SPLIT: it is multi-token
         # comma-less names, not comma-less names, so the docstring and the
@@ -448,25 +468,32 @@ class TestProseSurnameIsTheOwner:
         assert bi.first_author_prose_surname("{Doe, Jane}") == "{Doe"
         assert bi.first_author_surname("{Doe, Jane}") == "{Doe, Jane}"
 
-    def test_neither_divergence_raises_in_either_prose_consumer(self):
+    def test_no_divergence_raises_in_either_prose_consumer(self):
         # The cost is a silent under-report, never a crash: that is what
-        # makes leaving both shapes unfixed acceptable pending a census.
+        # makes leaving these shapes unfixed acceptable pending a census.
+        # BOTH consumers, because the claim is about both.
         scripts = Path(__file__).parent.parent / "skills" / "literature-review" / "scripts"
         sys.path.insert(0, str(scripts))
         try:
             import check_evidence
+            import resolve_context
         finally:
             sys.path.pop(0)
         md = "As Doe (2020) argues, see Doe 2020."
         assert check_evidence.find_cites(md, "Doe", "2020")  # the shape that works
-        for lost in ("Jane Doe", "{Doe"):
+        article = {"bibliography": [{"raw": "Doe, Jane, 2020, A Title, A Journal."}]}
+        for lost in ("Jane Doe", "{Doe", "Doe~Jane", "van~Fraassen"):
             assert check_evidence.find_cites(md, lost, "2020") == []
+            # resolve_context reaches no candidate line rather than raising.
+            assert resolve_context.match_entry_to_article(
+                {"author": lost, "year": "2020", "title": "A Title"}, article) is None
 
     def test_the_two_rules_agree_on_the_person_failure_fallback_path(self):
         # The corner the docstring's "two shapes" claim is only true over:
         # `first_author_surname` degrades to `_fallback_surname` when pybtex's
         # `Person` raises (too many commas) and that fallback IS the comma
-        # split, so the rules agree there rather than diverging a third time.
+        # split. These four cases show agreement; they do not establish it for
+        # every multi-comma shape, and the census is what would.
         for field in ("Doe, John, Jr.", "a, b, c, d", "Doe, Jr., John",
                       "Smith, , John"):
             assert bi.first_author_prose_surname(field) == bi.first_author_surname(field)

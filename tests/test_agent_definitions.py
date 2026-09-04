@@ -375,11 +375,19 @@ def test_stage4_skip_is_keyed_on_seeds_the_agent_holds():
             "paper ID or a DOI") in flat
     # Holdings must be enumerated before the case applies, or `<N>` evidences
     # nothing: a model may not inspect one file and call the domain seedless.
-    assert ("Inspect every Stage 3 S2 hit and every orchestrator-named seed "
-            "before this case applies") in flat
+    # The mandate must quantify over the SAME set the licence does, or a model
+    # can truthfully inspect everything asked and miss a held Stage 1 DOI.
+    assert "check every candidate you hold from Stages 1-3" in flat
+    assert "not the S2 hits alone" in flat
+    assert "A Stage 1 bibliography entry can carry a DOI" in flat
     # "Most foundational" ranks seeds; it must not gate them, or an ID-bearing
     # candidate judged tangential re-opens the no-case-applies state.
     assert "RANKS your usable seeds, it does not gate" in flat
+    # ...and it names the ID KIND: a bare "an ID" re-licenses an
+    # OpenAlex-only candidate the no-seed clause calls unusable.
+    assert ("any candidate you hold with a Semantic Scholar paper ID or a DOI "
+            "can serve as a seed") in flat
+    assert "with an ID or a DOI" not in flat
     # The retired clause must not come back: it is the data assertion itself.
     assert "skip while Stage 3's S2" not in flat
     # The emitted NOTABLE_GAPS line keeps its shape (the checklist reads it).
@@ -404,10 +412,14 @@ def test_stage1_double_fetch_failure_has_an_evidenced_record():
     # The status must be the FAILED SLUG's own: Stage 1's tail globs, so it can
     # print a sibling slug's "ok", and a model told to fill a placeholder from
     # an absent source may invent one. Both are licensed away explicitly.
-    assert "that slug's own status line" in flat
+    # Three licensed values, so "no status file" is never written of a file
+    # that exists but carries no status line.
+    assert "that slug's own status value" in flat
+    assert "no status line in that slug's file" in flat
     assert "no status file" in flat
-    assert "the tail globs" in flat
+    assert "The tail globs" in flat
     assert "never copy one that is not for this slug" in flat
+    assert "never infer or guess a status" in flat
     # And the checklist carries the row, as Stage 4's evidenced line does.
     checklist = _section(text, "## Before Submitting — Quality Checklist",
                          "## Error Checking")
@@ -426,13 +438,17 @@ def test_every_researcher_json_path_goes_through_json_dir():
     # two offenders, and the second was the `--output` CRITICAL blockquote --
     # prose, the most-quoted line in the stage. A fence-only scan would pass
     # green on a regression there.
-    # The defect class is the long path BUILT from $REVIEW_DIR; prose that
-    # merely names the shared directory is not a path and is fine.
+    # Match any PATH-LIKE use -- a `/` after the directory, or any shell
+    # expansion of the review dir before it -- so `${REVIEW_DIR}/...`,
+    # `"$REVIEW_DIR"/...` and an absolute path cannot slip past one spelling.
+    # Bare prose naming the directory (no trailing `/`, no expansion) is fine.
+    path_like = re.compile(
+        r"intermediate_files/json/[\w.$*<{]")
     for i, line in enumerate(text.splitlines(), 1):
-        if "$REVIEW_DIR/intermediate_files/json" not in line:
+        if not path_like.search(line):
             continue
         assert "JSON_DIR=" in line, (
-            f"line {i} writes the long json path instead of $JSON_DIR: {line!r}")
+            f"line {i} writes a json path outside $JSON_DIR: {line!r}")
     # Stage 5's verification writes through JSON_DIR, and defines it first.
     stage5 = _section(text, "### Stage 5: Metadata Enrichment & Verification",
                       "### Stage 5.5: Abstract Resolution")

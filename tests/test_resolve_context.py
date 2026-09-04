@@ -7,7 +7,7 @@ SCRIPTS_DIR = Path(__file__).parent.parent / "skills" / "literature-review" / "s
 sys.path.insert(0, str(SCRIPTS_DIR))
 
 from resolve_context import (
-    load_slug_files, first_author_surname, title_score, match_entry_to_article,
+    load_slug_files, prose_surname, title_score, match_entry_to_article,
     extract_passage, format_context_value, strip_context_fields, acquire_context,
     _title_texts,
 )
@@ -61,8 +61,8 @@ class TestSlugManifest:
 
 
 class TestSurnameAndTitle:
-    def test_first_author_surname(self):
-        assert first_author_surname("Kuhn, Thomas S. and Popper, Karl") == "Kuhn"
+    def test_prose_surname(self):
+        assert prose_surname("Kuhn, Thomas S. and Popper, Karl") == "Kuhn"
 
     def test_title_score_full_overlap(self):
         assert title_score(
@@ -656,10 +656,10 @@ class TestFetchPassDeadline:
         assert capsys.readouterr().err == ""
 
 
-def test_first_author_surname_is_brace_aware_and_keeps_comma_less_names_whole():
+def test_prose_surname_is_brace_aware_and_keeps_comma_less_names_whole():
     # A braced return never matches prose; parity with the pre-change rule,
     # census 0 of 9,157 such fields -- accepted residual.
-    assert first_author_surname("{Smith and Jones Institute} and Doe, Jane") == "{Smith and Jones Institute}"
-    assert first_author_surname("Doe, Jane and Smith, John") == "Doe"
+    assert prose_surname("{Smith and Jones Institute} and Doe, Jane") == "{Smith and Jones Institute}"
+    assert prose_surname("Doe, Jane and Smith, John") == "Doe"
     # Parity with the pre-change rule: no comma -> the whole first name.
-    assert first_author_surname("Willem van der Deijl and Doe, Jane") == "Willem van der Deijl"
+    assert prose_surname("Willem van der Deijl and Doe, Jane") == "Willem van der Deijl"

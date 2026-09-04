@@ -246,7 +246,7 @@ grep -m1 '"status"' "$JSON_DIR"/sep_<domain>_*.json "$JSON_DIR"/iep_<domain>_*.j
   printf '%s\n' '{"sep_entries": [], "iep_entries": []}' > "$JSON_DIR/encyclopedia_entries-domain-N.json"
   ```
 
-  If your assigned output is `literature-domain-3.bib`, this file is `encyclopedia_entries-domain-3.json` — never a literal `domain-N`. A missing file marks this domain's encyclopedia acquisition incomplete and demotes its entries. The orchestrator's evidence barrier reads these files to acquire citation context mechanically, and the Write that CREATES your `literature-domain-N.bib` is DENIED while the file is missing or malformed. The barrier re-fetches every listed slug itself, so list the slugs you chose — but a fetch that fails on your side still gets one re-run: you need its text and bibliography for Stages 1–4. If the re-run also fails, keep the slug listed and write `Stage 1 fetch failed: <slug> (status: <that slug's own status line, or `no status file` if it wrote none>)` in NOTABLE_GAPS — the tail globs, so it may print a DIFFERENT slug's status; never copy one that is not for this slug, and prefer the licensed `no status file` over a guess — you then work Stages 1–4 without that entry's text, and the deliverable has to say so.
+  If your assigned output is `literature-domain-3.bib`, this file is `encyclopedia_entries-domain-3.json` — never a literal `domain-N`. A missing file marks this domain's encyclopedia acquisition incomplete and demotes its entries. The orchestrator's evidence barrier reads these files to acquire citation context mechanically, and the Write that CREATES your `literature-domain-N.bib` is DENIED while the file is missing or malformed. The barrier re-fetches every listed slug itself, so list the slugs you chose — but a fetch that fails on your side still gets one re-run: you need its text and bibliography for Stages 1–4. If the re-run also fails, keep the slug listed and write ``Stage 1 fetch failed: <slug> (status: <one of the three below>)`` in NOTABLE_GAPS. The tail globs, so it may print a DIFFERENT slug's status: never copy one that is not for this slug, and never infer or guess a status. The three licensed values, in order of preference — that slug's own status value; `no status line in that slug's file`; `no status file` — you then work Stages 1–4 without that entry's text, and the deliverable has to say so.
 
 ### Stage 2: PhilPapers
 
@@ -342,8 +342,9 @@ Stages 1–3 surfaced (SEP bibliography staples, the most-cited Stage 3
 hits) plus every seed paper the orchestrator named; a seed is usable when
 you hold its Semantic Scholar paper ID or its DOI (pass a DOI as
 `DOI:10.…`). "Most foundational" RANKS your usable seeds, it does not gate
-them: any candidate you hold with an ID or a DOI can serve as a seed, so
-judging one tangential is never what makes a domain seedless. Chaining is the one discovery mechanism here with no
+them: any candidate you hold with a Semantic Scholar paper ID or a DOI can
+serve as a seed, so judging one tangential is never what makes a domain
+seedless. Chaining is the one discovery mechanism here with no
 substitute: keyword search cannot reach a paper whose title shares no
 words with the topic, the citation graph can. Three seed cases, plus one for failed calls:
 
@@ -354,8 +355,12 @@ words with the topic, the citation graph can. Three seed cases, plus one for fai
 - No usable seed after Stages 1–3 have run: no candidate you HOLD carries
   a Semantic Scholar paper ID or a DOI. Judge that on your holdings, not
   on what Stage 3 returned — a hit whose `paperId` came back `null` hands
-  you no seed. Inspect every Stage 3 S2 hit and every orchestrator-named
-  seed before this case applies. Valid even if S2 errored: write
+  you no seed. Before this case applies, check every candidate you hold from
+  Stages 1-3 — SEP and IEP bibliography entries, PhilPapers hits, and every
+  Stage 3 source (S2, OpenAlex, CORE, arXiv), not the S2 hits alone — plus
+  every orchestrator-named seed, for a Semantic Scholar paper ID or a DOI. A
+  Stage 1 bibliography entry can carry a DOI, so `<N>` must count that whole
+  set, not the subset you happened to open. Valid even if S2 errored: write
   `Stage 4 skipped: no resolvable seeds (S2 status:
   <status from the Stage 3 tail>, candidates inspected: <N>)` in
   NOTABLE_GAPS, with the actual status and the number you checked. Only

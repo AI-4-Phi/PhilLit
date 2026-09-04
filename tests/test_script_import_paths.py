@@ -12,7 +12,7 @@ SCRIPTS = Path(__file__).parent.parent / "skills" / "literature-review" / "scrip
 
 
 @pytest.mark.parametrize("script,expr,expected", [
-    ("resolve_context.py", "m.first_author_surname('{A and B} and C, D')", "{A and B}"),
+    ("resolve_context.py", "m.prose_surname('{A and B} and C, D')", "{A and B}"),
     ("check_evidence.py", "m.rc_surname('{A and B} and C, D')", "{A and B}"),
     ("year_suffix.py", "m.first_surname_raw({'author': '{A and B} and C, D'})", "{A and B}"),
 ])

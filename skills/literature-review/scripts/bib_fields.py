@@ -53,39 +53,38 @@ validation before any decision reads it. On a piece that opens and never
 closes the scan stops and returns what it has read: fail lenient, never
 loud, because the strict gate is pybtex's.
 
-There is NO `%` comment handling, and it costs nothing, because **`%` is not
-a comment character in BibTeX** -- there is no comment syntax here to be
-blind to. The convention only looks like one because everything outside an
-entry is skipped until the next `@`, which this scanner does structurally
-(above) and pybtex does too. Measured against pybtex, form by form:
+There is NO `%` handling, and the reason it costs nothing is worth stating
+precisely, because five external reviewers have now reasoned about it and
+three got the premise wrong. **`%` has no line-comment semantics in the
+BibTeX data syntax pybtex implements.** It is not that a comment is handled
+leniently here; there is no `%` comment to handle. The convention only looks
+like one because text outside an entry is skipped until the next `@` -- which
+this scanner does structurally (above) and pybtex does too. Two consequences
+that surprise people: a `%` does NOT comment an entry out (pybtex parses
+`% @article{old, ...}` as the entry `old`, and so does this scanner -- they
+AGREE), and a comment-aware reader would be the one diverging from the strict
+gate.
 
-- Inside a braced or quoted value, `%` is an ordinary character and the scan
-  is right about it: `title = {A % B}` reads as `{A % B}`, as pybtex reads
-  it. An escaped `50\\%` likewise.
-- At TOP level it changes nothing for either reader. `% just a note` is
-  skipped by both. And a `%` does NOT comment an entry out: pybtex parses
-  `% @article{old, ...}` as the entry `old`, and so does this scanner --
-  they AGREE, both against the intuition. (`@comment{...}` is skipped by
-  both as well.)
-- At FIELD position -- inside an entry, outside a value -- pybtex REFUSES
-  the chunk in every form tested: the bare `% note`, a `%` between a field
-  name and its `=`, a `%` after the `=`, and the `%` swallowing an entry's
-  closing brace (`@article{k, year = {2020} % }`). The scan of such text is
-  meaningless (it may read a comment word as a field name, or stop early),
-  and that is harmless precisely because the strict gate refuses it first:
-  `validate_bib_write` parses through this same pybtex, so nothing
-  downstream ever acts on it.
+Rather than enumerate positions, the property measured over 21 placements --
+in values (braced, quoted, escaped `50\\%`), at top level, in `@comment`
+payloads carrying braces or an `@`, in `@preamble`, in `@string`, at field
+position, between a field name and its `=`, after the `=`, swallowing an
+entry's closing brace, in the entry key, in the entry type, in a bare value,
+around `#` concatenation, and in the parenthesised entry form:
 
-The one position where `%` is neither of the above is inside an entry KEY
-(`@article{k%c, ...}`), which pybtex accepts as the key `k%c` -- and the
-scan of its fields is correct, because field scanning begins after the key.
+    Wherever pybtex ACCEPTS the text, this scanner reports the same fields.
+    Every divergence is confined to text pybtex REFUSES.
 
-Said here because the measured cost is REVIEWER time, not correctness: two
-independent external reviewers of the service's mirror both filed the same
-finding -- a `%` carrying an entry's closing brace truncating the scan --
-and both were reasoning from this docstring's earlier silence. Two more,
-reviewing the fix, then asked after top-level comments, which is what the
-second bullet is for.
+The scan of refused text is meaningless -- it may read a comment word as a
+field name, or stop early -- and that is harmless only because of a CALL-ORDER
+property, not a property of this module: `validate_bib_write` parses through
+this same pybtex, and the barrier validates every domain bib with it before
+doing anything else, so nothing downstream ever acts on a scan of text the
+gate refused. If that ordering ever changes, this paragraph stops being true.
+
+`test_percent_at_field_position_is_refused_by_the_strict_gate` pins the
+refusal half; the agreement half is pinned beside it. If a pybtex release
+adds `%` comment semantics, both go loud, which is the point.
 """
 from __future__ import annotations
 

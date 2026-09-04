@@ -67,12 +67,14 @@ def load_slug_files(paths):
     return states, union
 
 
-# The prose-matching surname rule, owned by bib_identity: the historic name
-# stays as an alias, never a second copy. NOTE the collision -- this is
-# bib_identity.first_author_prose_surname and NOT its `first_author_surname`,
-# which is the IDENTITY rule (pybtex prelast+last, feeding the dedup and
-# Chicago a/b keys). The two differ on a comma-less and a braced-comma name.
-first_author_surname = first_author_prose_surname
+# The prose-matching surname rule, owned by bib_identity. This site's historic
+# name was `first_author_surname` -- DELIBERATELY not kept, the one exception to
+# CLAUDE.md's keep-the-historic-name rule: `bib_identity` exports a function of
+# that exact name implementing the OTHER (identity) rule, and `year_suffix.py`
+# in this very directory imports it. Same name, same directory, two rules is the
+# confusion this owner exists to remove, and a comment does not remove it.
+# Still an alias to the shared object, never a copy; tests pin `is` identity.
+prose_surname = first_author_prose_surname
 
 
 def _title_tokens(text: str) -> set:
@@ -189,7 +191,7 @@ def _title_texts(item) -> list:
 
 
 def match_entry_to_article(fields: dict, article: dict):
-    surname = first_author_surname(fields.get("author", ""))
+    surname = prose_surname(fields.get("author", ""))
     year = (fields.get("year") or "").strip()
     title = fields.get("title", "")
     if not surname or not re.fullmatch(r"\d{4}", year):
@@ -376,7 +378,7 @@ def acquire_context(entries, articles):
     results = {}
     for key, info in entries.items():
         fields = info["fields"]
-        surname = first_author_surname(fields.get("author", ""))
+        surname = prose_surname(fields.get("author", ""))
         year = (fields.get("year") or "").strip()
         outcome = {"outcome": "unmatched"}
         for art_id in sorted(articles):

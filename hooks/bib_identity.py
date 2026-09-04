@@ -676,31 +676,40 @@ def first_author_prose_surname(author: str | None) -> str:
     Chicago author-date cites in a review's Markdown, and `resolve_context`
     matches it against an SEP passage. A comma in that string finds nothing.
 
-    The two rules agree on most shapes: `Mendon{\\c{c}}a, Desiree`,
-    `van Fraassen, Bas C.`, `{B}rown, John` and a braced corporate author with
-    no internal comma all come back identical from both (braces kept,
-    undecoded -- callers pass RAW field values). They diverge on exactly TWO
-    shapes, both of which hand the prose consumers a search string that real
-    Chicago prose does not contain, and both PRE-DATE this owner:
+    Where the two rules differ is ONE mechanism, not a list of shapes, and
+    reading it that way is load-bearing: two attempts to enumerate the shapes
+    here were both wrong, each time by asserting a universal from sampled
+    inputs. The mechanism: this rule returns the RAW pre-comma text, byte for
+    byte; `first_author_surname` returns pybtex's PARSED name parts, re-joined
+    with single spaces. So they agree exactly when the raw pre-comma text
+    already equals pybtex's normalised rendering of it, and every divergence
+    is an instance of that one difference. Known classes, as EXAMPLES and not
+    an exhaustive set -- all pre-date this owner:
 
-    - A comma-less name pybtex can split, i.e. MULTI-token: `Jane Doe`
-      yields `Jane Doe` here and `Doe` there, so a `Doe 2020` cite is not
-      found. A tie counts as a separator for pybtex and not for the comma
-      split, so `Doe~Jane` diverges the same way. A single-token comma-less
-      name does NOT diverge -- `Aristotle` is `Aristotle` from both.
+    - A comma-less name pybtex can split (MULTI-token): `Jane Doe` yields
+      `Jane Doe` here and `Doe` there. Single-token names do not diverge --
+      `Aristotle` is `Aristotle` from both.
+    - A comma-less name whose tokens are tie-separated: `Doe~Jane` gives
+      `Doe~Jane` here and `Jane` there (a tie separates for pybtex).
+    - Any whitespace VARIATION inside the surname: `van~Fraassen, Bas C.`,
+      `van  Fraassen, Bas C.` and a newline-separated one all give the raw
+      text here and `van Fraassen` there. Plain `van Fraassen, Bas C.` agrees
+      only because its raw text already is the normalised form.
     - A braced name with a comma INSIDE the group. The list split is
       brace-aware but this comma split is not, so `{Doe, Jane}` yields the
-      brace-unbalanced `{Doe` here, where the identity rule keeps
-      `{Doe, Jane}` whole. It matches nothing either.
+      brace-unbalanced `{Doe`, where the identity rule keeps `{Doe, Jane}`
+      whole.
 
-    Neither raises: `find_cites` returns no positions and `resolve_context`
-    finds no candidate line, so the cost is a silent under-report on two
-    recall-floor checkers -- false "uncited" telemetry, never a block. Do NOT
-    "fix" either by switching to the identity rule or by stripping braces
-    without measuring first: the identity rule fixes the first shape and not
-    the second (Chicago prose writes neither `{Doe, Jane}` nor `{Doe`), and
-    the rate at which either form reaches a delivered bib is unknown. The
-    false-negative rate of these two checkers is the thing at stake.
+    Each hands the prose consumers a search string real Chicago prose does not
+    contain, and none raises: `find_cites` returns no positions and
+    `resolve_context` finds no candidate line, so the cost is a silent
+    under-report on two recall-floor checkers -- false "uncited" telemetry,
+    never a block. Do NOT "fix" any of them by switching to the identity rule
+    or by stripping braces without measuring first: the switch is not a clean
+    fix (Chicago prose writes neither `{Doe, Jane}` nor `{Doe`), and the rate
+    at which any of these forms reaches a delivered bib is unknown. The
+    roadmap's census compares the two rules over the delivered corpus rather
+    than counting shapes, for exactly the reason this paragraph opens with.
 
     No editor fallback, unlike `first_author_surname`: both callers read the
     author field alone, and `check_evidence`'s module docstring records

@@ -442,6 +442,49 @@ class TestPercentIsNotAComment:
         assert self._pybtex_fields(text) == {"k%c": {"title": "A", "year": "2020"}}
         assert parse_entry_fields(text) == {"title": "A", "year": "2020"}
 
+    def test_the_invariant_holds_across_every_measured_placement(self):
+        """The docstring's claim as a contract: wherever pybtex ACCEPTS the
+        text, the scan reports the same fields. Every placement here was
+        measured; the accepted ones are the half a position-enumeration kept
+        getting wrong."""
+        accepted = (
+            '@article{k, title = {A % B}, year = {2020}}',
+            '@article{k, title = "A % B", year = {2020}}',
+            '@article{k, title = {50\\% more}, year = {2020}}',
+            '% just a note\n@article{k, title = {A}, year = {2020}}\n',
+            '@preamble{"a % b"}\n@article{k, title = {A}, year = {2020}}',
+            '@comment{ a { % } b }\n@article{k, title = {A}, year = {2020}}',
+            '@comment{ % @article{x, y = {1}} }\n@article{k, title = {A}, year = {2020}}',
+            '@article{k%c, title = {A}, year = {2020}}',
+            '@article(k, title = {A}, year = {2020})',
+        )
+        for text in accepted:
+            fields = self._pybtex_fields(text)
+            assert fields is not None, f"pybtex now refuses {text!r}"
+            # Compare against the LAST entry: the real one in the multi-part
+            # cases, where an earlier "commented" entry is also parsed.
+            assert parse_entry_fields(text) == list(fields.values())[-1], (
+                f"scanner and pybtex disagree on ACCEPTED text: {text!r}")
+
+        refused = (
+            '@article{k, title = {A}, % note\n year = {2020}}',
+            '@article{k, title % c\n = {A}, year = {2020}}',
+            '@article{k, title = % c\n {A}, year = {2020}}',
+            '@article{k, title = {A}, year = {2020} % }\n',
+            '@art%icle{k, title = {A}, year = {2020}}',
+            '@article%{k, title = {A}, year = {2020}}',
+            '@article{k, ti%tle = {A}, year = {2020}}',
+            '@article{k, month = ja%n, year = {2020}}',
+            '@article{k, title = foo % # bar, year = {2020}}',
+            '@article{k, title = foo # % bar, year = {2020}}',
+            '@string{ab%c = "X"}\n@article{k, title = ab%c, year = {2020}}',
+            '@article(k, title = {A}, year = {2020} % )',
+        )
+        for text in refused:
+            assert self._pybtex_fields(text) is None, (
+                f"pybtex now ACCEPTS {text!r}: the invariant's safety argument "
+                "rests on the strict gate refusing it, so re-measure the scan")
+
     def test_the_scanner_still_reads_such_text_leniently(self):
         # Not a promise about the values -- only that it fails lenient, never
         # loud, because nothing downstream sees a chunk pybtex refused.
