@@ -117,6 +117,8 @@ _LOW_TRUST_TIERS = (se.TIER_EXISTENCE, se.TIER_NONE, None)
 # stays as an alias, never a second copy. Not to be confused with that
 # module's `first_author_surname`, which is the IDENTITY rule; its docstring
 # has the one mechanism by which the two diverge.
+# Alias, not a wrapper (tests pin `is`): its parameter is the owner's
+# `author`, so call it positionally.
 rc_surname = first_author_prose_surname
 
 

@@ -65,7 +65,7 @@ that surprise people: a `%` does NOT comment an entry out (pybtex parses
 AGREE), and a comment-aware reader would be the one diverging from the strict
 gate.
 
-Rather than enumerate positions, the property measured over 21 `%` placements
+Rather than enumerate positions, the property measured over 22 `%` placements
 -- in values (braced, quoted, escaped `50\\%`), at top level, in `@comment`
 payloads carrying braces or an `@`, in `@preamble`, in `@string`, at field
 position, between a field name and its `=`, after the `=`, swallowing an

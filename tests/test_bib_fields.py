@@ -505,6 +505,7 @@ class TestPercentIsNotAComment:
             '@article{k, title = foo # % bar, year = {2020}}',
             '@string{ab%c = "X"}\n@article{k, title = ab%c, year = {2020}}',
             '@article(k, title = {A}, year = {2020} % )',
+            '@article{k, % title = {A}\n year = {2020}}',
         )
         for text in refused:
             assert self._pybtex_fields(text) is None, (

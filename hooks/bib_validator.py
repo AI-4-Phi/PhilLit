@@ -20,7 +20,6 @@ import sys
 from pathlib import Path
 
 from pybtex.database import parse_file
-from pybtex.database.input.bibtex import Parser
 from pybtex.scanner import PybtexSyntaxError
 
 

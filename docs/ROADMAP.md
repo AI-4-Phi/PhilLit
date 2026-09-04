@@ -14,53 +14,26 @@ that a recurrence is recognized where it would be read.
 field.** Do not census a textual shape — run
 `first_author_prose_surname(author)` against `first_author_surname(author)`
 over each `author` field in the delivered corpus and classify the
-disagreements. That measures the exposure directly and picks up any shape,
-including every class the owner's docstring names as an example and any it
-does not. Enumerating the shapes is exactly what failed twice here, which is
-why this is specified as a comparison and not as a count. Both are pre-existing and neither raises — `check_evidence.find_cites`
-returns no positions and `resolve_context`'s SEP match finds no candidate line.
-**But the cost is NOT the same on both sides, and this item used to say it
-was** (filed from the phillit-service mirror, 2026-09-04, while writing that
-pin's guards; `first_author_prose_surname`'s own docstring carries the same
-sentence and needs the same correction). For `check_evidence` it is a false
-"uncited" reading on a recall-floor checker — telemetry, as stated. For
-`resolve_context` it is not: an unmatched SEP passage means
-`evidence_barrier` never sets `att.context_written`, so
-`stamp_evidence.compute_tier` cannot return `TIER_CONTEXT` (rank 3, above
-`TIER_WEB`) and the entry is stamped at a LOWER tier in the DELIVERED
-bibliography, with no recovery path — `strip_context_fields` removes an
-agent-written context field before stamping, so the barrier's own
-acquisition is the only route. Still never a block. **This matters to the
-census rather than only to the wording**: a census weighed against a
-telemetry-only cost will under-value the switch for the consumer whose
-divergence actually changes a delivered artifact, so measure the two
-consumers' consequences separately.
-
-Two things measured downstream after that filing, both narrowing what the
-census has to cover. **Only ONE of `resolve_context`'s two `prose_surname`
-sites is exposed.** `match_entry_to_article` computes its own and gates the
-outcome; `acquire_context` computes a second for `extract_passage`, and that
-one is INERT for every divergence class the owner's docstring names, because
-`citation_context.normalize_author` re-derives its own surname (pre-comma
-prefix, else last whitespace token) and lands both rules on a matching token
-— `van~Fraassen` normalises to `van~fraassen` and `van Fraassen` to
-`fraassen`, and `\b` sits before `Fraassen` inside the tilde-joined token, so
-both hit. Measured by mutating each site alone. So the census only needs the
-match-site exposure, not both. **And the tier chain is pinned rather than
-traced**, in the mirror: `test_engine_stamp_evidence.py::
-test_TIER_CONTEXT_requires_the_barriers_own_context_written_flag` for the
-consumer half and `test_engine_evidence_barrier.py::
-test_a_matched_context_earns_EVIDENCE_CONTEXT_and_a_miss_DEMOTES` for the
-producer half — two `execute()` runs differing only in how the SEP source
-spells the first author, one earning `EVIDENCE-CONTEXT` and the other
-stamping strictly lower. Those tests live only downstream (`EXCLUDE_PREFIX`
-carries `tests/`), so if this repo wants the same protection it has to write
-them here. Measure the identity rule's behaviour on the same corpus too, not just
-the disagreement rate: the census has to be able to decide the switch, and the
-switch is not a clean fix — it repairs the comma-less shape and NOT the braced
-one, since Chicago prose writes neither `{Doe, Jane}` nor `{Doe`. Do not change
-either consumer blind. Reopen sooner if `find_cites` output ever feeds
-something read as a coverage VERDICT rather than a floor.
+disagreements by RUNNING the code path, never by matching shapes; enumerating
+shapes is what failed here repeatedly. Measure the two consumers'
+consequences separately, because their costs differ: for
+`check_evidence.find_cites` a divergence is a false "uncited" reading on a
+recall-floor checker (telemetry); for `resolve_context` it is an evidence-tier
+demotion in the DELIVERED bibliography — an unmatched SEP line means the
+barrier never sets `context_written`, so `compute_tier` cannot return
+`TIER_CONTEXT`, and `strip_context_fields` leaves no other route to the
+field. Only `match_entry_to_article`'s `prose_surname` site is exposed;
+`acquire_context`'s second site is inert because
+`citation_context.normalize_author` re-derives its own token (measured by
+mutating each site alone). Measure the identity rule's own failures on the
+same corpus too — the switch is not a clean fix, since Chicago prose writes
+neither `{Doe, Jane}` nor `{Doe` — so the census can decide it. Do not change
+either consumer blind. The tier chain is pinned only in the phillit-service
+mirror (`test_TIER_CONTEXT_requires_the_barriers_own_context_written_flag`
+and `test_a_matched_context_earns_EVIDENCE_CONTEXT_and_a_miss_DEMOTES`;
+`EXCLUDE_PREFIX` carries `tests/`), so write the same two tests here. Reopen
+sooner if `find_cites` output ever feeds something read as a coverage VERDICT
+rather than a floor.
 
 **`_plan_type_downgrade`'s verified-DOI guard and `check_required_fields`
 disagree, and the stop hook blocks on the disagreement.** The cleaner has a
@@ -102,56 +75,6 @@ SubagentStop hook nested `decision`/`reason` inside `hookSpecificOutput`, where
 the CLI reads neither, so the gate had blocked nothing since it was ported.
 Fixing that payload is what surfaced the disagreement — this repo's shell hook
 never had that bug, so the exposure here is live and unmitigated.
-
-**`rc_surname`'s keyword name changed, and nothing says so.** Low priority,
-no local change wanted here — recording it because it is a real API break and
-the mirror cannot document it into this file. `check_evidence.rc_surname` kept
-its NAME across `165eafc` and became an alias of
-`first_author_prose_surname`, so its parameter went from `author_field` to
-`author`: `rc_surname(author_field=...)` now raises `TypeError`, and
-`__name__`, `__doc__` and the annotations changed with it. LATENT, not live —
-every call site in this repo and in the phillit-service mirror is positional
-(measured 2026-09-04, both trees). The options are a one-line delegating
-wrapper (`def rc_surname(author_field): return
-first_author_prose_surname(author_field)`), which keeps one rule owner and no
-copy, or leaving it and treating the keyword as unsupported. Filed from the
-mirror, which cannot decide it — the alias is this repo's design choice.
-
-**Three small things the mirror's guard-writing turned up.** All found
-2026-09-04 while writing phillit-service's local equivalents of the ~25 pins
-this pin added (they do not travel — `EXCLUDE_PREFIX` carries `tests/`). Each
-is a few lines; grouped because they share nothing but a provenance.
-
-- **A 22nd `%` placement is exercised outside both fixture lists.**
-  `test_bib_fields.py`'s `test_percent_at_field_position_is_refused_by_the_
-  strict_gate` tests `'@article{k, % title = {A}\n year = {2020}}'`, and that
-  string is in neither the `accepted` nor the `refused` tuple of
-  `test_the_invariant_holds_across_every_measured_placement`. So the
-  invariant, and the leniency claim beside it, never see it. The docstring's
-  "21 placements" is consistent with the lists; the gap is that one placement
-  lives only in its own method. Moving it into `refused` costs one line and
-  makes the enumeration honest. (Found downstream by glm-5.3 in the mirror's
-  copy, which had inherited the same shape.)
-
-- **`bib_identity.py` and `CLAUDE.md` give different counts for the same
-  claim, and both are workspace-copied.** `CLAUDE.md` says "FOUR attempts to
-  enumerate it were all wrong"; the owner's docstring says "three attempts to
-  enumerate the shapes here were wrong". Filed as UNDERSPECIFIED rather than
-  as a contradiction, because the docstring's "here" may deliberately scope
-  to attempts made in that docstring while `CLAUDE.md` counts all of them —
-  but a reader of the two shipped files cannot tell which number is a mistake,
-  and the surrounding text is precisely about not trusting a restated summary.
-  Either scope one of them explicitly or make them agree.
-
-- **`bib_validator.py` imports `Parser` and never uses it.** `from
-  pybtex.database.input.bibtex import Parser` at line 23; zero `Parser(`
-  call sites — the file goes through `parse_file(..., bib_format='bibtex')`
-  throughout. Worth more than a lint nit because it actively misled a
-  review: an external reviewer of the mirror reasoned about what
-  `bib_validator` does with its `Parser` constructor and asked for the
-  construction options to be matched, and the answer was that there is no
-  construction. A dead import of a class the file's real parse path does not
-  use is a false signal about the parse path.
 
 ## Checked and deliberately NOT filed
 

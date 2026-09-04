@@ -677,8 +677,8 @@ def first_author_prose_surname(author: str | None) -> str:
     matches it against an SEP passage. A comma in that string finds nothing.
 
     Where the two rules differ is ONE mechanism, not a list of shapes, and
-    reading it that way is load-bearing: three attempts to enumerate the
-    shapes here were wrong, each by asserting a universal over sampled inputs.
+    reading it that way is load-bearing: every attempt to enumerate the
+    shapes here was wrong, each by asserting a universal over sampled inputs.
     Transcribed from the code rather than generalised from samples -- that
     distinction is the whole lesson here -- and scoped to the call path both
     prose consumers use, ONE author field and no editor. Let
@@ -735,17 +735,22 @@ def first_author_prose_surname(author: str | None) -> str:
 
     What a divergence COSTS, stated no more strongly than it is measured: the
     two rules hand the consumers different search strings, and recall drops
-    when the string does not match the form the target prose uses. It is not
-    true that a divergent value never matches -- `find_cites` DOES find
-    `Jane Doe` in prose that writes the full name. The bet is on Chicago
-    author-date normally writing the surname alone: against surname-only
-    prose every divergence measured misses, which is where the under-report
-    comes from. Do not read that as "a divergent value never matches" --
-    `find_cites` DOES find `Jane Doe` in prose writing the full name, and a
-    test pins that. What holds unconditionally across everything measured is
-    the weaker and more useful property: none of them RAISES. So the cost
-    lands as false "uncited" telemetry on two recall-floor checkers, never a
-    block.
+    when the string does not match the form the target prose uses. The bet
+    is on Chicago author-date normally writing the surname alone: against
+    surname-only prose every divergence measured misses, which is where the
+    under-report comes from. Do not read that as "a divergent value never
+    matches" -- `find_cites` DOES find `Jane Doe` in prose writing the full
+    name, and a test pins that. What holds unconditionally across everything
+    measured is the weaker and more useful property: none of them RAISES.
+    The cost differs by consumer, and is never a block. For
+    `check_evidence.find_cites` it is a false "uncited" reading on a
+    recall-floor checker: telemetry. For `resolve_context` it is not: an
+    unmatched SEP passage means `evidence_barrier` never sets
+    `att.context_written`, so `stamp_evidence.compute_tier` cannot return
+    `TIER_CONTEXT` and the entry is stamped at a LOWER tier in the DELIVERED
+    bibliography, with no recovery path -- `strip_context_fields` removes an
+    agent-written context field before stamping, so the barrier's own
+    acquisition is the only route.
     Do NOT "fix" any of them by switching to the identity rule or by stripping
     braces without measuring first: the switch is not a clean fix (Chicago
     prose writes neither `{Doe, Jane}` nor `{Doe`), and the rate at which any
