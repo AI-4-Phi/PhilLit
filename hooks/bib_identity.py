@@ -676,17 +676,28 @@ def first_author_prose_surname(author: str | None) -> str:
     Chicago author-date cites in a review's Markdown, and `resolve_context`
     matches it against an SEP passage. A comma in that string finds nothing.
 
-    The two rules coincide on every shape but one. `Mendon{\\c{c}}a, Desiree`,
-    `van Fraassen, Bas C.` and a braced corporate author all come back
-    identical from both (braces kept, undecoded -- callers pass RAW field
-    values). They diverge on a comma-less name: `Jane Doe` yields `Jane Doe`
-    here and `Doe` there. That is this rule's known limit rather than its
-    purpose -- a bib writing `author = {Jane Doe}` gets a prose search string
-    that a real `Doe 2020` cite does not contain -- and it is load-bearing
-    only for how often that form reaches a delivered bib, which is unmeasured.
-    Do not "fix" it by switching to the identity rule without measuring: both
-    consumers are recall-floor checkers whose false-negative rate is the thing
-    at stake.
+    The two rules agree on most shapes: `Mendon{\\c{c}}a, Desiree`,
+    `van Fraassen, Bas C.`, `{B}rown, John` and a braced corporate author with
+    no internal comma all come back identical from both (braces kept,
+    undecoded -- callers pass RAW field values). They diverge on exactly TWO
+    shapes, both of which hand the prose consumers a search string that real
+    Chicago prose does not contain, and both PRE-DATE this owner:
+
+    - A comma-less name. `Jane Doe` yields `Jane Doe` here and `Doe` there,
+      so a `Doe 2020` cite is not found.
+    - A braced name with a comma INSIDE the group. The list split is
+      brace-aware but this comma split is not, so `{Doe, Jane}` yields the
+      brace-unbalanced `{Doe` here, where the identity rule keeps
+      `{Doe, Jane}` whole. It matches nothing either.
+
+    Neither raises: `find_cites` returns no positions and `resolve_context`
+    finds no candidate line, so the cost is a silent under-report on two
+    recall-floor checkers -- false "uncited" telemetry, never a block. Do NOT
+    "fix" either by switching to the identity rule or by stripping braces
+    without measuring first: the identity rule fixes the first shape and not
+    the second (Chicago prose writes neither `{Doe, Jane}` nor `{Doe`), and
+    the rate at which either form reaches a delivered bib is unknown. The
+    false-negative rate of these two checkers is the thing at stake.
 
     No editor fallback, unlike `first_author_surname`: both callers read the
     author field alone, and `check_evidence`'s module docstring records

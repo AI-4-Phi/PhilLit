@@ -426,11 +426,31 @@ class TestProseSurnameIsTheOwner:
                       "van Fraassen, Bas C."):
             assert bi.first_author_prose_surname(field) == bi.first_author_surname(field)
 
-    def test_comma_less_name_is_the_one_documented_divergence(self):
-        # The known limit, pinned so a change to it is deliberate: a prose
-        # search string a real `Doe 2020` cite does not contain.
+    def test_comma_less_name_is_the_first_documented_divergence(self):
+        # Both known limits are pinned so a change to either is deliberate;
+        # each hands the prose consumers a string real Chicago prose lacks.
         assert bi.first_author_prose_surname("Jane Doe") == "Jane Doe"
         assert bi.first_author_surname("Jane Doe") == "Doe"
+
+    def test_braced_comma_name_is_the_second_documented_divergence(self):
+        # The LIST split is brace-aware; this comma split is not, so the
+        # group is cut and the result is brace-unbalanced.
+        assert bi.first_author_prose_surname("{Doe, Jane}") == "{Doe"
+        assert bi.first_author_surname("{Doe, Jane}") == "{Doe, Jane}"
+
+    def test_neither_divergence_raises_in_either_prose_consumer(self):
+        # The cost is a silent under-report, never a crash: that is what
+        # makes leaving both shapes unfixed acceptable pending a census.
+        scripts = Path(__file__).parent.parent / "skills" / "literature-review" / "scripts"
+        sys.path.insert(0, str(scripts))
+        try:
+            import check_evidence
+        finally:
+            sys.path.pop(0)
+        md = "As Doe (2020) argues, see Doe 2020."
+        assert check_evidence.find_cites(md, "Doe", "2020")  # the shape that works
+        for lost in ("Jane Doe", "{Doe"):
+            assert check_evidence.find_cites(md, lost, "2020") == []
 
     def test_no_editor_fallback_unlike_the_identity_rule(self):
         # check_evidence documents editor-only invisibility as a residual.

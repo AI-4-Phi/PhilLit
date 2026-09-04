@@ -21,16 +21,19 @@ carries the divergence brace-aware author splitting removed upstream, and the
 five findings this queue held were filed FROM that mirror — re-reading them
 there after the pin should now find them fixed.
 
-**Measure how often a delivered bib writes a comma-less author field.**
-`first_author_prose_surname`'s docstring names the one shape where the prose
-and identity surname rules diverge: `author = {Jane Doe}` yields the prose
-consumers a search string that a real `Doe 2020` cite does not contain, so
-`check_evidence.find_cites` under-reports and `resolve_context`'s SEP match
-misses. Both are recall-floor checkers, so the cost is false telemetry rather
-than a block, and the behaviour predates the consolidation and is documented at
-the owner. What is unknown is the RATE: a census over the delivered corpus
-(`docs/known-issues/` has the shape of one) decides whether switching those two
-consumers to the identity rule is worth the change. Do not switch it blind.
+**Measure how often a delivered bib writes an author field of either shape
+the prose surname rule loses.** `first_author_prose_surname`'s docstring names
+two, both pre-dating it, both handing the prose consumers a search string real
+Chicago prose does not contain: a comma-less name (`author = {Jane Doe}` gives
+`Jane Doe`, so `Doe 2020` is not found) and a braced name with an internal
+comma (`{Doe, Jane}` gives the brace-unbalanced `{Doe`). Neither raises --
+`check_evidence.find_cites` returns no positions and `resolve_context`'s SEP
+match finds no candidate line -- so the cost is false "uncited" telemetry on two
+recall-floor checkers, never a block. What is unknown is the RATE, per shape: a
+census over the delivered corpus (`docs/known-issues/` has the shape of one).
+Note the obvious fix does not cover both: switching to the identity rule fixes
+the comma-less name and NOT the braced one, since prose writes neither
+`{Doe, Jane}` nor `{Doe`. Do not change either blind.
 
 ## Checked and deliberately NOT filed
 
