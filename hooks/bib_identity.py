@@ -679,15 +679,27 @@ def first_author_prose_surname(author: str | None) -> str:
     Where the two rules differ is ONE mechanism, not a list of shapes, and
     reading it that way is load-bearing: three attempts to enumerate the
     shapes here were wrong, each by asserting a universal over sampled inputs.
-    Read from the code rather than from samples, and scoped to the call path
-    both prose consumers use -- ONE author field, no editor:
+    Transcribed from the code rather than generalised from samples -- that
+    distinction is the whole lesson here -- and scoped to the call path both
+    prose consumers use, ONE author field and no editor. Let
+    `first = first_author_name(author)` and `prefix = first.split(",")[0]
+    .strip()`. This rule returns `prefix`. `first_author_surname` takes one of
+    three branches:
 
-        This rule returns the stripped pre-comma prefix of
-        `first_author_name(author)`. `first_author_surname` returns pybtex's
-        SELECTED surname parts (prelast + last) joined by single spaces when
-        that parse succeeds and yields a surname, and otherwise falls back to
-        that same pre-comma prefix. So on this path they diverge exactly when
-        a successful pybtex surname differs from the prefix.
+        1. `Person(first)` parses and yields a surname: pybtex's SELECTED
+           parts (prelast + last), joined by single spaces. Diverges from
+           `prefix` whenever that rendering differs from it -- the usual case,
+           and the one the examples below are about.
+        2. It raises or yields nothing, and `first` HAS a comma:
+           `_fallback_surname` returns the same pre-comma split, so this
+           branch agrees with `prefix` by construction.
+        3. It raises or yields nothing, and `first` is COMMA-LESS:
+           `_fallback_surname` returns the LAST whitespace token, not
+           `prefix`. So this branch can diverge too -- `~ ~` gives `~ ~` here
+           and `~` there, pybtex raising `UnboundLocalError` on a tie-only
+           name. Degenerate input, but real: an earlier draft of this
+           paragraph claimed the fallback always agreed, and branch 3 is
+           what falsified it.
 
     Note what pybtex's side does, since "normalisation" undersells it: it
     classifies tokens by name role and keeps only the surname ones, so

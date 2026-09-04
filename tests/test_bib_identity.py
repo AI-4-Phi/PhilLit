@@ -463,6 +463,17 @@ class TestProseSurnameIsTheOwner:
                       "{de~la~Cruz}, Ana"):
             assert bi.first_author_prose_surname(field) == bi.first_author_surname(field)
 
+    def test_the_comma_less_fallback_branch_can_diverge(self):
+        # Branch 3: pybtex raises `UnboundLocalError` on a tie-only name, so
+        # the identity rule takes `_fallback_surname`, which for COMMA-LESS
+        # input returns the last whitespace token rather than the pre-comma
+        # prefix. Pinned because a previous draft of the docstring claimed the
+        # fallback always agreed, and this input is what falsified it.
+        assert bi.first_author_prose_surname("~ ~") == "~ ~"
+        assert bi.first_author_surname("~ ~") == "~"
+        # Branch 2, for contrast: with a comma, the fallback IS the prefix.
+        assert bi.first_author_prose_surname("a, b, c, d") == bi.first_author_surname("a, b, c, d")
+
     def test_the_editor_fallback_is_outside_the_mechanism(self):
         # `first_author_surname` has a parameter this rule does not, so this
         # difference is not an instance of "prefix vs pybtex's parts" -- the
@@ -517,9 +528,11 @@ class TestProseSurnameIsTheOwner:
     def test_the_two_rules_agree_on_the_person_failure_fallback_path(self):
         # The corner the docstring's "two shapes" claim is only true over:
         # `first_author_surname` degrades to `_fallback_surname` when pybtex's
-        # `Person` raises (too many commas) and that fallback IS the comma
-        # split. These four cases show agreement; they do not establish it for
-        # every multi-comma shape, and the census is what would.
+        # `Person` raises. For input WITH a comma that fallback is the same
+        # pre-comma split, so these agree by construction (branch 2 of the
+        # owner's docstring). Comma-LESS fallback input is branch 3 and can
+        # diverge -- see the test below. These four cases show agreement for
+        # branch 2; they do not establish it for every multi-comma shape.
         for field in ("Doe, John, Jr.", "a, b, c, d", "Doe, Jr., John",
                       "Smith, , John"):
             assert bi.first_author_prose_surname(field) == bi.first_author_surname(field)
