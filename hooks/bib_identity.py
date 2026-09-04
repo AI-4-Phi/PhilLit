@@ -753,10 +753,18 @@ def first_author_prose_surname(author: str | None) -> str:
     acquisition is the only route.
     Do NOT "fix" any of them by switching to the identity rule or by stripping
     braces without measuring first: the switch is not a clean fix (Chicago
-    prose writes neither `{Doe, Jane}` nor `{Doe`), and the rate at which any
-    of these forms reaches a delivered bib is unknown. The roadmap's census
-    compares the two rules over the delivered corpus rather than counting
-    shapes, for exactly the reason this docstring opens with.
+    prose writes neither `{Doe, Jane}` nor `{Doe`). Measured 2026-09-04
+    (reproduction: docs/known-issues/surname-rule-census-2026-09-04,
+    local-only): the two rules disagreed on 0 of 10,721 parsed author-field
+    instances in delivered bibs (8,975 across all 335 local files; 1,746
+    across 69 of 71 production files, two unread). That is a post-edit
+    observational rate over delivered output, not a property of the
+    functions -- the shapes above still diverge when they occur. Neither
+    consumer was switched: the rules were text-identical on every entry the
+    SEP matcher attempted, so no consequence existed to measure, and the
+    census's pre-registered sufficiency gate for that consumer was not
+    reached. Reopen by rerunning the census if a delivered author field ever
+    makes the two rules disagree.
 
     No editor fallback, unlike `first_author_surname`: both callers read the
     author field alone, and `check_evidence`'s module docstring records

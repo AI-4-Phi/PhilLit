@@ -10,30 +10,29 @@ that a recurrence is recognized where it would be read.
 
 ## Queue
 
-**Census the two surname rules' DISAGREEMENT over every delivered author
-field.** Do not census a textual shape — run
-`first_author_prose_surname(author)` against `first_author_surname(author)`
-over each `author` field in the delivered corpus and classify the
-disagreements by RUNNING the code path, never by matching shapes; enumerating
-shapes is what failed here repeatedly. Measure the two consumers'
-consequences separately, because their costs differ: for
-`check_evidence.find_cites` a divergence is a false "uncited" reading on a
-recall-floor checker (telemetry); for `resolve_context` it is an evidence-tier
-demotion in the DELIVERED bibliography — an unmatched SEP line means the
-barrier never sets `context_written`, so `compute_tier` cannot return
-`TIER_CONTEXT`, and `strip_context_fields` leaves no other route to the
-field. Only `match_entry_to_article`'s `prose_surname` site is exposed;
-`acquire_context`'s second site is inert because
-`citation_context.normalize_author` re-derives its own token (measured by
-mutating each site alone). Measure the identity rule's own failures on the
-same corpus too — the switch is not a clean fix, since Chicago prose writes
-neither `{Doe, Jane}` nor `{Doe` — so the census can decide it. Do not change
-either consumer blind. The tier chain is pinned only in the phillit-service
-mirror (`test_TIER_CONTEXT_requires_the_barriers_own_context_written_flag`
-and `test_a_matched_context_earns_EVIDENCE_CONTEXT_and_a_miss_DEMOTES`;
-`EXCLUDE_PREFIX` carries `tests/`), so write the same two tests here. Reopen
-sooner if `find_cites` output ever feeds something read as a coverage VERDICT
-rather than a floor.
+**Switch `check_evidence.find_cites`' search surname to brace-stripped text.**
+The 2026-09-04 surname census (reproduction:
+`docs/known-issues/surname-rule-census-2026-09-04/`, local-only) found the
+prose rule and the identity rule text-identical on every delivered author
+field (0 of 10,721 parsed instances; 8,975 across all 335 local bib files,
+1,746 across 69 of 71 production files), so no switch between THEM is
+warranted. But the third shipped derivation,
+`enrich_bibliography.get_author_last_name` (strips case-protection braces),
+qualified for this one consumer under the pre-registered rule: four entries
+with genuine prose cites — three corporate author strings, `{Article 36}`,
+`{Human Rights Watch}`, `{United Nations Institute for Disarmament
+Research}`, all in one production review — that `find_cites` reports as
+uncited because the braces sit in its regex, and no row where the shipped
+rule hit and the brace-stripped text missed. Telemetry only (a false
+"uncited" line), so low priority. Not for `resolve_context`: no
+acquisition-outcome difference was observed there, and its population was
+too small to decide — the census's sufficiency gate was not reached (10
+non-quarantined rows locally, 0 on the box). Do it as a reviewed change with
+the census rows as fixtures; the derivation must stay an alias of one owner.
+Loose end: the box census run predates the script's discovery fix and read
+69 of 71 bib files — rerun it (README has the command) once `ssh phillit`
+works again; the key has to be re-added to the agent from an interactive
+shell.
 
 ## Checked and deliberately NOT filed
 
