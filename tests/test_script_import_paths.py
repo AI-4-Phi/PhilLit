@@ -13,10 +13,12 @@ SCRIPTS = Path(__file__).parent.parent / "skills" / "literature-review" / "scrip
 
 @pytest.mark.parametrize("script,expr,expected", [
     ("resolve_context.py", "m.prose_surname('{A and B} and C, D')", "{A and B}"),
-    ("check_evidence.py", "m.rc_surname('{A and B} and C, D')", "{A and B}"),
+    # check_evidence binds enrich_bibliography's SEARCH rule (brace-stripped),
+    # not bib_identity's prose rule, so the braces come off here.
+    ("check_evidence.py", "m.rc_surname({'fields': {'author': '{A and B} and C, D'}})", "A and B"),
     ("year_suffix.py", "m.first_surname_raw({'author': '{A and B} and C, D'})", "{A and B}"),
 ])
-def test_script_imports_bib_identity_when_loaded_by_path(tmp_path, script, expr, expected):
+def test_script_imports_its_surname_owner_when_loaded_by_path(tmp_path, script, expr, expected):
     code = (
         "import importlib.util\n"
         f"spec = importlib.util.spec_from_file_location('m', {str(SCRIPTS / script)!r})\n"

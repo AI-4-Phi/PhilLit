@@ -331,8 +331,96 @@ def test_the_web_tier_is_not_low_trust():
     assert se.TIER_EXISTENCE in ce._LOW_TRUST_TIERS
 
 
-def test_rc_surname_is_brace_aware_and_keeps_comma_less_names_whole():
-    # A braced return never matches prose; parity with the pre-change rule,
-    # census 0 of 9,157 such fields -- accepted residual.
-    assert check_evidence.rc_surname("{Smith and Jones Institute} and Doe, Jane") == "{Smith and Jones Institute}"
-    assert check_evidence.rc_surname("Willem van der Deijl and Doe, Jane") == "Willem van der Deijl"
+# The checker's search text is enrich_bibliography's brace-stripped SEARCH
+# rule, not bib_identity's prose rule. The 2026-09-04 surname census
+# (docs/known-issues/surname-rule-census-2026-09-04, local-only) licensed the
+# switch for THIS consumer alone: every delivered entry where the two rules
+# handed find_cites different text was a corporate author or a case-protected
+# letter, the prose rule's braces sat in the regex and found nothing, and the
+# search rule recovered five adjudicated-correct cites with zero regressions.
+# The first test's census asserts are those rows; what follows them is the
+# owner's documented shapes, not census data.
+
+def _rc(author):
+    return check_evidence.rc_surname({"fields": {"author": author}})
+
+
+def test_rc_surname_strips_the_braces_the_prose_rule_kept():
+    # Census gains, box review 0c91f26e07dc4c04 (all three corporate) and
+    # 633fe42b123343f6 (case-protected letter).
+    assert _rc("{Article 36}") == "Article 36"
+    assert _rc("{Human Rights Watch} and "
+               "{Harvard Law School International Human Rights Clinic}") == "Human Rights Watch"
+    assert _rc("{United Nations Institute for Disarmament Research}") == (
+        "United Nations Institute for Disarmament Research")
+    assert _rc("Zają{c}, Maciek") == "Zając"
+    # Owner shapes, not census rows: a braced group with an internal comma
+    # splits on the CONTENT, where the prose rule yielded the
+    # brace-unbalanced `{Doe`.
+    assert _rc("{Doe, Jane}") == "Doe"
+    # LaTeX escape groups stay, by the owner's rule, so such a surname still
+    # matches no prose -- a miss the prose rule shared, not a regression.
+    assert _rc('B{\\"o}hm, David') == 'B{\\"o}hm'
+    # The rule reads `author` only: an empty or MISSING field yields None and
+    # main() skips the entry -- which is how editor-only entries stay
+    # invisible (the BIB_NO_AUTHOR test walks that path through main()).
+    assert _rc("") is None
+    assert check_evidence.rc_surname({"fields": {}}) is None
+
+
+def test_corporate_author_cite_is_found_end_to_end(tmp_path):
+    # The census gain, replayed through main(). `CHECK none-cited` is printed
+    # ONLY for an EVIDENCE-NONE entry whose cite find_cites FOUND -- main()
+    # skips every entry with no positions -- so the line IS the found cite.
+    # Before the switch this test failed: the regex was
+    # `\b\{Human Rights Watch\}\b`, which matches no prose.
+    bib = """@misc{hrw2012losing,
+  author = {{Human Rights Watch} and {Harvard Law School International Human Rights Clinic}},
+  title = {Losing Humanity},
+  year = {2012},
+  keywords = {EVIDENCE-NONE}
+}"""
+    r = _run(tmp_path, "Autonomous weapons are contested (Human Rights Watch 2012, non-peer-reviewed).", bib)
+    assert r.returncode == 0, r.stderr
+    assert "CHECK none-cited: hrw2012losing" in r.stdout
+    # Negative control: the line is cite-triggered, not tier-triggered.
+    r = _run(tmp_path, "Autonomous weapons are contested (Roorda 2015).", bib)
+    assert "hrw2012losing" not in r.stdout
+
+
+def test_comma_less_search_text_is_the_last_token_and_still_finds_the_full_name():
+    # Unmeasured by the census (no delivered field has the shape) but
+    # reasoned, and the reasoning is narrower than "any last token": wherever
+    # the prose rule's `\bWillem van der Deijl\b` matched, `\bDeijl\b`
+    # matches too, because `Deijl` STARTS WITH A WORD CHARACTER and follows a
+    # space inside the long match, and the closing `\b` is the same one. So
+    # the search rule finds a superset there, at the same-surname-collision
+    # cost the module docstring already records -- and at a higher rate on
+    # this shape, whose old search text was the full name.
+    surname = _rc("Willem van der Deijl and Doe, Jane")
+    assert surname == "Deijl"
+    assert check_evidence.find_cites("As Willem van der Deijl (2020) argues.", surname, "2020")
+    assert check_evidence.find_cites("As van der Deijl (2020) argues.", surname, "2020")
+    # The condition matters: a last token opening with a NON-word character
+    # gets no `\b` after the space, so the two regexes are not nested there.
+    # find_cites escapes, so the search text misses rather than raises.
+    odd = _rc("John (Deijl and Doe, Jane")
+    assert odd == "(Deijl"
+    assert check_evidence.find_cites("As John (Deijl (2020) argues.", odd, "2020") == []
+
+
+def test_search_rule_never_raises_and_find_cites_escapes_whatever_it_yields():
+    # "Never raises" was the prose rule's documented property; it moved owners
+    # with the switch, and main() guards only falsiness, so an owner exception
+    # would crash Phase 6. The shapes are the old no-raise corpus plus the
+    # search rule's own odd outputs: a bare brace, a metacharacter-led token,
+    # escapes, a stray `and`, whitespace only.
+    md = "As Doe (2020) argues, see (Doe 2020)."
+    for author in ("", " ", "~ ~", "{Doe", "Doe(", "{", "}", "{{", "{}", "\\", "{\\",
+                   "\\{Doe", "Doe\\}", ",", ", ,", "and", "and and", "{and}",
+                   "Jane Doe and", "{Doe (Jane", "Doe[", "Doe*", "Doe+",
+                   'B{\\"o}hm, David', "\u00e9, \u00e9"):
+        surname = _rc(author)
+        # None or stripped text: main()'s falsiness guard is the whole guard.
+        assert surname is None or (surname and surname.strip() == surname)
+        check_evidence.find_cites(md, surname or "", "2020")

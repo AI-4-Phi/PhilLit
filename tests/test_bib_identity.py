@@ -396,17 +396,25 @@ class TestProseSurnameIsTheOwner:
     `resolve_context.prose_surname` (then `first_author_surname`) were
     byte-identical copies of it,
     and `rc_surname`'s docstring asserted the agreement in prose -- the shape
-    `f0440fa`-`05efb94` spent five versions removing everywhere else."""
+    `f0440fa`-`05efb94` spent five versions removing everywhere else.
 
-    def test_both_sites_are_the_shared_object(self):
+    Since the 2026-09-04 census, `check_evidence` no longer consumes this
+    rule at all: it binds `enrich_bibliography.get_author_last_name`, the
+    brace-stripped SEARCH rule, which qualified for that one consumer (five
+    adjudicated gains, zero regressions). Each site is still an ALIAS of its
+    owner -- `is`, never a copy -- which is what these pins hold."""
+
+    def test_each_site_is_an_alias_of_its_owner(self):
         scripts = Path(__file__).parent.parent / "skills" / "literature-review" / "scripts"
         sys.path.insert(0, str(scripts))
         try:
             import check_evidence
+            import enrich_bibliography
             import resolve_context
         finally:
             sys.path.pop(0)
-        assert check_evidence.rc_surname is bi.first_author_prose_surname
+        assert check_evidence.rc_surname is enrich_bibliography.get_author_last_name
+        assert check_evidence.rc_surname is not bi.first_author_prose_surname
         assert resolve_context.prose_surname is bi.first_author_prose_surname
         # The historic name must NOT come back: it collides with this
         # module's identity rule, which year_suffix.py imports.
@@ -502,7 +510,9 @@ class TestProseSurnameIsTheOwner:
     def test_no_divergence_raises_in_either_prose_consumer(self):
         # The cost is a silent under-report, never a crash: that is what
         # makes leaving these shapes unfixed acceptable pending a census.
-        # BOTH consumers, because the claim is about both.
+        # BOTH sites, because the claim is about both: `find_cites` no
+        # longer receives this rule's text, but its regex still must not
+        # raise on whatever search text it is handed.
         scripts = Path(__file__).parent.parent / "skills" / "literature-review" / "scripts"
         sys.path.insert(0, str(scripts))
         try:

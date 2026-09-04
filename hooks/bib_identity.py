@@ -672,16 +672,20 @@ def first_author_prose_surname(author: str | None) -> str:
     `first_author_surname`. That one returns pybtex prelast + last -- identity
     text, feeding `fallback_key` and `same_work_key`, which need to agree with
     what `generate_bibliography` renders. This one returns text to search FOR
-    in prose: `check_evidence.find_cites` builds a regex from it to locate
-    Chicago author-date cites in a review's Markdown, and `resolve_context`
-    matches it against an SEP passage. A comma in that string finds nothing.
+    in prose: `resolve_context` matches it against an SEP passage. A comma in
+    that string finds nothing. (`check_evidence.find_cites` consumed it too,
+    until the 2026-09-04 census switched that checker to
+    `enrich_bibliography.get_author_last_name`, the SEARCH rule --
+    case-protection braces stripped, LaTeX escape groups kept, a comma-less
+    name reduced to its last token -- and the third shipped derivation; see
+    the end of this docstring.)
 
     Where the two rules differ is ONE mechanism, not a list of shapes, and
     reading it that way is load-bearing: every attempt to enumerate the
     shapes here was wrong, each by asserting a universal over sampled inputs.
     Transcribed from the code rather than generalised from samples -- that
-    distinction is the whole lesson here -- and scoped to the call path both
-    prose consumers use, ONE author field and no editor. Let
+    distinction is the whole lesson here -- and scoped to the call path its
+    consumer uses, ONE author field and no editor. Let
     `first = first_author_name(author)` and `prefix = first.split(",")[0]
     .strip()`. This rule returns `prefix`. `first_author_surname` takes one of
     three branches:
@@ -743,8 +747,9 @@ def first_author_prose_surname(author: str | None) -> str:
     name, and a test pins that. What holds unconditionally across everything
     measured is the weaker and more useful property: none of them RAISES.
     The cost differs by consumer, and is never a block. For
-    `check_evidence.find_cites` it is a false "uncited" reading on a
-    recall-floor checker: telemetry. For `resolve_context` it is not: an
+    `check_evidence.find_cites`, while it consumed this rule, it was a false
+    "uncited" reading on a recall-floor checker: telemetry, which is why a
+    small measured gain could switch it. For `resolve_context` it is not: an
     unmatched SEP passage means `evidence_barrier` never sets
     `att.context_written`, so `stamp_evidence.compute_tier` cannot return
     `TIER_CONTEXT` and the entry is stamped at a LOWER tier in the DELIVERED
@@ -755,20 +760,32 @@ def first_author_prose_surname(author: str | None) -> str:
     braces without measuring first: the switch is not a clean fix (Chicago
     prose writes neither `{Doe, Jane}` nor `{Doe`). Measured 2026-09-04
     (reproduction: docs/known-issues/surname-rule-census-2026-09-04,
-    local-only): the two rules disagreed on 0 of 10,721 parsed author-field
-    instances in delivered bibs (8,975 across all 335 local files; 1,746
-    across 69 of 71 production files, two unread). That is a post-edit
+    local-only): the two rules disagreed on 0 of 10,755 parsed author-field
+    instances in delivered bibs (8,975 across all 335 local files; 1,780
+    across all 70 delivered production files -- the box run was repeated the
+    same day after a discovery fix: the first run read 69 of these 70,
+    missing one slug-named root bib, and had counted the box's 71st `.bib`,
+    an undelivered scratch copy under `intermediate_files/`, as a second
+    unread file). That is a post-edit
     observational rate over delivered output, not a property of the
-    functions -- the shapes above still diverge when they occur. Neither
-    consumer was switched: the rules were text-identical on every entry the
-    SEP matcher attempted, so no consequence existed to measure, and the
-    census's pre-registered sufficiency gate for that consumer was not
-    reached. Reopen by rerunning the census if a delivered author field ever
-    makes the two rules disagree.
+    functions -- the shapes above still diverge when they occur.
+    `resolve_context` was not switched: the rules were text-identical on
+    every entry the SEP matcher attempted, so no consequence existed to
+    measure, and the census's pre-registered sufficiency gate for that
+    consumer was not reached. `check_evidence` WAS switched, and not to the
+    identity rule: the census's third column, `get_author_last_name`,
+    differed from this rule on 12 delivered root-bib entries (8 production,
+    4 local), every one a braced corporate author or a case-protected letter
+    whose brace sat in the checker's regex; it recovered five
+    adjudicated-correct cites, missed nothing this rule found, and never hit
+    at a different position -- the procedure's three clauses -- so it
+    qualified for that consumer. Reopen by rerunning the
+    census if a delivered author field ever makes the two rules disagree.
 
-    No editor fallback, unlike `first_author_surname`: both callers read the
-    author field alone, and `check_evidence`'s module docstring records
-    editor-only entries' resulting invisibility as an accepted residual.
+    No editor fallback, unlike `first_author_surname`: its caller reads the
+    author field alone, as does `check_evidence`'s search rule, whose module
+    docstring records editor-only entries' resulting invisibility as an
+    accepted residual.
     Never raises -- `split_author_list` returns unbalanced input whole and no
     `Person` is constructed here.
     """

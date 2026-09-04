@@ -34,12 +34,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 
 import stamp_evidence as se
-
-_hook_dir = Path(__file__).resolve().parent.parent.parent.parent / "hooks"
-sys.path.insert(0, str(_hook_dir))
-from bib_identity import first_author_prose_surname  # noqa: E402
-
-sys.path.pop(0)
+from enrich_bibliography import get_author_last_name  # noqa: E402 - same directory
 
 _MATCH_WINDOW = 60  # mirrors generate_bibliography._MATCH_WINDOW
 
@@ -113,13 +108,39 @@ _VERB_RE = re.compile(
 _LOW_TRUST_TIERS = (se.TIER_EXISTENCE, se.TIER_NONE, None)
 
 
-# The prose-matching surname rule, owned by bib_identity: the historic name
-# stays as an alias, never a second copy. Not to be confused with that
-# module's `first_author_surname`, which is the IDENTITY rule; its docstring
-# has the one mechanism by which the two diverge.
-# Alias, not a wrapper (tests pin `is`): its parameter is the owner's
-# `author`, so call it positionally.
-rc_surname = first_author_prose_surname
+# The search-text surname rule, owned by enrich_bibliography: a name that is
+# one outer brace group is unwrapped and split on its content's first comma;
+# otherwise the pre-comma text, else the LAST whitespace token; then
+# case-protection braces around plain letters come off (`{B}rown` -> `Brown`)
+# while LaTeX escape groups stay (`B{\"o}hm` keeps its braces, so a
+# LaTeX-escaped surname still matches no prose -- a miss the prose rule had
+# too). The historic name stays as an alias, never a second copy, and tests
+# pin `is`. Its parameter is the owner's entry dict, so call it as
+# `rc_surname({"fields": fields})`; it returns None for no author.
+#
+# Imported, not moved into bib_identity: that module's rules take field
+# strings, so a dict-taking rule there would need a non-alias adapter, and
+# the downstream service's re-vendor units anchor on enrich_bibliography's
+# text. The import brings dotenv, rate_limiter and bib_fields into this
+# process (all in the locked environment, none touching the filesystem at
+# import) and leaves philosophy-research/scripts on sys.path -- no module
+# name is shared between that directory and this one -- while popping the
+# hooks/ entry it adds.
+#
+# Not bib_identity's `first_author_prose_surname`, which this checker
+# consumed until the 2026-09-04 surname census licensed the switch
+# (reproduction: docs/known-issues/surname-rule-census-2026-09-04,
+# local-only). That rule keeps every brace, so a corporate author
+# (`{Human Rights Watch}`) or a case-protected letter (`Zają{c}`) put a
+# literal `{` into the regex below and every such entry read as never cited.
+# Over the delivered corpora the two rules handed this checker different
+# text on 8 production and 4 local entries, all of that shape; the search
+# rule recovered five adjudicated-correct cites, missed nothing the prose
+# rule found, and never hit at a different position -- the procedure's three
+# clauses -- so it qualified under the census's pre-registered procedure for
+# THIS consumer alone. `resolve_context` keeps the prose rule: its
+# population was too small to decide, and its cost is a tier, not telemetry.
+rc_surname = get_author_last_name
 
 
 def find_cites(md: str, surname: str, year: str, suffix: str = "") -> list[int]:
@@ -266,7 +287,7 @@ def main() -> int:
             continue
         _etype, key = header
         fields = se.parse_entry_fields(chunk)
-        surname = rc_surname(fields.get("author", ""))
+        surname = rc_surname({"fields": fields})
         year = (fields.get("year") or "").strip()
         if not surname or not re.fullmatch(r"\d{4}", year):
             continue  # Guard: empty surname/non-year -> unfindable, skip

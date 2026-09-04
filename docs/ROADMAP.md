@@ -10,32 +10,10 @@ that a recurrence is recognized where it would be read.
 
 ## Queue
 
-**Switch `check_evidence.find_cites`' search surname to brace-stripped text.**
-The 2026-09-04 surname census (reproduction:
-`docs/known-issues/surname-rule-census-2026-09-04/`, local-only) found the
-prose rule and the identity rule text-identical on every delivered author
-field (0 of 10,721 parsed instances; 8,975 across all 335 local bib files,
-1,746 across 69 of 71 production files), so no switch between THEM is
-warranted. But the third shipped derivation,
-`enrich_bibliography.get_author_last_name` (strips case-protection braces),
-qualified for this one consumer under the pre-registered rule: four entries
-with genuine prose cites — three corporate author strings, `{Article 36}`,
-`{Human Rights Watch}`, `{United Nations Institute for Disarmament
-Research}`, all in one production review — that `find_cites` reports as
-uncited because the braces sit in its regex, and no row where the shipped
-rule hit and the brace-stripped text missed. Telemetry only (a false
-"uncited" line), so low priority. Not for `resolve_context`: no
-acquisition-outcome difference was observed there, and its population was
-too small to decide — the census's sufficiency gate was not reached (10
-non-quarantined rows locally, 0 on the box). Do it as a reviewed change with
-the census rows as fixtures; the derivation must stay an alias of one owner.
-Loose end: the box census run predates the script's discovery fix and read
-69 of 71 bib files — rerun it (README has the command) once `ssh phillit`
-works again; the key has to be re-added to the agent from an interactive
-shell.
-
-**Re-vendor phillit-service at `bcc80b7` (v0.5.15), from a session launched in that
-repo.** Four things that session must know. (1) `hooks/cleaning_marker.py` is a NEW file
+**Re-vendor phillit-service at the current `main` tip (`2110dc8` or later — not the v0.5.15
+bump `bcc80b7`: the commits past it change `docs/conventions.md`, which the mirror vendors,
+and `check_evidence.py`), from a session launched in that repo.** Five things that session
+must know. (1) `hooks/cleaning_marker.py` is a NEW file
 in the vendored engine region; if `tools/revendor.py` enumerates files rather than copying
 the tree, the service's `bib_validator` dies at import with `ModuleNotFoundError:
 cleaning_marker`. (2) The service's `_structural_bib_errors` narrowing of its SubagentStop
@@ -49,7 +27,14 @@ and MASKS it. This repo's `tests/test_resolve_context.py::
 TestSurnameRuleGatesContextAcquisition` pins the true facts; the census file above
 closes that known issue's "what closes this" clause. (4) The box's SEP mirror (`sum2026`)
 lacks `ethics-care` and `wisdom-analytic`, which delivered reviews used; adding them
-restores 75 of 146 attempted rows to the census.
+restores 75 of 146 attempted rows to the census. (5) `check_evidence.rc_surname` is now an
+alias of `enrich_bibliography.get_author_last_name` (search text: case-protection braces stripped,
+comma-less names to their last token), no longer
+of `bib_identity.first_author_prose_surname`; the service's
+`tests/test_engine_bib_identity.py::TestProseSurnameIsTheOwner` pins the old binding and
+goes red at any pin that includes the switch. The 2026-09-04 census licensed it for that one
+consumer (its roadmap already says the census is what must license such a switch);
+`resolve_context` is unchanged.
 
 ## Checked and deliberately NOT filed
 
