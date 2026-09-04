@@ -738,10 +738,14 @@ def first_author_prose_surname(author: str | None) -> str:
     when the string does not match the form the target prose uses. It is not
     true that a divergent value never matches -- `find_cites` DOES find
     `Jane Doe` in prose that writes the full name. The bet is on Chicago
-    author-date normally writing the surname alone, which makes the typical
-    cost a silent under-report; every divergence measured so far fails closed
-    (no positions, no candidate line) rather than raising, so the cost lands
-    as false "uncited" telemetry on two recall-floor checkers, never a block.
+    author-date normally writing the surname alone: against surname-only
+    prose every divergence measured misses, which is where the under-report
+    comes from. Do not read that as "a divergent value never matches" --
+    `find_cites` DOES find `Jane Doe` in prose writing the full name, and a
+    test pins that. What holds unconditionally across everything measured is
+    the weaker and more useful property: none of them RAISES. So the cost
+    lands as false "uncited" telemetry on two recall-floor checkers, never a
+    block.
     Do NOT "fix" any of them by switching to the identity rule or by stripping
     braces without measuring first: the switch is not a clean fix (Chicago
     prose writes neither `{Doe, Jane}` nor `{Doe`), and the rate at which any

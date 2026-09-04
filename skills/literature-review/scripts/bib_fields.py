@@ -92,7 +92,10 @@ property, not a property of this module: `validate_bib_write` parses through
 this same pybtex, and the barrier's `_parseable_bib` marks an unparseable
 domain bib `malformed` and drops it before any field is scanned. If that
 ordering ever changes, this paragraph stops being true, which is why
-`test_unparseable_bib_is_dropped_before_any_field_is_scanned` pins it.
+`test_unparseable_bib_is_never_field_scanned` SPIES on the scanner rather
+than checking outputs -- asserting the final report cannot tell "never
+scanned" apart from "scanned, then discarded" -- with a sibling test proving
+the spy is not vacuous.
 
 `test_percent_at_field_position_is_refused_by_the_strict_gate` pins the
 refusal half; the agreement half is pinned beside it. If a pybtex release

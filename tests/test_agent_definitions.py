@@ -278,6 +278,11 @@ def test_researcher_prose_makes_citation_chaining_required():
     assert "Stage 4 runs in every domain" in stage4
     assert "Stage 4 skipped: no resolvable seeds (S2 status:" in stage4
     assert "Exactly one" in stage4  # the one-seed case has an action
+    # ...and it carries the inventory count, because the one-seed case is the
+    # one an undercounted inventory lands you in wrongly. Detection, not
+    # enforcement: `<N>` is still self-reported, but a bare "one seed
+    # available" leaves an undercount invisible in the deliverable.
+    assert "Stage 4: one seed available (candidates inspected: <N>)" in stage4
     # A chaining run that errored is not a skip: it has its own evidenced line.
     assert "Stage 4 attempted: chaining incomplete" in stage4
     checklist = _section(text, "## Before Submitting — Quality Checklist", "## Error Checking")

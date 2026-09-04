@@ -3975,27 +3975,67 @@ def test_accented_same_author_same_year_gets_letters(tmp_path):
     assert _report(rd)["year_suffixes"]["assigned"] == 2
 
 
-def test_unparseable_bib_is_dropped_before_any_field_is_scanned(tmp_path):
+def test_unparseable_bib_is_never_field_scanned(tmp_path, monkeypatch):
     """`bib_fields`' safety argument rests on a CALL-ORDER property, not on
     anything in that module: its scan of text pybtex refuses is meaningless,
-    and harmless only because the strict gate runs first. Two independent
-    reviewers noted the ordering was asserted in prose and pinned by nothing,
-    so a refactor could silently invalidate the docstring. Pin it here, where
-    the ordering lives: an unparseable domain bib is `malformed`, is excluded
-    from the stamped outputs, and is left byte-for-byte alone."""
+    and harmless only because the strict gate runs first. Two reviewers noted
+    the ordering was prose-only; a third then noted that asserting the final
+    outputs does not distinguish "never scanned" from "scanned, then results
+    discarded". So SPY on the scanner: it must not be called for a bib pybtex
+    refuses, and the run must fail closed."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    import stamp_evidence as se
+
     rd = tmp_path / "review"
     # A `%` at field position -- exactly the form bib_fields' docstring says
     # pybtex refuses and the scan reads meaninglessly.
     bad = '@article{smith2020data,\n  title = {A},\n  year = {2020} % }\n'
     _domain(rd, 1, bad, cleaning=_cleaning(1, []), enrichment=EMPTY_ENRICH)
-    r = _run(rd, 1)
+
+    scanned = []
+    real = se.parse_entry_fields
+    def spy(chunk):
+        scanned.append(chunk)
+        return real(chunk)
+    monkeypatch.setattr(se, "parse_entry_fields", spy)
+
+    rc = evidence_barrier.execute(rd, 1)
+
+    # The property itself: the scanner never saw the refused text.
+    assert not any("smith2020data" in c for c in scanned), (
+        f"a bib pybtex refuses was field-scanned anyway: {scanned!r}")
+    # And it fails CLOSED -- nonzero is what stops the orchestrator advancing
+    # to Phase 4 (SKILL.md) -- with the file left byte-identical.
+    assert rc != 0
     report = _report(rd)
     assert report["domains"]["1"]["bib"] == "malformed"
-    # Fail CLOSED, not merely degraded: nonzero exit is what stops the
-    # orchestrator advancing to Phase 4 (SKILL.md), so the scan of refused
-    # text never reaches a decision.
-    assert r.returncode != 0
     assert report["status"] == "failed"
-    # Never scanned, so never stamped -- and never rewritten.
     assert "literature-domain-1.bib" not in report.get("stamps", {})
     assert (rd / "literature-domain-1.bib").read_text(encoding="utf-8") == bad
+
+
+def test_the_field_scan_spy_is_actually_wired(tmp_path, monkeypatch):
+    """Guard against the sibling test above passing vacuously. If the spy is
+    not hooked into the path the barrier really uses, `scanned` is empty for
+    EVERY input and the call-order assertion proves nothing -- which is the
+    failure mode that let an earlier `@string` test pass green while the claim
+    it pinned was false. So assert the spy fires on a bib pybtex ACCEPTS."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    import stamp_evidence as se
+
+    rd = tmp_path / "review"
+    _domain(rd, 1, DOI_ENTRY, cleaning=_cleaning(1, []), enrichment=EMPTY_ENRICH)
+
+    scanned = []
+    real = se.parse_entry_fields
+    def spy(chunk):
+        scanned.append(chunk)
+        return real(chunk)
+    monkeypatch.setattr(se, "parse_entry_fields", spy)
+
+    evidence_barrier.execute(rd, 1)
+    assert any("smith2020data" in c for c in scanned), (
+        "the spy never fired on a parseable bib: it is not on the barrier's "
+        "field-scanning path, so the call-order test beside it is vacuous")

@@ -361,7 +361,10 @@ calls:
 - Two or more usable seeds: chain at least two and feed the same seeds to
   the recommender.
 - Exactly one usable seed: chain it and run the recommender with it; note
-  `Stage 4: one seed available` in NOTABLE_GAPS.
+  `Stage 4: one seed available (candidates inspected: <N>)` in NOTABLE_GAPS,
+  with `<N>` from the inventory. The count rides this case too because it is
+  the one an undercounted inventory lands you in wrongly, and a bare
+  `one seed available` leaves that invisible.
 - No usable seed after Stages 1–3 have run: no candidate you HOLD carries
   a Semantic Scholar paper ID or a DOI. Judge that on your holdings, not
   on what Stage 3 returned — a hit whose `paperId` came back `null` hands
