@@ -21,18 +21,22 @@ a session launched in that repo. Three things to expect:
   carries the divergence brace-aware author splitting removed upstream.
 - The five findings this queue held were filed FROM that mirror — re-reading
   them there after the pin should now find them fixed.
-- **The pins do NOT travel.** `revendor.py`'s `EXCLUDE_PREFIX` contains
-  `tests/`, so every test added upstream for this work stays here: the Stage 4
-  complement pin and its retired-clause negative pin, the whole-file
-  `$JSON_DIR` scan, the Stage 1 slug-specific-status pin, the two
-  surname-divergence pins with the single-token boundary and the
-  `Person`-fallback agreement, and the `%` positional pins including the
-  top-level agreement case. The service has the parallel files
+- **The pins do NOT travel, and there are now ~25 of them.**
+  `revendor.py`'s `EXCLUDE_PREFIX` contains `tests/`, so every test this work
+  added stays here while every fix it guards goes downstream. Read them off
+  `git log d532abd..HEAD -- tests/` rather than from a list here, which would
+  rot: they sit in `test_agent_definitions.py` (Stage 4's inventory and
+  complement pins, Stage 1's three status values, the whole-file `$JSON_DIR`
+  scan), `test_bib_identity.py` (the surname divergence classes, the
+  protected-group and single-token boundaries, the three fallback branches),
+  `test_bib_fields.py` (the 21 `%` placements, the three accepted-text
+  differences) and `test_evidence_barrier.py` (the call-order spy plus its
+  own anti-vacuity guard). The service has parallel files for each
   (`test_engine_bib_identity.py`, `test_engine_bib_fields.py`,
   `test_engine_check_evidence.py`, `test_engine_resolve_context.py`,
-  `test_engine_dispatch_prose.py`) — the equivalents have to be written into
-  them there, or the mirror carries the fixes with none of the guards that
-  keep them fixed.
+  `test_engine_dispatch_prose.py`, `test_engine_evidence_barrier.py`) — the
+  equivalents have to be written into them there, or the mirror carries the
+  fixes with none of the guards that keep them fixed.
 
 **Census the two surname rules' DISAGREEMENT over every delivered author
 field.** Do not census a textual shape — run
