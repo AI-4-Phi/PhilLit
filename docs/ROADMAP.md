@@ -117,6 +117,42 @@ first_author_prose_surname(author_field)`), which keeps one rule owner and no
 copy, or leaving it and treating the keyword as unsupported. Filed from the
 mirror, which cannot decide it — the alias is this repo's design choice.
 
+**Three small things the mirror's guard-writing turned up.** All found
+2026-09-04 while writing phillit-service's local equivalents of the ~25 pins
+this pin added (they do not travel — `EXCLUDE_PREFIX` carries `tests/`). Each
+is a few lines; grouped because they share nothing but a provenance.
+
+- **A 22nd `%` placement is exercised outside both fixture lists.**
+  `test_bib_fields.py`'s `test_percent_at_field_position_is_refused_by_the_
+  strict_gate` tests `'@article{k, % title = {A}\n year = {2020}}'`, and that
+  string is in neither the `accepted` nor the `refused` tuple of
+  `test_the_invariant_holds_across_every_measured_placement`. So the
+  invariant, and the leniency claim beside it, never see it. The docstring's
+  "21 placements" is consistent with the lists; the gap is that one placement
+  lives only in its own method. Moving it into `refused` costs one line and
+  makes the enumeration honest. (Found downstream by glm-5.3 in the mirror's
+  copy, which had inherited the same shape.)
+
+- **`bib_identity.py` and `CLAUDE.md` give different counts for the same
+  claim, and both are workspace-copied.** `CLAUDE.md` says "FOUR attempts to
+  enumerate it were all wrong"; the owner's docstring says "three attempts to
+  enumerate the shapes here were wrong". Filed as UNDERSPECIFIED rather than
+  as a contradiction, because the docstring's "here" may deliberately scope
+  to attempts made in that docstring while `CLAUDE.md` counts all of them —
+  but a reader of the two shipped files cannot tell which number is a mistake,
+  and the surrounding text is precisely about not trusting a restated summary.
+  Either scope one of them explicitly or make them agree.
+
+- **`bib_validator.py` imports `Parser` and never uses it.** `from
+  pybtex.database.input.bibtex import Parser` at line 23; zero `Parser(`
+  call sites — the file goes through `parse_file(..., bib_format='bibtex')`
+  throughout. Worth more than a lint nit because it actively misled a
+  review: an external reviewer of the mirror reasoned about what
+  `bib_validator` does with its `Parser` constructor and asked for the
+  construction options to be matched, and the answer was that there is no
+  construction. A dead import of a class the file's real parse path does not
+  use is a false signal about the parse path.
+
 ## Checked and deliberately NOT filed
 
 Not a queue — a register, so these are not re-found. Each was a live candidate
