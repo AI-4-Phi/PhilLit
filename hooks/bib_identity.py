@@ -662,3 +662,36 @@ def first_author_surname(author: str | None, editor: str | None = "") -> str:
         return _fallback_surname(first)
     surname = " ".join(person.prelast_names + person.last_names).strip()
     return surname or _fallback_surname(first)
+
+
+def first_author_prose_surname(author: str | None) -> str:
+    """The first author's surname as RUNNING TEXT names it: the part before
+    the first comma of the first name, brace-aware on the list split.
+
+    The second of this module's two surname rules, and deliberately not
+    `first_author_surname`. That one returns pybtex prelast + last -- identity
+    text, feeding `fallback_key` and `same_work_key`, which need to agree with
+    what `generate_bibliography` renders. This one returns text to search FOR
+    in prose: `check_evidence.find_cites` builds a regex from it to locate
+    Chicago author-date cites in a review's Markdown, and `resolve_context`
+    matches it against an SEP passage. A comma in that string finds nothing.
+
+    The two rules coincide on every shape but one. `Mendon{\\c{c}}a, Desiree`,
+    `van Fraassen, Bas C.` and a braced corporate author all come back
+    identical from both (braces kept, undecoded -- callers pass RAW field
+    values). They diverge on a comma-less name: `Jane Doe` yields `Jane Doe`
+    here and `Doe` there. That is this rule's known limit rather than its
+    purpose -- a bib writing `author = {Jane Doe}` gets a prose search string
+    that a real `Doe 2020` cite does not contain -- and it is load-bearing
+    only for how often that form reaches a delivered bib, which is unmeasured.
+    Do not "fix" it by switching to the identity rule without measuring: both
+    consumers are recall-floor checkers whose false-negative rate is the thing
+    at stake.
+
+    No editor fallback, unlike `first_author_surname`: both callers read the
+    author field alone, and `check_evidence`'s module docstring records
+    editor-only entries' resulting invisibility as an accepted residual.
+    Never raises -- `split_author_list` returns unbalanced input whole and no
+    `Person` is constructed here.
+    """
+    return first_author_name(author).split(",")[0].strip()

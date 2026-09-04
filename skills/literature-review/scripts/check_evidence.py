@@ -37,7 +37,7 @@ import stamp_evidence as se
 
 _hook_dir = Path(__file__).resolve().parent.parent.parent.parent / "hooks"
 sys.path.insert(0, str(_hook_dir))
-from bib_identity import first_author_name  # noqa: E402
+from bib_identity import first_author_prose_surname  # noqa: E402
 
 sys.path.pop(0)
 
@@ -113,10 +113,9 @@ _VERB_RE = re.compile(
 _LOW_TRUST_TIERS = (se.TIER_EXISTENCE, se.TIER_NONE, None)
 
 
-def rc_surname(author_field: str) -> str:
-    """First author's surname as resolve_context.first_author_surname
-    computes it (part before the first comma), brace-aware on the split."""
-    return first_author_name(author_field).split(",")[0].strip()
+# The prose-matching surname rule, owned by bib_identity: the historic name
+# stays as an alias, never a second copy (see that module for the two rules).
+rc_surname = first_author_prose_surname
 
 
 def find_cites(md: str, surname: str, year: str, suffix: str = "") -> list[int]:

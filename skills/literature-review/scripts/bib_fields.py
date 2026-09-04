@@ -52,6 +52,23 @@ never writes bare values, and an undefined one fails the barrier's pybtex
 validation before any decision reads it. On a piece that opens and never
 closes the scan stops and returns what it has read: fail lenient, never
 loud, because the strict gate is pybtex's.
+
+There is NO comment handling, deliberately: `%` is excluded from `_NAME_RE`
+and from `bare`, and nowhere does it start a comment that runs to end of
+line. What that costs splits by POSITION, not by form. Inside a braced or
+quoted value a `%` is an ordinary character and the scan is right about it
+(`title = {A % B}` reads as `{A % B}`, as pybtex reads it too). Outside a
+value -- at field position -- pybtex REJECTS the chunk in every form tested,
+the bare `% note` and the `%` swallowing an entry's closing brace included
+(`@article{k, year = {2020} % }` is a syntax error there). So the only text
+where a comment-aware reader would differ from this one is exactly the text
+`validate_bib_write` refuses and the barrier's own parse excludes: nothing
+downstream can act on a scan of it.
+
+Said here because the measured cost is REVIEWER time, not correctness: two
+independent external reviewers of the service's mirror both filed the same
+finding -- a `%` carrying an entry's closing brace truncating the scan --
+and both were reasoning from this docstring's silence.
 """
 from __future__ import annotations
 

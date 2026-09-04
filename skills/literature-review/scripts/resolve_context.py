@@ -27,7 +27,7 @@ sys.path.pop(0)
 
 _hook_dir = Path(__file__).resolve().parent.parent.parent.parent / "hooks"
 sys.path.insert(0, str(_hook_dir))
-from bib_identity import first_author_name  # noqa: E402
+from bib_identity import first_author_prose_surname  # noqa: E402
 
 sys.path.pop(0)
 
@@ -67,11 +67,9 @@ def load_slug_files(paths):
     return states, union
 
 
-def first_author_surname(author_field: str) -> str:
-    """Surname text used to match the SEP passage: the part before the
-    first comma of the first name (a comma-less name stays whole);
-    brace-aware on the list split."""
-    return first_author_name(author_field).split(",")[0].strip()
+# The prose-matching surname rule, owned by bib_identity: the historic name
+# stays as an alias, never a second copy (see that module for the two rules).
+first_author_surname = first_author_prose_surname
 
 
 def _title_tokens(text: str) -> set:

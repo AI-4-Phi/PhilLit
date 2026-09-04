@@ -372,3 +372,44 @@ def test_module_has_no_one_level_brace_regex():
     'good enough' shortcut; depth counting, not a character class."""
     src = Path(bib_fields.__file__).read_text(encoding="utf-8")
     assert r"[^{}]*\}" not in src
+
+
+class TestPercentIsNotAComment:
+    """The docstring's `%` clause, as a contract. The scanner has no comment
+    handling; what that costs splits by POSITION. Pinned because two
+    independent external reviewers of the service's mirror both filed the
+    same finding from this module's earlier silence -- a `%` carrying an
+    entry's closing brace truncating the scan."""
+
+    def _pybtex_fields(self, text):
+        """What the STRICT gate makes of the same text, or None if it refuses."""
+        import io
+
+        from pybtex.database.input.bibtex import Parser
+        try:
+            db = Parser().parse_stream(io.StringIO(text))
+        except Exception:
+            return None
+        return {k: dict(e.fields) for k, e in db.entries.items()}
+
+    def test_percent_inside_a_value_is_an_ordinary_character(self):
+        for text in ('@article{k, title = {A % B}, year = {2020}}',
+                     '@article{k, title = "A % B", year = {2020}}'):
+            assert parse_entry_fields(text)["title"] == "A % B"
+            # And the strict gate reads it the same way, so the scan is right.
+            assert self._pybtex_fields(text)["k"]["title"] == "A % B"
+
+    def test_percent_at_field_position_is_refused_by_the_strict_gate(self):
+        # Every form where a comment-aware reader would differ from this one.
+        for text in ('@article{k, title = {A}, % note\n year = {2020}}',
+                     '@article{k, title = {A}, year = {2020} % }\n',
+                     '@article{k, % title = {A}\n year = {2020}}'):
+            assert self._pybtex_fields(text) is None, (
+                f"pybtex now accepts {text!r}: the docstring's claim that the "
+                "scanner's comment-blindness is unreachable no longer holds")
+
+    def test_the_scanner_still_reads_such_text_leniently(self):
+        # Not a promise about the values -- only that it fails lenient, never
+        # loud, because nothing downstream sees a chunk pybtex refused.
+        fields = parse_entry_fields('@article{k, title = {A}, year = {2020} % }\n')
+        assert fields == {"title": "A", "year": "2020"}

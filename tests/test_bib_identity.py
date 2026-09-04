@@ -388,3 +388,51 @@ class TestAuthorListSplit:
         # raw identity text keeps the group whole; get_author_last_name's
         # search token differs by design
         assert bi.first_author_surname("{Doe, Jane}") == "{Doe, Jane}"
+
+
+class TestProseSurnameIsTheOwner:
+    """`first_author_prose_surname` is the second of this module's two
+    surname rules. `check_evidence.rc_surname` and
+    `resolve_context.first_author_surname` were byte-identical copies of it,
+    and `rc_surname`'s docstring asserted the agreement in prose -- the shape
+    `f0440fa`-`05efb94` spent five versions removing everywhere else."""
+
+    def test_both_sites_are_the_shared_object(self):
+        scripts = Path(__file__).parent.parent / "skills" / "literature-review" / "scripts"
+        sys.path.insert(0, str(scripts))
+        try:
+            import check_evidence
+            import resolve_context
+        finally:
+            sys.path.pop(0)
+        assert check_evidence.rc_surname is bi.first_author_prose_surname
+        assert resolve_context.first_author_surname is bi.first_author_prose_surname
+
+    def test_takes_the_part_before_the_first_comma(self):
+        assert bi.first_author_prose_surname("Doe, Jane and Roe, Rick") == "Doe"
+        assert bi.first_author_prose_surname("van Fraassen, Bas C.") == "van Fraassen"
+        assert bi.first_author_prose_surname("O'Neill, Onora") == "O'Neill"
+
+    def test_empty_and_none_give_empty(self):
+        assert bi.first_author_prose_surname("") == ""
+        assert bi.first_author_prose_surname(None) == ""
+
+    def test_accented_and_corporate_names_agree_with_the_identity_rule(self):
+        # The two rules coincide everywhere the docstring says they do: the
+        # split is brace-aware, and both keep braces and stay undecoded.
+        for field in ("Mendon{\\c{c}}a, Desiree",
+                      "{Smith and Jones Institute} and Doe, Jane",
+                      "{The Royal Society}",
+                      "van Fraassen, Bas C."):
+            assert bi.first_author_prose_surname(field) == bi.first_author_surname(field)
+
+    def test_comma_less_name_is_the_one_documented_divergence(self):
+        # The known limit, pinned so a change to it is deliberate: a prose
+        # search string a real `Doe 2020` cite does not contain.
+        assert bi.first_author_prose_surname("Jane Doe") == "Jane Doe"
+        assert bi.first_author_surname("Jane Doe") == "Doe"
+
+    def test_no_editor_fallback_unlike_the_identity_rule(self):
+        # check_evidence documents editor-only invisibility as a residual.
+        assert bi.first_author_prose_surname("") == ""
+        assert bi.first_author_surname("", "Roe, Rick") == "Roe"
