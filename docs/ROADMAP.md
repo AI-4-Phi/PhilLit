@@ -21,19 +21,22 @@ carries the divergence brace-aware author splitting removed upstream, and the
 five findings this queue held were filed FROM that mirror — re-reading them
 there after the pin should now find them fixed.
 
-**Measure how often a delivered bib writes an author field of either shape
-the prose surname rule loses.** `first_author_prose_surname`'s docstring names
-two, both pre-dating it, both handing the prose consumers a search string real
-Chicago prose does not contain: a comma-less name (`author = {Jane Doe}` gives
-`Jane Doe`, so `Doe 2020` is not found) and a braced name with an internal
-comma (`{Doe, Jane}` gives the brace-unbalanced `{Doe`). Neither raises --
-`check_evidence.find_cites` returns no positions and `resolve_context`'s SEP
-match finds no candidate line -- so the cost is false "uncited" telemetry on two
-recall-floor checkers, never a block. What is unknown is the RATE, per shape: a
-census over the delivered corpus (`docs/known-issues/` has the shape of one).
-Note the obvious fix does not cover both: switching to the identity rule fixes
-the comma-less name and NOT the braced one, since prose writes neither
-`{Doe, Jane}` nor `{Doe`. Do not change either blind.
+**Census the two surname rules' DISAGREEMENT over every delivered author
+field.** Do not census a textual shape — run
+`first_author_prose_surname(author)` against `first_author_surname(author)`
+over each `author` field in the delivered corpus and classify the
+disagreements. That measures the exposure directly and picks up any shape,
+including the two the owner's docstring names (a multi-token comma-less name,
+and a braced name with an internal comma) and anything neither of us thought
+of. Both are pre-existing and neither raises — `check_evidence.find_cites`
+returns no positions and `resolve_context`'s SEP match finds no candidate line
+— so the cost is false "uncited" telemetry on two recall-floor checkers, never
+a block. Measure the identity rule's behaviour on the same corpus too, not just
+the disagreement rate: the census has to be able to decide the switch, and the
+switch is not a clean fix — it repairs the comma-less shape and NOT the braced
+one, since Chicago prose writes neither `{Doe, Jane}` nor `{Doe`. Do not change
+either consumer blind. Reopen sooner if `find_cites` output ever feeds
+something read as a coverage VERDICT rather than a floor.
 
 ## Checked and deliberately NOT filed
 

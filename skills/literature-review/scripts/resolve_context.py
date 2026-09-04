@@ -68,7 +68,10 @@ def load_slug_files(paths):
 
 
 # The prose-matching surname rule, owned by bib_identity: the historic name
-# stays as an alias, never a second copy (see that module for the two rules).
+# stays as an alias, never a second copy. NOTE the collision -- this is
+# bib_identity.first_author_prose_surname and NOT its `first_author_surname`,
+# which is the IDENTITY rule (pybtex prelast+last, feeding the dedup and
+# Chicago a/b keys). The two differ on a comma-less and a braced-comma name.
 first_author_surname = first_author_prose_surname
 
 

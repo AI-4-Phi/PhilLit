@@ -114,7 +114,9 @@ _LOW_TRUST_TIERS = (se.TIER_EXISTENCE, se.TIER_NONE, None)
 
 
 # The prose-matching surname rule, owned by bib_identity: the historic name
-# stays as an alias, never a second copy (see that module for the two rules).
+# stays as an alias, never a second copy. Not to be confused with that
+# module's `first_author_surname`, which is the IDENTITY rule; see its
+# docstring for the two shapes on which the two rules diverge.
 rc_surname = first_author_prose_surname
 
 

@@ -683,8 +683,11 @@ def first_author_prose_surname(author: str | None) -> str:
     shapes, both of which hand the prose consumers a search string that real
     Chicago prose does not contain, and both PRE-DATE this owner:
 
-    - A comma-less name. `Jane Doe` yields `Jane Doe` here and `Doe` there,
-      so a `Doe 2020` cite is not found.
+    - A comma-less name pybtex can split, i.e. MULTI-token: `Jane Doe`
+      yields `Jane Doe` here and `Doe` there, so a `Doe 2020` cite is not
+      found. A tie counts as a separator for pybtex and not for the comma
+      split, so `Doe~Jane` diverges the same way. A single-token comma-less
+      name does NOT diverge -- `Aristotle` is `Aristotle` from both.
     - A braced name with a comma INSIDE the group. The list split is
       brace-aware but this comma split is not, so `{Doe, Jane}` yields the
       brace-unbalanced `{Doe` here, where the identity rule keeps

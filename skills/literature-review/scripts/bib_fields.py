@@ -53,22 +53,39 @@ validation before any decision reads it. On a piece that opens and never
 closes the scan stops and returns what it has read: fail lenient, never
 loud, because the strict gate is pybtex's.
 
-There is NO comment handling, deliberately: `%` is excluded from `_NAME_RE`
-and from `bare`, and nowhere does it start a comment that runs to end of
-line. What that costs splits by POSITION, not by form. Inside a braced or
-quoted value a `%` is an ordinary character and the scan is right about it
-(`title = {A % B}` reads as `{A % B}`, as pybtex reads it too). Outside a
-value -- at field position -- pybtex REJECTS the chunk in every form tested,
-the bare `% note` and the `%` swallowing an entry's closing brace included
-(`@article{k, year = {2020} % }` is a syntax error there). So the only text
-where a comment-aware reader would differ from this one is exactly the text
-`validate_bib_write` refuses and the barrier's own parse excludes: nothing
-downstream can act on a scan of it.
+There is NO `%` comment handling, and it costs nothing, because **`%` is not
+a comment character in BibTeX** -- there is no comment syntax here to be
+blind to. The convention only looks like one because everything outside an
+entry is skipped until the next `@`, which this scanner does structurally
+(above) and pybtex does too. Measured against pybtex, form by form:
+
+- Inside a braced or quoted value, `%` is an ordinary character and the scan
+  is right about it: `title = {A % B}` reads as `{A % B}`, as pybtex reads
+  it. An escaped `50\\%` likewise.
+- At TOP level it changes nothing for either reader. `% just a note` is
+  skipped by both. And a `%` does NOT comment an entry out: pybtex parses
+  `% @article{old, ...}` as the entry `old`, and so does this scanner --
+  they AGREE, both against the intuition. (`@comment{...}` is skipped by
+  both as well.)
+- At FIELD position -- inside an entry, outside a value -- pybtex REFUSES
+  the chunk in every form tested: the bare `% note`, a `%` between a field
+  name and its `=`, a `%` after the `=`, and the `%` swallowing an entry's
+  closing brace (`@article{k, year = {2020} % }`). The scan of such text is
+  meaningless (it may read a comment word as a field name, or stop early),
+  and that is harmless precisely because the strict gate refuses it first:
+  `validate_bib_write` parses through this same pybtex, so nothing
+  downstream ever acts on it.
+
+The one position where `%` is neither of the above is inside an entry KEY
+(`@article{k%c, ...}`), which pybtex accepts as the key `k%c` -- and the
+scan of its fields is correct, because field scanning begins after the key.
 
 Said here because the measured cost is REVIEWER time, not correctness: two
 independent external reviewers of the service's mirror both filed the same
 finding -- a `%` carrying an entry's closing brace truncating the scan --
-and both were reasoning from this docstring's silence.
+and both were reasoning from this docstring's earlier silence. Two more,
+reviewing the fix, then asked after top-level comments, which is what the
+second bullet is for.
 """
 from __future__ import annotations
 

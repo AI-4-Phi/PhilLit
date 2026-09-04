@@ -246,7 +246,7 @@ grep -m1 '"status"' "$JSON_DIR"/sep_<domain>_*.json "$JSON_DIR"/iep_<domain>_*.j
   printf '%s\n' '{"sep_entries": [], "iep_entries": []}' > "$JSON_DIR/encyclopedia_entries-domain-N.json"
   ```
 
-  If your assigned output is `literature-domain-3.bib`, this file is `encyclopedia_entries-domain-3.json` — never a literal `domain-N`. A missing file marks this domain's encyclopedia acquisition incomplete and demotes its entries. The orchestrator's evidence barrier reads these files to acquire citation context mechanically, and the Write that CREATES your `literature-domain-N.bib` is DENIED while the file is missing or malformed. The barrier re-fetches every listed slug itself, so list the slugs you chose — but a fetch that fails on your side still gets one re-run: you need its text and bibliography for Stages 1–4. If the re-run also fails, keep the slug listed and write `Stage 1 fetch failed: <slug> (status: <status from the tail above>)` in NOTABLE_GAPS — you then work Stages 1–4 without that entry's text, and the deliverable has to say so.
+  If your assigned output is `literature-domain-3.bib`, this file is `encyclopedia_entries-domain-3.json` — never a literal `domain-N`. A missing file marks this domain's encyclopedia acquisition incomplete and demotes its entries. The orchestrator's evidence barrier reads these files to acquire citation context mechanically, and the Write that CREATES your `literature-domain-N.bib` is DENIED while the file is missing or malformed. The barrier re-fetches every listed slug itself, so list the slugs you chose — but a fetch that fails on your side still gets one re-run: you need its text and bibliography for Stages 1–4. If the re-run also fails, keep the slug listed and write `Stage 1 fetch failed: <slug> (status: <that slug's own status line, or `no status file` if it wrote none>)` in NOTABLE_GAPS — the tail globs, so it may print a DIFFERENT slug's status; never copy one that is not for this slug, and prefer the licensed `no status file` over a guess — you then work Stages 1–4 without that entry's text, and the deliverable has to say so.
 
 ### Stage 2: PhilPapers
 
@@ -341,7 +341,9 @@ Stage 4 runs in every domain. Seeds are the most foundational works
 Stages 1–3 surfaced (SEP bibliography staples, the most-cited Stage 3
 hits) plus every seed paper the orchestrator named; a seed is usable when
 you hold its Semantic Scholar paper ID or its DOI (pass a DOI as
-`DOI:10.…`). Chaining is the one discovery mechanism here with no
+`DOI:10.…`). "Most foundational" RANKS your usable seeds, it does not gate
+them: any candidate you hold with an ID or a DOI can serve as a seed, so
+judging one tangential is never what makes a domain seedless. Chaining is the one discovery mechanism here with no
 substitute: keyword search cannot reach a paper whose title shares no
 words with the topic, the citation graph can. Three seed cases, plus one for failed calls:
 
@@ -349,16 +351,17 @@ words with the topic, the citation graph can. Three seed cases, plus one for fai
   the recommender.
 - Exactly one usable seed: chain it and run the recommender with it; note
   `Stage 4: one seed available` in NOTABLE_GAPS.
-- No usable seed after Stages 1–3 have run: no candidate you inspected
-  yields a Semantic Scholar paper ID or a DOI. Judge that on what you
-  HOLD, not on what Stage 3 returned — a hit whose `paperId` came back
-  `null` hands you no seed. Rare, and valid even if S2 errored: write
+- No usable seed after Stages 1–3 have run: no candidate you HOLD carries
+  a Semantic Scholar paper ID or a DOI. Judge that on your holdings, not
+  on what Stage 3 returned — a hit whose `paperId` came back `null` hands
+  you no seed. Inspect every Stage 3 S2 hit and every orchestrator-named
+  seed before this case applies. Valid even if S2 errored: write
   `Stage 4 skipped: no resolvable seeds (S2 status:
   <status from the Stage 3 tail>, candidates inspected: <N>)` in
   NOTABLE_GAPS, with the actual status and the number you checked. Only
   that evidenced line is a complete skip; a silent skip leaves the domain
-  incomplete, and so does a skip while you hold any candidate carrying an
-  ID or a DOI.
+  incomplete, and so does a skip while you hold any candidate carrying a
+  Semantic Scholar paper ID or a DOI.
 - One or more Stage 4 calls still failed after one re-run of each failed
   invocation (e.g. S2 down): keep and Read the results that succeeded, and
   write `Stage 4 attempted: chaining incomplete (failed: <scripts>;

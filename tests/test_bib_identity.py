@@ -431,6 +431,16 @@ class TestProseSurnameIsTheOwner:
         # each hands the prose consumers a string real Chicago prose lacks.
         assert bi.first_author_prose_surname("Jane Doe") == "Jane Doe"
         assert bi.first_author_surname("Jane Doe") == "Doe"
+        # A tie separates for pybtex but not for the comma split.
+        assert bi.first_author_prose_surname("Doe~Jane") == "Doe~Jane"
+        assert bi.first_author_surname("Doe~Jane") == "Jane"
+
+    def test_a_single_token_comma_less_name_does_not_diverge(self):
+        # The divergence needs a name pybtex can SPLIT: it is multi-token
+        # comma-less names, not comma-less names, so the docstring and the
+        # census must not be written over the broader class.
+        for field in ("Aristotle", "{The Royal Society}"):
+            assert bi.first_author_prose_surname(field) == bi.first_author_surname(field)
 
     def test_braced_comma_name_is_the_second_documented_divergence(self):
         # The LIST split is brace-aware; this comma split is not, so the
@@ -451,6 +461,15 @@ class TestProseSurnameIsTheOwner:
         assert check_evidence.find_cites(md, "Doe", "2020")  # the shape that works
         for lost in ("Jane Doe", "{Doe"):
             assert check_evidence.find_cites(md, lost, "2020") == []
+
+    def test_the_two_rules_agree_on_the_person_failure_fallback_path(self):
+        # The corner the docstring's "two shapes" claim is only true over:
+        # `first_author_surname` degrades to `_fallback_surname` when pybtex's
+        # `Person` raises (too many commas) and that fallback IS the comma
+        # split, so the rules agree there rather than diverging a third time.
+        for field in ("Doe, John, Jr.", "a, b, c, d", "Doe, Jr., John",
+                      "Smith, , John"):
+            assert bi.first_author_prose_surname(field) == bi.first_author_surname(field)
 
     def test_no_editor_fallback_unlike_the_identity_rule(self):
         # check_evidence documents editor-only invisibility as a residual.

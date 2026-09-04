@@ -382,13 +382,21 @@ class TestPercentIsNotAComment:
     entry's closing brace truncating the scan."""
 
     def _pybtex_fields(self, text):
-        """What the STRICT gate makes of the same text, or None if it refuses."""
+        """What the STRICT gate makes of the same text, or None if it refuses.
+
+        Same parse path as production: `validate_bib_write` runs through
+        `bib_validator`, which uses this `Parser`. The except clause names
+        pybtex's error deliberately -- a bare `except Exception` would let an
+        API break (renamed `Parser`, failed import) pass the refusal test
+        VACUOUSLY, since every input would then "refuse".
+        """
         import io
 
         from pybtex.database.input.bibtex import Parser
+        from pybtex.exceptions import PybtexError
         try:
             db = Parser().parse_stream(io.StringIO(text))
-        except Exception:
+        except PybtexError:
             return None
         return {k: dict(e.fields) for k, e in db.entries.items()}
 
@@ -407,6 +415,32 @@ class TestPercentIsNotAComment:
             assert self._pybtex_fields(text) is None, (
                 f"pybtex now accepts {text!r}: the docstring's claim that the "
                 "scanner's comment-blindness is unreachable no longer holds")
+
+    def test_top_level_percent_changes_nothing_for_either_reader(self):
+        # `%` is not a BibTeX comment character: text outside an entry is
+        # skipped until `@`, which is why the convention looks like one. The
+        # consequence both fix-reviewers asked after: a `%` does NOT comment
+        # an entry out, and the two readers AGREE that it does not.
+        note = '% just a note\n@article{real, title = {B}, year = {2020}}\n'
+        assert parse_entry_fields(note) == {"title": "B", "year": "2020"}
+        assert self._pybtex_fields(note) == {"real": {"title": "B", "year": "2020"}}
+
+        commented_out = ('% @article{old, title = {S}, year = {1999}}\n'
+                         '@article{real, title = {B}, year = {2020}}\n')
+        # pybtex reads the "commented" entry as real -- and so does the scan.
+        assert self._pybtex_fields(commented_out) == {
+            "old": {"title": "S", "year": "1999"},
+            "real": {"title": "B", "year": "2020"}}
+        assert [(f.name, f.value) for f in iter_fields(commented_out)] == [
+            ("title", "S"), ("year", "1999"), ("title", "B"), ("year", "2020")]
+
+    def test_percent_in_an_entry_key_is_accepted_and_scanned_correctly(self):
+        # The one position that is neither inside a value nor at field
+        # position. pybtex takes it as part of the key; field scanning begins
+        # after the key, so the fields still read correctly.
+        text = '@article{k%c, title = {A}, year = {2020}}'
+        assert self._pybtex_fields(text) == {"k%c": {"title": "A", "year": "2020"}}
+        assert parse_entry_fields(text) == {"title": "A", "year": "2020"}
 
     def test_the_scanner_still_reads_such_text_leniently(self):
         # Not a promise about the values -- only that it fails lenient, never
