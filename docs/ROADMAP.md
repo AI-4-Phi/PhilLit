@@ -10,13 +10,8 @@ that a recurrence is recognized where it would be read.
 
 ## Queue
 
-- **Re-vendor phillit-service at the 0.5.18 pin** - the service's item, run
-  from that repo. 0.5.18 carries the Phase-6 dispatch wording the service
-  held its 0.5.17 deploy for (rule 3 now states the inline-model converse),
-  plus the `@comment` grammar leaf (`hooks/bib_comments.py`), the cleaner's
-  refused-rewrite paths and the validator's check 4c (an `@` inside a comment
-  block; text outside every entry and block). The deploy itself is likewise
-  the service's.
+Nothing open. The service's deploy of re-vendor #15 (the 0.5.18 pin, service
+`064e658`) is the service's item, run from that repo.
 
 ## Checked and deliberately NOT filed
 
