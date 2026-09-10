@@ -21,6 +21,7 @@ from pybtex.database import parse_string
 _hook_dir = Path(__file__).resolve().parent.parent.parent.parent / "hooks"
 sys.path.insert(0, str(_hook_dir))
 from bib_identity import fallback_key, normalize_doi, same_work_year, title_key  # noqa: E402,F401
+from bib_comments import is_verbatim_block  # noqa: E402
 from cleaning_marker import has_marker, marker_removed_fields  # noqa: E402
 
 sys.path.pop(0)
@@ -702,19 +703,22 @@ def deduplicate_bib(
             if not entry.strip():
                 continue
 
+            # A block pybtex would drop (@comment, @string, @preamble) is
+            # carried verbatim - decided BEFORE the header regex, whose
+            # `[^,]+` would otherwise read a comma-bearing overview as a key.
+            if is_verbatim_block(entry):
+                comments.append(entry)
+                continue
+
             # Extract citation key
             match = re.match(r'@(\w+)\{([^,]+),', entry)
             if not match:
-                if entry.strip().startswith('@comment'):
-                    comments.append(entry)
+                print(f"WARNING: {bib_file.name}: dropped a chunk with no "
+                      f"`@type{{key,` header: {entry.strip()[:80]!r}", file=sys.stderr)
                 continue
 
             entry_type = match.group(1).lower()
             key = match.group(2).strip()
-
-            if entry_type == 'comment':
-                comments.append(entry)
-                continue
 
             if key in seen:
                 duplicates.append(key)

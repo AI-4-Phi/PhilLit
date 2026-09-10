@@ -27,6 +27,7 @@ from bib_validator import (
     check_bibtex_syntax,
     check_required_fields,
     check_biblatex_fields,
+    check_comment_bodies,
     validate_bib,
 )
 
@@ -962,3 +963,65 @@ class TestCLI:
         output = json.loads(result.stdout)
         assert "valid" in output
         assert "errors" in output
+
+
+class TestCheckCommentBodies:
+    """A braced `@word{...}` inside a `@comment{}` block is accepted by pybtex
+    as a second ENTRY - the block ends at that `@` and its remainder is
+    dropped - so the researcher spec's ban on `@` inside comment blocks is a
+    validation error, not a style note."""
+
+    def test_entry_inside_a_comment_block_is_an_error(self, tmp_path, valid_article):
+        content = ("@comment{\nDOMAIN_OVERVIEW: blah\n"
+                   "@misc{k2, title={y}, year={2001}}\n"
+                   "NOTABLE_GAPS: lost\n}\n\n" + valid_article)
+        errors = check_comment_bodies(content)
+        assert len(errors) == 1
+        assert "line 3" in errors[0] and "line 1" in errors[0]
+        assert "@misc" in errors[0]
+        bib = tmp_path / "t.bib"
+        bib.write_text(content, encoding="utf-8")
+        result = validate_bib(bib)
+        assert result["valid"] is False
+        assert any("@misc" in e for e in result["errors"])
+
+    def test_indented_comment_opener_is_an_error(self, tmp_path, valid_article):
+        # pybtex reads it as a comment; the cleaner's rewrite would drop it.
+        content = valid_article + "\n\n  @comment{ indented overview }\n"
+        errors = check_comment_bodies(content)
+        assert len(errors) == 1
+        assert "outside" in errors[0] and "@comment{ indented overview }" in errors[0]
+        assert f"line {valid_article.count(chr(10)) + 3}" in errors[0]
+        bib = tmp_path / "t.bib"
+        bib.write_text(content, encoding="utf-8")
+        assert validate_bib(bib)["valid"] is False
+
+    def test_percent_divider_between_entries_is_an_error(self, tmp_path, valid_article):
+        content = valid_article + "\n%% ==== section ====\n" + valid_article.replace("{", "{x", 1)
+        [error] = check_comment_bodies(content)
+        assert "%% ==== section ====" in error
+
+    def test_clean_comment_block_passes(self, tmp_path, comment_block, valid_article):
+        content = comment_block + "\n\n" + valid_article
+        assert check_comment_bodies(content) == []
+        bib = tmp_path / "t.bib"
+        bib.write_text(content, encoding="utf-8")
+        assert validate_bib(bib)["valid"] is True
+
+
+def test_module_loads_by_file_path_without_hooks_on_sys_path():
+    # bib_validator promises to work when a caller loads it by file path
+    # (the stamp_evidence idiom); every sibling import must go through the
+    # explicit path insert, or that caller fails at import time.
+    code = (
+        "import importlib.util, sys\n"
+        "sys.path = [p for p in sys.path if not p.rstrip('/').endswith('hooks')]\n"
+        f"spec = importlib.util.spec_from_file_location('bv', {str(HOOKS_DIR / 'bib_validator.py')!r})\n"
+        "m = importlib.util.module_from_spec(spec)\n"
+        "spec.loader.exec_module(m)\n"
+        "print(m.check_comment_bodies.__name__)\n"
+    )
+    proc = subprocess.run([sys.executable, "-c", code], capture_output=True, text=True,
+                          cwd=str(HOOKS_DIR.parent / "tests"))
+    assert proc.returncode == 0, proc.stderr
+    assert proc.stdout.strip() == "check_comment_bodies"

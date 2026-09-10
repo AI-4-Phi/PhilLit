@@ -2141,3 +2141,280 @@ class TestRewriteFidelity:
                          "\\url{https://x.org/a_b}", "10.1007/978-3-030-12345-6_7"):
             assert verbatim in entries_only
         assert "\\_" not in entries_only and "textasciitilde" not in entries_only
+
+
+class TestCommentBlocksGrammar:
+    """`comment_blocks` decides which raw chunks a rewrite carries verbatim.
+    The decision is the shared `@comment` grammar (hooks/bib_comments.py):
+    an entry TYPE that merely begins with "comment" is an entry."""
+
+    def test_an_entry_type_beginning_with_comment_is_not_carried(self):
+        text = ("@commentary{k1,\n  title = {x},\n  year = {2000}\n}\n\n"
+                "@comment{real}\n")
+        blocks = [b.strip() for b in mc.comment_blocks(text)]
+        assert blocks == ["@comment{real}"]
+
+    def test_paren_and_spaced_openers_are_carried(self):
+        # pybtex accepts both, and drops both on a rewrite.
+        text = "@comment(one)\n@COMMENT {two}\n@article{k,\n  title = {x}\n}\n"
+        assert [b.strip() for b in mc.comment_blocks(text)] == ["@comment(one)", "@COMMENT {two}"]
+
+    def test_predicate_is_the_shared_object(self):
+        import bib_comments
+        assert mc.is_verbatim_block is bib_comments.is_verbatim_block
+        assert mc.comment_defects is bib_comments.comment_defects
+
+
+class TestRewriteRefusal:
+    """A rewrite that would not round-trip is refused loudly and writes
+    nothing: the researcher's bib stays byte-identical, the result reports
+    failure (which the SubagentStop hook surfaces as "metadata was NOT
+    verified"), and no cleaning ledger is written for a pass that did not
+    happen."""
+
+    def test_write_bibtex_refuses_output_that_does_not_reparse(self, tmp_path):
+        bib = tmp_path / "t.bib"
+        original = "@article{k1,\n  title = {x},\n  year = {2000}\n}\n"
+        bib.write_text(original, encoding="utf-8")
+        data = pybtex_parse_file(str(bib), bib_format="bibtex")
+        # A carried chunk pybtex reads as a second `k1`: the rendered file
+        # holds k1 twice and fails to re-parse.
+        poisoned = ["@comment{overview @x{k1} tail}"]
+        with pytest.raises(mc.RewriteRefused) as exc:
+            mc.write_bibtex(data, bib, poisoned)
+        assert "re-parse" in str(exc.value)
+        # Measured: pybtex REJECTS a repeated key (it does not overwrite).
+        assert "repeated bibliography entry" in str(exc.value)
+        assert bib.read_text(encoding="utf-8") == original
+
+    @staticmethod
+    def _index(tmp_path, s2_nature_json, crossref_awad_other_issue):
+        json_dir = tmp_path / "json"
+        json_dir.mkdir()
+        (json_dir / "s2_nature.json").write_text(json.dumps(s2_nature_json), encoding='utf-8')
+        (json_dir / "verify_awad.json").write_text(json.dumps(crossref_awad_other_issue), encoding='utf-8')
+        return json_dir
+
+    def test_entry_inside_a_comment_block_refuses_the_rewrite(
+            self, tmp_path, s2_nature_json, crossref_awad_other_issue,
+            bibtex_with_hallucinated_number):
+        json_dir = self._index(tmp_path, s2_nature_json, crossref_awad_other_issue)
+        # pybtex ends the comment at `@misc`, parses k2 as an entry and drops
+        # NOTABLE_GAPS; a rewrite would make that loss permanent.
+        comment = ("@comment{\nDOMAIN_OVERVIEW: blah\n"
+                   "@misc{k2, title={y}, year={2001}}\n"
+                   "NOTABLE_GAPS: this tail would be lost\n}\n\n")
+        bib = tmp_path / "test.bib"
+        original = comment + bibtex_with_hallucinated_number + "\n"
+        bib.write_text(original, encoding='utf-8')
+
+        result = clean_bibtex(bib, json_dir)
+
+        assert result["success"] is False
+        assert any("@misc" in e and "line 3" in e for e in result["errors"])
+        assert bib.read_text(encoding='utf-8') == original
+        assert not (tmp_path / "intermediate_files" / "json" / "cleaning_ledger-test.json").exists()
+
+    def test_commentary_entry_is_rendered_once_and_the_file_reparses(
+            self, tmp_path, s2_nature_json, crossref_awad_other_issue,
+            bibtex_with_hallucinated_number):
+        json_dir = self._index(tmp_path, s2_nature_json, crossref_awad_other_issue)
+        bystander = "@commentary{k1,\n  title = {x},\n  year = {2000}\n}\n\n"
+        bib = tmp_path / "test.bib"
+        bib.write_text(bystander + bibtex_with_hallucinated_number + "\n", encoding='utf-8')
+
+        result = clean_bibtex(bib, json_dir)
+
+        assert result["success"] is True
+        assert result["total_fields_removed"] >= 1
+        content = bib.read_text(encoding='utf-8')
+        assert content.count("@commentary{k1") == 1
+        assert list(pybtex_parse_file(str(bib), bib_format="bibtex").entries) == ["k1", "awad2018moral"]
+
+
+class TestRewriteRefusalRoundTwo:
+    """Shapes two external reviews raised against the first refusal cut."""
+
+    @staticmethod
+    def _index(tmp_path, s2_nature_json, crossref_awad_other_issue):
+        json_dir = tmp_path / "json"
+        json_dir.mkdir()
+        (json_dir / "s2_nature.json").write_text(json.dumps(s2_nature_json), encoding='utf-8')
+        (json_dir / "verify_awad.json").write_text(json.dumps(crossref_awad_other_issue), encoding='utf-8')
+        return json_dir
+
+    @staticmethod
+    def _stale_ledger(tmp_path):
+        ledger = tmp_path / "intermediate_files" / "json" / "cleaning_ledger-test.json"
+        ledger.parent.mkdir(parents=True)
+        ledger.write_text('{"schema_version": 2, "bib_file": "test.bib", "entries": {"stale": {}}}',
+                          encoding='utf-8')
+        return ledger
+
+    def test_indented_comment_opener_refuses_the_rewrite(
+            self, tmp_path, s2_nature_json, crossref_awad_other_issue,
+            bibtex_with_hallucinated_number):
+        json_dir = self._index(tmp_path, s2_nature_json, crossref_awad_other_issue)
+        bib = tmp_path / "test.bib"
+        # pybtex reads the indented block as a comment; no splitter here does,
+        # so a rewrite would fold it into the entry's chunk and drop it.
+        original = bibtex_with_hallucinated_number + "\n\n  @comment{ indented overview }\n"
+        bib.write_text(original, encoding='utf-8')
+
+        result = clean_bibtex(bib, json_dir)
+
+        assert result["success"] is False
+        assert any("line 10" in e and "@comment{ indented overview }" in e for e in result["errors"])
+        assert bib.read_text(encoding='utf-8') == original
+
+    def test_refusal_removes_a_stale_ledger(
+            self, tmp_path, s2_nature_json, crossref_awad_other_issue,
+            bibtex_with_hallucinated_number):
+        # A prior pass's ledger attests a bib that has since changed; the
+        # barrier binds a ledger to its bib by NAME only, so a refused pass
+        # must take the stale attestation down rather than merely not renew it.
+        json_dir = self._index(tmp_path, s2_nature_json, crossref_awad_other_issue)
+        ledger = self._stale_ledger(tmp_path)
+        bib = tmp_path / "test.bib"
+        bib.write_text("@comment{\noverview\n@misc{k2, title={y}}\ntail\n}\n\n"
+                       + bibtex_with_hallucinated_number + "\n", encoding='utf-8')
+
+        result = clean_bibtex(bib, json_dir)
+
+        assert result["success"] is False
+        assert not ledger.exists()
+
+    def test_syntax_error_removes_a_stale_ledger(
+            self, tmp_path, s2_nature_json, crossref_awad_other_issue):
+        json_dir = self._index(tmp_path, s2_nature_json, crossref_awad_other_issue)
+        ledger = self._stale_ledger(tmp_path)
+        bib = tmp_path / "test.bib"
+        bib.write_text("@article{k1,\n  title = {unclosed\n", encoding='utf-8')
+
+        result = clean_bibtex(bib, json_dir)
+
+        assert result["success"] is False
+        assert not ledger.exists()
+
+    def test_string_block_is_carried_verbatim(
+            self, tmp_path, s2_nature_json, crossref_awad_other_issue,
+            bibtex_with_hallucinated_number):
+        json_dir = self._index(tmp_path, s2_nature_json, crossref_awad_other_issue)
+        bib = tmp_path / "test.bib"
+        bib.write_text('@string{jp = "J Phil"}\n\n' + bibtex_with_hallucinated_number + "\n",
+                       encoding='utf-8')
+
+        result = clean_bibtex(bib, json_dir)
+
+        assert result["success"] is True and result["total_fields_removed"] >= 1
+        content = bib.read_text(encoding='utf-8')
+        assert '@string{jp = "J Phil"}' in content
+        assert content.index("@string") < content.index("@article")
+        pybtex_parse_file(str(bib), bib_format="bibtex")
+
+    def test_reparse_refusal_resets_the_applied_counters(
+            self, tmp_path, monkeypatch, s2_nature_json, crossref_awad_other_issue,
+            bibtex_with_hallucinated_number):
+        # Simulate the failure class the re-parse guards against: a chunker
+        # that hands write_bibtex a chunk pybtex reads as an entry.
+        json_dir = self._index(tmp_path, s2_nature_json, crossref_awad_other_issue)
+        monkeypatch.setattr(mc, "comment_blocks",
+                            lambda text: ["@comment{overview @x{awad2018moral} tail}"])
+        bib = tmp_path / "test.bib"
+        original = bibtex_with_hallucinated_number + "\n"
+        bib.write_text(original, encoding='utf-8')
+
+        result = clean_bibtex(bib, json_dir)
+
+        assert result["success"] is False
+        assert any("re-parse" in e for e in result["errors"])
+        assert bib.read_text(encoding='utf-8') == original
+        # Nothing was applied to the file, so nothing reads as applied.
+        assert result["total_fields_removed"] == 0
+        assert result["applied_entries_cleaned"] == 0
+        assert result["entries_cleaned"] == 0
+        assert result["cleaned_entries"] == {}
+
+    def test_write_failure_leaves_the_original_and_no_temp_file(self, tmp_path, monkeypatch):
+        bib = tmp_path / "t.bib"
+        original = "@article{k1,\n  title = {x},\n  year = {2000}\n}\n"
+        bib.write_text(original, encoding="utf-8")
+        data = pybtex_parse_file(str(bib), bib_format="bibtex")
+
+        real_write_text = Path.write_text
+
+        def half_then_fail(self, data, *a, **k):
+            # A truncating failure: half the bytes land, then the disk is full.
+            real_write_text(self, data[: len(data) // 2], *a, **k)
+            raise OSError("disk full")
+        monkeypatch.setattr(Path, "write_text", half_then_fail)
+
+        with pytest.raises(OSError):
+            mc.write_bibtex(data, bib, [])
+        assert bib.read_bytes() == original.encode("utf-8")
+        assert [p.name for p in tmp_path.iterdir()] == ["t.bib"]
+
+    def test_without_the_guard_the_rewrite_loses_the_tail(
+            self, tmp_path, monkeypatch, s2_nature_json, crossref_awad_other_issue,
+            bibtex_with_hallucinated_number):
+        # Proves the refusal is load-bearing: with the preflight silenced the
+        # rewrite goes through, re-parses, and NOTABLE_GAPS is gone.
+        json_dir = self._index(tmp_path, s2_nature_json, crossref_awad_other_issue)
+        monkeypatch.setattr(mc, "comment_defects", lambda text: [])
+        bib = tmp_path / "test.bib"
+        bib.write_text("@comment{\nDOMAIN_OVERVIEW: blah\n@misc{k2, title={y}, year={2001}}\n"
+                       "NOTABLE_GAPS: this tail would be lost\n}\n\n"
+                       + bibtex_with_hallucinated_number + "\n", encoding='utf-8')
+
+        result = clean_bibtex(bib, json_dir)
+
+        assert result["success"] is True
+        content = bib.read_text(encoding='utf-8')
+        assert "NOTABLE_GAPS" not in content
+        assert "DOMAIN_OVERVIEW" in content
+        pybtex_parse_file(str(bib), bib_format="bibtex")
+
+
+class TestRewriteRefusalRoundThree:
+    _index = staticmethod(TestRewriteRefusalRoundTwo._index)
+
+    def test_a_ledger_the_writer_wrote_is_gone_after_a_refusal(
+            self, tmp_path, s2_nature_json, crossref_awad_other_issue,
+            bibtex_with_hallucinated_number):
+        # Round trip through the real writer, so this pins that deleter and
+        # writer agree on the path.
+        json_dir = self._index(tmp_path, s2_nature_json, crossref_awad_other_issue)
+        bib = tmp_path / "test.bib"
+        bib.write_text(bibtex_with_hallucinated_number + "\n", encoding='utf-8')
+        first = clean_bibtex(bib, json_dir)
+        assert first["success"] is True
+        ledger = Path(first["ledger_path"])
+        assert ledger.exists()
+
+        # A stray brace after the entry: text the rewrite would drop.
+        bib.write_text(bib.read_text(encoding='utf-8') + "}\n", encoding='utf-8')
+        second = clean_bibtex(bib, json_dir)
+
+        assert second["success"] is False
+        assert not ledger.exists()
+
+    def test_write_failure_is_recorded_and_removes_the_stale_ledger(
+            self, tmp_path, monkeypatch, s2_nature_json, crossref_awad_other_issue,
+            bibtex_with_hallucinated_number):
+        json_dir = self._index(tmp_path, s2_nature_json, crossref_awad_other_issue)
+        ledger = TestRewriteRefusalRoundTwo._stale_ledger(tmp_path)
+        bib = tmp_path / "test.bib"
+        original = bibtex_with_hallucinated_number + "\n"
+        bib.write_text(original, encoding='utf-8')
+
+        def boom(self, *a, **k):
+            raise OSError("disk full")
+        monkeypatch.setattr(Path, "write_text", boom)
+
+        result = clean_bibtex(bib, json_dir)
+
+        assert result["success"] is False
+        assert any("Rewrite failed" in e and "disk full" in e for e in result["errors"])
+        assert result["total_fields_removed"] == 0
+        assert bib.read_text(encoding='utf-8') == original
+        assert not ledger.exists()

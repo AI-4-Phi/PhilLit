@@ -5,7 +5,7 @@ Validates .bib files for:
 1. UTF-8 encoding
 2. No LaTeX diacritic escapes
 3. Valid BibTeX syntax
-4. No duplicate keys
+4. No duplicate keys or duplicate fields, and no text a metadata rewrite would drop
 5. Required fields per entry type
 6. No BibLaTeX fields
 
@@ -22,14 +22,16 @@ from pathlib import Path
 from pybtex.database import parse_file
 from pybtex.scanner import PybtexSyntaxError
 
-# Sibling module, imported through an explicit path insert (the same idiom
+# Sibling modules, imported through an explicit path insert (the same idiom
 # stamp_evidence.py uses) so this file also works when a caller loads it by
-# file path without putting hooks/ on sys.path itself. cleaning_marker is a
-# `re`-only leaf on purpose: metadata_cleaner owns the marker FORMAT but
-# imports bib_identity, which imports THIS module, so reading the grammar
-# out of the cleaner here would close an import cycle.
+# file path without putting hooks/ on sys.path itself. Both are `re`-only
+# leaves on purpose: metadata_cleaner owns the marker FORMAT but imports
+# bib_identity, which imports THIS module, so reading the marker grammar
+# out of the cleaner here would close an import cycle; the @comment
+# grammar is shared with the cleaner and dedupe the same way.
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 try:
+    from bib_comments import comment_defects  # noqa: E402
     from cleaning_marker import marker_removed_fields, marker_type_changed  # noqa: E402
 finally:
     sys.path.pop(0)
@@ -235,8 +237,24 @@ def check_duplicate_fields(content):
     return errors
 
 
+def check_comment_bodies(content):
+    """Check 4c: text a metadata rewrite would drop (before pybtex parsing
+    silently accepts it).
+
+    pybtex ends a comment at the next `@`, so a braced `@word{...}` inside
+    the block becomes a second entry and the rest of the block - the domain
+    overview the synthesis planner reads - is dropped without an error; and
+    a rewrite keeps only verbatim blocks and parsed entries, so any other
+    text (a `%%` divider, a stray `}`, an indented `@comment{`) is lost the
+    same way. The researcher spec bans `@` inside comment blocks; this
+    makes the ban, and its consequence, a block. Grammar and wording live in
+    bib_comments (`comment_defects`), shared with the cleaner."""
+    return comment_defects(content)
+
+
 def check_duplicate_keys(content):
-    """Check 4: Find duplicate citation keys (before pybtex parsing silently overwrites)."""
+    """Check 4: Find duplicate citation keys, with both line numbers (pybtex
+    rejects a repeated key too, but names neither line)."""
     errors = []
     keys = {}
     lines = content.split('\n')
@@ -401,6 +419,9 @@ def validate_bib(path):
 
     # Check 4b: Duplicate fields within entries (before pybtex parsing)
     errors.extend(check_duplicate_fields(content))
+
+    # Check 4c: text a metadata rewrite would drop (pybtex accepts it, then skips it)
+    errors.extend(check_comment_bodies(content))
 
     # Check 3: BibTeX syntax
     syntax_errors = check_bibtex_syntax(path)

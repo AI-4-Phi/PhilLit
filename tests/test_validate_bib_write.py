@@ -300,3 +300,19 @@ class TestSlugFileGate:
         out, code = run_hook(write_payload(str(bib), self.DEFAULT_CONTENT))
         assert out == {}
         assert code == 0
+
+
+class TestCommentBodyGate:
+    def test_entry_inside_a_comment_block_is_denied_at_write_time(self):
+        # pybtex accepts this shape (the block ends at `@misc`, k2 becomes an
+        # entry, NOTABLE_GAPS is dropped), so only the textual check 4c can
+        # deny it - and the Write is the earliest point to do so.
+        content = ("@comment{\nDOMAIN_OVERVIEW: blah\n"
+                   "@misc{k2, title={y}, year={2001}}\n"
+                   "NOTABLE_GAPS: lost\n}\n\n" + VALID_BIB)
+        out, code = run_hook(write_payload("reviews/x/literature.bib", content))
+        assert code == 0
+        hso = out["hookSpecificOutput"]
+        assert hso["permissionDecision"] == "deny"
+        assert "@misc" in hso["permissionDecisionReason"]
+        assert "line 3" in hso["permissionDecisionReason"]

@@ -34,10 +34,11 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Optional
 
-from pybtex.database import parse_file, BibliographyData
+from pybtex.database import parse_file, parse_string, BibliographyData
 from pybtex.database.output.bibtex import Writer
 from pybtex.scanner import PybtexSyntaxError
 
+from bib_comments import comment_defects, is_verbatim_block
 from bib_identity import (
     normalize_doi,
     normalize_journal,
@@ -1444,6 +1445,10 @@ class _BraceWriter(Writer):
         return text
 
 
+class RewriteRefused(Exception):
+    """A cleaning rewrite that would not round-trip. Nothing was written."""
+
+
 def comment_blocks(text: str) -> list[str]:
     """The `@comment{...}` blocks of a bib file, in order, as raw text.
 
@@ -1453,17 +1458,26 @@ def comment_blocks(text: str) -> list[str]:
     a domain its whole comment block, and the researcher spent eleven
     minutes restoring it by hand). Same chunking as dedupe_bib and
     stamp_evidence.split_entries: a line that starts with `@` opens a new
-    chunk, which is why the researcher spec forbids `@` inside a comment.
+    chunk, which is why the researcher spec forbids `@` inside a comment -
+    a braced `@word{...}` inside a block ends the block there for pybtex
+    and would lose its tail, which is why `clean_bibtex` refuses to rewrite
+    a bib whose closed comment block contains an `@` (bib_comments.
+    comment_body_intrusions; the validator reports the same defect).
+    Whether a chunk IS a block is `bib_comments.is_verbatim_block`: an entry
+    type that merely begins with "comment" is an entry, and `@string` /
+    `@preamble` ride along, since pybtex's Writer drops them the same way
+    (a `@string` macro is expanded into the rendered entries; the
+    declaration is carried unused).
     The one residual is the mirror image: a FIELD VALUE whose line starts
-    with `@comment` would be copied out as a comment block as well: the
-    chunk runs to the next `@`-initial line, so the copy at the top is
-    that line PLUS the tail of its entry, and its unbalanced braces may not
-    re-parse. pybtex still parses the entry whole, so the entry itself is
-    intact. No delivered bib has one; it is not guarded.
-    `@preamble` gets the same silent drop from pybtex and is NOT carried
-    over - do not use it in a domain bib."""
-    return [chunk for chunk in re.split(r"\n(?=@)", text)
-            if chunk.strip().lower().startswith("@comment")]
+    with `@comment` is copied out as a comment block as well: the chunk
+    runs to the next `@`-initial line, so the copy at the top is that line
+    PLUS the tail of its entry, prepended as junk commentary. pybtex still
+    parses the entry whole, so the entry itself is intact, and the result
+    re-parses (measured 2026-09-10; zero incidence over 335 local bibs). A
+    copy that did NOT re-parse would be refused by `write_bibtex`.
+    An INDENTED `@comment{` is a comment to pybtex but not a chunk here, so
+    `clean_bibtex` refuses to rewrite a bib that has one."""
+    return [chunk for chunk in re.split(r"\n(?=@)", text) if is_verbatim_block(chunk)]
 
 
 def write_bibtex(bib_data: BibliographyData, output_path: Path,
@@ -1474,12 +1488,32 @@ def write_bibtex(bib_data: BibliographyData, output_path: Path,
 
     Rendered in memory and written in one call: `check_braces` (or the
     LaTeX encoder) raising halfway through a streamed write used to leave
-    the researcher's bib truncated at the failing entry."""
+    the researcher's bib truncated at the failing entry. The rendered text
+    is re-parsed before the write; if pybtex rejects it (a carried chunk it
+    reads as an entry, say) `RewriteRefused` is raised and the file is left
+    untouched - a syntax-breaking mis-chunking is a loud no-write, never a
+    broken bib. This does NOT catch content loss that still parses; the
+    comment-body check in `clean_bibtex` covers the known case of that."""
     rendered = io.StringIO()
     _BraceWriter().write_stream(bib_data, rendered)
     parts = [block.rstrip() + "\n\n" for block in comments or []]
     parts.append(rendered.getvalue())
-    output_path.write_text("".join(parts), encoding='utf-8')
+    text = "".join(parts)
+    try:
+        parse_string(text, bib_format='bibtex')
+    except Exception as e:
+        raise RewriteRefused(
+            f"the cleaned text does not re-parse ({type(e).__name__}: {e}); "
+            f"{output_path.name} left untouched") from e
+    # tmp + os.replace, as the ledger writer does: a write that fails
+    # halfway must not leave the researcher's bib truncated either.
+    tmp = output_path.with_name(output_path.name + ".tmp")
+    try:
+        tmp.write_text(text, encoding='utf-8')
+        os.replace(str(tmp), str(output_path))
+    finally:
+        if tmp.exists():
+            tmp.unlink()
 
 
 def _verified_identifier(entry, api_entry: dict):
@@ -1530,6 +1564,35 @@ def write_cleaning_ledger(bib_path: Path, ledger_entries: dict, breaker_tripped:
     tmp.write_text(json.dumps(payload, indent=2), encoding="utf-8")
     os.replace(str(tmp), str(final))
     return str(final)
+
+
+def _discard_stale_ledger(result: dict, bib_path: Path) -> None:
+    """Remove this bib's cleaning ledger from an earlier pass. A pass that
+    refuses (syntax error, a comment block the rewrite could not carry, a
+    rendering that does not re-parse) writes no ledger - and must not leave
+    the previous one standing, because the evidence barrier binds a ledger
+    to its bib by NAME only and would trust an attestation of a bib that has
+    since changed. A missing ledger demotes downstream: the safe direction."""
+    stale = bib_path.parent / "intermediate_files" / "json" / f"cleaning_ledger-{bib_path.stem}.json"
+    try:
+        if stale.exists():
+            stale.unlink()
+    except OSError as e:
+        result["warnings"].append(f"Could not remove the stale cleaning ledger {stale.name}: {e}")
+
+
+def _refuse(result: dict, bib_path: Path, message: str) -> dict:
+    """Record a refused pass: failure, the reason, no ledger (stale one gone),
+    and applied counters that say nothing was applied - the file is untouched."""
+    result["success"] = False
+    result["errors"].append(message)
+    for key in ("total_fields_removed", "entries_cleaned", "applied_entries_cleaned",
+                "years_corrected", "types_downgraded", "applied_demotions"):
+        result[key] = 0
+    result["cleaned_entries"] = {}
+    result["applied_fields_removed_by_name"] = {}
+    _discard_stale_ledger(result, bib_path)
+    return result
 
 
 def _write_ledger_safe(result: dict, bib_path: Path, ledger_entries: dict, breaker_tripped: bool) -> None:
@@ -1667,18 +1730,28 @@ def clean_bibtex(bib_path: Path, json_dirs) -> dict:
     # Parse BibTeX file. The raw text is read alongside because pybtex drops
     # @comment blocks, which a rewrite must carry over (see comment_blocks).
     try:
-        comments = comment_blocks(bib_path.read_text(encoding='utf-8'))
+        raw_text = bib_path.read_text(encoding='utf-8')
+        comments = comment_blocks(raw_text)
         bib_data = parse_file(str(bib_path), bib_format='bibtex')
     except PybtexSyntaxError as e:
-        result["success"] = False
-        result["errors"].append(f"BibTeX syntax error: {e}")
-        return result
+        return _refuse(result, bib_path, f"BibTeX syntax error: {e}")
     except Exception as e:
-        result["success"] = False
-        result["errors"].append(f"BibTeX parsing error: {e}")
-        return result
+        return _refuse(result, bib_path, f"BibTeX parsing error: {e}")
 
+    # Preflight: refuse, rather than clean, a file the rewrite could not
+    # carry whole - an `@` inside a @comment block ends it there for pybtex,
+    # so the chunk carried over is only its head and the tail is lost for
+    # good; and any text outside a verbatim chunk and its chunk's entry (a
+    # `%%` divider, a stray `}`, an indented `@comment{`) is dropped, since
+    # a rewrite keeps only those two things. The validator blocks on the
+    # same list (bib_comments.comment_defects); this is what keeps the text
+    # intact until the researcher fixes it, since the SubagentStop hook runs
+    # the cleaner whether or not validation passed.
     result["entries_total"] = len(bib_data.entries)
+    defects = comment_defects(raw_text)
+    if defects:
+        return _refuse(result, bib_path,
+                       "Rewrite refused: " + "; ".join(defects) + f"; {bib_path.name} left untouched")
 
     # Entry-scoped planning: only entries with an affirmative API match are
     # cleaned; unmatched entries pass through untouched and are counted.
@@ -1810,7 +1883,14 @@ def clean_bibtex(bib_path: Path, json_dirs) -> dict:
             result["applied_demotions"] += 1
 
     if result["applied_entries_cleaned"]:
-        write_bibtex(bib_data, bib_path, comments)
+        try:
+            write_bibtex(bib_data, bib_path, comments)
+        except RewriteRefused as e:
+            return _refuse(result, bib_path, f"Rewrite refused: {e}")
+        except OSError as e:
+            # The atomic write left the bib untouched; the pass still did not
+            # happen, so the stale ledger must go the same way.
+            return _refuse(result, bib_path, f"Rewrite failed: {type(e).__name__}: {e}")
 
     _write_ledger_safe(result, bib_path, ledger_entries, False)
 

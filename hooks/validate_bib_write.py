@@ -30,6 +30,7 @@ sys.path.insert(0, str(HOOKS_DIR))
 
 from bib_validator import (
     check_bibtex_syntax,
+    check_comment_bodies,
     check_duplicate_fields,
     check_duplicate_keys,
     check_latex_escapes,
@@ -121,6 +122,7 @@ def validate_content(content: str, file_path: str) -> list[str]:
     """Run all bib_validator checks against a content string."""
     errors = []
     errors.extend(check_duplicate_fields(content))
+    errors.extend(check_comment_bodies(content))
     errors.extend(check_duplicate_keys(content))
     errors.extend(check_latex_escapes(file_path, content))
 
