@@ -17,6 +17,12 @@ workspace are untouched.
 Field names verified empirically against Claude Code 2.1.215:
   tool_name == "Agent"; tool_input = {subagent_type, run_in_background,
   prompt, description}; agent_id absent at orchestrator level.
+Claude Code 2.1.267 (measured 2026-09-10) exposes NO run_in_background on
+Agent at all: every dispatch is asynchronous and reports back through
+task notifications, so this gate never fires there. It is kept for the
+CLIs that still expose the flag; on 2.1.267 and later it is SKILL.md's
+dispatch rules, not this hook, that prevent a mis-dispatch - do not read
+those bullets as redundant with this file.
 
 Reads the hook JSON from stdin (Claude Code hook protocol).
 Exits 0 with hookSpecificOutput JSON on stdout.

@@ -77,9 +77,14 @@ Invoke subagents using the Agent tool with these parameters (older Claude Code s
 - `subagent_type`: The agent name with the plugin prefix (e.g., "phillit:literature-review-planner")
 - `prompt`: The instructions for the agent (include working directory and output filename)
 - `description`: Short description (3-5 words)
-- `run_in_background`: Always `false` (see below)
+- `run_in_background`: pass `run_in_background: false` **only if the tool's parameter list includes it**; never add a parameter the tool does not list. Claude Code 2.1.267 exposes no such parameter on `Agent` — every dispatch there returns "Async agent launched" at once, and the result arrives later as a `<task-notification>`.
 
-**Pass `run_in_background: false` explicitly on every subagent dispatch.** Foreground execution streams status updates to the user.
+**How dispatch completes depends on the harness.** On the harnesses observed so far, either every call in a message blocks and returns its result inline (the tool lists `run_in_background`), or every call returns immediately and each agent's result arrives later as a `<task-notification>` (the tool lists no such parameter). In both models the same four rules hold:
+- Issue all N calls of a parallel phase in ONE message.
+- An immediate "launched" return is success, not failure — never re-dispatch an agent because its call came back at once.
+- Do not start the next step until every dispatched agent has reported completion. In the notification model an agent's completion is the FIRST `<task-notification>` carrying its `<task-id>` with `<status>completed</status>`; read its result from that notification or the output file it names. Do not poll for it and do not busy-wait with tool calls — do whatever does not need the results (e.g. update `task-progress.md`), then end your turn and let the notifications arrive. Before advancing, also confirm every expected output file of the phase exists.
+- One agent can notify more than once (the harness re-fires when an agent stops again). A later notification with a `<task-id>` you have already collected is a repeat — take no action, and never re-dispatch.
+- A notification with any status other than `completed` is a failure to handle, not a repeat: do not advance — read that agent's output, then re-dispatch that one agent only.
 
 Do NOT read agent definition files before invoking them. Agent definitions are for the system, not for you to read.
 
@@ -197,8 +202,8 @@ Never advance to a next step in this phase before completing the current step.
    - Example prompt for domain 1: "Domain: [name]. Focus: [focus]. Key questions: [questions]. Research idea: [idea]. Working directory: reviews/[project-name]/. Write output to: reviews/[project-name]/literature-domain-1.bib"
    - description: "Domain [N]: [domain name]"
    - **CRITICAL**: Include ALL Agent tool calls in a single message to enable parallel execution
-   - **CRITICAL — foreground, never background**: Set `run_in_background: false` (or omit it) on EVERY call.
-3. With foreground dispatch (`run_in_background: false`), all N calls in the single message block until every agent finishes and their results return inline — there is no separate wait step. Expected outputs: `reviews/[project-name]/literature-domain-1.bib` through `literature-domain-N.bib`. **Update task-progress.md after all domains complete**
+   - **CRITICAL — foreground, never background**: never set `run_in_background: true`; pass `false` where the tool lists the parameter (see Agent Tool Usage).
+3. Wait until every one of the N agents has completed — inline results, or one completion notification per agent (see Agent Tool Usage; an immediate "launched" return is not completion). Expected outputs: `reviews/[project-name]/literature-domain-1.bib` through `literature-domain-N.bib`. **Update task-progress.md after all domains complete**
 4. **Collect source issues**: Note any "Source issues:" reported by domain researchers for the final summary
 5. **Evidence barrier (REQUIRED, after all researchers complete)**: run
 
@@ -255,7 +260,7 @@ Never advance to Phase 4 before all domain researchers have completed AND the ev
    - Example prompt: "Research idea: [idea]. Working directory: reviews/[project-name]/. BibTeX files: literature-domain-1.bib through literature-domain-N.bib. Plan: lit-review-plan.md. Write output to: reviews/[project-name]/synthesis-outline.md"
    - description: "Plan synthesis structure"
 2. Planner reads BibTeX files and creates tight outline
-3. With foreground dispatch (`run_in_background: false`), the call blocks until the agent finishes and its result returns inline. Expected output: `reviews/[project-name]/synthesis-outline.md` (800-1500 words outline for a 3000-4000 word review)
+3. Wait for the planner to complete — its inline result, or its completion notification (see Agent Tool Usage). Expected output: `reviews/[project-name]/synthesis-outline.md` (800-1500 words outline for a 3000-4000 word review)
 4. **Update task-progress.md**
 
 Never advance to a next step in this phase before completing the current step.
@@ -282,8 +287,8 @@ Never advance to a next step in this phase before completing the current step.
      reviews/[project-name]/synthesis-section-1.md"
    - description: "Write section [N]: [section name]"
    - **CRITICAL**: Include ALL Agent tool calls in a single message to enable parallel execution
-   - **CRITICAL — foreground, never background**: Set `run_in_background: false` (or omit it) on EVERY call.
-4. With foreground dispatch (`run_in_background: false`), all N calls in the single message block until every agent finishes and their results return inline — there is no separate wait step. Expected outputs: `reviews/[project-name]/synthesis-section-1.md` through `synthesis-section-N.md`. **Update task-progress.md after all sections complete**
+   - **CRITICAL — foreground, never background**: never set `run_in_background: true`; pass `false` where the tool lists the parameter (see Agent Tool Usage).
+4. Wait until every one of the N writers has completed — inline results, or one completion notification per agent (see Agent Tool Usage; an immediate "launched" return is not completion). Expected outputs: `reviews/[project-name]/synthesis-section-1.md` through `synthesis-section-N.md`. **Update task-progress.md after all sections complete**
 
 Never advance to Phase 6 before all synthesis writers have completed.
 
@@ -339,6 +344,8 @@ Never advance to Phase 6 before all synthesis writers have completed.
    - Re-stamp each merged entry's `EVIDENCE-*` tier attestation-aware from the evidence report
    - Deduplicate by DOI (catches same paper with different keys)
    - Log which duplicates were removed to console
+   - Print a `year conflict` line (stderr) when two copies of one work disagree on the year. The merge still happens and the survivor is chosen by abstract and importance, not by year — so before step 4, check the survivor's year against the prose (and CrossRef) and fix the wrong one in the merged bib. A survivor whose year the prose does not cite fails step 5 as an unresolved citation.
+   - Leave `same_work_group` pairs alone, by design: the barrier's grouping is advisory (a reprint carries its own DOI). The planner already cites one key per group, and step 4 prints a `[SAME-WORK]` line if the prose cites two.
 
 4. Generate bibliography and append to final review:
 
@@ -406,8 +413,9 @@ Never advance to Phase 6 before all synthesis writers have completed.
    Move JSON API response files to `intermediate_files/json/` for archival (allows debugging while keeping review directory clean):
    ```bash
    mkdir -p "reviews/[project-name]/intermediate_files/json"
-   mv "reviews/[project-name]"/*.json "reviews/[project-name]/intermediate_files/json/" 2>/dev/null || true
+   find "reviews/[project-name]" -maxdepth 1 -name "*.json" -exec mv {} "reviews/[project-name]/intermediate_files/json/" \;
    ```
+   (`find`, not a bare `mv …/*.json` glob: under zsh an unmatched glob aborts the command before any redirection applies, so `2>/dev/null || true` cannot silence its `no matches found` error.)
 
    Move stray API-result files from project root (agents sometimes omit the `$REVIEW_DIR/` prefix).
    Use targeted prefixes — never bare `*.json`, which could swallow unrelated files:
@@ -440,7 +448,7 @@ Never advance to Phase 6 before all synthesis writers have completed.
    find . -maxdepth 1 -type d -empty -not -name '.*' -not -name 'reviews' -not -name 'tests' -not -name 'docs' -exec rmdir {} \;
    ```
 
-   **Note:** Never `cd` here either — see the rule under Task Tool Usage above.
+   **Note:** Never `cd` here either — see the rule under Agent Tool Usage above.
 
 **After cleanup** (final state):
 ```
