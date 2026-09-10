@@ -10,8 +10,26 @@ that a recurrence is recognized where it would be read.
 
 ## Queue
 
-Nothing open. The service's deploy of re-vendor #15 (the 0.5.18 pin, service
-`064e658`) is the service's item, run from that repo.
+- **Re-vendor phillit-service at the 0.5.19 pin** - the service's item, run
+  from that repo. 0.5.19 is the final-design review round of the `@comment`
+  grammar: block extent by pybtex's rule (the next `@`, not the braces),
+  paren-delimited commands lexed with braces and quotes, a BOM tolerated,
+  render crashes routed through the refusal path, and dispatch rule 2/3
+  wording.
+- **Bind the cleaning ledger to its bib by content** - the evidence barrier
+  binds a ledger to its bib by NAME only, so a refused cleaning pass must
+  delete the stale ledger, and that unlink can fail (a warning, not a block).
+  A `bib_sha256` in the ledger (schema 3; the barrier accepts {1, 2} and must
+  learn 3) would make a stale ledger unusable however it survived. Raised in
+  the 0.5.18 final-design review; no incident yet.
+- **Paren-delimited entries** (`@article(k1, ...)`) - pybtex and
+  `bib_comments` accept them; dedupe's and the validator's `@type{` header
+  grammar does not, so dedupe drops one with only a stderr warning. Either
+  reject the form at validation (the researcher spec only shows braces) or
+  support it in both. Zero incidence over 335 local bibs.
+
+The service's deploy of re-vendor #15 (the 0.5.18 pin, service `064e658`) is
+the service's item, run from that repo.
 
 ## Checked and deliberately NOT filed
 
