@@ -16,6 +16,7 @@ lists it, never invent a parameter, treat an immediate return as success,
 wait for every agent's completion, and treat a repeat notification as a
 no-op. These assertions guard that wording.
 """
+import re
 from pathlib import Path
 
 SKILL = (
@@ -76,3 +77,55 @@ def test_no_deprecated_taskoutput_wait_idiom():
     # TaskOutput is deprecated (Claude Code v2.1.203+); completion arrives as
     # notifications, not by polling.
     assert "TaskOutput" not in TEXT
+
+
+def test_rule_count_matches_the_bullets_that_follow():
+    # "the same N rules hold:" is followed by exactly N bullets - a miscount
+    # reads as a dropped rule to the orchestrator.
+    m = re.search(r"the same (\w+) rules hold:\n((?:- .*(?:\n|$))+)", TEXT)
+    assert m, "rule-count sentence missing"
+    words = {"two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7}
+    stated = words.get(m.group(1)) or int(m.group(1))
+    bullets = [l for l in m.group(2).splitlines() if l.startswith("- ")]
+    assert stated == len(bullets)
+
+
+def _sentence_around(text, start, end):
+    # The sentence holding text[start:end]: back to the previous ". " or
+    # newline, forward to the next ". ", ".\n" or newline.
+    lo = max(text.rfind(". ", 0, start), text.rfind("\n", 0, start)) + 1
+    ends = [i for i in (text.find(". ", end), text.find(".\n", end),
+                        text.find("\n", end)) if i != -1]
+    hi = min(ends) + 1 if ends else len(text)
+    return text[lo:hi]
+
+
+def test_end_turn_is_fenced_to_the_notification_model():
+    # In an SDK session every dispatch returns inline and nothing re-prompts
+    # the orchestrator after its turn ends; an unfenced "end your turn" at a
+    # phase boundary ends the review. So: the inline converse is stated, the
+    # imperative names the "Async agent launched" return it applies to, and
+    # every "end ... turn" in the skill either names the notification model
+    # or is negated.
+    assert "If a call returned the agent's result inline, that agent is complete" in TEXT
+    assert "continue in this same turn" in TEXT
+    assert "never end your turn to wait for a notification that will not come" in TEXT
+    # The fence is the CRITERION (no result came back), with the observed
+    # acknowledgement only as its example - a harness may word the ack
+    # differently and must still fall on the right side.
+    assert "returned an acknowledgement without the agent's result" in TEXT
+    assert "Async agent launched" in TEXT
+    assert "end your turn only to let" in TEXT
+    # An inline call that errored or came back empty also "has no result";
+    # it must read as a failure to handle, never as a launch to wait for.
+    assert "An inline error or an empty return" in TEXT
+    # The classification is operational, not a string match: a return that
+    # carries the agent's report IS the result.
+    assert "carries the agent's report" in TEXT
+    # The missing-file backstop names its remedy in both models.
+    assert "re-dispatch that one agent, in either model" in TEXT
+    hits = list(re.finditer(r"end(?:ing)? (?:your|the) turn", TEXT))
+    assert hits
+    for m in hits:
+        sentence = _sentence_around(TEXT, m.start(), m.end())
+        assert re.search(r"notification|never", sentence), sentence
