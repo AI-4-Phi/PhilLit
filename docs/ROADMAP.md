@@ -14,22 +14,25 @@ that a recurrence is recognized where it would be read.
   binds a ledger to its bib by NAME only, so a refused cleaning pass must
   delete the stale ledger, and that unlink can fail (a warning, not a block).
   A `bib_sha256` in the ledger (schema 3; the barrier accepts {1, 2} and must
-  learn 3) would make a stale ledger unusable however it survived. Raised in
-  the 0.5.18 final-design review; no incident yet.
-- **Paren-delimited entries** (`@article(k1, ...)`) - pybtex and
-  `bib_comments` accept them; dedupe's and the validator's `@type{` header
-  grammar does not, so dedupe drops one with only a stderr warning. Either
-  reject the form at validation (the researcher spec only shows braces) or
-  support it in both. Zero incidence over 335 local bibs.
+  learn 3) would make a stale ledger unusable however it survived - hash the
+  decoded text, not the bytes, since the cleaner writes in text mode and
+  Windows gets CRLF. Raised in the 0.5.18 final-design review; no incident yet.
 
-The service's deploy of re-vendor #16 (the 0.5.19 pin, service `37c739c`) is
-the service's item, run from that repo.
+The service's re-vendor at the 0.5.20 pin, and its deploy, are the service's
+items, run from that repo.
 
 ## Checked and deliberately NOT filed
 
 Not a queue — a register, so these are not re-found. Each was a live candidate
 that did not survive reading the file it concerns.
 
+- `write_bibtex` hardening beyond the descriptor write (the service's 0.5.19
+  pin review, 2026-09-10): logging a failed cleanup unlink, treating the
+  `exists()`/`stat()` mode copy as a race, and `os.fchmod`. The cleaner runs
+  as the single writer of a per-review workspace; a stale `.tmp` after a
+  failed write is visible in the directory and the failure itself reaches the
+  agent as the cleaner's `Rewrite failed` error; `os.fchmod` is Unix-only and
+  Windows must work.
 - A machine-readable `year-conflicts.json` from `dedupe_bib`, gating
   `generate_bibliography` until acknowledged (proposed in review, 2026-09-10).
   Seen once; dedupe's `year conflict` stderr line now sits at the cause and

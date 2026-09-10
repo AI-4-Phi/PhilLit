@@ -21,6 +21,9 @@ from bib_comments import (  # noqa: E402
 )
 
 
+E = "@article{k1,\n  title = {x},\n  year = {2000}\n}\n"
+
+
 class TestIsVerbatimBlock:
     def test_brace_and_paren_openers_in_any_case_with_leading_whitespace(self):
         assert is_verbatim_block("@comment{\nDOMAIN: 1\n}")
@@ -77,6 +80,16 @@ class TestCommentBodyIntrusions:
                 "@article{k1,\n  title = {x}\n}\n")
         assert comment_body_intrusions(text) == []
 
+    def test_string_and_preamble_bodies_may_hold_an_at(self):
+        # pybtex reads a @string value and a @preamble whole, braces or
+        # quotes deciding their extent; only a @comment runs to the next `@`.
+        # Reporting these blocked the cleaner (and a service SubagentStop)
+        # on a valid file with a false diagnosis.
+        for block in ('@string{j = "Journal @ Large"}', "@string{j = {Journal @ Large}}",
+                      '@preamble{"mail: foo@bar"}', "@PREAMBLE( {\\href{mailto:a@b}} )"):
+            assert comment_body_intrusions(block + "\n" + E) == [], block
+            assert comment_defects(block + "\n" + E) == [], block
+
     def test_a_commentary_entry_is_not_an_opener(self):
         text = "@commentary{k1, title={x}}\n@misc{k2, title={y}}\n"
         assert comment_body_intrusions(text) == []
@@ -89,13 +102,10 @@ class TestCommentBodyIntrusions:
     def test_second_block_reports_its_own_lines(self):
         text = ("@comment{first, clean}\n"
                 "@article{k1,\n  title = {x}\n}\n"
-                "@comment{\nsecond\n@misc{k2}\n}\n")
+                "@comment{\nsecond\n@misc{k2, title={y}}\n}\n")
         assert comment_body_intrusions(text) == []
         [msg] = comment_defects(text)
         assert "line 8" in msg and "`@misc` on line 7" in msg and "opened on line 5" in msg
-
-
-E = "@article{k1,\n  title = {x},\n  year = {2000}\n}\n"
 
 
 class TestReviewRoundTwo:
@@ -220,9 +230,29 @@ class TestStrayText:
         [stray] = stray_text(text)
         assert (stray.line, stray.snippet) == (6, "}")
 
-    def test_paren_entry_span_is_honoured(self):
-        text = "@article(k1,\n  title = {x}\n)\n" + E
-        assert stray_text(text) == []
+    def test_a_header_no_tool_reads_is_reported_as_such(self):
+        # pybtex accepts all of these; the intersection header `@type{key,`
+        # shared by dedupe, evidence stamping and the field scanner does not
+        # match any, so at least one tool drops or misses it (dedupe, with
+        # only a stderr warning, all but the space-before-key form, which
+        # dedupe reads and evidence stamping misses). The
+        # report names the header rule, not the column-0 rule (the command
+        # DOES start its line), and the paren form is rejected here rather
+        # than taught to every tool (zero incidence over 335 local bibs).
+        for bad in ("@article(k2,\n  title = {x}\n)\n",
+                    "@my-type{k2, title={t}, year={2000}}\n",
+                    "@commentary{k2}\n",
+                    "@article {k2, title={t}}\n",
+                    "@article{ k2, title={t}}\n"):
+            [stray] = stray_text(bad + E)
+            assert stray.line == 1 and stray.snippet == bad.splitlines()[0], bad
+            [msg] = comment_defects(bad + E)
+            assert "`@type{key,`" in msg and "dedupe drops the chunk" in msg, msg
+            assert "start at the beginning of its line" not in msg, msg
+            assert "no space after the type or before the key" in msg, msg
+        # The same header at column 0 in a well-formed file is an entry.
+        assert stray_text("@commentary{k2,}\n" + E) == []
+        assert stray_text("@Article{k2 ,\n  title = {x}\n}\n" + E) == []
 
     def test_defect_message_names_the_line_and_the_text(self):
         [msg] = comment_defects(E + "%% ---- divider ----\n" + E.replace("k1", "k2"))
@@ -234,22 +264,35 @@ class TestReviewRoundFour:
     """Final-design review: lexical context for paren-delimited commands, a
     BOM, late-balance reporting, and same-line ordering."""
 
-    def test_paren_entry_with_a_literal_paren_inside_a_value_is_not_stray(self):
-        assert stray_text("@article(k1,\n  title = {A ) char},\n  year = {2000}\n)\n" + E) == []
-        assert stray_text('@article(k1,\n  title = "A ) char",\n  year = {2000}\n)\n' + E) == []
+    def test_paren_entry_is_one_header_report_whatever_its_body_holds(self):
+        # The `(`-form body is never scanned as an entry span any more, so a
+        # literal paren inside it changes nothing about the report.
+        for text in ("@article(k1,\n  title = {A ) char},\n  year = {2000}\n)\n" + E,
+                     '@article(k1,\n  title = "A ) char",\n  year = {2000}\n)\n' + E):
+            [stray] = stray_text(text)
+            assert stray.line == 1 and "`@type{key,`" in stray.describe()
 
     def test_paren_comment_block_balances_at_its_real_closer(self):
         # A `)` inside braces is literal; the block ends at the outer `)`.
         [hit] = comment_body_intrusions("@comment( see {a ) b} @x{k} )\n" + E)
         assert hit.word == "x"
 
-    def test_bom_is_leading_whitespace_to_the_grammar(self):
-        bom = "﻿"
+    def test_bom_is_leading_whitespace_to_the_block_grammar_only(self):
+        # Before a verbatim block a BOM is harmless: is_verbatim_block (which
+        # dedupe binds) tolerates it and the chunk is carried whole. Before
+        # the FIRST ENTRY it is not: dedupe matches `@type{key,` against the
+        # raw chunk and drops that entry (measured 2026-09-10), so it is
+        # reported as a command off the start of its line, naming the BOM.
+        bom = "\ufeff"
         assert is_verbatim_block(bom + "@comment{x}")
         assert stray_text(bom + "@comment{x}\n" + E) == []
-        assert stray_text(bom + E) == []
         [hit] = comment_body_intrusions(bom + "@comment{ a @x{k} }\n" + E)
         assert hit.word == "x"
+        [stray] = stray_text(bom + E)
+        assert (stray.line, stray.kind, stray.snippet) == (1, "misplaced", "@article{k1,")
+        assert "remove the byte-order mark" in stray.describe()
+        [stray] = stray_text(bom + "@my-type{k1, title={x}}\n" + E)
+        assert stray.kind == "misplaced"
 
     def test_unbalanced_block_then_entry_then_stray_closer_reports_only_the_closer(self):
         # Braces do not decide a block's extent, so the entry after an
@@ -273,6 +316,103 @@ class TestReviewRoundFive:
         # The block closed on its own line; the `}` after k1 is a plain typo.
         [msg] = comment_defects("@comment{ ok }\n" + E + "}\n")
         assert "ended the" not in msg and "'}'" in msg
+
+    def test_command_after_a_closed_string_or_preamble_is_misplaced(self):
+        # pybtex reads the entry (measured 2026-09-10); every tool here sees
+        # one @string chunk and carries it whole, so the entry gets no
+        # identity in dedupe and the cleaner would render it twice. The
+        # first cut of the comment-only rule went silent here; the old scan
+        # had reported it, with the wrong diagnosis.
+        [stray] = stray_text('@string{j = "x"} ' + E)
+        assert (stray.line, stray.kind, stray.snippet) == (1, "misplaced", "@article{k1,")
+        [msg] = comment_defects('@preamble{"x"}\n  @article{k2, title={y}}\n' + E)
+        assert "line 2" in msg and "start at the beginning of its line" in msg
+        # Plain words after the closer are ignored by pybtex and carried
+        # with the chunk: nothing is lost, nothing is reported.
+        assert stray_text('@string{jp = "J Phil"} trailing words\n' + E) == []
+
+    def test_an_indented_first_entry_is_a_misplaced_command(self):
+        # dedupe drops it (measured 2026-09-10): its header regex runs on the
+        # raw chunk, indentation included. Nothing is before it to fold into.
+        [stray] = stray_text("  " + E + E.replace("k1", "k2"))
+        assert (stray.line, stray.kind) == (1, "misplaced")
+        msg = stray.describe()
+        assert "dropped when it is the first chunk" in msg and "move it to the start" in msg
+        assert "byte-order mark" not in msg  # the BOM remedy is for a BOM
+
+    def test_unclosed_string_or_preamble_is_reported_and_attributes_nothing(self):
+        # Only a @comment runs to the next `@`, so the stray `}` after k1 is a
+        # plain typo with no claim that the `@article` ended a block. The
+        # unclosed block itself IS reported: pybtex refuses the quoted form
+        # at end of file (TokenRequired), but a brace form closed by a later
+        # `}}` parses to ZERO entries (measured 2026-09-10) - the entry is
+        # swallowed into the value, gone from a rewrite, kept by dedupe.
+        for opener in ('@string{j = "x"\n', '@preamble{"x"\n'):
+            unclosed, closer = comment_defects(opener + E + "}\n")
+            assert "line 1" in unclosed and "never closes" in unclosed, unclosed
+            assert "'}'" in closer and "ended the" not in closer, closer
+        unclosed, closer = comment_defects("@string{j = {x\n" + E + "}}\n")
+        assert "never closes" in unclosed and "vanish" in unclosed
+        assert "'}}'" in closer  # the late closer is stray to the column-0 tools
+
+    def test_only_an_entry_shaped_command_after_a_closed_string_is_misplaced(self):
+        # pybtex reads a second @string, a @comment and an entry after the
+        # closer (measured 2026-09-10); the tools carry the whole chunk. A
+        # verbatim command there loses nothing, so it is not reported; an
+        # entry there is the duplication hazard. `foo@bar.org` in trailing
+        # words is pybtex's own syntax error (TokenRequired), not a command.
+        assert stray_text('@string{j = "x"}@string{k = "y"}\n' + E) == []
+        assert stray_text('@string{j = "x"} @comment{ overview }\n' + E) == []
+        assert stray_text('@string{j = "x"} see foo@bar.org for more\n' + E) == []
+        [stray] = stray_text('@string{j = "x"}@string{k = "y"} @article{k2, title={t}}\n' + E)
+        assert (stray.kind, stray.snippet) == ("misplaced", "@article{k2, title={t}}")
+        [stray] = stray_text('@string{j = "x"} @comment{ ov } @misc{k2, title={t}}\n' + E)
+        assert (stray.kind, stray.snippet) == ("misplaced", "@misc{k2, title={t}}")
+        # Paren-form blocks balance at their real closer: a paren inside a
+        # quoted value is literal (pybtex reads the entry after each).
+        [stray] = stray_text('@string(j = "a ) b") ' + E)
+        assert stray.kind == "misplaced"
+        [stray] = stray_text('@preamble("a ( b") ' + E)
+        assert stray.kind == "misplaced"
+
+    def test_unclosed_secondary_string_in_a_tail_is_reported(self):
+        # Round-three shape: the first string balances, the second never
+        # does, and a later `}}}` in a comment closes it for pybtex, which
+        # then parses ZERO entries - k2 is swallowed. Silent before.
+        text = ('@string{j="x"} @string{k={y\n' + E.replace("k1", "k2") + "@comment{x}}}\n")
+        [stray] = stray_text(text)
+        assert (stray.line, stray.kind, stray.snippet) == (1, "unclosed", '@string{k={y')
+
+    def test_entry_after_a_comment_in_a_string_tail_names_the_comment(self):
+        # `@misc` ends the trailing @comment for pybtex (read as an entry);
+        # if it was comment prose the fix is to drop the `@`, not to move it.
+        [msg] = comment_defects('@string{j="x"} @comment{ a @misc{k2, title={t}} }\n' + E)
+        assert "start at the beginning of its line" in msg
+        assert "ends the @comment opened on line 1" in msg and "remove the `@` if this is comment text" in msg
+
+    def test_bom_with_indentation_names_both_in_the_remedy(self):
+        [stray] = stray_text("\ufeff  " + E)
+        assert stray.kind == "misplaced" and "byte-order mark and any indentation" in stray.describe()
+
+    def test_non_command_text_after_an_unbalanced_comment_is_attributed(self):
+        [msg] = comment_defects("@comment{\noverview {\n@ 3pm notes\n" + E)
+        assert "'@ 3pm notes'" in msg and "ended the @comment block opened on line 1" in msg
+
+    def test_a_column_zero_at_that_is_not_a_command_is_stray_text(self):
+        # `@ 3pm notes` is pybtex's syntax error and text to delete, not a
+        # header to rewrite.
+        [stray] = stray_text("@ 3pm notes\n" + E)
+        assert stray.kind == "text"
+
+    def test_header_defect_after_an_unbalanced_comment_names_the_comment(self):
+        # The column-0 `@commentary{k1}` ends the unbalanced block for pybtex
+        # and is no entry to dedupe. Told only to rewrite the header, an
+        # agent would make a phantom entry out of comment prose; the report
+        # names the block so the `@` can be removed instead.
+        [msg] = comment_defects("@comment{\noverview {\n@commentary{k1}\n}\n" + E)
+        assert "line 3" in msg and "`@type{key,`" in msg
+        assert "opened on line 1" in msg and "remove the `@` if this is comment text" in msg
+        assert not msg.endswith("rewrite the header")  # the two remedies are alternatives
 
     def test_attribution_reaches_only_the_chunk_right_after_the_block(self):
         text = ("@comment{\noverview { unmatched\n}\n" + E

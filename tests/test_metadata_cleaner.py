@@ -5,6 +5,7 @@ Tests the SubagentStop hook that removes unverifiable BibTeX metadata fields
 """
 
 import json
+import os
 import re
 import subprocess
 import sys
@@ -2341,13 +2342,25 @@ class TestRewriteRefusalRoundTwo:
         bib.write_text(original, encoding="utf-8")
         data = pybtex_parse_file(str(bib), bib_format="bibtex")
 
-        real_write_text = Path.write_text
+        real_fdopen = os.fdopen
 
-        def half_then_fail(self, data, *a, **k):
+        class HalfThenFail:
             # A truncating failure: half the bytes land, then the disk is full.
-            real_write_text(self, data[: len(data) // 2], *a, **k)
-            raise OSError("disk full")
-        monkeypatch.setattr(Path, "write_text", half_then_fail)
+            def __init__(self, handle):
+                self.handle = handle
+
+            def write(self, data):
+                self.handle.write(data[: len(data) // 2])
+                raise OSError("disk full")
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *exc):
+                self.handle.close()
+                return False
+
+        monkeypatch.setattr(os, "fdopen", lambda fd, *a, **k: HalfThenFail(real_fdopen(fd, *a, **k)))
 
         with pytest.raises(OSError):
             mc.write_bibtex(data, bib, [])
@@ -2407,9 +2420,14 @@ class TestRewriteRefusalRoundThree:
         original = bibtex_with_hallucinated_number + "\n"
         bib.write_text(original, encoding='utf-8')
 
-        def boom(self, *a, **k):
+        opened = []
+
+        def boom(fd, *a, **k):
+            # Fails BEFORE taking ownership of the descriptor: the writer
+            # must close it itself, or Windows keeps the tmp undeletable.
+            opened.append(fd)
             raise OSError("disk full")
-        monkeypatch.setattr(Path, "write_text", boom)
+        monkeypatch.setattr(os, "fdopen", boom)
 
         result = clean_bibtex(bib, json_dir)
 
@@ -2418,6 +2436,10 @@ class TestRewriteRefusalRoundThree:
         assert result["total_fields_removed"] == 0
         assert bib.read_text(encoding='utf-8') == original
         assert not ledger.exists()
+        [fd] = opened
+        with pytest.raises(OSError):
+            os.fstat(fd)  # closed by the writer, not leaked
+        assert [q.name for q in tmp_path.iterdir() if q.suffix == ".tmp"] == []
 
 
 class TestRewriteRefusalRoundFour:

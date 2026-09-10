@@ -94,31 +94,74 @@ def test_rule_count_matches_the_bullets_that_follow():
     assert stated == len(bullets)
 
 
-# A sentence that mentions ending the turn passes only with a governing
-# imperative negation right before the verb, or an adjacent "only".
-_FENCE = re.compile(r"\b(?:never|do not|must not|nor)\s+end(?:ing)? (?:your|the) turn"
-                    r"|end(?:ing)? (?:your|the) turn only\b", re.IGNORECASE)
+# Every mention of ending the turn passes only with a governing imperative
+# negation right before THAT occurrence, or an "only" right after it. The
+# check is per occurrence: a fence on one mention in a sentence must not
+# license a second, unfenced mention in the same sentence.
+# `\s+` between the words: Markdown soft-wraps a sentence, and a wrapped
+# mention is still a mention. The "only" clause licenses exactly ONE
+# formulation - the notification-model sentence as written in the skill -
+# because no regex can tell "only to let the notifications arrive" from
+# "only to let the notifications be lost"; any other wording fails here and
+# gets reviewed.
+_END_TURN = re.compile(r"\bend(?:ing)?\s+(?:your|the)\s+turn\b", re.IGNORECASE)
+_NEGATION_BEFORE = re.compile(r"\b(?:never|do not|must not|nor)\s+$", re.IGNORECASE)
+_ONLY_AFTER = re.compile(r"\s+only\s+to\s+let\s+(?:those|the)\s+pending\s+notifications\s+arrive\b",
+                         re.IGNORECASE)
+
+
+def _sentence_bounds(text, start, end):
+    # [lo, hi) of the sentence holding text[start:end]: back to the previous
+    # sentence end (". ", ".\n"), bullet start or blank line, forward to the
+    # next of the same - so an unterminated bullet cannot borrow the next
+    # bullet's text. A bare newline is not a boundary, so a reflowed
+    # sentence stays whole.
+    marks = (". ", ".\n", "? ", "?\n", "! ", "!\n", "\n- ", "\n\n")
+    lo = max(text.rfind(m, 0, start) for m in marks) + 1
+    ends = [i for i in (text.find(m, end) for m in marks) if i != -1]
+    hi = min(ends) + 1 if ends else len(text)
+    return lo, hi
+
+
+def _unfenced(text):
+    """The sentences holding an unfenced "end ... turn", one per offending
+    occurrence."""
+    offending = []
+    for m in _END_TURN.finditer(text):
+        lo, hi = _sentence_bounds(text, m.start(), m.end())
+        before, after = text[lo:m.start()], text[m.end():hi]
+        if not (_NEGATION_BEFORE.search(before) or _ONLY_AFTER.match(after)):
+            offending.append(text[lo:hi])
+    return offending
 
 
 def test_the_fence_itself_rejects_the_lethal_shapes():
     for lethal in ("End your turn and let the notifications arrive.",
                    "Why not end your turn and let the notifications arrive.",
-                   "Ending your turn is fine once every notification is in."):
-        assert not _FENCE.search(lethal), lethal
+                   "Ending your turn is fine once every notification is in.",
+                   # A fenced first mention must not cover an unfenced second.
+                   "Never end your turn to wait; end your turn and let them arrive.",
+                   "End your turn now, and never end your turn to wait.",
+                   # An unterminated bullet must not borrow the next bullet's fence.
+                   "- end your turn and let them arrive\n- never end your turn to wait.",
+                   # "only" fences only the mention it is adjacent to.
+                   "End your turn and wait; end your turn only to let those pending notifications arrive.",
+                   # A soft-wrapped mention is still a mention.
+                   "End your\nturn and let the notifications arrive.",
+                   # "only" licenses one formulation: the notification model.
+                   "End your turn only to abandon the task.",
+                   "End your turn only before dispatching the agents.",
+                   "End your turn only to let pending notifications be lost.",
+                   "End your turn only to let the review end before they arrive."):
+        assert _unfenced(lethal), lethal
     for safe in ("never end your turn to wait for a notification that will not come.",
-                 "then end your turn only to let those pending notifications arrive."):
-        assert _FENCE.search(safe), safe
-
-
-def _sentence_around(text, start, end):
-    # The sentence holding text[start:end]: back to the previous sentence
-    # end (". ", ".\n") or bullet start, forward to the next sentence end.
-    # A bare newline is not a boundary, so a reflowed sentence stays whole.
-    lo = max(text.rfind(". ", 0, start), text.rfind(".\n", 0, start),
-             text.rfind("\n- ", 0, start)) + 1
-    ends = [i for i in (text.find(". ", end), text.find(".\n", end)) if i != -1]
-    hi = min(ends) + 1 if ends else len(text)
-    return text[lo:hi]
+                 "then end your turn only to let those pending notifications arrive.",
+                 "Do not end your turn to wait. Never end the turn early.",
+                 "- never end your turn to wait\n- end your turn only to let those pending notifications arrive.",
+                 "never end your\nturn to wait for it.",
+                 # Not a mention at all.
+                 "At the weekend your turn begins."):
+        assert _unfenced(safe) == [], safe
 
 
 def test_end_turn_is_fenced_to_the_notification_model():
@@ -149,8 +192,5 @@ def test_end_turn_is_fenced_to_the_notification_model():
     assert "match its notification by the output file" in TEXT
     # The missing-file backstop names its remedy in both models.
     assert "re-dispatch that one agent, in either model" in TEXT
-    hits = list(re.finditer(r"end(?:ing)? (?:your|the) turn", TEXT, re.IGNORECASE))
-    assert hits
-    for m in hits:
-        sentence = _sentence_around(TEXT, m.start(), m.end())
-        assert _FENCE.search(sentence), sentence
+    assert _END_TURN.search(TEXT)
+    assert _unfenced(TEXT) == []

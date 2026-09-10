@@ -758,7 +758,7 @@ See `$PHILLIT_ROOT/docs/conventions.md` for citation key format, author name for
 - Standard BibTeX parsers should import successfully
 - All required fields present per entry type
 - **Never use `@` inside `@comment{}` blocks** — BibTeX parsers treat any `@word` as a new entry type, so `@comment only` or `@misc` inside a comment block causes parse errors downstream, or silently cuts the block short at the `@`; the validator rejects the file
-- **No text outside entries and `@comment{}` blocks** — no `%` comment lines, no stray braces, and every top-level `@` command at the start of its line: the metadata rewrite keeps only entries and `@comment{}` blocks, so the validator rejects text it would drop rather than let that happen
+- **No text outside entries and `@comment{}` blocks** — no `%` comment lines, no stray braces, every top-level `@` command at the start of its line, and every entry headed `@type{key,` (braces; no space after the type or before the key): the metadata rewrite keeps only entries and verbatim `@comment{}` / `@string` / `@preamble` blocks, and dedupe drops an entry with any other header, so the validator rejects what they would drop rather than let that happen
 
 ## Before Submitting — Quality Checklist
 

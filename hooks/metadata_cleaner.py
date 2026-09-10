@@ -1508,14 +1508,21 @@ def write_bibtex(bib_data: BibliographyData, output_path: Path,
             f"{output_path.name} left untouched") from e
     # tmp + os.replace, as the ledger writer does: a write that fails
     # halfway must not leave the researcher's bib truncated either. The tmp
-    # name is unique and created exclusively (no collision, no symlink to
-    # follow); the original's mode survives the replace.
+    # is created exclusively by mkstemp and written through that same
+    # descriptor; the mode copy goes by path (os.fchmod is Unix-only) and
+    # is a convenience for a single-writer workspace, not a boundary. The
+    # original's mode survives the replace.
     fd, tmp_name = tempfile.mkstemp(prefix=output_path.name + ".", suffix=".tmp",
                                     dir=str(output_path.parent))
-    os.close(fd)
     tmp = Path(tmp_name)
     try:
-        tmp.write_text(text, encoding='utf-8')
+        try:
+            handle = os.fdopen(fd, "w", encoding="utf-8")
+        except Exception:
+            os.close(fd)  # not yet owned by a file object; Windows keeps an open tmp undeletable
+            raise
+        with handle:
+            handle.write(text)
         if output_path.exists():
             os.chmod(tmp, output_path.stat().st_mode & 0o7777)
         os.replace(str(tmp), str(output_path))
@@ -1761,9 +1768,11 @@ def clean_bibtex(bib_path: Path, json_dirs) -> dict:
     # Preflight: refuse, rather than clean, a file the rewrite could not
     # carry whole - an `@` inside a @comment block ends it there for pybtex,
     # so the chunk carried over is only its head and the tail is lost for
-    # good; and any text outside a verbatim chunk and its chunk's entry (a
+    # good; any text outside a verbatim chunk and its chunk's entry (a
     # `%%` divider, a stray `}`, an indented `@comment{`) is dropped, since
-    # a rewrite keeps only those two things. The validator blocks on the
+    # a rewrite keeps only those two things; and a column-0 entry whose
+    # header dedupe does not read (`@article(k1,`, `@my-type{`) would be
+    # dropped there instead. The validator blocks on the
     # same list (bib_comments.comment_defects); this is what keeps the text
     # intact until the researcher fixes it, since the SubagentStop hook runs
     # the cleaner whether or not validation passed. Deliberately unconditional

@@ -5,7 +5,7 @@ Validates .bib files for:
 1. UTF-8 encoding
 2. No LaTeX diacritic escapes
 3. Valid BibTeX syntax
-4. No duplicate keys or duplicate fields, and no text a metadata rewrite would drop
+4. No duplicate keys or duplicate fields, and no text a metadata rewrite or dedupe would drop or misattribute
 5. Required fields per entry type
 6. No BibLaTeX fields
 
@@ -243,12 +243,15 @@ def check_comment_bodies(content):
 
     pybtex ends a comment at the next `@`, so a braced `@word{...}` inside
     the block becomes a second entry and the rest of the block - the domain
-    overview the synthesis planner reads - is dropped without an error; and
-    a rewrite keeps only verbatim blocks and parsed entries, so any other
-    text (a `%%` divider, a stray `}`, an indented `@comment{`) is lost the
-    same way. The researcher spec bans `@` inside comment blocks; this
-    makes the ban, and its consequence, a block. Grammar and wording live in
-    bib_comments (`comment_defects`), shared with the cleaner."""
+    overview the synthesis planner reads - is dropped without an error; a
+    rewrite keeps only verbatim blocks and parsed entries, so any other
+    text (a `%%` divider, a stray `}`) is lost the same way; an `@` command
+    off the start of its line is folded into the entry before it by dedupe
+    and evidence stamping; and a column-0 entry whose header is not the
+    `@type{key,` every tool reads is dropped by dedupe with only a warning.
+    The researcher spec bans `@` inside comment blocks; this makes the ban,
+    and its consequence, a block. Grammar and wording live in bib_comments
+    (`comment_defects`), shared with the cleaner."""
     return comment_defects(content)
 
 
