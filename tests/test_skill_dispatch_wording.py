@@ -94,6 +94,22 @@ def test_rule_count_matches_the_bullets_that_follow():
     assert stated == len(bullets)
 
 
+# A sentence that mentions ending the turn passes only with a governing
+# imperative negation right before the verb, or an adjacent "only".
+_FENCE = re.compile(r"\b(?:never|do not|must not|nor)\s+end(?:ing)? (?:your|the) turn"
+                    r"|end(?:ing)? (?:your|the) turn only\b", re.IGNORECASE)
+
+
+def test_the_fence_itself_rejects_the_lethal_shapes():
+    for lethal in ("End your turn and let the notifications arrive.",
+                   "Why not end your turn and let the notifications arrive.",
+                   "Ending your turn is fine once every notification is in."):
+        assert not _FENCE.search(lethal), lethal
+    for safe in ("never end your turn to wait for a notification that will not come.",
+                 "then end your turn only to let those pending notifications arrive."):
+        assert _FENCE.search(safe), safe
+
+
 def _sentence_around(text, start, end):
     # The sentence holding text[start:end]: back to the previous sentence
     # end (". ", ".\n") or bullet start, forward to the next sentence end.
@@ -137,7 +153,4 @@ def test_end_turn_is_fenced_to_the_notification_model():
     assert hits
     for m in hits:
         sentence = _sentence_around(TEXT, m.start(), m.end())
-        # A governing negation right before the verb, or an adjacent "only":
-        # "End your turn and let the notifications arrive." must NOT pass.
-        assert re.search(r"\b(?:never|not|nor)\s+end(?:ing)? (?:your|the) turn"
-                         r"|end(?:ing)? (?:your|the) turn only\b", sentence, re.IGNORECASE), sentence
+        assert _FENCE.search(sentence), sentence

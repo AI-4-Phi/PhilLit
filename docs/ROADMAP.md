@@ -10,12 +10,6 @@ that a recurrence is recognized where it would be read.
 
 ## Queue
 
-- **Re-vendor phillit-service at the 0.5.19 pin** - the service's item, run
-  from that repo. 0.5.19 is the final-design review round of the `@comment`
-  grammar: block extent by pybtex's rule (the next `@`, not the braces),
-  paren-delimited commands lexed with braces and quotes, a BOM tolerated,
-  render crashes routed through the refusal path, and dispatch rule 2/3
-  wording.
 - **Bind the cleaning ledger to its bib by content** - the evidence barrier
   binds a ledger to its bib by NAME only, so a refused cleaning pass must
   delete the stale ledger, and that unlink can fail (a warning, not a block).
@@ -28,7 +22,7 @@ that a recurrence is recognized where it would be read.
   reject the form at validation (the researcher spec only shows braces) or
   support it in both. Zero incidence over 335 local bibs.
 
-The service's deploy of re-vendor #15 (the 0.5.18 pin, service `064e658`) is
+The service's deploy of re-vendor #16 (the 0.5.19 pin, service `37c739c`) is
 the service's item, run from that repo.
 
 ## Checked and deliberately NOT filed
