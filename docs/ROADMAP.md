@@ -10,13 +10,22 @@ that a recurrence is recognized where it would be read.
 
 ## Queue
 
-Nothing open. The service's deploy of re-vendors #12 and #13 (box still on `ebe8a2b`) is
-the service's item, run from that repo.
+- **Re-vendor phillit-service at the 0.5.17 pin** - the service's item, run
+  from that repo. The service's deploy of re-vendors #12 and #13 (box still
+  on `ebe8a2b`) is likewise the service's.
 
 ## Checked and deliberately NOT filed
 
 Not a queue — a register, so these are not re-found. Each was a live candidate
 that did not survive reading the file it concerns.
+
+- A machine-readable `year-conflicts.json` from `dedupe_bib`, gating
+  `generate_bibliography` until acknowledged (proposed in review, 2026-09-10).
+  Seen once; dedupe's `year conflict` stderr line now sits at the cause and
+  names both copies, both source bibs and the survivor. A gate would add a
+  flag and a file for that one case. Revisit if a run ships a wrong-year
+  survivor despite the line - `lint_md`'s late citation failure is the
+  symptom that would show it, not a second guard.
 
 - The budget's `Stage 5.5 enrichment | 1 (2 if you added entries after it)`
   does NOT contradict "the bib file is FROZEN after enrichment" — FROZEN's own
