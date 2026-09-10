@@ -10,9 +10,13 @@ that a recurrence is recognized where it would be read.
 
 ## Queue
 
-- **Re-vendor phillit-service at the 0.5.17 pin** - the service's item, run
-  from that repo. The service's deploy of re-vendors #12 and #13 (box still
-  on `ebe8a2b`) is likewise the service's.
+- **Re-vendor phillit-service at the 0.5.18 pin** - the service's item, run
+  from that repo. 0.5.18 carries the Phase-6 dispatch wording the service
+  held its 0.5.17 deploy for (rule 3 now states the inline-model converse),
+  plus the `@comment` grammar leaf (`hooks/bib_comments.py`), the cleaner's
+  refused-rewrite paths and the validator's check 4c (an `@` inside a comment
+  block; text outside every entry and block). The deploy itself is likewise
+  the service's.
 
 ## Checked and deliberately NOT filed
 
@@ -25,7 +29,11 @@ that did not survive reading the file it concerns.
   names both copies, both source bibs and the survivor. A gate would add a
   flag and a file for that one case. Revisit if a run ships a wrong-year
   survivor despite the line - `lint_md`'s late citation failure is the
-  symptom that would show it, not a second guard.
+  symptom that would show it, not a second guard. The line's source
+  attribution was also checked: `merge_entries` picks one whole entry and
+  copies only `year_suffix`, so origin follows the winner, and a three-copy
+  chain whose year-less middle copy wins prints no line rather than a wrong
+  one.
 
 - The budget's `Stage 5.5 enrichment | 1 (2 if you added entries after it)`
   does NOT contradict "the bib file is FROZEN after enrichment" — FROZEN's own
