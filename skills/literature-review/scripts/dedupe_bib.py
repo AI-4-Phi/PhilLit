@@ -5,6 +5,8 @@ Also handles:
 - Preferring entries with abstract over entries without
 - Preserving abstract_source field
 - Removing INCOMPLETE flag when merged entry has abstract
+- Reporting a YEAR disagreement between two copies of one work (the merge
+  goes ahead; the survivor's year is named) - see _comparison_year
 """
 
 import argparse
@@ -18,7 +20,7 @@ from pybtex.database import parse_string
 # Import identity/matching helpers from bib_identity (single source of truth)
 _hook_dir = Path(__file__).resolve().parent.parent.parent.parent / "hooks"
 sys.path.insert(0, str(_hook_dir))
-from bib_identity import fallback_key, normalize_doi, title_key  # noqa: E402,F401
+from bib_identity import fallback_key, normalize_doi, same_work_year, title_key  # noqa: E402,F401
 from cleaning_marker import has_marker, marker_removed_fields  # noqa: E402
 
 sys.path.pop(0)
@@ -122,6 +124,43 @@ def _extract_keywords_value(entry: str) -> str:
     """Extract the value of the keywords field from a BibTeX entry."""
     f = _field(entry, "keywords")
     return f.value if f is not None else ''
+
+
+def _comparison_year(entry: str) -> str:
+    """The entry's year on the same_work_year axis ("2010a" and "2010--2011"
+    compare as "2010"; a malformed or missing year is "" and never
+    conflicts). Two copies of one work can disagree here: measured
+    2026-09-10, `posner2010executive` (domain 2) and `posner2011executive`
+    (domain 4) shared a DOI, the planner's canonical key and the prose said
+    2011, and a first-wins DOI merge would have shipped only the 2010 copy -
+    generate_bibliography matches on surname+year, so the citation then
+    resolves to nothing and lint fails late with an unhelpful message. This
+    script has no authority over which year is right, and the merge itself
+    is a standing decision (tests pin that two copies of one DOI collapse
+    even across a year difference), so the disagreement is REPORTED on
+    stderr - both keys, both years, the survivor - for the orchestrator to
+    adjudicate before generate_bibliography runs, never decided here."""
+    f = _field(entry, "year")
+    return same_work_year(f.value) if f is not None else ""
+
+
+def _year_conflict_line(tag: str, existing: tuple, incoming: tuple,
+                        survivor_key: str, merged: str, doi: str | None = None) -> str | None:
+    """The stderr line for a year disagreement between two copies of one
+    work, or None when there is none. `existing`/`incoming` are
+    (key, comparison_year, source_bib_name). Both copies, both years, both
+    source bibs and the survivor are named, so the orchestrator can fix the
+    wrong domain bib without opening anything else. Printed to stderr like
+    the [SUFFIX] conflict beside it (the merge lines themselves go to
+    stdout): it is a warning about the merge, not part of its record."""
+    (k1, y1, f1), (k2, y2, f2) = existing, incoming
+    if not (y1 and y2 and y1 != y2):
+        return None
+    via = f" share DOI {doi}" if doi else " share one citation key"
+    return (f"  [{tag}] year conflict: '{k1}' ({y1}, {f1}) and '{k2}' ({y2}, {f2}){via} - "
+            f"the survivor '{survivor_key}' keeps {_comparison_year(merged)}, chosen by "
+            f"abstract and importance, not by year; check it against the prose (and "
+            f"CrossRef) and fix the wrong year before generating the bibliography")
 
 
 def _extract_year_suffix_value(entry: str) -> str:
@@ -679,7 +718,12 @@ def deduplicate_bib(
 
             if key in seen:
                 duplicates.append(key)
+                existing = (key, _comparison_year(seen[key]), origin[key][0])
+                incoming = (key, _comparison_year(entry), bib_file.name)
                 merged, reason, winner = merge_entries(seen[key], entry)
+                conflict = _year_conflict_line("DEDUPE", existing, incoming, key, merged)
+                if conflict:
+                    print(conflict, file=sys.stderr)
                 incoming_id = (bib_file.name, key)
                 if winner == 2:
                     survivor_id, loser_id = incoming_id, origin[key]
@@ -704,6 +748,13 @@ def deduplicate_bib(
             existing_key = seen_dois[doi]
             existing_entry = seen[existing_key]
             merged, reason, winner = merge_entries(existing_entry, entry)
+            conflict = _year_conflict_line(
+                "DEDUPE-DOI",
+                (existing_key, _comparison_year(existing_entry), origin[existing_key][0]),
+                (key, _comparison_year(entry), origin[key][0]),
+                key if winner == 2 else existing_key, merged, doi=doi)
+            if conflict:
+                print(conflict, file=sys.stderr)
             if winner == 2:
                 # New entry won — replace
                 print(f"  [DEDUPE-DOI] '{key}' and '{existing_key}' share DOI {doi} - keeping '{key}' ({reason})")

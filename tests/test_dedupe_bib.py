@@ -1,6 +1,7 @@
 """Tests for dedupe_bib.py - BibTeX deduplication script."""
 
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -2041,3 +2042,91 @@ def test_neither_barrier_stamped_field_is_substantive():
     assert not {"venue_status", "year_suffix"} & set(_SUBSTANTIVE_FIELDS)
     assert not {"venue_status", "year_suffix"} & set(
         generate_bibliography._SUBSTANTIVE_FIELDS)
+
+
+# =============================================================================
+# Year conflicts between copies of one work
+# =============================================================================
+
+class TestYearConflict:
+    """Two domains can hold one work under different years. Measured
+    2026-09-10: `posner2010executive` (domain 2) and `posner2011executive`
+    (domain 4) shared a DOI; the planner's canonical key and the prose said
+    2011, and a first-wins DOI merge would have shipped only the 2010 copy -
+    generate_bibliography (surname+year) then finds no match and lint fails
+    on an unresolved citation. dedupe cannot know which year is right, and
+    the collapse itself is pinned (test_mixed_delimiter_same_doi_different_years),
+    so the merge goes ahead and the disagreement is REPORTED - both keys,
+    both years, the survivor - never passed over silently."""
+
+    def _pair(self, tmp_path, y1, y2, k1="posner2010executive",
+              k2="posner2011executive"):
+        bib1 = tmp_path / "literature-domain-2.bib"
+        bib1.write_text(f'@book{{{k1},\n  author = {{Posner, Eric A. and Vermeule, Adrian}},\n'
+                        f'  title = {{The Executive Unbound}},\n  year = {{{y1}}},\n'
+                        f'  doi = {{10.1093/acprof:osobl/9780199765331.001.0001}},\n'
+                        f'  keywords = {{High}}\n}}', encoding='utf-8')
+        bib2 = tmp_path / "literature-domain-4.bib"
+        bib2.write_text(f'@book{{{k2},\n  author = {{Posner, Eric A. and Vermeule, Adrian}},\n'
+                        f'  title = {{The Executive Unbound}},\n  year = {{{y2}}},\n'
+                        f'  doi = {{10.1093/acprof:osobl/9780199765331.001.0001}},\n'
+                        f'  keywords = {{High}}\n}}', encoding='utf-8')
+        return bib1, bib2
+
+    def test_doi_merge_reports_year_conflict(self, tmp_path, capsys):
+        bib1, bib2 = self._pair(tmp_path, "2010", "2011")
+        output = tmp_path / "out.bib"
+        duplicates = deduplicate_bib([bib1, bib2], output)
+        content = output.read_text(encoding='utf-8')
+        assert content.count("@book{") == 1  # the collapse still happens
+        assert len(duplicates) == 1
+        survivor = "posner2010executive" if "posner2010executive" in content else "posner2011executive"
+        survivor_year = re.search(r"year = \{(\d{4})\}", content).group(1)
+        err = capsys.readouterr().err
+        assert "year conflict" in err
+        for needle in ("posner2010executive", "posner2011executive", "2010", "2011",
+                       "10.1093/acprof:osobl/9780199765331.001.0001",
+                       "literature-domain-2.bib", "literature-domain-4.bib",
+                       f"survivor '{survivor}' keeps {survivor_year}"):
+            assert needle in err
+
+    def test_doi_conflict_names_the_incoming_key_when_it_wins(self, tmp_path, capsys):
+        # The incoming copy carries an abstract, so merge_entries picks it
+        # (winner == 2) and the survivor that lands in the output is ITS key.
+        bib1, bib2 = self._pair(tmp_path, "2010", "2011")
+        bib2.write_text(bib2.read_text(encoding='utf-8').replace(
+            "  keywords = {High}", "  abstract = {A substantial abstract.},\n  keywords = {High}"),
+            encoding='utf-8')
+        output = tmp_path / "out.bib"
+        deduplicate_bib([bib1, bib2], output)
+        content = output.read_text(encoding='utf-8')
+        assert "posner2011executive" in content and "posner2010executive" not in content
+        assert "survivor 'posner2011executive' keeps 2011" in capsys.readouterr().err
+
+    def test_doi_merge_proceeds_when_years_agree_modulo_suffix(self, tmp_path, capsys):
+        bib1, bib2 = self._pair(tmp_path, "2010", "2010a")
+        output = tmp_path / "out.bib"
+        duplicates = deduplicate_bib([bib1, bib2], output)
+        assert len(duplicates) == 1
+        assert "year conflict" not in capsys.readouterr().err
+
+    def test_doi_merge_proceeds_when_one_year_missing(self, tmp_path, capsys):
+        bib1, bib2 = self._pair(tmp_path, "2010", "2011")
+        bib2.write_text(bib2.read_text(encoding='utf-8').replace("  year = {2011},\n", ""),
+                        encoding='utf-8')
+        output = tmp_path / "out.bib"
+        duplicates = deduplicate_bib([bib1, bib2], output)
+        assert len(duplicates) == 1
+        assert "year conflict" not in capsys.readouterr().err
+
+    def test_same_key_year_conflict_merges_and_warns(self, tmp_path, capsys):
+        bib1, bib2 = self._pair(tmp_path, "2010", "2011",
+                                k1="posner2011executive", k2="posner2011executive")
+        output = tmp_path / "out.bib"
+        duplicates = deduplicate_bib([bib1, bib2], output)
+        assert duplicates == ["posner2011executive"]
+        assert output.read_text(encoding='utf-8').count("@book{") == 1
+        err = capsys.readouterr().err
+        assert "year conflict" in err and "posner2011executive" in err
+        assert "2010" in err and "2011" in err
+        assert "literature-domain-2.bib" in err and "literature-domain-4.bib" in err
