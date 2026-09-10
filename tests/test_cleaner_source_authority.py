@@ -32,10 +32,12 @@ from metadata_cleaner import (
 def assert_no_cleaned_marker(content: str) -> None:
     """Assert the cleaner wrote no METADATA_CLEANED marker.
 
-    NOT `assert "METADATA_CLEANED" not in content`: pybtex escapes the
-    underscore on write (`METADATA\\_CLEANED`, and `METADATA\\\\_CLEANED` on a
-    second round-trip), so the plain-string form never appears and that
-    assertion can never fail. Match the same backslash-tolerant shape
+    NOT `assert "METADATA_CLEANED" not in content`: before the cleaner's
+    `_BraceWriter._encode` override, pybtex escaped the underscore on write
+    (`METADATA\\_CLEANED`, and `METADATA\\\\_CLEANED` on a second round-trip),
+    so the plain-string form never appeared and that assertion could never
+    fail. The cleaner now writes the plain form, but bibs cleaned earlier
+    still carry the escaped ones, so match the same backslash-tolerant shape
     cleaning_marker.MARKER_STRIP_RE uses.
     """
     assert not re.search(r"METADATA\\*_CLEANED", content), content
@@ -393,8 +395,10 @@ class TestConflictVisibility:
 
 
 def test_assert_no_cleaned_marker_actually_catches_a_written_marker(tmp_path):
-    """Guard the guard: pin that the escaped form pybtex really writes DOES
-    trip the helper, so the two assertions above cannot go vacuous again."""
+    """Guard the guard: pin that the form the cleaner really writes DOES
+    trip the helper, so the two assertions above cannot go vacuous again.
+    (It wrote the escaped `METADATA\\_CLEANED` until `_BraceWriter._encode`
+    stopped latexcodec; the helper must catch both spellings.)"""
     json_dir = make_json_dir(tmp_path, {"s2_roff.json": S2_DUMP})
     bib_file = tmp_path / "test.bib"
     # The pooled record names another journal -> `journal` removed -> marker
@@ -412,9 +416,11 @@ def test_assert_no_cleaned_marker_actually_catches_a_written_marker(tmp_path):
     assert result["total_fields_removed"] >= 1
 
     content = bib_file.read_text(encoding="utf-8")
-    assert "METADATA_CLEANED" not in content       # the OLD, vacuous assertion still "passes"
-    with pytest.raises(AssertionError):            # ...while the real one fails, as it must
+    assert "METADATA_CLEANED: journal" in content  # written plain since the _encode override
+    with pytest.raises(AssertionError):            # the helper catches it, as it must
         assert_no_cleaned_marker(content)
+    with pytest.raises(AssertionError):            # ...and the legacy escaped spelling too
+        assert_no_cleaned_marker(content.replace("METADATA_CLEANED", "METADATA\\_CLEANED"))
 
 
 class TestTypeDowngradeDoiGuard:

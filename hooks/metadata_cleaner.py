@@ -23,6 +23,7 @@ Output: JSON to stdout with cleaning summary
 Exit codes: 0 = success, 2 = file not found/read error
 """
 
+import io
 import json
 import os
 import re
@@ -1409,11 +1410,76 @@ def apply_entry_cleaning(entry, plan: dict) -> None:
     _apply_cleaned_marker(entry, plan)
 
 
-def write_bibtex(bib_data: BibliographyData, output_path: Path) -> None:
-    """Write BibliographyData to file with consistent formatting."""
-    writer = Writer()
-    with open(output_path, 'w', encoding='utf-8') as f:
-        writer.write_file(bib_data, f)
+class _BraceWriter(Writer):
+    """pybtex's Writer, with two of its serialisation choices undone.
+
+    `quote`: the stock Writer emits every field as `name = "value"` (braces
+    only when the value itself contains a `"`). PhilLit's convention, and
+    every researcher-written domain bib, is braces - a rewrite that flips
+    180 fields to quotes leaves a delivered bib in two styles and breaks any
+    downstream brace-only parser (measured 2026-09-10). `check_braces` is
+    load-bearing here, not a leftover: with braces the only delimiter, an
+    unbalanced value would otherwise be written as unparseable BibTeX
+    instead of raising.
+
+    `_encode`: the stock Writer runs every value through latexcodec, which
+    is CORRUPTION for values that are already BibTeX/LaTeX text, and every
+    value here is - the researcher, enrich_bibliography and the barrier all
+    write verbatim. Measured against pybtex 0.25.1: `Jo{\\~a}o` became
+    `Jo{\\\\textasciitilde a}o` (a broken accent inside an author name),
+    `\\url{https://x.org/a_b}` became `...a\\_b`, and a DOI's `_` became
+    `\\_`, which `bib_identity.normalize_doi` does not fold back - so a
+    cleaned entry stopped matching its own twin in dedupe's DOI pass,
+    `restamp_merged` and `generate_bibliography`, and `title_key` diverged on
+    every `&`/`%`. Identity encoding is what every other writer in the
+    pipeline does. The METADATA_CLEANED marker grammar keeps tolerating the
+    escaped spelling (`METADATA\\_CLEANED`) because bibs cleaned before this
+    override carry it. Field order is the Writer's own, as before."""
+
+    def quote(self, s):
+        self.check_braces(s)
+        return '{%s}' % s
+
+    def _encode(self, text):
+        return text
+
+
+def comment_blocks(text: str) -> list[str]:
+    """The `@comment{...}` blocks of a bib file, in order, as raw text.
+
+    pybtex's parser discards them and its Writer never emits them, so a
+    cleaning rewrite would otherwise delete the domain overview the
+    synthesis planner reads (measured 2026-09-10: one removed `number` cost
+    a domain its whole comment block, and the researcher spent eleven
+    minutes restoring it by hand). Same chunking as dedupe_bib and
+    stamp_evidence.split_entries: a line that starts with `@` opens a new
+    chunk, which is why the researcher spec forbids `@` inside a comment.
+    The one residual is the mirror image: a FIELD VALUE whose line starts
+    with `@comment` would be copied out as a comment block as well: the
+    chunk runs to the next `@`-initial line, so the copy at the top is
+    that line PLUS the tail of its entry, and its unbalanced braces may not
+    re-parse. pybtex still parses the entry whole, so the entry itself is
+    intact. No delivered bib has one; it is not guarded.
+    `@preamble` gets the same silent drop from pybtex and is NOT carried
+    over - do not use it in a domain bib."""
+    return [chunk for chunk in re.split(r"\n(?=@)", text)
+            if chunk.strip().lower().startswith("@comment")]
+
+
+def write_bibtex(bib_data: BibliographyData, output_path: Path,
+                 comments: list[str] | None = None) -> None:
+    """Write BibliographyData to file with consistent formatting: the
+    file's `@comment{}` blocks first (verbatim, the position dedupe_bib
+    also gives them), then every entry, brace-delimited.
+
+    Rendered in memory and written in one call: `check_braces` (or the
+    LaTeX encoder) raising halfway through a streamed write used to leave
+    the researcher's bib truncated at the failing entry."""
+    rendered = io.StringIO()
+    _BraceWriter().write_stream(bib_data, rendered)
+    parts = [block.rstrip() + "\n\n" for block in comments or []]
+    parts.append(rendered.getvalue())
+    output_path.write_text("".join(parts), encoding='utf-8')
 
 
 def _verified_identifier(entry, api_entry: dict):
@@ -1598,8 +1664,10 @@ def clean_bibtex(bib_path: Path, json_dirs) -> dict:
         result["warnings"].append("No API results found in JSON directory - skipping cleaning")
         return _count_entries_as_unmatched(bib_path, result)  # B1: still count
 
-    # Parse BibTeX file
+    # Parse BibTeX file. The raw text is read alongside because pybtex drops
+    # @comment blocks, which a rewrite must carry over (see comment_blocks).
     try:
+        comments = comment_blocks(bib_path.read_text(encoding='utf-8'))
         bib_data = parse_file(str(bib_path), bib_format='bibtex')
     except PybtexSyntaxError as e:
         result["success"] = False
@@ -1742,7 +1810,7 @@ def clean_bibtex(bib_path: Path, json_dirs) -> dict:
             result["applied_demotions"] += 1
 
     if result["applied_entries_cleaned"]:
-        write_bibtex(bib_data, bib_path)
+        write_bibtex(bib_data, bib_path, comments)
 
     _write_ledger_safe(result, bib_path, ledger_entries, False)
 

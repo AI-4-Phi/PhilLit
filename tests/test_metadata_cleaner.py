@@ -5,6 +5,7 @@ Tests the SubagentStop hook that removes unverifiable BibTeX metadata fields
 """
 
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -2076,3 +2077,67 @@ class TestStripPolicy:
         plan, _ = _plan_for(tmp_path, bib, {"verify_c.json": api})
         assert plan["removed_field_names"] == ["journal"]
         assert plan["venue_stripped_no_evidence"] == []
+
+
+# =============================================================================
+# Rewrite fidelity: what a cleaning rewrite must NOT change
+# =============================================================================
+
+class TestRewriteFidelity:
+    """A cleaning that removes a field rewrites the whole file through pybtex's
+    Writer. Two things that writer does by default must not reach a domain
+    bib: it emits every field as `name = "value"` (PhilLit's convention, and
+    every researcher-written file, is braces), and it drops `@comment{}`
+    blocks - which is where the domain overview the synthesis planner reads
+    lives. Measured 2026-09-10: one removed `number` field cost a domain its
+    entire comment block and flipped 180 fields to quotes."""
+
+    def test_rewrite_keeps_comment_block_and_brace_delimiters(
+            self, tmp_path, s2_nature_json, crossref_awad_other_issue,
+            bibtex_with_hallucinated_number):
+        json_dir = tmp_path / "json"
+        json_dir.mkdir()
+        (json_dir / "s2_nature.json").write_text(
+            json.dumps(s2_nature_json), encoding='utf-8')
+        (json_dir / "verify_awad.json").write_text(
+            json.dumps(crossref_awad_other_issue), encoding='utf-8')
+        comment = ("@comment{\n====\nDOMAIN: 3 - Formal Models\n"
+                   "DOMAIN_OVERVIEW: an overview with an unbalanced { brace\n"
+                   "====\n}\n\n")
+        # A second, unmatched entry rides along: the rewrite re-serialises
+        # EVERY entry, and these are the values pybtex's stock encoder
+        # corrupts (a LaTeX accent, a `\url`, an underscore DOI, `&`/`%`).
+        bystander = ("\n\n@article{joao2019law,\n"
+                     "  author = {Mendon{\\c{c}}a, Jo{\\~a}o},\n"
+                     "  title = {Law & Order: 50% of _cases_},\n"
+                     "  howpublished = {\\url{https://x.org/a_b}},\n"
+                     "  year = {2019},\n"
+                     "  doi = {10.1007/978-3-030-12345-6_7}\n}\n")
+        bib_file = tmp_path / "test.bib"
+        bib_file.write_text(comment + bibtex_with_hallucinated_number + bystander,
+                            encoding='utf-8')
+
+        keys_before = re.findall(r"^@\w+\{([^,]+),", bib_file.read_text(encoding='utf-8'), re.M)
+        result = clean_bibtex(bib_file, json_dir)
+
+        assert result["success"] is True
+        assert result["total_fields_removed"] >= 1  # a rewrite happened
+        content = bib_file.read_text(encoding='utf-8')
+        # No entry lost or invented by the rewrite.
+        assert re.findall(r"^@\w+\{([^,]+),", content, re.M) == keys_before
+        # The comment block survives, verbatim, ahead of the entries.
+        assert content.startswith("@comment{")
+        assert "DOMAIN_OVERVIEW: an overview with an unbalanced { brace" in content
+        assert content.index("@comment{") < content.index("@article{awad2018moral")
+        # Every rewritten field is brace-delimited, none quoted or bare.
+        entries_only = content[content.index("@article{awad2018moral"):]
+        assert "title = {The Moral Machine experiment}" in entries_only
+        field_lines = re.findall(r'^\s*[A-Za-z_-]+\s*=\s*(.)', entries_only, re.M)
+        assert field_lines and set(field_lines) == {"{"}
+        # The cleaning itself still landed: no `number` FIELD survives.
+        assert not re.search(r'^\s*number\s*=', entries_only, re.M | re.I)
+        # Verbatim in, verbatim out: no LaTeX escaping was introduced.
+        for verbatim in ("Mendon{\\c{c}}a, Jo{\\~a}o", "Law & Order: 50% of _cases_",
+                         "\\url{https://x.org/a_b}", "10.1007/978-3-030-12345-6_7"):
+            assert verbatim in entries_only
+        assert "\\_" not in entries_only and "textasciitilde" not in entries_only
