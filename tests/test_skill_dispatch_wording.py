@@ -45,6 +45,10 @@ def test_no_blocking_claim():
 
 def test_immediate_return_is_success_and_repeats_are_noops():
     assert "never re-dispatch" in TEXT
+    # An immediate acknowledgement is acceptance of the dispatch - not
+    # "success", which would collide with rule 3's inline-error remedy.
+    assert "means the dispatch was accepted" in TEXT
+    assert "is success, not failure" not in TEXT
     assert "task-notification" in TEXT
     # One agent can notify more than once; a repeat is recognised by task id.
     assert "more than once" in TEXT
@@ -91,11 +95,12 @@ def test_rule_count_matches_the_bullets_that_follow():
 
 
 def _sentence_around(text, start, end):
-    # The sentence holding text[start:end]: back to the previous ". " or
-    # newline, forward to the next ". ", ".\n" or newline.
-    lo = max(text.rfind(". ", 0, start), text.rfind("\n", 0, start)) + 1
-    ends = [i for i in (text.find(". ", end), text.find(".\n", end),
-                        text.find("\n", end)) if i != -1]
+    # The sentence holding text[start:end]: back to the previous sentence
+    # end (". ", ".\n") or bullet start, forward to the next sentence end.
+    # A bare newline is not a boundary, so a reflowed sentence stays whole.
+    lo = max(text.rfind(". ", 0, start), text.rfind(".\n", 0, start),
+             text.rfind("\n- ", 0, start)) + 1
+    ends = [i for i in (text.find(". ", end), text.find(".\n", end)) if i != -1]
     hi = min(ends) + 1 if ends else len(text)
     return text[lo:hi]
 
@@ -121,11 +126,18 @@ def test_end_turn_is_fenced_to_the_notification_model():
     assert "An inline error or an empty return" in TEXT
     # The classification is operational, not a string match: a return that
     # carries the agent's report IS the result.
-    assert "carries the agent's report" in TEXT
+    assert "carries the agent's report or a completion or failure status" in TEXT
+    assert "a status that reports failure is that agent's failure" in TEXT
+    # An acknowledgement without a task id still has to be matched to its
+    # notification somehow: by the output file it names.
+    assert "match its notification by the output file" in TEXT
     # The missing-file backstop names its remedy in both models.
     assert "re-dispatch that one agent, in either model" in TEXT
-    hits = list(re.finditer(r"end(?:ing)? (?:your|the) turn", TEXT))
+    hits = list(re.finditer(r"end(?:ing)? (?:your|the) turn", TEXT, re.IGNORECASE))
     assert hits
     for m in hits:
         sentence = _sentence_around(TEXT, m.start(), m.end())
-        assert re.search(r"notification|never", sentence), sentence
+        # A governing negation right before the verb, or an adjacent "only":
+        # "End your turn and let the notifications arrive." must NOT pass.
+        assert re.search(r"\b(?:never|not|nor)\s+end(?:ing)? (?:your|the) turn"
+                         r"|end(?:ing)? (?:your|the) turn only\b", sentence, re.IGNORECASE), sentence
