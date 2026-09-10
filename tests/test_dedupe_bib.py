@@ -2136,9 +2136,9 @@ def test_verbatim_blocks_are_decided_by_the_shared_predicate_first(tmp_path, cap
     """dedupe decides "carry this chunk verbatim" with the shared grammar
     BEFORE its `@type{key,` header regex: a comma-bearing `@comment{}` (the
     common case), a `@string` whose value holds a comma, and a paren-form
-    comment all ride to the top of the output; an entry type that merely
-    begins with "comment" is an entry; an unmatched non-verbatim chunk is
-    dropped, as it always was, but no longer silently."""
+    comment all ride to the top of the output; a chunk that is neither a
+    block nor an `@type{key,` entry is dropped, as it always was, but no
+    longer silently."""
     import bib_comments
     import dedupe_bib
     assert dedupe_bib.is_verbatim_block is bib_comments.is_verbatim_block
@@ -2146,7 +2146,7 @@ def test_verbatim_blocks_are_decided_by_the_shared_predicate_first(tmp_path, cap
     bib1.write_text(sample_entry_high
                     + '\n\n@string{jp = "J, Phil"}\n\n'
                     + "@comment{\nDOMAIN_OVERVIEW: epistemology, ethics, language\n}\n\n"
-                    + "@comment(no comma here)\n\n@commentary{k1}\n",
+                    + "@comment(no comma here)\n\n@ not a command at all\n",
                     encoding='utf-8')
     output = tmp_path / "output.bib"
     deduplicate_bib([bib1], output)
@@ -2155,6 +2155,6 @@ def test_verbatim_blocks_are_decided_by_the_shared_predicate_first(tmp_path, cap
                   "@comment(no comma here)"):
         assert block in content
         assert content.index(block) < content.index("@article{rawls1971theory")
-    assert "@commentary" not in content
+    assert "not a command" not in content
     err = capsys.readouterr().err
-    assert "WARNING" in err and "test1.bib" in err and "@commentary{k1}" in err
+    assert "WARNING" in err and "test1.bib" in err and "@ not a command at all" in err

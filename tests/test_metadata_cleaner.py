@@ -2418,3 +2418,29 @@ class TestRewriteRefusalRoundThree:
         assert result["total_fields_removed"] == 0
         assert bib.read_text(encoding='utf-8') == original
         assert not ledger.exists()
+
+
+class TestRewriteRefusalRoundFour:
+    _index = staticmethod(TestRewriteRefusalRoundTwo._index)
+
+    def test_render_failure_is_recorded_and_removes_the_stale_ledger(
+            self, tmp_path, monkeypatch, s2_nature_json, crossref_awad_other_issue,
+            bibtex_with_hallucinated_number):
+        # The failure class that motivated rendering in memory (check_braces,
+        # the encoder) must land on the same refusal path as every other.
+        json_dir = self._index(tmp_path, s2_nature_json, crossref_awad_other_issue)
+        ledger = TestRewriteRefusalRoundTwo._stale_ledger(tmp_path)
+        bib = tmp_path / "test.bib"
+        original = bibtex_with_hallucinated_number + "\n"
+        bib.write_text(original, encoding='utf-8')
+
+        def boom(self, *a, **k):
+            raise ValueError("unbalanced braces in rendered value")
+        monkeypatch.setattr(mc._BraceWriter, "write_stream", boom)
+
+        result = clean_bibtex(bib, json_dir)
+
+        assert result["success"] is False
+        assert any("Rewrite failed" in e and "unbalanced braces" in e for e in result["errors"])
+        assert bib.read_text(encoding='utf-8') == original
+        assert not ledger.exists()

@@ -41,13 +41,21 @@ class TestCommentBodyIntrusions:
                 "@article{k1,\n  title = {x},\n  year = {2000}\n}\n")
         assert comment_body_intrusions(text) == []
 
-    def test_line_start_entry_inside_a_closed_block(self):
+    def test_line_start_entry_inside_a_block_is_stray_text_attributed_to_it(self):
+        # A column-0 `@misc` is its own chunk to every tool here and an entry
+        # to pybtex, so it is not an intrusion; what pybtex drops is the tail
+        # after it, reported as stray text that names the `@` which ended
+        # the block.
         text = ("@comment{\nDOMAIN_OVERVIEW: blah\n"
                 "@misc{k2, title={y}, year={2001}}\n"
                 "NOTABLE_GAPS: this tail is what pybtex drops\n}\n\n"
                 "@article{k1,\n  title = {x},\n  year = {2000}\n}\n")
-        [hit] = comment_body_intrusions(text)
-        assert (hit.open_line, hit.line, hit.word) == (1, 3, "misc")
+        assert comment_body_intrusions(text) == []
+        [stray] = stray_text(text)
+        assert (stray.line, stray.snippet) == (4, "NOTABLE_GAPS: this tail is what pybtex drops")
+        [msg] = comment_defects(text)
+        assert "line 4" in msg and "NOTABLE_GAPS" in msg
+        assert "`@misc` on line 3" in msg and "opened on line 1" in msg
 
     def test_mid_line_braced_word_inside_a_closed_block(self):
         text = "@comment{overview @x{k1} tail}\n@article{k1,\n  title = {x}\n}\n"
@@ -82,8 +90,9 @@ class TestCommentBodyIntrusions:
         text = ("@comment{first, clean}\n"
                 "@article{k1,\n  title = {x}\n}\n"
                 "@comment{\nsecond\n@misc{k2}\n}\n")
-        [hit] = comment_body_intrusions(text)
-        assert (hit.open_line, hit.line, hit.word) == (5, 7, "misc")
+        assert comment_body_intrusions(text) == []
+        [msg] = comment_defects(text)
+        assert "line 8" in msg and "`@misc` on line 7" in msg and "opened on line 5" in msg
 
 
 E = "@article{k1,\n  title = {x},\n  year = {2000}\n}\n"
@@ -92,10 +101,11 @@ E = "@article{k1,\n  title = {x},\n  year = {2000}\n}\n"
 class TestReviewRoundTwo:
     """Shapes two external reviews raised against the first cut."""
 
-    def test_paren_form_block_is_scanned_with_paren_delimiters(self):
+    def test_paren_form_block_is_handled_like_the_brace_form(self):
         text = "@comment(\noverview\n@misc{k2, title={y}, year={2001}}\ntail\n)\n" + E
-        [hit] = comment_body_intrusions(text)
-        assert (hit.open_line, hit.line, hit.word) == (1, 3, "misc")
+        assert comment_body_intrusions(text) == []
+        [msg] = comment_defects(text)
+        assert "'tail'" in msg and "`@misc` on line 3" in msg and "opened on line 1" in msg
 
     def test_indented_line_start_opener_is_not_a_block(self):
         # The chunker splits only at a column-0 `@`; an indented `@comment{`
@@ -127,11 +137,23 @@ class TestReviewRoundTwo:
         [stray] = stray_text(with_divider)
         assert (stray.line, stray.snippet) == (8, "%% divider")
 
-    def test_nested_openers_report_each_at_once(self):
+    def test_column_zero_nested_comment_is_its_own_chunk(self):
+        # pybtex ends the outer block at the inner `@comment` and reads a
+        # second comment; both chunks are carried whole, nothing is lost, so
+        # only the mid-line `@x` inside the second chunk is an intrusion.
         text = "@comment{ a\n@comment{ b @x{k} }\n c }\n" + E
         hits = comment_body_intrusions(text)
-        assert [(h.line, h.word) for h in hits] == [(2, "comment"), (2, "x")]
-        assert all(h.open_line == 1 for h in hits)
+        assert [(h.open_line, h.line, h.word) for h in hits] == [(2, 2, "x")]
+
+    def test_early_closing_brace_hides_nothing(self):
+        # Braces mean nothing to pybtex's comment: the block runs to the next
+        # `@`, so a `}` in the overview cannot put a later `@misc` outside it.
+        [hit] = comment_body_intrusions("@comment{overview } and @misc{fake, title={x}} more }\n" + E)
+        assert (hit.line, hit.word) == (1, "misc")
+
+    def test_a_double_at_reports_two_intrusions(self):
+        hits = comment_body_intrusions("@comment{ a @@foo }\n" + E)
+        assert [h.word for h in hits] == ["", "foo"]
 
     def test_verbatim_blocks_are_the_three_commands_pybtex_drops(self):
         assert is_verbatim_block("@comment{x}")
@@ -140,15 +162,18 @@ class TestReviewRoundTwo:
         assert not is_verbatim_block("@stringent{k1, title={x}}")
         assert not is_verbatim_block("@article{k1, title={x}}")
 
-    def test_indented_commands_after_an_entry_are_stray_text(self):
+    def test_indented_commands_after_an_entry_are_misplaced_commands(self):
         # pybtex reads them (a comment; an entry); no splitter here does, so
-        # a rewrite folds them into the entry's chunk and drops the text.
+        # dedupe and evidence stamping fold them into the entry before them
+        # and a rewrite drops the comment. The message names the real reason
+        # - the command's position - not a loss the rewrite may not cause.
         text = E + "  @comment{ indented }\n" + E.replace("k1", "k2") + "\t@COMMENT (also)\n"
         assert [(s.line, s.snippet) for s in stray_text(text)] == [
             (5, "@comment{ indented }"), (10, "@COMMENT (also)")]
         assert stray_text("@comment{ ok }\n" + E) == []
-        [stray] = stray_text(E + "  @commentary{k3, title={t}}\n")
-        assert stray.line == 5
+        [msg] = comment_defects(E + "  @commentary{k3, title={t}}\n")
+        assert "line 5" in msg and "start at the beginning of its line" in msg
+        assert "drops" not in msg
 
 
 class TestStrayText:
@@ -203,3 +228,54 @@ class TestStrayText:
         [msg] = comment_defects(E + "%% ---- divider ----\n" + E.replace("k1", "k2"))
         assert "line 5" in msg and "%% ---- divider ----" in msg
         assert "outside" in msg
+
+
+class TestReviewRoundFour:
+    """Final-design review: lexical context for paren-delimited commands, a
+    BOM, late-balance reporting, and same-line ordering."""
+
+    def test_paren_entry_with_a_literal_paren_inside_a_value_is_not_stray(self):
+        assert stray_text("@article(k1,\n  title = {A ) char},\n  year = {2000}\n)\n" + E) == []
+        assert stray_text('@article(k1,\n  title = "A ) char",\n  year = {2000}\n)\n' + E) == []
+
+    def test_paren_comment_block_balances_at_its_real_closer(self):
+        # A `)` inside braces is literal; the block ends at the outer `)`.
+        [hit] = comment_body_intrusions("@comment( see {a ) b} @x{k} )\n" + E)
+        assert hit.word == "x"
+
+    def test_bom_is_leading_whitespace_to_the_grammar(self):
+        bom = "﻿"
+        assert is_verbatim_block(bom + "@comment{x}")
+        assert stray_text(bom + "@comment{x}\n" + E) == []
+        assert stray_text(bom + E) == []
+        [hit] = comment_body_intrusions(bom + "@comment{ a @x{k} }\n" + E)
+        assert hit.word == "x"
+
+    def test_unbalanced_block_then_entry_then_stray_closer_reports_only_the_closer(self):
+        # Braces do not decide a block's extent, so the entry after an
+        # unbalanced block is never an intrusion; the stray `}` after it is
+        # the one thing to remove and the one thing reported.
+        text = "@comment{\noverview { unmatched\n}\n" + E + "}\n" + E.replace("k1", "k2")
+        [msg] = comment_defects(text)
+        assert "'}'" in msg and "line 8" in msg
+
+    def test_same_line_defects_keep_source_order(self):
+        msgs = comment_defects("@comment{ a @z{1} @a{2} }\n" + E)
+        assert [m.split("`")[1] for m in msgs] == ["@z", "@a"]
+
+
+class TestReviewRoundFive:
+    def test_concatenated_commands_on_one_line_are_misplaced_commands(self):
+        [msg] = comment_defects("@article{k1,\n  title = {x}\n}@misc{k2, title={y}}\n")
+        assert "line 3" in msg and "start at the beginning of its line" in msg
+
+    def test_stray_after_a_balanced_block_carries_no_attribution(self):
+        # The block closed on its own line; the `}` after k1 is a plain typo.
+        [msg] = comment_defects("@comment{ ok }\n" + E + "}\n")
+        assert "ended the" not in msg and "'}'" in msg
+
+    def test_attribution_reaches_only_the_chunk_right_after_the_block(self):
+        text = ("@comment{\noverview { unmatched\n}\n" + E
+                + E.replace("k1", "k2") + "}\n")
+        [msg] = comment_defects(text)
+        assert "'}'" in msg and "ended the" not in msg

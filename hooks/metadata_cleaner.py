@@ -28,6 +28,7 @@ import json
 import os
 import re
 import sys
+import tempfile
 import traceback
 from collections import Counter
 from dataclasses import dataclass, field
@@ -1506,14 +1507,24 @@ def write_bibtex(bib_data: BibliographyData, output_path: Path,
             f"the cleaned text does not re-parse ({type(e).__name__}: {e}); "
             f"{output_path.name} left untouched") from e
     # tmp + os.replace, as the ledger writer does: a write that fails
-    # halfway must not leave the researcher's bib truncated either.
-    tmp = output_path.with_name(output_path.name + ".tmp")
+    # halfway must not leave the researcher's bib truncated either. The tmp
+    # name is unique and created exclusively (no collision, no symlink to
+    # follow); the original's mode survives the replace.
+    fd, tmp_name = tempfile.mkstemp(prefix=output_path.name + ".", suffix=".tmp",
+                                    dir=str(output_path.parent))
+    os.close(fd)
+    tmp = Path(tmp_name)
     try:
         tmp.write_text(text, encoding='utf-8')
+        if output_path.exists():
+            os.chmod(tmp, output_path.stat().st_mode & 0o7777)
         os.replace(str(tmp), str(output_path))
     finally:
-        if tmp.exists():
-            tmp.unlink()
+        try:
+            if tmp.exists():
+                tmp.unlink()
+        except OSError:
+            pass  # never mask the write's own failure
 
 
 def _verified_identifier(entry, api_entry: dict):
@@ -1567,12 +1578,18 @@ def write_cleaning_ledger(bib_path: Path, ledger_entries: dict, breaker_tripped:
 
 
 def _discard_stale_ledger(result: dict, bib_path: Path) -> None:
-    """Remove this bib's cleaning ledger from an earlier pass. A pass that
-    refuses (syntax error, a comment block the rewrite could not carry, a
-    rendering that does not re-parse) writes no ledger - and must not leave
-    the previous one standing, because the evidence barrier binds a ledger
-    to its bib by NAME only and would trust an attestation of a bib that has
-    since changed. A missing ledger demotes downstream: the safe direction."""
+    """Attempt to remove this bib's cleaning ledger from an earlier pass. A
+    pass that refuses (syntax error, text the rewrite could not carry, a
+    rendering that does not re-parse or could not be written) writes no
+    ledger - and must not leave the previous one standing, because the
+    evidence barrier binds a ledger to its bib by NAME only and would trust
+    an attestation of a bib that has since changed. A missing ledger demotes
+    downstream: the safe direction, taken even when the bib is unchanged and
+    the old ledger would still be accurate (a rewrite that failed to render
+    or write), because the alternative is telling the two cases apart by
+    content, which the ledger does not carry - see the roadmap item on
+    binding the ledger by content. The unlink itself is best-effort: if the
+    OS refuses, the old ledger stays and only a warning records it."""
     stale = bib_path.parent / "intermediate_files" / "json" / f"cleaning_ledger-{bib_path.stem}.json"
     try:
         if stale.exists():
@@ -1682,6 +1699,9 @@ def clean_bibtex(bib_path: Path, json_dirs) -> dict:
         "planned_entries_cleaned": 0,
         "planned_fields_removed_by_name": {},
         "planned_demotions": 0,
+        # Every "applied" figure below (and the totals above that mirror
+        # them) is zeroed by _refuse when a pass is refused: add a new one
+        # there too, or a refused pass will report work it did not do.
         "applied_entries_cleaned": 0,
         "applied_fields_removed_by_name": {},
         "applied_demotions": 0,
@@ -1746,7 +1766,10 @@ def clean_bibtex(bib_path: Path, json_dirs) -> dict:
     # a rewrite keeps only those two things. The validator blocks on the
     # same list (bib_comments.comment_defects); this is what keeps the text
     # intact until the researcher fixes it, since the SubagentStop hook runs
-    # the cleaner whether or not validation passed.
+    # the cleaner whether or not validation passed. Deliberately unconditional
+    # - refused even when nothing would be cleaned this pass: the text is a
+    # hazard for any future rewrite, and a ledger for a file the validator
+    # rejects would attest a state about to change.
     result["entries_total"] = len(bib_data.entries)
     defects = comment_defects(raw_text)
     if defects:
@@ -1887,8 +1910,9 @@ def clean_bibtex(bib_path: Path, json_dirs) -> dict:
             write_bibtex(bib_data, bib_path, comments)
         except RewriteRefused as e:
             return _refuse(result, bib_path, f"Rewrite refused: {e}")
-        except OSError as e:
-            # The atomic write left the bib untouched; the pass still did not
+        except Exception as e:
+            # A render-time raise (check_braces, the encoder) or a write
+            # failure: the bib is untouched either way, and the pass did not
             # happen, so the stale ledger must go the same way.
             return _refuse(result, bib_path, f"Rewrite failed: {type(e).__name__}: {e}")
 

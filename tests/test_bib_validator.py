@@ -990,7 +990,8 @@ class TestCheckCommentBodies:
         content = valid_article + "\n\n  @comment{ indented overview }\n"
         errors = check_comment_bodies(content)
         assert len(errors) == 1
-        assert "outside" in errors[0] and "@comment{ indented overview }" in errors[0]
+        assert "start at the beginning of its line" in errors[0]
+        assert "@comment{ indented overview }" in errors[0]
         assert f"line {valid_article.count(chr(10)) + 3}" in errors[0]
         bib = tmp_path / "t.bib"
         bib.write_text(content, encoding="utf-8")
