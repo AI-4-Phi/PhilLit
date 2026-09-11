@@ -40,11 +40,13 @@ text" the same way. The pybtex facts that drive it (all measured 2026-09-10):
   the cleaner would render it twice and dedupe gives it no identity); a
   further verbatim command there is carried whole and is not reported, and
   a bare `@` in trailing words is pybtex's own syntax error, not ours.
-- A UTF-8 BOM, or indentation, before the FIRST command: pybtex skips it,
-  dedupe matches its header regex against the raw chunk and DROPS that
-  entry (measured 2026-09-10), so it is reported as a misplaced command. A
-  BOM before a verbatim block is tolerated by `is_verbatim_block` (dedupe's
-  own predicate), so the block is carried and nothing is lost.
+- A UTF-8 BOM, a zero-width character (U+200B/C/D, U+2060), or indentation
+  before a command: pybtex skips it (all measured 2026-09-10, first chunk
+  and mid-file); before the FIRST entry, dedupe matches its header regex
+  against the raw chunk and DROPS that entry, so it is reported
+  as a misplaced command. The same lead before a verbatim block is
+  tolerated by `is_verbatim_block` (dedupe's own predicate, one lead class
+  for both regexes), so the block is carried and nothing is lost.
 
 Every splitter here chunks a file at a COLUMN-0 `@` (`re.split(r"\\n(?=@)")`),
 so that is what "line start" means throughout. What the tools then read as
@@ -82,8 +84,13 @@ naming the cause.
 import re
 from typing import NamedTuple
 
-# A UTF-8 BOM (which `\s` does not match) is leading whitespace here.
-_VERBATIM_RE = re.compile(r"[\s\ufeff]*@(comment|string|preamble)\s*([{(])", re.IGNORECASE)
+# Leading whitespace plus the invisible format characters an editor can
+# leave before a command (BOM, zero-width space/joiners, word joiner) -
+# none of which `\s` matches. One class for both regexes below: a block so
+# led is carried (dedupe binds `is_verbatim_block`), an entry so led is
+# off column 0 to dedupe's header regex and reported.
+_LEAD = r"[\s\ufeff\u200b\u200c\u200d\u2060]*"
+_VERBATIM_RE = re.compile(_LEAD + r"@(comment|string|preamble)\s*([{(])", re.IGNORECASE)
 _NEXT_CHUNK_RE = re.compile(r"\n(?=@)")
 # The entry header every tool here reads (the intersection of dedupe's
 # `@(\w+)\{([^,]+),`, stamp_evidence's `@(\w+)\s*\{([^,\s]+)\s*,` and
@@ -93,10 +100,7 @@ _NEXT_CHUNK_RE = re.compile(r"\n(?=@)")
 # so a BOM or indentation before the FIRST entry of a file drops that entry
 # (measured 2026-09-10) - that is a misplaced command, not a header.
 _ENTRY_HEADER_RE = re.compile(r"@\w+(\{)[^,\s]+\s*,")
-# Leading whitespace plus the invisible format characters an editor can
-# leave before a command (BOM, zero-width space/joiners, word joiner) -
-# none of which `\s` matches, all of which put the `@` off column 0.
-_LEAD_RE = re.compile(r"[\s\ufeff\u200b\u200c\u200d\u2060]*")
+_LEAD_RE = re.compile(_LEAD)
 # A command as pybtex reads one: `@`, an identifier, `{` or `(`. A run that
 # opens with `@` but is not command-shaped (`@ 3pm`, `foo@bar.org`) is
 # either stray text or pybtex's own syntax error, never a misplaced command.
@@ -111,8 +115,9 @@ _CLOSER = {"{": "}", "(": ")"}
 def is_verbatim_block(chunk: str) -> bool:
     """True if `chunk` - a `\\n(?=@)`-split piece of a bib file - opens a
     block to carry verbatim because pybtex's Writer drops it: `@comment`,
-    `@string` or `@preamble`. Leading whitespace is tolerated (the first
-    chunk); an entry type that merely begins with one of the words is not."""
+    `@string` or `@preamble`. A leading BOM, zero-width character or
+    whitespace is tolerated (`_LEAD`, the first chunk; pybtex skips them
+    too); an entry type that merely begins with one of the words is not."""
     return _VERBATIM_RE.match(chunk) is not None
 
 
@@ -193,7 +198,7 @@ class Intrusion(NamedTuple):
                 f"start of its own line")
 
 
-def comment_body_intrusions(text: str) -> list[Intrusion]:
+def comment_body_intrusions(text: str, strays: list | None = None) -> list[Intrusion]:
     """Every `@` inside a `@comment` chunk after the command that opens it,
     in order. This is pybtex's own rule - a comment runs to the next `@`,
     braces notwithstanding - so nothing here depends on the block's braces
@@ -202,8 +207,21 @@ def comment_body_intrusions(text: str) -> list[Intrusion]:
     inside a block is a chunk of its own to every tool here and an entry to
     pybtex, so it is not an intrusion: whatever pybtex drops after it is
     `stray_text`'s to report, which names it."""
+    # A column-0 `@comment{` inside the value of an unclosed @string/@preamble
+    # is value text to BibTeX, not a comment: judged by the unclosed report
+    # alone (its span is `stray_text`'s), never scanned for intrusions. The
+    # boundary chunk is skipped whole on purpose: what follows the closer
+    # there is a block's tail, and `_scan_tail` already reports an entry-
+    # shaped command after a trailing @comment with that comment's
+    # attribution and the dual remedy - the same verdict an intrusion scan
+    # of the remainder would reach, said once.
+    if strays is None:
+        strays = stray_text(text)
+    swallowed = [(s.offset, s.until) for s in strays if s.kind == "unclosed"]
     hits = []
     for offset, chunk in _chunks(text):
+        if any(start <= offset < until for start, until in swallowed):
+            continue
         m = _VERBATIM_RE.match(chunk)
         if not m or m.group(1).lower() != "comment":
             continue
@@ -236,8 +254,11 @@ class Stray(NamedTuple):
     after: tuple[int, int, str] | None = None
     bom: bool = False  # an invisible character (BOM, zero-width space) put it off column 0
     # "unclosed" only: the 1-based line where the block's value closes by
-    # brace count when it does close later in the file (None: never).
+    # brace count when it does close later in the file (None: never), and
+    # the text index the value runs to (the text's end when never) - the
+    # span that is value text to BibTeX, which no scan here judges on its own.
     closes: int | None = None
+    until: int | None = None
 
     def describe(self) -> str:
         if self.kind == "misplaced":
@@ -308,12 +329,15 @@ def _unclosed(text: str, chunk: str, offset: int, at: int, opener_at: int, opene
     PrematureEOF, measured), so nothing after it is advised on its own."""
     whole = _balanced_end(text, offset + opener_at, opener)
     closes = _line(text, whole - 1) if whole is not None else None
+    until = whole if whole is not None else len(text)
     snippet = chunk[at:].splitlines()[0].strip()[:80]
-    strays.append(Stray(_line(text, offset + at), snippet, offset + at, "unclosed", closes=closes))
-    return whole if whole is not None else len(text)
+    strays.append(Stray(_line(text, offset + at), snippet, offset + at, "unclosed",
+                        closes=closes, until=until))
+    return until
 
 
-def _scan_tail(text: str, chunk: str, offset: int, pos: int, strays: list) -> int:
+def _scan_tail(text: str, chunk: str, offset: int, pos: int, strays: list,
+               entries: bool = True) -> int:
     """Commands in chunk[pos:], the text after a closed @string/@preamble.
     pybtex skips plain words there (carried with the chunk, nothing lost)
     and reads commands. A further @comment runs to the next `@`; a further
@@ -322,8 +346,11 @@ def _scan_tail(text: str, chunk: str, offset: int, pos: int, strays: list) -> in
     here, so it is a misplaced command - not chunked on its own, it is
     carried inside a verbatim chunk (and rendered a second time by the
     cleaner) or dropped with a headerless one - with the header rule too
-    when it has none. Returns the text index an unclosed secondary block's
-    value runs to (0 if none)."""
+    when it has none. With `entries=False` (a @comment chunk's body, where
+    the intrusion scan owns every `@`) only the @string/@preamble spans are
+    tracked, so an unclosed one there still bounds what it swallows.
+    Returns the text index an unclosed secondary block's value runs to (0
+    if none)."""
     comment_line = None  # a @comment passed here: the entry after it may be its prose
     while (c := _COMMAND_RE.search(chunk, pos)) is not None:
         word = c.group(1).lower()
@@ -338,6 +365,9 @@ def _scan_tail(text: str, chunk: str, offset: int, pos: int, strays: list) -> in
             if nxt is None:
                 return _unclosed(text, chunk, offset, c.start(), c.end() - 1, c.group(2), strays)
             pos = nxt
+            continue
+        if not entries:
+            pos = c.end()
             continue
         after = (comment_line, _line(text, at), word) if comment_line else None
         strays.append(Stray(_line(text, at), snippet, at, "misplaced", after))
@@ -385,7 +415,10 @@ def stray_text(text: str) -> list[Stray]:
                 # Only a comment runs to the next `@` (any `@` after the
                 # command is the intrusion scan's); an unbalanced one ends
                 # at the next chunk's `@`, which attributes its stray tail.
+                # A @string/@preamble in its body is a command pybtex reads
+                # after the comment: an unclosed one bounds what it swallows.
                 open_block = _line(text, open_at) if end is None else None
+                value_until = _scan_tail(text, chunk, offset, m.end(), strays, entries=False)
                 continue
             open_block = None
             if end is None:
@@ -452,6 +485,7 @@ def comment_defects(text: str) -> list[str]:
     researcher-facing messages in source order: the intrusions into
     verbatim chunks and the stray text. The validator's check 4c and the
     cleaner's preflight are the same list."""
-    found = [(hit.offset, hit.describe()) for hit in comment_body_intrusions(text)]
-    found += [(stray.offset, stray.describe()) for stray in stray_text(text)]
+    strays = stray_text(text)
+    found = [(hit.offset, hit.describe()) for hit in comment_body_intrusions(text, strays)]
+    found += [(stray.offset, stray.describe()) for stray in strays]
     return [msg for _, msg in sorted(found, key=lambda pair: pair[0])]

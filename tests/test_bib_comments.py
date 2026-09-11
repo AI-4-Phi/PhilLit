@@ -412,11 +412,10 @@ class TestReviewRoundFive:
             assert kinds == ["misplaced", "header"], text
         [stray] = stray_text("  " + E)  # readable once at column 0: one report
         assert stray.kind == "misplaced"
-        # A block once at column 0 is carried, not an entry: one report, and
-        # never "rewrite the header" for a comment or macro.
-        [stray] = stray_text("\u200b@comment{done}\n" + E)
-        assert stray.kind == "misplaced" and "invisible character" in stray.describe()
-        assert stray_text("  @comment{done}\n" + E) == []  # verbatim predicate tolerates whitespace
+        # A block behind a lead is carried (dedupe's own predicate tolerates
+        # whitespace, a BOM and zero-width characters alike): no report.
+        assert stray_text("  @comment{done}\n" + E) == []
+        assert stray_text("\u200b@comment{done}\n" + E) == []
         # The same two-at-once rule in an entry's tail and in a string's tail.
         assert [s.kind for s in stray_text(E.rstrip("\n") + " @my-type{k2, title={t}}\n")] == ["misplaced", "header"]
         assert [s.kind for s in stray_text(E.rstrip("\n") + " @misc{k2, title={t}}\n")] == ["misplaced"]
@@ -466,17 +465,55 @@ class TestReviewRoundFive:
         [stray] = stray_text('@string{j = "Journal\n@ Large"} see above\n' + E)
         assert stray.kind == "unclosed"
 
-    def test_off_column_string_has_its_tail_and_closure_checked_at_once(self):
-        # Removing the invisible lead makes it a carried block; its same-line
-        # entry (or its missing closer) would then block again. Both now.
-        kinds = [s.kind for s in stray_text('\u200b@string{j="J"} @article{k2, title={t}}\n' + E)]
-        assert kinds == ["misplaced", "misplaced"]
-        kinds = [s.kind for s in stray_text("\u200b@string{j = {x\n" + E + "}}\n")]
-        assert kinds == ["misplaced", "unclosed"]
-        # A comment off column 0 is one report: its body is the intrusion
-        # scan's once it is a block, and the lead is the one fix here.
-        [stray] = stray_text("\u200b@comment{ a @x{k} }\n" + E)
-        assert stray.kind == "misplaced"
+    def test_invisible_lead_before_a_block_is_the_bom_rule(self):
+        # One lead class for both regexes (the service noted the drift): a
+        # zero-width character before a block is tolerated like a BOM - the
+        # chunk is carried by dedupe's own predicate, its tail and closure
+        # are judged as a block's, and its body is the intrusion scan's.
+        assert is_verbatim_block("\u200b@comment{x}") and is_verbatim_block("\u2060 @string{j = \"x\"}")
+        [stray] = stray_text('\u200b@string{j="J"} @article{k2, title={t}}\n' + E)
+        assert (stray.kind, stray.snippet) == ("misplaced", "@article{k2, title={t}}")
+        [stray] = stray_text("\u200b@string{j = {x\n" + E + "}}\n")
+        assert stray.kind == "unclosed"
+        assert stray_text("\u200b@comment{ a @x{k} }\n" + E) == []
+        [hit] = comment_body_intrusions("\u200b@comment{ a @x{k} }\n" + E)
+        assert hit.word == "x"
+
+    def test_intrusion_scan_honours_an_unclosed_blocks_value_span(self):
+        # Service pin review of 0.5.22: pybtex reads ['k1'] - the braced
+        # value holds the literal `@comment{a @x{k}}` and closes at `}}`.
+        # The `@x` was a false intrusion whose remedy would corrupt the
+        # value; the unclosed report is the one report.
+        swallowed = "@string{j = {x\n@comment{a @x{k}}\n}}\n" + E
+        assert comment_body_intrusions(swallowed) == []
+        [msg] = comment_defects(swallowed)
+        assert "does not close within its chunk" in msg and "through line 3" in msg
+        [msg] = comment_defects("@string{j = {x\n@comment{a @x{k}}\n" + E)  # never closes
+        assert "never closes" in msg
+        # A boundary chunk holding value text before the closer AND a real
+        # comment after it (service round 2, pybtex reads ['k2', 'k1']): the
+        # `@x` before the closer is value text (no report), the `@y` that
+        # ends the trailing comment is reported once, by the tail scan, with
+        # the comment's attribution and the dual remedy.
+        text = ("@string{j = {x\n@comment{ a } @x{k} }} @comment{b @y{k2, title={t}}}\n" + E)
+        assert comment_body_intrusions(text) == []
+        unclosed, at_y = stray_text(text)
+        assert (unclosed.kind, unclosed.closes) == ("unclosed", 2)
+        assert (at_y.kind, at_y.snippet, at_y.after) == ("misplaced", "@y{k2, title={t}}}", (2, 2, "y"))
+        assert "ends the @comment opened on line 2" in at_y.describe()
+        # An unclosed @string in a COMMENT chunk's tail (pybtex ends the
+        # comment at `@string` and reads the string; ['k1'], measured): the
+        # intrusion scan reports the `@string` (true - move it to its own
+        # line) and the string's unclosed span still bounds the swallowed
+        # `@comment{a @x{k}}` line, so `@x` is not a second, false intrusion.
+        text = "@comment{done} @string{j = {x\n@comment{a @x{k}}\n}}\n" + E
+        assert [(h.line, h.word) for h in comment_body_intrusions(text)] == [(1, "string")]
+        [unclosed] = stray_text(text)
+        assert (unclosed.kind, unclosed.closes) == ("unclosed", 3)
+        # A comment AFTER the closer is a comment again.
+        unclosed, intrusion = comment_defects(
+            "@string{j = {x\n@article{k0, title={t}}\n}}\n@comment{a @x{k}}\n" + E)
+        assert "through line 3" in unclosed and "`@x`" in intrusion
 
     def test_a_column_zero_at_that_is_not_a_command_is_stray_text(self):
         # `@ 3pm notes` is pybtex's syntax error and text to delete, not a
