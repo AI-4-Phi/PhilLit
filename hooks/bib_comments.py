@@ -252,11 +252,12 @@ class Stray(NamedTuple):
                           f"as stray text); if it is an entry, {remedy}")
             return (f"line {self.line}: {self.snippet!r} - an `@` command must start at the "
                     f"beginning of its line: every tool here reads the file in column-0 "
-                    f"chunks, so this one is carried inside the chunk before it - an entry "
-                    f"there has no identity of its own in dedupe or evidence stamping (and "
-                    f"inside a carried @string/@preamble chunk the cleaner would render it a "
-                    f"second time), a comment there would not survive a metadata rewrite - "
-                    f"or dropped when it is the first chunk; {remedy}")
+                    f"chunks, so this one is not a chunk of its own: inside an entry's chunk "
+                    f"it has no identity in dedupe or evidence stamping, inside a carried "
+                    f"@string/@preamble chunk the cleaner would also render it a second time, "
+                    f"a comment there would not survive a metadata rewrite, and in a chunk "
+                    f"with no header dedupe reads (the first of the file, or the cut-off tail "
+                    f"of a block) it is dropped with that chunk; {remedy}")
         if self.kind == "header":
             remedy = "rewrite the header"
             if self.after:
@@ -298,6 +299,54 @@ class Stray(NamedTuple):
                 f"@comment block or delete it")
 
 
+def _unclosed(text: str, chunk: str, offset: int, at: int, opener_at: int, opener: str,
+              strays: list) -> int:
+    """Report the @string/@preamble whose `@` is at chunk[at] and whose
+    opener is at chunk[opener_at] as unclosed; return the text index its
+    value runs to by brace count over the whole text - the end of the text
+    when it never closes (pybtex reads to end of file and fails there:
+    PrematureEOF, measured), so nothing after it is advised on its own."""
+    whole = _balanced_end(text, offset + opener_at, opener)
+    closes = _line(text, whole - 1) if whole is not None else None
+    snippet = chunk[at:].splitlines()[0].strip()[:80]
+    strays.append(Stray(_line(text, offset + at), snippet, offset + at, "unclosed", closes=closes))
+    return whole if whole is not None else len(text)
+
+
+def _scan_tail(text: str, chunk: str, offset: int, pos: int, strays: list) -> int:
+    """Commands in chunk[pos:], the text after a closed @string/@preamble.
+    pybtex skips plain words there (carried with the chunk, nothing lost)
+    and reads commands. A further @comment runs to the next `@`; a further
+    @string/@preamble is carried over its balanced span (or reported as
+    unclosed); an entry-shaped command is read by pybtex and by no splitter
+    here, so it is a misplaced command - not chunked on its own, it is
+    carried inside a verbatim chunk (and rendered a second time by the
+    cleaner) or dropped with a headerless one - with the header rule too
+    when it has none. Returns the text index an unclosed secondary block's
+    value runs to (0 if none)."""
+    comment_line = None  # a @comment passed here: the entry after it may be its prose
+    while (c := _COMMAND_RE.search(chunk, pos)) is not None:
+        word = c.group(1).lower()
+        at = offset + c.start()
+        snippet = chunk[c.start():].splitlines()[0].strip()[:80]
+        if word == "comment":
+            comment_line = _line(text, at)
+            pos = c.end()
+            continue
+        if word in _VERBATIM_WORDS:
+            nxt = _balanced_end(chunk, c.end() - 1, c.group(2))
+            if nxt is None:
+                return _unclosed(text, chunk, offset, c.start(), c.end() - 1, c.group(2), strays)
+            pos = nxt
+            continue
+        after = (comment_line, _line(text, at), word) if comment_line else None
+        strays.append(Stray(_line(text, at), snippet, at, "misplaced", after))
+        if not _ENTRY_HEADER_RE.match(chunk, c.start()):
+            strays.append(Stray(_line(text, at), snippet, at, "header"))
+        return 0
+    return 0
+
+
 def stray_text(text: str) -> list[Stray]:
     """The runs of non-whitespace text that neither sit in a verbatim chunk
     nor inside the entry their chunk opens, one report per chunk. A chunk
@@ -322,8 +371,11 @@ def stray_text(text: str) -> list[Stray]:
             # Inside the value of a @string/@preamble reported as unclosed:
             # to BibTeX this is value text (a cut-off tail, or swallowed
             # entries), so its own "delete it"/"rewrite the header" advice
-            # would be wrong. The unclosed report names the one fix.
+            # would be wrong. The unclosed report names the one fix. What
+            # follows the closer on the boundary chunk is a string's tail.
             open_block = None
+            if offset + len(chunk) > value_until:
+                value_until = _scan_tail(text, chunk, offset, value_until - offset, strays)
             continue
         m = _VERBATIM_RE.match(chunk)
         if m:
@@ -342,43 +394,10 @@ def stray_text(text: str) -> list[Stray]:
                 # entries swallowed until a later closer - or fails at end
                 # of file. Where it closes, by brace count over the whole
                 # text, bounds the chunks that are value text to BibTeX.
-                whole = _balanced_end(text, offset + m.end() - 1, m.group(2))
-                closes = _line(text, whole - 1) if whole is not None else None
-                value_until = whole or 0
-                snippet = chunk[m.start(1) - 1:].splitlines()[0].strip()[:80]
-                strays.append(Stray(_line(text, open_at), snippet, open_at, "unclosed",
-                                    closes=closes))
+                value_until = _unclosed(text, chunk, offset, m.start(1) - 1, m.end() - 1,
+                                        m.group(2), strays)
                 continue
-            # After the closer pybtex skips plain words (carried with the
-            # chunk, nothing lost) and reads commands. A further verbatim
-            # command is carried too; an entry-shaped one is read by pybtex
-            # and by no splitter here - the cleaner would render it twice.
-            pos = end
-            comment_line = None  # a @comment passed in this tail: the entry after it may be its prose
-            while (c := _COMMAND_RE.search(chunk, pos)) is not None:
-                word = c.group(1).lower()
-                at = offset + c.start()
-                snippet = chunk[c.start():].splitlines()[0].strip()[:80]
-                if word == "comment":
-                    comment_line = _line(text, at)
-                    pos = c.end()  # runs to the next `@`, whatever follows
-                    continue
-                if word in _VERBATIM_WORDS:
-                    nxt = _balanced_end(chunk, c.end() - 1, c.group(2))
-                    if nxt is None:
-                        # The same swallowing hazard as a primary one.
-                        whole = _balanced_end(text, at + c.end() - c.start() - 1, c.group(2))
-                        closes = _line(text, whole - 1) if whole is not None else None
-                        value_until = whole or 0
-                        strays.append(Stray(_line(text, at), snippet, at, "unclosed", closes=closes))
-                        break
-                    pos = nxt
-                    continue
-                after = (comment_line, _line(text, at), word) if comment_line else None
-                strays.append(Stray(_line(text, at), snippet, at, "misplaced", after))
-                if not _ENTRY_HEADER_RE.match(chunk, c.start()):
-                    strays.append(Stray(_line(text, at), snippet, at, "header"))
-                break
+            value_until = _scan_tail(text, chunk, offset, end, strays)
             continue
         header = _ENTRY_HEADER_RE.match(chunk)
         if header:
@@ -407,13 +426,23 @@ def stray_text(text: str) -> list[Stray]:
             snippet = stripped.splitlines()[0].strip()[:80]
             invisible = not tail[:lead].isspace() if lead else False  # a BOM or zero-width char
             strays.append(Stray(_line(text, at), snippet, at, kind, after, invisible))
-            if (kind == "misplaced" and not _ENTRY_HEADER_RE.match(stripped)
-                    and not is_verbatim_block(stripped)):
-                # Off column 0 AND, once there, neither an entry header nor
-                # a block to carry: say both now rather than block a second
-                # time after the first fix. (`header` matched the RAW chunk,
-                # lead included; this tests the command itself.)
-                strays.append(Stray(_line(text, at), snippet, at, "header"))
+            if kind == "misplaced" and not _ENTRY_HEADER_RE.match(stripped):
+                # Off column 0 AND, once there, not an entry header: say what
+                # else is wrong now rather than block a second time after the
+                # first fix. (`header` matched the RAW chunk, lead included;
+                # this tests the command itself.) A block to carry is not a
+                # header defect, but its own tail and closure still count.
+                vm = _VERBATIM_RE.match(stripped)
+                if vm is None:
+                    strays.append(Stray(_line(text, at), snippet, at, "header"))
+                elif vm.group(1).lower() != "comment":
+                    vend = _balanced_end(stripped, vm.end() - 1, vm.group(2))
+                    base = end + lead  # stripped == chunk[base:]
+                    if vend is None:
+                        value_until = _unclosed(text, chunk, offset, base + vm.start(1) - 1,
+                                                base + vm.end() - 1, vm.group(2), strays)
+                    else:
+                        value_until = _scan_tail(text, chunk, offset, base + vend, strays)
         open_block = None
     return strays
 

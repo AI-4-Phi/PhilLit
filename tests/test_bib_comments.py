@@ -336,7 +336,7 @@ class TestReviewRoundFive:
         [stray] = stray_text("  " + E + E.replace("k1", "k2"))
         assert (stray.line, stray.kind) == (1, "misplaced")
         msg = stray.describe()
-        assert "dropped when it is the first chunk" in msg and "move it to the start" in msg
+        assert "dropped with that chunk" in msg and "move it to the start" in msg
         assert "byte-order mark" not in msg  # the BOM remedy is for a BOM
 
     def test_unclosed_string_or_preamble_is_reported_and_attributes_nothing(self):
@@ -355,8 +355,8 @@ class TestReviewRoundFive:
         # Everything BibTeX reads as the value - the swallowed entry, the
         # late `}}` closer - is covered by that one report, not reported as
         # stray text to delete.
-        [msg] = comment_defects("@string{j = {x\n" + E)
-        assert "never closes" in msg and "end of file" in msg
+        [msg] = comment_defects("@string{j = {x\n" + E + "%% divider\n" + E.replace("k1", "k2"))
+        assert "never closes" in msg and "end of file" in msg  # and nothing after it is advised
 
     def test_only_an_entry_shaped_command_after_a_closed_string_is_misplaced(self):
         # pybtex reads a second @string, a @comment and an entry after the
@@ -451,6 +451,32 @@ class TestReviewRoundFive:
         # The second says only what is certain: BibTeX left the comment at
         # the first `@`; how it reads this one depends on that fix.
         assert "fix that first `@`" in second.describe() and "becomes an entry" not in second.describe()
+
+    def test_boundary_chunk_of_an_unclosed_block_is_scanned_past_the_closer(self):
+        # Service pin review of 0.5.21: the chunk holding the closer was
+        # skipped WHOLE, so an entry after the closer on that line went
+        # unreported while dedupe drops that chunk (no header). pybtex reads
+        # k2 (measured). Now the remainder after the closer is a string's
+        # tail: k2 is a misplaced command, said in the same cycle.
+        text = ('@string{j = "Journal\n@ Large"} @article{k2,\n  title = {T}, year = {2001}\n}\n' + E)
+        unclosed, misplaced = stray_text(text)
+        assert (unclosed.kind, unclosed.line, unclosed.closes) == ("unclosed", 1, 2)
+        assert (misplaced.kind, misplaced.offset) == ("misplaced", text.index("@article{k2"))
+        # Plain words after the closer are still nothing.
+        [stray] = stray_text('@string{j = "Journal\n@ Large"} see above\n' + E)
+        assert stray.kind == "unclosed"
+
+    def test_off_column_string_has_its_tail_and_closure_checked_at_once(self):
+        # Removing the invisible lead makes it a carried block; its same-line
+        # entry (or its missing closer) would then block again. Both now.
+        kinds = [s.kind for s in stray_text('\u200b@string{j="J"} @article{k2, title={t}}\n' + E)]
+        assert kinds == ["misplaced", "misplaced"]
+        kinds = [s.kind for s in stray_text("\u200b@string{j = {x\n" + E + "}}\n")]
+        assert kinds == ["misplaced", "unclosed"]
+        # A comment off column 0 is one report: its body is the intrusion
+        # scan's once it is a block, and the lead is the one fix here.
+        [stray] = stray_text("\u200b@comment{ a @x{k} }\n" + E)
+        assert stray.kind == "misplaced"
 
     def test_a_column_zero_at_that_is_not_a_command_is_stray_text(self):
         # `@ 3pm notes` is pybtex's syntax error and text to delete, not a
