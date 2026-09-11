@@ -527,6 +527,11 @@ class TestReviewRoundFive:
         assert stray_text(text) == []
         assert [(h.word, h.first) for h in comment_body_intrusions(text)] == [
             ("article", True), ("string", False), ("article", False)]
+        # The QUOTED variant of the same shape (pybtex ['k1', 'k2', 'k9']).
+        text = ('@comment{done} @article{k1, title="literal @string(foo"} @article{k2, title={t}}\n'
+                "@article{k9, title={t}}\n")
+        assert stray_text(text) == []
+        assert [h.word for h in comment_body_intrusions(text)] == ["article", "string", "article"]
         # A same-line @string AFTER a stepped-over entry is still found.
         text = "@comment{done} @article{k1, title={t}} @string{j = {x\n" + E + "}}\n"
         [unclosed] = stray_text(text)

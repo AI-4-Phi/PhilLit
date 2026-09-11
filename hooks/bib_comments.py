@@ -389,8 +389,9 @@ def _scan_tail(text: str, chunk: str, offset: int, pos: int, strays: list,
             # Step over the entry's balanced extent: an `@` inside its
             # braced value is text to pybtex, not a command (a literal
             # `@string(` there forged a never-closing span). Unbalanced -
-            # pybtex refuses the file (PrematureEOF) - the rest of the tail
-            # is not decomposable into commands, so stop rather than forge.
+            # pybtex refuses the file, at end of file or at the next
+            # line-start `@` - the rest of the tail is not decomposable into
+            # commands, so stop rather than forge.
             skip = _balanced_end(chunk, c.end() - 1, c.group(2))
             if skip is None:
                 return 0
