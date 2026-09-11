@@ -18,8 +18,8 @@ that a recurrence is recognized where it would be read.
   decoded text, not the bytes, since the cleaner writes in text mode and
   Windows gets CRLF. Raised in the 0.5.18 final-design review; no incident yet.
 
-The service's re-vendor at the 0.5.20 pin, and its deploy, are the service's
-items, run from that repo.
+The deploy of 0.5.25 (phillit-service engine at `da48b2c`, re-vendor #23) is
+the service's item, run from that repo.
 
 ## Checked and deliberately NOT filed
 
