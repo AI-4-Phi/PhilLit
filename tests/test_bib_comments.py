@@ -290,9 +290,8 @@ class TestReviewRoundFour:
         assert hit.word == "x"
         [stray] = stray_text(bom + E)
         assert (stray.line, stray.kind, stray.snippet) == (1, "misplaced", "@article{k1,")
-        assert "remove the byte-order mark" in stray.describe()
-        [stray] = stray_text(bom + "@my-type{k1, title={x}}\n" + E)
-        assert stray.kind == "misplaced"
+        assert "byte-order mark" in stray.describe()
+        assert [s.kind for s in stray_text(bom + "@my-type{k1, title={x}}\n" + E)] == ["misplaced", "header"]
 
     def test_unbalanced_block_then_entry_then_stray_closer_reports_only_the_closer(self):
         # Braces do not decide a block's extent, so the entry after an
@@ -348,12 +347,16 @@ class TestReviewRoundFive:
         # `}}` parses to ZERO entries (measured 2026-09-10) - the entry is
         # swallowed into the value, gone from a rewrite, kept by dedupe.
         for opener in ('@string{j = "x"\n', '@preamble{"x"\n'):
-            unclosed, closer = comment_defects(opener + E + "}\n")
-            assert "line 1" in unclosed and "never closes" in unclosed, unclosed
-            assert "'}'" in closer and "ended the" not in closer, closer
-        unclosed, closer = comment_defects("@string{j = {x\n" + E + "}}\n")
-        assert "never closes" in unclosed and "vanish" in unclosed
-        assert "'}}'" in closer  # the late closer is stray to the column-0 tools
+            [msg] = comment_defects(opener + E + "}\n")
+            assert "line 1" in msg and "does not close within its chunk" in msg, msg
+            assert "ended the" not in msg
+        [msg] = comment_defects("@string{j = {x\n" + E + "}}\n")
+        assert "through line 6" in msg and "vanish" in msg
+        # Everything BibTeX reads as the value - the swallowed entry, the
+        # late `}}` closer - is covered by that one report, not reported as
+        # stray text to delete.
+        [msg] = comment_defects("@string{j = {x\n" + E)
+        assert "never closes" in msg and "end of file" in msg
 
     def test_only_an_entry_shaped_command_after_a_closed_string_is_misplaced(self):
         # pybtex reads a second @string, a @comment and an entry after the
@@ -382,21 +385,72 @@ class TestReviewRoundFive:
         text = ('@string{j="x"} @string{k={y\n' + E.replace("k1", "k2") + "@comment{x}}}\n")
         [stray] = stray_text(text)
         assert (stray.line, stray.kind, stray.snippet) == (1, "unclosed", '@string{k={y')
+        assert stray.closes == 6
 
     def test_entry_after_a_comment_in_a_string_tail_names_the_comment(self):
         # `@misc` ends the trailing @comment for pybtex (read as an entry);
         # if it was comment prose the fix is to drop the `@`, not to move it.
         [msg] = comment_defects('@string{j="x"} @comment{ a @misc{k2, title={t}} }\n' + E)
         assert "start at the beginning of its line" in msg
-        assert "ends the @comment opened on line 1" in msg and "remove the `@` if this is comment text" in msg
+        assert "ends the @comment opened on line 1" in msg and "if this is comment text remove the `@`" in msg
 
-    def test_bom_with_indentation_names_both_in_the_remedy(self):
-        [stray] = stray_text("\ufeff  " + E)
-        assert stray.kind == "misplaced" and "byte-order mark and any indentation" in stray.describe()
+    def test_invisible_lead_characters_name_both_in_the_remedy(self):
+        for lead in ("\ufeff  ", "\u200b", " \u2060"):
+            [stray] = stray_text(lead + E)
+            assert stray.kind == "misplaced", lead
+            assert "invisible character" in stray.describe() and "any indentation" in stray.describe()
 
     def test_non_command_text_after_an_unbalanced_comment_is_attributed(self):
         [msg] = comment_defects("@comment{\noverview {\n@ 3pm notes\n" + E)
         assert "'@ 3pm notes'" in msg and "ended the @comment block opened on line 1" in msg
+
+    def test_off_column_and_unreadable_header_are_both_reported_at_once(self):
+        # Service pin review of 0.5.20: a BOM/indent AND a bad header on one
+        # first entry earned two blocking cycles; now both are said at once.
+        for text in ("\ufeff@article(k1, title={x})\n" + E, "  @my-type{k1, title={x}}\n" + E):
+            kinds = [s.kind for s in stray_text(text)]
+            assert kinds == ["misplaced", "header"], text
+        [stray] = stray_text("  " + E)  # readable once at column 0: one report
+        assert stray.kind == "misplaced"
+        # A block once at column 0 is carried, not an entry: one report, and
+        # never "rewrite the header" for a comment or macro.
+        [stray] = stray_text("\u200b@comment{done}\n" + E)
+        assert stray.kind == "misplaced" and "invisible character" in stray.describe()
+        assert stray_text("  @comment{done}\n" + E) == []  # verbatim predicate tolerates whitespace
+        # The same two-at-once rule in an entry's tail and in a string's tail.
+        assert [s.kind for s in stray_text(E.rstrip("\n") + " @my-type{k2, title={t}}\n")] == ["misplaced", "header"]
+        assert [s.kind for s in stray_text(E.rstrip("\n") + " @misc{k2, title={t}}\n")] == ["misplaced"]
+        assert [s.kind for s in stray_text('@string{j="x"} @my-type{k2, title={t}}\n' + E)] == ["misplaced", "header"]
+
+    def test_a_string_value_continuing_past_a_column_zero_at_names_the_cut(self):
+        # pybtex reads `@string{j = "Journal\n@ Large"}` whole (measured
+        # 2026-09-10); the chunker cuts it at the column-0 `@`, so no tool
+        # here carries it whole and blocking is right - but the remedy is to
+        # move that `@`, not to "close" a block that does close.
+        [msg] = comment_defects('@string{j = "Journal\n@ Large"}\n' + E)
+        assert "does not close within its chunk" in msg and "through line 2" in msg
+        assert "move that line-start `@` off column 0" in msg
+        # The value's tail chunk is NOT reported on its own: "delete it" would
+        # be the wrong fix for text BibTeX reads as the value.
+
+    def test_entry_after_a_closed_comment_gets_the_dual_remedy(self):
+        # `@comment{ done } @misc{k2,...}`: pybtex reads k2 as an entry
+        # (measured). Whether the `}` closed the intended block or not is the
+        # author's intent, so the report offers both fixes and no longer
+        # claims a tail is dropped when the block had closed.
+        [msg] = comment_defects("@comment{ done } @misc{k2, title={t}}\n" + E)
+        assert "if this is comment text remove the `@`" in msg and "left behind as stray text" in msg
+        assert "if it is an entry, move the command to the start of its own line" in msg
+        assert "the rest of the block is dropped" not in msg
+
+    def test_only_the_first_intruder_is_said_to_end_the_block(self):
+        first, second = comment_body_intrusions(
+            "@comment{a @misc{k2, title={x}} @article{k3, title={y}}}\n" + E)
+        assert first.first and not second.first
+        assert "ends the block at this `@`" in first.describe()
+        # The second says only what is certain: BibTeX left the comment at
+        # the first `@`; how it reads this one depends on that fix.
+        assert "fix that first `@`" in second.describe() and "becomes an entry" not in second.describe()
 
     def test_a_column_zero_at_that_is_not_a_command_is_stray_text(self):
         # `@ 3pm notes` is pybtex's syntax error and text to delete, not a
@@ -411,8 +465,8 @@ class TestReviewRoundFive:
         # names the block so the `@` can be removed instead.
         [msg] = comment_defects("@comment{\noverview {\n@commentary{k1}\n}\n" + E)
         assert "line 3" in msg and "`@type{key,`" in msg
-        assert "opened on line 1" in msg and "remove the `@` if this is comment text" in msg
-        assert not msg.endswith("rewrite the header")  # the two remedies are alternatives
+        assert "opened on line 1" in msg and "if this is comment text remove the `@`" in msg
+        assert msg.endswith("if it is an entry, rewrite the header")  # the two remedies are alternatives
 
     def test_attribution_reaches_only_the_chunk_right_after_the_block(self):
         text = ("@comment{\noverview { unmatched\n}\n" + E

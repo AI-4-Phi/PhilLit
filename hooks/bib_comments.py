@@ -93,7 +93,10 @@ _NEXT_CHUNK_RE = re.compile(r"\n(?=@)")
 # so a BOM or indentation before the FIRST entry of a file drops that entry
 # (measured 2026-09-10) - that is a misplaced command, not a header.
 _ENTRY_HEADER_RE = re.compile(r"@\w+(\{)[^,\s]+\s*,")
-_LEAD_RE = re.compile(r"[\s\ufeff]*")
+# Leading whitespace plus the invisible format characters an editor can
+# leave before a command (BOM, zero-width space/joiners, word joiner) -
+# none of which `\s` matches, all of which put the `@` off column 0.
+_LEAD_RE = re.compile(r"[\s\ufeff\u200b\u200c\u200d\u2060]*")
 # A command as pybtex reads one: `@`, an identifier, `{` or `(`. A run that
 # opens with `@` but is not command-shaped (`@ 3pm`, `foo@bar.org`) is
 # either stray text or pybtex's own syntax error, never a misplaced command.
@@ -170,14 +173,24 @@ class Intrusion(NamedTuple):
     line: int       # 1-based line of the intruding `@`
     word: str       # the identifier after it ("" for a lone `@`)
     offset: int     # index of the `@` in the text
+    first: bool = True  # the first `@` after the command: the one that ends the block
 
     def describe(self) -> str:
-        return (f"line {self.line}: `@{self.word}` inside the @comment block opened on "
-                f"line {self.open_line} - BibTeX ends the block at the first such `@` and reads on "
-                f"from there as a new command (a braced `@word{{...}}` becomes an entry "
-                f"and the rest of the block is dropped; a bare `@word` is a syntax "
-                f"error; a nested `@comment{{` starts a second block); remove the `@` "
-                f"or move the text out of the block")
+        if not self.first:
+            return (f"line {self.line}: `@{self.word}` in the @comment chunk opened on line "
+                    f"{self.open_line}, after the first `@` in it, which is where BibTeX "
+                    f"ended the block - this text is no longer comment to BibTeX; fix that "
+                    f"first `@` and re-check")
+        return (f"line {self.line}: `@{self.word}` in the @comment chunk opened on line "
+                f"{self.open_line} - BibTeX ends the block at this `@`, whatever the braces "
+                f"before it say, and reads on from there as a new command (a braced "
+                f"`@word{{...}}` becomes an entry, which the tools here would carry as block "
+                f"text and the cleaner render a second time, and any comment text after it "
+                f"up to the next line-start `@` is dropped; a bare `@word` is a syntax "
+                f"error; a nested `@comment{{` starts a second block); if this is comment "
+                f"text remove the `@` (and the braces of a `@word{{...}}`, or its body is "
+                f"left behind as stray text); if it is an entry, move the command to the "
+                f"start of its own line")
 
 
 def comment_body_intrusions(text: str) -> list[Intrusion]:
@@ -195,11 +208,13 @@ def comment_body_intrusions(text: str) -> list[Intrusion]:
         if not m or m.group(1).lower() != "comment":
             continue
         open_line = _line(text, offset + m.start(1) - 1)
+        first = True
         i = m.end()
         while i < len(chunk):
             if chunk[i] == "@":
                 word = _WORD_RE.match(chunk, i + 1).group()
-                hits.append(Intrusion(open_line, _line(text, offset + i), word, offset + i))
+                hits.append(Intrusion(open_line, _line(text, offset + i), word, offset + i, first))
+                first = False
             i += 1
     return hits
 
@@ -219,17 +234,22 @@ class Stray(NamedTuple):
     # before this one is a `@comment` block that never balanced - the `@`
     # that opens this chunk is what ended the block for pybtex.
     after: tuple[int, int, str] | None = None
-    bom: bool = False  # a UTF-8 BOM is what put the command off column 0
+    bom: bool = False  # an invisible character (BOM, zero-width space) put it off column 0
+    # "unclosed" only: the 1-based line where the block's value closes by
+    # brace count when it does close later in the file (None: never).
+    closes: int | None = None
 
     def describe(self) -> str:
         if self.kind == "misplaced":
-            remedy = ("remove the byte-order mark and any indentation before it" if self.bom
+            remedy = ("remove the invisible character (a byte-order mark or zero-width "
+                      "space) and any indentation before it" if self.bom
                       else "move it to the start of a line")
             if self.after:
                 open_line, at_line, word = self.after
                 remedy = (f"it also sits where BibTeX ends the @comment opened on line "
-                          f"{open_line} (a comment runs to the next `@`): remove the `@` if "
-                          f"this is comment text, or {remedy} if it is an entry")
+                          f"{open_line} (a comment runs to the next `@`): if this is comment "
+                          f"text remove the `@` and the braces (or the body is left behind "
+                          f"as stray text); if it is an entry, {remedy}")
             return (f"line {self.line}: {self.snippet!r} - an `@` command must start at the "
                     f"beginning of its line: every tool here reads the file in column-0 "
                     f"chunks, so this one is carried inside the chunk before it - an entry "
@@ -243,8 +263,9 @@ class Stray(NamedTuple):
                 open_line, at_line, word = self.after
                 remedy = (f"and the `@{word}` on line {at_line} is where BibTeX ends the "
                           f"@comment block opened on line {open_line} (a comment runs to the "
-                          f"next `@`): remove the `@` if this is comment text, or rewrite the "
-                          f"header if it is an entry")
+                          f"next `@`): if this is comment text remove the `@` and the braces "
+                          f"(or the body is left behind as stray text); if it is an entry, "
+                          f"rewrite the header")
             return (f"line {self.line}: {self.snippet!r} - an entry header must read "
                     f"`@type{{key,`: a word type, `{{`, the key and `,`, with no space after "
                     f"the type or before the key. That is the one header dedupe, evidence "
@@ -253,11 +274,19 @@ class Stray(NamedTuple):
                     f"key with no `,` after it, a space before `{{`) or evidence stamping "
                     f"misses it (a space before the key); {remedy}")
         if self.kind == "unclosed":
-            return (f"line {self.line}: {self.snippet!r} - this block never closes within "
-                    f"its chunk: BibTeX reads the entries that follow as part of its value "
-                    f"until a later closer (they vanish from the parse and from a metadata "
-                    f"rewrite, while dedupe still reads them as entries) or fails at end of "
-                    f"file; close it")
+            if self.closes is None:
+                return (f"line {self.line}: {self.snippet!r} - this block never closes: "
+                        f"BibTeX fails at end of file, and the column-0 tools here cut it at "
+                        f"the next line-start `@`; close it")
+            return (f"line {self.line}: {self.snippet!r} - this block does not close within "
+                    f"its chunk: by brace count BibTeX reads on through line {self.closes} "
+                    f"as its value (or fails at a token it cannot place), so the lines in "
+                    f"between - entries included - are not entries to BibTeX and vanish "
+                    f"from a metadata rewrite, while the column-0 tools here (not BibTeX) "
+                    f"cut the block at the next line-start `@` and read on from there. If the value was meant to "
+                    f"run on, move that line-start `@` off column 0 (a value line may not "
+                    f"start with `@`); otherwise close the block where it was meant to end. "
+                    f"Nothing in between is reported separately until this is fixed")
         cause = ""
         if self.after:
             open_line, at_line, word = self.after
@@ -281,10 +310,21 @@ def stray_text(text: str) -> list[Stray]:
     BOM at the top of the file - is a command that does not start its line,
     which pybtex reads and no splitter here does (dedupe drops a first
     entry so placed); a `@` that is not command-shaped is plain stray text.
-    A `@string`/`@preamble` that never balances is reported as such."""
+    A `@string`/`@preamble` that does not balance within its chunk is
+    reported as such - whether it never closes or its value runs past a
+    line that starts with `@` (pybtex reads the value whole; the chunker
+    cuts it there)."""
     strays = []
     open_block = None  # open line of an unbalanced `@comment` chunk just seen
+    value_until = 0    # text index up to which chunks sit inside an unclosed block's value
     for offset, chunk in _chunks(text):
+        if offset < value_until:
+            # Inside the value of a @string/@preamble reported as unclosed:
+            # to BibTeX this is value text (a cut-off tail, or swallowed
+            # entries), so its own "delete it"/"rewrite the header" advice
+            # would be wrong. The unclosed report names the one fix.
+            open_block = None
+            continue
         m = _VERBATIM_RE.match(chunk)
         if m:
             end = _balanced_end(chunk, m.end() - 1, m.group(2))
@@ -297,11 +337,17 @@ def stray_text(text: str) -> list[Stray]:
                 continue
             open_block = None
             if end is None:
-                # pybtex reads on into the following entries as the value
-                # (or fails at end of file); the column-0 tools read them
-                # as entries. Reported, since a later `}` can close it.
+                # pybtex reads on past the chunk as the value - a value line
+                # that starts with `@` (cut here by every column-0 tool), or
+                # entries swallowed until a later closer - or fails at end
+                # of file. Where it closes, by brace count over the whole
+                # text, bounds the chunks that are value text to BibTeX.
+                whole = _balanced_end(text, offset + m.end() - 1, m.group(2))
+                closes = _line(text, whole - 1) if whole is not None else None
+                value_until = whole or 0
                 snippet = chunk[m.start(1) - 1:].splitlines()[0].strip()[:80]
-                strays.append(Stray(_line(text, open_at), snippet, open_at, "unclosed"))
+                strays.append(Stray(_line(text, open_at), snippet, open_at, "unclosed",
+                                    closes=closes))
                 continue
             # After the closer pybtex skips plain words (carried with the
             # chunk, nothing lost) and reads commands. A further verbatim
@@ -321,12 +367,17 @@ def stray_text(text: str) -> list[Stray]:
                     nxt = _balanced_end(chunk, c.end() - 1, c.group(2))
                     if nxt is None:
                         # The same swallowing hazard as a primary one.
-                        strays.append(Stray(_line(text, at), snippet, at, "unclosed"))
+                        whole = _balanced_end(text, at + c.end() - c.start() - 1, c.group(2))
+                        closes = _line(text, whole - 1) if whole is not None else None
+                        value_until = whole or 0
+                        strays.append(Stray(_line(text, at), snippet, at, "unclosed", closes=closes))
                         break
                     pos = nxt
                     continue
                 after = (comment_line, _line(text, at), word) if comment_line else None
                 strays.append(Stray(_line(text, at), snippet, at, "misplaced", after))
+                if not _ENTRY_HEADER_RE.match(chunk, c.start()):
+                    strays.append(Stray(_line(text, at), snippet, at, "header"))
                 break
             continue
         header = _ENTRY_HEADER_RE.match(chunk)
@@ -353,8 +404,16 @@ def stray_text(text: str) -> list[Stray]:
                 # This chunk's column-0 `@` ended the unbalanced comment.
                 at_word = _WORD_RE.match(chunk, chunk.index("@") + 1)
                 after = (open_block, _line(text, offset), at_word.group())
-            strays.append(Stray(_line(text, at), stripped.splitlines()[0].strip()[:80], at,
-                                kind, after, "\ufeff" in tail[:lead]))
+            snippet = stripped.splitlines()[0].strip()[:80]
+            invisible = not tail[:lead].isspace() if lead else False  # a BOM or zero-width char
+            strays.append(Stray(_line(text, at), snippet, at, kind, after, invisible))
+            if (kind == "misplaced" and not _ENTRY_HEADER_RE.match(stripped)
+                    and not is_verbatim_block(stripped)):
+                # Off column 0 AND, once there, neither an entry header nor
+                # a block to carry: say both now rather than block a second
+                # time after the first fix. (`header` matched the RAW chunk,
+                # lead included; this tests the command itself.)
+                strays.append(Stray(_line(text, at), snippet, at, "header"))
         open_block = None
     return strays
 
