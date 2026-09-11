@@ -518,6 +518,26 @@ class TestReviewRoundFive:
         [unclosed] = stray_text(text)
         assert (unclosed.offset, unclosed.until, unclosed.closes) == (15, 62, 3)
         assert len(comment_defects(text)) == 2
+        # Service pin review of 0.5.24: an intruding ENTRY's value may hold a
+        # literal `@string(` - text to pybtex (['k1', 'k2', 'k9'], measured
+        # there). The comment-tail mode steps over the entry's balanced
+        # extent, so no false never-closing span suppresses the later k2.
+        text = ("@comment{done} @article{k1, title={literal @string(foo}} @article{k2, title={t}}\n"
+                "@article{k9, title={t}}\n")
+        assert stray_text(text) == []
+        assert [(h.word, h.first) for h in comment_body_intrusions(text)] == [
+            ("article", True), ("string", False), ("article", False)]
+        # A same-line @string AFTER a stepped-over entry is still found.
+        text = "@comment{done} @article{k1, title={t}} @string{j = {x\n" + E + "}}\n"
+        [unclosed] = stray_text(text)
+        assert unclosed.kind == "unclosed" and unclosed.closes == 6
+        # An UNBALANCED entry in a comment tail (pybtex refuses the file,
+        # PrematureEOF): the tail is not decomposable into commands any
+        # more, so the mode stops - no forged span from a `@string(` inside
+        # the open value either.
+        text = "@comment{done} @article{k1, title={literal @string(foo\n" + E
+        assert stray_text(text) == []
+        assert [h.word for h in comment_body_intrusions(text)] == ["article", "string"]
         # A BALANCED @string in the tail is no span: the `@x` in its value is
         # still reported, as a non-first intrusion whose message says only
         # to fix the first `@` - once `@string` starts its own line its value

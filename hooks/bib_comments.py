@@ -190,8 +190,9 @@ class Intrusion(NamedTuple):
                 f"{self.open_line} - BibTeX ends the block at this `@`, whatever the braces "
                 f"before it say, and reads on from there as a new command (a braced "
                 f"`@word{{...}}` becomes an entry, which the tools here would carry as block "
-                f"text and the cleaner render a second time, and any comment text after it "
-                f"up to the next line-start `@` is dropped; a bare `@word` is a syntax "
+                f"text and the cleaner render a second time; a `@string{{...}}` or "
+                f"`@preamble{{...}}` is carried once; any comment text after it up to the "
+                f"next line-start `@` is dropped; a bare `@word` is a syntax "
                 f"error; a nested `@comment{{` starts a second block); if this is comment "
                 f"text remove the `@` (and the braces of a `@word{{...}}`, or its body is "
                 f"left behind as stray text); if it is an entry, move the command to the "
@@ -364,9 +365,11 @@ def _scan_tail(text: str, chunk: str, offset: int, pos: int, strays: list,
     cleaner) or dropped with a headerless one - with the header rule too
     when it has none. With `entries=False` (a @comment chunk's body, where
     the intrusion scan owns every `@`) only the @string/@preamble spans are
-    tracked, so an unclosed one there still bounds what it swallows.
-    Returns the text index an unclosed secondary block's value runs to (0
-    if none)."""
+    tracked, so an unclosed one there still bounds what it swallows; an
+    entry-shaped command is stepped over by its balanced extent (an `@` in
+    its value is text), and an unbalanced one - pybtex refuses the file -
+    ends the walk rather than forge a span from its open body. Returns the
+    text index an unclosed secondary block's value runs to (0 if none)."""
     comment_line = None  # a @comment passed here: the entry after it may be its prose
     while (c := _COMMAND_RE.search(chunk, pos)) is not None:
         word = c.group(1).lower()
@@ -383,7 +386,15 @@ def _scan_tail(text: str, chunk: str, offset: int, pos: int, strays: list,
             pos = nxt
             continue
         if not entries:
-            pos = c.end()
+            # Step over the entry's balanced extent: an `@` inside its
+            # braced value is text to pybtex, not a command (a literal
+            # `@string(` there forged a never-closing span). Unbalanced -
+            # pybtex refuses the file (PrematureEOF) - the rest of the tail
+            # is not decomposable into commands, so stop rather than forge.
+            skip = _balanced_end(chunk, c.end() - 1, c.group(2))
+            if skip is None:
+                return 0
+            pos = skip
             continue
         after = (comment_line, _line(text, at), word) if comment_line else None
         strays.append(Stray(_line(text, at), snippet, at, "misplaced", after))
