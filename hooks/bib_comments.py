@@ -202,25 +202,41 @@ def comment_body_intrusions(text: str, strays: list | None = None) -> list[Intru
     """Every `@` inside a `@comment` chunk after the command that opens it,
     in order. This is pybtex's own rule - a comment runs to the next `@`,
     braces notwithstanding - so nothing here depends on the block's braces
-    balancing. It is the comment's rule alone: `@string` and `@preamble`
-    chunks are read whole by pybtex and are not scanned. A column-0 `@`
-    inside a block is a chunk of its own to every tool here and an entry to
+    balancing. It is the comment's rule alone: a `@string` or `@preamble`
+    value is read whole by pybtex, `@` and all, so those chunks are not
+    scanned. A column-0 `@` inside a COMMENT block is a chunk of its own to
+    every tool here and, the comment having ended there, a command to
     pybtex, so it is not an intrusion: whatever pybtex drops after it is
-    `stray_text`'s to report, which names it."""
-    # A column-0 `@comment{` inside the value of an unclosed @string/@preamble
-    # is value text to BibTeX, not a comment: judged by the unclosed report
-    # alone (its span is `stray_text`'s), never scanned for intrusions. The
-    # boundary chunk is skipped whole on purpose: what follows the closer
-    # there is a block's tail, and `_scan_tail` already reports an entry-
-    # shaped command after a trailing @comment with that comment's
-    # attribution and the dual remedy - the same verdict an intrusion scan
-    # of the remainder would reach, said once.
+    `stray_text`'s to report, which names it. (Inside an unclosed @string
+    value a column-0 `@` is value text to pybtex instead - the unclosed
+    report's span, honoured below.)"""
+    # Text inside the value of an unclosed @string/@preamble is value text
+    # to BibTeX, whatever it looks like: judged by the unclosed report alone
+    # (its span is `stray_text`'s), never scanned for intrusions. Two rules:
+    # a chunk whose column-0 `@comment{` lies inside a span is no comment
+    # and is skipped whole - wholly swallowed chunks have nothing to judge,
+    # and on the boundary chunk what follows the closer is a block's tail,
+    # where `_scan_tail` already reports an entry-shaped command after a
+    # trailing @comment with that comment's attribution and the dual
+    # remedy, the same verdict an intrusion scan would reach, said once;
+    # and in a comment chunk where a span begins partway (an unclosed
+    # @string in its tail), the `@` positions inside the span are skipped.
+    # A BALANCED @string in a comment's tail is not a span: an `@` inside
+    # its value is still a (non-first) intrusion, whose hedged message says
+    # only to fix the first `@` - once the @string starts its own line, its
+    # value is a block's and unscanned.
     if strays is None:
         strays = stray_text(text)
     swallowed = [(s.offset, s.until) for s in strays if s.kind == "unclosed"]
+
+    def inside(index: int) -> bool:
+        # Strictly after the block's own `@`: that `@` is where pybtex left
+        # the comment, a true intrusion to report.
+        return any(start < index < until for start, until in swallowed)
+
     hits = []
     for offset, chunk in _chunks(text):
-        if any(start <= offset < until for start, until in swallowed):
+        if inside(offset):
             continue
         m = _VERBATIM_RE.match(chunk)
         if not m or m.group(1).lower() != "comment":
@@ -229,7 +245,7 @@ def comment_body_intrusions(text: str, strays: list | None = None) -> list[Intru
         first = True
         i = m.end()
         while i < len(chunk):
-            if chunk[i] == "@":
+            if chunk[i] == "@" and not inside(offset + i):
                 word = _WORD_RE.match(chunk, i + 1).group()
                 hits.append(Intrusion(open_line, _line(text, offset + i), word, offset + i, first))
                 first = False

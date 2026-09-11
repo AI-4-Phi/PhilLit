@@ -510,6 +510,21 @@ class TestReviewRoundFive:
         assert [(h.line, h.word) for h in comment_body_intrusions(text)] == [(1, "string")]
         [unclosed] = stray_text(text)
         assert (unclosed.kind, unclosed.closes) == ("unclosed", 3)
+        # Service pin review of 0.5.23: the span begins PARTWAY through the
+        # comment chunk, so the `@x` inside the value on the same line is
+        # skipped by position, not by chunk (pybtex ['k1'], measured there).
+        text = "@comment{done} @string{j = {x @x{k}\n@article{k0, title={t}}\n}}\n" + E
+        assert [(h.offset, h.word, h.first) for h in comment_body_intrusions(text)] == [(15, "string", True)]
+        [unclosed] = stray_text(text)
+        assert (unclosed.offset, unclosed.until, unclosed.closes) == (15, 62, 3)
+        assert len(comment_defects(text)) == 2
+        # A BALANCED @string in the tail is no span: the `@x` in its value is
+        # still reported, as a non-first intrusion whose message says only
+        # to fix the first `@` - once `@string` starts its own line its value
+        # is a block's and unscanned. Not destructive, so accepted.
+        hits = comment_body_intrusions("@comment{done} @string{j = {@x}}\n" + E)
+        assert [(h.word, h.first) for h in hits] == [("string", True), ("x", False)]
+        assert "fix that first `@`" in hits[1].describe()
         # A comment AFTER the closer is a comment again.
         unclosed, intrusion = comment_defects(
             "@string{j = {x\n@article{k0, title={t}}\n}}\n@comment{a @x{k}}\n" + E)
