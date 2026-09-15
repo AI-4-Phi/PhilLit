@@ -144,8 +144,12 @@ that a recurrence is recognized where it would be read.
   written down nowhere. Reported from the 2026-09-10 run. Decide which
   document wins and say so in the one that loses.
 
-The deploy of 0.5.25 (phillit-service engine at `da48b2c`, re-vendor #23) is
-the service's item, run from that repo.
+phillit-service is two steps behind and both are its own items, run from that
+repo: the deploy of 0.5.25 (engine at `da48b2c`, re-vendor #23), and a
+re-vendor of 0.5.26, whose engine changes are the ledger content binding.
+Tell the operator that the binding FLOOR reports `degraded` for a review
+whose researchers ran before the pin and whose barrier runs after, until a
+researcher re-runs - fail-closed and intended, but not obvious in production.
 
 ## Checked and deliberately NOT filed
 

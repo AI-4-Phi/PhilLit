@@ -1624,8 +1624,9 @@ def _discard_stale_ledger(result: dict, bib_path: Path) -> None:
     ledger_binding.py): a pass that refused after the bib changed leaves a
     hash that no longer matches, and the barrier rejects it. The unlink stays
     all the same - it is the direct remedy, and the binding cannot catch the
-    one case where the bib is byte-identical to what the stale ledger
-    attested."""
+    one case where the bib is DECODED-TEXT-identical to what the stale ledger
+    attested. Not byte-identical: the hash folds newlines, so a CRLF/LF-only
+    difference is byte-distinct and still matches."""
     stale = bib_path.parent / "intermediate_files" / "json" / f"cleaning_ledger-{bib_path.stem}.json"
     try:
         if stale.exists():
