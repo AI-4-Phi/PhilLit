@@ -78,6 +78,14 @@ class TestBindingHolds:
         assert not lb.binding_holds(lb.bib_text_sha256(KUHN),
                                     tmp_path / "absent.bib")
 
+    def test_false_when_neither_side_has_a_digest(self, tmp_path):
+        """The one genuinely load-bearing line in this function. The cleaner
+        writes a null bib_sha256 when it cannot read the bib back, and the
+        bib can also be unreadable at barrier time -- so `None == None` is a
+        REACHABLE pair, and without the `actual is not None` clause it reads
+        as a held binding. Fail-open, on an accuracy gate."""
+        assert not lb.binding_holds(None, tmp_path / "absent.bib")
+
     @pytest.mark.parametrize("bad", [
         None, 0, 1, True, False, [], {}, b"a" * 64, "", "abc",
         "g" * 64,            # not hex
@@ -157,3 +165,86 @@ class TestProducerConsumerRoundTrip:
         bib.write_text(bib.read_text(encoding="utf-8") + "\n% later edit\n",
                        encoding="utf-8")
         assert self._barrier(rd)["domains"]["1"]["cleaning_ledger"] == "malformed"
+
+
+class TestBarrierIsRerunnable:
+    """The barrier STAMPS tiers into the bib it just read, so its own write
+    moves the bib out from under the binding. Before the binding landed the
+    barrier was idempotent (verified against the parent commit: three runs,
+    EVIDENCE-EXISTENCE every time); it must stay that way.
+    """
+
+    def _review(self, tmp_path):
+        rd = tmp_path / "review"
+        (rd / "intermediate_files" / "json").mkdir(parents=True)
+        (rd / "literature-domain-1.bib").write_text(KUHN, encoding="utf-8")
+        ij = rd / "intermediate_files" / "json"
+        (ij / "enrichment_ledger-literature-domain-1.json").write_text(
+            json.dumps({"schema_version": 1,
+                        "bib_file": "literature-domain-1.bib",
+                        "entries": {}}), encoding="utf-8")
+        (ij / "encyclopedia_entries-domain-1.json").write_text(
+            '{"sep_entries": [], "iep_entries": []}', encoding="utf-8")
+        (ij / "cleaning_ledger-literature-domain-1.json").write_text(
+            json.dumps({
+                "schema_version": lb.BINDING_SCHEMA_VERSION,
+                "bib_file": "literature-domain-1.bib",
+                "bib_sha256": lb.bib_text_sha256(KUHN),
+                "breaker_tripped": False,
+                "entries": {"kuhn1962structure": {
+                    "api_matched": True,
+                    "verified_identifier": "publisher",
+                    "verified_identifier_value":
+                        "university of chicago press",
+                    "entry_type": "book"}}}), encoding="utf-8")
+        return rd
+
+    def _run(self, rd):
+        r = subprocess.run(
+            [sys.executable, str(BARRIER), str(rd), "--domains", "1"],
+            capture_output=True, text=True, cwd=str(rd))
+        assert r.returncode == 0, r.stderr
+        rep = json.loads((rd / "intermediate_files" / "json"
+                          / "evidence_report.json").read_text(encoding="utf-8"))
+        return (rep["status"],
+                rep["domains"]["1"]["cleaning_ledger"],
+                rep["stamps"]["literature-domain-1.bib"]["kuhn1962structure"])
+
+    def test_a_second_run_keeps_the_tier_the_first_run_granted(self, tmp_path):
+        rd = self._review(tmp_path)
+        assert self._run(rd) == ("complete", "present", "EVIDENCE-EXISTENCE")
+        assert self._run(rd) == ("complete", "present", "EVIDENCE-EXISTENCE")
+
+    def test_the_tier_survives_repeated_runs(self, tmp_path):
+        """Not just twice -- the re-point must itself be idempotent, or the
+        gate merely degrades one run later."""
+        rd = self._review(tmp_path)
+        for _ in range(4):
+            assert self._run(rd) == ("complete", "present", "EVIDENCE-EXISTENCE")
+
+    def test_a_hand_edit_between_runs_is_still_caught(self, tmp_path):
+        """Re-pointing must track the BARRIER's own write and nothing else.
+        An edit by anything the barrier did not do must still reject."""
+        rd = self._review(tmp_path)
+        assert self._run(rd)[1] == "present"
+        bib = rd / "literature-domain-1.bib"
+        bib.write_text(bib.read_text(encoding="utf-8") + "\n% hand edit\n",
+                       encoding="utf-8")
+        status, ledger, _ = self._run(rd)
+        assert ledger == "malformed"
+        assert status == "degraded"
+
+    def test_a_rejected_ledger_stays_rejected_on_every_later_run(self, tmp_path):
+        """Re-pointing must skip a ledger this run did NOT accept. Otherwise
+        the barrier launders it: run N rejects the stale ledger but re-points
+        it anyway, and run N+1 accepts the very attestation the binding was
+        built to refuse."""
+        rd = self._review(tmp_path)
+        bib = rd / "literature-domain-1.bib"
+        bib.write_text(bib.read_text(encoding="utf-8") + "\n% edited\n",
+                       encoding="utf-8")
+        for run in range(3):
+            status, ledger, tier = self._run(rd)
+            assert ledger == "malformed", f"laundered on run {run + 1}"
+            assert status == "degraded", f"laundered on run {run + 1}"
+            assert tier != "EVIDENCE-EXISTENCE", f"laundered on run {run + 1}"

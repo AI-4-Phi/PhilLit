@@ -57,11 +57,18 @@ def binding_holds(declared, bib_path) -> bool:
     unreadable bib, a genuine mismatch -- because each must land on the safe
     side, which is to distrust the ledger.
 
-    No separate shape check on `declared`, deliberately: `bib_file_sha256`
-    returns lowercase hex or None, so `actual == declared` is true only for a
-    value that already has the right shape. A guard in front of it was
-    removed after no mutation could distinguish it -- `None`, `True`, an
-    uppercase digest and a truncated one all fail this compare on their own.
+    No separate shape check on `declared`, deliberately: WHEN `actual` IS A
+    DIGEST it is lowercase hex, so `actual == declared` is true only for a
+    value that already has the right shape -- `True`, an uppercase digest and
+    a truncated one all fail that compare unaided. A guard in front of it was
+    removed after no mutation could distinguish it.
+
+    `actual is not None` is the load-bearing half and is NOT redundant with
+    it. `None == None` is true, and the pair is reachable: the cleaner writes
+    a null `bib_sha256` when it cannot read the bib back, and the bib can be
+    unreadable at check time too. Without that clause a binding between two
+    absent digests reads as held -- fail-open, on an accuracy gate. Pinned by
+    test_false_when_neither_side_has_a_digest.
     """
     actual = bib_file_sha256(bib_path)
     return actual is not None and actual == declared

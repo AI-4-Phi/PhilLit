@@ -41,7 +41,7 @@ _hooks_dir = Path(__file__).resolve().parent.parent.parent.parent / "hooks"
 sys.path.insert(0, str(_hooks_dir))
 from bib_identity import same_work_key, same_work_year  # noqa: E402
 from ledger_binding import (  # noqa: E402
-    BINDING_SCHEMA_VERSION, binding_holds,
+    BINDING_SCHEMA_VERSION, bib_file_sha256, binding_holds,
 )
 
 sys.path.pop(0)
@@ -1473,6 +1473,62 @@ def _atomic_write(path: Path, content: str) -> None:
     os.replace(str(tmp), str(path))
 
 
+def _repoint_binding(ledger_path: Path, bib_path: Path) -> str | None:
+    """Re-point a cleaning ledger's `bib_sha256` at the bib THIS RUN just
+    stamped. Returns a warning string on failure, None on success.
+
+    Why this exists: the barrier stamps tiers into the very bib the ledger
+    binds to, so its own write moves the bib out from under the binding. Left
+    alone, a second run rejects every ledger and demotes every entry it
+    granted -- measured as EVIDENCE-EXISTENCE on run 1 and EVIDENCE-NONE on
+    run 2, against a barrier that was idempotent before the binding landed.
+
+    This does NOT launder staleness. It runs only for a ledger this run
+    already ACCEPTED -- its binding matched the pre-stamp text, so the
+    attestation is current -- and it re-points only to text the barrier
+    itself just wrote. Anything else that edits the bib still fails the
+    binding on the next run, which is the whole point.
+
+    The cleaner still OWNS the ledger: the attestation is untouched, and
+    stamping cannot change which entries matched an API record. Only the
+    field that tracks the barrier's own edit moves.
+    """
+    try:
+        data = json.loads(ledger_path.read_text(encoding="utf-8"))
+        if not isinstance(data, dict):
+            return f"{ledger_path.name}: not an object"
+        digest = bib_file_sha256(bib_path)
+        if digest is None:
+            return f"{ledger_path.name}: could not read {bib_path.name} back"
+        if data.get("bib_sha256") == digest:
+            return None  # already current -- keeps repeated runs idempotent
+        data["bib_sha256"] = digest
+        _atomic_write(ledger_path, json.dumps(data, indent=2))
+        return None
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as e:
+        return f"{ledger_path.name}: {type(e).__name__}: {e}"
+
+
+def _repoint_bindings(review_dir: Path, ijson: Path, report: dict,
+                      outputs: dict) -> list:
+    """Re-point every cleaning ledger this run ACCEPTED, for the bibs it just
+    wrote. A ledger reported anything but `present` was not trusted and must
+    stay unusable -- re-pointing it would launder exactly the staleness the
+    binding exists to catch."""
+    warnings = []
+    for i, dom in (report.get("domains") or {}).items():
+        if dom.get("cleaning_ledger") != "present":
+            continue
+        bib_path = review_dir / f"literature-domain-{i}.bib"
+        if bib_path not in outputs:
+            continue  # bib was missing/malformed -- nothing was written
+        w = _repoint_binding(
+            ijson / f"cleaning_ledger-literature-domain-{i}.json", bib_path)
+        if w:
+            warnings.append(w)
+    return warnings
+
+
 def execute(review_dir: Path, n_domains: int, debug: bool = False) -> int:
     ijson = review_dir / "intermediate_files" / "json"
     ijson.mkdir(parents=True, exist_ok=True)
@@ -1487,6 +1543,16 @@ def execute(review_dir: Path, n_domains: int, debug: bool = False) -> int:
         if report["status"] != "failed":
             for path, content in outputs.items():  # report first, bibs second
                 _atomic_write(path, content)
+            # Only AFTER the bib write succeeds: a binding pointing at text
+            # that was never written would be worse than a stale one.
+            repoint_warnings = _repoint_bindings(review_dir, ijson, report,
+                                                 outputs)
+            if repoint_warnings:
+                # A plumbing failure, not an accuracy one -- this run already
+                # succeeded. But it is never silent: the NEXT run degrades,
+                # and this line is the only warning an operator gets first.
+                report["binding_repoint_failed"] = repoint_warnings
+                _atomic_write(report_path, json.dumps(report, indent=2))
     except OSError as exc:
         print(json.dumps({"status": "failed", "error": repr(exc)}))
         return 1
