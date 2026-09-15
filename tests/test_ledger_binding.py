@@ -248,3 +248,82 @@ class TestBarrierIsRerunnable:
             assert ledger == "malformed", f"laundered on run {run + 1}"
             assert status == "degraded", f"laundered on run {run + 1}"
             assert tier != "EVIDENCE-EXISTENCE", f"laundered on run {run + 1}"
+
+
+class TestCleaningLedgerMustDeclareTheBinding:
+    """A cleaning ledger below the binding schema is refused outright.
+
+    Producer and consumer shipped together, so there is no compatibility
+    case: any v1/v2 cleaning ledger reaching the barrier is either a
+    pre-upgrade survivor -- the exact stale-ledger shape the binding exists
+    to refuse, and the one it could not see -- or hand-written. Accepting it
+    would leave a downgrade path straight past the binding on a gate whose
+    policy is to fail closed. The enrichment ledger is unaffected: it is
+    written before the cleaner rewrites the bib, so it stays at 1.
+    """
+
+    def _review(self, tmp_path, cleaning):
+        rd = tmp_path / "review"
+        ij = rd / "intermediate_files" / "json"
+        ij.mkdir(parents=True)
+        (rd / "literature-domain-1.bib").write_text(KUHN, encoding="utf-8")
+        (ij / "cleaning_ledger-literature-domain-1.json").write_text(
+            json.dumps(cleaning), encoding="utf-8")
+        (ij / "enrichment_ledger-literature-domain-1.json").write_text(
+            json.dumps({"schema_version": 1,
+                        "bib_file": "literature-domain-1.bib",
+                        "entries": {}}), encoding="utf-8")
+        (ij / "encyclopedia_entries-domain-1.json").write_text(
+            '{"sep_entries": [], "iep_entries": []}', encoding="utf-8")
+        r = subprocess.run(
+            [sys.executable, str(BARRIER), str(rd), "--domains", "1"],
+            capture_output=True, text=True, cwd=str(rd))
+        assert r.returncode == 0, r.stderr
+        return json.loads((ij / "evidence_report.json").read_text(
+            encoding="utf-8"))
+
+    def _ledger(self, version, **extra):
+        d = {"schema_version": version,
+             "bib_file": "literature-domain-1.bib",
+             "breaker_tripped": False,
+             "entries": {"kuhn1962structure": {
+                 "api_matched": True, "verified_identifier": "publisher",
+                 "verified_identifier_value": "university of chicago press",
+                 "entry_type": "book"}}}
+        d.update(extra)
+        return d
+
+    def test_a_v1_cleaning_ledger_is_refused(self, tmp_path):
+        rep = self._review(tmp_path, self._ledger(1))
+        assert rep["domains"]["1"]["cleaning_ledger"] == "malformed"
+        assert rep["status"] == "degraded"
+
+    def test_a_v2_cleaning_ledger_is_refused(self, tmp_path):
+        rep = self._review(tmp_path, self._ledger(2))
+        assert rep["domains"]["1"]["cleaning_ledger"] == "malformed"
+        assert rep["status"] == "degraded"
+
+    def test_a_v2_ledger_cannot_buy_the_tier_by_omitting_the_binding(
+            self, tmp_path):
+        """The downgrade path, stated as the attack it is."""
+        rep = self._review(tmp_path, self._ledger(2))
+        assert rep["stamps"]["literature-domain-1.bib"][
+            "kuhn1962structure"] != "EVIDENCE-EXISTENCE"
+
+    def test_a_v3_cleaning_ledger_is_accepted(self, tmp_path):
+        rep = self._review(
+            tmp_path,
+            self._ledger(lb.BINDING_SCHEMA_VERSION,
+                         bib_sha256=lb.bib_text_sha256(KUHN)))
+        assert rep["domains"]["1"]["cleaning_ledger"] == "present"
+        assert rep["status"] == "complete"
+
+    def test_the_enrichment_ledger_keeps_its_v1_exemption(self, tmp_path):
+        """The floor is kind-scoped. The enrichment ledger is written at the
+        researcher's Stage 5.5, BEFORE the cleaner rewrites the bib, so it
+        cannot carry a binding and must not be held to one."""
+        rep = self._review(
+            tmp_path,
+            self._ledger(lb.BINDING_SCHEMA_VERSION,
+                         bib_sha256=lb.bib_text_sha256(KUHN)))
+        assert rep["domains"]["1"]["enrichment_ledger"] == "present"

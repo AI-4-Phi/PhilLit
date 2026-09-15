@@ -9,6 +9,11 @@ SCRIPT = (Path(__file__).parent.parent / "skills" / "literature-review"
           / "scripts" / "evidence_barrier.py")
 SCRIPTS_DIR = SCRIPT.parent
 
+sys.path.insert(0, str(Path(__file__).parent.parent / "hooks"))
+from ledger_binding import (  # noqa: E402
+    BINDING_SCHEMA_VERSION, bib_file_sha256, bib_text_sha256,
+)
+
 KUHN = """@book{kuhn1962structure,
   author = {Kuhn, Thomas S.},
   title = {The Structure of Scientific Revolutions},
@@ -17,7 +22,8 @@ KUHN = """@book{kuhn1962structure,
   keywords = {ps, High, INCOMPLETE, no-abstract}
 }"""
 
-CLEAN_KUHN = {"schema_version": 1, "bib_file": "literature-domain-1.bib",
+CLEAN_KUHN = {"schema_version": BINDING_SCHEMA_VERSION,
+              "bib_file": "literature-domain-1.bib",
               "breaker_tripped": False,
               "entries": {"kuhn1962structure": {
                   "api_matched": True, "verified_identifier": "publisher",
@@ -29,13 +35,24 @@ EMPTY_SLUGS = '{"sep_entries": [], "iep_entries": []}'
 
 
 def _domain(review_dir, i, bib_text, cleaning=None, enrichment=None,
-            slugs=EMPTY_SLUGS):
+            slugs=EMPTY_SLUGS, bind=True):
+    """Write one domain's bib and ledgers.
+
+    `bind=True` fills a schema-3 cleaning ledger's `bib_sha256` from the bib
+    being written, because that is what the cleaner does and almost every
+    test wants a ledger that simply matches. A test probing the binding
+    itself passes `bind=False`, or supplies its own `bib_sha256`.
+    """
     ij = review_dir / "intermediate_files" / "json"
     ij.mkdir(parents=True, exist_ok=True)
+    bib_path = review_dir / f"literature-domain-{i}.bib"
     if bib_text is not None:
-        (review_dir / f"literature-domain-{i}.bib").write_text(
-            bib_text, encoding="utf-8")
+        bib_path.write_text(bib_text, encoding="utf-8")
     if cleaning is not None:
+        if (bind and isinstance(cleaning, dict)
+                and cleaning.get("schema_version") == BINDING_SCHEMA_VERSION
+                and "bib_sha256" not in cleaning and bib_path.exists()):
+            cleaning = dict(cleaning, bib_sha256=bib_file_sha256(bib_path))
         (ij / f"cleaning_ledger-literature-domain-{i}.json").write_text(
             json.dumps(cleaning), encoding="utf-8")
     if enrichment is not None:
@@ -63,7 +80,8 @@ def _run(review_dir, n):
 
 
 def _cleaning(i, entries, breaker=False):
-    return {"schema_version": 1, "bib_file": f"literature-domain-{i}.bib",
+    return {"schema_version": BINDING_SCHEMA_VERSION,
+            "bib_file": f"literature-domain-{i}.bib",
             "breaker_tripped": breaker, "entries": entries}
 
 
@@ -355,17 +373,18 @@ def test_ledger_wrong_top_level_type_is_malformed_not_crash(tmp_path):
     assert report["domains"]["1"]["cleaning_ledger"] == "malformed"
 
 
-def test_v2_cleaning_ledger_loads_present(tmp_path):
+def test_v2_cleaning_ledger_is_refused_by_the_binding_floor(tmp_path):
+    """v2 used to load `present`. It no longer does: a cleaning ledger must
+    declare the binding, or a pre-upgrade survivor would walk straight past
+    it. Kept as the record of the behaviour change."""
     rd = tmp_path / "review"
     v2 = dict(CLEAN_KUHN, schema_version=2)
     _domain(rd, 1, KUHN, cleaning=v2, enrichment=EMPTY_ENRICH)
     r = _run(rd, 1)
     assert r.returncode == 0, r.stderr
     report = _report(rd)
-    assert report["domains"]["1"]["cleaning_ledger"] == "present"
-    assert report["status"] == "complete"
-    assert report["stamps"]["literature-domain-1.bib"]["kuhn1962structure"] == (
-        "EVIDENCE-EXISTENCE")
+    assert report["domains"]["1"]["cleaning_ledger"] == "malformed"
+    assert report["status"] == "degraded"
 
 
 def test_cleaning_ledger_schema_version_4_is_malformed(tmp_path):
@@ -438,8 +457,8 @@ def test_v3_cleaning_ledger_without_a_hash_is_malformed(tmp_path):
     """Declaring 3 is declaring the binding. Omitting the field must not be
     a way to opt out of it."""
     rd = tmp_path / "review"
-    _domain(rd, 1, KUHN, cleaning=dict(CLEAN_KUHN, schema_version=3),
-            enrichment=EMPTY_ENRICH)
+    _domain(rd, 1, KUHN, cleaning=dict(CLEAN_KUHN), enrichment=EMPTY_ENRICH,
+            bind=False)
     r = _run(rd, 1)
     assert r.returncode == 0, r.stderr
     report = _report(rd)
@@ -474,32 +493,21 @@ def test_v3_hash_is_computed_over_decoded_text_not_bytes(tmp_path):
     assert report["domains"]["1"]["cleaning_ledger"] == "present"
 
 
-def test_v2_ledger_is_unaffected_by_a_bib_sha256_it_happens_to_carry(tmp_path):
-    """Below 3 there is no hash contract, so the field is not read. Pinned so
-    nobody half-enforces it on a version that never promised it."""
+def test_the_binding_is_kind_scoped_and_spares_the_enrichment_ledger(tmp_path):
+    """The floor and the hash both key on `kind == "cleaning"`. The
+    enrichment ledger is written at the researcher's Stage 5.5, BEFORE the
+    cleaner rewrites the bib, so it could never satisfy a binding -- and a
+    future bump of ITS schema must not silently opt it into one."""
     rd = tmp_path / "review"
-    _domain(rd, 1, KUHN,
-            cleaning=dict(CLEAN_KUHN, schema_version=2, bib_sha256=_sha("no")),
-            enrichment=EMPTY_ENRICH)
-    r = _run(rd, 1)
-    assert r.returncode == 0, r.stderr
-    report = _report(rd)
-    assert report["domains"]["1"]["cleaning_ledger"] == "present"
-    assert report["status"] == "complete"
-
-
-def test_v3_enrichment_ledger_is_held_to_the_same_binding(tmp_path):
-    """The rule is version-driven, not kind-driven: whatever declares 3
-    carries the hash. (The enrichment ledger stays at 1 because it is written
-    BEFORE the cleaner rewrites the bib -- see write_cleaning_ledger.)"""
-    rd = tmp_path / "review"
-    _domain(rd, 1, KUHN, cleaning=CLEAN_KUHN,
-            enrichment=dict(EMPTY_ENRICH, schema_version=3))
-    r = _run(rd, 1)
-    assert r.returncode == 0, r.stderr
-    report = _report(rd)
-    assert report["status"] == "degraded"
-    assert report["domains"]["1"]["enrichment_ledger"] == "malformed"
+    for version in (1, 2, BINDING_SCHEMA_VERSION):
+        rd = tmp_path / f"review-{version}"
+        _domain(rd, 1, KUHN, cleaning=CLEAN_KUHN,
+                enrichment=dict(EMPTY_ENRICH, schema_version=version))
+        r = _run(rd, 1)
+        assert r.returncode == 0, r.stderr
+        report = _report(rd)
+        assert report["domains"]["1"]["enrichment_ledger"] == "present", version
+        assert report["status"] == "complete", version
 
 
 def test_cleaning_ledger_schema_version_string_is_malformed(tmp_path):
@@ -542,14 +550,14 @@ def test_cleaning_ledger_schema_version_absent_is_malformed(tmp_path):
     assert report["domains"]["1"]["cleaning_ledger"] == "malformed"
 
 
-def test_v2_entry_with_unverified_fields_passes_validation(tmp_path):
-    # The new schema-2 per-entry key (task 3 makes the cleaner write it) is
-    # not one the entries-validation loop constrains -- it only ever reads
-    # verified_identifier -- so it must ride through unchanged.
+def test_entry_with_unverified_fields_passes_validation(tmp_path):
+    # The schema-2 per-entry telemetry key is not one the entries-validation
+    # loop constrains -- it only ever reads verified_identifier -- so it must
+    # ride through unchanged on the current schema too.
     entries = {"kuhn1962structure": dict(
         CLEAN_KUHN["entries"]["kuhn1962structure"],
         unverified_fields=["pages"])}
-    v2 = dict(CLEAN_KUHN, schema_version=2, entries=entries)
+    v2 = dict(CLEAN_KUHN, entries=entries)
     rd = tmp_path / "review"
     _domain(rd, 1, KUHN, cleaning=v2, enrichment=EMPTY_ENRICH)
     r = _run(rd, 1)

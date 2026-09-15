@@ -27,9 +27,17 @@ from __future__ import annotations
 import hashlib
 from pathlib import Path
 
-# The schema version at which a cleaning ledger carries `bib_sha256`. The
-# barrier accepts {1, 2, 3} and hard-rejects anything else, so a further bump
-# must land in the producer AND in that accepted set.
+# The schema version at which a cleaning ledger carries `bib_sha256`.
+#
+# For the CLEANING ledger this is a floor: the barrier refuses anything below
+# it, so there is no version a ledger can declare to opt out of the binding.
+# For the ENRICHMENT ledger it is nothing at all -- that ledger is written
+# before the cleaner rewrites the bib, so it could never satisfy a binding,
+# and the barrier scopes the whole rule to `kind == "cleaning"` precisely so
+# that bumping the enrichment schema cannot silently opt it in.
+#
+# A further bump must land in the producer AND in the barrier's accepted set,
+# or every cleaning ledger is refused.
 BINDING_SCHEMA_VERSION = 3
 
 

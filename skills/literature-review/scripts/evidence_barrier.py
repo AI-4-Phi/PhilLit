@@ -80,11 +80,26 @@ def _load_ledger(path: Path, expected_bib_name: str, kind: str,
     # Binding by NAME (just above) cannot tell a current ledger from one a
     # failed unlink left behind. From schema 3 the ledger also carries a hash
     # of the bib it attests, so a survivor is unusable however it survived.
-    # The rule is VERSION-driven, not kind-driven: whatever declares 3 is
-    # held to it. Rejection reuses "malformed" -- the same state the
-    # bib_file mismatch on the line above already returns for the same
-    # reason -- so a caller needs no new case and the entry demotes.
-    if version >= BINDING_SCHEMA_VERSION:
+    # Rejection reuses "malformed" -- the same state the bib_file mismatch on
+    # the line above already returns for the same reason -- so a caller needs
+    # no new case and the entry demotes.
+    #
+    # The CLEANING ledger must declare the binding: producer and consumer
+    # shipped together, so a v1/v2 cleaning ledger is either a pre-upgrade
+    # survivor (the very stale shape this binding exists to refuse, and the
+    # one it cannot see) or hand-written. Accepting it would leave a
+    # downgrade path straight past the binding -- measured: a v2 ledger
+    # bought EVIDENCE-EXISTENCE with no hash at all.
+    #
+    # The ENRICHMENT ledger is exempt, and the exemption is why this floor is
+    # kind-scoped rather than version-scoped. It is written at the
+    # researcher's Stage 5.5, BEFORE the cleaner rewrites the bib at
+    # SubagentStop, so any hash it took would always be of a superseded text.
+    # Scoping by kind also means a future enrichment-schema bump cannot
+    # silently opt that ledger into a contract it can never satisfy.
+    if kind == "cleaning":
+        if version < BINDING_SCHEMA_VERSION:
+            return "malformed", None
         if bib_path is None or not binding_holds(data.get("bib_sha256"), bib_path):
             return "malformed", None
     entries = data.get("entries")

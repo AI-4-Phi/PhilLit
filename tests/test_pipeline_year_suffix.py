@@ -25,6 +25,11 @@ from pathlib import Path
 SCRIPTS = (Path(__file__).resolve().parent.parent / "skills"
            / "literature-review" / "scripts")
 
+sys.path.insert(0, str(Path(__file__).parent.parent / "hooks"))
+from ledger_binding import (  # noqa: E402
+    BINDING_SCHEMA_VERSION, bib_file_sha256,
+)
+
 # menary2010cognitive and menaryCogIntegration are deliberately the SAME work
 # (shared DOI 10.7551/mitpress/1.001) reached through two domains, so the
 # barrier has to give both copies the same letter and dedupe has to fold them
@@ -150,6 +155,16 @@ def _entry_count(bib_text):
     return len(re.findall(r"(?m)^@\w+\s*\{", bib_text))
 
 
+def _assert_healthy(rd):
+    """The scaffold must describe a run with nothing degraded. Pinned so a
+    future schema change cannot quietly turn every assertion below into a
+    test of the degraded path."""
+    report = json.loads(
+        (rd / "intermediate_files" / "json" / "evidence_report.json")
+        .read_text(encoding="utf-8"))
+    assert report["status"] == "complete", report["domains"]
+
+
 def _scaffold(tmp_path):
     """A two-domain review dir in the shape the barrier expects."""
     rd = tmp_path / "review"
@@ -160,8 +175,14 @@ def _scaffold(tmp_path):
     for i in (1, 2):
         name = f"literature-domain-{i}.bib"
         stem = name.replace(".bib", ".json")
+        # A REAL cleaning ledger: schema 3 and bound to the bib just written.
+        # Without the binding the barrier reports `degraded` and this
+        # scaffold would stop describing a healthy run -- the stamping
+        # assertions below would still pass, silently, on a broken premise.
         (ij / f"cleaning_ledger-{stem}").write_text(
-            json.dumps({"schema_version": 1, "bib_file": name,
+            json.dumps({"schema_version": BINDING_SCHEMA_VERSION,
+                        "bib_file": name,
+                        "bib_sha256": bib_file_sha256(rd / name),
                         "breaker_tripped": False, "entries": {}}),
             encoding="utf-8")
         (ij / f"enrichment_ledger-{stem}").write_text(
@@ -177,6 +198,7 @@ def test_letter_survives_the_whole_phase_6_chain(tmp_path):
 
     # --- Phase 3->4 barrier: assign and stamp the letters -------------------
     _run(rd, SCRIPTS / "evidence_barrier.py", rd, "--domains", "2")
+    _assert_healthy(rd)
 
     d1 = (rd / "literature-domain-1.bib").read_text(encoding="utf-8")
     d2 = (rd / "literature-domain-2.bib").read_text(encoding="utf-8")

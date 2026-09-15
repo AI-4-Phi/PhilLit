@@ -1571,9 +1571,15 @@ def write_cleaning_ledger(bib_path: Path, ledger_entries: dict, breaker_tripped:
         # strip-rule fix, which added the optional telemetry keys documented
         # above; 1 held through the `cleaning_abstained` addition, recorded
         # 2026-08-18 as deliberate because producer and consumer shipped
-        # together.) The barrier accepts {1, 2, 3} and hard-rejects anything
-        # else, so a further bump must land in both -- and a v1 or v2 ledger
-        # still reads, as one with no binding.
+        # together.)
+        #
+        # Unlike 1 -> 2, this bump is a FLOOR, not an addition: the barrier
+        # refuses a CLEANING ledger below it. Producer and consumer shipped
+        # together, so a v1/v2 cleaning ledger is either a pre-upgrade
+        # survivor -- the stale shape the binding exists to refuse -- or
+        # hand-written, and accepting it would be a downgrade path straight
+        # past the binding. A further bump must therefore land in BOTH this
+        # writer and the barrier's accepted set, or every ledger is refused.
         "schema_version": BINDING_SCHEMA_VERSION,
         "bib_file": bib_path.name,
         # Binds this ledger to the bib it attests, so that a stale ledger
