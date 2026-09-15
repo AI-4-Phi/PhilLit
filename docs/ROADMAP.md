@@ -26,10 +26,22 @@ that a recurrence is recognized where it would be read.
     strip left those 16 behind. Locate and remove fields with
     `bib_fields.iter_fields` / `remove_field`, never a new regex.
   - `FLn.n` tags appear in note PROSE, not only in `keywords`: 111 of 131
-    notes carried one (145 occurrences - 119 in RELEVANCE, 20 in CORE
-    ARGUMENT, 6 in POSITION). Removing them from the annotated file's prose
-    is a rewrite, not a field filter. Which sections survive, and whether
-    prose tags are stripped, are open sub-questions.
+    notes carried one, over 130 sentences. They are grammatically EMBEDDED,
+    not appended - "the thesis on which FL1.1 turns", "the direct statement
+    of FL6.2" - so deleting the token breaks the sentence; only 9 of the 130
+    are bare lists that would cut cleanly.
+    DECIDED (Johannes, 2026-09-15): SUBSTITUTE, do not delete. Each `FLn.n`
+    is replaced by the short question the review plan defines it as
+    (`intermediate_files/lit-review-plan.md`, e.g. FL1.1 -> `the "one
+    principle or three?" fault line`). All 31 tags in the 2026-09-10 run were
+    defined there. This is pure string substitution with no model in the
+    loop, so no researcher claim can be paraphrased away, and the note
+    becomes readable to someone who never saw the plan. It must FAIL LOUDLY
+    on a tag the plan does not define rather than leave a bare token - the
+    plan is per-review and an undefined tag means the two have drifted.
+    Weighed and rejected: leaving the tags (a reader meets an undefined token
+    130 times), an LLM rewrite of the 130 sentences (130 unverifiable edits
+    to evaluative claims), and dropping whole sentences (guts RELEVANCE).
   - SKILL.md's Phase 6 safety-net glob (`literature-*.bib`) already keeps a
     `-annotated` sibling at the top level. That becomes intentional under
     this spec; do not "fix" it back.
