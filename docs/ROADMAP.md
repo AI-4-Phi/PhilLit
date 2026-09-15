@@ -10,16 +10,19 @@ that a recurrence is recognized where it would be read.
 
 ## Queue
 
-- **Split bibliography delivery into a clean primary and an annotated
-  sibling** - the delivered `literature-<project>.bib` ships the researchers'
+- **Split the delivery into three files: a clean bib, an annotated bib, and
+  a research-notes doc** - the delivered `literature-<project>.bib` ships the researchers'
   `note` fields, their `FLn.n` fault-line tags and `High`/`Medium`/`Low`
   triage in `keywords`, `abstract_source`, and the per-domain `@comment`
   search logs. `sanitize_bib.py` strips only `EVIDENCE-*` tokens from
   `keywords`, by its own docstring, so all of that reaches a file the user
   imports into Zotero. Owner decision (Johannes, 2026-09-15): the reading
-  notes are worth delivering, the engine's tags are not. Ship two files - a
-  clean import-ready `literature-<project>.bib` and a
-  `literature-<project>-annotated.bib` carrying the notes.
+  notes are worth delivering, the engine's tags are not. Six follow-on calls
+  were adjudicated on 2026-09-15 and are recorded below; together they make
+  the delivery THREE files - a clean import-ready `literature-<project>.bib`,
+  a `literature-<project>-annotated.bib` carrying the notes, and a
+  `research-notes-<project>.md` carrying what is today in `@comment` blocks.
+  Nothing here is still open: the item is ready to build.
   Constraints any implementation must respect:
   - Researchers emit BOTH `note = {...}` and `note = "..."`. In the
     2026-09-10 run the split was 115 braced / 16 quoted, and a brace-only
