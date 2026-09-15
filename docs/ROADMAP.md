@@ -1,12 +1,12 @@
 # PhilLit Roadmap
 
 **Open engineering work only.** Design sketches live in `docs/ideas/`;
-`docs/known-issues/` holds only measurement scripts and their data, kept as the
-reproduction path for decisions this file says to re-measure. Shipped work is
-deleted from this file rather than marked done — the git log is the history. A
-decision that is still binding belongs in `CLAUDE.md` or the module that owns
-it, never here; an accepted residual belongs in the function it describes, so
-that a recurrence is recognized where it would be read.
+`docs/known-issues/` holds only measurement scripts and their data (see
+`CLAUDE.md`). Shipped work is deleted from this file rather than marked done
+— the git log is the history. A decision that is still binding belongs in
+`CLAUDE.md` or the module that owns it, never here; an accepted residual
+belongs in the function it describes, so that a recurrence is recognized
+where it would be read.
 
 ## Queue
 
@@ -99,8 +99,9 @@ that a recurrence is recognized where it would be read.
     any field stripping: `abstract_source` (117), `web_span` (3), `urldate`
     (3), `same_work_group` (3), `venue_status` (2) and `sep_context` (1) are
     stripped from the CLEAN bib and kept in the ANNOTATED one. The
-    2026-08-15 decision to keep them is not reversed - the two-file split
-    just gives its audit intent a better home than the file people import.
+    2026-08-15 decision to keep them is not reversed - the clean/annotated
+    split just gives its audit intent a better home than the file people
+    import.
   - WRITER-DIRECTED SENTENCES inside a kept section (10 of the 131
     `RELEVANCE` blocks say things like "Cite one or the other, not both, in
     the final review") are NOT removed. Settled by the same-day precedent on
@@ -124,7 +125,8 @@ that a recurrence is recognized where it would be read.
   `EVIDENCE-*`/`year_suffix`/`web_span`/`venue_status`/`same_work_group`/
   `urldate`/`archiveurl`). Raised in the 0.5.26 round-2 review; no incident.
   Note the same projection, used as the BINDING itself, would remove the need
-  to re-point at all - see `docs/ideas/` before building the narrow version.
+  to re-point at all - weigh that against the narrow guard before building
+  either.
 
 - **`EVIDENCE-ABSTRACT` attests sameness, not usability** - the barrier's
   per-source re-fetch hash-matches the bib's abstract against the live

@@ -105,8 +105,8 @@ gate that Step 1 hit — adding `"Workflow"` to `allowed_tools` is a one-line
 change there, but whether that clears the gate is a probe, not a claim.
 
 **2. Re-run the Step 1 hook test on the current Claude Code.** The results
-below are from **2.1.218**; the installed CLI is **2.1.252**. The dispatch tool
-was renamed Task -> Agent in between — a rename this repo's own hook layer had
+below are from **2.1.218**; the installed CLI is **2.1.272** (checked
+2026-09-15). The dispatch tool was renamed Task -> Agent in between — a rename this repo's own hook layer had
 to absorb (`hooks/hooks.json` now carries PreToolUse matchers for both `Agent`
 and `Task`; `block_subagent_background_dispatch.py` documents it). The platform
 moved underneath exactly the surface the gate test measured, so the six checks

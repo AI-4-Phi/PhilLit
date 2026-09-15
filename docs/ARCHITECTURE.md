@@ -178,7 +178,7 @@ skills/literature-review/
     ├── normalize_headings.py             # Normalize section/subsection heading numbering
     ├── dedupe_bib.py                     # Deduplicate and merge BibTeX (re-stamps tiers via --evidence-report)
     ├── enrich_bibliography.py            # Batch abstract resolution for BibTeX
-    ├── evidence_barrier.py               # Phase 3-to-4 barrier: validate, acquire SEP/IEP context, vet venues, letter collisions, group reprints (same_work_group), gate web sources, corroborate abstracts, stamp EVIDENCE-* tiers
+    ├── evidence_barrier.py               # Phase 3-to-4 barrier: validate, acquire SEP/IEP context, vet venues, letter collisions, group reprints (same_work_group), gate web sources, corroborate abstracts, stamp EVIDENCE-* tiers, re-point the cleaning ledger's binding
     ├── resolve_context.py                # Mechanical SEP/IEP context acquisition (barrier helper)
     ├── stamp_evidence.py                 # Evidence-tier computation and stamping (barrier helper)
     ├── bib_fields.py                     # Depth-counting scanner: locates field values in raw BibTeX text for every value read, edit and strip in this directory
@@ -210,8 +210,11 @@ hooks/
 ├── block_subagent_background_dispatch.py # PreToolUse (Agent/Task): review agents must dispatch foreground
 ├── block_ledger_write.py                 # PreToolUse (Write/Edit/NotebookEdit): refuse tool-writes to the attestation ledgers (ledger write-protection)
 ├── bib_validator.py                      # BibTeX validation logic
+├── bib_comments.py                       # NOT a hook — the one owner of the @comment/@string/@preamble block grammar (is_verbatim_block, comment_defects)
+├── cleaning_marker.py                    # NOT a hook — the one owner of the METADATA_CLEANED marker grammar (marker_removed_fields, marker_type_changed, has_marker)
+├── ledger_binding.py                     # NOT a hook — the one owner of the ledger-to-bib content binding (bib_sha256; the cleaning ledger's schema floor)
 ├── bib_identity.py                       # NOT a hook — the one owner of identity/comparison keys (DOI, title, pages, journal, year, fallback) and name folds (ascii_variants, translit_fold, contract_fold), imported by the cleaner and the skill scripts
-└── metadata_cleaner.py                   # Metadata provenance cleaning: year/type/field cleanup
+└── metadata_cleaner.py                   # Metadata provenance cleaning: year/type/field cleanup; writes the bib-bound cleaning ledger
 
 bin/
 └── phillit-run                           # uv wrapper: runs bundled Python in the per-install venv

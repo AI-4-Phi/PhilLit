@@ -3,10 +3,12 @@
 Order: manifest validation -> SEP/IEP context acquisition -> report -> stamp.
 Accuracy gate: fails CLOSED. run_barrier() mutates nothing -- it returns the
 report plus every domain's final stamped content, built in memory; execute()
-then atomically writes the report FIRST, then each bib. A crash before the
-write phase leaves every file untouched; a crash mid-write leaves a prefix of
-domains stamped with exit 1 (documented residual -- SKILL.md halts on
-nonzero, and unstamped files read as all-EVIDENCE-NONE downstream).
+then atomically writes the report FIRST, then each bib, re-pointing that
+domain's accepted cleaning ledger as soon as its bib lands. A crash before
+the write phase leaves every file untouched; a crash mid-write leaves a
+prefix of domains stamped and re-pointed with exit 1 (documented residual
+-- SKILL.md halts on nonzero, and unstamped files read as
+all-EVIDENCE-NONE downstream).
 Per-domain problems degrade (status: "degraded") and can only demote the
 affected entries. All maps are per-domain: same-key entries in different
 domains never share attestations.

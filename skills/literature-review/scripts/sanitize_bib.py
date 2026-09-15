@@ -16,11 +16,12 @@ bib keeps them for audit transparency; standard BibTeX/biblatex styles
 ignore unknown fields, so they are inert downstream.
 
 That decision was REVISITED on 2026-09-15 and stands, with a new home: under
-the two-file delivery (a clean import-ready bib plus an `-annotated`
-sibling) these fields are stripped from the CLEAN file and kept in the
-ANNOTATED one. The audit intent is unchanged -- it simply does not belong in
-the copy a user imports into Zotero. That stripping is the SPLIT's job, not
-this script's; see the delivery item in `docs/ROADMAP.md`.
+the three-file delivery (a clean import-ready bib, an `-annotated` sibling,
+and `research-notes-<project>.md`) these fields are stripped from the CLEAN
+file and kept in the ANNOTATED one. The audit intent is unchanged -- it
+simply does not belong in the copy a user imports into Zotero. That
+stripping is the SPLIT's job, not this script's; see the delivery item in
+`docs/ROADMAP.md`.
 
 Do not add field stripping here without a new owner decision.
 """
