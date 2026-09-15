@@ -73,6 +73,24 @@ that a recurrence is recognized where it would be read.
     (`bib_comments.is_verbatim_block`), so this changes what Phase 6 does
     with them, not just what sanitize strips - and the carry logic must keep
     working for any OTHER `@comment` a bib holds.
+    WHICH LABELS REACH THE NOTES FILE - DECIDED (Johannes, 2026-09-15). It is
+    a LABEL list, never a sentence-level edit; sentence-level cleaning of
+    `NOTABLE_GAPS` was offered and declined, so run-mechanics prose inside a
+    kept section stays.
+    IN:  `DOMAIN_OVERVIEW`, `KEY_POSITIONS`, `NOTABLE_GAPS`,
+         `SYNTHESIS_GUIDANCE`, `RELEVANCE_TO_PROJECT` (94.9 KB of 124).
+         `NOTABLE_GAPS` keeps its "Stage 4: 45 candidates inspected" lines -
+         what was searched for and not found is itself a finding.
+         `SYNTHESIS_GUIDANCE` keeps its imperative voice ("Do not present
+         FL1.1 as...") - the analysis is worth more than the register.
+    OUT: `DOMAIN`, `SEARCH_DATE`, `PAPERS_FOUND`, `SEARCH_SOURCES`,
+         `RETRIEVAL_FAILURES`, `FAULT_LINES_POPULATED`, `ABSTRACTS`,
+         `ROUTING NOTES`, and the `====` rules.
+    An UNRECOGNISED label must fail loudly rather than be guessed either way
+    - the 2026-09-10 run also carried one-off labels (`SCOPE NOTE`,
+    `ADJUDICATION ATTEMPT`, `NOTE ON ATTRIBUTION`, `COUNT NOTE`, `AGAINST`,
+    `CONTROL`, `ROUTING`), so the list is not closed and a silent default
+    would either leak telemetry or drop analysis.
   - SKILL.md's Phase 6 safety-net glob (`literature-*.bib`) already keeps a
     `-annotated` sibling at the top level. That becomes intentional under
     this spec; do not "fix" it back.
