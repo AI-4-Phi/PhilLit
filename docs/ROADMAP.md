@@ -91,6 +91,18 @@ that a recurrence is recognized where it would be read.
     `ADJUDICATION ATTEMPT`, `NOTE ON ATTRIBUTION`, `COUNT NOTE`, `AGAINST`,
     `CONTROL`, `ROUTING`), so the list is not closed and a silent default
     would either leak telemetry or drop analysis.
+  - THE ENGINE-DERIVED FIELDS - DECIDED (Johannes, 2026-09-15), and this IS
+    the "new owner decision" `sanitize_bib.py`'s docstring required before
+    any field stripping: `abstract_source` (117), `web_span` (3), `urldate`
+    (3), `same_work_group` (3), `venue_status` (2) and `sep_context` (1) are
+    stripped from the CLEAN bib and kept in the ANNOTATED one. The
+    2026-08-15 decision to keep them is not reversed - the two-file split
+    just gives its audit intent a better home than the file people import.
+  - WRITER-DIRECTED SENTENCES inside a kept section (10 of the 131
+    `RELEVANCE` blocks say things like "Cite one or the other, not both, in
+    the final review") are NOT removed. Settled by the same-day precedent on
+    `NOTABLE_GAPS`: the rule is a LABEL list, never a sentence-level edit.
+    Do not re-raise this as a separate cleanup.
   - SKILL.md's Phase 6 safety-net glob (`literature-*.bib`) already keeps a
     `-annotated` sibling at the top level. That becomes intentional under
     this spec; do not "fix" it back.
