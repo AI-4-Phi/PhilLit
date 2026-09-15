@@ -429,3 +429,179 @@ class TestNonAsciiRoundTrip:
         rep = json.loads((ij / "evidence_report.json").read_text(
             encoding="utf-8"))
         assert rep["domains"]["1"]["cleaning_ledger"] == "present"
+
+
+class TestRepointBindsWhatTheBarrierWrote:
+    """The re-point must bind the text the barrier AUTHORED, not whatever is
+    on disk when it gets around to hashing.
+
+    Round 2 showed the read-back was both useless and dangerous here: with
+    universal-newline translation, hashing the in-memory string is identical
+    to reading it back even when the disk holds CRLF (verified) -- so the
+    read-back bought no cross-platform safety, and it blessed anything that
+    edited the file in the window after the write.
+    """
+
+    def test_an_edit_in_the_write_to_repoint_window_is_not_blessed(
+            self, tmp_path, monkeypatch):
+        """Inject an edit between the barrier's bib write and its re-point.
+        The injected text must NOT end up bound: the next run must reject."""
+        import evidence_barrier as eb
+        rd = tmp_path / "review"
+        ij = rd / "intermediate_files" / "json"
+        ij.mkdir(parents=True)
+        (rd / "literature-domain-1.bib").write_text(KUHN, encoding="utf-8")
+        (ij / "enrichment_ledger-literature-domain-1.json").write_text(
+            json.dumps({"schema_version": 1,
+                        "bib_file": "literature-domain-1.bib",
+                        "entries": {}}), encoding="utf-8")
+        (ij / "encyclopedia_entries-domain-1.json").write_text(
+            '{"sep_entries": [], "iep_entries": []}', encoding="utf-8")
+        (ij / "cleaning_ledger-literature-domain-1.json").write_text(
+            json.dumps({
+                "schema_version": lb.BINDING_SCHEMA_VERSION,
+                "bib_file": "literature-domain-1.bib",
+                "bib_sha256": lb.bib_text_sha256(KUHN),
+                "breaker_tripped": False,
+                "entries": {"kuhn1962structure": {
+                    "api_matched": True, "verified_identifier": "publisher",
+                    "verified_identifier_value":
+                        "university of chicago press",
+                    "entry_type": "book"}}}), encoding="utf-8")
+
+        bib = rd / "literature-domain-1.bib"
+        real_write = eb._atomic_write
+        injected = {"done": False}
+
+        def sneaky(path, content):
+            real_write(path, content)
+            if str(path).endswith("literature-domain-1.bib") and not injected["done"]:
+                injected["done"] = True
+                # An edit the barrier did not author, landing after its write.
+                with open(path, "a", encoding="utf-8") as fh:
+                    fh.write("\n@misc{injected2020, title = {Forged}}\n")
+
+        monkeypatch.setattr(eb, "_atomic_write", sneaky)
+        eb.execute(rd, 1)
+        assert injected["done"], "the fixture never injected; test proves nothing"
+
+        led = json.loads(
+            (ij / "cleaning_ledger-literature-domain-1.json").read_text(
+                encoding="utf-8"))
+        on_disk = lb.bib_file_sha256(bib)
+        assert led["bib_sha256"] != on_disk, (
+            "the barrier bound an edit it did not author -- a forged entry "
+            "would be trusted on the next run")
+
+
+class TestRepointSurvivesPartialFailure:
+    """A write failure on one domain must not strand the domains already
+    written. Re-pointing after the whole batch left an earlier domain stamped
+    but unbound, so the next run rejected a ledger nothing was wrong with --
+    and a rejected ledger is never re-pointed, so no re-run could repair it.
+    """
+
+    def _scaffold(self, tmp_path, n):
+        rd = tmp_path / "review"
+        ij = rd / "intermediate_files" / "json"
+        ij.mkdir(parents=True)
+        for i in range(1, n + 1):
+            name = f"literature-domain-{i}.bib"
+            (rd / name).write_text(KUHN, encoding="utf-8")
+            (ij / f"enrichment_ledger-{name[:-4]}.json").write_text(
+                json.dumps({"schema_version": 1, "bib_file": name,
+                            "entries": {}}), encoding="utf-8")
+            (ij / f"encyclopedia_entries-domain-{i}.json").write_text(
+                '{"sep_entries": [], "iep_entries": []}', encoding="utf-8")
+            (ij / f"cleaning_ledger-{name[:-4]}.json").write_text(
+                json.dumps({
+                    "schema_version": lb.BINDING_SCHEMA_VERSION,
+                    "bib_file": name,
+                    "bib_sha256": lb.bib_text_sha256(KUHN),
+                    "breaker_tripped": False,
+                    "entries": {"kuhn1962structure": {
+                        "api_matched": True,
+                        "verified_identifier": "publisher",
+                        "verified_identifier_value":
+                            "university of chicago press",
+                        "entry_type": "book"}}}), encoding="utf-8")
+        return rd, ij
+
+    def test_every_domain_is_repointed_not_just_the_first(self, tmp_path):
+        """A mutation that re-points only the first accepted domain survived
+        the suite, because every re-run test used one domain."""
+        import evidence_barrier as eb
+        rd, ij = self._scaffold(tmp_path, 3)
+        eb.execute(rd, 3)
+        for i in (1, 2, 3):
+            name = f"literature-domain-{i}"
+            led = json.loads((ij / f"cleaning_ledger-{name}.json").read_text(
+                encoding="utf-8"))
+            assert led["bib_sha256"] == lb.bib_file_sha256(
+                rd / f"{name}.bib"), f"domain {i} left unbound"
+
+    def test_a_write_failure_does_not_strand_an_already_written_domain(
+            self, tmp_path, monkeypatch):
+        import evidence_barrier as eb
+        rd, ij = self._scaffold(tmp_path, 2)
+        real_write = eb._atomic_write
+        seen = []
+
+        def failing(path, content):
+            if str(path).endswith("literature-domain-2.bib"):
+                raise OSError("disk full")
+            seen.append(path)
+            real_write(path, content)
+
+        monkeypatch.setattr(eb, "_atomic_write", failing)
+        try:
+            eb.execute(rd, 2)
+        except OSError:
+            pass
+        led = json.loads(
+            (ij / "cleaning_ledger-literature-domain-1.json").read_text(
+                encoding="utf-8"))
+        assert led["bib_sha256"] == lb.bib_file_sha256(
+            rd / "literature-domain-1.bib"), (
+            "domain 1 was written but left unbound, so the next run rejects "
+            "a ledger nothing is wrong with -- and cannot repair it")
+
+
+class TestEnrichmentVersionIsPinnedToItsOwnProducer:
+    """The floor is kind-scoped, but the ACCEPTED SET was not: an enrichment
+    ledger declaring 2 or 3 was read under version-1 semantics, even though
+    its producer only ever writes 1. Accepting an unknown attestation schema
+    is the fail-open direction on an accuracy gate."""
+
+    def _review(self, tmp_path, enrich_version):
+        rd = tmp_path / "review"
+        ij = rd / "intermediate_files" / "json"
+        ij.mkdir(parents=True)
+        (rd / "literature-domain-1.bib").write_text(KUHN, encoding="utf-8")
+        (ij / "cleaning_ledger-literature-domain-1.json").write_text(
+            json.dumps({"schema_version": lb.BINDING_SCHEMA_VERSION,
+                        "bib_file": "literature-domain-1.bib",
+                        "bib_sha256": lb.bib_text_sha256(KUHN),
+                        "breaker_tripped": False, "entries": {}}),
+            encoding="utf-8")
+        (ij / "enrichment_ledger-literature-domain-1.json").write_text(
+            json.dumps({"schema_version": enrich_version,
+                        "bib_file": "literature-domain-1.bib",
+                        "entries": {}}), encoding="utf-8")
+        (ij / "encyclopedia_entries-domain-1.json").write_text(
+            '{"sep_entries": [], "iep_entries": []}', encoding="utf-8")
+        r = subprocess.run(
+            [sys.executable, str(BARRIER), str(rd), "--domains", "1"],
+            capture_output=True, text=True, cwd=str(rd))
+        assert r.returncode == 0, r.stderr
+        return json.loads((ij / "evidence_report.json").read_text(
+            encoding="utf-8"))
+
+    def test_the_version_its_producer_writes_is_accepted(self, tmp_path):
+        rep = self._review(tmp_path, 1)
+        assert rep["domains"]["1"]["enrichment_ledger"] == "present"
+
+    def test_a_version_its_producer_never_writes_is_refused(self, tmp_path):
+        for v in (2, 3):
+            rep = self._review(tmp_path / f"v{v}", v)
+            assert rep["domains"]["1"]["enrichment_ledger"] == "malformed", v

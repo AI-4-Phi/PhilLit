@@ -11,7 +11,8 @@ SCRIPTS_DIR = SCRIPT.parent
 
 sys.path.insert(0, str(Path(__file__).parent.parent / "hooks"))
 from ledger_binding import (  # noqa: E402
-    BINDING_SCHEMA_VERSION, bib_file_sha256, bib_text_sha256,
+    BINDING_SCHEMA_VERSION, ENRICHMENT_SCHEMA_VERSION,
+    bib_file_sha256, bib_text_sha256,
 )
 
 KUHN = """@book{kuhn1962structure,
@@ -497,17 +498,68 @@ def test_the_binding_is_kind_scoped_and_spares_the_enrichment_ledger(tmp_path):
     """The floor and the hash both key on `kind == "cleaning"`. The
     enrichment ledger is written at the researcher's Stage 5.5, BEFORE the
     cleaner rewrites the bib, so it could never satisfy a binding -- and a
-    future bump of ITS schema must not silently opt it into one."""
+    future bump of ITS schema must not silently opt it into one.
+
+    Being spared the BINDING is not the same as accepting any VERSION: the
+    two are separate concerns, and an earlier version of this test conflated
+    them, pinning a fail-open. See the sibling test below."""
     rd = tmp_path / "review"
-    for version in (1, 2, BINDING_SCHEMA_VERSION):
+    _domain(rd, 1, KUHN, cleaning=CLEAN_KUHN,
+            enrichment=dict(EMPTY_ENRICH,
+                            schema_version=ENRICHMENT_SCHEMA_VERSION))
+    r = _run(rd, 1)
+    assert r.returncode == 0, r.stderr
+    report = _report(rd)
+    assert report["domains"]["1"]["enrichment_ledger"] == "present"
+    assert report["status"] == "complete"
+    # No binding was demanded of it, though it carries no bib_sha256.
+    assert "enrichment_ledger_reason" not in report["domains"]["1"]
+
+
+def test_the_enrichment_ledger_is_pinned_to_the_version_it_writes(tmp_path):
+    """A version its producer never emits is refused rather than read under
+    the old semantics -- accepting an unimplemented attestation schema is the
+    fail-open direction on an accuracy gate."""
+    for version in (2, BINDING_SCHEMA_VERSION):
         rd = tmp_path / f"review-{version}"
         _domain(rd, 1, KUHN, cleaning=CLEAN_KUHN,
                 enrichment=dict(EMPTY_ENRICH, schema_version=version))
         r = _run(rd, 1)
         assert r.returncode == 0, r.stderr
         report = _report(rd)
-        assert report["domains"]["1"]["enrichment_ledger"] == "present", version
-        assert report["status"] == "complete", version
+        assert report["domains"]["1"]["enrichment_ledger"] == "malformed", version
+        assert report["status"] == "degraded", version
+
+
+def test_a_refusal_says_which_check_refused_it(tmp_path):
+    """"malformed" alone cannot tell an operator whether to regenerate the
+    ledger, look for a changed bib, or suspect the platform."""
+    rd = tmp_path / "stale"
+    _domain(rd, 1, KUHN, cleaning=dict(CLEAN_KUHN, bib_sha256=_sha("other")),
+            enrichment=EMPTY_ENRICH)
+    r = _run(rd, 1)
+    assert r.returncode == 0, r.stderr
+    assert "stale" in _report(rd)["domains"]["1"]["cleaning_ledger_reason"]
+
+    rd = tmp_path / "wrongname"
+    _domain(rd, 1, KUHN, cleaning=dict(CLEAN_KUHN, bib_file="other.bib"),
+            enrichment=EMPTY_ENRICH)
+    r = _run(rd, 1)
+    assert r.returncode == 0, r.stderr
+    assert "different bib" in _report(rd)["domains"]["1"]["cleaning_ledger_reason"]
+
+    rd = tmp_path / "nohash"
+    _domain(rd, 1, KUHN, cleaning=dict(CLEAN_KUHN), enrichment=EMPTY_ENRICH,
+            bind=False)
+    r = _run(rd, 1)
+    assert r.returncode == 0, r.stderr
+    assert "no bib_sha256" in _report(rd)["domains"]["1"]["cleaning_ledger_reason"]
+
+    rd = tmp_path / "healthy"
+    _domain(rd, 1, KUHN, cleaning=CLEAN_KUHN, enrichment=EMPTY_ENRICH)
+    r = _run(rd, 1)
+    assert r.returncode == 0, r.stderr
+    assert "cleaning_ledger_reason" not in _report(rd)["domains"]["1"]
 
 
 def test_cleaning_ledger_schema_version_string_is_malformed(tmp_path):

@@ -40,6 +40,13 @@ from pathlib import Path
 # or every cleaning ledger is refused.
 BINDING_SCHEMA_VERSION = 3
 
+# The enrichment ledger's version, pinned here so the barrier can accept
+# exactly what `enrich_bibliography` writes and nothing else. It is a
+# separate constant, not `1`, because the two schemas evolve independently --
+# and because a shared accepted set once let an enrichment ledger declare a
+# version its producer had never written and be read under the old one.
+ENRICHMENT_SCHEMA_VERSION = 1
+
 
 def bib_text_sha256(text: str) -> str:
     """The binding value for an already-decoded bib text."""

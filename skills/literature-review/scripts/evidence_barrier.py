@@ -41,7 +41,8 @@ _hooks_dir = Path(__file__).resolve().parent.parent.parent.parent / "hooks"
 sys.path.insert(0, str(_hooks_dir))
 from bib_identity import same_work_key, same_work_year  # noqa: E402
 from ledger_binding import (  # noqa: E402
-    BINDING_SCHEMA_VERSION, bib_file_sha256, binding_holds,
+    BINDING_SCHEMA_VERSION, ENRICHMENT_SCHEMA_VERSION,
+    bib_file_sha256, bib_text_sha256, binding_holds,
 )
 
 sys.path.pop(0)
@@ -52,31 +53,53 @@ except Exception:  # optional pass -- never block the accuracy gate
     vv = None
 
 
-def _load_ledger(path: Path, expected_bib_name: str, kind: str,
-                 bib_path: Path | None = None):
-    """(state, payload): present / missing / malformed. Never raises.
+# The cleaning ledger's version is a FLOOR (see ledger_binding): below the
+# binding there is no content check, so accepting an older one would be a
+# downgrade path straight past it. The enrichment ledger is pinned to the one
+# version its producer writes.
+_CLEANING_VERSIONS = frozenset({BINDING_SCHEMA_VERSION})
+_ENRICHMENT_VERSIONS = frozenset({ENRICHMENT_SCHEMA_VERSION})
 
-    `bib_path` is the bib this ledger claims to attest. It is required to
-    validate the schema-3 content binding; without it a schema-3 ledger is
-    rejected, since an unchecked binding is worth less than no binding.
+
+def _load_ledger(path: Path, expected_bib_name: str, kind: str,
+                 bib_path: Path):
+    """(state, payload, reason): present / missing / malformed.
+
+    `reason` is None when the ledger loads, and otherwise names WHICH check
+    refused it. The state stays coarse because nothing branches on it, but an
+    operator reading the report has to tell "regenerate this ledger" from
+    "the bib changed after cleaning" from "this platform cannot read the bib
+    back", and a bare "malformed" cannot.
+
+    `bib_path` is REQUIRED, not defaulted: a caller that forgot it would
+    silently demote every entry in the review, and a loud TypeError in
+    development beats a quiet mass-demotion in production.
+
+    Never raises on bad DATA. A programming error here may.
     """
     if not path.exists():
-        return "missing", None
+        return "missing", None, None
     try:
         data = json.loads(path.read_text(encoding="utf-8"))
-    except (json.JSONDecodeError, OSError, UnicodeDecodeError):
-        return "malformed", None
+    except (json.JSONDecodeError, OSError, UnicodeDecodeError) as e:
+        return "malformed", None, f"unreadable: {type(e).__name__}"
     if not isinstance(data, dict):
-        return "malformed", None
+        return "malformed", None, "not a JSON object"
     # TYPE first, then membership. `in` compares with `==`, and JSON `true`
     # and `1.0` both equal the int 1 -- so a ledger whose version is a bool
     # or a float used to read as a valid version-1 ledger. `type(v) is int`,
     # NOT isinstance: bool subclasses int, so isinstance admits `true`.
+    # Each kind is pinned to the versions ITS OWN producer writes. A shared
+    # accepted set let an enrichment ledger declare 2 or 3 -- versions its
+    # writer has never emitted -- and be read under version-1 semantics,
+    # which is accepting an attestation schema nothing implements.
     version = data.get("schema_version")
-    if type(version) is not int or version not in (1, 2, BINDING_SCHEMA_VERSION):
-        return "malformed", None
+    accepted = (_CLEANING_VERSIONS if kind == "cleaning"
+                else _ENRICHMENT_VERSIONS)
+    if type(version) is not int or version not in accepted:
+        return "malformed", None, f"schema_version {version!r} not in {sorted(accepted)}"
     if data.get("bib_file") != expected_bib_name:
-        return "malformed", None  # stale/copied ledger -- reject
+        return "malformed", None, "bib_file names a different bib"
     # Binding by NAME (just above) cannot tell a current ledger from one a
     # failed unlink left behind. From schema 3 the ledger also carries a hash
     # of the bib it attests, so a survivor is unusable however it survived.
@@ -98,19 +121,23 @@ def _load_ledger(path: Path, expected_bib_name: str, kind: str,
     # Scoping by kind also means a future enrichment-schema bump cannot
     # silently opt that ledger into a contract it can never satisfy.
     if kind == "cleaning":
-        if version < BINDING_SCHEMA_VERSION:
-            return "malformed", None
-        if bib_path is None or not binding_holds(data.get("bib_sha256"), bib_path):
-            return "malformed", None
+        declared = data.get("bib_sha256")
+        if not binding_holds(declared, bib_path):
+            actual = bib_file_sha256(bib_path)
+            if actual is None:
+                return "malformed", None, "bib could not be read back as UTF-8"
+            if declared is None:
+                return "malformed", None, "no bib_sha256 (cleaner could not bind)"
+            return "malformed", None, "bib_sha256 does not match the bib (stale)"
     entries = data.get("entries")
     if not isinstance(entries, dict):
-        return "malformed", None
+        return "malformed", None, "entries is not an object"
     if kind == "cleaning":
         for v in entries.values():
             if not isinstance(v, dict) or v.get("verified_identifier") not in (
                     "doi", "publisher", None):
-                return "malformed", None
-    return "present", data
+                return "malformed", None, "an entry has a bad verified_identifier"
+    return "present", data, None
 
 
 def _parseable_bib(path: Path) -> bool:
@@ -798,10 +825,10 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
     for i in range(1, n_domains + 1):
         bib_name = f"literature-domain-{i}.bib"
         bib = review_dir / bib_name
-        c_state, c_data = _load_ledger(
+        c_state, c_data, c_why = _load_ledger(
             ijson / f"cleaning_ledger-literature-domain-{i}.json", bib_name,
             "cleaning", bib)
-        e_state, e_data = _load_ledger(
+        e_state, e_data, e_why = _load_ledger(
             ijson / f"enrichment_ledger-literature-domain-{i}.json", bib_name,
             "enrichment", bib)
         slug_paths.append(ijson / f"encyclopedia_entries-domain-{i}.json")
@@ -814,6 +841,12 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
         report["domains"][str(i)] = {
             "bib": b_state, "cleaning_ledger": c_state, "enrichment_ledger": e_state,
         }
+        # WHY a ledger was refused, for the operator. Present only when there
+        # is something to say, so a healthy domain stays as terse as before.
+        if c_why:
+            report["domains"][str(i)]["cleaning_ledger_reason"] = c_why
+        if e_why:
+            report["domains"][str(i)]["enrichment_ledger_reason"] = e_why
         if b_state != "present" or c_state != "present" or e_state != "present":
             degraded = True
         if b_state == "present":
@@ -1488,7 +1521,7 @@ def _atomic_write(path: Path, content: str) -> None:
     os.replace(str(tmp), str(path))
 
 
-def _repoint_binding(ledger_path: Path, bib_path: Path) -> str | None:
+def _repoint_binding(ledger_path: Path, authored: str) -> str | None:
     """Re-point a cleaning ledger's `bib_sha256` at the bib THIS RUN just
     stamped. Returns a warning string on failure, None on success.
 
@@ -1507,14 +1540,21 @@ def _repoint_binding(ledger_path: Path, bib_path: Path) -> str | None:
     The cleaner still OWNS the ledger: the attestation is untouched, and
     stamping cannot change which entries matched an API record. Only the
     field that tracks the barrier's own edit moves.
+
+    `authored` is the text the barrier GENERATED, not a read-back of the
+    file. Reading the file back would bind whatever happens to be on disk at
+    that moment, so anything editing the bib between the write and this call
+    would be signed as the barrier's own work -- laundering unverified text
+    into a trusted attestation. Hashing the authored string costs nothing in
+    portability: `write_text`/`read_text` translate newlines symmetrically,
+    so the two digests are identical even where the disk holds CRLF
+    (verified), which is why the read-back never bought anything here.
     """
     try:
         data = json.loads(ledger_path.read_text(encoding="utf-8"))
         if not isinstance(data, dict):
             return f"{ledger_path.name}: not an object"
-        digest = bib_file_sha256(bib_path)
-        if digest is None:
-            return f"{ledger_path.name}: could not read {bib_path.name} back"
+        digest = bib_text_sha256(authored)
         if data.get("bib_sha256") == digest:
             return None  # already current -- keeps repeated runs idempotent
         data["bib_sha256"] = digest
@@ -1524,24 +1564,21 @@ def _repoint_binding(ledger_path: Path, bib_path: Path) -> str | None:
         return f"{ledger_path.name}: {type(e).__name__}: {e}"
 
 
-def _repoint_bindings(review_dir: Path, ijson: Path, report: dict,
-                      outputs: dict) -> list:
-    """Re-point every cleaning ledger this run ACCEPTED, for the bibs it just
-    wrote. A ledger reported anything but `present` was not trusted and must
-    stay unusable -- re-pointing it would launder exactly the staleness the
-    binding exists to catch."""
-    warnings = []
+def _accepted_ledger_for(review_dir: Path, ijson: Path, report: dict,
+                         bib_path: Path) -> Path | None:
+    """The cleaning ledger to re-point for `bib_path`, or None.
+
+    None whenever this run did not ACCEPT that ledger: one reported anything
+    but `present` was not trusted and must stay unusable, or re-pointing
+    would launder exactly the staleness the binding exists to catch.
+    """
     for i, dom in (report.get("domains") or {}).items():
-        if dom.get("cleaning_ledger") != "present":
+        if review_dir / f"literature-domain-{i}.bib" != bib_path:
             continue
-        bib_path = review_dir / f"literature-domain-{i}.bib"
-        if bib_path not in outputs:
-            continue  # bib was missing/malformed -- nothing was written
-        w = _repoint_binding(
-            ijson / f"cleaning_ledger-literature-domain-{i}.json", bib_path)
-        if w:
-            warnings.append(w)
-    return warnings
+        if dom.get("cleaning_ledger") != "present":
+            return None
+        return ijson / f"cleaning_ledger-literature-domain-{i}.json"
+    return None
 
 
 def execute(review_dir: Path, n_domains: int, debug: bool = False) -> int:
@@ -1556,12 +1593,23 @@ def execute(review_dir: Path, n_domains: int, debug: bool = False) -> int:
     try:
         _atomic_write(report_path, json.dumps(report, indent=2))
         if report["status"] != "failed":
+            repoint_warnings = []
             for path, content in outputs.items():  # report first, bibs second
                 _atomic_write(path, content)
-            # Only AFTER the bib write succeeds: a binding pointing at text
-            # that was never written would be worse than a stale one.
-            repoint_warnings = _repoint_bindings(review_dir, ijson, report,
-                                                 outputs)
+                # Per domain, immediately after ITS bib lands -- not after the
+                # whole batch. A failure on a later bib used to abort before
+                # any re-point, leaving an earlier domain stamped but bound to
+                # its pre-stamp text; the next run then rejected a ledger
+                # nothing was wrong with, and since a rejected ledger is never
+                # re-pointed, no re-run could repair it.
+                #
+                # Only after the write succeeds: a binding pointing at text
+                # that was never written would be worse than a stale one.
+                ledger = _accepted_ledger_for(review_dir, ijson, report, path)
+                if ledger is not None:
+                    w = _repoint_binding(ledger, content)
+                    if w:
+                        repoint_warnings.append(w)
             if repoint_warnings:
                 # A plumbing failure, not an accuracy one -- this run already
                 # succeeded. But it is never silent: the NEXT run degrades,
