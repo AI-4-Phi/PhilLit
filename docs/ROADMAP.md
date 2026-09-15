@@ -10,14 +10,6 @@ that a recurrence is recognized where it would be read.
 
 ## Queue
 
-- **Bind the cleaning ledger to its bib by content** - the evidence barrier
-  binds a ledger to its bib by NAME only, so a refused cleaning pass must
-  delete the stale ledger, and that unlink can fail (a warning, not a block).
-  A `bib_sha256` in the ledger (schema 3; the barrier accepts {1, 2} and must
-  learn 3) would make a stale ledger unusable however it survived - hash the
-  decoded text, not the bytes, since the cleaner writes in text mode and
-  Windows gets CRLF. Raised in the 0.5.18 final-design review; no incident yet.
-
 - **Split bibliography delivery into a clean primary and an annotated
   sibling** - the delivered `literature-<project>.bib` ships the researchers'
   `note` fields, their `FLn.n` fault-line tags and `High`/`Medium`/`Low`

@@ -16,7 +16,13 @@ import json
 import os
 import shutil
 import subprocess
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent.parent / "hooks"))
+from ledger_binding import (  # noqa: E402
+    BINDING_SCHEMA_VERSION, bib_text_sha256,
+)
 
 import pytest
 from pybtex.database import parse_file as pybtex_parse_file
@@ -418,8 +424,12 @@ class TestMetadataCleaning:
         ledger = review / "intermediate_files" / "json" / "cleaning_ledger-d1.json"
         assert ledger.exists()
         ldata = json.loads(ledger.read_text(encoding="utf-8"))
-        assert ldata["schema_version"] == 2
+        assert ldata["schema_version"] == BINDING_SCHEMA_VERSION
         assert ldata["bib_file"] == "d1.bib"
+        # The resumed pass rewrote the bib, so its ledger must bind to the
+        # text that is there NOW -- the blocked pass's hash would not.
+        assert ldata["bib_sha256"] == bib_text_sha256(
+            (review / "d1.bib").read_text(encoding="utf-8"))
         assert "awad2018moral" in ldata["entries"]
         assert "wolf1990freedom" not in ldata["entries"], (
             "ledger is stale from the blocked pass — the resumed pass "

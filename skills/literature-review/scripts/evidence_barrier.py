@@ -40,6 +40,9 @@ import year_suffix as ys
 _hooks_dir = Path(__file__).resolve().parent.parent.parent.parent / "hooks"
 sys.path.insert(0, str(_hooks_dir))
 from bib_identity import same_work_key, same_work_year  # noqa: E402
+from ledger_binding import (  # noqa: E402
+    BINDING_SCHEMA_VERSION, binding_holds,
+)
 
 sys.path.pop(0)
 
@@ -49,8 +52,14 @@ except Exception:  # optional pass -- never block the accuracy gate
     vv = None
 
 
-def _load_ledger(path: Path, expected_bib_name: str, kind: str):
-    """(state, payload): present / missing / malformed. Never raises."""
+def _load_ledger(path: Path, expected_bib_name: str, kind: str,
+                 bib_path: Path | None = None):
+    """(state, payload): present / missing / malformed. Never raises.
+
+    `bib_path` is the bib this ledger claims to attest. It is required to
+    validate the schema-3 content binding; without it a schema-3 ledger is
+    rejected, since an unchecked binding is worth less than no binding.
+    """
     if not path.exists():
         return "missing", None
     try:
@@ -64,10 +73,20 @@ def _load_ledger(path: Path, expected_bib_name: str, kind: str):
     # or a float used to read as a valid version-1 ledger. `type(v) is int`,
     # NOT isinstance: bool subclasses int, so isinstance admits `true`.
     version = data.get("schema_version")
-    if type(version) is not int or version not in (1, 2):
+    if type(version) is not int or version not in (1, 2, BINDING_SCHEMA_VERSION):
         return "malformed", None
     if data.get("bib_file") != expected_bib_name:
         return "malformed", None  # stale/copied ledger -- reject
+    # Binding by NAME (just above) cannot tell a current ledger from one a
+    # failed unlink left behind. From schema 3 the ledger also carries a hash
+    # of the bib it attests, so a survivor is unusable however it survived.
+    # The rule is VERSION-driven, not kind-driven: whatever declares 3 is
+    # held to it. Rejection reuses "malformed" -- the same state the
+    # bib_file mismatch on the line above already returns for the same
+    # reason -- so a caller needs no new case and the entry demotes.
+    if version >= BINDING_SCHEMA_VERSION:
+        if bib_path is None or not binding_holds(data.get("bib_sha256"), bib_path):
+            return "malformed", None
     entries = data.get("entries")
     if not isinstance(entries, dict):
         return "malformed", None
@@ -765,9 +784,11 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
         bib_name = f"literature-domain-{i}.bib"
         bib = review_dir / bib_name
         c_state, c_data = _load_ledger(
-            ijson / f"cleaning_ledger-literature-domain-{i}.json", bib_name, "cleaning")
+            ijson / f"cleaning_ledger-literature-domain-{i}.json", bib_name,
+            "cleaning", bib)
         e_state, e_data = _load_ledger(
-            ijson / f"enrichment_ledger-literature-domain-{i}.json", bib_name, "enrichment")
+            ijson / f"enrichment_ledger-literature-domain-{i}.json", bib_name,
+            "enrichment", bib)
         slug_paths.append(ijson / f"encyclopedia_entries-domain-{i}.json")
         if not bib.exists():
             b_state = "missing"

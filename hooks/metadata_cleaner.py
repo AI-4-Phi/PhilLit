@@ -40,6 +40,7 @@ from pybtex.database.output.bibtex import Writer
 from pybtex.scanner import PybtexSyntaxError
 
 from bib_comments import comment_defects, is_verbatim_block
+from ledger_binding import BINDING_SCHEMA_VERSION, bib_file_sha256
 from bib_identity import (
     normalize_doi,
     normalize_journal,
@@ -1566,14 +1567,30 @@ def write_cleaning_ledger(bib_path: Path, ledger_entries: dict, breaker_tripped:
     ledger_dir = bib_path.parent / "intermediate_files" / "json"
     ledger_dir.mkdir(parents=True, exist_ok=True)
     payload = {
-        # 2 since the cleaner strip-rule fix, which added the optional
-        # telemetry keys documented above. (1 held through the
-        # `cleaning_abstained` addition, recorded 2026-08-18 as deliberate
-        # because producer and consumer shipped together.) The barrier accepts
-        # {1, 2} and hard-rejects anything else, so a further bump must land in
-        # both -- and a v1 ledger still reads, as one with no telemetry.
-        "schema_version": 2,
+        # 3 since the bib_sha256 content binding below. (2 came with the
+        # strip-rule fix, which added the optional telemetry keys documented
+        # above; 1 held through the `cleaning_abstained` addition, recorded
+        # 2026-08-18 as deliberate because producer and consumer shipped
+        # together.) The barrier accepts {1, 2, 3} and hard-rejects anything
+        # else, so a further bump must land in both -- and a v1 or v2 ledger
+        # still reads, as one with no binding.
+        "schema_version": BINDING_SCHEMA_VERSION,
         "bib_file": bib_path.name,
+        # Binds this ledger to the bib it attests, so that a stale ledger
+        # left standing by a failed unlink cannot be trusted. EVERY caller
+        # reaches here AFTER the bib has taken its final form for this pass:
+        # the rewrite path calls write_bibtex first, and the breaker-trip and
+        # no-usable-index paths do not touch the bib at all.
+        #
+        # None when the bib cannot be read back. That is written out as-is
+        # rather than omitted: a v3 ledger MUST carry the key, and a null
+        # fails the barrier's shape check, which is the safe direction.
+        #
+        # The enrichment ledger is deliberately NOT on this schema. It is
+        # written during the researcher's Stage 5.5, before this cleaner runs
+        # at SubagentStop and rewrites the bib, so any hash it took would be
+        # of a superseded text and would always fail.
+        "bib_sha256": bib_file_sha256(bib_path),
         "breaker_tripped": bool(breaker_tripped),
         "entries": ledger_entries,
     }
@@ -1588,15 +1605,21 @@ def _discard_stale_ledger(result: dict, bib_path: Path) -> None:
     """Attempt to remove this bib's cleaning ledger from an earlier pass. A
     pass that refuses (syntax error, text the rewrite could not carry, a
     rendering that does not re-parse or could not be written) writes no
-    ledger - and must not leave the previous one standing, because the
-    evidence barrier binds a ledger to its bib by NAME only and would trust
-    an attestation of a bib that has since changed. A missing ledger demotes
+    ledger - and must not leave the previous one standing, because it would
+    otherwise attest a bib that has since changed. A missing ledger demotes
     downstream: the safe direction, taken even when the bib is unchanged and
     the old ledger would still be accurate (a rewrite that failed to render
-    or write), because the alternative is telling the two cases apart by
-    content, which the ledger does not carry - see the roadmap item on
-    binding the ledger by content. The unlink itself is best-effort: if the
-    OS refuses, the old ledger stays and only a warning records it."""
+    or write), because unlinking unconditionally is simpler than telling the
+    two cases apart.
+
+    The unlink is best-effort: if the OS refuses, the old ledger stays and
+    only a warning records it. That survivor is no longer trusted, because
+    the ledger also binds to its bib by CONTENT (`bib_sha256`, schema 3 - see
+    ledger_binding.py): a pass that refused after the bib changed leaves a
+    hash that no longer matches, and the barrier rejects it. The unlink stays
+    all the same - it is the direct remedy, and the binding cannot catch the
+    one case where the bib is byte-identical to what the stale ledger
+    attested."""
     stale = bib_path.parent / "intermediate_files" / "json" / f"cleaning_ledger-{bib_path.stem}.json"
     try:
         if stale.exists():

@@ -1227,8 +1227,10 @@ class TestCleaningLedger:
         assert ledger_path.exists()
         assert result["ledger_path"] == str(ledger_path)
         ledger = json.loads(ledger_path.read_text(encoding="utf-8"))
-        # 2 since the strip-rule fix added the optional telemetry keys.
-        assert ledger["schema_version"] == 2
+        # Bound to the owner constant, not spelled out: the number moves
+        # whenever the payload's contract does (2 with the strip-rule fix's
+        # telemetry keys, 3 with the bib_sha256 binding).
+        assert ledger["schema_version"] == mc.BINDING_SCHEMA_VERSION
         assert ledger["bib_file"] == "literature-domain-1.bib"
         assert ledger["breaker_tripped"] is False
         ent = ledger["entries"]["nature2018"]
@@ -2466,3 +2468,84 @@ class TestRewriteRefusalRoundFour:
         assert any("Rewrite failed" in e and "unbalanced braces" in e for e in result["errors"])
         assert bib.read_text(encoding='utf-8') == original
         assert not ledger.exists()
+
+
+# --- Ledger-to-bib content binding (schema 3) --------------------------
+# The barrier binds a ledger to its bib by NAME only, so a refused pass must
+# delete the stale ledger -- and that unlink is best-effort. A `bib_sha256`
+# makes a survivor unusable however it survived.
+
+def _bib_sha256(text: str) -> str:
+    import hashlib
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+
+class TestCleaningLedgerBibHash:
+    """Every path that writes a ledger must bind it to the bib's FINAL text."""
+
+    def _ledger(self, tmp_path, bib_name="literature-domain-1.bib"):
+        p = (tmp_path / "intermediate_files" / "json"
+             / f"cleaning_ledger-{Path(bib_name).stem}.json")
+        return json.loads(p.read_text(encoding="utf-8"))
+
+    def test_schema_version_is_3(self, tmp_path, bibtex_with_hallucinated_number):
+        bib = tmp_path / "literature-domain-1.bib"
+        bib.write_text(bibtex_with_hallucinated_number, encoding="utf-8")
+        clean_bibtex(bib, [tmp_path / "nonexistent"])
+        assert self._ledger(tmp_path)["schema_version"] == 3
+
+    def test_hash_matches_the_bib_as_it_stands_after_the_pass(
+            self, tmp_path, bibtex_with_hallucinated_number):
+        """The hash must cover the FINAL text. write_bibtex runs before the
+        ledger write on the rewrite path, so a hash taken of the pre-rewrite
+        text would never match what the barrier later reads."""
+        bib = tmp_path / "literature-domain-1.bib"
+        bib.write_text(bibtex_with_hallucinated_number, encoding="utf-8")
+        clean_bibtex(bib, [tmp_path / "nonexistent"])
+        assert (self._ledger(tmp_path)["bib_sha256"]
+                == _bib_sha256(bib.read_text(encoding="utf-8")))
+
+    def test_hash_is_newline_insensitive(
+            self, tmp_path, bibtex_with_hallucinated_number):
+        """Windows gets CRLF from the cleaner's text-mode write. The hash
+        must cover DECODED TEXT, not bytes, or a ledger written on Windows
+        could never validate against the same logical bib elsewhere."""
+        lf = bibtex_with_hallucinated_number.replace("\r\n", "\n")
+        crlf = lf.replace("\n", "\r\n")
+        hashes = []
+        for i, payload in enumerate((lf, crlf)):
+            d = tmp_path / f"r{i}"
+            d.mkdir()
+            bib = d / "literature-domain-1.bib"
+            bib.write_bytes(payload.encode("utf-8"))
+            clean_bibtex(bib, [d / "nonexistent"])
+            hashes.append(self._ledger(d)["bib_sha256"])
+        assert hashes[0] == hashes[1]
+
+    def test_breaker_trip_path_carries_the_hash(self, tmp_path, monkeypatch):
+        """The breaker writes a ledger without rewriting the bib. It still
+        attests the bib it read, so it still binds by content."""
+        monkeypatch.setattr(mc, "BREAKER_MIN_ENTRIES", 1)
+        monkeypatch.setattr(mc, "BREAKER_FRACTION", 0.0)
+        bib = tmp_path / "literature-domain-1.bib"
+        bib.write_text(
+            "@article{a2020x,\n  author = {A},\n  title = {T},\n"
+            "  journal = {J},\n  year = {2020}\n}\n", encoding="utf-8")
+        json_dir = tmp_path / "json"
+        json_dir.mkdir()
+        (json_dir / "s2_x.json").write_text(json.dumps(
+            {"results": [{"title": "T", "year": 2020, "authors": ["A"]}]}),
+            encoding="utf-8")
+        clean_bibtex(bib, [json_dir])
+        led = self._ledger(tmp_path)
+        assert led["schema_version"] == 3
+        assert led["bib_sha256"] == _bib_sha256(bib.read_text(encoding="utf-8"))
+
+    def test_unmatched_count_path_carries_the_hash(
+            self, tmp_path, bibtex_with_hallucinated_number):
+        """The no-usable-index path writes a ledger without touching the bib."""
+        bib = tmp_path / "literature-domain-1.bib"
+        bib.write_text(bibtex_with_hallucinated_number, encoding="utf-8")
+        clean_bibtex(bib, [tmp_path / "nonexistent"])
+        led = self._ledger(tmp_path)
+        assert led["bib_sha256"] == _bib_sha256(bib.read_text(encoding="utf-8"))

@@ -368,15 +368,138 @@ def test_v2_cleaning_ledger_loads_present(tmp_path):
         "EVIDENCE-EXISTENCE")
 
 
-def test_cleaning_ledger_schema_version_3_is_malformed(tmp_path):
+def test_cleaning_ledger_schema_version_4_is_malformed(tmp_path):
+    """The accepted set gained 3 with the bib_sha256 binding; the CEILING
+    moved, it did not disappear."""
     rd = tmp_path / "review"
-    v3 = dict(CLEAN_KUHN, schema_version=3)
-    _domain(rd, 1, KUHN, cleaning=v3, enrichment=EMPTY_ENRICH)
+    v4 = dict(CLEAN_KUHN, schema_version=4)
+    _domain(rd, 1, KUHN, cleaning=v4, enrichment=EMPTY_ENRICH)
     r = _run(rd, 1)
     assert r.returncode == 0, r.stderr
     report = _report(rd)
     assert report["status"] == "degraded"
     assert report["domains"]["1"]["cleaning_ledger"] == "malformed"
+
+
+# --- schema 3: the ledger binds to its bib by CONTENT ------------------
+# Binding by NAME alone means a refused pass must delete the stale ledger,
+# and that unlink is best-effort (a warning, not a block). A bib_sha256
+# makes a survivor unusable however it survived.
+
+def _sha(text):
+    import hashlib
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+
+def _v3(bib_text, base=None):
+    return dict(base or CLEAN_KUHN, schema_version=3,
+                bib_sha256=_sha(bib_text))
+
+
+def test_v3_cleaning_ledger_with_matching_hash_is_present(tmp_path):
+    rd = tmp_path / "review"
+    _domain(rd, 1, KUHN, cleaning=_v3(KUHN), enrichment=EMPTY_ENRICH)
+    r = _run(rd, 1)
+    assert r.returncode == 0, r.stderr
+    report = _report(rd)
+    assert report["domains"]["1"]["cleaning_ledger"] == "present"
+    assert report["status"] == "complete"
+    assert report["stamps"]["literature-domain-1.bib"]["kuhn1962structure"] == (
+        "EVIDENCE-EXISTENCE")
+
+
+def test_v3_cleaning_ledger_whose_hash_does_not_match_the_bib_is_rejected(tmp_path):
+    """The whole point: a ledger that survived a refused pass attests a bib
+    that has since changed, and must not be trusted."""
+    rd = tmp_path / "review"
+    _domain(rd, 1, KUHN, cleaning=_v3(KUHN + "\n% edited since\n"),
+            enrichment=EMPTY_ENRICH)
+    r = _run(rd, 1)
+    assert r.returncode == 0, r.stderr
+    report = _report(rd)
+    assert report["status"] == "degraded"
+    assert report["domains"]["1"]["cleaning_ledger"] == "malformed"
+
+
+def test_v3_cleaning_ledger_demotes_the_entry_it_would_have_attested(tmp_path):
+    """Rejection is not cosmetic -- the attestation it carried must not reach
+    the stamp. Without the ledger the entry cannot earn EVIDENCE-EXISTENCE."""
+    rd = tmp_path / "review"
+    _domain(rd, 1, KUHN, cleaning=_v3("something else"),
+            enrichment=EMPTY_ENRICH)
+    r = _run(rd, 1)
+    assert r.returncode == 0, r.stderr
+    report = _report(rd)
+    assert report["stamps"]["literature-domain-1.bib"]["kuhn1962structure"] != (
+        "EVIDENCE-EXISTENCE")
+
+
+def test_v3_cleaning_ledger_without_a_hash_is_malformed(tmp_path):
+    """Declaring 3 is declaring the binding. Omitting the field must not be
+    a way to opt out of it."""
+    rd = tmp_path / "review"
+    _domain(rd, 1, KUHN, cleaning=dict(CLEAN_KUHN, schema_version=3),
+            enrichment=EMPTY_ENRICH)
+    r = _run(rd, 1)
+    assert r.returncode == 0, r.stderr
+    report = _report(rd)
+    assert report["status"] == "degraded"
+    assert report["domains"]["1"]["cleaning_ledger"] == "malformed"
+
+
+def test_v3_cleaning_ledger_with_a_non_string_hash_is_malformed(tmp_path):
+    rd = tmp_path / "review"
+    for i, bad in enumerate((None, 0, True, [], {}, _sha(KUHN).upper(), "abc")):
+        rd = tmp_path / f"review-{i}"
+        _domain(rd, 1, KUHN, cleaning=dict(CLEAN_KUHN, schema_version=3,
+                                           bib_sha256=bad),
+                enrichment=EMPTY_ENRICH)
+        r = _run(rd, 1)
+        assert r.returncode == 0, r.stderr
+        report = _report(rd)
+        assert report["domains"]["1"]["cleaning_ledger"] == "malformed", bad
+
+
+def test_v3_hash_is_computed_over_decoded_text_not_bytes(tmp_path):
+    """A ledger written on Windows hashes text the cleaner wrote as CRLF.
+    The barrier must decode the same way or the binding would be
+    platform-local."""
+    rd = tmp_path / "review"
+    _domain(rd, 1, None, cleaning=_v3(KUHN), enrichment=EMPTY_ENRICH)
+    (rd / "literature-domain-1.bib").write_bytes(
+        KUHN.replace("\n", "\r\n").encode("utf-8"))
+    r = _run(rd, 1)
+    assert r.returncode == 0, r.stderr
+    report = _report(rd)
+    assert report["domains"]["1"]["cleaning_ledger"] == "present"
+
+
+def test_v2_ledger_is_unaffected_by_a_bib_sha256_it_happens_to_carry(tmp_path):
+    """Below 3 there is no hash contract, so the field is not read. Pinned so
+    nobody half-enforces it on a version that never promised it."""
+    rd = tmp_path / "review"
+    _domain(rd, 1, KUHN,
+            cleaning=dict(CLEAN_KUHN, schema_version=2, bib_sha256=_sha("no")),
+            enrichment=EMPTY_ENRICH)
+    r = _run(rd, 1)
+    assert r.returncode == 0, r.stderr
+    report = _report(rd)
+    assert report["domains"]["1"]["cleaning_ledger"] == "present"
+    assert report["status"] == "complete"
+
+
+def test_v3_enrichment_ledger_is_held_to_the_same_binding(tmp_path):
+    """The rule is version-driven, not kind-driven: whatever declares 3
+    carries the hash. (The enrichment ledger stays at 1 because it is written
+    BEFORE the cleaner rewrites the bib -- see write_cleaning_ledger.)"""
+    rd = tmp_path / "review"
+    _domain(rd, 1, KUHN, cleaning=CLEAN_KUHN,
+            enrichment=dict(EMPTY_ENRICH, schema_version=3))
+    r = _run(rd, 1)
+    assert r.returncode == 0, r.stderr
+    report = _report(rd)
+    assert report["status"] == "degraded"
+    assert report["domains"]["1"]["enrichment_ledger"] == "malformed"
 
 
 def test_cleaning_ledger_schema_version_string_is_malformed(tmp_path):
