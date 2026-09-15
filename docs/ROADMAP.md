@@ -62,6 +62,17 @@ that a recurrence is recognized where it would be read.
     keywords - `XCONST`, `POLCON`, `DPI`, `CHECKS`, `CCP`, `IRT`, `UDS`,
     `QCA` all appear and all must survive. A `[A-Z][A-Z0-9-]{2,}` rule would
     delete content. Any new marker must be added to the named list.
+  - THE `@comment` BLOCKS - DECIDED (Johannes, 2026-09-15): they leave the
+    bibliography entirely. The seven blocks are 124 KB of per-domain research
+    notes - prose documents that are not BibTeX entries at all - and they go
+    to a THIRD deliverable, `research-notes-<project>.md`, alongside the
+    review. Neither .bib keeps them. Telemetry is omitted from the new file.
+    So the delivery is three files, not two: clean `.bib`, `-annotated.bib`,
+    and `research-notes-<project>.md`.
+    Note `dedupe_bib` currently CARRIES these blocks forward by design
+    (`bib_comments.is_verbatim_block`), so this changes what Phase 6 does
+    with them, not just what sanitize strips - and the carry logic must keep
+    working for any OTHER `@comment` a bib holds.
   - SKILL.md's Phase 6 safety-net glob (`literature-*.bib`) already keeps a
     `-annotated` sibling at the top level. That becomes intentional under
     this spec; do not "fix" it back.
