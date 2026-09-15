@@ -52,6 +52,16 @@ that a recurrence is recognized where it would be read.
     offered and declined, so a normalizer must not "tidy" them. 12 of the 14
     name an engine tool or API in their prose, and that is accepted - the
     information is the point.
+  - THE `keywords` FIELD - DECIDED (Johannes, 2026-09-15): keep the topical
+    keywords (261 distinct, 508 occurrences); strip the `FLn.n` tags (145),
+    the `High`/`Medium`/`Low` ratings (131 - and 95 of them are `High`, so
+    the field barely discriminates) and the workflow markers `AI-RELEVANT`
+    (7), `ROUTING-DISPUTE` (1) and `NO-DOI` (2).
+    STRIP THE MARKERS BY NAME, NEVER BY SHAPE. The markers are ALL-CAPS, but
+    so are real dataset and method names the measurement literature uses as
+    keywords - `XCONST`, `POLCON`, `DPI`, `CHECKS`, `CCP`, `IRT`, `UDS`,
+    `QCA` all appear and all must survive. A `[A-Z][A-Z0-9-]{2,}` rule would
+    delete content. Any new marker must be added to the named list.
   - SKILL.md's Phase 6 safety-net glob (`literature-*.bib`) already keeps a
     `-annotated` sibling at the top level. That becomes intentional under
     this spec; do not "fix" it back.
