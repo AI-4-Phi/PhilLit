@@ -37,6 +37,19 @@ that a recurrence is recognized where it would be read.
     Phase 6 sweep, and `sanitize_bib.py`'s recorded keep-decision. All of it
     is vendored downstream, so it is a design item, not a one-liner.
 
+- **The barrier blesses its own output wholesale, not just its stamps** -
+  after writing a stamped bib the barrier re-points the cleaning ledger's
+  `bib_sha256` to that text, on the ground that stamping cannot change which
+  entries matched an API record. Nothing ENFORCES that. A bug in the stamping
+  renderer that altered a key, title, year or author - or dropped an entry -
+  would be bound as valid on the spot, and the next run would trust it. The
+  guard is an invariant: the output must equal the input under a canonical
+  projection that strips the barrier-owned fields (`keywords`
+  `EVIDENCE-*`/`year_suffix`/`web_span`/`venue_status`/`same_work_group`/
+  `urldate`/`archiveurl`). Raised in the 0.5.26 round-2 review; no incident.
+  Note the same projection, used as the BINDING itself, would remove the need
+  to re-point at all - see `docs/ideas/` before building the narrow version.
+
 - **`EVIDENCE-ABSTRACT` attests sameness, not usability** - the barrier's
   per-source re-fetch hash-matches the bib's abstract against the live
   source, which proves the text was not invented. It cannot see that the
@@ -63,6 +76,28 @@ the service's item, run from that repo.
 Not a queue — a register, so these are not re-found. Each was a live candidate
 that did not survive reading the file it concerns.
 
+- A lock protocol between the cleaner and the barrier (round-2 review,
+  2026-09-15). Both write the same workspace, and a concurrent writer could
+  in principle swap a cleaning ledger between the barrier accepting it and
+  re-pointing it. Not filed: the workspace is single-writer by design - the
+  cleaner runs from one SubagentStop hook, the barrier once at the Phase 3-4
+  boundary - and a real fix needs a lock both participate in, which is a
+  larger change than the exposure warrants. The cheap half is already done:
+  the re-point binds the text the barrier AUTHORED, so the bib cannot be
+  swapped under it. Revisit if the service ever runs domains concurrently.
+- Normalizing BOM or NFC/NFD before hashing (round-2 review, 2026-09-15).
+  Both reviewers agreed it is noise here and one argued against it
+  outright: every writer in the pipeline is Python, `utf-8` neither emits a
+  BOM nor normalizes, and an external tool that changes either HAS edited
+  the file - invalidating the ledger is the conservative, correct answer.
+  Folding them would deliberately make some real edits invisible.
+- Forcing pybtex's writer encoding (round-1 and round-2 reviews). Two
+  reviewers predicted a Windows outage: a cp1252 write of a diacritic bib
+  would make the read-back raise, null the hash and refuse every ledger. It
+  cannot happen - `write_bibtex` renders through an in-memory `StringIO` and
+  does its own `os.fdopen(fd, "w", encoding="utf-8")`, so pybtex never
+  reaches the filesystem. Verified by mutation: switching that one encoding
+  to cp1252 does fail the round-trip test, which is why the test exists.
 - `write_bibtex` hardening beyond the descriptor write (the service's 0.5.19
   pin review, 2026-09-10): logging a failed cleanup unlink, treating the
   `exists()`/`stat()` mode copy as a race, and `os.fchmod`. The cleaner runs
