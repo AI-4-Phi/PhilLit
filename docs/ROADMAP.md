@@ -42,6 +42,16 @@ that a recurrence is recognized where it would be read.
     Weighed and rejected: leaving the tags (a reader meets an undefined token
     130 times), an LLM rewrite of the 130 sentences (130 unverifiable edits
     to evaluative claims), and dropping whole sentences (guts RELEVANCE).
+  - WHICH SECTIONS SURVIVE - DECIDED (Johannes, 2026-09-15): ALL FOUR.
+    `CORE ARGUMENT` (131, 68 KB), `RELEVANCE` (131, 60 KB), `POSITION` (131,
+    14.8 KB - a one-line classification of where the work sits in the debate)
+    and the provenance blocks (14, 2.8 KB - why a record is missing a journal
+    or took its year from a secondary source). The provenance blocks keep
+    their three INCONSISTENT labels (`METADATA NOTE`, `NOTE ON METADATA`,
+    `BIBLIOGRAPHIC NOTE`): unifying them under one reader-facing heading was
+    offered and declined, so a normalizer must not "tidy" them. 12 of the 14
+    name an engine tool or API in their prose, and that is accepted - the
+    information is the point.
   - SKILL.md's Phase 6 safety-net glob (`literature-*.bib`) already keeps a
     `-annotated` sibling at the top level. That becomes intentional under
     this spec; do not "fix" it back.
