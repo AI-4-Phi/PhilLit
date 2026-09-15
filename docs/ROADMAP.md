@@ -18,6 +18,51 @@ that a recurrence is recognized where it would be read.
   decoded text, not the bytes, since the cleaner writes in text mode and
   Windows gets CRLF. Raised in the 0.5.18 final-design review; no incident yet.
 
+- **Split bibliography delivery into a clean primary and an annotated
+  sibling** - the delivered `literature-<project>.bib` ships the researchers'
+  `note` fields, their `FLn.n` fault-line tags and `High`/`Medium`/`Low`
+  triage in `keywords`, `abstract_source`, and the per-domain `@comment`
+  search logs. `sanitize_bib.py` strips only `EVIDENCE-*` tokens from
+  `keywords`, by its own docstring, so all of that reaches a file the user
+  imports into Zotero. Owner decision (Johannes, 2026-09-15): the reading
+  notes are worth delivering, the engine's tags are not. Ship two files - a
+  clean import-ready `literature-<project>.bib` and a
+  `literature-<project>-annotated.bib` carrying the notes.
+  Constraints any implementation must respect:
+  - Researchers emit BOTH `note = {...}` and `note = "..."`. In the
+    2026-09-10 run the split was 115 braced / 16 quoted, and a brace-only
+    strip left those 16 behind. Locate and remove fields with
+    `bib_fields.iter_fields` / `remove_field`, never a new regex.
+  - `FLn.n` tags appear in note PROSE, not only in `keywords`: 111 of 131
+    notes carried one (145 occurrences - 119 in RELEVANCE, 20 in CORE
+    ARGUMENT, 6 in POSITION). Removing them from the annotated file's prose
+    is a rewrite, not a field filter. Which sections survive, and whether
+    prose tags are stripped, are open sub-questions.
+  - SKILL.md's Phase 6 safety-net glob (`literature-*.bib`) already keeps a
+    `-annotated` sibling at the top level. That becomes intentional under
+    this spec; do not "fix" it back.
+  - The spec touches SKILL.md's deliverable list and tree diagram, the
+    Phase 6 sweep, and `sanitize_bib.py`'s recorded keep-decision. All of it
+    is vendored downstream, so it is a design item, not a one-liner.
+
+- **`EVIDENCE-ABSTRACT` attests sameness, not usability** - the barrier's
+  per-source re-fetch hash-matches the bib's abstract against the live
+  source, which proves the text was not invented. It cannot see that the
+  text is useless. The 2026-09-10 run granted the tier to five unusable
+  abstracts - one truncated, one a bare JEL keyword string, two
+  bibliographic stubs, one garbled OCR - while `abstract_corroboration`
+  reported 127/127 with zero mismatches. A citable tier resting on an
+  unreadable abstract is an accuracy defect, which is objective #1.
+  Reproduce from the 2026-09-10 artifacts before designing anything; a
+  usability screen is a second, separate test from the corroboration hash.
+
+- **The synthesis-planner's role spec overrides the orchestrator on
+  citability** - `agents/synthesis-planner.md` declares the `EVIDENCE-*`
+  keyword "the single authority on citability"; the orchestrator's Phase 4
+  instructions are not documented as yielding to it, and the precedence is
+  written down nowhere. Reported from the 2026-09-10 run. Decide which
+  document wins and say so in the one that loses.
+
 The deploy of 0.5.25 (phillit-service engine at `da48b2c`, re-vendor #23) is
 the service's item, run from that repo.
 
