@@ -327,3 +327,105 @@ class TestCleaningLedgerMustDeclareTheBinding:
             self._ledger(lb.BINDING_SCHEMA_VERSION,
                          bib_sha256=lb.bib_text_sha256(KUHN)))
         assert rep["domains"]["1"]["enrichment_ledger"] == "present"
+
+
+class TestNonAsciiRoundTrip:
+    """A review round asked whether pybtex's Writer could emit non-UTF-8
+    bytes on a locale-dependent platform, which would make `read_text` raise,
+    the cleaner write a null hash, and EVERY ledger refuse -- a
+    platform-specific outage of the accuracy gate.
+
+    It cannot: `write_bibtex` renders through an in-memory StringIO and does
+    its own write with `os.fdopen(fd, "w", encoding="utf-8")`, so pybtex
+    never reaches the filesystem. Pinned here against a bib whose author,
+    title and publisher all carry diacritics, because the claim is about the
+    write->read-back path and no unit test of the hash function touches it.
+    """
+
+    ACCENTED = """@book{mendonca2020razão,
+  author = {Mendon{\\c{c}}a, Jos\\'{e} and Krak\\'{o}w, Anna},
+  title = {Raz\u00e3o, Ética e Ação: Estudos sobre Weber},
+  publisher = {Editora da Universidade de São Paulo},
+  year = {2020},
+  keywords = {ps, High}
+}
+"""
+
+    # A CrossRef record contradicting the entry's `number`, which is what
+    # makes the cleaner actually REWRITE the file. Without a strip there is
+    # nothing to write, write_bibtex is never called, and a test of the
+    # write path tests nothing -- a mutation to the writer's encoding
+    # survived this class until the strip was added.
+    CONTRADICTING = {
+        "status": "success", "source": "crossref",
+        "results": [{"verified": True, "doi": "10.1234/abc.2020",
+                     "title": "Raz\u00e3o, Ética e Ação",
+                     "container_title": "Revista de Filosofia",
+                     "issue": "1", "year": 2020, "type": "journal-article"}],
+    }
+    STRIPPABLE = """@article{mendonca2020razao,
+  author = {Mendon{\\c{c}}a, Jos\\'{e}},
+  title = {Raz\u00e3o, Ética e Ação},
+  journal = {Revista de Filosofia},
+  year = {2020},
+  number = {7729},
+  doi = {10.1234/abc.2020}
+}
+"""
+
+    def test_the_hash_survives_a_REWRITE_of_a_diacritic_bib(self, tmp_path):
+        """The path the concern is actually about: the cleaner strips a
+        field, rewrites the file through pybtex's renderer, then hashes what
+        landed on disk."""
+        from metadata_cleaner import clean_bibtex
+        json_dir = tmp_path / "json"
+        json_dir.mkdir()
+        (json_dir / "verify_m.json").write_text(
+            json.dumps(self.CONTRADICTING), encoding="utf-8")
+        bib = tmp_path / "literature-domain-1.bib"
+        bib.write_text(self.STRIPPABLE, encoding="utf-8")
+        result = clean_bibtex(bib, [json_dir])
+        assert result["total_fields_removed"] == 1, (
+            "fixture no longer forces a rewrite, so this tests nothing")
+        led = json.loads((tmp_path / "intermediate_files" / "json"
+                          / "cleaning_ledger-literature-domain-1.json")
+                         .read_text(encoding="utf-8"))
+        assert led["bib_sha256"] is not None, (
+            "a null hash means the rewritten bib was not readable as UTF-8")
+        assert led["bib_sha256"] == lb.bib_file_sha256(bib)
+        assert "Mendon" in bib.read_text(encoding="utf-8")
+
+    def test_a_bib_full_of_diacritics_survives_clean_then_bind(self, tmp_path):
+        from metadata_cleaner import clean_bibtex
+        bib = tmp_path / "literature-domain-1.bib"
+        bib.write_text(self.ACCENTED, encoding="utf-8")
+        clean_bibtex(bib, [tmp_path / "nonexistent"])
+        led = json.loads((tmp_path / "intermediate_files" / "json"
+                          / "cleaning_ledger-literature-domain-1.json")
+                         .read_text(encoding="utf-8"))
+        assert led["bib_sha256"] is not None, (
+            "a null hash here means the bib could not be read back as UTF-8")
+        assert led["bib_sha256"] == lb.bib_file_sha256(bib)
+
+    def test_the_barrier_accepts_a_diacritic_bib_end_to_end(self, tmp_path):
+        """The round trip that matters: cleaner writes, barrier reads."""
+        from metadata_cleaner import clean_bibtex
+        rd = tmp_path / "review"
+        ij = rd / "intermediate_files" / "json"
+        ij.mkdir(parents=True)
+        (rd / "literature-domain-1.bib").write_text(
+            self.ACCENTED, encoding="utf-8")
+        (ij / "enrichment_ledger-literature-domain-1.json").write_text(
+            json.dumps({"schema_version": 1,
+                        "bib_file": "literature-domain-1.bib",
+                        "entries": {}}), encoding="utf-8")
+        (ij / "encyclopedia_entries-domain-1.json").write_text(
+            '{"sep_entries": [], "iep_entries": []}', encoding="utf-8")
+        clean_bibtex(rd / "literature-domain-1.bib", [rd / "nonexistent"])
+        r = subprocess.run(
+            [sys.executable, str(BARRIER), str(rd), "--domains", "1"],
+            capture_output=True, text=True, cwd=str(rd))
+        assert r.returncode == 0, r.stderr
+        rep = json.loads((ij / "evidence_report.json").read_text(
+            encoding="utf-8"))
+        assert rep["domains"]["1"]["cleaning_ledger"] == "present"
