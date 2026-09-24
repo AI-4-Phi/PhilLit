@@ -336,6 +336,36 @@ def test_activate_refuses_unknown(home, ws):
         wd.cmd_activate(ws, "nothing")
 
 
+@pytest.mark.parametrize("field,value", [("workspace", "/another/workspace"), ("name", "other")])
+def test_activate_local_refuses_unprovable_ownership(home, ruled, field, value):
+    wd.cmd_init(ruled, "topic")
+    wd.remove_pointer(ruled)
+    local = wd.local_workdir(ruled, "topic")
+    meta = wd.read_meta(local)
+    meta[field] = value
+    wd.write_meta(local, meta)
+    with pytest.raises(wd.Refusal, match="ownership cannot be proven"):
+        wd.cmd_activate(ruled, "topic")
+    assert wd.read_pointer(ruled) is None
+
+
+def test_activate_local_refuses_a_finished_review(home, ruled):
+    wd.cmd_init(ruled, "topic")
+    _finish(ruled, "topic")  # local metadata "published", pointer removed
+    with pytest.raises(wd.Refusal, match="not an abandoned review"):
+        wd.cmd_activate(ruled, "topic")
+    assert wd.read_pointer(ruled) is None
+
+
+def test_activate_local_under_the_inplace_pin_refuses(home, ruled, monkeypatch):
+    wd.cmd_init(ruled, "topic")
+    wd.remove_pointer(ruled)
+    monkeypatch.setenv("PHILLIT_WORKDIR", "inplace")
+    with pytest.raises(wd.Refusal, match="unset PHILLIT_WORKDIR"):
+        wd.cmd_activate(ruled, "topic")
+    assert wd.read_pointer(ruled) is None
+
+
 # --- demote ------------------------------------------------------------------
 def test_demote_fresh_review(home, ruled):
     wd.cmd_init(ruled, "topic")
