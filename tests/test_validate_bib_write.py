@@ -224,6 +224,19 @@ class TestSlugFileGate:
         assert out == {}
         assert code == 0
 
+    def test_domain_bib_in_the_local_work_folder_is_slug_checked(self, tmp_path):
+        # The local root keeps a literal `reviews` segment, so the gate fires
+        # on ~/.local/state/phillit/reviews/<key>/<name>/ unchanged.
+        review = (tmp_path / ".local" / "state" / "phillit" / "reviews"
+                  / "ws-0123456789abcdef" / "topic")
+        review.mkdir(parents=True)
+        bib = review / "literature-domain-1.bib"
+        out, code = run_hook(write_payload(str(bib), self.DEFAULT_CONTENT))
+        assert code == 0
+        hso = out["hookSpecificOutput"]
+        assert hso["permissionDecision"] == "deny"
+        assert "encyclopedia_entries-domain-1.json" in hso["permissionDecisionReason"]
+
     def test_named_domain_stem_maps_to_named_slug_file(self, tmp_path):
         review = tmp_path / "reviews" / "topic"
         review.mkdir(parents=True)

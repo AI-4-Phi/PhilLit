@@ -251,24 +251,30 @@ class TestGateFailurePolicy:
     """
 
     def test_validator_crash_blocks_not_allows(self, project):
-        # A .bib exists (content is irrelevant — the validator never runs), and
-        # uv is broken: the hook must block with a "crashed" reason, not allow.
+        # A .bib exists (content is irrelevant — the validator never runs).
+        # The stub phillit-run answers `resolve` (so the resolver succeeds)
+        # and crashes everything else, so the crash lands on the validator:
+        # the hook must block with a "crashed" reason, not allow.
         (project / "reviews" / "test-review" / "d1.bib").write_text(
             VALID_BIB, encoding="utf-8"
         )
-        broken = project / "brokenbin"
-        broken.mkdir()
-        fake_uv = broken / "uv"
-        fake_uv.write_text(
-            "#!/usr/bin/env bash\necho 'uv: simulated venv build failure' >&2\nexit 2\n",
+        root = project / "stub-plugin"
+        (root / "bin").mkdir(parents=True)
+        run = root / "bin" / "phillit-run"
+        run.write_text(
+            "#!/usr/bin/env bash\n"
+            "case \"$1\" in\n"
+            "  *workdir.py) printf '{\"workdir\": \"%s/reviews/test-review\"}\\n' \"$CLAUDE_PROJECT_DIR\" ;;\n"
+            "  *) echo 'uv: simulated venv build failure' >&2; exit 2 ;;\n"
+            "esac\n",
             encoding="utf-8",
         )
-        fake_uv.chmod(0o755)
+        run.chmod(0o755)
         env = {
             **os.environ,
             "CLAUDE_PROJECT_DIR": str(project),
-            "CLAUDE_PLUGIN_ROOT": str(REPO_ROOT),
-            "PHILLIT_UV": str(fake_uv),
+            "CLAUDE_PLUGIN_ROOT": str(root),
+            "PHILLIT_UV": UV,
         }
         proc = subprocess.run(
             [BASH, str(SCRIPT)],
@@ -514,6 +520,7 @@ class TestCleanerFailureIsNeverSilent:
         run.write_text(
             "#!/usr/bin/env bash\n"
             "case \"$1\" in\n"
+            "  *workdir.py) printf '{\"workdir\": \"%s/reviews/test-review\"}\\n' \"$CLAUDE_PROJECT_DIR\" ;;\n"
             "  *bib_validator.py) echo '{\"valid\": true, \"errors\": []}' ;;\n"
             f"  *metadata_cleaner.py) {cleaner_stdout}\n"
             f"                        exit {cleaner_rc} ;;\n"
@@ -608,3 +615,130 @@ class TestCleanerFailureIsNeverSilent:
         out, code, stderr = self._run(project, root)
         assert code == 0
         assert "metadata_cleaner.py failed" in stderr
+
+
+def _home_sharing_uv(tmp_path):
+    """A fresh HOME for the local work folder whose plugin venvs, uv cache and
+    uv-managed Pythons are the REAL ones (symlinked). bin/phillit-run keys its
+    venv off $HOME and uv finds its cache and interpreters there, so a bare
+    temp HOME would rebuild the environment cold (network) on every test."""
+    real = Path.home()
+    home = tmp_path / "home"
+    (home / ".local").mkdir(parents=True)
+    for rel in (".venvs", ".cache", ".local/share"):
+        if (real / rel).exists():
+            (home / rel).symlink_to(real / rel, target_is_directory=True)
+    return home
+
+
+def _local_review(tmp_path, monkeypatch_env):
+    """A workspace with a LOCAL review, built by the real workdir.py."""
+    home = _home_sharing_uv(tmp_path)
+    proj = tmp_path / "proj"
+    (proj / ".phillit").mkdir(parents=True)
+    (proj / ".claude").mkdir()
+    (proj / ".claude" / "settings.json").write_text(
+        json.dumps({"permissions": {"allow": ["Edit(~/.local/state/phillit/reviews/**)"]}}),
+        encoding="utf-8")
+    env = {**os.environ, "HOME": str(home), "USERPROFILE": str(home),
+           "CLAUDE_CONFIG_DIR": str(home / ".claude")}
+    env.pop("PHILLIT_WORKDIR", None)
+    r = subprocess.run([sys.executable, str(REPO_ROOT / "skills" / "literature-review" / "scripts" / "workdir.py"),
+                        "init", "topic"], cwd=proj, capture_output=True, text=True, env=env)
+    assert r.returncode == 0, r.stderr
+    monkeypatch_env.update({"HOME": str(home), "USERPROFILE": str(home),
+                            "CLAUDE_CONFIG_DIR": str(home / ".claude")})
+    return proj, Path(json.loads(r.stdout)["workdir"])
+
+
+def _run(payload, proj, extra_env, cwd=None):
+    env = {**os.environ, "CLAUDE_PROJECT_DIR": str(proj), "CLAUDE_PLUGIN_ROOT": str(REPO_ROOT),
+           "PHILLIT_UV": UV, **extra_env}
+    env.pop("PHILLIT_WORKDIR", None)
+    proc = subprocess.run([BASH, str(SCRIPT)], input=json.dumps(payload), capture_output=True,
+                          text=True, encoding="utf-8", env=env, cwd=cwd or proj)
+    return json.loads(proc.stdout.strip().splitlines()[-1]), proc.returncode, proc.stderr
+
+
+def test_local_review_bibs_are_validated(tmp_path):
+    extra = {}
+    proj, workdir = _local_review(tmp_path, extra)
+    (workdir / "literature-domain-1.bib").write_text(INVALID_BIB, encoding="utf-8")
+    out, code, _ = _run(RESEARCHER, proj, extra)
+    assert code == 0
+    assert out.get("decision") == "block" and "journal" in out["reason"]
+
+
+def test_resolver_error_warns_and_allows(tmp_path):
+    extra = {}
+    proj, workdir = _local_review(tmp_path, extra)
+    shutil.rmtree(workdir)  # the files are "elsewhere"
+    out, code, err = _run(RESEARCHER, proj, extra)
+    assert out == {"decision": "allow"} and "not on this machine" in err
+
+
+def test_resolver_crash_fails_closed(tmp_path):
+    extra = {}
+    proj, _ = _local_review(tmp_path, extra)
+    fake_uv = tmp_path / "fake-uv"
+    fake_uv.write_text("#!/bin/sh\necho boom >&2\nexit 3\n", encoding="utf-8")
+    fake_uv.chmod(0o755)
+    extra["PHILLIT_UV"] = str(fake_uv)
+    out, code, _ = _run(RESEARCHER, proj, extra)
+    assert code == 0
+    assert out.get("decision") == "block" and "could not resolve the review directory" in out["reason"]
+
+
+def test_resolver_crash_on_resumed_pass_is_a_system_message(tmp_path):
+    extra = {}
+    proj, _ = _local_review(tmp_path, extra)
+    fake_uv = tmp_path / "fake-uv"
+    fake_uv.write_text("#!/bin/sh\nexit 3\n", encoding="utf-8")
+    fake_uv.chmod(0o755)
+    extra["PHILLIT_UV"] = str(fake_uv)
+    out, _, _ = _run({**RESEARCHER, "stop_hook_active": True}, proj, extra)
+    assert "decision" not in out and "could not resolve" in out["systemMessage"]
+
+
+@pytest.mark.parametrize("resolver_stdout", [
+    "{}",
+    '{"workdir": 4}',
+    '{"workdir": ""}',
+    '{"workdir": "/x", "error": "y"}',
+    '[{"workdir": "/x"}]',
+    '{"workdir": "/x"}\n{"workdir": "/y"}',
+])
+def test_malformed_resolver_output_fails_closed(tmp_path, resolver_stdout):
+    proj = tmp_path / "proj"
+    (proj / ".phillit").mkdir(parents=True)
+    root = tmp_path / "stub-plugin"
+    (root / "bin").mkdir(parents=True)
+    out_file = tmp_path / "resolver-out.txt"
+    out_file.write_text(resolver_stdout + "\n", encoding="utf-8")
+    run = root / "bin" / "phillit-run"
+    run.write_text(
+        "#!/usr/bin/env bash\n"
+        "case \"$1\" in\n"
+        f"  *workdir.py) cat '{out_file}' ;;\n"
+        "  *) echo '{\"valid\": true, \"errors\": []}' ;;\n"
+        "esac\n",
+        encoding="utf-8",
+    )
+    run.chmod(0o755)
+    env = {**os.environ, "CLAUDE_PROJECT_DIR": str(proj), "CLAUDE_PLUGIN_ROOT": str(root),
+           "PHILLIT_UV": UV}
+    proc = subprocess.run([BASH, str(SCRIPT)], input=json.dumps(RESEARCHER), capture_output=True,
+                          text=True, encoding="utf-8", env=env)
+    out = json.loads(proc.stdout)
+    assert out.get("decision") == "block" and "could not resolve" in out["reason"]
+
+
+def test_resolver_reads_the_workspace_env(tmp_path):
+    # .env sets PHILLIT_WORKDIR=inplace while the review is local: resolve must
+    # see that .env (it runs from the workspace) and report the pin conflict.
+    extra = {}
+    proj, workdir = _local_review(tmp_path, extra)
+    (workdir / "literature-domain-1.bib").write_text(INVALID_BIB, encoding="utf-8")
+    (proj / ".env").write_text("PHILLIT_WORKDIR=inplace\n", encoding="utf-8")
+    out, _, err = _run(RESEARCHER, proj, extra, cwd=tmp_path)  # the hook's cwd is NOT the workspace
+    assert out == {"decision": "allow"} and "unset PHILLIT_WORKDIR" in err

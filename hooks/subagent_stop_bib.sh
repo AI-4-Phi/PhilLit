@@ -2,8 +2,8 @@
 # BibTeX validation and cleaning hook for SubagentStop.
 # Fires for ALL SubagentStop events (hooks.json registers it with no matcher)
 # and self-scopes: it no-ops unless the cwd is a PhilLit workspace (.phillit
-# marker), the agent_type contains domain-literature-researcher, and an
-# .active-review pointer exists. When the researcher exits:
+# marker), the agent_type contains domain-literature-researcher, and
+# workdir.py resolves an active review. When the researcher exits:
 #   1. Validates BibTeX syntax — blocks on errors (agent must fix them)
 #   2. Cleans hallucinated metadata fields — informational, does not block
 #
@@ -59,22 +59,47 @@ if [[ "$AGENT_TYPE" != *"domain-literature-researcher"* ]]; then
     allow
 fi
 
-# Read .active-review pointer to find review directory
-POINTER="$CLAUDE_PROJECT_DIR/reviews/.active-review"
-if [[ ! -f "$POINTER" ]]; then
-    echo "WARNING: No .active-review pointer found — skipping BibTeX validation" >&2
+# Resolve the review's working directory through workdir.py, the one owner of
+# the pointer: a local review works OUTSIDE the workspace
+# (~/.local/state/phillit/reviews/...), so the pointer is no longer a path to
+# paste. It runs FROM the workspace (a subshell cd), so its .env - which may
+# set PHILLIT_WORKDIR - is the one that loads. Capture stdout only (uv writes
+# build progress to stderr). The output must be exactly one JSON object,
+# either {"workdir": <non-empty string>} or {"error": <string>}. Anything
+# else - a nonzero exit, empty or non-JSON output, another shape - is a
+# resolver CRASH and fails CLOSED like a validator crash: this is an
+# accuracy gate. A resolver {error} (no pointer, files on another machine)
+# is today's warn-and-allow.
+RESOLVE_WS="${CLAUDE_PROJECT_DIR:-$PWD}"
+RESOLVE_STDERR=$(mktemp)
+RESOLVE_STATUS=0
+RESOLVED=$(cd "$RESOLVE_WS" && bash "$CLAUDE_PLUGIN_ROOT/bin/phillit-run" \
+    skills/literature-review/scripts/workdir.py --workspace "$RESOLVE_WS" resolve \
+    2>"$RESOLVE_STDERR") || RESOLVE_STATUS=$?
+RESOLVE_SHAPE='length == 1 and (.[0] | type == "object" and (
+    (keys == ["workdir"] and (.workdir | type == "string" and length > 0))
+    or (keys == ["error"] and (.error | type == "string"))))'
+if [[ $RESOLVE_STATUS -ne 0 ]] || [[ -z "$RESOLVED" ]] || \
+   ! echo "$RESOLVED" | jq -se "$RESOLVE_SHAPE" >/dev/null 2>&1; then
+    RESOLVE_ERR_TAIL=$(tail -c 400 "$RESOLVE_STDERR" 2>/dev/null || true)
+    rm -f "$RESOLVE_STDERR"
+    RESOLVE_OUT_TAIL=$(echo "$RESOLVED" | tail -c 400)
+    RESOLVE_MSG="workdir.py resolve crashed (exit $RESOLVE_STATUS): could not resolve the review directory, so BibTeX validation did not run. ${RESOLVE_OUT_TAIL} ${RESOLVE_ERR_TAIL}"
+    if [[ "$STOP_HOOK_ACTIVE" == "true" ]]; then
+        jq -cn --arg msg "PhilLit: $RESOLVE_MSG" '{"systemMessage": $msg}'
+        exit 0
+    fi
+    jq -cn --arg reason "$RESOLVE_MSG" '{"decision": "block", "reason": $reason}'
+    exit 0
+fi
+rm -f "$RESOLVE_STDERR"
+
+REVIEW_DIR=$(echo "$RESOLVED" | jq -r '.workdir // empty')
+if [[ -z "$REVIEW_DIR" ]]; then
+    RESOLVE_ERROR=$(echo "$RESOLVED" | jq -r '.error // "no working directory"')
+    echo "WARNING: no active review directory ($RESOLVE_ERROR) - skipping BibTeX validation" >&2
     allow
 fi
-
-POINTER_CONTENT=$(tr -d '\r\n' < "$POINTER")
-
-# Validate pointer content (must start with reviews/)
-if [[ ! "$POINTER_CONTENT" =~ ^reviews/ ]]; then
-    echo "WARNING: Invalid .active-review pointer content: $POINTER_CONTENT" >&2
-    allow
-fi
-
-REVIEW_DIR="$CLAUDE_PROJECT_DIR/$POINTER_CONTENT"
 
 # Validate directory exists
 if [[ ! -d "$REVIEW_DIR" ]]; then

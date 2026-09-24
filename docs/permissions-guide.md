@@ -112,7 +112,7 @@ Beyond permissions, `hooks/hooks.json` configures hooks that run automatically (
 | PreToolUse (`Edit`) | Before any Edit tool call | `block_ledger_write.py` (same wiring) | Same guard for the Edit-tool spelling; blocking needs PreToolUse, so this cannot live in the PostToolUse `Edit` row below |
 | PreToolUse (`NotebookEdit`) | Before any NotebookEdit tool call | `block_ledger_write.py` (same wiring) | Same guard for the third file-editing tool — the deny rules are written `Edit(...)`, which Claude Code applies to the whole Write/Edit/NotebookEdit family, but a hook matcher names one tool and so needs its own row |
 | PostToolUse (`Edit`) | After any Edit tool call | `validate_bib_write.py` (via `fast_gate.sh`, needle `.bib`, then `phillit-run`) | Validate `.bib` files after edits (block with reasons) |
-| SubagentStop (no matcher) | After any subagent finishes | `subagent_stop_bib.sh` | Validate BibTeX, clean metadata. Self-scopes via `.phillit` + `agent_type`, and additionally requires `jq` (absent → emits a `systemMessage` and SKIPS validation for the run), and a valid `reviews/.active-review` pointer to an existing directory. A resumed pass (`stop_hook_active` true) still validates and cleans, but never blocks again |
+| SubagentStop (no matcher) | After any subagent finishes | `subagent_stop_bib.sh` | Validate BibTeX, clean metadata. Self-scopes via `.phillit` + `agent_type`, and additionally requires `jq` (absent → emits a `systemMessage` and SKIPS validation for the run), and an active review that `workdir.py resolve` locates (a resolver crash blocks; a resolver error warns and skips). A resumed pass (`stop_hook_active` true) still validates and cleans, but never blocks again |
 
 ## Agent-Specific Configuration
 
