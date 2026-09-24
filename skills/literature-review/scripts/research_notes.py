@@ -1,15 +1,20 @@
 """Per-domain research notes: the `@comment` blocks researchers write at the
 head of each domain bib, turned into the `research-notes-<project>.md`
-deliverable (docs/ROADMAP.md, delivery item).
+deliverable.
 
-A LABEL is an ALL-CAPS `LABEL:` at the start of a line, alone or followed by
-text, in the header block or the body. An IN label opens a kept section, an
-OUT label a dropped one (to the next label). Any other label - or text under
-no label, such as a colon-less heading after a `====` rule - raises
-UnknownLabel naming every offender: the list is not closed, and a silent
-default would either leak telemetry or drop analysis. Grow IN_LABELS or
-OUT_LABELS to admit a new label; never guess. The header block admits only
-`DOMAIN` and OUT labels: an IN label there is unknown, not a section.
+DECIDED, do not reopen: a LABEL is any ALL-CAPS `LABEL:` at the start of a
+line - alone on its line or followed by text, in the header block or the
+body (an alone-on-its-line-only reading was considered and rejected). An IN
+label opens a kept section, an OUT label a dropped one (to the next label).
+Any other label - or text under no label, such as a colon-less heading after
+a `====` rule - raises UnknownLabel naming every offender: the list is not
+closed, and a silent default would either leak telemetry or drop analysis.
+Grow IN_LABELS or OUT_LABELS to admit a new label; never guess. The header
+block admits only `DOMAIN` and OUT labels: an IN label there is unknown, not
+a section. This is a LABEL list, never a sentence-level edit: run-mechanics
+prose inside NOTABLE_GAPS and writer-directed sentences inside
+RELEVANCE_TO_PROJECT stay untouched, and a provenance label appearing inside
+a kept note's own text is never normalised.
 """
 from __future__ import annotations
 
@@ -33,10 +38,13 @@ IN_LABELS = ("DOMAIN_OVERVIEW", "KEY_POSITIONS", "NOTABLE_GAPS",
 OUT_LABELS = frozenset({
     "DOMAIN", "SEARCH_DATE", "PAPERS_FOUND", "SEARCH_SOURCES",
     "RETRIEVAL_FAILURES", "FAULT_LINES_POPULATED", "ABSTRACTS", "ROUTING NOTES"})
-_HEADINGS = {
-    "DOMAIN_OVERVIEW": "Domain overview", "KEY_POSITIONS": "Key positions",
-    "NOTABLE_GAPS": "Notable gaps", "SYNTHESIS_GUIDANCE": "Synthesis guidance",
-    "RELEVANCE_TO_PROJECT": "Relevance to project"}
+
+
+def _heading(label: str) -> str:
+    """`KEY_POSITIONS` -> `Key positions`. Derived, not looked up, so a
+    label added to IN_LABELS renders without a matching table entry."""
+    return label.replace("_", " ").capitalize()
+
 
 _RULE_RE = re.compile(r"^\s*={10,}\s*$")
 _LABEL_RE = re.compile(r"^([A-Z][A-Z0-9_ ()/-]*[A-Z0-9)]):(.*)$")
@@ -46,9 +54,20 @@ _NUMBER_RE = re.compile(r"^(\d+)")
 
 
 class UnknownLabel(ValueError):
-    def __init__(self, labels):
+    """`labels` are ALL-CAPS `LABEL:` lines this grammar does not recognise;
+    `texts` are stray non-label text (a colon-less heading, text before any
+    label, text before the block's own `====` header) - never conflated,
+    since one names a token to add to a list and the other names prose."""
+
+    def __init__(self, labels=(), texts=()):
         self.labels = sorted(set(labels))
-        super().__init__("unrecognised research-notes label(s): " + ", ".join(self.labels))
+        self.texts = sorted(set(texts))
+        parts = []
+        if self.labels:
+            parts.append("unrecognised label(s): " + ", ".join(self.labels))
+        if self.texts:
+            parts.append("unlabelled text: " + ", ".join(self.texts))
+        super().__init__("; ".join(parts))
 
 
 @dataclass
@@ -85,8 +104,12 @@ def parse_block(chunk: str) -> DomainNotes:
     lines = _body(chunk).split("\n")
     rules = [i for i, line in enumerate(lines) if _RULE_RE.match(line)]
     if len(rules) < 2:
-        raise UnknownLabel(["<research block without its ==== header>"])
-    unknown: list[str] = []
+        raise UnknownLabel(texts=["<research block without its ==== header>"])
+    unknown_labels: list[str] = []
+    unknown_texts: list[str] = []
+    for line in lines[:rules[0]]:
+        if line.strip():
+            unknown_texts.append(line.strip()[:60])   # text before the block's own header
     title = ""
     for line in lines[rules[0] + 1: rules[1]]:
         m = _LABEL_RE.match(line)
@@ -95,7 +118,7 @@ def parse_block(chunk: str) -> DomainNotes:
         if m.group(1) == "DOMAIN":
             title = m.group(2).strip()
         elif m.group(1) not in OUT_LABELS:
-            unknown.append(m.group(1))
+            unknown_labels.append(m.group(1))
     num = _NUMBER_RE.match(title)
     notes = DomainNotes(title=title, number=int(num.group(1)) if num else None)
 
@@ -120,18 +143,18 @@ def parse_block(chunk: str) -> DomainNotes:
                 current = label
             else:
                 if label not in OUT_LABELS:
-                    unknown.append(label)
+                    unknown_labels.append(label)
                 current = ""
             continue
         if current is None:
             if line.strip():
-                unknown.append(line.strip()[:60])   # a heading this grammar does not know
+                unknown_texts.append(line.strip()[:60])   # a heading this grammar does not know
                 current = ""
             continue
         buf.append(line)
     flush()
-    if unknown:
-        raise UnknownLabel(unknown)
+    if unknown_labels or unknown_texts:
+        raise UnknownLabel(unknown_labels, unknown_texts)
     return notes
 
 
@@ -156,5 +179,5 @@ def render(domains: list[DomainNotes], defs: dict[str, str], project: str) -> st
     for d in ordered:
         out += [f"## {fault_lines.substitute(d.title or 'Domain', defs)}", ""]
         for label, text in d.sections:
-            out += [f"### {_HEADINGS[label]}", "", fault_lines.substitute(text, defs), ""]
+            out += [f"### {_heading(label)}", "", fault_lines.substitute(text, defs), ""]
     return "\n".join(out).rstrip() + "\n"

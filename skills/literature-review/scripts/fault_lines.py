@@ -3,10 +3,13 @@ substitution into prose a reader outside the pipeline will see.
 
 The planner emits no fault lines of its own; they appear only when the
 user's prompt asks for them, defined in `lit-review-plan.md` as
-`- **FLn.n — Title** ...` bullets. Substitution is pure string replacement,
-so no researcher claim is paraphrased, and it FAILS on a tag the plan does
-not define: the plan is per-review, and an undefined tag means the two have
-drifted (docs/ROADMAP.md, delivery item).
+`- **FLn.n — Title** ...` bullets. DECIDED, do not reopen: substitution is
+pure string replacement, no model involved, so no researcher claim is
+paraphrased; it applies to the annotated bib's notes AND the notes file
+alike; and it FAILS loudly on a tag the plan does not define, since the plan
+is per-review and an undefined tag means the two have drifted. Weighed and
+rejected: leaving tags in place, a glossary alongside bare tags, an LLM
+rewrite, and deleting the tag or its sentence.
 """
 from __future__ import annotations
 
@@ -43,6 +46,9 @@ def phrase(title: str) -> str:
     title become curly single quotes, so the phrase is safe inside a
     quote-delimited BibTeX value."""
     first = title.split(" ", 1)[0]
+    # Known limitation: a proper noun as the first word would be lowercased
+    # too, since this rule cannot tell a sentence-initial capital from a
+    # proper noun's. No current plan title starts with one.
     if len(first) > 1 and first[0].isupper() and first[1:] == first[1:].lower():
         title = title[0].lower() + title[1:]
     title = _LONE_QUOTE_RE.sub("’", _PAIR_QUOTES_RE.sub("‘\\1’", title))

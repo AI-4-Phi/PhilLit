@@ -80,6 +80,7 @@ def test_an_inline_unknown_label_fails_loudly():
     with pytest.raises(rn.UnknownLabel) as exc:
         rn.parse_block(block(body=body))
     assert exc.value.labels == ["AGAINST"]
+    assert exc.value.texts == []
 
 
 def test_an_unknown_label_in_the_header_fails_loudly():
@@ -107,13 +108,28 @@ FL6.1 -- TEXT OR BEHAVIOUR? Proposition.
 {RULE}"""
     with pytest.raises(rn.UnknownLabel) as exc:
         rn.parse_block(block(body=body))
-    assert exc.value.labels == ["FAULT LINES (proposition, positions)"]
+    assert exc.value.texts == ["FAULT LINES (proposition, positions)"]
+    assert exc.value.labels == []
 
 
 def test_text_before_any_label_fails_loudly():
     with pytest.raises(rn.UnknownLabel) as exc:
         rn.parse_block(block(body="\nSome unlabelled paragraph.\n\nDOMAIN_OVERVIEW:\nKept.\n"))
-    assert exc.value.labels == ["Some unlabelled paragraph."]
+    assert exc.value.texts == ["Some unlabelled paragraph."]
+    assert exc.value.labels == []
+
+
+def test_text_before_the_first_rule_is_reported_not_discarded():
+    chunk = block().replace("@comment{\n", "@comment{\nStray preamble.\n", 1)
+    with pytest.raises(rn.UnknownLabel) as exc:
+        rn.parse_block(chunk)
+    assert exc.value.texts == ["Stray preamble."]
+    assert exc.value.labels == []
+
+
+def test_blank_lines_before_the_first_rule_are_fine():
+    chunk = block().replace("@comment{\n", "@comment{\n\n\n", 1)
+    assert rn.parse_block(chunk).title == "1 -- Conceptual Anatomy"
 
 
 def test_has_in_label_spots_overflow_analysis():
@@ -152,3 +168,27 @@ def test_render_names_every_undefined_tag():
 
 def test_render_with_no_domains_says_so():
     assert "No per-domain research notes were recorded." in rn.render([], {}, "p")
+
+
+def test_every_in_label_renders_a_heading():
+    expected = {
+        "DOMAIN_OVERVIEW": "Domain overview",
+        "KEY_POSITIONS": "Key positions",
+        "NOTABLE_GAPS": "Notable gaps",
+        "SYNTHESIS_GUIDANCE": "Synthesis guidance",
+        "RELEVANCE_TO_PROJECT": "Relevance to project",
+    }
+    assert set(rn.IN_LABELS) == set(expected)
+    for label in rn.IN_LABELS:
+        assert rn._heading(label) == expected[label]
+
+
+def test_render_does_not_raise_when_in_labels_is_extended(monkeypatch):
+    monkeypatch.setattr(rn, "IN_LABELS", rn.IN_LABELS + ("EXTRA_SECTION",))
+    body = f"""
+EXTRA_SECTION:
+New content.
+{RULE}"""
+    d = rn.parse_block(block(body=body))
+    md = rn.render([d], DEFS, "p")
+    assert "### Extra section" in md

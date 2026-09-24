@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Split the merged bibliography into the three Phase 6 deliverables, one
-purpose each (docs/ROADMAP.md, delivery item):
+purpose each:
 
 - `literature-<project>.bib` - the TRACK RECORD: every verdict an agent
   reached (EVIDENCE-* tier, High/Medium/Low, FLn.n tags, workflow and
@@ -10,9 +10,21 @@ purpose each (docs/ROADMAP.md, delivery item):
   (Zotero, BibDesk, ...): standard fields, topical keywords and the reading
   notes with FLn.n substituted. Zotero turns `note` into a child note and
   every keyword into a tag, so every verdict token is stripped here, and so
-  are the eight engine-derived fields the spec names.
+  are the eight engine-derived fields the spec names (ENGINE_FIELDS below;
+  `urldate` is included, `iep_context` is not). No `@comment` here either.
 - `research-notes-<project>.md` - the per-domain research blocks, for a
   human reader (research_notes.py).
+
+DECIDED, do not reopen: every workflow and METADATA_CLEANED marker is
+stripped BY NAME (WORKFLOW_MARKERS, cleaning_marker), never by shape, since
+an ALL-CAPS topical keyword (XCONST, POLCON, ...) shares that shape. Each
+output is computed whole in memory; the track record is always written
+unless it fails to parse; the annotated bib is withheld when a note or
+keyword carries an undefined fault-line tag; the notes file is withheld on
+an unrecognised label or an undefined tag in its text; a file this run does
+not write is deleted if an older copy exists. Before the track record
+overwrites the merged bib (its only input), the merged bib is saved to
+`intermediate_files/<project>-merged.bib`.
 
 Runs after generate_bibliography and check_evidence, which read year_suffix
 and the tiers from the merged bib.
@@ -42,7 +54,7 @@ import stamp_evidence as se  # noqa: E402
 sys.path.pop(0)
 
 # The eight engine-derived fields the annotated bib strips - exactly the
-# spec's list (decided 2026-09-24): `urldate` included, `iep_context` not.
+# spec's list (decided): `urldate` included, `iep_context` not.
 ENGINE_FIELDS = frozenset({
     "abstract_source", "web_span", "urldate", "archiveurl", "same_work_group",
     "venue_status", "sep_context", "year_suffix"})
@@ -229,28 +241,35 @@ def split(bib_path: Path, plan_path: Path | None) -> dict:
         # savvy still knows where to look.
         if track_text is not None:
             annotated_error += ("; the merged bib (with its notes) is kept at "
-                                f"intermediate_files/{backup_path.name} — restore it "
+                                f"intermediate_files/{backup_path.name} -- restore it "
                                 "before splitting again")
         errors.append(annotated_error)
 
     notes_md = None
-    domains, unknown = [], set()
+    domains, unknown_labels, unknown_texts = [], set(), set()
     for chunk in research:
         try:
             domains.append(research_notes.parse_block(chunk))
         except research_notes.UnknownLabel as e:
-            unknown.update(e.labels)
-    if unknown:
+            unknown_labels.update(e.labels)
+            unknown_texts.update(e.texts)
+    # The backup is written below whenever track_text is not None -- named
+    # here too (mirroring the annotated-withheld addendum) so an operator
+    # knows the research blocks survive even when the notes file does not.
+    kept_at = (f"; the research blocks are kept in intermediate_files/{backup_path.name}"
+              if track_text is not None else "")
+    if unknown_labels or unknown_texts:
         raw_undefined = [t for t in fault_lines.tags_in("\n".join(research)) if t not in defs]
-        msg = f"{notes_path.name} not written: " + str(research_notes.UnknownLabel(unknown))
+        msg = (f"{notes_path.name} not written: "
+              + str(research_notes.UnknownLabel(unknown_labels, unknown_texts)))
         if raw_undefined:
             msg += "; " + str(fault_lines.UndefinedFaultLine(raw_undefined))
-        errors.append(msg)
+        errors.append(msg + kept_at)
     else:
         try:
             notes_md = research_notes.render(domains, defs, project)
         except fault_lines.UndefinedFaultLine as e:
-            errors.append(f"{notes_path.name} not written: {e}")
+            errors.append(f"{notes_path.name} not written: {e}" + kept_at)
 
     # The merged bib -- notes, comment blocks and all -- is backed up to
     # intermediate_files/ BEFORE anything else is written, whenever the track

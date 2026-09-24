@@ -1,4 +1,5 @@
-"""split_delivery: the three Phase 6 deliverables (docs/ROADMAP.md, delivery item)."""
+"""split_delivery: the three Phase 6 deliverables. The binding decisions
+this exercises live in split_delivery.py's module docstring."""
 import sys
 from pathlib import Path
 
@@ -196,6 +197,8 @@ def test_an_unknown_label_writes_the_bibs_but_not_the_notes(tmp_path):
     assert "FL9.9" in out                       # every offender named in one run
     assert _summary(r)["written"] == ["literature-sop.bib", "literature-sop-annotated.bib"]
     assert not stale.exists()                   # no stale file beside fresh ones
+    assert ("the research blocks are kept in "
+            "intermediate_files/literature-sop-merged.bib") in out
 
 
 def test_an_undefined_tag_withholds_only_the_annotated_bib(tmp_path):
