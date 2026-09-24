@@ -239,6 +239,9 @@ def test_a_moved_plan_is_found_in_intermediate_files(tmp_path):
     plan.rename(tmp_path / "intermediate_files" / plan.name)
     r = _cli(bib, plan)                          # the old top-level path
     assert r.returncode == 0, r.stdout + r.stderr
+    annotated = (tmp_path / "literature-sop-annotated.bib").read_text(encoding="utf-8")
+    assert ("the “continuity or rupture with the classical tradition?” fault line"
+            in annotated)                        # the moved plan's FL1.4 definition was used
 
 
 def test_a_named_plan_that_does_not_exist_is_an_error(tmp_path):
@@ -261,3 +264,29 @@ def test_error_lines_stay_ascii_for_a_non_ascii_label(tmp_path):
     r = _cli(bib, plan)
     assert r.returncode == 2
     assert "\\xc9TUDE" in _out(r)              # escaped, and _out() proves all-ASCII
+
+
+def test_a_run_that_withholds_both_siblings_still_blocks_a_note_less_rerun(tmp_path):
+    bib, plan = _review(tmp_path, COMMENT + "\n" + ENTRY)
+    original = bib.read_text(encoding="utf-8")
+    r = _cli(bib)                                # no --plan: every FLn.n is undefined
+    assert r.returncode == 2
+    out = _out(r)
+    assert out.count("SPLIT-ERROR:") >= 2        # both siblings withheld
+
+    backup = tmp_path / "intermediate_files" / "literature-sop-merged.bib"
+    assert backup.exists() and backup.read_text(encoding="utf-8") == original
+
+    r2 = _cli(bib, plan)                         # now with the right plan
+    assert r2.returncode == 2
+    out2 = _out(r2)
+    assert "re-run step 3" in out2 and backup.name in out2
+    assert not (tmp_path / "literature-sop-annotated.bib").exists()
+    assert not (tmp_path / "research-notes-sop.md").exists()
+
+
+def test_a_stray_non_entry_chunk_passes_through_uncounted(tmp_path):
+    bib, plan = _review(tmp_path, "% header\n" + ENTRY)
+    r = _cli(bib, plan)
+    assert r.returncode == 0, r.stdout + r.stderr
+    assert _summary(r)["entries"] == 1
