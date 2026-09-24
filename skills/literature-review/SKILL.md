@@ -414,6 +414,8 @@ Never advance to Phase 6 before all synthesis writers have completed.
 
    It rewrites `literature-[project-name].bib` as the track record and writes `literature-[project-name]-annotated.bib` and `research-notes-[project-name].md` beside it. A `SPLIT-ERROR:` line (exit 2) names a file that was NOT written and why — an unrecognised label in a domain's research notes, a fault-line tag the plan does not define, or a bib that does not parse; the files it does not name were written. A `SPLIT-NOTICE:` line names a comment block that was dropped although it held analysis. Do not edit files to get past these: report every line **verbatim** in the final summary and deliver the review with what was written.
 
+   If it exits 1 (a bad input or `--plan` path, or a read/write failure), nothing was written: `literature-[project-name].bib` is still the merged bib — report the line verbatim and fix the path before re-running.
+
    The one exception is a `SPLIT-ERROR` saying the bib is **already split**: this step ran before on this bib, and nothing was written this time. The merged bib it replaced is saved at `reviews/[project-name]/intermediate_files/literature-[project-name]-merged.bib`: copy it back over `literature-[project-name].bib` (or re-run step 3, dedupe), then run this step again. If step 8 has already run, the domain bibs and the plan are in `intermediate_files/`: point step 3's input glob at `reviews/[project-name]/intermediate_files/literature-domain-*.bib` and `--plan` at `reviews/[project-name]/intermediate_files/lit-review-plan.md`.
 
 8. Clean up intermediate files (use absolute paths to avoid cwd issues):

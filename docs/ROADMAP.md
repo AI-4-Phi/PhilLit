@@ -81,6 +81,28 @@ where it would be read.
   correcting in two consecutive doc passes; make the permissions-guide table
   the wiring owner and cut the others to file names and purpose.
 
+- **Resume after Phase 6 step 1 skips the delivery split** - resume rule 1
+  (SKILL.md, Resume) treats the workflow as complete once
+  `literature-review-*.md` exists, which step 1 writes, so an interruption
+  in steps 2-8 resumes as complete and step 7 never runs; the user gets the
+  merged bib alone. The saved
+  `intermediate_files/literature-<project>-merged.bib` could serve as the
+  completion marker.
+
+- **Researchers are not told the research-notes label rules** -
+  `agents/domain-literature-researcher.md` (BibTeX File Structure) never
+  says an improvised `LABEL:` line withholds the notes file; the one tagged
+  real run withheld it on 20 improvised labels. A one-line instruction
+  (extra analysis goes inside an existing section; no new `LABEL:` lines)
+  needs a test run.
+
+- **The label grammar cannot admit colon-less headings or
+  section-dependent sub-labels** - owner decision needed: domain 6 of the
+  real run uses headings after `====` rules with no colon (INSTRUMENT
+  COMPARISON TABLE, FAULT LINES (...)), which no list growth can admit;
+  FOR/AGAINST/CONTROL sit inside an OUT section in one block and could sit
+  inside KEY_POSITIONS in another, which an IN/OUT list cannot express.
+
 phillit-service is deployed at 0.5.25 (engine at `da48b2c`) and owes a
 re-vendor of 0.5.29: 0.5.26's ledger content binding, 0.5.27's prompt fixes
 (current-year search bounds, the synthesis writer's note rule), 0.5.28's
@@ -89,6 +111,14 @@ delivery. It runs from that repo, and its roadmap does not queue it yet.
 Tell the operator that the binding FLOOR reports `degraded` for a review
 whose researchers ran before the pin and whose barrier runs after, until a
 researcher re-runs - fail-closed and intended, but not obvious in production.
+The re-vendor script syncs the engine tree and its deletions, but three of
+the service's OWN files are not vendored and need a manual follow-up pass:
+its public share list (`pages/routes.py`) will publish the track record -
+which now carries every verdict token - by the plain `.bib` suffix, while
+`research-notes-*.md` will not surface there at all; its `hooks.py`
+validation glob will match both the track record and the annotated bib,
+where before it matched one bib; and `docs/engine-provenance.md` still
+names `sanitize_bib.py`, which this repo deleted.
 
 ## Checked and deliberately NOT filed
 
