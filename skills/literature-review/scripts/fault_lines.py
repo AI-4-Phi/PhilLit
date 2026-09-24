@@ -38,14 +38,14 @@ def parse_definitions(plan_text: str) -> dict[str, str]:
 
 
 def phrase(title: str) -> str:
-    """`the "<title>" fault line`. A capitalised first word is lowercased
+    """the “<title>” fault line. A capitalised first word is lowercased
     (`One` -> `one`); an acronym (`XCONST`) is not. Straight quotes inside the
     title become curly single quotes, so the phrase is safe inside a
     quote-delimited BibTeX value."""
     first = title.split(" ", 1)[0]
     if len(first) > 1 and first[0].isupper() and first[1:] == first[1:].lower():
         title = title[0].lower() + title[1:]
-    title = _LONE_QUOTE_RE.sub("'", _PAIR_QUOTES_RE.sub("'\\1'", title))
+    title = _LONE_QUOTE_RE.sub("’", _PAIR_QUOTES_RE.sub("‘\\1’", title))
     return f"the “{title}” fault line"
 
 

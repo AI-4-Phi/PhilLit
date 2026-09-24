@@ -33,7 +33,7 @@ def test_phrase_turns_inner_straight_quotes_curly():
     # A straight `"` would end a quote-delimited BibTeX value.
     out = fl.phrase('Is the "new separation of powers" comparative or American?')
     assert '"' not in out
-    assert "'‘new separation of powers’'" in out or "'new separation of powers'" in out
+    assert "‘new separation of powers’" in out
 
 
 def test_phrase_leaves_a_latex_accent_alone():
