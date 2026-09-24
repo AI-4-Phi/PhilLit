@@ -67,7 +67,7 @@ The `domain-literature-researcher` subagent uses the `philosophy-research` skill
 | `citation_context.py` | Shared SEP/IEP citation-context utilities | — |
 | `check_setup.py` | Environment verification | — |
 
-**Key benefit**: Papers discovered via structured APIs are verified at search time, eliminating the need for a separate validation phase.
+**Key benefit**: papers found via structured APIs are grounded at search time; the Phase 3-to-4 evidence barrier (`evidence_barrier.py`) then validates every domain bib and stamps each entry's `EVIDENCE-*` citability tier.
 
 ## Pattern Implementation
 
@@ -98,7 +98,7 @@ Orchestrator:
 - Tracks completion in task-progress.md
 - All files used together by synthesis-planner
 - No explicit assembly needed (planner reads all)
-- No separate validation phase needed
+- Runs `evidence_barrier.py` once every domain finishes; Phase 4 starts only on a `complete` or `degraded` evidence report
 ```
 
 ### Phase 4 & 5: Synthesis Planning and Section-by-Section Writing
@@ -117,7 +117,7 @@ Parallel Execution:
 
 Each invocation:
 - Isolated context
-- Reads only relevant domain files (~5k words, not all 24k)
+- Reads only the domain files relevant to its section
 - Writes one complete section
 - Independent markdown file
 
@@ -128,22 +128,8 @@ Orchestrator:
 
 ## File Organization
 
-**Final state** (after cleanup):
-```
-reviews/[project-name]/
-├── literature-review-[project-name].md   # Final review (pandoc-ready, YAML frontmatter)
-├── literature-[project-name].bib         # Aggregated BibTeX
-│
-├── intermediate_files/                   # Archived workflow artifacts
-│   ├── json/                             # API response files (archived)
-│   ├── task-progress.md
-│   ├── lit-review-plan.md
-│   ├── synthesis-outline.md
-│   ├── synthesis-section-*.md
-│   └── literature-domain-*.bib
-│
-└── literature-review-[project-name].docx # (Optional) DOCX conversion
-```
+**Final state** (after cleanup): see the tree in `skills/literature-review/SKILL.md`, Phase 6.
+
 
 **During workflow** (before cleanup):
 ```
@@ -159,6 +145,7 @@ reviews/[project-name]/
 ├── literature-domain-5.bib
 ├── literature-domain-6.bib
 ├── literature-domain-7.bib
+├── intermediate_files/json/              # Phase 3: cleaning/enrichment ledgers, evidence_report.json
 │
 ├── synthesis-outline.md                  # Phase 4 output
 │
@@ -202,7 +189,7 @@ skills/setup/
 
 hooks/
 ├── hooks.json                            # Hook wiring (single source of truth)
-├── setup-environment.sh                  # SessionStart: thin bootstrap — bridge PHILLIT_ROOT/PHILLIT_UV into CLAUDE_ENV_FILE
+├── setup-environment.sh                  # SessionStart: thin bootstrap — bridge PHILLIT_ROOT/PHILLIT_UV (and PHILLIT_ACTIVE inside a workspace) into CLAUDE_ENV_FILE
 ├── fast_gate.sh                          # Shell pre-filter for per-call gates: .phillit marker + stdin needle before uv starts
 ├── subagent_stop_bib.sh                  # SubagentStop: validate researcher BibTeX, clean metadata (self-scoped to .phillit workspaces)
 ├── validate_bib_write.py                 # PreToolUse (Write) + PostToolUse (Edit): validate .bib

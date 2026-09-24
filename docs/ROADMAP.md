@@ -16,9 +16,8 @@ where it would be read.
   triage in `keywords`, `abstract_source`, and the per-domain `@comment`
   search logs. `sanitize_bib.py` strips only `EVIDENCE-*` tokens from
   `keywords`, by its own docstring, so all of that reaches a file the user
-  imports into Zotero. Owner decision (Johannes, 2026-09-15): the reading
-  notes are worth delivering, the engine's tags are not. Six follow-on calls
-  were adjudicated on 2026-09-15 and are recorded below; together they make
+  imports into Zotero. Decided: the reading notes are worth delivering, the
+  engine's tags are not. The six follow-on calls recorded below together make
   the delivery THREE files - a clean import-ready `literature-<project>.bib`,
   a `literature-<project>-annotated.bib` carrying the notes, and a
   `research-notes-<project>.md` carrying what is today in `@comment` blocks.
@@ -33,19 +32,22 @@ where it would be read.
     not appended - "the thesis on which FL1.1 turns", "the direct statement
     of FL6.2" - so deleting the token breaks the sentence; only 9 of the 130
     are bare lists that would cut cleanly.
-    DECIDED (Johannes, 2026-09-15): SUBSTITUTE, do not delete. Each `FLn.n`
+    DECIDED: SUBSTITUTE, do not delete. Each `FLn.n`
     is replaced by the short question the review plan defines it as
     (`intermediate_files/lit-review-plan.md`, e.g. FL1.1 -> `the "one
     principle or three?" fault line`). All 31 tags in the 2026-09-10 run were
-    defined there. This is pure string substitution with no model in the
-    loop, so no researcher claim can be paraphrased away, and the note
-    becomes readable to someone who never saw the plan. It must FAIL LOUDLY
+    defined there. The planner emits no fault lines of its own - tags appear
+    only when the user's prompt asks for them (no plan or bib in the 45
+    local reviews carries one) - so with no tags the substitution is a
+    no-op. This is pure string substitution with no model in the loop, so
+    no researcher claim can be paraphrased away, and the note becomes
+    readable to someone who never saw the plan. It must FAIL LOUDLY
     on a tag the plan does not define rather than leave a bare token - the
     plan is per-review and an undefined tag means the two have drifted.
     Weighed and rejected: leaving the tags (a reader meets an undefined token
     130 times), an LLM rewrite of the 130 sentences (130 unverifiable edits
     to evaluative claims), and dropping whole sentences (guts RELEVANCE).
-  - WHICH SECTIONS SURVIVE - DECIDED (Johannes, 2026-09-15): ALL FOUR.
+  - WHICH SECTIONS SURVIVE - DECIDED: ALL FOUR.
     `CORE ARGUMENT` (131, 68 KB), `RELEVANCE` (131, 60 KB), `POSITION` (131,
     14.8 KB - a one-line classification of where the work sits in the debate)
     and the provenance blocks (14, 2.8 KB - why a record is missing a journal
@@ -55,7 +57,7 @@ where it would be read.
     offered and declined, so a normalizer must not "tidy" them. 12 of the 14
     name an engine tool or API in their prose, and that is accepted - the
     information is the point.
-  - THE `keywords` FIELD - DECIDED (Johannes, 2026-09-15): keep the topical
+  - THE `keywords` FIELD - DECIDED: keep the topical
     keywords (261 distinct, 508 occurrences); strip the `FLn.n` tags (145),
     the `High`/`Medium`/`Low` ratings (131 - and 95 of them are `High`, so
     the field barely discriminates) and the workflow markers `AI-RELEVANT`
@@ -65,7 +67,7 @@ where it would be read.
     keywords - `XCONST`, `POLCON`, `DPI`, `CHECKS`, `CCP`, `IRT`, `UDS`,
     `QCA` all appear and all must survive. A `[A-Z][A-Z0-9-]{2,}` rule would
     delete content. Any new marker must be added to the named list.
-  - THE `@comment` BLOCKS - DECIDED (Johannes, 2026-09-15): they leave the
+  - THE `@comment` BLOCKS - DECIDED: they leave the
     bibliography entirely. The seven blocks are 124 KB of per-domain research
     notes - prose documents that are not BibTeX entries at all - and they go
     to a THIRD deliverable, `research-notes-<project>.md`, alongside the
@@ -76,7 +78,7 @@ where it would be read.
     (`bib_comments.is_verbatim_block`), so this changes what Phase 6 does
     with them, not just what sanitize strips - and the carry logic must keep
     working for any OTHER `@comment` a bib holds.
-    WHICH LABELS REACH THE NOTES FILE - DECIDED (Johannes, 2026-09-15). It is
+    WHICH LABELS REACH THE NOTES FILE - DECIDED. It is
     a LABEL list, never a sentence-level edit; sentence-level cleaning of
     `NOTABLE_GAPS` was offered and declined, so run-mechanics prose inside a
     kept section stays.
@@ -94,12 +96,14 @@ where it would be read.
     `ADJUDICATION ATTEMPT`, `NOTE ON ATTRIBUTION`, `COUNT NOTE`, `AGAINST`,
     `CONTROL`, `ROUTING`), so the list is not closed and a silent default
     would either leak telemetry or drop analysis.
-  - THE ENGINE-DERIVED FIELDS - DECIDED (Johannes, 2026-09-15), and this IS
-    the "new owner decision" `sanitize_bib.py`'s docstring required before
-    any field stripping: `abstract_source` (117), `web_span` (3), `urldate`
-    (3), `same_work_group` (3), `venue_status` (2) and `sep_context` (1) are
+  - THE ENGINE-DERIVED FIELDS - DECIDED, and this IS the "new owner
+    decision" `sanitize_bib.py`'s docstring requires before any field
+    stripping: `abstract_source` (117), `web_span` (3), `urldate`
+    (3), `same_work_group` (3), `venue_status` (2) and `sep_context` (1) -
+    plus `year_suffix` and `archiveurl`, engine-derived like the rest but
+    absent from that run, so all eight `sanitize_bib.py` names - are
     stripped from the CLEAN bib and kept in the ANNOTATED one. The
-    2026-08-15 decision to keep them is not reversed - the clean/annotated
+    keep-decision in `sanitize_bib.py` is not reversed - the clean/annotated
     split just gives its audit intent a better home than the file people
     import.
   - WRITER-DIRECTED SENTENCES inside a kept section (10 of the 131
@@ -110,8 +114,9 @@ where it would be read.
   - SKILL.md's Phase 6 safety-net glob (`literature-*.bib`) already keeps a
     `-annotated` sibling at the top level. That becomes intentional under
     this spec; do not "fix" it back.
-  - The spec touches SKILL.md's deliverable list and tree diagram, the
-    Phase 6 sweep, and `sanitize_bib.py`'s recorded keep-decision. All of it
+  - The spec touches SKILL.md's deliverable list and tree diagram, README's
+    Highlights and Output Structure, the Phase 6 sweep, and
+    `sanitize_bib.py`'s recorded keep-decision. All of it
     is vendored downstream, so it is a design item, not a one-liner.
 
 - **The barrier blesses its own output wholesale, not just its stamps** -
@@ -123,7 +128,7 @@ where it would be read.
   guard is an invariant: the output must equal the input under a canonical
   projection that strips the barrier-owned fields (`keywords`
   `EVIDENCE-*`/`year_suffix`/`web_span`/`venue_status`/`same_work_group`/
-  `urldate`/`archiveurl`). Raised in the 0.5.26 round-2 review; no incident.
+  `urldate`/`archiveurl`). No incident.
   Note the same projection, used as the BINDING itself, would remove the need
   to re-point at all - weigh that against the narrow guard before building
   either.
@@ -146,9 +151,9 @@ where it would be read.
   written down nowhere. Reported from the 2026-09-10 run. Decide which
   document wins and say so in the one that loses.
 
-phillit-service is two steps behind and both are its own items, run from that
-repo: the deploy of 0.5.25 (engine at `da48b2c`, re-vendor #23), and a
-re-vendor of 0.5.26, whose engine changes are the ledger content binding.
+phillit-service is deployed at 0.5.25 (engine at `da48b2c`) and owes a
+re-vendor of 0.5.26, whose engine changes are the ledger content binding. It
+runs from that repo, and its roadmap does not queue it yet.
 Tell the operator that the binding FLOOR reports `degraded` for a review
 whose researchers ran before the pin and whose barrier runs after, until a
 researcher re-runs - fail-closed and intended, but not obvious in production.
@@ -158,52 +163,49 @@ researcher re-runs - fail-closed and intended, but not obvious in production.
 Not a queue — a register, so these are not re-found. Each was a live candidate
 that did not survive reading the file it concerns.
 
-- A lock protocol between the cleaner and the barrier (round-2 review,
-  2026-09-15). Both write the same workspace, and a concurrent writer could
-  in principle swap a cleaning ledger between the barrier accepting it and
-  re-pointing it. Not filed: the workspace is single-writer by design - the
-  cleaner runs from one SubagentStop hook, the barrier once at the Phase 3-4
-  boundary - and a real fix needs a lock both participate in, which is a
-  larger change than the exposure warrants. The cheap half is already done:
-  the re-point binds the text the barrier AUTHORED, so the bib cannot be
-  swapped under it. Revisit if the service ever runs domains concurrently.
-- Normalizing BOM or NFC/NFD before hashing (round-2 review, 2026-09-15).
-  Both reviewers agreed it is noise here and one argued against it
-  outright: every writer in the pipeline is Python, `utf-8` neither emits a
-  BOM nor normalizes, and an external tool that changes either HAS edited
-  the file - invalidating the ledger is the conservative, correct answer.
-  Folding them would deliberately make some real edits invisible.
-- Forcing pybtex's writer encoding (round-1 and round-2 reviews). Two
-  reviewers predicted a Windows outage: a cp1252 write of a diacritic bib
-  would make the read-back raise, null the hash and refuse every ledger. It
-  cannot happen - `write_bibtex` renders through an in-memory `StringIO` and
-  does its own `os.fdopen(fd, "w", encoding="utf-8")`, so pybtex never
-  reaches the filesystem. Verified by mutation: switching that one encoding
-  to cp1252 does fail the round-trip test, which is why the test exists.
-- `write_bibtex` hardening beyond the descriptor write (the service's 0.5.19
-  pin review, 2026-09-10): logging a failed cleanup unlink, treating the
-  `exists()`/`stat()` mode copy as a race, and `os.fchmod`. The cleaner runs
-  as the single writer of a per-review workspace; a stale `.tmp` after a
-  failed write is visible in the directory and the failure itself reaches the
-  agent as the cleaner's `Rewrite failed` error; `os.fchmod` is Unix-only and
-  Windows must work.
+- A lock protocol between the cleaner and the barrier. Both write the same
+  workspace, and a concurrent writer could in principle swap a cleaning ledger
+  between the barrier accepting it and re-pointing it. Not filed: the
+  workspace is single-writer by design - the cleaner runs from one
+  SubagentStop hook, the barrier once at the Phase 3-4 boundary - and a real
+  fix needs a lock both participate in, which is a larger change than the
+  exposure warrants. The cheap half is already done: the re-point binds the
+  text the barrier AUTHORED, so the bib cannot be swapped under it. Revisit if
+  the service ever runs domains concurrently.
+- Normalizing BOM or NFC/NFD before hashing. It is noise here: every writer in
+  the pipeline is Python, `utf-8` neither emits a BOM nor normalizes, and an
+  external tool that changes either HAS edited the file - invalidating the
+  ledger is the conservative, correct answer. Folding them would deliberately
+  make some real edits invisible.
+- Forcing pybtex's writer encoding to prevent a predicted Windows outage: a
+  cp1252 write of a diacritic bib would make the read-back raise, null the
+  hash and refuse every ledger. It cannot happen - `write_bibtex` renders
+  through an in-memory `StringIO` and does its own `os.fdopen(fd, "w",
+  encoding="utf-8")`, so pybtex never reaches the filesystem. Verified by
+  mutation: switching that one encoding to cp1252 does fail the round-trip
+  test, which is why the test exists.
+- `write_bibtex` hardening beyond the descriptor write: logging a failed
+  cleanup unlink, treating the `exists()`/`stat()` mode copy as a race, and
+  `os.fchmod`. The cleaner runs as the single writer of a per-review
+  workspace; a stale `.tmp` after a failed write is visible in the directory
+  and the failure itself reaches the agent as the cleaner's `Rewrite failed`
+  error; `os.fchmod` is Unix-only and Windows must work.
 - A machine-readable `year-conflicts.json` from `dedupe_bib`, gating
-  `generate_bibliography` until acknowledged (proposed in review, 2026-09-10).
-  Seen once; dedupe's `year conflict` stderr line now sits at the cause and
-  names both copies, both source bibs and the survivor. A gate would add a
-  flag and a file for that one case. Revisit if a run ships a wrong-year
-  survivor despite the line - `lint_md`'s late citation failure is the
-  symptom that would show it, not a second guard. The line's source
-  attribution was also checked: `merge_entries` picks one whole entry and
-  copies only `year_suffix`, so origin follows the winner, and a three-copy
-  chain whose year-less middle copy wins prints no line rather than a wrong
-  one.
+  `generate_bibliography` until acknowledged. Seen once; dedupe's `year
+  conflict` stderr line now sits at the cause and names both copies, both
+  source bibs and the survivor. A gate would add a flag and a file for that
+  one case. Revisit if a run ships a wrong-year survivor despite the line -
+  `lint_md`'s late citation failure is the symptom that would show it, not a
+  second guard. The line's source attribution was also checked:
+  `merge_entries` picks one whole entry and copies only `year_suffix`, so
+  origin follows the winner, and a three-copy chain whose year-less middle
+  copy wins prints no line rather than a wrong one.
 
 - The budget's `Stage 5.5 enrichment | 1 (2 if you added entries after it)`
   does NOT contradict "the bib file is FROZEN after enrichment" — FROZEN's own
-  bullet sanctions "adding a missed entry" by surgical `Edit`. Two independent
-  reviewers called it a contradiction, which is a readability datum rather than
-  a defect, and worth knowing given the audience is a model.
+  bullet sanctions "adding a missed entry" by surgical `Edit`. It reads as a
+  contradiction, which is a readability datum rather than a defect, and worth
+  knowing given the audience is a model.
 - Stage 4 case 3's `<status from the Stage 3 tail>` is not undefined when a
   source fails: Stage 3's tail names each expected file explicitly, so a
   missing one prints a `grep: … No such file` line. (Stage 1 and Stage 4's

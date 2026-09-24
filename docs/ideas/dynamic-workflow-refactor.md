@@ -65,8 +65,7 @@ to approve it** — Phases 3–5 would fail in the service's production.
 That failure class has already happened once in exactly this direction:
 `hooks/validate_bib_write.py` is excluded from the same mirror (there by name,
 in `EXCLUDE_EXACT`), so it carried the *prose claiming the slug-file gate* and
-none of the gate, until the service ported the check by hand
-(`phillit-service/docs/known-issues/missing-encyclopedia-slug-file.md`).
+none of the gate, until the service ported the check by hand.
 
 **What that asks of step 3**: a delivery path the `skills/` mirror already
 carries — the script shipped inside `skills/literature-review/` rather than
@@ -105,8 +104,7 @@ gate that Step 1 hit — adding `"Workflow"` to `allowed_tools` is a one-line
 change there, but whether that clears the gate is a probe, not a claim.
 
 **2. Re-run the Step 1 hook test on the current Claude Code.** The results
-below are from **2.1.218**; the installed CLI is **2.1.272** (checked
-2026-09-15). The dispatch tool was renamed Task -> Agent in between — a rename this repo's own hook layer had
+below are from **2.1.218**; the installed CLI is far past it. The dispatch tool was renamed Task -> Agent in between — a rename this repo's own hook layer had
 to absorb (`hooks/hooks.json` now carries PreToolUse matchers for both `Agent`
 and `Task`; `block_subagent_background_dispatch.py` documents it). The platform
 moved underneath exactly the surface the gate test measured, so the six checks
@@ -116,7 +114,7 @@ and re-runnable as written.
 **Re-run it against the CLI the Agent SDK bundles, not the installed one.** The
 service never executes the installed CLI: the SDK bundles its own and prefers it
 over anything on `PATH`, at **2.1.233** for the SDK version pinned in
-`phillit-service/uv.lock` (0.2.139). So a pass at 2.1.252 is evidence about a
+`phillit-service/uv.lock` (0.2.139). So a pass on the installed CLI is evidence about a
 binary one of this skill's two consumers does not run, and if the gate clears
 there while the service sits at 2.1.233, the two diverge on exactly the surface
 the test measures. Making the engine depend on workflows would then force an SDK
@@ -153,16 +151,16 @@ Delivery: the script lives in the plugin repo (single source of truth); `setup_w
 
 ## Known costs and risks
 
-- **Staleness / drift**: the installed workflow is a snapshot; `/plugin update` does not touch it. Setup must overwrite on re-run (same backup discipline as the settings merge), and a version stamp inside the installed file should be compared against the plugin's copy (by the skill at Phase 1, or the check-updates hook) to prompt a setup re-run. This is a second copy of orchestration logic — a real single-source-of-truth cost.
+- **Staleness / drift**: the installed workflow is a snapshot; `/plugin update` does not touch it. Setup must overwrite on re-run (same backup discipline as the settings merge), and a version stamp inside the installed file should be compared against the plugin's copy (by the skill at Phase 1) to prompt a setup re-run. This is a second copy of orchestration logic — a real single-source-of-truth cost.
 - **Guard bypass**: `block_subagent_background_dispatch.py` matches Agent/Task calls; a Workflow call sails past it. The foreground-only rationale (orchestrator proceeding before agents finish — PR #38) is solved *by* the workflow's own `await`, but the guard's coverage story should be re-examined in this design.
 - **UX change**: foreground Task dispatch streams researcher status inline; a workflow shows progress via the `/workflows` tree instead.
 
 ## Roadmap
 
-1. **Empirical gate test (first step — decisive) — DONE 2026-07-22, PASSED (all six checks; results below)**. A minimal test — no full researcher run, no API keys, a few thousand tokens — settles whether plugin hooks fire for workflow-spawned agents. Full protocol in "Step 1 protocol" below. It checks:
+1. **Empirical gate test (first step — decisive)**: passed all six checks on 2.1.218 (results below); gate 2 of "Gates before step 2" requires re-running it on the current CLI. A minimal test — no full researcher run, no API keys, a few thousand tokens — settles whether plugin hooks fire for workflow-spawned agents. Full protocol in "Step 1 protocol" below. It checks:
    - (a) the SubagentStop BibTeX validator fires on the workflow-spawned agent;
    - (b) the PreToolUse/PostToolUse `.bib` gates fire on its Write/Edit calls;
-   - (c) scoped `Write`/`Edit` and deny rules bind under `acceptEdits`;
+   - (c) the scoped `Edit(reviews/**)` rule and deny rules bind under `acceptEdits`;
    - (d) `agentType: "phillit:domain-literature-researcher"` resolves;
    - (e) file naming/extension conventions in `.claude/workflows/` (name from `meta.name` vs filename);
    - (f) `CLAUDE_ENV_FILE` bridging (`PHILLIT_ROOT` etc.) reaches workflow subagents.
@@ -170,7 +168,7 @@ Delivery: the script lives in the plugin repo (single source of truth); `setup_w
 2. Author the production workflow script (Phases 3–5) in the plugin repo; namespaced `meta.name`, version stamp, `args` contract.
 3. Extend `setup_workspace.py` to install/refresh the workflow file (atomic write, backup, overwrite-on-rerun), and add a `Workflow` allow rule to `PHILLIT_RULES` (Step 1 showed running a saved workflow otherwise hits a "Review dynamic workflow before running" approval gate).
 4. Refactor `SKILL.md`: Phases 3–5 delegate to the workflow (Workflow tool `{name, args}`); keep file-based outputs and `task-progress.md` resume; update Status Updates section for the `/workflows` progress model.
-5. Add the version-stamp freshness check (Phase 1 or check-updates hook).
+5. Add the version-stamp freshness check (Phase 1).
 6. Update `docs/ARCHITECTURE.md` ("Orchestration: Skill-Based Design" becomes hybrid skill + workflow), bump `plugin.json`, release.
 
 ## Step 1 protocol: minimal hook-firing test
@@ -201,7 +199,7 @@ Prerequisites: Claude Code ≥ 2.1.154 (on Pro: enable "Dynamic workflows" in `/
    claude --plugin-dir /path/to/PhilLit
    ```
 
-   In the session: run `/phillit:setup` (needed for real permission rules — item (c) tests the scoped `Write`/`Edit` rules that setup merges into `.claude/settings.json`). API keys can be dummies; no script that needs them will run.
+   In the session: run `/phillit:setup` (needed for real permission rules — item (c) tests the scoped `Edit(reviews/**)` rule that setup merges into `.claude/settings.json`). API keys can be dummies; no script that needs them will run.
 
 3. **Pre-plant workspace state** (from a shell, so no hooks interfere):
 

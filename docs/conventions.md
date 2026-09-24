@@ -15,7 +15,7 @@ Requirements:
 - Never convert special characters to ASCII approximations
 - Never use LaTeX commands for special characters
 
-**Verification**: Run `file [filename]` — should show "UTF-8 Unicode text"
+**Verification**: `file [filename]` reports UTF-8 (e.g. "Unicode text, UTF-8 text"); a pure-ASCII file reports "ASCII text", which is also valid UTF-8
 
 ---
 
