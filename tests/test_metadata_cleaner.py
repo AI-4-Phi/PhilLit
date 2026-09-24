@@ -2273,9 +2273,10 @@ class TestRewriteRefusalRoundTwo:
     def test_refusal_removes_a_stale_ledger(
             self, tmp_path, s2_nature_json, crossref_awad_other_issue,
             bibtex_with_hallucinated_number):
-        # A prior pass's ledger attests a bib that has since changed; the
-        # barrier binds a ledger to its bib by NAME only, so a refused pass
-        # must take the stale attestation down rather than merely not renew it.
+        # A prior pass's ledger attests a bib that has since changed. A
+        # refused pass must take the stale attestation down rather than merely
+        # not renew it: the content binding (bib_sha256) rejects a survivor
+        # whose bib changed, but cannot see one whose bib is text-identical.
         json_dir = self._index(tmp_path, s2_nature_json, crossref_awad_other_issue)
         ledger = self._stale_ledger(tmp_path)
         bib = tmp_path / "test.bib"
@@ -2471,9 +2472,9 @@ class TestRewriteRefusalRoundFour:
 
 
 # --- Ledger-to-bib content binding (schema 3) --------------------------
-# The barrier binds a ledger to its bib by NAME only, so a refused pass must
-# delete the stale ledger -- and that unlink is best-effort. A `bib_sha256`
-# makes a survivor unusable however it survived.
+# A refused pass deletes the stale ledger, and that unlink is best-effort.
+# The `bib_sha256` binding makes a survivor unusable however it survived,
+# unless its bib is decoded-text-identical to the one it attested.
 
 def _bib_sha256(text: str) -> str:
     import hashlib
