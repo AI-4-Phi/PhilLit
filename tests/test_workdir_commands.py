@@ -581,3 +581,23 @@ def test_init_collects_a_finished_leftover_even_when_it_refuses(home, ruled):
     with pytest.raises(wd.Refusal):
         wd.cmd_init(ruled, "old")  # the name is taken by the delivered review
     assert not local.exists()
+
+
+def test_an_unreadable_local_root_never_breaks_an_inplace_review(home, ws, monkeypatch):
+    # A sandbox (phillit-service's bwrap worker) may deny $HOME: in-place mode
+    # never needs the local root, so init and status must read it as empty.
+    monkeypatch.setenv("PHILLIT_WORKDIR", "inplace")
+    root = wd.local_root()
+    root.mkdir(parents=True)
+    real_iterdir = Path.iterdir
+
+    def denied(self):
+        if self == root or root in self.parents:
+            raise PermissionError(13, "Permission denied", str(self))
+        return real_iterdir(self)
+
+    monkeypatch.setattr(Path, "iterdir", denied)
+    assert wd.cmd_init(ws, "topic")["mode"] == "inplace"
+    wd.remove_pointer(ws)
+    out = wd.cmd_status(ws)
+    assert out["active"] is False and out["stranded"] == []

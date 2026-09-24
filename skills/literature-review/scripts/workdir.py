@@ -459,6 +459,19 @@ def committed(workspace: Path, ptr: dict) -> dict | None:
 
 # --- garbage collection -------------------------------------------------------
 
+def _subdirs(d: Path) -> list[Path]:
+    """The non-link subdirectories of d, sorted; [] when d is missing, a
+    link, or unreadable. An in-place review never needs the local root, so a
+    sandbox that denies $HOME must not crash it; an unreadable folder is
+    never deleted either, only left out."""
+    try:
+        if _is_link(d) or not d.is_dir():
+            return []
+        return sorted(p for p in d.iterdir() if p.is_dir() and not _is_link(p))
+    except OSError:
+        return []
+
+
 def _collectable(workspace: Path, d: Path, meta: dict) -> bool:
     """A finished local folder whose published copy carries the same
     review_id and state: safe to delete."""
@@ -477,11 +490,7 @@ def collect(workspace: Path) -> list[str]:
     deleted; status lists it. Returns what could not be deleted."""
     keydir = local_root() / ws_key(workspace)
     leftover: list[str] = []
-    if _is_link(keydir) or not keydir.is_dir():
-        return leftover
-    for d in sorted(keydir.iterdir()):
-        if _is_link(d) or not d.is_dir():
-            continue
+    for d in _subdirs(keydir):
         meta = read_meta(d)
         if meta is None:
             if holds_no_files(d):
@@ -499,13 +508,11 @@ def collect(workspace: Path) -> list[str]:
 
 def list_abandoned(workspace: Path) -> list[dict]:
     out = []
-    keydir = local_root() / ws_key(workspace)
-    if keydir.is_dir() and not _is_link(keydir):
-        for d in sorted(keydir.iterdir()):
-            meta = read_meta(d) if d.is_dir() and not _is_link(d) else None
-            if (meta and meta.get("state") == "active" and meta.get("name") == d.name
-                    and meta.get("workspace") == workspace_id(workspace)):
-                out.append({"name": d.name, "mode": "local", "workdir": d.as_posix()})
+    for d in _subdirs(local_root() / ws_key(workspace)):
+        meta = read_meta(d)
+        if (meta and meta.get("state") == "active" and meta.get("name") == d.name
+                and meta.get("workspace") == workspace_id(workspace)):
+            out.append({"name": d.name, "mode": "local", "workdir": d.as_posix()})
     reviews = workspace / "reviews"
     if reviews.is_dir():
         for d in sorted(p for p in reviews.iterdir() if p.is_dir() and not _is_link(p)):
@@ -533,16 +540,9 @@ def list_stranded(workspace: Path) -> list[dict]:
     non-empty folders without metadata anywhere, and this workspace's
     finished folders that collection cannot collect."""
     out = []
-    root = local_root()
-    if not root.is_dir():
-        return out
     own = ws_key(workspace)
-    for keydir in sorted(root.iterdir()):
-        if _is_link(keydir) or not keydir.is_dir():
-            continue
-        for d in sorted(keydir.iterdir()):
-            if _is_link(d) or not d.is_dir():
-                continue
+    for keydir in _subdirs(local_root()):
+        for d in _subdirs(keydir):
             meta = read_meta(d)
             if meta is None:
                 if not holds_no_files(d):
