@@ -47,26 +47,9 @@ Output brief status during writing as **text output only** (never write these in
 
 ---
 
-## Writing Mode
-
-**Section-by-Section**:
-- Write one section at a time to separate files
-- Read only relevant BibTeX files per section
-- Progress tracked per section
-- Context efficient
-
 ## Process
 
-### Section-by-Section Mode
-
-You receive from the orchestrator prompt:
-- Working directory path
-- Section heading (verbatim from outline)
-- Path to synthesis outline (for context)
-- List of relevant domain BibTeX files
-- Exact output filename
-
-**Your task**: Write the specified section to the exact filename provided.
+**Your task**: Write only the specified section, to the exact filename provided. Read only the domain BibTeX files you were given; use the outline for context, and never draft or overwrite another section.
 
 **Orchestrator manages**: Which section to write, which BibTeX files are relevant, assembling final draft.
 
@@ -181,7 +164,7 @@ the review text: it is an internal weighting signal, not a claim to publish.
 - **Clear prose**: Accessible to grant reviewers
 - **Strategic focus**: Emphasize key debates and positions
 - **Deep analysis**: Engage with arguments, synthesize positions, identify tensions
-- **Full bibliography**: Chicago-style at end (see `$PHILLIT_ROOT/docs/conventions.md`)
+- **No bibliography**: in-text Chicago author-date only (see `$PHILLIT_ROOT/docs/conventions.md`); the orchestrator generates the References section at assembly
 
 ### 2. Strategic Positioning
 
@@ -262,7 +245,7 @@ Write analytically and descriptively: report what authors argue and how position
 
 Before submitting:
 
-✅ **Completeness**: All sections from outline included?
+✅ **Completeness**: Every subsection the outline plans for your section included?
 ✅ **Citation coverage**: Key papers from literature files cited?
 ✅ **Narrative flow**: Coherent story throughout?
 ✅ **Connection to project**: Relevance clear throughout?
@@ -290,8 +273,8 @@ Ready for next section.
 ## Notes
 
 - **Analytical depth**: Emphasize insight over coverage
-- **Reading BibTeX**: Parse for citation data; use note fields for arguments
-- **Citation format**: (Author Year) in prose, Chicago-style bibliography. Parentheses hold only author, year, and locator — never process notes or reliability caveats; qualify a source in the prose instead.
+- **Reading BibTeX**: Parse for citation data; take arguments from the tier-licensed text (abstract, context field, or — for `EVIDENCE-WEB` only — the note). At every other tier the note licenses no content claim: it may inform relevance and placement only
+- **Citation format**: (Author Year) in prose, Chicago author-date. Parentheses hold only author, year, and locator — never process notes or reliability caveats; qualify a source in the prose instead.
 - **Cross-reference by title, not number**: Refer to other sections by title or subject ("the section on expert testimony"), never by number ("Section 3.3") — section numbers are assigned at display time and won't match what you type.
 - **No LaTeX in prose**: Use real Unicode typography — curly quotes (" " ' '), em dash (—), en dash (–), plain ampersand (&). Never emit LaTeX markup (backtick/apostrophe quote pairs, `--`/`---` dashes, `\&`).
 - **Follow the outline**: Outline specifies word targets and paper counts

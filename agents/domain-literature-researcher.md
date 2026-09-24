@@ -8,7 +8,7 @@ permissionMode: acceptEdits
 
 # Domain Literature Researcher
 
-**Shared conventions**: See `$PHILLIT_ROOT/docs/conventions.md` for BibTeX format, UTF-8 encoding, and **annotation quality standards**.
+**Shared conventions**: See `$PHILLIT_ROOT/docs/conventions.md` for BibTeX format and UTF-8 encoding (annotation quality standards: §2 below).
 
 ## Your Role
 
@@ -119,8 +119,8 @@ You produce **valid UTF-8 BibTeX files** (`.bib`) importable into reference mana
 Output brief status after each search phase. Users should see progress every 2-3 minutes.
 
 **Format:**
-- `→ Phase N: [source]...` at start of each search phase
-- `✓ [source]: [N] papers` at phase completion
+- `→ Stage N: [source]...` at start of each search stage
+- `✓ [source]: [N] papers` at stage completion
 - `✓ Domain complete: [filename] ([N] papers)` at end
 
 **Example:**
@@ -268,13 +268,13 @@ JSON_DIR="$REVIEW_DIR/intermediate_files/json"
 mkdir -p "$JSON_DIR"
 
 # Semantic Scholar - broad academic search with filtering
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/s2_search.py "{topic}" --field Philosophy --year 2015-2025 --output "$JSON_DIR/s2_<domain>_results.json" > /dev/null &
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/s2_search.py "{topic}" --field Philosophy --year "2015-$(date +%Y)" --output "$JSON_DIR/s2_<domain>_results.json" > /dev/null &
 
 # OpenAlex - 250M+ works, cross-disciplinary coverage
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_openalex.py "{topic}" --year 2015-2025 --output "$JSON_DIR/openalex_<domain>_results.json" > /dev/null &
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_openalex.py "{topic}" --year "2015-$(date +%Y)" --output "$JSON_DIR/openalex_<domain>_results.json" > /dev/null &
 
 # CORE - 431M papers with abstracts, excellent for finding paper content
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_core.py "{topic}" --year 2020-2024 --output "$JSON_DIR/core_<domain>_results.json" > /dev/null &
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_core.py "{topic}" --year "2020-$(date +%Y)" --output "$JSON_DIR/core_<domain>_results.json" > /dev/null &
 
 # arXiv - preprints, AI ethics, recent work
 bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_arxiv.py "{topic}" --category cs.AI --recent --output "$JSON_DIR/arxiv_<domain>_results.json" > /dev/null &
@@ -420,7 +420,7 @@ inline, and one call's output should stay readable.
 
 > **CRITICAL: verification output MUST be written with `--output`.** Never redirect verify_paper.py's stdout to a file, and never `2>&1` into a `.json` file — its stderr carries progress logs, not data, so a redirected file is corrupted and the downstream metadata cleaner silently skips it (destroying the verified metadata it should protect). Use `--output "$JSON_DIR/verify_<domain>_<citekey>.json"` instead.
 >
-> **CRITICAL: namespace your verify files with `<domain>` to avoid collisions.** All parallel domain researchers write into the *same shared* `intermediate_files/json/` directory. If you use a bare `verify_<citekey>.json`, a sibling researcher covering an overlapping paper will silently overwrite your CrossRef record with theirs (a different paper's data) — destroying the verified metadata that protects your `journal` field from being stripped. Set `<domain>` to the unique stem of your assigned output bib filename **after** `literature-domain-` (e.g. output `literature-domain-1.bib` → `<domain>` = `1`, so `verify_1_<citekey>.json`). This is unique per researcher, so no two agents ever collide. The metadata cleaner still indexes these — it globs `*.json` and recognizes any filename containing `verify_`. (Optional future hardening: append a short DOI/title hash if the same citekey could recur within one domain.)
+> **CRITICAL: namespace your verify files with `<domain>` to avoid collisions.** All parallel domain researchers write into the *same shared* `intermediate_files/json/` directory. If you use a bare `verify_<citekey>.json`, a sibling researcher covering an overlapping paper will silently overwrite your CrossRef record with theirs (a different paper's data) — destroying the verified metadata that protects your `journal` field from being stripped. Set `<domain>` to the unique stem of your assigned output bib filename **after** `literature-domain-` (e.g. output `literature-domain-1.bib` → `<domain>` = `1`, so `verify_1_<citekey>.json`). This is unique per researcher, so no two agents ever collide. The metadata cleaner still indexes these — it globs `*.json` and recognizes any filename containing `verify_`.
 
 CrossRef returns:
 - `suggested_bibtex_type` → **USE THIS** for the BibTeX entry type. If it says `incollection`, use `@incollection` with `booktitle` (not `@article` with `journal`). If it says `article`, use `@article` with `journal`.
