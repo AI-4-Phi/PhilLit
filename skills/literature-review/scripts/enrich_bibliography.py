@@ -46,6 +46,7 @@ import bib_fields  # noqa: E402 - same directory
 _hook_dir = Path(__file__).resolve().parent.parent.parent.parent / "hooks"
 sys.path.insert(0, str(_hook_dir))
 from bib_identity import first_author_name  # noqa: E402
+from ledger_binding import ENRICHMENT_SCHEMA_VERSION  # noqa: E402
 
 sys.path.pop(0)
 
@@ -1024,7 +1025,7 @@ def _update_enrichment_ledger(output_path: Path, ledger_writes: dict, current_ke
     entries.update(ledger_writes)
 
     payload = {
-        "schema_version": 1,
+        "schema_version": ENRICHMENT_SCHEMA_VERSION,
         "bib_file": output_path.name,
         "entries": entries,
     }

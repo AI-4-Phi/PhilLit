@@ -122,6 +122,26 @@ class TestSingleOwner:
         assert (evidence_barrier.BINDING_SCHEMA_VERSION
                 is lb.BINDING_SCHEMA_VERSION)
 
+    @pytest.mark.parametrize("path, names", [
+        (HOOKS_DIR / "metadata_cleaner.py", {"BINDING_SCHEMA_VERSION"}),
+        (SCRIPTS_DIR / "evidence_barrier.py",
+         {"BINDING_SCHEMA_VERSION", "ENRICHMENT_SCHEMA_VERSION"}),
+        (SCRIPTS_DIR / "enrich_bibliography.py", {"ENRICHMENT_SCHEMA_VERSION"}),
+    ])
+    def test_version_constants_are_imported_not_restated(self, path, names):
+        """`is` cannot tell an alias from a copy for a small int (CPython
+        caches them), so the version constants are pinned at the source: each
+        site imports them from ledger_binding and never assigns them."""
+        import ast
+        tree = ast.parse(path.read_text(encoding="utf-8"))
+        imported = {a.asname or a.name for n in ast.walk(tree)
+                    if isinstance(n, ast.ImportFrom) and n.module == "ledger_binding"
+                    for a in n.names}
+        assigned = {t.id for n in ast.walk(tree) if isinstance(n, ast.Assign)
+                    for t in n.targets if isinstance(t, ast.Name)}
+        assert names <= imported, f"{path.name} must import {names - imported}"
+        assert not names & assigned, f"{path.name} restates {names & assigned}"
+
 
 class TestProducerConsumerRoundTrip:
     """The binding is only worth anything if the two sides agree in the

@@ -876,6 +876,23 @@ class TestEnrichmentLedger:
         assert ent["abstract_source"] == "s2"
         assert ent["abstract_sha256"] == stamp_evidence.abstract_hash("A found abstract text.")
 
+    @patch("enrich_bibliography.resolve_abstract_for_entry")
+    def test_ledger_version_is_the_shared_constant(self, mock_resolve, tmp_path,
+                                                   monkeypatch):
+        """The writer stamps the name the barrier accepts, not a literal: a
+        changed constant must reach the ledger."""
+        import enrich_bibliography
+        mock_resolve.return_value = ("A found abstract text.", "s2")
+        monkeypatch.setattr(enrich_bibliography, "ENRICHMENT_SCHEMA_VERSION", 99,
+                            raising=False)
+        bib = tmp_path / "test.bib"
+        bib.write_text(SAMPLE_ENTRY_NO_ABSTRACT, encoding="utf-8")
+
+        enrich_bibliography.enrich_bibliography(bib, None, None, None, None)
+
+        ledger = json.loads(self._ledger_path(tmp_path).read_text(encoding="utf-8"))
+        assert ledger["schema_version"] == 99
+
     @patch("enrich_bibliography.resolve_ndpr_abstract")
     def test_ledger_records_ndpr_source_and_hash(self, mock_ndpr, tmp_path):
         """NDPR enrichment site (~line 492) must also record its write."""

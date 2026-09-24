@@ -188,12 +188,6 @@ where it would be read.
   README's "writes review output only to `./reviews/`". Scope it to the
   names researchers write (`literature-domain-*.bib`, `literature-*.bib`).
 
-- **The enrichment ledger's version is a literal, not the shared
-  constant** - `enrich_bibliography.py` writes `"schema_version": 1` while
-  the barrier accepts `ENRICHMENT_SCHEMA_VERSION` from `ledger_binding.py`.
-  Bumping the producer alone would refuse every enrichment ledger, and no
-  test ties the two. Import the constant, as the cleaner does.
-
 - **Delivered reviews run about twice the planner's length target** - the
   synthesis planner (and SKILL.md's Phase 4 text) targets 3000-4000 words;
   SKILL.md's Success Metrics say 3000-8000. Measured over the 43 delivered
