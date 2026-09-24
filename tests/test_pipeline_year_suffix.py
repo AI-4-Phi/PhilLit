@@ -4,13 +4,13 @@ Phase 6 stage and come out in the rendered References.
 
 `year_suffix` in dedupe_bib._KNOWN_FIELDS proves nothing on its own: the
 letter has to survive a merge, an attestation-aware re-stamp, a pybtex
-round-trip in the renderer, the sanitizer, and it has to be the token the
-linter and the evidence checker actually see. The only thing that proves
-that is running the real Phase 6 command sequence through the real
+round-trip in the renderer, the delivery split, and it has to be the token
+the linter and the evidence checker actually see. The only thing that
+proves that is running the real Phase 6 command sequence through the real
 command-line entry points, which is what this module does.
 
 Stage order follows skills/literature-review/SKILL.md Phase 6 verbatim --
-dedupe -> generate -> lint -> check_evidence -> sanitize -- including
+dedupe -> generate -> lint -> check_evidence -> split -- including
 dedupe's `--evidence-report` argument, because the attestation-aware
 re-stamp pass rewrites every surviving entry's text and is therefore one of
 the carriers under test. (Steps 1-2 of Phase 6, assemble_review and
@@ -276,9 +276,11 @@ def test_letter_survives_the_whole_phase_6_chain(tmp_path):
     summary = json.loads(check.stdout.rsplit("CHECK-SUMMARY: ", 1)[1])
     assert summary["none_cited"] == 2
 
-    # --- Phase 6 step 7: sanitize the delivered bib -------------------------
-    _run(rd, SCRIPTS / "sanitize_bib.py", merged)
-    sanitized = merged.read_text(encoding="utf-8")
-    assert "EVIDENCE-" not in sanitized          # the sanitizer did its own job
-    assert _suffix_of(sanitized, "menary2010cognitive") == letter_cog
-    assert _suffix_of(sanitized, "menary2010extended") == letter_book
+    # --- Phase 6 step 7: split the delivery ----------------------------------
+    _run(rd, SCRIPTS / "split_delivery.py", merged)
+    track = merged.read_text(encoding="utf-8")
+    annotated = merged.with_name(merged.stem + "-annotated.bib").read_text(encoding="utf-8")
+    assert "EVIDENCE-" in track and "EVIDENCE-" not in annotated
+    assert _suffix_of(track, "menary2010cognitive") == letter_cog
+    assert _suffix_of(track, "menary2010extended") == letter_book
+    assert "year_suffix" not in annotated

@@ -173,7 +173,9 @@ skills/literature-review/
     ├── year_suffix.py                    # Chicago a/b assignment over work identity (barrier helper, Chicago a/b disambiguation)
     ├── web_evidence.py                   # URL extraction, capture checks, existence (barrier helper, the EVIDENCE-WEB gate; owns the excluded-host policy — SEP + mirrors, IEP, NDPR, PhilPapers — which never earn EVIDENCE-WEB)
     ├── check_evidence.py                 # Phase 6 evidence-tier telemetry checker
-    ├── sanitize_bib.py                   # Strip engine-internal EVIDENCE-* tokens from delivered .bib
+    ├── split_delivery.py                 # Phase 6: track-record bib, annotated bib, research notes
+    ├── fault_lines.py                    # FLn.n definitions and substitution
+    ├── research_notes.py                 # research @comment blocks -> Markdown
     ├── generate_bibliography.py          # Generate Chicago-style references
     └── lint_md.py                        # Lint markdown review files
 

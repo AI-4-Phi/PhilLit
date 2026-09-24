@@ -290,3 +290,57 @@ def test_a_stray_non_entry_chunk_passes_through_uncounted(tmp_path):
     r = _cli(bib, plan)
     assert r.returncode == 0, r.stdout + r.stderr
     assert _summary(r)["entries"] == 1
+
+
+import os
+import re
+
+SKILL = (ROOT / "skills" / "literature-review" / "SKILL.md").read_text(encoding="utf-8")
+
+
+def test_phase_6_runs_the_split_not_the_sanitizer():
+    assert "split_delivery.py" in SKILL and "sanitize_bib.py" not in SKILL
+
+
+PHASE_6 = SKILL[SKILL.index("## Phase 6:"):]
+
+
+FENCE = "`" * 3      # built, not written, so this file can sit in a Markdown code block
+
+
+def _step_bash(anchor):
+    """The first bash code block after `anchor` in Phase 6, for review `p`."""
+    tail = PHASE_6[PHASE_6.index(anchor):]
+    block = re.search(FENCE + r"bash\n(.*?)" + FENCE, tail, re.S)
+    return block.group(1).replace("[project-name]", "p")
+
+
+def test_step_7_as_written_writes_the_three_files(tmp_path):
+    """Runs step 7's command exactly as SKILL.md writes it, from a workspace
+    root, so a wrong path or flag fails here and not in a user's review."""
+    rd = tmp_path / "reviews" / "p"
+    rd.mkdir(parents=True)
+    (rd / "literature-p.bib").write_text(COMMENT + "\n" + ENTRY, encoding="utf-8")
+    (rd / "lit-review-plan.md").write_text(PLAN, encoding="utf-8")
+    env = {**os.environ, "PHILLIT_ROOT": str(ROOT)}
+    r = subprocess.run(["bash", "-c", _step_bash("Split the delivery into its three files")],
+                       cwd=tmp_path, env=env, capture_output=True, text=True)
+    assert r.returncode == 0, r.stdout + r.stderr
+    for name in ("literature-p.bib", "literature-p-annotated.bib", "research-notes-p.md"):
+        assert (rd / name).exists(), name
+
+
+def test_the_safety_net_keeps_the_three_deliverables(tmp_path):
+    """Runs the sweep exactly as SKILL.md writes it: a keep-list typo, or an
+    earlier command that moves the notes file, fails here."""
+    script = _step_bash("Safety net")
+    rd = tmp_path / "reviews" / "p"
+    (rd / "intermediate_files").mkdir(parents=True)
+    keep = ["literature-review-p.md", "literature-p.bib", "literature-p-annotated.bib",
+            "research-notes-p.md"]
+    for name in keep + ["stray.txt"]:
+        (rd / name).write_text("x", encoding="utf-8")
+    subprocess.run(["bash", "-c", script], cwd=tmp_path, check=True)
+    for name in keep:
+        assert (rd / name).exists(), name
+    assert (rd / "intermediate_files" / "stray.txt").exists()

@@ -298,10 +298,12 @@ Never advance to Phase 6 before all synthesis writers have completed.
 
 **Working directory**: `reviews/[project-name]/`
 
-**Expected outputs of this phase** (final):
-- `literature-review-[project-name].md` — complete review with YAML frontmatter
-- `literature-review-[project-name].docx` — DOCX version (if pandoc is installed)
-- `literature-[project-name].bib` — aggregated bibliography
+**Expected outputs of this phase** (final) — one purpose each:
+- `literature-review-[project-name].md` — the complete review, with YAML frontmatter
+- `literature-review-[project-name].docx` — the review as a Word document, only if pandoc is installed
+- `literature-[project-name].bib` — the TRACK RECORD, for accountability and reproducibility: every work with every verdict the agents reached on it — evidence tier, relevance rating, fault-line tags, cleaning and workflow markers, and the engine-derived fields. No reading notes, no `@comment` blocks.
+- `literature-[project-name]-annotated.bib` — the REFERENCE-MANAGER IMPORT (Zotero, BibDesk, ...): the same works with standard fields, topical keywords, and the researchers' reading notes with fault-line tags spelled out. No verdict tokens and none of the eight engine-derived fields. Zotero imports the notes as notes and the keywords as tags.
+- `research-notes-[project-name].md` — the per-domain analysis the researchers recorded (overview, key positions, gaps, synthesis guidance, relevance), for reading.
 
 1. Assemble final review with YAML frontmatter:
 
@@ -402,11 +404,17 @@ Never advance to Phase 6 before all synthesis writers have completed.
 
    Include every `CHECK` line **verbatim** in the final summary (they are telemetry, not blockers) — never summarize, count, or gloss them: a live run's summary once reported four findings as "two minor notes", which hid a do-not-cite violation from the user.
 
-7. **Sanitize the delivered bibliography** (engine-internal tier tokens must not ship):
+7. **Split the delivery into its three files**:
 
    ```bash
-   bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/sanitize_bib.py "reviews/[project-name]/literature-[project-name].bib"
+   bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/split_delivery.py \
+     "reviews/[project-name]/literature-[project-name].bib" \
+     --plan "reviews/[project-name]/lit-review-plan.md"
    ```
+
+   It rewrites `literature-[project-name].bib` as the track record and writes `literature-[project-name]-annotated.bib` and `research-notes-[project-name].md` beside it. Each `SPLIT-ERROR:` line (exit 2) names a file that was NOT written and why — an unrecognised label in a domain's research notes, a fault-line tag the plan does not define, or a bib that does not parse; the files it does not name were written. Each `SPLIT-NOTICE:` line names a comment block that was dropped although it held analysis. Do not edit files to get past either: report every line **verbatim** in the final summary and deliver the review with what was written.
+
+   "Already split" means this step ran before on this bib. The merged bib it replaced is saved at `reviews/[project-name]/intermediate_files/literature-[project-name]-merged.bib`: copy it back over `literature-[project-name].bib` (or re-run step 3, dedupe), then run this step again. If step 8 has already run, the domain bibs and the plan are in `intermediate_files/`: point step 3's input glob at `reviews/[project-name]/intermediate_files/literature-domain-*.bib` and `--plan` at `reviews/[project-name]/intermediate_files/lit-review-plan.md`.
 
 8. Clean up intermediate files (use absolute paths to avoid cwd issues):
 
@@ -437,7 +445,7 @@ Never advance to Phase 6 before all synthesis writers have completed.
    ```bash
    for f in "reviews/[project-name]"/*; do
      case "$(basename "$f")" in
-       literature-review-*.md|literature-review-*.docx|literature-*.bib|intermediate_files) ;;
+       literature-review-*.md|literature-review-*.docx|literature-*.bib|research-notes-*.md|intermediate_files) ;;
        *) mv "$f" "reviews/[project-name]/intermediate_files/" 2>/dev/null || true ;;
      esac
    done
@@ -455,8 +463,11 @@ Never advance to Phase 6 before all synthesis writers have completed.
 reviews/[project-name]/
 ├── literature-review-[project-name].md    # Final review (markdown)
 ├── literature-review-[project-name].docx  # Final review (if pandoc available)
-├── literature-[project-name].bib          # Aggregated bibliography
+├── literature-[project-name].bib          # Track record: every agent verdict
+├── literature-[project-name]-annotated.bib # Reference-manager import: notes + topical keywords
+├── research-notes-[project-name].md       # Per-domain research notes
 └── intermediate_files/           # Workflow artifacts
+    ├── literature-[project-name]-merged.bib # The merged bib as dedupe wrote it, saved by the split
     ├── json/                     # JSON files archived here
     │   ├── s2_<domain>_results.json … verify_<domain>_<citekey>.json
     │   ├── cleaning_ledger-*.json, enrichment_ledger-*.json
@@ -537,6 +548,7 @@ Output status updates directly as text (visible to user in real-time):
 | **Phase completion** | `Phase [N] complete: [summary]` |
 | **Assembly** | `Assembling final review with YAML frontmatter...` |
 | **BibTeX aggregation** | `Aggregating BibTeX files -> literature-[project-name].bib` |
+| **Delivery split** | `Split delivery: track record, annotated bib, research notes` |
 | **Cleanup** | `Moving intermediate files -> intermediate_files/` |
 | **DOCX conversion** | `Converted to DOCX: literature-review-[project-name].docx` |
 | **Workflow complete** | `Literature review complete: literature-review-[project-name].md ([wordcount])` |

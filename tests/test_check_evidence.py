@@ -1,5 +1,4 @@
-"""Tests for check_evidence.py (Phase 6 telemetry) and sanitize_bib.py
-(delivered-bib sanitizer)."""
+"""Tests for check_evidence.py (Phase 6 telemetry)."""
 
 import subprocess
 import sys
@@ -9,7 +8,6 @@ import pytest
 
 SCRIPTS_DIR = Path(__file__).parent.parent / "skills" / "literature-review" / "scripts"
 CHECKER = SCRIPTS_DIR / "check_evidence.py"
-SANITIZER = SCRIPTS_DIR / "sanitize_bib.py"
 
 sys.path.insert(0, str(SCRIPTS_DIR))
 import check_evidence  # noqa: E402
@@ -307,17 +305,6 @@ def test_uppercase_lettered_citation_flags_only_its_own_entry(tmp_path):
     r = _run(tmp_path, "Menary (2010B) is influential.", bib_text=BIB_LETTERED)
     assert "CHECK none-cited: menary2010extended" in r.stdout
     assert "CHECK none-cited: menary2010cognitive" not in r.stdout
-
-
-def test_sanitizer_strips_all_tokens(tmp_path):
-    bib = tmp_path / "b.bib"
-    bib.write_text(BIB, encoding="utf-8")
-    r = subprocess.run([sys.executable, str(SANITIZER), str(bib)],
-                       capture_output=True, text=True)
-    assert r.returncode == 0
-    content = bib.read_text(encoding="utf-8")
-    assert "EVIDENCE-" not in content        # the delivered-artifact invariant
-    assert "ps, High" in content             # other keywords intact
 
 
 def test_the_web_tier_is_not_low_trust():

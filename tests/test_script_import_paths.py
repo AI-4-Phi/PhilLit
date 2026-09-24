@@ -42,3 +42,16 @@ def test_enrich_imports_bib_identity_when_loaded_by_path(tmp_path):
                        text=True, env={**os.environ, "PYTHONPATH": ""})
     assert r.returncode == 0, r.stderr
     assert r.stdout.strip() == "A and B"
+
+
+def test_split_delivery_imports_its_hooks_when_loaded_by_path(tmp_path):
+    code = (
+        "import importlib.util\n"
+        f"spec = importlib.util.spec_from_file_location('m', {str(SCRIPTS / 'split_delivery.py')!r})\n"
+        "m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)\n"
+        "print(m.annotated_keywords('a-topic, High, EVIDENCE-NONE'))"
+    )
+    r = subprocess.run([sys.executable, "-c", code], cwd=tmp_path, capture_output=True,
+                       text=True, env={**os.environ, "PYTHONPATH": ""})
+    assert r.returncode == 0, r.stderr
+    assert r.stdout.strip() == "a-topic"
