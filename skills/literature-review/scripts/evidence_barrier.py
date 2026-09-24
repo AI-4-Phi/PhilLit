@@ -843,8 +843,10 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
         report["domains"][str(i)] = {
             "bib": b_state, "cleaning_ledger": c_state, "enrichment_ledger": e_state,
         }
-        # WHY a ledger was refused, for the operator. Present only when there
-        # is something to say, so a healthy domain stays as terse as before.
+        # WHY a ledger was refused, for the operator: a bare `malformed`
+        # cannot say whether to regenerate the ledger, look for a changed
+        # bib, or suspect the platform. Present only when there is something
+        # to say, so a healthy domain stays terse.
         if c_why:
             report["domains"][str(i)]["cleaning_ledger_reason"] = c_why
         if e_why:
@@ -1540,8 +1542,10 @@ def _repoint_binding(ledger_path: Path, authored: str) -> str | None:
     binding on the next run, which is the whole point.
 
     The cleaner still OWNS the ledger: the attestation is untouched, and
-    stamping cannot change which entries matched an API record. Only the
-    field that tracks the barrier's own edit moves.
+    stamping cannot change which entries matched an API record -- an
+    invariant nothing enforces yet (docs/ROADMAP.md, "The barrier blesses
+    its own output wholesale"). Only the field that tracks the barrier's own
+    edit moves.
 
     `authored` is the text the barrier GENERATED, not a read-back of the
     file. Reading the file back would bind whatever happens to be on disk at
@@ -1550,7 +1554,7 @@ def _repoint_binding(ledger_path: Path, authored: str) -> str | None:
     into a trusted attestation. Hashing the authored string costs nothing in
     portability: `write_text`/`read_text` translate newlines symmetrically,
     so the two digests are identical even where the disk holds CRLF
-    (verified), which is why the read-back never bought anything here.
+    (verified).
     """
     try:
         data = json.loads(ledger_path.read_text(encoding="utf-8"))
@@ -1599,11 +1603,10 @@ def execute(review_dir: Path, n_domains: int, debug: bool = False) -> int:
             for path, content in outputs.items():  # report first, bibs second
                 _atomic_write(path, content)
                 # Per domain, immediately after ITS bib lands -- not after the
-                # whole batch. A failure on a later bib used to abort before
-                # any re-point, leaving an earlier domain stamped but bound to
-                # its pre-stamp text; the next run then rejected a ledger
-                # nothing was wrong with, and since a rejected ledger is never
-                # re-pointed, no re-run could repair it.
+                # whole batch. Batching would strand an earlier domain when a
+                # later write fails: stamped, bound to its pre-stamp text,
+                # rejected by the next run, and -- since a rejected ledger is
+                # never re-pointed -- unrepairable by re-run.
                 #
                 # Only after the write succeeds: a binding pointing at text
                 # that was never written would be worse than a stale one.

@@ -1567,19 +1567,14 @@ def write_cleaning_ledger(bib_path: Path, ledger_entries: dict, breaker_tripped:
     ledger_dir = bib_path.parent / "intermediate_files" / "json"
     ledger_dir.mkdir(parents=True, exist_ok=True)
     payload = {
-        # 3 since the bib_sha256 content binding below. (2 came with the
-        # strip-rule fix, which added the optional telemetry keys documented
-        # above; 1 held through the `cleaning_abstained` addition, recorded
-        # 2026-08-18 as deliberate because producer and consumer shipped
-        # together.)
+        # 3: the bib_sha256 content binding below.
         #
-        # Unlike 1 -> 2, this bump is a FLOOR, not an addition: the barrier
-        # refuses a CLEANING ledger below it. Producer and consumer shipped
-        # together, so a v1/v2 cleaning ledger is either a pre-upgrade
-        # survivor -- the stale shape the binding exists to refuse -- or
-        # hand-written, and accepting it would be a downgrade path straight
-        # past the binding. A further bump must therefore land in BOTH this
-        # writer and the barrier's accepted set, or every ledger is refused.
+        # This version is a FLOOR, not an addition: the barrier refuses a
+        # CLEANING ledger below it. A v1/v2 cleaning ledger is either a
+        # pre-upgrade survivor -- the stale shape the binding exists to
+        # refuse -- or hand-written, and accepting it would be a downgrade
+        # path straight past the binding. A further bump is made in
+        # ledger_binding.py, never here or in the barrier's accepted set.
         "schema_version": BINDING_SCHEMA_VERSION,
         "bib_file": bib_path.name,
         # Binds this ledger to the bib it attests, so that a stale ledger
@@ -1590,7 +1585,8 @@ def write_cleaning_ledger(bib_path: Path, ledger_entries: dict, breaker_tripped:
         #
         # None when the bib cannot be read back. That is written out as-is
         # rather than omitted: a v3 ledger MUST carry the key, and a null
-        # fails the barrier's shape check, which is the safe direction.
+        # fails binding_holds -- the barrier reports it as "cleaner could not
+        # bind" -- which is the safe direction.
         #
         # The enrichment ledger is deliberately NOT on this schema. It is
         # written during the researcher's Stage 5.5, before this cleaner runs

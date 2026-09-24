@@ -9,7 +9,8 @@ ledger actually describes, so a survivor is unusable however it survived.
 Both sides of the binding live here because a drift between them rejects
 every ledger silently: `metadata_cleaner.write_cleaning_ledger` stamps the
 value, `evidence_barrier._load_ledger` checks it, and neither may compute it
-its own way. Sites bind these as ALIASES, never a local copy.
+its own way; `evidence_barrier._repoint_binding` re-stamps it after the
+barrier's own write. Sites bind these as ALIASES, never a local copy.
 
 THE HASH COVERS DECODED TEXT, NOT BYTES. The cleaner writes its rewrite in
 text mode, so the same logical bib is CRLF on Windows and LF elsewhere;
@@ -17,10 +18,10 @@ hashing bytes would make a ledger validate only on the platform that wrote
 it. `Path.read_text` reads in universal-newlines mode, which folds CRLF and
 CR to LF, so hashing its result is platform-stable by construction.
 
-A leaf module (`hashlib` only, no project imports) for the same reason
-`cleaning_marker.py` is one: the barrier must read the binding, and pulling
-in the cleaner to get at it would drag pybtex and the whole cleaning stack
-behind it.
+A leaf module (stdlib only -- `hashlib`, `pathlib` -- no project imports)
+for the same reason `cleaning_marker.py` is one: the barrier must read the
+binding, and pulling in the cleaner to get at it would drag pybtex and the
+whole cleaning stack behind it.
 """
 from __future__ import annotations
 
@@ -36,8 +37,9 @@ from pathlib import Path
 # and the barrier scopes the whole rule to `kind == "cleaning"` precisely so
 # that bumping the enrichment schema cannot silently opt it in.
 #
-# A further bump must land in the producer AND in the barrier's accepted set,
-# or every cleaning ledger is refused.
+# The cleaner and the barrier both read this constant, so a bump moves them
+# together and refuses every ledger written under the old value -- the floor
+# working. Never widen the barrier's accepted set to keep old ledgers.
 BINDING_SCHEMA_VERSION = 3
 
 # The enrichment ledger's version, pinned here so the barrier can accept

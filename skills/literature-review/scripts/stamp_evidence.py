@@ -142,7 +142,7 @@ DROP_TOKENS = {"INCOMPLETE", "no-abstract"}
 # escapes the underscore on round-trip, so match any run of backslashes.
 _MARKER_RE = re.compile(r",?\s*(METADATA\\*_CLEANED:.*)$", re.DOTALL)
 # Strip ANY evidence-shaped token (unknown/mixed-case included); only the
-# four canonical uppercase tiers are ever emitted.
+# five canonical uppercase tiers are ever emitted.
 _EVIDENCE_TOKEN_RE = re.compile(r"^EVIDENCE-[A-Za-z0-9_-]+$", re.IGNORECASE)
 _HEADER_RE = re.compile(r"@(\w+)\s*\{([^,\s]+)\s*,")
 
