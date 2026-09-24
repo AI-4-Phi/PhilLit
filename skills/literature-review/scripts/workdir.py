@@ -320,12 +320,20 @@ def _stale_meta_temp(rel: Path) -> bool:
             and rel.name.endswith(".tmp"))
 
 
+def _walk_error(e: OSError) -> None:
+    """os.walk's onerror: a folder the walk cannot list must never read as
+    empty, or a copy would miss files and a delete would follow them."""
+    raise Refusal(f"cannot list {e.filename}: {e.strerror}; refusing to copy or "
+                  "delete what cannot be seen")
+
+
 def tree_files(root: Path) -> list[Path]:
     """Every regular file under root, relative, walked with lstat. A link or
     special file (FIFO, socket) refuses, so a link planted in a tree can
-    never redirect a copy or a delete. Stale metadata temps are skipped."""
+    never redirect a copy or a delete. Stale metadata temps are skipped.
+    A folder it cannot list refuses too."""
     files = []
-    for dirpath, dirnames, filenames in os.walk(root, followlinks=False):
+    for dirpath, dirnames, filenames in os.walk(root, onerror=_walk_error, followlinks=False):
         for name in dirnames + filenames:
             p = Path(dirpath) / name
             if _is_link(p):
@@ -357,9 +365,14 @@ def manifest(root: Path, files: list[Path]) -> dict[str, tuple[int, str]]:
 
 
 def holds_no_files(d: Path) -> bool:
-    for dirpath, dirnames, filenames in os.walk(d, followlinks=False):
-        if filenames or any(_is_link(Path(dirpath) / n) for n in dirnames):
-            return False
+    """True only when d provably holds no files: a folder the walk cannot
+    list counts as holding some (fail closed; it is never collected)."""
+    try:
+        for dirpath, dirnames, filenames in os.walk(d, onerror=_walk_error, followlinks=False):
+            if filenames or any(_is_link(Path(dirpath) / n) for n in dirnames):
+                return False
+    except Refusal:
+        return False
     return True
 
 
@@ -708,7 +721,9 @@ def cmd_activate(workspace: Path, name: str) -> dict:
                 or meta.get("workspace") != workspace_id(workspace)):
             raise Refusal(f"{local.as_posix()}: ownership cannot be proven")
         if meta.get("state") != "active":
-            raise Refusal(f"{local.as_posix()} is {meta.get('state')}, not an abandoned review")
+            raise Refusal(f"{local.as_posix()} is a {meta.get('state')} review that could not "
+                          "be collected (its copy in reviews/ is missing or differs, or a file "
+                          "is locked); move or delete it by hand, then run activate again")
         new_ptr = {"form": "local", "review_id": meta["review_id"], "name": name,
                    "host": platform.node(), "workdir": local.as_posix()}
         mode, workdir = "local", local
@@ -963,9 +978,11 @@ def cmd_publish(workspace: Path, abandon: bool) -> dict:
         existing = read_meta(dest)
         # A destination holding no files is what a crash inside step 1 leaves
         # (an empty intermediate_files/, or a temp every walk skips): nothing
-        # there to protect, so it is not foreign.
-        empty = dest.is_dir() and not _is_link(dest) and tree_files(dest) == []
-        if (existing is None or existing.get("review_id") != ptr["review_id"]) and not empty:
+        # there to protect. A READABLE marker naming another review always
+        # refuses, and a folder the walk cannot list refuses (tree_files).
+        foreign = (existing.get("review_id") != ptr["review_id"] if existing is not None
+                   else not (dest.is_dir() and not _is_link(dest) and tree_files(dest) == []))
+        if foreign:
             raise Refusal(f"{dest.as_posix()} already exists and is not this review's; "
                           "nothing was copied", destination=dest.as_posix())
     workdir, where = locate(workspace, ptr)

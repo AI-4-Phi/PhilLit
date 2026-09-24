@@ -363,7 +363,7 @@ def test_activate_refuses_an_uncollectable_finished_leftover(home, ruled):
     marker = wd.read_meta(ruled / "reviews" / "topic")
     marker["review_id"] = "ff" * 16
     wd.write_meta(ruled / "reviews" / "topic", marker)
-    with pytest.raises(wd.Refusal, match="not an abandoned review"):
+    with pytest.raises(wd.Refusal, match="could not be collected"):
         wd.cmd_activate(ruled, "topic")
     assert local.exists()
 

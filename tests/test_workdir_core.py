@@ -370,3 +370,17 @@ def test_manifest_skips_the_metadata_file(tmp_path):
     m = wd.manifest(d, wd.tree_files(d))
     assert set(m) == {"a.md", "intermediate_files/json/x.json"}
     assert m["a.md"][0] == 1
+
+
+def test_holds_no_files_fails_closed_on_an_unlistable_folder(tmp_path):
+    if os.name == "nt" or (hasattr(os, "geteuid") and os.geteuid() == 0):
+        pytest.skip("POSIX permission bits, as a non-root user")
+    d = tmp_path / "d"
+    (d / "sub").mkdir(parents=True)
+    (d / "sub").chmod(0o000)
+    try:
+        assert wd.holds_no_files(d) is False
+        with pytest.raises(wd.Refusal, match="cannot list"):
+            wd.tree_files(d)
+    finally:
+        (d / "sub").chmod(0o755)

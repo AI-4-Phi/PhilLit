@@ -503,3 +503,55 @@ def test_activate_after_an_abandon_whose_delete_failed_resumes_in_place(home, ws
     (ws / "reviews" / "topic" / "task-progress.md").write_text("x", encoding="utf-8")
     assert wd.cmd_activate(ws, "topic")["mode"] == "inplace"
     assert not local.exists()
+
+
+_POSIX_PERMS = pytest.mark.skipif(
+    os.name == "nt" or (hasattr(os, "geteuid") and os.geteuid() == 0),
+    reason="POSIX permission bits, as a non-root user")
+
+
+@_POSIX_PERMS
+def test_an_unlistable_foreign_destination_is_refused_untouched(home, ws):
+    _review(ws)
+    dest = ws / "reviews" / "topic"
+    dest.mkdir(parents=True)
+    (dest / "literature-review-topic.md").write_text("someone else's", encoding="utf-8")
+    dest.chmod(0o300)  # write+search, no read: the walk cannot list it
+    try:
+        with pytest.raises(wd.Refusal):
+            wd.cmd_publish(ws, abandon=False)
+    finally:
+        dest.chmod(0o755)
+    assert (dest / "literature-review-topic.md").read_text(encoding="utf-8") == "someone else's"
+    assert wd.read_pointer(ws) is not None
+
+
+@_POSIX_PERMS
+def test_a_readable_foreign_marker_always_refuses(home, ws):
+    _review(ws)
+    dest = ws / "reviews" / "topic"
+    (dest / "intermediate_files").mkdir(parents=True)
+    wd.write_meta(dest, {"format": 1, "review_id": "ff" * 16, "name": "topic", "state": "published"})
+    (dest / "intermediate_files").chmod(0o300)  # the marker stays readable by path
+    try:
+        with pytest.raises(wd.Refusal, match="not this review"):
+            wd.cmd_publish(ws, abandon=False)
+    finally:
+        (dest / "intermediate_files").chmod(0o755)
+    assert wd.read_meta(dest)["review_id"] == "ff" * 16
+
+
+@_POSIX_PERMS
+def test_an_unlistable_source_folder_is_never_published_or_deleted(home, ws):
+    local = _review(ws)
+    hidden = local / "notes"
+    hidden.mkdir()
+    (hidden / "only-copy.md").write_text("irreplaceable", encoding="utf-8")
+    hidden.chmod(0o000)
+    try:
+        with pytest.raises(wd.Refusal, match="cannot list"):
+            wd.cmd_publish(ws, abandon=False)
+    finally:
+        hidden.chmod(0o755)
+    assert (hidden / "only-copy.md").read_text(encoding="utf-8") == "irreplaceable"
+    assert wd.read_pointer(ws) is not None
