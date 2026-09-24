@@ -13,9 +13,9 @@ The engine-derived FIELDS (`web_span`, `venue_status`, `year_suffix`,
 `sep_context`) are deliberately NOT stripped here: the delivered bib keeps
 them for audit transparency, and standard BibTeX/biblatex styles ignore
 unknown fields, so they are inert downstream. The planned three-file
-delivery (the delivery item in `docs/ROADMAP.md`) strips all eight from the
-clean bib and keeps them in the annotated one -- that is the split's job,
-not this script's.
+delivery (the delivery item in `docs/ROADMAP.md`) keeps all eight -- and the
+EVIDENCE-* tiers -- in the track-record bib and strips them from the
+annotated bib that goes to Zotero.
 
 Do not add field stripping here without a new owner decision.
 """

@@ -10,17 +10,30 @@ where it would be read.
 
 ## Queue
 
-- **Split the delivery into three files: a clean bib, an annotated bib, and
-  a research-notes doc** - the delivered `literature-<project>.bib` ships the researchers'
-  `note` fields, their `FLn.n` fault-line tags and `High`/`Medium`/`Low`
-  triage in `keywords`, `abstract_source`, and the per-domain `@comment`
-  search logs. `sanitize_bib.py` strips only `EVIDENCE-*` tokens from
-  `keywords`, by its own docstring, so all of that reaches a file the user
-  imports into Zotero. Decided: the reading notes are worth delivering, the
-  engine's tags are not. The six follow-on calls recorded below together make
-  the delivery THREE files - a clean import-ready `literature-<project>.bib`,
-  a `literature-<project>-annotated.bib` carrying the notes, and a
-  `research-notes-<project>.md` carrying what is today in `@comment` blocks.
+- **Split the delivery into three files, one per purpose** - the delivered
+  `literature-<project>.bib` mixes three audiences: the researchers' `note`
+  fields, their `FLn.n` fault-line tags and `High`/`Medium`/`Low` triage in
+  `keywords`, the engine's derived fields, and the per-domain `@comment`
+  research notes, while `sanitize_bib.py` strips the `EVIDENCE-*` tiers - the
+  one verdict an auditor most needs. DECIDED - each file has one purpose, and
+  SKILL.md's deliverable list and README must state it:
+  - `literature-<project>.bib` - the TRACK RECORD: accountability,
+    transparency and reproducibility. It shows the verdict each agent reached
+    on each entry: the `EVIDENCE-*` tier, the `High`/`Medium`/`Low` rating,
+    the `FLn.n` tags, the workflow markers, the `METADATA_CLEANED` markers
+    and all eight engine-derived fields. No `note`, no `@comment`.
+  - `literature-<project>-annotated.bib` - the ZOTERO IMPORT. Standard
+    fields, topical keywords and the reading notes, `FLn.n` substituted.
+    Zotero's BibTeX importer (`BibTeX.js` in zotero/translators) turns `note`
+    into a child note and every `keywords` item into a tag, maps `urldate` to
+    Accessed, and silently drops fields it has no mapping for - so every
+    verdict token must be stripped from this file's `keywords`, or it becomes
+    a Zotero tag.
+  - `research-notes-<project>.md` - the per-domain analysis from today's
+    `@comment` blocks, for a human reader.
+  Weighed and rejected: a clean "import-ready" bib for Zotero with the notes
+  and engine fields in the annotated one (it discarded the verdicts from
+  every file, and put Zotero on the file with no notes).
   Nothing here is still open: the item is ready to build.
   Constraints any implementation must respect:
   - Researchers emit BOTH `note = {...}` and `note = "..."`. In the
@@ -59,11 +72,13 @@ where it would be read.
     offered and declined, so a normalizer must not "tidy" them. 12 of the 14
     name an engine tool or API in their prose, and that is accepted - the
     information is the point.
-  - THE `keywords` FIELD - DECIDED: keep the topical
-    keywords (261 distinct, 508 occurrences); strip the `FLn.n` tags (145),
-    the `High`/`Medium`/`Low` ratings (131 - and 95 of them are `High`, so
-    the field barely discriminates) and the workflow markers `AI-RELEVANT`
-    (7), `ROUTING-DISPUTE` (1) and `NO-DOI` (2).
+  - THE `keywords` FIELD in the ANNOTATED (Zotero) bib - DECIDED: keep the
+    topical keywords (261 distinct, 508 occurrences); strip the `EVIDENCE-*`
+    tier, the `FLn.n` tags (145), the `High`/`Medium`/`Low` ratings (131 -
+    and 95 of them are `High`, so the field barely discriminates), the
+    `METADATA_CLEANED` marker and the workflow markers `AI-RELEVANT` (7),
+    `ROUTING-DISPUTE` (1) and `NO-DOI` (2). The TRACK-RECORD bib keeps all of
+    them; `INCOMPLETE`/`no-abstract` leave both, as today.
     STRIP THE MARKERS BY NAME, NEVER BY SHAPE. The markers are ALL-CAPS, but
     so are real dataset and method names the measurement literature uses as
     keywords - `XCONST`, `POLCON`, `DPI`, `CHECKS`, `CCP`, `IRT`, `UDS`,
@@ -74,8 +89,7 @@ where it would be read.
     notes - prose documents that are not BibTeX entries at all - and they go
     to a THIRD deliverable, `research-notes-<project>.md`, alongside the
     review. Neither .bib keeps them. Telemetry is omitted from the new file.
-    So the delivery is three files, not two: clean `.bib`, `-annotated.bib`,
-    and `research-notes-<project>.md`.
+    So the delivery is three files, not two.
     Note `dedupe_bib` currently CARRIES these blocks forward by design
     (`bib_comments.is_verbatim_block`), so this changes what Phase 6 does
     with them, not just what sanitize strips - and the carry logic must keep
@@ -100,14 +114,11 @@ where it would be read.
     would either leak telemetry or drop analysis.
   - THE ENGINE-DERIVED FIELDS - DECIDED, and this IS the "new owner
     decision" `sanitize_bib.py`'s docstring requires before any field
-    stripping: `abstract_source` (117), `web_span` (3), `urldate`
-    (3), `same_work_group` (3), `venue_status` (2) and `sep_context` (1) -
-    plus `year_suffix` and `archiveurl`, engine-derived like the rest but
-    absent from that run, so all eight `sanitize_bib.py` names - are
-    stripped from the CLEAN bib and kept in the ANNOTATED one. The
-    keep-decision in `sanitize_bib.py` is not reversed - the clean/annotated
-    split just gives its audit intent a better home than the file people
-    import.
+    stripping: `abstract_source` (117), `web_span` (3), `urldate` (3),
+    `same_work_group` (3), `venue_status` (2), `sep_context` (1), and
+    `year_suffix` and `archiveurl` (engine-derived like the rest, absent from
+    that run) - all eight `sanitize_bib.py` names. The TRACK-RECORD bib keeps
+    them; the ANNOTATED bib strips them (Zotero would drop them regardless).
   - WRITER-DIRECTED SENTENCES inside a kept section (10 of the 131
     `RELEVANCE` blocks say things like "Cite one or the other, not both, in
     the final review") are NOT removed. Settled by the same-day precedent on
@@ -116,15 +127,16 @@ where it would be read.
   - The split runs where `sanitize_bib` runs today: AFTER
     `generate_bibliography` and `check_evidence`, both of which read
     `year_suffix` for the Chicago a/b labels. Stripping it any earlier breaks
-    the review's citations.
+    the review's citations. `sanitize_bib`'s `EVIDENCE-*` strip moves from the
+    track-record bib to the annotated one.
   - Give the rewritten `sanitize_bib` a real CLI: today it reads
     `sys.argv[1]` bare, so `--help` (or a wrong path) is a traceback.
   - SKILL.md's Phase 6 safety-net glob (`literature-*.bib`) already keeps a
     `-annotated` sibling at the top level. That becomes intentional under
     this spec; do not "fix" it back.
   - The spec touches SKILL.md's deliverable list and tree diagram, README's
-    Highlights and Output Structure, the Phase 6 sweep, and
-    `sanitize_bib.py`'s recorded keep-decision. All of it
+    Highlights and Output Structure (each file's PURPOSE, as above), the
+    Phase 6 sweep, and `sanitize_bib.py`'s docstring and behaviour. All of it
     is vendored downstream, so it is a design item, not a one-liner.
 
 - **The barrier blesses its own output wholesale, not just its stamps** -
