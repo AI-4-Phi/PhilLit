@@ -788,8 +788,156 @@ def cmd_resolve(workspace: Path) -> dict:
         return {"error": str(e)}
 
 
+# --- publish ------------------------------------------------------------------------
+
+def _copy_file(src: Path, dst: Path) -> None:
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(src, dst)
+    with open(dst, "rb+") as f:  # a write handle: Windows fsync needs one
+        os.fsync(f.fileno())
+
+
+def _finish(workspace: Path, workdir: Path | None, state: str, dest: Path) -> dict:
+    """Steps 5-7: mark the local metadata, remove the pointer, delete the
+    local copy (metadata last). A failed delete never fails the publish: the
+    leftover carries final-state metadata, and the next init or publish
+    collects it."""
+    leftover: list[str] = []
+    if workdir is not None:
+        meta = read_meta(workdir)
+        if meta is not None:  # never write a partial record over an unreadable one
+            meta["state"] = state
+            write_meta(workdir, meta)
+    remove_pointer(workspace)
+    if workdir is not None:
+        leftover += delete_workdir(workdir)
+        try:
+            workdir.parent.rmdir()
+        except OSError:
+            pass
+    leftover += [p for p in collect(workspace) if p not in leftover]
+    out = {"mode": "local", "state": state, "published_to": dest.as_posix()}
+    try:
+        files = [f for f in tree_files(dest) if f != META_REL]
+        out.update(files=len(files), bytes=sum((dest / f).stat().st_size for f in files))
+    except Refusal:
+        pass  # a link someone put into the delivered review; the counts are cosmetic
+    if leftover:
+        out["leftover"] = leftover
+    return out
+
+
+def _finish_committed(workspace: Path, ptr: dict, dest: Path, marker: dict) -> dict:
+    """Branch 1, recovery after a crash anywhere past the commit: never copy
+    again. The working directory, if still here, must match the destination
+    for every file it still holds; a mismatch means it changed after the
+    commit, and nothing is deleted. A file missing from it is a partial
+    delete and loses nothing: the destination has it."""
+    expected = local_workdir(workspace, ptr["name"])
+    workdir, unproven = None, []
+    if ptr["workdir"] == expected.as_posix() and os.path.lexists(expected):
+        if not _is_link(expected) and holds_no_files(expected):
+            delete_workdir(expected)  # only empty folders were left; they hold nothing
+        else:
+            try:
+                workdir, _ = locate(workspace, ptr)
+            except Refusal as e:
+                # The destination marker already proves the delivery, so the
+                # publish completes; the unprovable folder is left untouched
+                # and reported (status lists it as stranded).
+                unproven = [f"{expected.as_posix()} ({e})"]
+    if workdir is not None:
+        differing = [rel.as_posix() for rel in tree_files(workdir)
+                     if rel != META_REL and not same_file(workdir / rel, dest / rel)]
+        if differing:
+            raise Refusal("the working directory changed after the review was published; "
+                          "nothing was deleted", differing=differing)
+    out = _finish(workspace, workdir, marker["state"], dest)
+    if unproven:
+        out["leftover"] = unproven + out.get("leftover", [])
+    return out
+
+
+def _copy_commit(workspace: Path, ptr: dict, workdir: Path, dest: Path, state: str) -> dict:
+    """Branch 3: fresh, or an interrupted copy of this review. PRECONDITION
+    (SKILL.md, prose): nothing is still writing the tree. The before/after
+    manifests catch a write that lands during the copy; one that lands
+    between the final check and the commit is the precondition's alone."""
+    if _is_link(dest) or _is_link(dest.parent):
+        raise Refusal(f"{dest.as_posix()} or its parent is a link; refusing to copy into it")
+    src_files = tree_files(workdir)
+    before = manifest(workdir, src_files)
+    if os.path.lexists(dest):
+        tree_files(dest)  # a partial copy must hold no planted link either
+    # 1. metadata FIRST: a partial destination is provably this review's
+    _copy_file(workdir / META_REL, dest / META_REL)
+    # 2. the rest; the source is authoritative
+    for rel in src_files:
+        if rel != META_REL:
+            _copy_file(workdir / rel, dest / rel)
+    # 3. verify: the source did not change, and the copy equals it exactly
+    after = manifest(workdir, tree_files(workdir))
+    copied = manifest(dest, tree_files(dest))
+    if not before == after == copied:
+        changed = sorted(k for k in before.keys() | after.keys() if before.get(k) != after.get(k))
+        mismatched = sorted(k for k in after if copied.get(k) != after[k])
+        extra = sorted(set(copied) - set(after))
+        raise Refusal("the copy does not match the working directory; nothing was "
+                      "committed (was something still writing?)",
+                      changed_during_copy=changed, mismatched=mismatched, extra=extra)
+    # 4. commit: the reduced marker carries no host and no path
+    write_meta(dest, {"format": FORMAT, "review_id": ptr["review_id"], "name": ptr["name"],
+                      "state": state, "published": now()})
+    return _finish(workspace, workdir, state, dest)
+
+
+def _publish_inplace(workspace: Path, ptr: dict, state: str) -> dict:
+    dest = destination(workspace, ptr["name"])
+    for p in (dest, dest / "intermediate_files"):
+        if _is_link(p):
+            raise Refusal(f"{p.as_posix()} is a link; refusing to write through it")
+    if state == "abandoned":
+        # The reduced marker keeps an unfinished review discoverable even
+        # after its tracker moves; activate removes it again. Never on a
+        # folder holding the final review: that is a delivered review (the
+        # init guard for an existing review runs --abandon on one), and a
+        # delivered review is never changed.
+        if (dest.is_dir() and not (dest / f"literature-review-{ptr['name']}.md").exists()):
+            (dest / "intermediate_files").mkdir(exist_ok=True)
+            write_meta(dest, {"format": FORMAT, "review_id": None, "name": ptr["name"],
+                              "state": "abandoned", "published": now()})
+        remove_pointer(workspace)
+    else:
+        (dest / "intermediate_files").mkdir(parents=True, exist_ok=True)
+        os.replace(workspace / POINTER_REL, dest / COMPLETED_REL)
+    return {"mode": "inplace", "state": state, "published_to": dest.as_posix()}
+
+
 def cmd_publish(workspace: Path, abandon: bool) -> dict:
-    raise Refusal("publish is not implemented yet")  # Task 3
+    """Phase 6's last step (and, with --abandon, how an unfinished review is
+    set aside). The first matching branch runs: already committed ->
+    recovery; destination foreign -> refuse; otherwise copy, verify, commit."""
+    ptr = current_pointer(workspace)
+    if ptr is None:
+        raise Refusal("no active review; if its pointer was deleted, run "
+                      "`workdir.py activate <name>`, then publish again")
+    state = "abandoned" if abandon else "published"
+    if ptr["form"] == "inplace":
+        return _publish_inplace(workspace, ptr, state)
+    dest = destination(workspace, ptr["name"])
+    marker = committed(workspace, ptr)
+    if marker:
+        return _finish_committed(workspace, ptr, dest, marker)
+    if os.path.lexists(dest):
+        existing = read_meta(dest)
+        if existing is None or existing.get("review_id") != ptr["review_id"]:
+            raise Refusal(f"{dest.as_posix()} already exists and is not this review's; "
+                          "nothing was copied", destination=dest.as_posix())
+    workdir, where = locate(workspace, ptr)
+    if workdir is None:
+        raise Refusal("the review's working files are not on this machine "
+                      f"({where}); nothing was copied")
+    return _copy_commit(workspace, ptr, workdir, dest, state)
 
 
 # --- CLI ------------------------------------------------------------------------------
