@@ -55,3 +55,16 @@ def test_split_delivery_imports_its_hooks_when_loaded_by_path(tmp_path):
                        text=True, env={**os.environ, "PYTHONPATH": ""})
     assert r.returncode == 0, r.stderr
     assert r.stdout.strip() == "a-topic"
+
+
+def test_workdir_imports_output_when_loaded_by_path(tmp_path):
+    code = (
+        "import importlib.util\n"
+        f"spec = importlib.util.spec_from_file_location('m', {str(SCRIPTS / 'workdir.py')!r})\n"
+        "m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)\n"
+        "print(m.dumps({'a': 1}).replace(chr(10), ''))"
+    )
+    r = subprocess.run([sys.executable, "-c", code], cwd=tmp_path, capture_output=True,
+                       text=True, env={**os.environ, "PYTHONPATH": ""})
+    assert r.returncode == 0, r.stderr
+    assert r.stdout.strip().replace(" ", "") == '{"a":1}'

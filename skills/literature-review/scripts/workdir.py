@@ -457,3 +457,385 @@ def committed(workspace: Path, ptr: dict) -> dict | None:
     return None
 
 
+# --- garbage collection -------------------------------------------------------
+
+def _collectable(workspace: Path, d: Path, meta: dict) -> bool:
+    """A finished local folder whose published copy carries the same
+    review_id and state: safe to delete."""
+    if not (meta.get("state") in FINAL_STATES and meta.get("name") == d.name
+            and meta.get("workspace") == workspace_id(workspace)):
+        return False
+    marker = read_meta(destination(workspace, d.name))
+    return bool(marker and marker.get("review_id") == meta.get("review_id")
+                and marker.get("state") == meta.get("state"))
+
+
+def collect(workspace: Path) -> list[str]:
+    """Delete THIS workspace's finished leftovers under its ws-key (see
+    _collectable), and folders holding no files at all (an init that crashed
+    before its metadata write). A non-empty folder without metadata is never
+    deleted; status lists it. Returns what could not be deleted."""
+    keydir = local_root() / ws_key(workspace)
+    leftover: list[str] = []
+    if _is_link(keydir) or not keydir.is_dir():
+        return leftover
+    for d in sorted(keydir.iterdir()):
+        if _is_link(d) or not d.is_dir():
+            continue
+        meta = read_meta(d)
+        if meta is None:
+            if holds_no_files(d):
+                leftover += delete_workdir(d)
+        elif _collectable(workspace, d, meta):
+            leftover += delete_workdir(d)
+    try:
+        keydir.rmdir()  # only when empty
+    except OSError:
+        pass
+    return leftover
+
+
+# --- listings -------------------------------------------------------------------
+
+def list_abandoned(workspace: Path) -> list[dict]:
+    out = []
+    keydir = local_root() / ws_key(workspace)
+    if keydir.is_dir() and not _is_link(keydir):
+        for d in sorted(keydir.iterdir()):
+            meta = read_meta(d) if d.is_dir() and not _is_link(d) else None
+            if (meta and meta.get("state") == "active" and meta.get("name") == d.name
+                    and meta.get("workspace") == workspace_id(workspace)):
+                out.append({"name": d.name, "mode": "local", "workdir": d.as_posix()})
+    reviews = workspace / "reviews"
+    if reviews.is_dir():
+        for d in sorted(p for p in reviews.iterdir() if p.is_dir() and not _is_link(p)):
+            if _abandoned_in_place(d):
+                out.append({"name": d.name, "mode": "inplace", "workdir": d.as_posix()})
+    return out
+
+
+def _abandoned_in_place(d: Path) -> bool:
+    """An in-workspace review that can be resumed: its marker says
+    `abandoned` (set by publish --abandon in either mode, so it holds after
+    Phase 6 moved the tracker), or it still has a top-level tracker and no
+    marker saying `published`. A delivered review is never offered."""
+    marker = read_meta(d)
+    if marker and marker.get("state") == "published":
+        return False
+    if marker and marker.get("state") == "abandoned":
+        return True
+    return (d / "task-progress.md").is_file()
+
+
+def list_stranded(workspace: Path) -> list[dict]:
+    """For information only (listing needs no ownership proof; deletion
+    does): folders under OTHER keys whose workspace no longer exists,
+    non-empty folders without metadata anywhere, and this workspace's
+    finished folders that collection cannot collect."""
+    out = []
+    root = local_root()
+    if not root.is_dir():
+        return out
+    own = ws_key(workspace)
+    for keydir in sorted(root.iterdir()):
+        if _is_link(keydir) or not keydir.is_dir():
+            continue
+        for d in sorted(keydir.iterdir()):
+            if _is_link(d) or not d.is_dir():
+                continue
+            meta = read_meta(d)
+            if meta is None:
+                if not holds_no_files(d):
+                    out.append({"path": d.as_posix(), "note": STRANDED_NOTE})
+            elif keydir.name != own:
+                ws = meta.get("workspace")
+                if isinstance(ws, str) and not Path(ws).exists():
+                    out.append({"path": d.as_posix(), "note": STRANDED_NOTE})
+            elif meta.get("state") in FINAL_STATES and not _collectable(workspace, d, meta):
+                out.append({"path": d.as_posix(), "note": UNCOLLECTED_NOTE})
+    return out
+
+
+# --- commands ---------------------------------------------------------------------
+
+def _describe(ptr: dict) -> dict:
+    return {k: v for k, v in ptr.items() if k != "form"} | {"mode": ptr["form"]}
+
+
+def _refuse_linked_destination(dest: Path) -> None:
+    """An in-place review writes into reviews/<name>/ for hours and publish
+    refuses a linked one, so refuse it up front rather than at the end."""
+    for p in (dest, dest / "intermediate_files"):
+        if _is_link(p):
+            raise Refusal(f"{p.as_posix()} is a link; a review cannot work through it")
+
+
+def _active(mode: str, name: str, workdir: Path, workspace: Path) -> dict:
+    _require_quotable(workdir)
+    return {"active": True, "mode": mode, "name": name, "workdir": workdir.as_posix(),
+            "destination": destination(workspace, name).as_posix()}
+
+
+def suggest_name(workspace: Path, name: str) -> str | None:
+    for n in range(2, 1000):
+        suffix = f"-{n}"
+        candidate = name[:64 - len(suffix)].rstrip(".") + suffix
+        if name_problem(candidate):
+            continue
+        if not (os.path.lexists(destination(workspace, candidate))
+                or os.path.lexists(local_workdir(workspace, candidate))):
+            return candidate
+    return None
+
+
+def cmd_init(workspace: Path, name: str) -> dict:
+    ptr = current_pointer(workspace)
+    if ptr is not None:
+        raise Refusal("a review is already active: resume it, or abandon it first with "
+                      "`workdir.py publish --abandon`", active=_describe(ptr))
+    problem = name_problem(name)
+    if problem:
+        raise Refusal(problem)
+    mode, reason = requested_mode() or "local", None
+    dest, local = destination(workspace, name), local_workdir(workspace, name)
+    if mode == "local":
+        if not allow_rule_present(workspace):
+            mode, reason = "inplace", MISSING_RULE_REASON
+        elif (ch := unsafe_char(local)) is not None:
+            mode, reason = "inplace", (f"the local work folder path contains {ch!r}, which "
+                                       "the review's shell commands cannot quote safely")
+    workdir = local if mode == "local" else dest
+    _require_quotable(workdir)
+    problem = length_problem([local, dest] if mode == "local" else [dest])
+    if problem:
+        raise Refusal(problem)
+    leftover = collect(workspace)  # before the clash check: a finished leftover never blocks
+    existing_review = False
+    if mode == "local":
+        if _is_link(local.parent):
+            raise Refusal(f"{local.parent.as_posix()} is a link; ownership could never be "
+                          "proven there. Remove the link and run init again")
+        taken = [p for p in (dest, local) if os.path.lexists(p)]
+        if taken:
+            raise Refusal(f"the name {name!r} is taken: {taken[0].as_posix()} exists",
+                          suggested_name=suggest_name(workspace, name))
+    else:
+        _refuse_linked_destination(dest)
+        existing_review = (dest / f"literature-review-{name}.md").exists()
+    if mode == "local":
+        root = local_root()
+        root.mkdir(parents=True, exist_ok=True)
+        if os.name != "nt" and not _is_link(root):
+            os.chmod(root, 0o700)  # every init: review drafts and API results live here
+        local.parent.mkdir(exist_ok=True)
+        try:
+            local.mkdir()  # no exist_ok: a racing init fails instead of sharing
+        except FileExistsError:
+            raise Refusal(f"{local.as_posix()} appeared while init ran",
+                          suggested_name=suggest_name(workspace, name))
+        (local / "intermediate_files").mkdir()
+        review_id, host = uuid.uuid4().hex, platform.node()
+        write_meta(local, {"format": FORMAT, "review_id": review_id, "name": name,
+                           "workspace": workspace_id(workspace), "host": host,
+                           "state": "active", "created": now()})
+        new_ptr = {"form": "local", "review_id": review_id, "name": name, "host": host,
+                   "workdir": local.as_posix()}
+    else:
+        dest.mkdir(parents=True, exist_ok=True)  # the service pre-creates it
+        new_ptr = {"form": "inplace", "name": name}
+    try:
+        create_pointer(workspace, new_ptr)
+    except FileExistsError:
+        if mode == "local":
+            delete_workdir(local)
+        raise Refusal("another init created the pointer first; a review is already active")
+    out = {"mode": mode, "name": name, "workdir": workdir.as_posix(),
+           "destination": dest.as_posix()}
+    if reason:
+        out["reason"] = reason
+    if existing_review:
+        out["existing_review"] = True
+        out["suggested_name"] = suggest_name(workspace, name)
+    if leftover:
+        out["leftover"] = leftover
+    return out
+
+
+def cmd_status(workspace: Path) -> dict:
+    """READ-ONLY: reports; never deletes or writes."""
+    ptr = current_pointer(workspace)
+    if ptr is None:
+        return {"active": False, "abandoned": list_abandoned(workspace),
+                "stranded": list_stranded(workspace)}
+    name = ptr["name"]
+    dest = destination(workspace, name)
+    if ptr["form"] == "inplace":
+        _require_quotable(dest)
+        if not dest.is_dir():
+            # init creates the folder before the pointer, so this is loss or
+            # sync lag, never "created but not started"
+            return {"active": True, "missing": True, "mode": "inplace", "name": name,
+                    "workdir": dest.as_posix()}
+        if (dest / COMPLETED_REL).exists():
+            # an init whose completed-review guard was interrupted
+            return {"active": True, "delivered": True, "mode": "inplace", "name": name,
+                    "workdir": dest.as_posix()}
+        return _active("inplace", name, dest, workspace)
+    marker = committed(workspace, ptr)
+    if marker:
+        return {"active": True, "committed": True, "mode": "local", "name": name,
+                "state": marker["state"], "destination": dest.as_posix()}
+    workdir, _ = locate(workspace, ptr)
+    if workdir is not None:
+        return _active("local", name, workdir, workspace)
+    return {"active": True, "elsewhere": True, "mode": "local", "name": name,
+            "host": ptr["host"], "workdir": ptr["workdir"]}
+
+
+def cmd_activate(workspace: Path, name: str) -> dict:
+    ptr = current_pointer(workspace)
+    if ptr is not None:
+        raise Refusal("a review is already active; activate needs no pointer",
+                      active=_describe(ptr))
+    clear_marker = None
+    if name_problem(name) is None and os.path.lexists(local := local_workdir(workspace, name)):
+        if requested_mode() == "inplace":
+            raise Refusal(INPLACE_MEETS_LOCAL)
+        meta = read_meta(local)
+        if (_is_link(local) or _is_link(local.parent) or meta is None
+                or meta.get("name") != name or not isinstance(meta.get("review_id"), str)
+                or meta.get("workspace") != workspace_id(workspace)):
+            raise Refusal(f"{local.as_posix()}: ownership cannot be proven")
+        if meta.get("state") != "active":
+            raise Refusal(f"{local.as_posix()} is {meta.get('state')}, not an abandoned review")
+        new_ptr = {"form": "local", "review_id": meta["review_id"], "name": name,
+                   "host": platform.node(), "workdir": local.as_posix()}
+        mode, workdir = "local", local
+    else:
+        if "/" in name or "\\" in name or name in ("", ".", ".."):
+            raise Refusal(f"review name {name!r} is not a folder name")
+        dest = destination(workspace, name)
+        marker = read_meta(dest)
+        if marker and marker.get("state") == "published":
+            raise Refusal(f"{dest.as_posix()} is a delivered review; it is never resumed")
+        if not (dest.is_dir() and _abandoned_in_place(dest)):
+            raise Refusal(f"no abandoned review named {name!r} in this workspace")
+        _refuse_linked_destination(dest)
+        if marker and marker.get("state") == "abandoned":
+            clear_marker = meta_path(dest)
+        new_ptr, mode, workdir = {"form": "inplace", "name": name}, "inplace", dest
+    _require_quotable(workdir)
+    try:
+        create_pointer(workspace, new_ptr)  # win the race BEFORE changing anything
+    except FileExistsError:
+        raise Refusal("another command created the pointer first")
+    if clear_marker is not None:
+        clear_marker.unlink(missing_ok=True)  # an ordinary in-place review from now on
+    return _active(mode, name, workdir, workspace)
+
+
+def cmd_demote(workspace: Path) -> dict:
+    """Turn a FRESH local review (nothing but its metadata) into an in-place
+    one: Phase 1's tracker Write was denied in the local folder. The local
+    folder is deleted BEFORE the pointer changes, so a failed delete leaves
+    the review exactly as it was."""
+    ptr = current_pointer(workspace)
+    if ptr is None or ptr["form"] != "local":
+        raise Refusal("demote needs an active local review")
+    workdir, _ = locate(workspace, ptr)
+    if workdir is None:
+        raise Refusal("the review's working files are not on this machine")
+    files = tree_files(workdir)
+    if files != [META_REL]:
+        raise Refusal("demote only moves a FRESH review; the working directory already "
+                      "holds files", files=[f.as_posix() for f in files[:20]])
+    dest = destination(workspace, ptr["name"])
+    _refuse_linked_destination(dest)
+    if dest.exists() and any(dest.iterdir()):
+        raise Refusal(f"{dest.as_posix()} already holds files")
+    _require_quotable(dest)
+    leftover = delete_workdir(workdir)
+    if leftover:
+        raise Refusal("could not remove the local work folder; the review is unchanged",
+                      leftover=leftover)
+    try:
+        workdir.parent.rmdir()
+    except OSError:
+        pass
+    dest.mkdir(parents=True, exist_ok=True)
+    replace_pointer(workspace, {"form": "inplace", "name": ptr["name"]})
+    return {"mode": "inplace", "name": ptr["name"], "workdir": dest.as_posix(),
+            "destination": dest.as_posix(), "reason": DEMOTE_REASON}
+
+
+def cmd_resolve(workspace: Path) -> dict:
+    """For the SubagentStop hook: {workdir} with ownership proven, else
+    {error}. main() prints it and exits 0 either way; only a crash (exit 1)
+    is the hook's fail-closed case."""
+    try:
+        ptr = current_pointer(workspace)
+        if ptr is None:
+            return {"error": "no active review"}
+        if ptr["form"] == "inplace":
+            d = destination(workspace, ptr["name"])
+            return {"workdir": d.as_posix()} if d.is_dir() else {"error": f"{d.as_posix()} does not exist"}
+        workdir, _ = locate(workspace, ptr)
+        if workdir is None:
+            return {"error": "the review's working files are not on this machine "
+                             f"(last worked on {ptr['host'] or 'an unnamed host'})"}
+        return {"workdir": workdir.as_posix()}
+    except Refusal as e:
+        return {"error": str(e)}
+
+
+def cmd_publish(workspace: Path, abandon: bool) -> dict:
+    raise Refusal("publish is not implemented yet")  # Task 3
+
+
+# --- CLI ------------------------------------------------------------------------------
+
+def main(argv: list[str] | None = None) -> int:
+    load_dotenv(find_dotenv(usecwd=True), override=True)
+    parser = argparse.ArgumentParser(
+        description="Owner of the review working directory (see the module docstring).")
+    parser.add_argument("--workspace", type=Path, default=None,
+                        help="the PhilLit workspace (default: the current directory)")
+    sub = parser.add_subparsers(dest="command", required=True)
+    sub.add_parser("init", help="create a new review and its pointer").add_argument("name")
+    sub.add_parser("status", help="report the active or abandoned reviews (read-only)")
+    sub.add_parser("activate", help="re-attach an abandoned review").add_argument("name")
+    sub.add_parser("demote", help="turn a fresh local review into an in-place one")
+    p = sub.add_parser("publish", help="copy the review into reviews/<name>/ and clear the pointer")
+    p.add_argument("--abandon", action="store_true", help="set an unfinished review aside")
+    sub.add_parser("resolve", help="print the active working directory (for hooks; exits 0)")
+    args = parser.parse_args(argv)
+    try:
+        workspace = (args.workspace or Path.cwd()).resolve()
+        requested_mode()  # a bad value is an error for every subcommand
+        if args.command == "init":
+            result = cmd_init(workspace, args.name)
+        elif args.command == "status":
+            result = cmd_status(workspace)
+        elif args.command == "activate":
+            result = cmd_activate(workspace, args.name)
+        elif args.command == "demote":
+            result = cmd_demote(workspace)
+        elif args.command == "publish":
+            result = cmd_publish(workspace, args.abandon)
+        else:
+            result = cmd_resolve(workspace)
+    except Refusal as e:
+        if args.command == "resolve":
+            print(dumps({"error": str(e)}))
+            return 0
+        print(dumps({"error": str(e), **e.extra}))
+        return 2
+    except Exception as e:  # still one JSON object; exit 1 reads as a crash
+        print(dumps({"error": f"workdir.py crashed: {type(e).__name__}: {e}"}))
+        return 1
+    print(dumps(result))
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
