@@ -43,7 +43,7 @@ Once the review directory `reviews/[project-short-name]/` is established (Phase 
 
 ## Completed Tasks
 
-[timestamp] Phase 1: Created `lit-review-plan.md` ([N] domains)
+[timestamp] Phase 2: Created `lit-review-plan.md` ([N] domains)
 
 ## Current Task
 
@@ -233,8 +233,8 @@ Never advance to a next step in this phase before completing the current step.
 
    The summary's `abstract_corroboration` key reports the abstract check,
    which re-fetches one abstract per candidate entry and is bounded at 180 s
-   and 3 consecutive failures — mentioned for the same reason as the venue
-   timing above: a non-zero `corroboration_deadline` count means one of those
+   and 3 consecutive failures — surface it once, for the same reason as the
+   venue check above: a non-zero `corroboration_deadline` count means one of those
    two bounds stopped the pass early, so those entries carry a lower tier
    this run and a re-run restores it. But a count that REPEATS across runs
    means the probes themselves are failing rather than the pass merely
@@ -420,7 +420,7 @@ Never advance to Phase 6 before all synthesis writers have completed.
    Move stray API-result files from project root (agents sometimes omit the `$REVIEW_DIR/` prefix).
    Use targeted prefixes — never bare `*.json`, which could swallow unrelated files:
    ```bash
-   find . -maxdepth 1 \( -name "philpapers_*.json" -o -name "pp_*.json" -o -name "s2_*.json" -o -name "openalex_*.json" -o -name "stage3_*.json" -o -name "arxiv_*.json" \) -exec mv {} "reviews/[project-name]/intermediate_files/json/" \;
+   find . -maxdepth 1 \( -name "philpapers_*.json" -o -name "pp_*.json" -o -name "s2_*.json" -o -name "openalex_*.json" -o -name "stage3_*.json" -o -name "arxiv_*.json" -o -name "core_*.json" -o -name "sep_*.json" -o -name "iep_*.json" -o -name "cites_*.json" -o -name "recommendations_*.json" -o -name "verify_*.json" -o -name "encyclopedia_entries-*.json" \) -exec mv {} "reviews/[project-name]/intermediate_files/json/" \;
    find . -maxdepth 1 -name "*.bib" -exec mv {} "reviews/[project-name]/intermediate_files/" \;
    ```
 
@@ -458,9 +458,9 @@ reviews/[project-name]/
 ├── literature-[project-name].bib          # Aggregated bibliography
 └── intermediate_files/           # Workflow artifacts
     ├── json/                     # JSON files archived here
-    │   ├── s2_<domain>_results.json
-    │   ├── openalex_<domain>_results.json
-    │   └── stage3_*.json
+    │   ├── s2_<domain>_results.json … verify_<domain>_<citekey>.json
+    │   ├── cleaning_ledger-*.json, enrichment_ledger-*.json
+    │   └── evidence_report.json
     ├── task-progress.md
     ├── lit-review-plan.md
     ├── synthesis-outline.md
@@ -531,6 +531,7 @@ Output status updates directly as text (visible to user in real-time):
 | **Phase transition** | `Phase 3/6: Researching literature in [N] domains (parallel)` |
 | **Phase transition** | `Phase 4/6: Outlining synthesis review across domains` |
 | **Phase transition** | `Phase 5/6: Writing [N] review sections (parallel)` |
+| **Phase transition** | `Phase 6/6: Assembling final review files` |
 | **Agent launch (parallel)** | `Launching [N] domain researchers in parallel...` |
 | **Agent completion** | `Domain [N] complete: literature-domain-[N].bib ([number of sources included] sources)` |
 | **Phase completion** | `Phase [N] complete: [summary]` |

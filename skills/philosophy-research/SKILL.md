@@ -67,13 +67,13 @@ bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_p
 
 ```bash
 # Semantic Scholar - broad academic search
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/s2_search.py "moral responsibility" --field Philosophy --year 2015-2025
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/s2_search.py "moral responsibility" --field Philosophy --year "2015-$(date +%Y)"
 
 # OpenAlex - 250M+ works, cross-disciplinary
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_openalex.py "consciousness" --year 2020-2024 --min-citations 10
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_openalex.py "consciousness" --year "2020-$(date +%Y)" --min-citations 10
 
 # CORE - 431M+ research outputs, 46M full texts, excellent for abstracts
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_core.py "epistemic injustice" --year 2020-2024
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_core.py "epistemic injustice" --year "2020-$(date +%Y)"
 bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_core.py --doi "10.1111/nous.12191"
 bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_core.py --title "Freedom of the Will" --author "Frankfurt"
 
@@ -163,25 +163,12 @@ bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/verify_p
 - Bibliography with parsed author/year/title
 - Author and publication dates
 
-```bash
-# Get specific sections
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_sep.py compatibilism --sections "preamble,1,2"
-
-# Get bibliography only
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_sep.py freewill --bibliography-only
-```
-
 ## IEP Content Access
 
 **Use `fetch_iep.py` for Internet Encyclopedia of Philosophy articles.**
 
 `fetch_iep.py` provides structured extraction similar to SEP:
 - Preamble, individual sections, bibliography, author information
-
-```bash
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_iep.py compatibilism --sections "1,2,3"
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_iep.py freewill --bibliography-only
-```
 
 **Note**: IEP has different coverage than SEP. Use both for comprehensive encyclopedia coverage.
 
@@ -215,7 +202,7 @@ All scripts output JSON with consistent structure:
 
 ```json
 {
-  "status": "success|partial|error",
+  "status": "success|partial|error|skipped",
   "source": "script_name",
   "query": "search query",
   "results": [...],
@@ -224,7 +211,7 @@ All scripts output JSON with consistent structure:
 }
 ```
 
-Exit codes: 0=success, 1=not found, 2=config error, 3=API error
+Exit codes: 0=success, 1=not found, 2=config error, 3=API error, 4=`--output` write failed (JSON still on stdout)
 
 ## WebFetch Usage
 
