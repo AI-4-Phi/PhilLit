@@ -211,8 +211,9 @@ where it would be read.
   the wiring owner and cut the others to file names and purpose.
 
 phillit-service is deployed at 0.5.25 (engine at `da48b2c`) and owes a
-re-vendor of 0.5.27: 0.5.26's ledger content binding, plus 0.5.27's prompt
-fixes (current-year search bounds, the synthesis writer's note rule). It
+re-vendor of 0.5.28: 0.5.26's ledger content binding, 0.5.27's prompt fixes
+(current-year search bounds, the synthesis writer's note rule) and 0.5.28's
+review-length rule and enrichment-ledger constant. It
 runs from that repo, and its roadmap does not queue it yet.
 Tell the operator that the binding FLOOR reports `degraded` for a review
 whose researchers ran before the pin and whose barrier runs after, until a
