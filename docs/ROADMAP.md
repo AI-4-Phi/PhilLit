@@ -10,7 +10,10 @@ where it would be read.
 
 ## Queue
 
-- **Split the delivery into three files, one per purpose** - the delivered
+- **Split the delivery into three files, one per purpose** - NEXT. The spec
+  below is complete; NO CODE EXISTS yet. The engine still writes one
+  `literature-<project>.bib`, and the two bibs in the 2026-09-10 review were
+  made by hand after the run, with no research-notes file. The delivered
   `literature-<project>.bib` mixes three audiences: the researchers' `note`
   fields, their `FLn.n` fault-line tags and `High`/`Medium`/`Low` triage in
   `keywords`, the engine's derived fields, and the per-domain `@comment`
@@ -34,7 +37,7 @@ where it would be read.
   Weighed and rejected: a clean "import-ready" bib for Zotero with the notes
   and engine fields in the annotated one (it discarded the verdicts from
   every file, and put Zotero on the file with no notes).
-  Nothing here is still open: the item is ready to build.
+  No design question is open: plan the implementation and build it.
   Constraints any implementation must respect:
   - Researchers emit BOTH `note = {...}` and `note = "..."`. In the
     2026-09-10 run the split was 115 braced / 16 quoted, and a brace-only
