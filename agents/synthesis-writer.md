@@ -277,6 +277,6 @@ Ready for next section.
 - **Citation format**: (Author Year) in prose, Chicago author-date. Parentheses hold only author, year, and locator — never process notes or reliability caveats; qualify a source in the prose instead.
 - **Cross-reference by title, not number**: Refer to other sections by title or subject ("the section on expert testimony"), never by number ("Section 3.3") — section numbers are assigned at display time and won't match what you type.
 - **No LaTeX in prose**: Use real Unicode typography — curly quotes (" " ' '), em dash (—), en dash (–), plain ampersand (&). Never emit LaTeX markup (backtick/apostrophe quote pairs, `--`/`---` dashes, `\&`).
-- **Follow the outline**: Outline specifies word targets and paper counts
+- **Follow the outline**: Outline specifies word targets and paper counts. Word targets are guidance: run shorter or longer where the material warrants, but keep to a length the user set
 - **Tight prose**: Every paragraph earns its place
 - **No filler**: If a paper doesn't contribute insight, don't cite it

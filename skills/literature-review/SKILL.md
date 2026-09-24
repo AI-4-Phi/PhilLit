@@ -256,11 +256,11 @@ Never advance to Phase 4 before all domain researchers have completed AND the ev
 
 1. Use the Agent tool to invoke `synthesis-planner` agent:
    - subagent_type: "phillit:synthesis-planner"
-   - prompt: Include research idea, working directory, list of BibTeX files, and original plan path
-   - Example prompt: "Research idea: [idea]. Working directory: reviews/[project-name]/. BibTeX files: literature-domain-1.bib through literature-domain-N.bib. Plan: lit-review-plan.md. Write output to: reviews/[project-name]/synthesis-outline.md"
+   - prompt: Include research idea, working directory, list of BibTeX files, original plan path, and — only if the user stated one in their request — the target length
+   - Example prompt: "Research idea: [idea]. Target length: [user's stated length, or omit this sentence]. Working directory: reviews/[project-name]/. BibTeX files: literature-domain-1.bib through literature-domain-N.bib. Plan: lit-review-plan.md. Write output to: reviews/[project-name]/synthesis-outline.md"
    - description: "Plan synthesis structure"
 2. Planner reads BibTeX files and creates tight outline
-3. Wait for the planner to complete — its inline result, or its completion notification (see Agent Tool Usage). Expected output: `reviews/[project-name]/synthesis-outline.md` (800-1500 words outline for a 3000-4000 word review)
+3. Wait for the planner to complete — its inline result, or its completion notification (see Agent Tool Usage). Expected output: `reviews/[project-name]/synthesis-outline.md` (an 800-1500 word outline)
 4. **Update task-progress.md**
 
 Never advance to a next step in this phase before completing the current step.
@@ -546,6 +546,6 @@ Output status updates directly as text (visible to user in real-time):
 
 ## Success Metrics
 
-- Focused, rigorous, insight-driven review (3000-8000 words)
+- Focused, rigorous, insight-driven review — at the length the user asked for; otherwise sized to the literature found, with 4,000–10,000 words as soft guidance
 - Resumable (task-progress.md enables continuity)
 - Valid BibTeX files

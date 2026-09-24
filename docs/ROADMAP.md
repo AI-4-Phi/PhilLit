@@ -188,14 +188,6 @@ where it would be read.
   README's "writes review output only to `./reviews/`". Scope it to the
   names researchers write (`literature-domain-*.bib`, `literature-*.bib`).
 
-- **Delivered reviews run about twice the planner's length target** - the
-  synthesis planner (and SKILL.md's Phase 4 text) targets 3000-4000 words;
-  SKILL.md's Success Metrics say 3000-8000. Measured over the 43 delivered
-  reviews under `reviews/` (body only, frontmatter and References excluded):
-  min 4,407, p25 5,672, median 7,073, p75 8,164, max 14,247 - not one met
-  the planner's range. Decide the intended length, then align the planner's
-  total and per-section targets, the Phase 4 line and the success metric.
-
 - **The permissions guide claims a permission mode plugin agents never
   get** - `docs/permissions-guide.md`'s agent table lists `acceptEdits` for
   all four agents, from their `permissionMode` frontmatter. Claude Code's
