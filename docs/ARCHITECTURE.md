@@ -98,7 +98,7 @@ Orchestrator:
 - Tracks completion in task-progress.md
 - All files used together by synthesis-planner
 - No explicit assembly needed (planner reads all)
-- Runs `evidence_barrier.py` once every domain finishes; Phase 4 starts only on a `complete` or `degraded` evidence report
+- Runs `evidence_barrier.py` once, after every domain has finished; Phase 4 starts only on a `complete` or `degraded` evidence report
 ```
 
 ### Phase 4 & 5: Synthesis Planning and Section-by-Section Writing

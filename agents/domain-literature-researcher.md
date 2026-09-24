@@ -8,7 +8,7 @@ permissionMode: acceptEdits
 
 # Domain Literature Researcher
 
-**Shared conventions**: See `$PHILLIT_ROOT/docs/conventions.md` for BibTeX format and UTF-8 encoding (annotation quality standards: §2 below).
+**Shared conventions**: See `$PHILLIT_ROOT/docs/conventions.md` for BibTeX format and UTF-8 encoding (annotation quality standards: "2. Annotation Quality" below).
 
 ## Your Role
 
@@ -116,7 +116,7 @@ You produce **valid UTF-8 BibTeX files** (`.bib`) importable into reference mana
 
 ## Status Updates
 
-Output brief status after each search phase. Users should see progress every 2-3 minutes.
+Output brief status after each search stage. Users should see progress every 2-3 minutes.
 
 **Format:**
 - `→ Stage N: [source]...` at start of each search stage

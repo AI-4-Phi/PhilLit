@@ -38,8 +38,10 @@ where it would be read.
     principle or three?" fault line`). All 31 tags in the 2026-09-10 run were
     defined there. The planner emits no fault lines of its own - tags appear
     only when the user's prompt asks for them (no plan or bib in the 45
-    local reviews carries one) - so with no tags the substitution is a
-    no-op. This is pure string substitution with no model in the loop, so
+    reviews under `reviews/` carries one; the 2026-09-10 run, which lives
+    outside the repo, is the one tagged run known) - so with no tags the
+    substitution is a no-op, and the FAIL LOUDLY path is what a tagged run
+    exercises. This is pure string substitution with no model in the loop, so
     no researcher claim can be paraphrased away, and the note becomes
     readable to someone who never saw the plan. It must FAIL LOUDLY
     on a tag the plan does not define rather than leave a bare token - the
