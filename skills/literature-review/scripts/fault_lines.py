@@ -46,9 +46,7 @@ def phrase(title: str) -> str:
     title become curly single quotes, so the phrase is safe inside a
     quote-delimited BibTeX value."""
     first = title.split(" ", 1)[0]
-    # Known limitation: a proper noun as the first word would be lowercased
-    # too, since this rule cannot tell a sentence-initial capital from a
-    # proper noun's. No current plan title starts with one.
+    # Known limitation: a proper-noun first word would be lowercased too; no current plan title starts with one.
     if len(first) > 1 and first[0].isupper() and first[1:] == first[1:].lower():
         title = title[0].lower() + title[1:]
     title = _LONE_QUOTE_RE.sub("’", _PAIR_QUOTES_RE.sub("‘\\1’", title))

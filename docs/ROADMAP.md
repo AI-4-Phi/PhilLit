@@ -116,9 +116,8 @@ the service's OWN files are not vendored and need a manual follow-up pass:
 its public share list (`pages/routes.py`) will publish the track record -
 which now carries every verdict token - by the plain `.bib` suffix, while
 `research-notes-*.md` will not surface there at all; its `hooks.py`
-validation glob will match both the track record and the annotated bib,
-where before it matched one bib; and `docs/engine-provenance.md` still
-names `sanitize_bib.py`, which this repo deleted.
+validation glob will pick up both bibs; and `docs/engine-provenance.md`
+still names `sanitize_bib.py`, which this repo deleted.
 
 ## Checked and deliberately NOT filed
 

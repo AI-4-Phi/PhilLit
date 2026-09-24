@@ -10,21 +10,22 @@ purpose each:
   (Zotero, BibDesk, ...): standard fields, topical keywords and the reading
   notes with FLn.n substituted. Zotero turns `note` into a child note and
   every keyword into a tag, so every verdict token is stripped here, and so
-  are the eight engine-derived fields the spec names (ENGINE_FIELDS below;
+  are exactly these eight engine-derived fields (ENGINE_FIELDS below;
   `urldate` is included, `iep_context` is not). No `@comment` here either.
 - `research-notes-<project>.md` - the per-domain research blocks, for a
   human reader (research_notes.py).
 
 DECIDED, do not reopen: every workflow and METADATA_CLEANED marker is
-stripped BY NAME (WORKFLOW_MARKERS, cleaning_marker), never by shape, since
-an ALL-CAPS topical keyword (XCONST, POLCON, ...) shares that shape. Each
-output is computed whole in memory; the track record is always written
-unless it fails to parse; the annotated bib is withheld when a note or
-keyword carries an undefined fault-line tag; the notes file is withheld on
-an unrecognised label or an undefined tag in its text; a file this run does
-not write is deleted if an older copy exists. Before the track record
+stripped BY NAME from the annotated bib (WORKFLOW_MARKERS, cleaning_marker),
+never by shape, since an ALL-CAPS topical keyword (XCONST, POLCON, ...)
+shares that shape; the track record keeps them all. Each output is computed
+whole in memory; the track record is always written unless it fails to
+parse; the annotated bib is withheld when a note or keyword carries an
+undefined fault-line tag; the notes file is withheld on an unrecognised
+label, unlabelled text, or an undefined tag in its text; a file this run
+does not write is deleted if an older copy exists. Before the track record
 overwrites the merged bib (its only input), the merged bib is saved to
-`intermediate_files/<project>-merged.bib`.
+`intermediate_files/literature-<project>-merged.bib`.
 
 Runs after generate_bibliography and check_evidence, which read year_suffix
 and the tiers from the merged bib.
@@ -53,8 +54,8 @@ import stamp_evidence as se  # noqa: E402
 
 sys.path.pop(0)
 
-# The eight engine-derived fields the annotated bib strips - exactly the
-# spec's list (decided): `urldate` included, `iep_context` not.
+# The eight engine-derived fields the annotated bib strips (decided):
+# `urldate` included, `iep_context` not.
 ENGINE_FIELDS = frozenset({
     "abstract_source", "web_span", "urldate", "archiveurl", "same_work_group",
     "venue_status", "sep_context", "year_suffix"})
