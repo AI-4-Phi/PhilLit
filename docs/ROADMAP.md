@@ -117,6 +117,8 @@ where it would be read.
     `generate_bibliography` and `check_evidence`, both of which read
     `year_suffix` for the Chicago a/b labels. Stripping it any earlier breaks
     the review's citations.
+  - Give the rewritten `sanitize_bib` a real CLI: today it reads
+    `sys.argv[1]` bare, so `--help` (or a wrong path) is a traceback.
   - SKILL.md's Phase 6 safety-net glob (`literature-*.bib`) already keeps a
     `-annotated` sibling at the top level. That becomes intentional under
     this spec; do not "fix" it back.
@@ -179,6 +181,36 @@ where it would be read.
   the barrier accepts `ENRICHMENT_SCHEMA_VERSION` from `ledger_binding.py`.
   Bumping the producer alone would refuse every enrichment ledger, and no
   test ties the two. Import the constant, as the cleaner does.
+
+- **Delivered reviews run about twice the planner's length target** - the
+  synthesis planner (and SKILL.md's Phase 4 text) targets 3000-4000 words;
+  SKILL.md's Success Metrics say 3000-8000. Measured over the 43 delivered
+  reviews under `reviews/` (body only, frontmatter and References excluded):
+  min 4,407, p25 5,672, median 7,073, p75 8,164, max 14,247 - not one met
+  the planner's range. Decide the intended length, then align the planner's
+  total and per-section targets, the Phase 4 line and the success metric.
+
+- **The permissions guide claims a permission mode plugin agents never
+  get** - `docs/permissions-guide.md`'s agent table lists `acceptEdits` for
+  all four agents, from their `permissionMode` frontmatter. Claude Code's
+  sub-agents docs: plugin subagents ignore `permissionMode` (and `hooks`,
+  `mcpServers`). So in the plugin the mode is the session's, and edits pass
+  on setup's `Edit(reviews/**)` rule. Keep the frontmatter - phillit-service
+  vendors the files as project agents under `engine/.claude/agents/`, where
+  it IS honoured - and correct the column to say where it applies.
+
+- **Three doc inventories each have more than one owner** - they drift
+  between passes. (1) Environment variables: `.env.example`,
+  `check_setup.py`, `skills/setup/SKILL.md` and
+  `skills/philosophy-research/SKILL.md` all describe the keys, and CORE has
+  already drifted - `check_setup.py` says the key "improves rate limits" and
+  `.env.example` "improves CORE full-text discovery", but without it
+  `search_core.py` and the CORE abstract fallback skip entirely. Make
+  `.env.example` + `check_setup.py` the owners and cut philosophy-research's
+  copy to a pointer. (2) The hooks wiring is listed in CLAUDE.md,
+  `docs/ARCHITECTURE.md` and `docs/permissions-guide.md`, and needed
+  correcting in two consecutive doc passes; make the permissions-guide table
+  the wiring owner and cut the others to file names and purpose.
 
 phillit-service is deployed at 0.5.25 (engine at `da48b2c`) and owes a
 re-vendor of 0.5.27: 0.5.26's ledger content binding, plus 0.5.27's prompt
@@ -255,3 +287,15 @@ that did not survive reading the file it concerns.
   uncounted — real, but the table is explicitly approximate ("About ten
   calls") and says what it caps ("ceremony"), so it does not carry the risk of
   a skipped mandated call.
+
+- `skills/philosophy-research/SKILL.md`'s "Do NOT use WebFetch for ... Paper
+  abstracts: use `s2_search.py` or `s2_batch.py`" does not conflict with
+  `enrich_bibliography.py` being the sole author of `abstract` fields: it is
+  a WebFetch prohibition for reading abstracts during selection, and the
+  researcher's own "never write `abstract` yourself" rule governs the bib.
+- `lint_md.py --help` prints pymarkdown's help rather than its own. Harmless:
+  the script is only ever invoked by Phase 6 with fixed arguments.
+- CLAUDE.md's Permissions section repeats facts from
+  `docs/permissions-guide.md` (evaluation order, Edit covering Write). It is
+  kept: CLAUDE.md states them as the imperatives a developer session must
+  obey, the guide as explanation.
