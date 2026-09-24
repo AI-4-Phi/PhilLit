@@ -98,7 +98,7 @@ def test_publish_inplace_archives_the_pointer(home, tmp_path):
     assert not (w / "reviews" / ".active-review").exists()
 
 
-def test_publish_inplace_abandon_only_removes_the_pointer(home, tmp_path):
+def test_publish_inplace_abandon_keeps_the_review_in_place(home, tmp_path):
     w = (tmp_path / "plain")
     w.mkdir()
     wd.cmd_init(w.resolve(), "topic")
@@ -232,8 +232,6 @@ def _write_raw_pointer(ws, **fields):
     lambda home, ws: (wd.local_root() / wd.ws_key(ws) / ".." / wd.ws_key(ws) / "topic").as_posix(),
     lambda home, ws: "C:/Users/me/.local/state/phillit/reviews/" + wd.ws_key(ws) + "/topic",
 ])
-
-
 def test_publish_refuses_foreign_machine_pointer(home, ws, workdir_of):
     local = _review(ws)
     _write_raw_pointer(ws, workdir=workdir_of(home, ws))
@@ -388,6 +386,7 @@ def test_committed_review_with_an_unprovable_local_folder_completes(home, ws):
     out = wd.cmd_publish(ws, abandon=False)
     assert out["state"] == "published" and wd.read_pointer(ws) is None
     assert local.exists() and "ownership cannot be proven" in out["leftover"][0]
+    assert [s["path"] for s in wd.cmd_status(ws)["stranded"]] == [local.as_posix()]
 
 
 def test_a_stale_metadata_temp_is_never_published(home, ws):
@@ -402,3 +401,105 @@ def test_a_failed_delete_is_reported_once(home, ws, monkeypatch):
     monkeypatch.setattr(wd, "delete_workdir", lambda d: [d.as_posix() + "/locked.json"])
     out = wd.cmd_publish(ws, abandon=False)
     assert out["leftover"] == [local.as_posix() + "/locked.json"]
+
+
+def test_a_read_only_file_never_wedges_publish(home, ws, monkeypatch):
+    local = _review(ws)
+    ro = local / "literature-topic.bib"
+    ro.chmod(0o444)
+    real = wd._copy_file
+
+    def dying(src, dst):
+        real(src, dst)
+        if src == ro:
+            raise OSError("crash right after the read-only file was copied")
+
+    monkeypatch.setattr(wd, "_copy_file", dying)
+    with pytest.raises(OSError):
+        wd.cmd_publish(ws, abandon=False)
+    monkeypatch.setattr(wd, "_copy_file", real)
+    assert wd.cmd_publish(ws, abandon=False)["state"] == "published"
+    assert (ws / "reviews" / "topic" / "literature-topic.bib").read_text(encoding="utf-8") == "@misc{a, title={A}}\n"
+    assert not local.exists()
+
+
+def test_a_crash_inside_the_metadata_copy_is_not_a_foreign_destination(home, ws, monkeypatch):
+    local = _review(ws)
+    real = wd._copy_file
+
+    def dying(src, dst):
+        if src.name == ".phillit-review.json":
+            dst.parent.mkdir(parents=True, exist_ok=True)
+            dst.write_text('{"format": 1, "rev', encoding="utf-8")  # a torn copy
+            raise OSError("killed mid-copy")
+        real(src, dst)
+
+    monkeypatch.setattr(wd, "_copy_file", dying)
+    with pytest.raises(OSError):
+        wd.cmd_publish(ws, abandon=False)
+    monkeypatch.setattr(wd, "_copy_file", real)
+    assert wd.cmd_publish(ws, abandon=False)["state"] == "published"
+    assert not local.exists()
+    assert not list((ws / "reviews" / "topic" / "intermediate_files").glob("*.tmp"))
+
+
+def test_a_crashed_commit_leaves_no_temp_in_the_delivered_review(home, ws, monkeypatch):
+    _review(ws)
+    real = wd.write_meta
+
+    def dying(workdir, data):
+        if workdir == wd.destination(ws, "topic") and data.get("state") == "published":
+            wd.meta_path(workdir).with_name(".phillit-review.json.99999.tmp").write_text("{}", encoding="utf-8")
+            raise OSError("killed before os.replace")
+        real(workdir, data)
+
+    monkeypatch.setattr(wd, "write_meta", dying)
+    with pytest.raises(OSError):
+        wd.cmd_publish(ws, abandon=False)
+    monkeypatch.setattr(wd, "write_meta", real)
+    assert wd.cmd_publish(ws, abandon=False)["state"] == "published"
+    assert not list((ws / "reviews" / "topic" / "intermediate_files").glob("*.tmp"))
+
+
+def test_recovery_refuses_a_file_added_after_the_commit(home, ws):
+    local = _review(ws)
+    real_remove = wd.remove_pointer
+    wd.remove_pointer = lambda w: (_ for _ in ()).throw(OSError("crash"))
+    try:
+        with pytest.raises(OSError):
+            wd.cmd_publish(ws, abandon=False)
+    finally:
+        wd.remove_pointer = real_remove
+    (local / "added-later.md").write_text("new", encoding="utf-8")
+    with pytest.raises(wd.Refusal) as e:
+        wd.cmd_publish(ws, abandon=False)
+    assert e.value.extra["differing"] == ["added-later.md"]
+    assert local.exists()
+
+
+def test_inplace_publish_refuses_a_missing_folder(home, plain):
+    wd.cmd_init(plain, "topic")
+    (plain / "reviews" / "topic").rmdir()
+    with pytest.raises(wd.Refusal, match="nothing to publish"):
+        wd.cmd_publish(plain, abandon=False)
+    assert wd.read_pointer(plain) is not None
+
+
+def test_inplace_abandon_never_marks_a_delivered_folder(home, plain):
+    d = plain / "reviews" / "topic"
+    (d / "intermediate_files").mkdir(parents=True)
+    (d / "intermediate_files" / ".completed-review").write_text("reviews/topic\n", encoding="utf-8")
+    (plain / "reviews" / ".active-review").write_text("reviews/topic\n", encoding="utf-8")
+    wd.cmd_publish(plain, abandon=True)
+    assert not wd.meta_path(d).exists() and wd.read_pointer(plain) is None
+
+
+def test_activate_after_an_abandon_whose_delete_failed_resumes_in_place(home, ws, monkeypatch):
+    local = _review(ws)
+    real = wd.delete_workdir
+    monkeypatch.setattr(wd, "delete_workdir", lambda d: [d.as_posix() + "/locked"])
+    wd.cmd_publish(ws, abandon=True)
+    monkeypatch.setattr(wd, "delete_workdir", real)
+    (ws / "reviews" / "topic" / "task-progress.md").write_text("x", encoding="utf-8")
+    assert wd.cmd_activate(ws, "topic")["mode"] == "inplace"
+    assert not local.exists()

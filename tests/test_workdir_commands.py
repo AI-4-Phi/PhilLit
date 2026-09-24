@@ -349,12 +349,23 @@ def test_activate_local_refuses_unprovable_ownership(home, ruled, field, value):
     assert wd.read_pointer(ruled) is None
 
 
-def test_activate_local_refuses_a_finished_review(home, ruled):
+def test_activate_collects_a_finished_leftover_then_refuses_the_delivered_review(home, ruled):
     wd.cmd_init(ruled, "topic")
-    _finish(ruled, "topic")  # local metadata "published", pointer removed
+    local = _finish(ruled, "topic")  # local "published", its copy committed, pointer removed
+    with pytest.raises(wd.Refusal, match="delivered review"):
+        wd.cmd_activate(ruled, "topic")
+    assert not local.exists() and wd.read_pointer(ruled) is None
+
+
+def test_activate_refuses_an_uncollectable_finished_leftover(home, ruled):
+    wd.cmd_init(ruled, "topic")
+    local = _finish(ruled, "topic")
+    marker = wd.read_meta(ruled / "reviews" / "topic")
+    marker["review_id"] = "ff" * 16
+    wd.write_meta(ruled / "reviews" / "topic", marker)
     with pytest.raises(wd.Refusal, match="not an abandoned review"):
         wd.cmd_activate(ruled, "topic")
-    assert wd.read_pointer(ruled) is None
+    assert local.exists()
 
 
 def test_activate_local_under_the_inplace_pin_refuses(home, ruled, monkeypatch):
