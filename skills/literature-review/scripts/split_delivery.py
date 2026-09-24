@@ -129,3 +129,162 @@ def annotated_entry(chunk: str, defs: dict[str, str]) -> str:
             return None
         return ...
     return _rewrite(chunk, edit)
+
+
+class AlreadySplit(ValueError):
+    pass
+
+
+def _outputs(bib_path: Path) -> tuple[Path, Path, str]:
+    stem = bib_path.stem                      # literature-<project>
+    project = stem[len("literature-"):] if stem.startswith("literature-") else stem
+    return (bib_path.with_name(f"{stem}-annotated.bib"),
+            bib_path.with_name(f"research-notes-{project}.md"), project)
+
+
+def _parse_error(text: str) -> str | None:
+    try:
+        parse_string(text, "bibtex")
+    except Exception as e:                     # pybtex raises several types
+        return f"{type(e).__name__}: {e}"
+    return None
+
+
+def _write(path: Path, content: str) -> None:
+    tmp = path.with_name(path.name + ".tmp")
+    tmp.write_text(content, encoding="utf-8")
+    os.replace(str(tmp), str(path))
+
+
+def split(bib_path: Path, plan_path: Path | None) -> dict:
+    annotated_path, notes_path, project = _outputs(bib_path)
+    text = bib_path.read_text(encoding="utf-8")
+    defs = (fault_lines.parse_definitions(plan_path.read_text(encoding="utf-8"))
+            if plan_path is not None else {})
+
+    errors: list[str] = []
+    notices: list[str] = []
+    track, annotated, research, entries = [], [], [], 0
+    undefined: set[str] = set()
+    for chunk in se.split_entries(text):
+        if not chunk.strip():
+            continue
+        if research_notes.is_research_block(chunk):
+            research.append(chunk)
+        elif research_notes.is_comment_block(chunk):
+            if research_notes.has_in_label(chunk):
+                notices.append("dropped a comment block without a DOMAIN: header "
+                               "that holds research-notes sections: "
+                               + " ".join(chunk.split())[:80])
+        elif is_verbatim_block(chunk):                 # @string / @preamble
+            track.append(chunk)
+            annotated.append(chunk)
+        else:
+            entries += 1
+            track.append(track_record_entry(chunk))
+            try:
+                annotated.append(annotated_entry(chunk, defs))
+            except fault_lines.UndefinedFaultLine as e:
+                undefined.update(e.tags)
+
+    has_notes = any(f.name.lower() == "note" for f in bib_fields.iter_fields(text))
+    if not research and not has_notes and (annotated_path.exists() or notes_path.exists()):
+        raise AlreadySplit(
+            f"{bib_path.name} has no notes and no research blocks, and "
+            f"{annotated_path.name} or {notes_path.name} exists: it was already "
+            "split. re-run step 3 (dedupe) to rebuild the merged bib, then split again")
+
+    track_text = "\n".join(track)
+    annotated_text = None if undefined else "\n".join(annotated)
+    if undefined:
+        errors.append(f"{annotated_path.name} not written: "
+                      + str(fault_lines.UndefinedFaultLine(undefined)))
+    bad = _parse_error(track_text)
+    if bad:
+        errors.append(f"{bib_path.name} left as merged: the track record does not parse ({bad})")
+        track_text = None
+        if annotated_text is not None:
+            errors.append(f"{annotated_path.name} not written: the track record failed")
+            annotated_text = None
+    elif annotated_text is not None:
+        bad = _parse_error(annotated_text)
+        if bad:
+            errors.append(f"{annotated_path.name} not written: it does not parse ({bad})")
+            annotated_text = None
+
+    notes_md = None
+    domains, unknown = [], set()
+    for chunk in research:
+        try:
+            domains.append(research_notes.parse_block(chunk))
+        except research_notes.UnknownLabel as e:
+            unknown.update(e.labels)
+    if unknown:
+        raw_undefined = [t for t in fault_lines.tags_in("\n".join(research)) if t not in defs]
+        msg = f"{notes_path.name} not written: " + str(research_notes.UnknownLabel(unknown))
+        if raw_undefined:
+            msg += "; " + str(fault_lines.UndefinedFaultLine(raw_undefined))
+        errors.append(msg)
+    else:
+        try:
+            notes_md = research_notes.render(domains, defs, project)
+        except fault_lines.UndefinedFaultLine as e:
+            errors.append(f"{notes_path.name} not written: {e}")
+
+    # The track record overwrites the merged bib, the only input, so it is
+    # written LAST: an interruption before it leaves the notes and research
+    # blocks in place, and a plain re-run recovers.
+    written = []
+    for path, content in ((annotated_path, annotated_text), (notes_path, notes_md)):
+        if content is None:
+            path.unlink(missing_ok=True)       # never leave a stale copy
+        else:
+            _write(path, content)
+            written.append(path.name)
+    if track_text is not None:
+        _write(bib_path, track_text)
+        written.insert(0, bib_path.name)
+    return {"written": written, "errors": errors, "notices": notices,
+            "entries": entries, "research_blocks": len(research),
+            "domains": len(domains)}
+
+
+def _say(line: str) -> None:
+    """stdout, ASCII only: a cp1252 console must not turn a report into a traceback."""
+    print(line.encode("ascii", "backslashreplace").decode("ascii"))
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
+    parser.add_argument("bib", type=Path, help="the merged literature-<project>.bib")
+    parser.add_argument("--plan", type=Path, default=None,
+                        help="lit-review-plan.md, for FLn.n definitions")
+    args = parser.parse_args()
+    if not args.bib.is_file():
+        _say(f"SPLIT-ERROR: not a file: {args.bib}")
+        return 1
+    if args.plan is not None and not args.plan.is_file():
+        # After step 8 the plan lives in intermediate_files/ (resume path).
+        moved = args.bib.parent / "intermediate_files" / args.plan.name
+        if not moved.is_file():
+            _say(f"SPLIT-ERROR: --plan names no file: {args.plan} (nor {moved})")
+            return 1
+        args.plan = moved
+    try:
+        summary = split(args.bib, args.plan)
+    except AlreadySplit as e:
+        _say(f"SPLIT-ERROR: {e}")
+        return 2
+    except (UnicodeDecodeError, OSError) as e:
+        _say(f"SPLIT-ERROR: cannot read or write the delivery files ({type(e).__name__}: {e})")
+        return 1
+    for err in summary["errors"]:
+        _say(f"SPLIT-ERROR: {err}")
+    for note in summary["notices"]:
+        _say(f"SPLIT-NOTICE: {note}")
+    _say(json.dumps(summary, ensure_ascii=True))
+    return 2 if summary["errors"] else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

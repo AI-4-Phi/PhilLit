@@ -105,3 +105,159 @@ def test_an_entry_without_notes_or_keywords_passes_through():
     entry = "@book{k1,\n  title = {T},\n  year = {2020}\n}\n"
     assert sd.track_record_entry(entry) == entry
     assert sd.annotated_entry(entry, DEFS) == entry
+
+
+import json
+import subprocess
+
+RULE = "=" * 68
+COMMENT = f"""@comment{{
+{RULE}
+DOMAIN: 1 -- Anatomy
+SEARCH_DATE: 2026-09-10
+{RULE}
+
+DOMAIN_OVERVIEW:
+The move is DISAGGREGATION.
+
+SYNTHESIS_GUIDANCE:
+Do not present FL1.1 as settled.
+{RULE}
+}}
+"""
+OTHER_COMMENT = "@comment{jabref-meta: databaseType:bibtex;}\n"
+OVERFLOW = "@comment{\nKEY_POSITIONS:\n- more analysis\n}\n"
+STRING = "@string{rda = {Revista de Direito Administrativo}}\n"
+PLAN = "- **FL1.1 — One principle or three?** Waldron.\n- **FL1.4 — Continuity or rupture with the classical tradition?** x.\n"
+
+
+def _review(tmp_path, bib_text, plan_text=PLAN):
+    bib = tmp_path / "literature-sop.bib"
+    bib.write_text(bib_text, encoding="utf-8")
+    plan = tmp_path / "lit-review-plan.md"
+    plan.write_text(plan_text, encoding="utf-8")
+    return bib, plan
+
+
+def _cli(bib, plan=None):
+    cmd = [sys.executable, str(SCRIPTS / "split_delivery.py"), str(bib)]
+    if plan is not None:
+        cmd += ["--plan", str(plan)]
+    return subprocess.run(cmd, capture_output=True, cwd=bib.parent)
+
+
+def _out(r):
+    return r.stdout.decode("ascii")          # raises if any byte is not ASCII
+
+
+def _summary(r):
+    return json.loads(_out(r).strip().splitlines()[-1])
+
+
+def test_the_split_writes_three_files_by_purpose(tmp_path):
+    bib, plan = _review(tmp_path, STRING + "\n" + COMMENT + "\n" + OTHER_COMMENT + "\n" + ENTRY)
+    r = _cli(bib, plan)
+    assert r.returncode == 0, r.stdout + r.stderr
+    s = _summary(r)
+    assert s["entries"] == 1 and s["domains"] == 1 and s["errors"] == []
+    assert s["written"] == ["literature-sop.bib", "literature-sop-annotated.bib",
+                            "research-notes-sop.md"]
+
+    track = bib.read_text(encoding="utf-8")
+    annotated = (tmp_path / "literature-sop-annotated.bib").read_text(encoding="utf-8")
+    notes = (tmp_path / "research-notes-sop.md").read_text(encoding="utf-8")
+
+    for text in (track, annotated):
+        assert "@comment" not in text.lower()          # no comment of any kind
+        assert "@string{rda" in text                   # macros stay
+        assert "waldron2020separation" in parse_string(text, "bibtex").entries
+    assert "EVIDENCE-ABSTRACT" in track and "EVIDENCE-" not in annotated
+    assert "CORE ARGUMENT" not in track and "CORE ARGUMENT" in annotated
+    assert "## 1 -- Anatomy" in notes
+    assert "Do not present the “one principle or three?” fault line as settled." in notes
+
+
+def test_a_dropped_comment_that_held_analysis_is_noticed(tmp_path):
+    bib, plan = _review(tmp_path, COMMENT + "\n" + OVERFLOW + "\n" + ENTRY)
+    r = _cli(bib, plan)
+    assert r.returncode == 0
+    assert "SPLIT-NOTICE:" in _out(r) and "KEY_POSITIONS" not in bib.read_text(encoding="utf-8")
+
+
+def test_an_unknown_label_writes_the_bibs_but_not_the_notes(tmp_path):
+    bad = COMMENT.replace("SYNTHESIS_GUIDANCE:", "SCOPE NOTE:").replace("FL1.1", "FL9.9")
+    bib, plan = _review(tmp_path, bad + "\n" + ENTRY)
+    stale = tmp_path / "research-notes-sop.md"
+    stale.write_text("an older run's notes", encoding="utf-8")
+    r = _cli(bib, plan)
+    assert r.returncode == 2
+    out = _out(r)
+    assert "SPLIT-ERROR:" in out and "SCOPE NOTE" in out
+    assert "FL9.9" in out                       # every offender named in one run
+    assert _summary(r)["written"] == ["literature-sop.bib", "literature-sop-annotated.bib"]
+    assert not stale.exists()                   # no stale file beside fresh ones
+
+
+def test_an_undefined_tag_withholds_only_the_annotated_bib(tmp_path):
+    bib, plan = _review(tmp_path, ENTRY.replace("FL1.4", "FL9.9"))
+    r = _cli(bib, plan)
+    assert r.returncode == 2 and "FL9.9" in _out(r)
+    assert not (tmp_path / "literature-sop-annotated.bib").exists()
+    assert "CORE ARGUMENT" not in bib.read_text(encoding="utf-8")   # track record written
+    assert (tmp_path / "research-notes-sop.md").exists()
+
+
+def test_a_track_record_that_would_not_parse_is_not_written(tmp_path):
+    broken = ENTRY.replace("  doi =", "  doi = {x},\n  doi =")      # duplicate field
+    bib, plan = _review(tmp_path, broken)
+    before = bib.read_text(encoding="utf-8")
+    r = _cli(bib, plan)
+    assert r.returncode == 2 and "does not parse" in _out(r)
+    assert bib.read_text(encoding="utf-8") == before
+    assert not (tmp_path / "literature-sop-annotated.bib").exists()
+
+
+def test_re_running_on_a_split_bib_is_refused(tmp_path):
+    bib, plan = _review(tmp_path, COMMENT + "\n" + ENTRY)
+    assert _cli(bib, plan).returncode == 0
+    annotated = (tmp_path / "literature-sop-annotated.bib").read_text(encoding="utf-8")
+    r = _cli(bib, plan)
+    assert r.returncode == 2 and "re-run step 3" in _out(r)
+    assert (tmp_path / "literature-sop-annotated.bib").read_text(encoding="utf-8") == annotated
+
+
+def test_a_bib_with_no_notes_and_no_siblings_still_splits(tmp_path):
+    bib, plan = _review(tmp_path, "@book{k1,\n  title = {T},\n  year = {2020}\n}\n")
+    r = _cli(bib, plan)
+    assert r.returncode == 0, r.stdout + r.stderr
+    assert "No per-domain research notes" in (tmp_path / "research-notes-sop.md").read_text(encoding="utf-8")
+
+
+def test_a_moved_plan_is_found_in_intermediate_files(tmp_path):
+    bib, plan = _review(tmp_path, ENTRY)
+    (tmp_path / "intermediate_files").mkdir()
+    plan.rename(tmp_path / "intermediate_files" / plan.name)
+    r = _cli(bib, plan)                          # the old top-level path
+    assert r.returncode == 0, r.stdout + r.stderr
+
+
+def test_a_named_plan_that_does_not_exist_is_an_error(tmp_path):
+    bib, _ = _review(tmp_path, ENTRY)
+    r = _cli(bib, tmp_path / "missing-plan.md")
+    assert r.returncode == 1 and "SPLIT-ERROR:" in _out(r)
+    assert not (tmp_path / "literature-sop-annotated.bib").exists()
+
+
+def test_a_non_utf8_input_is_a_clean_error(tmp_path):
+    bib = tmp_path / "literature-sop.bib"
+    bib.write_bytes("@book{k1,\n  title = {Müller},\n}\n".encode("cp1252"))
+    r = _cli(bib)
+    assert r.returncode == 1 and "SPLIT-ERROR:" in _out(r)
+
+
+def test_error_lines_stay_ascii_for_a_non_ascii_label(tmp_path):
+    bad = COMMENT.replace("SYNTHESIS_GUIDANCE:", f"{RULE}\nÉTUDE ANNEXE\n")
+    bib, plan = _review(tmp_path, bad + "\n" + ENTRY)
+    r = _cli(bib, plan)
+    assert r.returncode == 2
+    assert "\\xc9TUDE" in _out(r)              # escaped, and _out() proves all-ASCII
