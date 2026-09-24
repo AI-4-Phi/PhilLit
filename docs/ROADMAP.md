@@ -111,6 +111,10 @@ where it would be read.
     the final review") are NOT removed. Settled by the same-day precedent on
     `NOTABLE_GAPS`: the rule is a LABEL list, never a sentence-level edit.
     Do not re-raise this as a separate cleanup.
+  - The split runs where `sanitize_bib` runs today: AFTER
+    `generate_bibliography` and `check_evidence`, both of which read
+    `year_suffix` for the Chicago a/b labels. Stripping it any earlier breaks
+    the review's citations.
   - SKILL.md's Phase 6 safety-net glob (`literature-*.bib`) already keeps a
     `-annotated` sibling at the top level. That becomes intentional under
     this spec; do not "fix" it back.
@@ -149,7 +153,30 @@ where it would be read.
   keyword "the single authority on citability"; the orchestrator's Phase 4
   instructions are not documented as yielding to it, and the precedence is
   written down nowhere. Reported from the 2026-09-10 run. Decide which
-  document wins and say so in the one that loses.
+  document wins and say so in the one that loses. The same "single
+  authority" wording also sits in `docs/conventions.md` (tier section) and
+  `agents/synthesis-writer.md` (tier table); the fix covers all three.
+
+- **The SubagentStop gate fails open silently on a bad review pointer** -
+  `hooks/subagent_stop_bib.sh` allows the stop with only a stderr WARNING
+  when `reviews/.active-review` is missing, malformed, or names a missing
+  directory, and stderr on exit 0 is never shown. Validation and cleaning
+  are then skipped for that researcher. The barrier later reports the
+  missing cleaning ledger as `degraded`, so it is not invisible downstream,
+  but the gate-failure policy in CLAUDE.md forbids a silent open on an
+  accuracy gate. Decide between a `systemMessage` and a block.
+
+- **Phase 6 moves every root-level `.bib` into the review** - SKILL.md's
+  stray-file step runs `find . -maxdepth 1 -name "*.bib" -exec mv`, which
+  also takes a user's own bibliography from the workspace root, against
+  README's "writes review output only to `./reviews/`". Scope it to the
+  names researchers write (`literature-domain-*.bib`, `literature-*.bib`).
+
+- **The enrichment ledger's version is a literal, not the shared
+  constant** - `enrich_bibliography.py` writes `"schema_version": 1` while
+  the barrier accepts `ENRICHMENT_SCHEMA_VERSION` from `ledger_binding.py`.
+  Bumping the producer alone would refuse every enrichment ledger, and no
+  test ties the two. Import the constant, as the cleaner does.
 
 phillit-service is deployed at 0.5.25 (engine at `da48b2c`) and owes a
 re-vendor of 0.5.27: 0.5.26's ledger content binding, plus 0.5.27's prompt
