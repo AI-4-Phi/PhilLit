@@ -152,7 +152,8 @@ where it would be read.
   document wins and say so in the one that loses.
 
 phillit-service is deployed at 0.5.25 (engine at `da48b2c`) and owes a
-re-vendor of 0.5.26, whose engine changes are the ledger content binding. It
+re-vendor of 0.5.27: 0.5.26's ledger content binding, plus 0.5.27's prompt
+fixes (current-year search bounds, the synthesis writer's note rule). It
 runs from that repo, and its roadmap does not queue it yet.
 Tell the operator that the binding FLOOR reports `degraded` for a review
 whose researchers ran before the pin and whose barrier runs after, until a
