@@ -25,8 +25,9 @@ where it would be read.
     on each entry: the `EVIDENCE-*` tier, the `High`/`Medium`/`Low` rating,
     the `FLn.n` tags, the workflow markers, the `METADATA_CLEANED` markers
     and all eight engine-derived fields. No `note`, no `@comment`.
-  - `literature-<project>-annotated.bib` - the ZOTERO IMPORT. Standard
-    fields, topical keywords and the reading notes, `FLn.n` substituted.
+  - `literature-<project>-annotated.bib` - the REFERENCE-MANAGER IMPORT
+    (Zotero, BibDesk, ...). Standard fields, topical keywords and the
+    reading notes, `FLn.n` substituted.
     Zotero's BibTeX importer (`BibTeX.js` in zotero/translators) turns `note`
     into a child note and every `keywords` item into a tag, maps `urldate` to
     Accessed, and silently drops fields it has no mapping for - so every
@@ -62,6 +63,9 @@ where it would be read.
     readable to someone who never saw the plan. It must FAIL LOUDLY
     on a tag the plan does not define rather than leave a bare token - the
     plan is per-review and an undefined tag means the two have drifted.
+    DECIDED: the same substitution applies to the tags in
+    `research-notes-<project>.md` (a glossary with bare tags was offered and
+    declined).
     Weighed and rejected: leaving the tags (a reader meets an undefined token
     130 times), an LLM rewrite of the 130 sentences (130 unverifiable edits
     to evaluative claims), and dropping whole sentences (guts RELEVANCE).
@@ -81,7 +85,8 @@ where it would be read.
     and 95 of them are `High`, so the field barely discriminates), the
     `METADATA_CLEANED` marker and the workflow markers `AI-RELEVANT` (7),
     `ROUTING-DISPUTE` (1) and `NO-DOI` (2). The TRACK-RECORD bib keeps all of
-    them; `INCOMPLETE`/`no-abstract` leave both, as today.
+    them. `INCOMPLETE`/`no-abstract` are removed from BOTH bibs, as the
+    delivered bib drops them today.
     STRIP THE MARKERS BY NAME, NEVER BY SHAPE. The markers are ALL-CAPS, but
     so are real dataset and method names the measurement literature uses as
     keywords - `XCONST`, `POLCON`, `DPI`, `CHECKS`, `CCP`, `IRT`, `UDS`,
@@ -110,6 +115,11 @@ where it would be read.
     OUT: `DOMAIN`, `SEARCH_DATE`, `PAPERS_FOUND`, `SEARCH_SOURCES`,
          `RETRIEVAL_FAILURES`, `FAULT_LINES_POPULATED`, `ABSTRACTS`,
          `ROUTING NOTES`, and the `====` rules.
+    WHAT A LABEL IS - DECIDED: any ALL-CAPS `LABEL:` at the start of a
+    line, alone or followed by text, in the header block or the body (an
+    alone-on-its-line reading, which would treat `AGAINST: ...` as content,
+    was offered and declined). FAILING withholds only the notes file: both
+    bibs are still written, and the error names every offending label.
     An UNRECOGNISED label must fail loudly rather than be guessed either way
     - the 2026-09-10 run also carried one-off labels (`SCOPE NOTE`,
     `ADJUDICATION ATTEMPT`, `NOTE ON ATTRIBUTION`, `COUNT NOTE`, `AGAINST`,
@@ -121,7 +131,9 @@ where it would be read.
     `same_work_group` (3), `venue_status` (2), `sep_context` (1), and
     `year_suffix` and `archiveurl` (engine-derived like the rest, absent from
     that run) - all eight `sanitize_bib.py` names. The TRACK-RECORD bib keeps
-    them; the ANNOTATED bib strips them (Zotero would drop them regardless).
+    them; the ANNOTATED bib strips exactly these eight. DECIDED: `urldate`
+    goes although Zotero maps it to Accessed, and `iep_context`, not on the
+    list, stays.
   - WRITER-DIRECTED SENTENCES inside a kept section (10 of the 131
     `RELEVANCE` blocks say things like "Cite one or the other, not both, in
     the final review") are NOT removed. Settled by the same-day precedent on
