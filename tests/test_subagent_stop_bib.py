@@ -5,7 +5,7 @@ Pins the Claude Code hook protocol contract:
 - Block: {"decision": "block", "reason": <syntax errors>}.
 - Cleaning summary: hookSpecificOutput.additionalContext (allow path).
 - Self-scopes with NO matcher: validates only inside a .phillit workspace, when
-  agent_type contains "domain-literature-researcher", and an .active-review exists.
+  agent_type contains "domain-literature-researcher", and workdir.py resolves an active review.
 
 The script runs against a temporary CLAUDE_PROJECT_DIR marked with .phillit; the
 bib_validator.py / metadata_cleaner.py validators resolve from CLAUDE_PLUGIN_ROOT
@@ -707,6 +707,9 @@ def test_resolver_crash_on_resumed_pass_is_a_system_message(tmp_path):
     '{"workdir": "/x", "error": "y"}',
     '[{"workdir": "/x"}]',
     '{"workdir": "/x"}\n{"workdir": "/y"}',
+    "",
+    "boom",
+    '{"error": 5}',
 ])
 def test_malformed_resolver_output_fails_closed(tmp_path, resolver_stdout):
     proj = tmp_path / "proj"
@@ -735,10 +738,51 @@ def test_malformed_resolver_output_fails_closed(tmp_path, resolver_stdout):
 
 def test_resolver_reads_the_workspace_env(tmp_path):
     # .env sets PHILLIT_WORKDIR=inplace while the review is local: resolve must
-    # see that .env (it runs from the workspace) and report the pin conflict.
+    # see that .env (it runs from the workspace) and fail closed on the configuration error.
     extra = {}
     proj, workdir = _local_review(tmp_path, extra)
     (workdir / "literature-domain-1.bib").write_text(INVALID_BIB, encoding="utf-8")
     (proj / ".env").write_text("PHILLIT_WORKDIR=inplace\n", encoding="utf-8")
-    out, _, err = _run(RESEARCHER, proj, extra, cwd=tmp_path)  # the hook's cwd is NOT the workspace
-    assert out == {"decision": "allow"} and "unset PHILLIT_WORKDIR" in err
+    out, _, _ = _run(RESEARCHER, proj, extra, cwd=tmp_path)  # the hook's cwd is NOT the workspace
+    # The .env pin meets a local review: a configuration error, so the gate
+    # blocks loudly instead of skipping validation.
+    assert out.get("decision") == "block" and "unset PHILLIT_WORKDIR" in out["reason"]
+
+
+def test_the_stub_resolver_positive_control_allows(tmp_path):
+    # The stub harness of the malformed-output test, fed a VALID resolver
+    # answer: the hook must get past resolve and validate, so the malformed
+    # cases above fail for their shape, not for a broken stub.
+    proj = tmp_path / "proj"
+    (proj / ".phillit").mkdir(parents=True)
+    review = proj / "reviews" / "r"
+    review.mkdir(parents=True)
+    (review / "d1.bib").write_text(VALID_BIB, encoding="utf-8")
+    root = tmp_path / "stub-plugin"
+    (root / "bin").mkdir(parents=True)
+    out_file = tmp_path / "resolver-out.txt"
+    out_file.write_text(json.dumps({"workdir": review.as_posix()}) + "\n", encoding="utf-8")
+    run = root / "bin" / "phillit-run"
+    run.write_text(
+        "#!/usr/bin/env bash\n"
+        "case \"$1\" in\n"
+        f"  *workdir.py) cat '{out_file}' ;;\n"
+        "  *) echo '{\"valid\": true, \"errors\": []}' ;;\n"
+        "esac\n",
+        encoding="utf-8",
+    )
+    run.chmod(0o755)
+    env = {**os.environ, "CLAUDE_PROJECT_DIR": str(proj), "CLAUDE_PLUGIN_ROOT": str(root),
+           "PHILLIT_UV": UV}
+    proc = subprocess.run([BASH, str(SCRIPT)], input=json.dumps(RESEARCHER), capture_output=True,
+                          text=True, encoding="utf-8", env=env)
+    assert json.loads(proc.stdout) == {"decision": "allow"}
+
+
+def test_an_invalid_workdir_mode_blocks_instead_of_skipping(tmp_path):
+    extra = {}
+    proj, workdir = _local_review(tmp_path, extra)
+    (workdir / "literature-domain-1.bib").write_text(INVALID_BIB, encoding="utf-8")
+    (proj / ".env").write_text("PHILLIT_WORKDIR=lcoal\n", encoding="utf-8")  # a typo
+    out, _, _ = _run(RESEARCHER, proj, extra)
+    assert out.get("decision") == "block" and "'lcoal'" in out["reason"]

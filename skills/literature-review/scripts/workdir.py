@@ -14,7 +14,8 @@ directory or touches the pointer `reviews/.active-review`. The SubagentStop
 hook calls `resolve` instead of parsing the pointer. Every subcommand prints
 one JSON object on stdout: exit 2 on a refusal, exit 1 on a crash (still one
 JSON object, `{"error": "workdir.py crashed: ..."}`); a `resolve` refusal
-exits 0, so only a crash reads as a crash to the hook.
+about the review exits 0, while a configuration error (ConfigError) exits 1,
+so the hook fails closed on it as on a crash.
 
 The location is fixed (`XDG_STATE_HOME` is ignored), so one permission-rule
 string works on every machine. `ws-key` only NAMES a folder: ownership is
@@ -91,6 +92,14 @@ class Refusal(Exception):
         self.extra = extra
 
 
+class ConfigError(Refusal):
+    """A configuration error: a bad PHILLIT_WORKDIR, or the inplace pin
+    meeting a local review. `resolve` reports it as a CRASH (exit 1), so the
+    SubagentStop gate fails closed instead of silently skipping validation
+    for a review whose files are here. Every other command treats it as an
+    ordinary refusal (exit 2)."""
+
+
 # --- location ---------------------------------------------------------------
 
 def local_root() -> Path:
@@ -130,7 +139,7 @@ def requested_mode() -> str | None:
     if not value:
         return None
     if value not in MODES:
-        raise Refusal(f"PHILLIT_WORKDIR={value!r} is not one of: local, inplace")
+        raise ConfigError(f"PHILLIT_WORKDIR={value!r} is not one of: local, inplace")
     return value
 
 
@@ -240,7 +249,7 @@ def current_pointer(workspace: Path) -> dict | None:
     so the service's pin can never act on a local review."""
     ptr = read_pointer(workspace)
     if ptr is not None and ptr["form"] == "local" and requested_mode() == "inplace":
-        raise Refusal(INPLACE_MEETS_LOCAL)
+        raise ConfigError(INPLACE_MEETS_LOCAL)
     return ptr
 
 
@@ -714,7 +723,7 @@ def cmd_activate(workspace: Path, name: str) -> dict:
     clear_marker = None
     if name_problem(name) is None and os.path.lexists(local := local_workdir(workspace, name)):
         if requested_mode() == "inplace":
-            raise Refusal(INPLACE_MEETS_LOCAL)
+            raise ConfigError(INPLACE_MEETS_LOCAL)
         meta = read_meta(local)
         if (_is_link(local) or _is_link(local.parent) or meta is None
                 or meta.get("name") != name or not isinstance(meta.get("review_id"), str)
@@ -786,8 +795,8 @@ def cmd_demote(workspace: Path) -> dict:
 
 def cmd_resolve(workspace: Path) -> dict:
     """For the SubagentStop hook: {workdir} with ownership proven, else
-    {error}. main() prints it and exits 0 either way; only a crash (exit 1)
-    is the hook's fail-closed case."""
+    {error}. main() prints it and exits 0 either way, except for a
+    configuration error, which exits 1 like a crash."""
     try:
         ptr = current_pointer(workspace)
         if ptr is None:
@@ -800,6 +809,8 @@ def cmd_resolve(workspace: Path) -> dict:
             return {"error": "the review's working files are not on this machine "
                              f"(last worked on {ptr['host'] or 'an unnamed host'})"}
         return {"workdir": workdir.as_posix()}
+    except ConfigError:
+        raise  # main() prints it and exits 1: the hook's fail-closed crash branch
     except Refusal as e:
         return {"error": str(e)}
 
@@ -1027,7 +1038,7 @@ def main(argv: list[str] | None = None) -> int:
     except Refusal as e:
         if args.command == "resolve":
             print(dumps({"error": str(e)}))
-            return 0
+            return 1 if isinstance(e, ConfigError) else 0
         print(dumps({"error": str(e), **e.extra}))
         return 2
     except Exception as e:  # still one JSON object; exit 1 reads as a crash

@@ -83,7 +83,7 @@ def test_requested_mode(monkeypatch, value, expected):
 
 def test_requested_mode_rejects_other_values(monkeypatch):
     monkeypatch.setenv("PHILLIT_WORKDIR", "tmp")
-    with pytest.raises(wd.Refusal, match="'tmp'"):
+    with pytest.raises(wd.ConfigError, match="'tmp'"):
         wd.requested_mode()
 
 

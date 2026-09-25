@@ -93,7 +93,8 @@ def test_plumbing_hooks_fail_open_with_visible_message():
 
 def test_subagentstop_routes_to_bib_hook():
     # No matcher: the hook fires for all SubagentStop events and self-scopes internally
-    # (.phillit marker + tolerant agent_type + .active-review). Robust to plugin namespacing.
+    # (.phillit marker + tolerant agent_type + an active review that workdir.py resolve
+    # locates). Robust to plugin namespacing.
     entries = HOOKS["SubagentStop"]
     assert "matcher" not in entries[0]
     assert "subagent_stop_bib.sh" in entries[0]["hooks"][0]["command"]

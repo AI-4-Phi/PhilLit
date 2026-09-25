@@ -69,7 +69,9 @@ fi
 # else - a nonzero exit, empty or non-JSON output, another shape - is a
 # resolver CRASH and fails CLOSED like a validator crash: this is an
 # accuracy gate. A resolver {error} (no pointer, files on another machine)
-# is today's warn-and-allow.
+# is today's warn-and-allow. workdir.py exits 1 for a configuration error (a
+# bad PHILLIT_WORKDIR, or the inplace pin meeting a local review), so a
+# config typo blocks loudly instead of skipping validation.
 RESOLVE_WS="${CLAUDE_PROJECT_DIR:-$PWD}"
 RESOLVE_STDERR=$(mktemp)
 RESOLVE_STATUS=0
@@ -84,7 +86,7 @@ if [[ $RESOLVE_STATUS -ne 0 ]] || [[ -z "$RESOLVED" ]] || \
     RESOLVE_ERR_TAIL=$(tail -c 400 "$RESOLVE_STDERR" 2>/dev/null || true)
     rm -f "$RESOLVE_STDERR"
     RESOLVE_OUT_TAIL=$(echo "$RESOLVED" | tail -c 400)
-    RESOLVE_MSG="workdir.py resolve crashed (exit $RESOLVE_STATUS): could not resolve the review directory, so BibTeX validation did not run. ${RESOLVE_OUT_TAIL} ${RESOLVE_ERR_TAIL}"
+    RESOLVE_MSG="workdir.py resolve failed (exit $RESOLVE_STATUS, or its output was not one JSON object of the expected shape): could not resolve the review directory, so BibTeX validation did not run. ${RESOLVE_OUT_TAIL} ${RESOLVE_ERR_TAIL}"
     if [[ "$STOP_HOOK_ACTIVE" == "true" ]]; then
         jq -cn --arg msg "PhilLit: $RESOLVE_MSG" '{"systemMessage": $msg}'
         exit 0
@@ -94,7 +96,8 @@ if [[ $RESOLVE_STATUS -ne 0 ]] || [[ -z "$RESOLVED" ]] || \
 fi
 rm -f "$RESOLVE_STDERR"
 
-REVIEW_DIR=$(echo "$RESOLVED" | jq -r '.workdir // empty')
+# tr: a native jq.exe under Git Bash emits CRLF, and $(...) strips only the LF.
+REVIEW_DIR=$(echo "$RESOLVED" | jq -r '.workdir // empty' | tr -d '\r')
 if [[ -z "$REVIEW_DIR" ]]; then
     RESOLVE_ERROR=$(echo "$RESOLVED" | jq -r '.error // "no working directory"')
     echo "WARNING: no active review directory ($RESOLVE_ERROR) - skipping BibTeX validation" >&2

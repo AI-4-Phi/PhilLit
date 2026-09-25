@@ -429,9 +429,13 @@ def test_cli_invalid_mode_exits_2(home, ruled):
     assert r.returncode == 2 and "'tmp'" in json.loads(r.stdout)["error"]
 
 
-def test_cli_resolve_always_exits_0(home, ruled, tmp_path):
+def test_cli_resolve_exit_codes(home, ruled, tmp_path):
+    # A review state (no pointer) is an {error} at exit 0: the hook warns and
+    # allows. A configuration error exits 1: the hook fails closed.
+    r = _cli(tmp_path, "--workspace", str(ruled), "resolve")
+    assert r.returncode == 0 and "no active review" in json.loads(r.stdout)["error"]
     r = _cli(tmp_path, "--workspace", str(ruled), "resolve", env_extra={"PHILLIT_WORKDIR": "tmp"})
-    assert r.returncode == 0 and "error" in json.loads(r.stdout)
+    assert r.returncode == 1 and "'tmp'" in json.loads(r.stdout)["error"]
 
 
 def test_cli_reads_workdir_mode_from_dotenv(home, ruled):
@@ -467,7 +471,8 @@ def test_explicit_inplace_meets_local_pointer_in_every_command(home, ruled, monk
                  lambda: wd.cmd_demote(ruled)):
         with pytest.raises(wd.Refusal, match="unset PHILLIT_WORKDIR"):
             call()
-    assert "unset PHILLIT_WORKDIR" in wd.cmd_resolve(ruled)["error"]
+    with pytest.raises(wd.ConfigError, match="unset PHILLIT_WORKDIR"):
+        wd.cmd_resolve(ruled)
 
 
 def test_status_missing_inplace_folder_is_not_a_fresh_review(home, ws):
