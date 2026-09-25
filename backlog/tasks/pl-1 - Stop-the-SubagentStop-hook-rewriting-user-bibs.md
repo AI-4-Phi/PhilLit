@@ -22,5 +22,5 @@ ordinal: 1000
 
 The SubagentStop hook cleans every workspace-root `.bib`. Phase 6's stray sweep moves only `literature-domain-*.bib`, but `hooks/subagent_stop_bib.sh` still collects every `"$CLAUDE_PROJECT_DIR"/*.bib` as a researcher stray, validates it and runs `metadata_cleaner.py` on it. Scope the root glob to the names researchers write (`literature-domain-*.bib`).
 
-The same file carries PL-8 (visible SubagentStop gate failures). If that ruling is in by then, ship both together.
+The same file carries PL-8 (the SubagentStop gate failing open silently). If that ruling is in by then, ship both together.
 <!-- SECTION:DESCRIPTION:END -->

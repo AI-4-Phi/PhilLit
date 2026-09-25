@@ -5,7 +5,8 @@ status: Later
 assignee: []
 created_date: '2026-09-25 19:18'
 updated_date: '2026-09-25 19:24'
-labels: []
+labels:
+  - test-run
 dependencies: []
 references:
   - docs/ideas/dynamic-workflow-refactor.md

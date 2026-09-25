@@ -17,7 +17,7 @@ ordinal: 2000
 ## Description
 
 <!-- SECTION:DESCRIPTION:BEGIN -->
-**Why:** On Windows, a deep workspace can make `init` refuse the very name `suggest_name` offered. In Full Autopilot the orchestrator takes the suggestion, so the review cannot start.
+**Why:** On Windows, a deep workspace can make `init` refuse the very name `suggest_name` offered. Full Autopilot takes the suggestion, and `init` then refuses it.
 
 `workdir.py`'s `suggest_name` checks `name_problem` and whether the name exists, but not `length_problem`. On a deep workspace it can therefore suggest a name that `init` then refuses as too long.
 

@@ -63,7 +63,7 @@ Open work lives only on the backlog-md board in `backlog/`, one card per
 item. Before proposing next steps, read the board guide
 (`backlog/docs/doc-1 - Board-guide.md`: what each field means, the columns,
 the conventions) and `backlog task list --plain`. Refer to a card by ID and
-name ("PL-5, the abstract usability screen"), never by ID alone. New open
+name ("PL-n, <its short name>"), never by ID alone. New open
 work gets a card, never a list in a doc; move a card as its work moves.
 Web UI: `backlog browser`, then http://127.0.0.1:6422.
 
@@ -85,8 +85,9 @@ in both directions — a fix that lands in the service comes back here.
 
 **Engine/prompt fixes that need test runs are built and validated HERE
 first** — reviews here run under Claude Code (free), while the service bills
-every run through the Agent SDK — then ported. Open cross-repo work gets a
-card on the board like any other.
+every run through the Agent SDK — then ported. PhilLit-side cross-repo work
+gets a card on the board like any other; the service's pin, deploy and port
+state stays in phillit-service.
 
 Gotcha: the service tracks its roadmap as **`docs/roadmap.md` (lowercase)**.
 On macOS's case-insensitive filesystem, editing `docs/ROADMAP.md` there

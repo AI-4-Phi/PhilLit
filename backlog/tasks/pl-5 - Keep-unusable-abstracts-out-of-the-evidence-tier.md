@@ -24,5 +24,5 @@ ordinal: 3000
 
 `EVIDENCE-ABSTRACT` attests sameness, not usability. The barrier's per-source re-fetch hash-matches the bib's abstract against the live source. That proves the text was not invented; it cannot see that the text is useless. The 2026-09-10 run (topic: separation of powers) granted the tier to five unusable abstracts: one truncated, one a bare JEL keyword string, two bibliographic stubs and one garbled OCR text. Meanwhile `abstract_corroboration` reported 127/127 with zero mismatches.
 
-Reproduce from that run's artifacts before designing anything. A usability screen is a second test, separate from the corroboration hash. The fix needs a headless test run; share it with PL-6 (research-notes label rules).
+Reproduce from that run's artifacts before designing anything. A usability screen is a second test, separate from the corroboration hash. Test the screen on a copy of that run's bibs first. A headless run then confirms it end to end; share that run with PL-6 (research-notes label rules).
 <!-- SECTION:DESCRIPTION:END -->
