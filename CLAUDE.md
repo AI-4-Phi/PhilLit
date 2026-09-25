@@ -139,6 +139,7 @@ env -u ANTHROPIC_API_KEY claude --plugin-dir <checkout> --model sonnet \
 - `env -u ANTHROPIC_API_KEY` is load-bearing: if set, it silently outranks subscription auth and bills the API.
 - Bake "Full Autopilot, no questions" into the prompt — any AskUserQuestion ends a `-p` run mid-workflow.
 - Headless runs share the account's 5-hour usage window with the session driving them.
+- A barrier that outlasts the Bash tool's 10-minute ceiling moves to the background, and the `-p` orchestrator ends its turn to wait for it: that ends the run, and the barrier dies with it. Run the barrier from a shell (`bash <checkout>/bin/phillit-run skills/literature-review/scripts/evidence_barrier.py "<workdir>" --domains N`, from the workspace), then relaunch headless with "resume the active review".
 - The review is published into the scratch workspace's `reviews/` only at the end; a run cut short leaves its files under `~/.local/state/phillit/reviews/`.
 
 ## Releasing
