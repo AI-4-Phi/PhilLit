@@ -32,7 +32,7 @@ PhilLit's work queue, holding open engineering work only. There is one card per 
 - **To Do**: the queue, in working order, top first. Cards with equal ordinals are peers: batch them into one release, so that phillit-service re-pins once.
 - **In Progress**: being worked on now.
 - **Needs Johannes**: waiting on his ruling. Each card names the decision and its options. Once he rules, the card moves to To Do, or to Done when the ruling itself closes it.
-- **Done**: shipped. At a session wrap-up, clear Done cards last updated more than about two weeks ago off the board: `backlog task complete PL-n` moves each into `backlog/completed/`. The git log is the history.
+- **Done**: shipped, and only until the session wrap-up. Then delete the card with `git rm`: shipped work leaves the board, and the git log is the history. Never use `backlog task complete` or the web UI's "Clean Up Old Tasks", which keep shipped cards in `backlog/completed/`.
 
 ## Fields
 
