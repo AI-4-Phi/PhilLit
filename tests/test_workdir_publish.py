@@ -611,6 +611,39 @@ def test_inplace_abandon_never_marks_a_delivered_folder(home, plain):
     assert not wd.meta_path(d).exists() and wd.read_pointer(plain) is None
 
 
+def _locally_published(plain):
+    """A review LOCAL mode published (reduced marker, no .completed-review),
+    then repointed at in place by an interrupted init."""
+    d = plain / "reviews" / "topic"
+    (d / "intermediate_files").mkdir(parents=True)
+    wd.write_meta(d, {"format": 1, "review_id": "ab" * 16, "name": "topic",
+                       "state": "published", "published": "x"})
+    (plain / "reviews" / ".active-review").write_text("reviews/topic\n", encoding="utf-8")
+    return d
+
+
+def test_status_reports_delivered_for_a_locally_published_folder(home, plain):
+    d = _locally_published(plain)
+    assert not (d / "intermediate_files" / ".completed-review").exists()
+    out = wd.cmd_status(plain)
+    assert out["delivered"] is True and out["mode"] == "inplace"
+
+
+def test_inplace_publish_refuses_a_locally_published_folder(home, plain):
+    d = _locally_published(plain)
+    with pytest.raises(wd.Refusal, match="never published again"):
+        wd.cmd_publish(plain, abandon=False)
+    assert wd.read_pointer(plain) is not None
+    assert not (d / "intermediate_files" / ".completed-review").exists()
+
+
+def test_inplace_abandon_never_marks_a_locally_published_folder(home, plain):
+    d = _locally_published(plain)
+    wd.cmd_publish(plain, abandon=True)
+    assert wd.read_meta(d)["state"] == "published"
+    assert wd.read_pointer(plain) is None
+
+
 def test_activate_after_an_abandon_whose_delete_failed_resumes_in_place(home, ws, monkeypatch):
     local = _review(ws)
     real = wd.delete_workdir

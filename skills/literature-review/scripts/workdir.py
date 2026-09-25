@@ -839,8 +839,10 @@ def cmd_status(workspace: Path) -> dict:
             # sync lag, never "created but not started"
             return {"active": True, "missing": True, "mode": "inplace", "name": name,
                     "workdir": dest.as_posix()}
-        if (dest / COMPLETED_REL).exists():
-            # an init whose completed-review guard was interrupted
+        marker = read_meta(dest)
+        if (dest / COMPLETED_REL).exists() or (marker is not None and marker.get("state") == "published"):
+            # an init whose completed-review guard was interrupted, or a
+            # folder a local publish delivered
             return {"active": True, "delivered": True, "mode": "inplace", "name": name,
                     "workdir": dest.as_posix()}
         return _active("inplace", name, dest, workspace)
@@ -1157,7 +1159,8 @@ def _publish_inplace(workspace: Path, ptr: dict, state: str) -> dict:
         # init guard for an existing review runs --abandon on one, and a
         # delivered review is never changed.
         if (dest.is_dir() and not (dest / f"literature-review-{ptr['name']}.md").exists()
-                and not (dest / COMPLETED_REL).exists()):
+                and not (dest / COMPLETED_REL).exists()
+                and not ((m := read_meta(dest)) is not None and m.get("state") == "published")):
             (dest / "intermediate_files").mkdir(exist_ok=True)
             marker = {"format": FORMAT, "review_id": None, "name": ptr["name"],
                       "state": "abandoned", "published": now()}
@@ -1171,6 +1174,11 @@ def _publish_inplace(workspace: Path, ptr: dict, state: str) -> dict:
     else:
         if not dest.is_dir():
             raise Refusal(f"{dest.as_posix()} does not exist; there is nothing to publish")
+        marker = read_meta(dest)
+        if marker is not None and marker.get("state") == "published":
+            raise Refusal(f"{dest.as_posix()} is a delivered review (its marker says published) "
+                          "and is never published again; run `workdir.py publish --abandon` to "
+                          "clear the pointer")
         (dest / "intermediate_files").mkdir(exist_ok=True)
         _make_writable(dest / COMPLETED_REL)
         os.replace(workspace / POINTER_REL, dest / COMPLETED_REL)
