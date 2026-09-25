@@ -131,7 +131,7 @@ Orchestrator:
 A review works in `~/.local/state/phillit/reviews/<ws-key>/<name>/` and is published into the workspace's `reviews/<name>/` once, at the end of Phase 6 (or when abandoned), so a synced workspace sees one burst of new files instead of hours of rewrites. `skills/literature-review/scripts/workdir.py` is the one owner of the mode, the location, the pointer `reviews/.active-review` and the publish; its docstring carries the rules. `ws-key` is the workspace basename slug plus 16 hex of the sha256 of its resolved path, and only names the folder: ownership is proven by `intermediate_files/.phillit-review.json`. `PHILLIT_WORKDIR=inplace` keeps the review in `reviews/<name>/` throughout (phillit-service pins it). Local mode needs `Edit(~/.local/state/phillit/reviews/**)`; `init` falls back to in place when the rule is missing, and Phase 1's first Write is the empirical test (`workdir.py demote` on a denial).
 
 Residuals, accepted:
-- Windows is unverified: the `~` form of the rule, the name-surrogate reparse-point test, and the path-length headroom (ROADMAP: "Verify the local work folder on Windows").
+- Windows is unverified: the `~` form of the rule, the name-surrogate reparse-point test, and the path-length headroom (backlog card PL-12, "Verify the local work folder on Windows").
 - `ws-key` hashes the resolved path's spelling, so on a case-insensitive disk two letter-case spellings of one workspace get two keys; the second reads the review as `elsewhere`.
 - There is no lock across machines: two machines sharing a synced workspace can both act on the one pointer file.
 - Mixed plugin versions on one synced workspace are unsupported: an older PhilLit does not read the local pointer form.

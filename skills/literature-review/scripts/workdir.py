@@ -43,8 +43,8 @@ Decided, do not reopen:
   fallback refuses it, since a delivered review is never changed.
 - A linked root is accepted: dotfile managers link `~/.local`.
 - A configuration error fails the SubagentStop hook closed; a review-state
-  error warns and allows (ROADMAP: "The SubagentStop gate fails open
-  silently when the review cannot be resolved").
+  error warns and allows (backlog card PL-8, visible SubagentStop gate
+  failures).
 
 Design and rationale: docs/ARCHITECTURE.md, "Working directory".
 """

@@ -1543,8 +1543,8 @@ def _repoint_binding(ledger_path: Path, authored: str) -> str | None:
 
     The cleaner still OWNS the ledger: the attestation is untouched, and
     stamping cannot change which entries matched an API record -- an
-    invariant nothing enforces yet (docs/ROADMAP.md, "The barrier blesses
-    its own output wholesale"). Only the field that tracks the barrier's own
+    invariant nothing enforces yet (backlog card PL-10, the barrier
+    self-check on its own output). Only the field that tracks the barrier's own
     edit moves.
 
     `authored` is the text the barrier GENERATED, not a read-back of the

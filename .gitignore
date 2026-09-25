@@ -103,3 +103,6 @@ docs/superpowers/
 
 # Local direnv / per-machine env (e.g. CLAUDE_CONFIG_DIR account selector)
 .envrc
+
+# backlog-md runtime locks (the board itself, backlog/, is tracked)
+backlog/.locks/

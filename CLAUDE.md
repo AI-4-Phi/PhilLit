@@ -38,7 +38,8 @@
 
   Sites bind these shared objects as **aliases**, never a local copy, and tests assert `is` identity. An alias may keep a historic name or take a clearer one, but it must never SHADOW a different shared object's name (why `resolve_context`'s alias is `prose_surname`).
 - `hooks/hooks.json` — Plugin hook definitions (single source of truth): SessionStart bootstrap; marker-gated PreToolUse/PostToolUse/SubagentStop.
-- `docs/` — Project documentation: `ROADMAP.md` (the work queue: open items only), shared specs (`ARCHITECTURE.md`, `conventions.md`, `permissions-guide.md`), `known-issues/` (measurement scripts and their data — the reproduction path for measured decisions, not issue write-ups), and `ideas/` (design ideas and deferred plans).
+- `backlog/` — The work queue: a backlog-md board, one card per open item (see Work Queue below).
+- `docs/` — Project documentation: shared specs (`ARCHITECTURE.md`, `conventions.md`, `permissions-guide.md`), `known-issues/` (measurement scripts and their data — the reproduction path for measured decisions, not issue write-ups), and `ideas/` (design ideas and deferred plans).
 - `tests/` — pytest tests for API scripts and hooks.
 
 # Typical Usage: Literature Review
@@ -55,6 +56,16 @@ The `/phillit:literature-review` skill runs in the main conversation and coordin
 # Development
 
 For agent architecture and design patterns, see `docs/ARCHITECTURE.md`.
+
+## Work Queue
+
+Open work lives only on the backlog-md board in `backlog/`, one card per
+item. Before proposing next steps, read the board guide
+(`backlog/docs/doc-1 - Board-guide.md`: what each field means, the columns,
+the conventions) and `backlog task list --plain`. Refer to a card by ID and
+name ("PL-5, the abstract usability screen"), never by ID alone. New open
+work gets a card, never a list in a doc; move a card as its work moves.
+Web UI: `backlog browser`, then http://127.0.0.1:6422.
 
 ## Sister repo: phillit-service
 
@@ -74,8 +85,8 @@ in both directions — a fix that lands in the service comes back here.
 
 **Engine/prompt fixes that need test runs are built and validated HERE
 first** — reviews here run under Claude Code (free), while the service bills
-every run through the Agent SDK — then ported. Open cross-repo work is
-listed in `docs/ROADMAP.md`.
+every run through the Agent SDK — then ported. Open cross-repo work gets a
+card on the board like any other.
 
 Gotcha: the service tracks its roadmap as **`docs/roadmap.md` (lowercase)**.
 On macOS's case-insensitive filesystem, editing `docs/ROADMAP.md` there
