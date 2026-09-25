@@ -17,7 +17,9 @@ Prompts for approval on first use of each tool per session. Standard security mo
   "Bash(dd *)",      // Prevent disk operations
   "Bash(mkfs *)",    // Prevent filesystem formatting
   "Edit(**/enrichment_ledger-*.json)",   // Evidence-tier attestation ledgers
-  "Edit(**/cleaning_ledger-*.json)"      // (see below)
+  "Edit(**/cleaning_ledger-*.json)",     // (see below)
+  "Edit(~/.local/state/phillit/reviews/**/enrichment_ledger-*.json)",  // Same pair, local work folder
+  "Edit(~/.local/state/phillit/reviews/**/cleaning_ledger-*.json)"
 ]
 ```
 Blocks destructive operations and hand-written evidence attestations. These cannot be approved even if requested.
@@ -34,7 +36,9 @@ by the scripts that own them, so the supported pipeline is unaffected — but
 note this also blocks **you** from hand-editing a ledger while debugging;
 re-run the owning script or `git checkout` it. The allow rule `Edit(reviews/**)`
 below positively permits the ledger path, so this only works because deny is
-evaluated before allow. The rule is belt-and-braces: the mechanism that covers
+evaluated before allow. The `~/.local/state/phillit/reviews/**` pair does the
+same for the local work folder; `**/` is anchored to the project and does not
+reach it. The rule is belt-and-braces: the mechanism that covers
 workspaces which have not re-run `/phillit:setup` is the plugin-shipped
 `hooks/block_ledger_write.py` gate.
 
@@ -60,6 +64,7 @@ therefore still load-bearing on their own.
   "WebFetch",        // Fetch web content
   "Bash",            // All Bash commands (see safety layers below)
   "Edit(reviews/**)",   // Create and edit files in reviews/ and subdirectories
+  "Edit(~/.local/state/phillit/reviews/**)",  // The local work folder: reviews run here, then publish into reviews/
   "Skill(phillit:literature-review)",   // Main orchestration skill
   "Skill(phillit:philosophy-research)"  // Academic search skill
 ]
@@ -92,7 +97,7 @@ With `Bash` in the allow list, safety comes from four layers:
 
 1. **Deny rules**: `sudo`, `dd`, `mkfs` are blocked unconditionally, as are file-tool writes to the evidence-tier ledgers
 2. **Ask rules**: `rm`, `rmdir` still require approval
-3. **Scoped writes**: file-editing tools are only auto-approved in `reviews/` (via `Edit(reviews/**)`)
+3. **Scoped writes**: file-editing tools are only auto-approved in `reviews/` and in the local work folder `~/.local/state/phillit/reviews/` (via `Edit(reviews/**)` and `Edit(~/.local/state/phillit/reviews/**)`)
 4. **Hook gates**: the PreToolUse/PostToolUse gates in the table below, which ship with the plugin and so apply even where no permission rules were merged — `.bib` validation and ledger write-protection
 
 Note what none of these reach: `Bash` is deliberately unenumerated, so anything a shell command does is outside all four layers. That is a considered trade (see "Why `Bash`" above), not an oversight, and it is why the ledger controls are described as incidence reduction rather than as a boundary.

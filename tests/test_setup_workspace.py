@@ -308,3 +308,30 @@ def test_dry_run_writes_nothing(tmp_path):
     assert not (ws / ".phillit").exists()
     assert not (ws / ".claude").exists()
     assert not (ws / ".env").exists()
+
+
+sys.path.insert(0, str(Path(__file__).parent.parent / "skills" / "literature-review" / "scripts"))
+import workdir  # noqa: E402
+
+LOCAL_ALLOW = "Edit(~/.local/state/phillit/reviews/**)"
+LOCAL_DENY = ["Edit(~/.local/state/phillit/reviews/**/enrichment_ledger-*.json)",
+              "Edit(~/.local/state/phillit/reviews/**/cleaning_ledger-*.json)"]
+
+
+def test_rules_allow_the_local_work_folder_and_match_workdir():
+    assert LOCAL_ALLOW in RULES["allow"]
+    assert workdir.ALLOW_RULE == LOCAL_ALLOW  # workdir.py detects exactly this string
+
+
+def test_rules_deny_ledgers_in_the_local_work_folder():
+    # REQUIRED, not redundant: Edit(**/x) is anchored to the project, so it does
+    # not reach ~/.local/... (probed on Claude Code 2.1.282).
+    for rule in LOCAL_DENY:
+        assert rule in RULES["deny"]
+
+
+def test_local_rules_merge_idempotently(tmp_path):
+    once = sw.merge_permissions({}, RULES)
+    twice = sw.merge_permissions(once, RULES)
+    assert once == twice
+    assert once["allow"].count(LOCAL_ALLOW) == 1

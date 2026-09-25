@@ -34,8 +34,11 @@ only they can provide.
    - Creates a `.phillit` folder marker and, for any API keys not already set in the
      environment, a `.env` file to hold them (keys found in the environment are used
      from there — never copied into a file)
-   - Lets Claude run PhilLit's research tools **in this folder** without asking permission
-     each time; deleting files and system-level commands still require approval
+   - Lets Claude run PhilLit's research tools **in this folder**, and make file edits in
+     `~/.local/state/phillit/reviews/` (the local work folder where reviews run before
+     they appear in `reviews/`, keeping hours of rewrites off a synced folder), without
+     asking permission each time; deleting files and system-level commands still require
+     approval
    - Nothing is sent or published anywhere
    Ask whether to proceed.
 4. **Apply.** On approval, run the same command without `--dry-run`. Keys already set in

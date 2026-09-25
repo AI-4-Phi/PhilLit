@@ -38,10 +38,19 @@ PHILLIT_RULES = {
         # that have not re-run /phillit:setup.
         "Edit(**/enrichment_ledger-*.json)",
         "Edit(**/cleaning_ledger-*.json)",
+        # The same two for the local work folder: `**/` is anchored to the
+        # project, so the pair above does not reach ~/.local (probed on
+        # Claude Code 2.1.282).
+        "Edit(~/.local/state/phillit/reviews/**/enrichment_ledger-*.json)",
+        "Edit(~/.local/state/phillit/reviews/**/cleaning_ledger-*.json)",
     ],
     "allow": [
         "Read", "Grep", "Glob", "WebSearch", "WebFetch", "Bash",
         "Edit(reviews/**)",
+        # Reviews work here and are published into reviews/ when finished
+        # (skills/literature-review/scripts/workdir.py, whose ALLOW_RULE must
+        # equal this string).
+        "Edit(~/.local/state/phillit/reviews/**)",
         "Skill(phillit:literature-review)", "Skill(phillit:philosophy-research)",
     ],
     "ask": ["Bash(rm *)", "Bash(rmdir *)"],
