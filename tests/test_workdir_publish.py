@@ -635,7 +635,7 @@ def test_an_unlistable_foreign_destination_is_refused_untouched(home, ws):
     (dest / "literature-review-topic.md").write_text("someone else's", encoding="utf-8")
     dest.chmod(0o300)  # write+search, no read: the walk cannot list it
     try:
-        with pytest.raises(wd.Refusal):
+        with pytest.raises(wd.Refusal, match="cannot list"):
             wd.cmd_publish(ws, abandon=False)
     finally:
         dest.chmod(0o755)
@@ -672,3 +672,62 @@ def test_an_unlistable_source_folder_is_never_published_or_deleted(home, ws):
         hidden.chmod(0o755)
     assert (hidden / "only-copy.md").read_text(encoding="utf-8") == "irreplaceable"
     assert wd.read_pointer(ws) is not None
+
+
+@pytest.fixture
+def windows_read_only(monkeypatch):
+    """Windows semantics on POSIX: replacing or removing a read-only file
+    fails (Access is denied), whatever the folder's permissions."""
+    if os.name == "nt" or (hasattr(os, "geteuid") and os.geteuid() == 0):
+        pytest.skip("simulates Windows on POSIX, as a non-root user")
+    real_replace, real_unlink = os.replace, os.unlink
+
+    def guard(p):
+        if os.path.isfile(p) and not os.path.islink(p) and not os.access(p, os.W_OK):
+            raise PermissionError(13, "Access is denied", str(p))
+
+    def replace(src, dst, *a, **k):
+        guard(dst)
+        return real_replace(src, dst, *a, **k)
+
+    def unlink(p, *a, **k):
+        guard(p)
+        return real_unlink(p, *a, **k)
+
+    monkeypatch.setattr(os, "replace", replace)
+    monkeypatch.setattr(os, "unlink", unlink)
+
+
+def test_a_read_only_metadata_file_is_still_replaced(home, ws, windows_read_only):
+    local = _review(ws)
+    wd.meta_path(local).chmod(0o444)
+    wd.write_meta(local, {**wd.read_meta(local), "state": "active"})
+    assert wd.read_meta(local)["state"] == "active"
+
+
+def test_a_read_only_pointer_is_still_removed(home, ws, windows_read_only):
+    _review(ws)
+    (ws / "reviews" / ".active-review").chmod(0o444)
+    wd.remove_pointer(ws)
+    assert wd.read_pointer(ws) is None
+
+
+def test_a_read_only_completed_review_is_still_replaced(home, plain, windows_read_only):
+    wd.cmd_init(plain, "topic")
+    done = plain / "reviews" / "topic" / "intermediate_files" / ".completed-review"
+    done.parent.mkdir(parents=True)
+    done.write_text("reviews/stale\n", encoding="utf-8")
+    done.chmod(0o444)
+    assert wd.cmd_publish(plain, abandon=False)["state"] == "published"
+    assert done.read_text(encoding="utf-8") == "reviews/topic\n"
+
+
+def test_a_read_only_destination_only_file_is_still_removed(home, ws, windows_read_only):
+    local = _review(ws)
+    dest = ws / "reviews" / "topic"
+    (dest / "intermediate_files").mkdir(parents=True)
+    wd._copy_file(wd.meta_path(local), wd.meta_path(dest))
+    (dest / "renamed-away.md").write_text("x", encoding="utf-8")
+    (dest / "renamed-away.md").chmod(0o444)  # a read-only source's copy keeps its mode
+    assert wd.cmd_publish(ws, abandon=False)["state"] == "published"
+    assert not (dest / "renamed-away.md").exists()

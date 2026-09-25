@@ -22,10 +22,25 @@ string works on every machine. `ws-key` only NAMES a folder: ownership is
 proven by the metadata file `intermediate_files/.phillit-review.json`, never
 by the key. Nothing is copied or deleted unless ownership is proven, and every
 deletion removes the metadata file LAST, so an interrupted delete always
-leaves a folder that still says what it is. A link (symlink, or any Windows
-reparse point) at the key or review level, or inside a tree, refuses; the
-root itself may be a link, since dotfile managers link `~/.local`, and every
+leaves a folder that still says what it is. A link (a symlink, or on Windows
+a junction or other name-surrogate reparse point; a cloud-files placeholder
+is not one) at the key or review level, or inside a tree, refuses; the root
+itself may be a link, since dotfile managers link `~/.local`, and every
 deletion stays inside `<root>/<key>/<name>`.
+
+Decided, do not reopen:
+- The location is fixed: one rule string then works on every machine.
+- A local name clash refuses: publish must prove its destination, and a
+  delivered review is never changed.
+- The local copy is deleted at publish: kept until the next init, it would
+  stay a hidden copy forever in a workspace that starts no other review.
+- In-place `init` accepts an existing finished destination only under an
+  explicit `PHILLIT_WORKDIR=inplace` (the service's pin); the automatic
+  fallback refuses it, since a delivered review is never changed.
+- A linked root is accepted: dotfile managers link `~/.local`.
+- A configuration error fails the SubagentStop hook closed; a review-state
+  error warns and allows (ROADMAP: "The SubagentStop gate fails open
+  silently when the review cannot be resolved").
 
 Design and rationale: docs/ARCHITECTURE.md, "Working directory".
 """
@@ -72,6 +87,7 @@ UNSAFE_CHARS = ("$", "`", '"', "\\", "\n")
 WINDOWS_PATH_LIMIT = 250
 DEEP_FILE_HEADROOM = 120  # intermediate_files/json/verify_<domain>_<citekey>.json
 _REPARSE_POINT = getattr(stat, "FILE_ATTRIBUTE_REPARSE_POINT", 0x400)
+_NAME_SURROGATE = 0x20000000  # IO_REPARSE_TAG_NAME_SURROGATE bit: symlinks, junctions
 MISSING_RULE_REASON = (
     "the standard PhilLit allow rule for the local work folder was not found; "
     "re-run /phillit:setup to move review work off this folder")
@@ -281,6 +297,7 @@ def _atomic_write_text(path: Path, text: str) -> None:
         f.write(text)
         f.flush()
         os.fsync(f.fileno())
+    _make_writable(path)
     os.replace(tmp, path)
 
 
@@ -289,6 +306,7 @@ def replace_pointer(workspace: Path, ptr: dict) -> None:
 
 
 def remove_pointer(workspace: Path) -> None:
+    _make_writable(workspace / POINTER_REL)
     (workspace / POINTER_REL).unlink(missing_ok=True)
 
 
@@ -317,13 +335,29 @@ def now() -> str:
 # --- trees ------------------------------------------------------------------------
 
 def _is_link(p: Path) -> bool:
-    """A symlink, or on Windows any reparse point: a junction included, which
-    os.path.isjunction reports only from Python 3.12 on."""
+    """A symlink, or on Windows a name-surrogate reparse point (a junction or
+    symlink; os.path.isjunction exists only from Python 3.12). A cloud-files
+    placeholder (OneDrive Files On-Demand) is a reparse point too, but it
+    does not redirect a walk, so it is not a link."""
     try:
         st = os.lstat(p)
     except OSError:
         return False
-    return stat.S_ISLNK(st.st_mode) or bool(getattr(st, "st_file_attributes", 0) & _REPARSE_POINT)
+    if stat.S_ISLNK(st.st_mode):
+        return True
+    if getattr(st, "st_file_attributes", 0) & _REPARSE_POINT:
+        return bool(getattr(st, "st_reparse_tag", 0) & _NAME_SURROGATE)
+    return False
+
+
+def _make_writable(path: Path) -> None:
+    """Clear a read-only mode/attribute on a file PhilLit is about to replace
+    or remove (Windows refuses both on a read-only file)."""
+    try:
+        if os.path.lexists(path) and not _is_link(path) and not os.access(path, os.W_OK):
+            os.chmod(path, stat.S_IREAD | stat.S_IWRITE)
+    except OSError:
+        pass
 
 
 # Files a file manager or sync client drops into any folder it shows: never
@@ -345,7 +379,8 @@ def _stale_meta_temp(rel: Path) -> bool:
 def _walk_error(e: OSError) -> None:
     """os.walk's onerror: a folder the walk cannot list must never read as
     empty, or a copy would miss files and a delete would follow them."""
-    raise Refusal(f"cannot list {e.filename}: {e.strerror}; refusing to copy or "
+    where = Path(e.filename).as_posix() if e.filename else "a folder"
+    raise Refusal(f"cannot list {where}: {e.strerror}; refusing to copy or "
                   "delete what cannot be seen")
 
 
@@ -360,7 +395,12 @@ def tree_files(root: Path) -> list[Path]:
             p = Path(dirpath) / name
             if _is_link(p):
                 raise Refusal(f"{p.as_posix()} is a link; refusing to copy or delete through it")
-            if name in filenames and not stat.S_ISREG(os.lstat(p).st_mode):
+            try:
+                mode = os.lstat(p).st_mode
+            except OSError as e:  # a folder that lists but cannot be searched
+                raise Refusal(f"cannot inspect {p.as_posix()}: {e.strerror}; refusing to copy "
+                              "or delete what cannot be seen")
+            if name in filenames and not stat.S_ISREG(mode):
                 raise Refusal(f"{p.as_posix()} is not a regular file; refusing to copy it")
             if name in filenames and not _stale_meta_temp(p.relative_to(root)):
                 files.append(p.relative_to(root))
@@ -1044,6 +1084,7 @@ def _copy_commit(workspace: Path, ptr: dict, workdir: Path, dest: Path, state: s
     src_set = set(src_files)
     for rel in tree_files(dest):
         if rel not in src_set:
+            _make_writable(dest / rel)  # a read-only source's copy keeps its mode
             (dest / rel).unlink()
     # 3. verify: the source did not change, and the copy equals it exactly
     after = manifest(workdir, tree_files(workdir))
@@ -1092,6 +1133,7 @@ def _publish_inplace(workspace: Path, ptr: dict, state: str) -> dict:
         if not dest.is_dir():
             raise Refusal(f"{dest.as_posix()} does not exist; there is nothing to publish")
         (dest / "intermediate_files").mkdir(exist_ok=True)
+        _make_writable(dest / COMPLETED_REL)
         os.replace(workspace / POINTER_REL, dest / COMPLETED_REL)
     return {"mode": "inplace", "state": state, "published_to": dest.as_posix()}
 
@@ -1134,6 +1176,8 @@ def cmd_publish(workspace: Path, abandon: bool) -> dict:
 # --- CLI ------------------------------------------------------------------------------
 
 def main(argv: list[str] | None = None) -> int:
+    """--workspace does not move .env discovery; a caller passing it runs
+    from the workspace (the hook cd's there)."""
     load_dotenv(find_dotenv(usecwd=True), override=True)
     parser = argparse.ArgumentParser(
         description="Owner of the review working directory (see the module docstring).")

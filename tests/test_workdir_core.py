@@ -359,10 +359,13 @@ def test_committed_reads_the_destination_marker(home, ws):
     assert wd.committed(ws, ptr)["state"] == "published"
 
 
-def test_is_link_detects_a_windows_reparse_point(monkeypatch, tmp_path):
+@pytest.mark.parametrize("tag,is_link", [
+    (0xA0000003, True),    # IO_REPARSE_TAG_MOUNT_POINT: a junction
+    (0xA000000C, True),    # IO_REPARSE_TAG_SYMLINK
+    (0x9000601A, False)])  # a cloud-files tag: a OneDrive Files On-Demand placeholder
+def test_is_link_counts_only_name_surrogate_reparse_points(monkeypatch, tmp_path, tag, is_link):
     # A junction on Python < 3.12 is not S_ISLNK; the reparse attribute is
-    # the only reliable signal.
-    import stat as _stat
+    # the signal, and the tag's name-surrogate bit says it redirects a walk.
     import types
     d = tmp_path / "j"
     d.mkdir()
@@ -371,11 +374,12 @@ def test_is_link_detects_a_windows_reparse_point(monkeypatch, tmp_path):
     def fake_lstat(p, *a, **k):
         st = real_lstat(p, *a, **k)
         if Path(p) == d:
-            return types.SimpleNamespace(st_mode=st.st_mode, st_file_attributes=0x400)
+            return types.SimpleNamespace(st_mode=st.st_mode, st_file_attributes=0x400,
+                                         st_reparse_tag=tag)
         return st
 
     monkeypatch.setattr(os, "lstat", fake_lstat)
-    assert wd._is_link(d)
+    assert wd._is_link(d) is is_link
     assert not wd._is_link(tmp_path)
 
 
@@ -385,6 +389,41 @@ def test_manifest_skips_the_metadata_file(tmp_path):
     m = wd.manifest(d, wd.tree_files(d))
     assert set(m) == {"a.md", "intermediate_files/json/x.json"}
     assert m["a.md"][0] == 1
+
+
+_POSIX_PERMS = pytest.mark.skipif(
+    os.name == "nt" or (hasattr(os, "geteuid") and os.geteuid() == 0),
+    reason="POSIX permission bits, as a non-root user")
+
+
+@_POSIX_PERMS
+def test_make_writable_clears_a_read_only_file(tmp_path):
+    f = tmp_path / "ro.txt"
+    f.write_text("x", encoding="utf-8")
+    f.chmod(0o444)
+    wd._make_writable(f)
+    assert os.access(f, os.W_OK)
+    wd._make_writable(tmp_path / "absent")  # a missing target is fine
+
+
+@_POSIX_PERMS
+def test_tree_files_refuses_a_folder_it_cannot_search(tmp_path):
+    d = tmp_path / "t"
+    (d / "sub").mkdir(parents=True)
+    (d / "sub" / "f.txt").write_text("x", encoding="utf-8")
+    (d / "sub").chmod(0o600)  # readable, not searchable: names list, lstat fails
+    try:
+        with pytest.raises(wd.Refusal, match="cannot inspect .*refusing to copy or delete"):
+            wd.tree_files(d)
+    finally:
+        (d / "sub").chmod(0o755)
+
+
+def test_walk_errors_print_posix_paths(monkeypatch):
+    from pathlib import PureWindowsPath
+    monkeypatch.setattr(wd, "Path", PureWindowsPath)  # as on Windows
+    with pytest.raises(wd.Refusal, match="^cannot list C:/Users/me/x: Access is denied"):
+        wd._walk_error(PermissionError(13, "Access is denied", "C:\\Users\\me\\x"))
 
 
 def test_holds_no_files_fails_closed_on_an_unlistable_folder(tmp_path):
