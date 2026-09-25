@@ -44,7 +44,7 @@ PhilLit's work queue, holding open engineering work only. There is one card per 
 
 - A decision that is still binding belongs in CLAUDE.md or in the module that owns it. An accepted residual belongs in the function it describes, so that a recurrence is recognized where it would be read.
 - Design sketches live in `docs/ideas/`. A card points at the sketch; it does not copy it.
-- phillit-service tracks its own engine state: which PhilLit pin is vendored, what is deployed, and the service-side ports each pin needs. See its `docs/roadmap.md` (the engine-ports intake item) and `docs/engine-provenance.md`. Do not copy that state here: every copied fact went stale.
+- phillit-service tracks its own engine state: which PhilLit pin is vendored, what is deployed, and the service-side ports each pin needs. See its own board, `phillit-service/backlog/`, where PS-26 (engine ports from PhilLit: standing intake) is the intake, and its `docs/engine-provenance.md` for the pins and run records. Do not copy that state here: every copied fact went stale.
 - Candidates that were checked and deliberately not filed are in doc-2, so that they are not found again.
 
 ## Conventions
