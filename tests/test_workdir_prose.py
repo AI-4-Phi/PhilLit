@@ -93,6 +93,15 @@ def test_researcher_strips_the_backticks():
 def test_resume_never_skips_the_evidence_barrier():
     rules = SKILL[SKILL.index("**Resume logic**"):SKILL.index("Output: \"Resuming from Phase")]
     assert "evidence_report.json" in rules and "evidence barrier" in rules
+    # a report that exists but says `failed` must re-run the barrier too
+    assert "`complete`" in rules and "`degraded`" in rules
+
+
+def test_phase6_root_sweep_takes_only_phillit_bibs():
+    phase6 = SKILL.split("## Phase 6")[1].split("\n## ")[0]
+    step8 = phase6[phase6.index("8. Clean up"):phase6.index("**After publish**")]
+    assert '-name "*.bib"' not in step8  # a user's own bibliography stays put
+    assert 'find . -maxdepth 1 -name "literature-domain-*.bib" -exec mv' in step8
 
 
 def test_publish_step_names_the_unproven_entry():

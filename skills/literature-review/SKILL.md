@@ -153,7 +153,8 @@ This phase validates conditions for subsequent phases to function.
       - Count existing domain files
       - Check lit-review-plan.md for total domains expected
       - If all domains exist -> if [workdir]/intermediate_files/json/evidence_report.json
-        is missing, run Phase 3 step 5 (the evidence barrier) first; then resume at Phase 4
+        is missing, or its `status` is neither `complete` nor `degraded`, run Phase 3
+        step 5 (the evidence barrier) first; then resume at Phase 4
       - If some domains missing -> Resume Phase 3 for missing domains only
 
    5. If lit-review-plan.md exists -> Resume at Phase 3
@@ -460,7 +461,7 @@ A resume that starts at step 8 cannot reproduce the split's `SPLIT-*` lines or t
    Use targeted prefixes — never bare `*.json`, which could swallow unrelated files:
    ```bash
    find . -maxdepth 1 \( -name "philpapers_*.json" -o -name "pp_*.json" -o -name "s2_*.json" -o -name "openalex_*.json" -o -name "stage3_*.json" -o -name "arxiv_*.json" -o -name "core_*.json" -o -name "sep_*.json" -o -name "iep_*.json" -o -name "cites_*.json" -o -name "recommendations_*.json" -o -name "verify_*.json" -o -name "encyclopedia_entries-*.json" \) -exec mv {} "[workdir]/intermediate_files/json/" \;
-   find . -maxdepth 1 -name "*.bib" -exec mv {} "[workdir]/intermediate_files/" \;
+   find . -maxdepth 1 -name "literature-domain-*.bib" -exec mv {} "[workdir]/intermediate_files/" \;
    ```
 
    Move remaining intermediate files; every move skips what is already moved, so a resumed Phase 6 can run this step again. `lit-review-plan.md` moves FIRST, because its move is the resume test above:
