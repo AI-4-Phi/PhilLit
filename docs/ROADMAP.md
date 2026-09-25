@@ -108,6 +108,22 @@ where it would be read.
   FOR/AGAINST/CONTROL sit inside an OUT section in one block and could sit
   inside KEY_POSITIONS in another, which an IN/OUT list cannot express.
 
+- **The research notes are withheld when a researcher's @comment block
+  drifts from the template** - in a live Sonnet review on 2026-09-24
+  (topic: specification gaming and reward hacking), `split_delivery.py`
+  withheld `research-notes-<id>.md`. Three of the eight researcher blocks
+  (domains 4, 6 and 7) left out the `====` rule that closes the block
+  header, so `research_notes.parse_block` read everything down to the final
+  rule as header, and valid IN labels (`DOMAIN_OVERVIEW`, `KEY_POSITIONS`,
+  ...) failed as unknown. Two blocks also used labels outside the grammar
+  (`GREY_LITERATURE`, `INCOMPLETE`). The track-record and annotated bibs
+  were written. The label grammar is marked "DECIDED, do not reopen", so a
+  fix is Johannes's call: harden the researcher prose that asks for the
+  closing rule, make the parser end the header at the first IN label, or
+  grow the label sets. Reproduce from that run's
+  `intermediate_files/literature-<id>-merged.bib`, on a COPY: the split
+  rewrites its input.
+
 - **Verify the local work folder on Windows** - the off-sync working
   directory was built and tested on macOS only. Check on a real Windows
   machine: that Claude Code honours the `~` form of
@@ -134,21 +150,10 @@ where it would be read.
   resolves the review folder by running
   `skills/literature-review/scripts/workdir.py` through `phillit-run`.
 
-phillit-service is deployed at 0.5.25 (engine at `da48b2c`) and owes a
-re-vendor of 0.5.29: 0.5.26's ledger content binding, 0.5.27's prompt fixes
-(current-year search bounds, the synthesis writer's note rule), 0.5.28's
-review-length rule and enrichment-ledger constant, and 0.5.29's three-file
-delivery. It runs from that repo, and its roadmap does not queue it yet.
-Tell the operator that the binding FLOOR reports `degraded` for a review
-whose researchers ran before the pin and whose barrier runs after, until a
-researcher re-runs - fail-closed and intended, but not obvious in production.
-The re-vendor script syncs the engine tree and its deletions, but three of
-the service's OWN files are not vendored and need a manual follow-up pass:
-its public share list (`pages/routes.py`) will publish the track record -
-which now carries every verdict token - by the plain `.bib` suffix, while
-`research-notes-*.md` will not surface there at all; its `hooks.py`
-validation glob will pick up both bibs; and `docs/engine-provenance.md`
-still names `sanitize_bib.py`, which this repo deleted.
+phillit-service tracks its own engine state: which PhilLit pin is vendored,
+what is deployed, and the service-side ports each pin needs. See its
+docs/roadmap.md (the engine-ports intake item) and docs/engine-provenance.md.
+Do not copy that state here: every copied fact went stale.
 
 ## Checked and deliberately NOT filed
 
