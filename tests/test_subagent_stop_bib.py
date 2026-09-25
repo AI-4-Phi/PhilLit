@@ -617,6 +617,13 @@ class TestCleanerFailureIsNeverSilent:
         assert "metadata_cleaner.py failed" in stderr
 
 
+def _symlink(link: Path, target: Path) -> None:
+    try:
+        link.symlink_to(target, target_is_directory=target.is_dir())
+    except OSError as e:  # Windows without Developer Mode or elevation
+        pytest.skip(f"symlinks need privileges here: {e}")
+
+
 def _home_sharing_uv(tmp_path):
     """A fresh HOME for the local work folder whose plugin venvs, uv cache and
     uv-managed Pythons are the REAL ones (symlinked). bin/phillit-run keys its
@@ -627,7 +634,7 @@ def _home_sharing_uv(tmp_path):
     (home / ".local").mkdir(parents=True)
     for rel in (".venvs", ".cache", ".local/share"):
         if (real / rel).exists():
-            (home / rel).symlink_to(real / rel, target_is_directory=True)
+            _symlink(home / rel, real / rel)
     return home
 
 

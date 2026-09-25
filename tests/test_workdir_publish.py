@@ -320,7 +320,7 @@ def test_publish_refuses_a_symlinked_working_dir(home, ws, tmp_path):
     local = _review(ws)
     real = tmp_path / "elsewhere"
     local.rename(real)
-    local.symlink_to(real, target_is_directory=True)
+    _symlink(local, real)
     with pytest.raises(wd.Refusal, match="is a link"):
         wd.cmd_publish(ws, abandon=False)
     assert (real / "literature-review-topic.md").is_file()
@@ -330,7 +330,7 @@ def test_publish_refuses_a_symlink_inside(home, ws, tmp_path):
     local = _review(ws)
     secret = tmp_path / "secret.txt"
     secret.write_text("s", encoding="utf-8")
-    (local / "leak.txt").symlink_to(secret)
+    _symlink(local / "leak.txt", secret)
     with pytest.raises(wd.Refusal, match="is a link"):
         wd.cmd_publish(ws, abandon=False)
     assert not (ws / "reviews" / "topic").exists()
@@ -396,7 +396,7 @@ def test_inplace_publish_refuses_a_linked_intermediate_files(home, tmp_path):
     outside = tmp_path / "outside"
     outside.mkdir()
     (outside / ".completed-review").write_text("keep", encoding="utf-8")
-    (w / "reviews" / "topic" / "intermediate_files").symlink_to(outside, target_is_directory=True)
+    _symlink(w / "reviews" / "topic" / "intermediate_files", outside)
     with pytest.raises(wd.Refusal, match="is a link"):
         wd.cmd_publish(w, abandon=False)
     assert (outside / ".completed-review").read_text(encoding="utf-8") == "keep"

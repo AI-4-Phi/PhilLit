@@ -293,7 +293,7 @@ def test_status_active_local(home, ruled):
 def test_status_from_symlinked_workspace_form(home, ruled, tmp_path):
     wd.cmd_init(ruled, "topic")
     link = tmp_path / "onedrive-form"
-    link.symlink_to(ruled, target_is_directory=True)
+    _symlink(link, ruled)
     out = wd.cmd_status(link.resolve())
     assert out["active"] and out["mode"] == "local"
 
@@ -664,7 +664,7 @@ def test_init_refuses_a_linked_key_dir(home, ruled, tmp_path):
     elsewhere = tmp_path / "elsewhere"
     elsewhere.mkdir()
     wd.local_root().mkdir(parents=True)
-    (wd.local_root() / wd.ws_key(ruled)).symlink_to(elsewhere, target_is_directory=True)
+    _symlink(wd.local_root() / wd.ws_key(ruled), elsewhere)
     with pytest.raises(wd.Refusal, match="is a link"):
         wd.cmd_init(ruled, "topic")
     assert wd.read_pointer(ruled) is None and not any(elsewhere.iterdir())
@@ -787,7 +787,7 @@ def test_inplace_commands_refuse_a_linked_destination(home, ws, tmp_path, comman
     outside.mkdir()
     (outside / "task-progress.md").write_text("x", encoding="utf-8")
     (ws / "reviews").mkdir()
-    (ws / "reviews" / "topic").symlink_to(outside, target_is_directory=True)
+    _symlink(ws / "reviews" / "topic", outside)
     with pytest.raises(wd.Refusal, match="is a link"):
         if command == "init":
             wd.cmd_init(ws, "topic")  # no rule: in place
@@ -800,7 +800,7 @@ def test_demote_refuses_a_linked_destination(home, ruled, tmp_path):
     wd.cmd_init(ruled, "topic")
     outside = tmp_path / "outside"
     outside.mkdir()
-    (ruled / "reviews" / "topic").symlink_to(outside, target_is_directory=True)
+    _symlink(ruled / "reviews" / "topic", outside)
     with pytest.raises(wd.Refusal, match="is a link"):
         wd.cmd_demote(ruled)
     assert wd.read_pointer(ruled)["form"] == "local"
@@ -819,7 +819,9 @@ def test_an_unreadable_local_root_never_breaks_an_inplace_review(home, ws, monke
     # never needs the local root, so init and status must read it as empty.
     monkeypatch.setenv("PHILLIT_WORKDIR", "inplace")
     root = wd.local_root()
-    root.mkdir(parents=True)
+    dummy = root / wd.ws_key(ws) / "dummy"  # so init's collection iterates under the root
+    dummy.mkdir(parents=True)
+    (dummy / "f.txt").write_text("x", encoding="utf-8")
     real_iterdir = Path.iterdir
 
     def denied(self):
@@ -832,6 +834,7 @@ def test_an_unreadable_local_root_never_breaks_an_inplace_review(home, ws, monke
     wd.remove_pointer(ws)
     out = wd.cmd_status(ws)
     assert out["active"] is False and out["stranded"] == []
+    assert (dummy / "f.txt").is_file()  # unreadable is never deleted, only left out
 
 
 def test_a_marker_for_another_review_is_never_offered_or_removed(home, ws):

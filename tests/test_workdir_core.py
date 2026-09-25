@@ -30,6 +30,13 @@ def ws(tmp_path):
     return w.resolve()
 
 
+def _symlink(link: Path, target: Path) -> None:
+    try:
+        link.symlink_to(target, target_is_directory=target.is_dir())
+    except OSError as e:  # Windows without Developer Mode or elevation
+        pytest.skip(f"symlinks need privileges here: {e}")
+
+
 def test_local_root_is_fixed_under_home(home):
     assert wd.local_root() == home / ".local" / "state" / "phillit" / "reviews"
 
@@ -54,7 +61,7 @@ def test_ws_key_slug_is_cut_to_20_chars(tmp_path):
 
 def test_ws_key_same_for_symlinked_path(ws, tmp_path):
     link = tmp_path / "link-to-ws"
-    link.symlink_to(ws, target_is_directory=True)
+    _symlink(link, ws)
     assert wd.ws_key(link) == wd.ws_key(ws)
     assert wd.workspace_id(link) == wd.workspace_id(ws)
 
@@ -220,7 +227,7 @@ def test_tree_files_refuses_symlink(tmp_path):
     d.mkdir()
     (d / "a.txt").write_text("a", encoding="utf-8")
     assert wd.tree_files(d) == [Path("a.txt")]
-    (d / "link").symlink_to(tmp_path)
+    _symlink(d / "link", tmp_path)
     with pytest.raises(wd.Refusal, match="is a link"):
         wd.tree_files(d)
 
@@ -287,7 +294,7 @@ def test_delete_workdir_unlinks_a_planted_dir_link_without_following(tmp_path):
     (outside / "keep.txt").write_text("keep", encoding="utf-8")
     d = tmp_path / "review"
     _review_tree(d)
-    (d / "sneaky").symlink_to(outside, target_is_directory=True)
+    _symlink(d / "sneaky", outside)
     assert wd.delete_workdir(d) == []
     assert (outside / "keep.txt").is_file()
 
@@ -343,7 +350,7 @@ def test_locate_refuses_symlinked_workdir(home, ws, tmp_path):
     d = wd.local_workdir(ws, "topic")
     real = tmp_path / "real"
     d.rename(real)
-    d.symlink_to(real, target_is_directory=True)
+    _symlink(d, real)
     with pytest.raises(wd.Refusal, match="is a link"):
         wd.locate(ws, ptr)
 
