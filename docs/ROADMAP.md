@@ -57,11 +57,12 @@ where it would be read.
   exit 1). Decide between a `systemMessage` and a block for the review
   states.
 
-- **Phase 6 moves every root-level `.bib` into the review** - SKILL.md's
-  stray-file step runs `find . -maxdepth 1 -name "*.bib" -exec mv`, which
-  also takes a user's own bibliography from the workspace root, against
-  README's "writes review output only to `./reviews/`". Scope it to the
-  names researchers write (`literature-domain-*.bib`, `literature-*.bib`).
+- **The SubagentStop hook cleans every workspace-root `.bib`** - Phase 6's
+  stray sweep now moves only `literature-domain-*.bib`, but
+  `hooks/subagent_stop_bib.sh` still collects every `"$CLAUDE_PROJECT_DIR"/*.bib`
+  as a researcher stray, validates it and runs `metadata_cleaner.py` on it,
+  which can rewrite a user's own bibliography in the workspace root. Scope
+  the root glob to the names researchers write (`literature-domain-*.bib`).
 
 - **The permissions guide claims a permission mode plugin agents never
   get** - `docs/permissions-guide.md`'s agent table lists `acceptEdits` for
@@ -107,6 +108,16 @@ where it would be read.
   FOR/AGAINST/CONTROL sit inside an OUT section in one block and could sit
   inside KEY_POSITIONS in another, which an IN/OUT list cannot express.
 
+- **Verify the local work folder on Windows** - the off-sync working
+  directory was built and tested on macOS only. Check on a real Windows
+  machine: that Claude Code honours the `~` form of
+  `Edit(~/.local/state/phillit/reviews/**)`; that `workdir.py`'s
+  name-surrogate test refuses a real junction and accepts a OneDrive Files
+  On-Demand placeholder; that read-only attributes never wedge `publish`,
+  `activate` or the pointer; and that the 120-character headroom
+  (`DEEP_FILE_HEADROOM`) covers the longest generated filenames
+  (`intermediate_files/json/verify_<domain>_<citekey>.json`).
+
 - **phillit-service: adopt the off-sync working directory at the next pin** -
   PhilLit 0.5.30 moves review work to `~/.local/state/phillit/reviews/` and
   publishes into `reviews/<name>/` at the end. The service must set
@@ -115,7 +126,13 @@ where it would be read.
   `_substitute_review_prose` rewrites will fail loudly at re-vendor on the
   reworded researcher and SKILL sentences, including the new
   `existing_review` guard: map `[workdir]` to `reviews/<id>`. In-place
-  `init` accepts the `reviews/<id>/` the service pre-creates.
+  `init` accepts the `reviews/<id>/` the service pre-creates, which
+  `build_workspace` must never make a symlink (in-place `init`, `activate`
+  and `publish` refuse a linked review folder). The pointer now lives
+  through Phase 6 steps 9-10 and moves only at step 11 (`publish` archives
+  it as `intermediate_files/.completed-review`), and the SubagentStop hook
+  resolves the review folder by running
+  `skills/literature-review/scripts/workdir.py` through `phillit-run`.
 
 phillit-service is deployed at 0.5.25 (engine at `da48b2c`) and owes a
 re-vendor of 0.5.29: 0.5.26's ledger content binding, 0.5.27's prompt fixes
