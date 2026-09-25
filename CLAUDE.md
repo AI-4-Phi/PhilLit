@@ -89,12 +89,6 @@ every run through the Agent SDK — then ported. PhilLit-side cross-repo work
 gets a card on the board like any other; the service's pin, deploy and port
 state stays in phillit-service.
 
-Gotcha: the service tracks its roadmap as **`docs/roadmap.md` (lowercase)**.
-On macOS's case-insensitive filesystem, editing `docs/ROADMAP.md` there
-writes the right file but `git add docs/ROADMAP.md` stages *nothing* — the
-change silently misses the commit. Use the lowercase path, and check
-`git show --stat` after committing.
-
 ## Cross-Platform
 
 PhilLit must work in Claude Code Cloud, Linux, macOS, and Windows. **Windows/Git Bash has never been verified** — the clean-install parity gate deferred that step for want of a Windows machine; revisit on the first Windows bug report or when hardware is available. On Windows, Claude Code uses Git Bash to run hooks and Bash tool calls. Use forward-slash paths everywhere. Python is never invoked directly — the `bin/phillit-run` wrapper runs it through `uv`, which resolves the correct interpreter per platform, so there is no `.venv/bin` vs `.venv/Scripts` branching to maintain.
