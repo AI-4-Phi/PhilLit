@@ -617,3 +617,13 @@ def test_an_unreadable_local_root_never_breaks_an_inplace_review(home, ws, monke
     wd.remove_pointer(ws)
     out = wd.cmd_status(ws)
     assert out["active"] is False and out["stranded"] == []
+
+
+def test_a_delivered_inplace_review_is_never_offered_even_with_a_stray_tracker(home, ws):
+    d = ws / "reviews" / "topic"
+    (d / "intermediate_files").mkdir(parents=True)
+    (d / "intermediate_files" / ".completed-review").write_text("reviews/topic\n", encoding="utf-8")
+    (d / "task-progress.md").write_text("written after publish", encoding="utf-8")
+    assert wd.cmd_status(ws)["abandoned"] == []
+    with pytest.raises(wd.Refusal, match="no abandoned review"):
+        wd.cmd_activate(ws, "topic")

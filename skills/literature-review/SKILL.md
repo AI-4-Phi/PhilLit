@@ -39,7 +39,7 @@ Once `workdir.py init` has created the review (Phase 1, step 7), create the trac
 - [ ] Phase 3: Research [N] domains in parallel
 - [ ] Phase 4: Outline synthesis review across domains
 - [ ] Phase 5: Write review for each section in parallel
-- [ ] Phase 6: Assemble final review files and move intermediate files
+- [ ] Phase 6: Assemble, deliver and publish the review (tick before step 11)
 
 ## Completed Tasks
 
@@ -54,7 +54,7 @@ Once `workdir.py init` has created the review (Phase 1, step 7), create the trac
 [Numbered list of next actions]
 ```
 
-**Update `task-progress.md` after EVERY completed phase in the workflow.**
+**Update `task-progress.md` after EVERY completed phase in the workflow.** Phase 6 is the one exception: tick it BEFORE step 11 (`publish`), and never write the tracker, or anything else, into `[workdir]` after publish: the folder is gone (local mode) or is the delivered review (in place).
 
 ## Workflow Architecture
 
@@ -124,12 +124,12 @@ This phase validates conditions for subsequent phases to function.
    bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/workdir.py status
    ```
 
-   It prints one JSON object. From here on, `[workdir]` means the `workdir` value that `status`, `activate` or `init` printed: an absolute path, used verbatim.
-   - `"committed": true` → a publish was interrupted after the review's files were copied. Run only Phase 6 step 11 (`workdir.py publish`); never re-run any other Phase 6 step. Then report the outcome by the `state` it prints: `published` is a delivered review, `abandoned` a review set aside.
+   It prints one JSON object. From here on, `[workdir]` means the `workdir` value that `status`, `activate`, `init` or `demote` printed (an absolute path, used verbatim), and `[project-name]` means the `name` value.
+   - `"committed": true` → a publish was interrupted after the review's files were copied. Run only Phase 6 step 11's command (`workdir.py publish`), and update nothing first, not even the tracker. Never re-run any other Phase 6 step. Then report the outcome by the `state` it prints: `published` is a delivered review, `abandoned` a review set aside.
    - `"missing": true` → **STOP.** The pointer names `reviews/[project-name]/`, but that folder does not exist here: it was deleted, or sync has not delivered it yet. Tell the user; never start the review again under this pointer. Once the folder is back, run step 5 again. To give up on it instead, run `workdir.py publish --abandon`, which only clears the pointer.
-   - `"delivered": true` → the pointer names a review that was already delivered (an interrupted "completed review" guard, step 7). Run `workdir.py publish --abandon` (it only clears the pointer; the delivered review is not touched), then continue as for no active review.
-   - `"elsewhere": true` → **STOP.** Tell the user that this review's working files are not on this machine: it was last worked on `[host]`, where it can be resumed, or its files were removed. If `[host]` is this machine, the workspace was probably moved, renamed or opened by another path spelling (letter case counts); its files are at the printed `workdir`, and reopening the workspace by its original path resumes it. The user can resume on the machine that holds the files, or delete `reviews/.active-review` themselves — warn them that the pointer is one synced file, so deleting it also detaches the review on the other machine (there it stays listed as abandoned, and `workdir.py activate <name>` re-attaches it). Never treat it as a fresh review.
-   - `"active": true` with a `workdir` → apply the resume logic below in `[workdir]`.
+   - `"delivered": true` → the pointer names a review that was already delivered (an interrupted "completed review" guard, step 7). Run `workdir.py publish --abandon` (it only clears the pointer; the delivered review is not touched), then run step 5 again and continue from its answer.
+   - `"elsewhere": true` → **STOP.** Tell the user that this review's working files are not on this machine: it was last worked on `[host]`, where it can be resumed, or its files were removed. If `[host]` is this machine: when the printed `workdir` exists, the workspace was probably moved, renamed or opened by another path spelling (letter case counts), its files are there, and reopening the workspace by its original path resumes it; when it does not exist, the files were removed. The user can resume on the machine that holds the files, or delete `reviews/.active-review` themselves — warn them that the pointer is one synced file, so deleting it also detaches the review on the other machine (there it stays listed as abandoned, and `workdir.py activate <name>` re-attaches it). Never treat it as a fresh review.
+   - `"active": true` with a `workdir` and none of the flags above → apply the resume logic below in `[workdir]`.
    - `"active": false` → no review is active. If `abandoned` lists entries, offer to resume one — `workdir.py activate <name>`, which prints the same fields as an active `status` — or to start fresh (step 6). In Full Autopilot, start fresh. Mention any `stranded` entries once, with their `path` and `note`.
    - An `error`, any nonzero exit, or output that is not one JSON object → report it verbatim to the user and stop.
 
@@ -185,7 +185,9 @@ This phase validates conditions for subsequent phases to function.
 
    **Guard — concurrent review**: If `init` refuses because a review is already active, it names that review under `active`. Ask the user whether to resume it (go back to step 5) or abandon it with `workdir.py publish --abandon` — its files then appear in `reviews/` and can be resumed later — and then run `init` again. **PRECONDITION for `publish --abandon`**: nothing the active review started is still running — no dispatched agent without its completion, no evidence barrier or other command in the background. `publish` copies a tree that nothing else may be writing; if you cannot account for every agent and command, resume the review instead.
 
-   Then create the progress tracker with the **Write** tool at `[workdir]/task-progress.md` (template under "Critical: Task List Management"). **Write check**: if `init` printed `"mode": "local"` and that Write is denied, run
+   **Any other refusal**, nonzero exit or non-JSON output from `init` or `demote`: report it verbatim to the user and stop.
+
+   Then create the progress tracker with the **Write** tool (the Write tool only, never a Bash redirect: `demote` accepts only a folder that holds nothing but `init`'s metadata) at `[workdir]/task-progress.md` (template under "Critical: Task List Management"). **Write check**: if `init` printed `"mode": "local"` and that Write is denied, run
    ```bash
    bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/workdir.py demote
    ```
@@ -538,7 +540,7 @@ reviews/[project-name]/
    bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/workdir.py publish
    ```
 
-   It copies the review into `reviews/[project-name]/` once, verifies the copy, clears the active-review pointer and deletes the local working copy. In in-place mode it only archives the pointer as `intermediate_files/.completed-review`. A `leftover` in its output names a local folder it could not delete: mention it; it is collected later. If it refuses with "no active review", run `workdir.py activate [project-name]`, then `publish` again; if `activate` answers that `reviews/[project-name]/` is a delivered review, the earlier publish had already finished and the workflow is complete. If it refuses because the copy does not match (`changed_during_copy`, `mismatched`, `extra`), something was still writing: wait until nothing is, then run `publish` again. Any other refusal, nonzero exit or non-JSON output: report it verbatim and stop — never copy, move or delete review files by hand.
+   It copies the review into `reviews/[project-name]/` once, verifies the copy, clears the active-review pointer and deletes the local working copy. In in-place mode it only archives the pointer as `intermediate_files/.completed-review`. A `leftover` in its output names a local folder it could not delete: mention it; it is collected later. If it refuses with "no active review", run `workdir.py activate [project-name]`, then `publish` again. If `activate` answers that `reviews/[project-name]/` is a delivered review, or `reviews/[project-name]/intermediate_files/.completed-review` exists, the earlier publish had already finished and the workflow is complete. If it refuses because the copy does not match (`changed_during_copy`, `mismatched`, `extra`), something was still writing: wait until nothing is, then run `publish` again, and if it refuses the same way twice, report it verbatim and stop. Any other refusal from `publish` or `activate`, nonzero exit or non-JSON output: report it verbatim and stop — never copy, move or delete review files by hand.
 
    Only now is the workflow complete. The same precondition applies to `publish --abandon` (Phase 1, step 7).
 

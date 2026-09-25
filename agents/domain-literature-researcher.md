@@ -154,7 +154,7 @@ REVIEW_DIR="[workdir]"
 JSON_DIR="$REVIEW_DIR/intermediate_files/json"
 mkdir -p "$JSON_DIR"
 ```
-Substitute `[workdir]` with the working directory from the orchestrator prompt, copied verbatim — an absolute path; keep the double quotes around it.
+Substitute `[workdir]` with the working directory from the orchestrator prompt: the path between the backticks, without the backticks, copied verbatim. It is an absolute path; keep the double quotes around it.
 
 > **CRITICAL: ALL output files MUST use `$REVIEW_DIR` paths.** Never redirect to bare filenames (e.g., `> results.json`). Files without the full path land in the project root, not the review directory.
 

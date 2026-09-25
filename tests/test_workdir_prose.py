@@ -74,3 +74,17 @@ def test_abandon_precondition_is_stated_where_abandon_is_offered():
     phase1 = SKILL.split("## Phase 1")[1].split("\n## ")[0]
     guard = phase1[phase1.index("Guard — concurrent review"):]
     assert "PRECONDITION" in guard.split("\n\n")[0]
+
+
+def test_the_tracker_is_never_written_after_publish():
+    assert "tick before step 11" in SKILL
+    rule = SKILL[SKILL.index("**Update `task-progress.md` after EVERY completed phase"):][:500]
+    assert "never write the tracker" in rule and "after publish" in rule
+
+
+def test_status_active_branch_excludes_the_flags():
+    assert "with a `workdir` and none of the flags above" in SKILL
+
+
+def test_researcher_strips_the_backticks():
+    assert "the path between the backticks, without the backticks" in RESEARCHER

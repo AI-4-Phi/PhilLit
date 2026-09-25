@@ -547,7 +547,10 @@ def _abandoned_in_place(d: Path) -> bool:
     """An in-workspace review that can be resumed: its marker says
     `abandoned` (set by publish --abandon in either mode, so it holds after
     Phase 6 moved the tracker), or it still has a top-level tracker and no
-    marker saying `published`. A delivered review is never offered."""
+    marker saying `published`. A delivered review (a `published` marker, or
+    `.completed-review` in place) is never offered."""
+    if (d / COMPLETED_REL).exists():
+        return False  # delivered in place: its pointer was archived by publish
     marker = read_meta(d)
     if marker and marker.get("state") == "published":
         return False
