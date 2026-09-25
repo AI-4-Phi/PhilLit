@@ -122,3 +122,25 @@ def test_status_names_every_stuck_state_before_the_active_branch():
     assert "workdir.py demote" in demote and "Phase 2" in demote
     elsewhere = step5[step5.index('"elsewhere": true'):].split("\n   - ")[0]
     assert "`workdir_exists`" in elsewhere
+
+
+def test_phase1_names_the_way_out_of_an_activate_refusal():
+    step5 = SKILL[SKILL.index("5. Check for an active review"):SKILL.index("**Resume logic**")]
+    inactive = step5[step5.index('"active": false'):].split("\n   - ")[0]
+    assert "If `activate` refuses, report it verbatim." in inactive
+    assert "try again once sync has finished; otherwise stop" in inactive
+
+
+def test_an_unproven_folder_is_never_promised_a_listing():
+    step5 = SKILL[SKILL.index("5. Check for an active review"):SKILL.index("**Resume logic**")]
+    unproven = step5[step5.index('"unproven": true'):].split("\n   - ")[0]
+    assert "listed under `stranded`" not in unproven
+    assert unproven.count("deletes `reviews/.active-review` by hand") == 1
+    assert "may list it as abandoned or stranded, or not at all" in unproven
+
+
+def test_publish_step_names_the_foreign_destination_refusal():
+    phase6 = SKILL.split("## Phase 6")[1].split("\n## ")[0]
+    step11 = phase6[phase6.index("11. **Publish the review**"):]
+    assert ("If it refuses because `reviews/[project-name]/` belongs to another review, "
+            "report the refusal verbatim (it names the way out) and stop.") in step11
