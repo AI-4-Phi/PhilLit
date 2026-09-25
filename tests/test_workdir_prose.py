@@ -99,3 +99,17 @@ def test_publish_step_names_the_unproven_entry():
     phase6 = SKILL.split("## Phase 6")[1].split("\n## ")[0]
     step11 = phase6[phase6.index("11. **Publish the review**"):]
     assert "An `unproven` entry names a local folder whose ownership could not be proven" in step11
+
+
+def test_status_names_every_stuck_state_before_the_active_branch():
+    step5 = SKILL[SKILL.index("5. Check for an active review"):SKILL.index("**Resume logic**")]
+    active = step5.index("with a `workdir` and none of the flags above")
+    for flag in ('"unproven": true', '"interrupted_demote": true'):
+        assert -1 < step5.find(flag) < active, flag
+    unproven = step5[step5.index('"unproven": true'):].split("\n   - ")[0]
+    assert "**STOP.**" in unproven and "`error` verbatim" in unproven
+    assert "reviews/.active-review` by hand" in unproven
+    demote = step5[step5.index('"interrupted_demote": true'):].split("\n   - ")[0]
+    assert "workdir.py demote" in demote and "Phase 2" in demote
+    elsewhere = step5[step5.index('"elsewhere": true'):].split("\n   - ")[0]
+    assert "`workdir_exists`" in elsewhere

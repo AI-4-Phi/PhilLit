@@ -196,7 +196,7 @@ def test_replace_and_remove_pointer(ws):
 def test_bad_pointers_refuse(ws, text):
     (ws / "reviews").mkdir()
     (ws / "reviews" / ".active-review").write_text(text, encoding="utf-8")
-    with pytest.raises(wd.Refusal):
+    with pytest.raises(wd.Refusal, match=r"\(to detach it, delete reviews/\.active-review by hand\)$"):
         wd.read_pointer(ws)
 
 

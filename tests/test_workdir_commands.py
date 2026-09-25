@@ -40,6 +40,13 @@ def ruled(ws):
     return ws
 
 
+def _symlink(link: Path, target: Path) -> None:
+    try:
+        link.symlink_to(target, target_is_directory=target.is_dir())
+    except OSError as e:  # Windows without Developer Mode or elevation
+        pytest.skip(f"symlinks need privileges here: {e}")
+
+
 # --- init -------------------------------------------------------------------
 def test_init_local(home, ruled):
     out = wd.cmd_init(ruled, "topic")
@@ -261,6 +268,163 @@ def test_status_elsewhere(home, ruled):
     wd.delete_workdir(wd.local_workdir(ruled, "topic"))
     out = wd.cmd_status(ruled)
     assert out["elsewhere"] is True and out["host"]
+    assert out["workdir_exists"] is False
+
+
+def test_status_elsewhere_says_whether_the_printed_workdir_exists(home, ruled, tmp_path):
+    # The workspace was opened by another path spelling: the pointer's
+    # workdir is not this spelling's, but the folder is there.
+    wd.cmd_init(ruled, "topic")
+    ptr = wd.read_pointer(ruled)
+    other = tmp_path / "other-spelling" / "topic"
+    other.mkdir(parents=True)
+    wd.replace_pointer(ruled, {**ptr, "workdir": other.as_posix()})
+    out = wd.cmd_status(ruled)
+    assert out["elsewhere"] is True and out["workdir_exists"] is True
+    assert out["workdir"] == other.as_posix()
+
+
+def test_status_reports_an_unprovable_local_folder(home, ruled):
+    wd.cmd_init(ruled, "topic")
+    local = wd.local_workdir(ruled, "topic")
+    wd.meta_path(local).unlink()  # the metadata was lost; the folder stays
+    out = wd.cmd_status(ruled)
+    assert out["active"] is True and out["unproven"] is True and out["mode"] == "local"
+    assert out["name"] == "topic" and out["workdir"] == local.as_posix() and "host" in out
+    assert "ownership cannot be proven" in out["error"]
+    r = _cli(ruled, "status")
+    assert r.returncode == 0 and json.loads(r.stdout)["unproven"] is True
+
+
+def test_an_interrupted_publish_leftover_is_never_offered(home, ruled):
+    # The destination commits this review, but the local copy still says
+    # active and no pointer is left: never resumable, listed as stranded.
+    wd.cmd_init(ruled, "topic")
+    local = wd.local_workdir(ruled, "topic")
+    meta = wd.read_meta(local)
+    dest = wd.destination(ruled, "topic")
+    (dest / "intermediate_files").mkdir(parents=True)
+    wd.write_meta(dest, {"format": 1, "review_id": meta["review_id"], "name": "topic",
+                         "state": "published", "published": wd.now()})
+    wd.remove_pointer(ruled)
+    out = wd.cmd_status(ruled)
+    assert out["abandoned"] == []
+    assert out["stranded"] == [{"path": local.as_posix(), "note": wd.ALREADY_PUBLISHED_NOTE}]
+
+
+def _interrupted_demote(ws):
+    """A demote that crashed between its delete and its pointer rewrite."""
+    wd.cmd_init(ws, "topic")
+    local = wd.local_workdir(ws, "topic")
+    wd.delete_workdir(local)
+    wd.destination(ws, "topic").mkdir(parents=True)
+    return local
+
+
+def test_status_and_demote_finish_an_interrupted_demote(home, ruled):
+    _interrupted_demote(ruled)
+    dest = wd.destination(ruled, "topic")
+    assert wd.cmd_status(ruled) == {"active": True, "interrupted_demote": True, "mode": "local",
+                                    "name": "topic", "workdir": dest.as_posix()}
+    out = wd.cmd_demote(ruled)
+    assert out == {"mode": "inplace", "name": "topic", "workdir": dest.as_posix(),
+                   "destination": dest.as_posix(), "reason": wd.DEMOTE_REASON}
+    assert wd.read_pointer(ruled) == {"form": "inplace", "name": "topic"}
+
+
+def test_a_demote_crashing_right_after_its_delete_is_recoverable(home, ruled, monkeypatch):
+    wd.cmd_init(ruled, "topic")
+    real = wd.delete_workdir
+
+    def delete_then_crash(d):
+        real(d)
+        raise OSError("killed right after the delete")
+
+    monkeypatch.setattr(wd, "delete_workdir", delete_then_crash)
+    with pytest.raises(OSError):
+        wd.cmd_demote(ruled)
+    monkeypatch.setattr(wd, "delete_workdir", real)
+    assert wd.cmd_status(ruled)["interrupted_demote"] is True
+    assert wd.cmd_demote(ruled)["mode"] == "inplace"
+
+
+def test_an_empty_destination_with_a_live_local_folder_is_not_an_interrupted_demote(home, ruled):
+    wd.cmd_init(ruled, "topic")
+    wd.destination(ruled, "topic").mkdir(parents=True)
+    out = wd.cmd_status(ruled)
+    assert "interrupted_demote" not in out and out["mode"] == "local"
+
+
+def test_stranded_is_listed_under_a_linked_root(home, ruled, tmp_path):
+    real_root = tmp_path / "dotfiles-state"
+    real_root.mkdir()
+    wd.local_root().parent.mkdir(parents=True)
+    _symlink(wd.local_root(), real_root)
+    orphan = wd.local_root() / "other-ws-0123456789abcdef" / "orphan"
+    orphan.mkdir(parents=True)
+    (orphan / "notes.md").write_text("x", encoding="utf-8")
+    stranded = wd.cmd_status(ruled)["stranded"]
+    assert stranded == [{"path": orphan.as_posix(), "note": wd.STRANDED_NOTE}]
+
+
+def _state_committed(ruled, ws):
+    wd.cmd_init(ruled, "topic")
+    ptr = wd.read_pointer(ruled)
+    _finish(ruled, "topic")
+    wd.create_pointer(ruled, ptr)
+    return ruled
+
+
+def _state_elsewhere(ruled, ws):
+    wd.cmd_init(ruled, "topic")
+    wd.delete_workdir(wd.local_workdir(ruled, "topic"))
+    return ruled
+
+
+def _state_missing(ruled, ws):
+    wd.cmd_init(ws, "topic")  # ws has no rule: in place
+    (ws / "reviews" / "topic").rmdir()
+    return ws
+
+
+def _state_delivered(ruled, ws):
+    d = ws / "reviews" / "topic"
+    (d / "intermediate_files").mkdir(parents=True)
+    (d / "intermediate_files" / ".completed-review").write_text("reviews/topic\n", encoding="utf-8")
+    (ws / "reviews" / ".active-review").write_text("reviews/topic\n", encoding="utf-8")
+    return ws
+
+
+def _state_unproven(ruled, ws):
+    wd.cmd_init(ruled, "topic")
+    wd.meta_path(wd.local_workdir(ruled, "topic")).unlink()
+    return ruled
+
+
+def _state_interrupted_demote(ruled, ws):
+    _interrupted_demote(ruled)
+    return ruled
+
+
+@pytest.mark.parametrize("state,flag", [
+    (_state_committed, "committed"), (_state_elsewhere, "elsewhere"), (_state_missing, "missing"),
+    (_state_delivered, "delivered"), (_state_unproven, "unproven"),
+    (_state_interrupted_demote, "interrupted_demote")])
+def test_status_is_read_only_in_every_stuck_state(home, tmp_path, state, flag):
+    ruled = tmp_path / "ruled-ws"
+    (ruled / ".claude").mkdir(parents=True)
+    (ruled / ".claude" / "settings.json").write_text(
+        json.dumps({"permissions": {"allow": [wd.ALLOW_RULE]}}), encoding="utf-8")
+    ws = tmp_path / "plain-ws"
+    ws.mkdir()
+    target = state(ruled.resolve(), ws.resolve())
+
+    def snap():
+        return sorted((p.as_posix(), p.stat().st_mtime_ns) for p in tmp_path.rglob("*"))
+
+    before = snap()
+    assert wd.cmd_status(target)[flag] is True
+    assert snap() == before
 
 
 def test_changed_hostname_does_not_block_resume(home, ruled, monkeypatch):

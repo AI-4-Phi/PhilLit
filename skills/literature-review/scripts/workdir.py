@@ -82,6 +82,9 @@ INPLACE_MEETS_LOCAL = (
 STRANDED_NOTE = "ownership cannot be proven; move or delete it by hand"
 UNCOLLECTED_NOTE = ("finished, but its published copy in reviews/ is missing or "
                     "differs; move or delete it by hand")
+ALREADY_PUBLISHED_NOTE = ("already published to reviews/; an interrupted publish left this "
+                          "copy; delete it by hand")
+DETACH_HINT = " (to detach it, delete reviews/.active-review by hand)"
 
 
 class Refusal(Exception):
@@ -220,7 +223,7 @@ def read_pointer(workspace: Path) -> dict | None:
     except FileNotFoundError:
         return None
     except OSError as e:
-        raise Refusal(f"cannot read {POINTER_REL.as_posix()}: {e}")
+        raise Refusal(f"cannot read {POINTER_REL.as_posix()}: {e}{DETACH_HINT}")
     if text.startswith("{"):
         try:
             data = json.loads(text)
@@ -233,14 +236,15 @@ def read_pointer(workspace: Path) -> dict | None:
               and isinstance(data.get("host"), str)
               and name_problem(data["name"]) is None)
         if not ok:
-            raise Refusal(f"{POINTER_REL.as_posix()} is not a valid local-review pointer",
-                          pointer=text[:200])
+            raise Refusal(f"{POINTER_REL.as_posix()} is not a valid local-review pointer"
+                          f"{DETACH_HINT}", pointer=text[:200])
         return {"form": "local", **{k: data[k] for k in ("review_id", "name", "host", "workdir")}}
     if text.startswith("reviews/") and "\n" not in text:
         name = text[len("reviews/"):].rstrip("/")
         if name and "/" not in name and "\\" not in name and name not in (".", ".."):
             return {"form": "inplace", "name": name}
-    raise Refusal(f"{POINTER_REL.as_posix()} holds neither pointer form", pointer=text[:200])
+    raise Refusal(f"{POINTER_REL.as_posix()} holds neither pointer form{DETACH_HINT}",
+                  pointer=text[:200])
 
 
 def current_pointer(workspace: Path) -> dict | None:
@@ -488,15 +492,31 @@ def committed(workspace: Path, ptr: dict) -> dict | None:
     return None
 
 
+def _published_copy(workspace: Path, d: Path, meta: dict) -> bool:
+    """reviews/<d.name>/ commits the review d holds (same review_id, a final
+    state): d is a copy an interrupted publish left behind."""
+    marker = read_meta(destination(workspace, d.name))
+    return bool(marker and isinstance(meta.get("review_id"), str)
+                and marker.get("review_id") == meta["review_id"]
+                and marker.get("state") in FINAL_STATES)
+
+
+def _demote_interrupted(dest: Path) -> bool:
+    """reviews/<name>/ exists and holds nothing: with the local folder gone,
+    a demote crashed between its delete and its pointer rewrite."""
+    return dest.is_dir() and not _is_link(dest) and holds_no_files(dest)
+
+
 # --- garbage collection -------------------------------------------------------
 
-def _subdirs(d: Path) -> list[Path]:
+def _subdirs(d: Path, follow_top_link: bool = False) -> list[Path]:
     """The non-link subdirectories of d, sorted; [] when d is missing, a
-    link, or unreadable. An in-place review never needs the local root, so a
-    sandbox that denies $HOME must not crash it; an unreadable folder is
-    never deleted either, only left out."""
+    link (unless follow_top_link: the root itself may be a link), or
+    unreadable. An in-place review never needs the local root, so a sandbox
+    that denies $HOME must not crash it; an unreadable folder is never
+    deleted either, only left out."""
     try:
-        if _is_link(d) or not d.is_dir():
+        if (not follow_top_link and _is_link(d)) or not d.is_dir():
             return []
         return sorted(p for p in d.iterdir() if p.is_dir() and not _is_link(p))
     except OSError:
@@ -542,7 +562,8 @@ def list_abandoned(workspace: Path) -> list[dict]:
     for d in _subdirs(local_root() / ws_key(workspace)):
         meta = read_meta(d)
         if (meta and meta.get("state") == "active" and meta.get("name") == d.name
-                and meta.get("workspace") == workspace_id(workspace)):
+                and meta.get("workspace") == workspace_id(workspace)
+                and not _published_copy(workspace, d, meta)):
             out.append({"name": d.name, "mode": "local", "workdir": d.as_posix()})
     reviews = workspace / "reviews"
     if reviews.is_dir():
@@ -571,11 +592,12 @@ def _abandoned_in_place(d: Path) -> bool:
 def list_stranded(workspace: Path) -> list[dict]:
     """For information only (listing needs no ownership proof; deletion
     does): folders under OTHER keys whose workspace no longer exists,
-    non-empty folders without metadata anywhere, and this workspace's
-    finished folders that collection cannot collect."""
+    non-empty folders without metadata anywhere, this workspace's finished
+    folders that collection cannot collect, and its active folders whose
+    review is already published (an interrupted publish's copy)."""
     out = []
     own = ws_key(workspace)
-    for keydir in _subdirs(local_root()):
+    for keydir in _subdirs(local_root(), follow_top_link=True):
         for d in _subdirs(keydir):
             meta = read_meta(d)
             if meta is None:
@@ -587,6 +609,8 @@ def list_stranded(workspace: Path) -> list[dict]:
                     out.append({"path": d.as_posix(), "note": STRANDED_NOTE})
             elif meta.get("state") in FINAL_STATES and not _collectable(workspace, d, meta):
                 out.append({"path": d.as_posix(), "note": UNCOLLECTED_NOTE})
+            elif meta.get("state") == "active" and _published_copy(workspace, d, meta):
+                out.append({"path": d.as_posix(), "note": ALREADY_PUBLISHED_NOTE})
     return out
 
 
@@ -719,11 +743,20 @@ def cmd_status(workspace: Path) -> dict:
     if marker:
         return {"active": True, "committed": True, "mode": "local", "name": name,
                 "state": marker["state"], "destination": dest.as_posix()}
-    workdir, _ = locate(workspace, ptr)
+    try:
+        workdir, where = locate(workspace, ptr)
+    except Refusal as e:  # the folder is here, but nothing may act on it
+        return {"active": True, "unproven": True, "mode": "local", "name": name,
+                "host": ptr["host"], "workdir": ptr["workdir"], "error": str(e)}
     if workdir is not None:
         return _active("local", name, workdir, workspace)
+    if where == "missing" and _demote_interrupted(dest):
+        _require_quotable(dest)
+        return {"active": True, "interrupted_demote": True, "mode": "local", "name": name,
+                "workdir": dest.as_posix()}
     return {"active": True, "elsewhere": True, "mode": "local", "name": name,
-            "host": ptr["host"], "workdir": ptr["workdir"]}
+            "host": ptr["host"], "workdir": ptr["workdir"],
+            "workdir_exists": os.path.lexists(ptr["workdir"])}
 
 
 def cmd_activate(workspace: Path, name: str) -> dict:
@@ -773,33 +806,42 @@ def cmd_activate(workspace: Path, name: str) -> dict:
 
 def cmd_demote(workspace: Path) -> dict:
     """Turn a FRESH local review (nothing but its metadata) into an in-place
-    one: Phase 1's tracker Write was denied in the local folder. The local
-    folder is deleted BEFORE the pointer changes, so a failed delete leaves
-    the review exactly as it was."""
+    one: Phase 1's tracker Write was denied in the local folder. The empty
+    reviews/<name>/ is created first and the local folder deleted BEFORE the
+    pointer changes, so a failed delete leaves the review exactly as it was,
+    and a crash after the delete leaves the state status reports as
+    `interrupted_demote`, which demote then finishes."""
     ptr = current_pointer(workspace)
     if ptr is None or ptr["form"] != "local":
         raise Refusal("demote needs an active local review")
-    workdir, _ = locate(workspace, ptr)
-    if workdir is None:
-        raise Refusal("the review's working files are not on this machine")
-    files = tree_files(workdir)
-    if files != [META_REL]:
-        raise Refusal("demote only moves a FRESH review; the working directory already "
-                      "holds files", files=[f.as_posix() for f in files[:20]])
     dest = destination(workspace, ptr["name"])
+    workdir, where = locate(workspace, ptr)
+    if workdir is None and not (where == "missing" and _demote_interrupted(dest)):
+        raise Refusal("the review's working files are not on this machine")
     _refuse_linked_destination(dest)
-    if dest.exists() and any(dest.iterdir()):
-        raise Refusal(f"{dest.as_posix()} already holds files")
     _require_quotable(dest)
-    leftover = delete_workdir(workdir)
-    if leftover:
-        raise Refusal("could not remove the local work folder; the review is unchanged",
-                      leftover=leftover)
-    try:
-        workdir.parent.rmdir()
-    except OSError:
-        pass
-    dest.mkdir(parents=True, exist_ok=True)
+    if workdir is not None:
+        files = tree_files(workdir)
+        if files != [META_REL]:
+            raise Refusal("demote only moves a FRESH review; the working directory already "
+                          "holds files", files=[f.as_posix() for f in files[:20]])
+        if dest.exists() and any(dest.iterdir()):
+            raise Refusal(f"{dest.as_posix()} already holds files")
+        created = not dest.exists()
+        dest.mkdir(parents=True, exist_ok=True)
+        leftover = delete_workdir(workdir)
+        if leftover:
+            if created:
+                try:
+                    dest.rmdir()
+                except OSError:
+                    pass
+            raise Refusal("could not remove the local work folder; the review is unchanged",
+                          leftover=leftover)
+        try:
+            workdir.parent.rmdir()
+        except OSError:
+            pass
     replace_pointer(workspace, {"form": "inplace", "name": ptr["name"]})
     return {"mode": "inplace", "name": ptr["name"], "workdir": dest.as_posix(),
             "destination": dest.as_posix(), "reason": DEMOTE_REASON}
