@@ -39,6 +39,13 @@ def plain(tmp_path):
     return w.resolve()
 
 
+def _symlink(link: Path, target: Path) -> None:
+    try:
+        link.symlink_to(target, target_is_directory=target.is_dir())
+    except OSError as e:  # Windows without Developer Mode or elevation
+        pytest.skip(f"symlinks need privileges here: {e}")
+
+
 def _review(ws, name="topic"):
     wd.cmd_init(ws, name)
     local = wd.local_workdir(ws, name)
@@ -142,16 +149,80 @@ def test_source_is_authoritative_over_a_stale_partial_copy(home, ws):
     assert (dest / "literature-review-topic.md").read_text(encoding="utf-8") == "# Review\n"
 
 
-def test_publish_refuses_when_destination_has_extra_files(home, ws):
+def test_publish_removes_files_only_the_destination_holds(home, ws):
+    # An uncommitted destination carrying this review's metadata is provably
+    # ours, and the source is authoritative: a destination-only file goes.
     local = _review(ws)
     dest = ws / "reviews" / "topic"
     (dest / "intermediate_files").mkdir(parents=True)
     wd._copy_file(wd.meta_path(local), wd.meta_path(dest))
     (dest / "unexpected.txt").write_text("x", encoding="utf-8")
+    assert wd.cmd_publish(ws, abandon=False)["state"] == "published"
+    assert not (dest / "unexpected.txt").exists()
+    assert wd.read_pointer(ws) is None and not local.exists()
+
+
+def test_a_file_removed_during_the_copy_is_dropped_on_the_rerun(home, ws, monkeypatch):
+    local = _review(ws)
+    src = local / "intermediate_files" / "json" / "s2_d1.json"
+    real = wd._copy_file
+
+    def copy_then_remove(s, d):
+        real(s, d)
+        if s == src:
+            s.unlink()  # renamed away by the review after its copy
+
+    monkeypatch.setattr(wd, "_copy_file", copy_then_remove)
     with pytest.raises(wd.Refusal) as e:
         wd.cmd_publish(ws, abandon=False)
-    assert e.value.extra["extra"] == ["unexpected.txt"]
-    assert wd.read_pointer(ws) is not None and local.exists()
+    assert "intermediate_files/json/s2_d1.json" in e.value.extra["changed_during_copy"]
+    monkeypatch.setattr(wd, "_copy_file", real)
+    assert wd.cmd_publish(ws, abandon=False)["state"] == "published"
+    assert not (ws / "reviews" / "topic" / "intermediate_files" / "json" / "s2_d1.json").exists()
+
+
+def test_os_clutter_in_a_half_published_destination_is_removed(home, ws, monkeypatch):
+    _review(ws)
+    real = wd._copy_file
+    calls = {"n": 0}
+
+    def dying(src, dst):
+        calls["n"] += 1
+        if calls["n"] == 3:
+            raise OSError("disk went away")
+        real(src, dst)
+
+    monkeypatch.setattr(wd, "_copy_file", dying)
+    with pytest.raises(OSError):
+        wd.cmd_publish(ws, abandon=False)
+    dest = ws / "reviews" / "topic"
+    (dest / ".DS_Store").write_bytes(b"\x00\x00\x00\x01Bud1")  # a file manager looked in
+    monkeypatch.setattr(wd, "_copy_file", real)
+    assert wd.cmd_publish(ws, abandon=False)["state"] == "published"
+    assert not (dest / ".DS_Store").exists()
+
+
+def test_a_destination_holding_only_clutter_and_a_stale_temp_is_not_foreign(home, ws):
+    local = _review(ws)
+    dest = ws / "reviews" / "topic"
+    (dest / "intermediate_files").mkdir(parents=True)
+    (dest / "intermediate_files" / ".phillit-review.json.4182.tmp").write_text("{", encoding="utf-8")
+    (dest / ".DS_Store").write_bytes(b"\x00")
+    assert wd.cmd_publish(ws, abandon=False)["state"] == "published"
+    assert not (dest / ".DS_Store").exists()
+    assert not list((dest / "intermediate_files").glob("*.tmp"))
+    assert not local.exists()
+
+
+def test_publish_through_a_linked_reviews_folder(home, ws, tmp_path):
+    # A linked workspace reviews/ is the user's own layout; no delete touches it.
+    real_reviews = tmp_path / "real-reviews"
+    real_reviews.mkdir()
+    _symlink(ws / "reviews", real_reviews)
+    local = _review(ws)
+    assert wd.cmd_publish(ws, abandon=False)["state"] == "published"
+    assert (real_reviews / "topic" / "literature-review-topic.md").is_file()
+    assert not local.exists() and wd.read_pointer(ws) is None
 
 
 def test_publish_refuses_a_foreign_destination(home, ws):
@@ -200,6 +271,9 @@ def test_recovery_refuses_a_working_dir_edited_after_commit(home, ws):
     with pytest.raises(wd.Refusal) as e:
         wd.cmd_publish(ws, abandon=False)
     assert e.value.extra["differing"] == ["literature-review-topic.md"]
+    msg = str(e.value)
+    assert f"the working directory {local.as_posix()} and the published copy in reviews/topic/" in msg
+    assert "already delivered" in msg and "run publish again" in msg
     assert local.exists()
 
 
@@ -385,7 +459,8 @@ def test_committed_review_with_an_unprovable_local_folder_completes(home, ws):
     wd.meta_path(local).unlink()  # a user "cleaned up" the local folder's metadata
     out = wd.cmd_publish(ws, abandon=False)
     assert out["state"] == "published" and wd.read_pointer(ws) is None
-    assert local.exists() and "ownership cannot be proven" in out["leftover"][0]
+    assert local.exists() and "leftover" not in out
+    assert len(out["unproven"]) == 1 and "ownership cannot be proven" in out["unproven"][0]
     assert [s["path"] for s in wd.cmd_status(ws)["stranded"]] == [local.as_posix()]
 
 

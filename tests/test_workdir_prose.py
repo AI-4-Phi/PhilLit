@@ -93,3 +93,9 @@ def test_researcher_strips_the_backticks():
 def test_resume_never_skips_the_evidence_barrier():
     rules = SKILL[SKILL.index("**Resume logic**"):SKILL.index("Output: \"Resuming from Phase")]
     assert "evidence_report.json" in rules and "evidence barrier" in rules
+
+
+def test_publish_step_names_the_unproven_entry():
+    phase6 = SKILL.split("## Phase 6")[1].split("\n## ")[0]
+    step11 = phase6[phase6.index("11. **Publish the review**"):]
+    assert "An `unproven` entry names a local folder whose ownership could not be proven" in step11

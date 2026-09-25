@@ -322,6 +322,15 @@ def _is_link(p: Path) -> bool:
     return stat.S_ISLNK(st.st_mode) or bool(getattr(st, "st_file_attributes", 0) & _REPARSE_POINT)
 
 
+# Files a file manager or sync client drops into any folder it shows: never
+# review content, so a destination holding only these holds nothing.
+_OS_CLUTTER = frozenset({".DS_Store", "Thumbs.db", "desktop.ini"})
+
+
+def _is_clutter(rel: Path) -> bool:
+    return rel.name in _OS_CLUTTER or rel.name.startswith("._")
+
+
 def _stale_meta_temp(rel: Path) -> bool:
     """A metadata temp file left by a crash inside _atomic_write_text: never
     review content, so never copied, counted or verified."""
@@ -906,11 +915,15 @@ def _finish_committed(workspace: Path, ptr: dict, dest: Path, marker: dict) -> d
         differing = [rel.as_posix() for rel in tree_files(workdir)
                      if rel != META_REL and not same_file(workdir / rel, dest / rel)]
         if differing:
-            raise Refusal("the working directory and the published copy differ; "
-                          "nothing was deleted", differing=differing)
+            w, n = workdir.as_posix(), ptr["name"]
+            raise Refusal(f"the working directory {w} and the published copy in reviews/{n}/ "
+                          "differ in these files; nothing was deleted. The review is already "
+                          f"delivered: if reviews/{n}/ is what you want, delete {w} and "
+                          "reviews/.active-review by hand; otherwise copy those files from "
+                          f"{w} into reviews/{n}/ and run publish again", differing=differing)
     out = _finish(workspace, workdir, marker["state"], dest)
     if unproven:
-        out["leftover"] = unproven + out.get("leftover", [])
+        out["unproven"] = unproven
     return out
 
 
@@ -919,8 +932,8 @@ def _copy_commit(workspace: Path, ptr: dict, workdir: Path, dest: Path, state: s
     (SKILL.md, prose): nothing is still writing the tree. The before/after
     manifests catch a write that lands during the copy; one that lands
     between the final check and the commit is the precondition's alone."""
-    if _is_link(dest) or _is_link(dest.parent):
-        raise Refusal(f"{dest.as_posix()} or its parent is a link; refusing to copy into it")
+    if _is_link(dest):  # a linked reviews/ is the user's layout; no delete touches it
+        raise Refusal(f"{dest.as_posix()} is a link; refusing to copy into it")
     src_files = tree_files(workdir)
     before = manifest(workdir, src_files)
     if os.path.lexists(dest):
@@ -931,6 +944,14 @@ def _copy_commit(workspace: Path, ptr: dict, workdir: Path, dest: Path, state: s
     for rel in src_files:
         if rel != META_REL:
             _copy_file(workdir / rel, dest / rel)
+    # 2b. The source is authoritative: remove what only the (uncommitted,
+    # provably ours) destination holds, such as a file the source renamed
+    # away or a .DS_Store a file manager added. Branch 3 runs only on an
+    # absent, empty or own-marker destination, and step 1 just wrote ours.
+    src_set = set(src_files)
+    for rel in tree_files(dest):
+        if rel not in src_set:
+            (dest / rel).unlink()
     # 3. verify: the source did not change, and the copy equals it exactly
     after = manifest(workdir, tree_files(workdir))
     copied = manifest(dest, tree_files(dest))
@@ -992,10 +1013,12 @@ def cmd_publish(workspace: Path, abandon: bool) -> dict:
         existing = read_meta(dest)
         # A destination holding no files is what a crash inside step 1 leaves
         # (an empty intermediate_files/, or a temp every walk skips): nothing
-        # there to protect. A READABLE marker naming another review always
-        # refuses, and a folder the walk cannot list refuses (tree_files).
+        # there to protect, and OS clutter (.DS_Store) is not a file either.
+        # A READABLE marker naming another review always refuses, and a
+        # folder the walk cannot list refuses (tree_files).
         foreign = (existing.get("review_id") != ptr["review_id"] if existing is not None
-                   else not (dest.is_dir() and not _is_link(dest) and tree_files(dest) == []))
+                   else not (dest.is_dir() and not _is_link(dest)
+                             and all(_is_clutter(r) for r in tree_files(dest))))
         if foreign:
             raise Refusal(f"{dest.as_posix()} already exists and is not this review's; "
                           "nothing was copied", destination=dest.as_posix())
