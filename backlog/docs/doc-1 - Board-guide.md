@@ -32,7 +32,7 @@ PhilLit's work queue, holding open engineering work only. There is one card per 
 - **To Do**: the queue, in working order, top first. Cards with equal ordinals are peers: batch them into one release, so that phillit-service re-pins once.
 - **In Progress**: being worked on now.
 - **Needs Johannes**: waiting on his ruling. Each card names the decision and its options. Once he rules, the card moves to To Do, or to Done when the ruling itself closes it.
-- **Done**: shipped. At a session wrap-up, take Done cards off the board with `backlog task complete PL-n`, which files each in `backlog/completed/`. Keep them there. backlog numbers a new card as the highest ID in `tasks/` and `completed/` plus one, so deleting the highest card (`git rm`) or archiving it (`backlog task archive`) makes the next card reuse an ID that code comments and commits already cite. `completed/` is that ID register and never part of the queue; the git log is the history.
+- **Done**: shipped. At a session wrap-up, take Done cards off the board with `backlog task complete PL-n`, which files each in `backlog/completed/`. Keep them there. backlog numbers a new card as the highest ID in `tasks/` and `completed/` plus one, so deleting the highest card (`git rm`), archiving it (`backlog task archive`) or demoting it to a draft (`backlog task demote`, the web UI's "Demote to draft" button, which also renames it `draft-n`) makes the next card reuse an ID that code comments and commits already cite. `completed/` is that ID register and never part of the queue; the git log is the history.
 
 ## Fields
 
