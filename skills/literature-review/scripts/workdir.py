@@ -455,7 +455,8 @@ def delete_workdir(workdir: Path) -> list[str]:
     meta = meta_path(workdir)
 
     def _unlistable(e: OSError) -> None:
-        leftover.append(Path(e.filename).as_posix() if e.filename else workdir.as_posix())
+        if not isinstance(e, FileNotFoundError):  # a vanished folder hides nothing
+            leftover.append(Path(e.filename).as_posix() if e.filename else workdir.as_posix())
 
     def _rm_link(p: Path) -> None:
         try:

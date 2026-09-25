@@ -288,6 +288,10 @@ def test_delete_workdir_keeps_the_metadata_when_a_folder_cannot_be_listed(tmp_pa
     assert wd.meta_path(d).is_file()  # still says what it is
 
 
+def test_delete_workdir_of_a_vanished_folder_leaves_nothing(tmp_path):
+    assert wd.delete_workdir(tmp_path / "gone") == []  # nothing unseen: nothing left over
+
+
 def test_delete_workdir_unlinks_a_planted_dir_link_without_following(tmp_path):
     outside = tmp_path / "outside"
     outside.mkdir()
