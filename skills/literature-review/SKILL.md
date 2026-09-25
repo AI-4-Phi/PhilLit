@@ -23,7 +23,7 @@ Quality over speed; use full context as needed (do not optimize for token saving
 
 **ALWAYS maintain a todo list and a `task-progress.md` file to enable resume across conversations.**
 
-Once the review directory `reviews/[project-short-name]/` is established (Phase 1, step 7), create the tracker at `reviews/[project-short-name]/task-progress.md`. The first setup steps of Phase 1 (environment check, resume detection, mode choice) run untracked because the review directory does not exist yet. The tracker template:
+Once `workdir.py init` has created the review (Phase 1, step 7), create the tracker at `[workdir]/task-progress.md`, where `[workdir]` is the absolute `workdir` path `init` printed. The first setup steps of Phase 1 (environment check, resume detection, mode choice) run untracked because the review does not exist yet. The tracker template:
 
 ```markdown
 # Literature Review Progress Tracker
@@ -88,7 +88,7 @@ Invoke subagents using the Agent tool with these parameters (older Claude Code s
 
 Do NOT read agent definition files before invoking them. Agent definitions are for the system, not for you to read.
 
-**Do NOT use `cd`** in any Bash call across all phases. Always use paths relative to the repo root or absolute paths — a `cd` changes the working directory for later commands too, which is how stray directories and misplaced files happen.
+**Do NOT use `cd`** in any Bash call across all phases. Always use `[workdir]` (an absolute path) or paths relative to the workspace root — a `cd` changes the working directory for later commands too, which is how stray directories and misplaced files happen.
 
 ---
 
@@ -118,17 +118,26 @@ This phase validates conditions for subsequent phases to function.
 
 **Why this matters**: If the environment isn't configured, the `philosophy-research` skill scripts used by the domain researchers will fail, causing agents to fall back to unstructured web searches, undermining review quality.
 
-5. Check for an active review pointer and determine resume point:
+5. Check for an active review and determine the resume point:
 
-   **Check `reviews/.active-review`** to find the review directory:
-   - If `reviews/.active-review` exists → read the path from it (e.g., `reviews/epistemic-autonomy-ai`), use that as the working directory, and check file state below
-   - If `reviews/.active-review` does NOT exist → this is a fresh review, proceed to step 6
-     (If you suspect an orphaned review from a previous interruption, scan `reviews/*/task-progress.md` to locate it.)
+   ```bash
+   bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/workdir.py status
+   ```
 
-   **Resume logic** (check files in the review directory, in order):
+   It prints one JSON object. From here on, `[workdir]` means the `workdir` value that `status`, `activate` or `init` printed: an absolute path, used verbatim.
+   - `"committed": true` → a publish was interrupted after the review's files were copied. Run only Phase 6 step 11 (`workdir.py publish`); never re-run any other Phase 6 step. Then report the outcome by the `state` it prints: `published` is a delivered review, `abandoned` a review set aside.
+   - `"missing": true` → **STOP.** The pointer names `reviews/[project-name]/`, but that folder does not exist here: it was deleted, or sync has not delivered it yet. Tell the user; never start the review again under this pointer. Once the folder is back, run step 5 again. To give up on it instead, run `workdir.py publish --abandon`, which only clears the pointer.
+   - `"delivered": true` → the pointer names a review that was already delivered (an interrupted "completed review" guard, step 7). Run `workdir.py publish --abandon` (it only clears the pointer; the delivered review is not touched), then continue as for no active review.
+   - `"elsewhere": true` → **STOP.** Tell the user that this review's working files are not on this machine: it was last worked on `[host]`, where it can be resumed, or its files were removed. If `[host]` is this machine, the workspace was probably moved, renamed or opened by another path spelling (letter case counts); its files are at the printed `workdir`, and reopening the workspace by its original path resumes it. The user can resume on the machine that holds the files, or delete `reviews/.active-review` themselves — warn them that the pointer is one synced file, so deleting it also detaches the review on the other machine (there it stays listed as abandoned, and `workdir.py activate <name>` re-attaches it). Never treat it as a fresh review.
+   - `"active": true` with a `workdir` → apply the resume logic below in `[workdir]`.
+   - `"active": false` → no review is active. If `abandoned` lists entries, offer to resume one — `workdir.py activate <name>`, which prints the same fields as an active `status` — or to start fresh (step 6). In Full Autopilot, start fresh. Mention any `stranded` entries once, with their `path` and `note`.
+   - An `error`, any nonzero exit, or output that is not one JSON object → report it verbatim to the user and stop.
+
+   **Resume logic** (check files in `[workdir]`, in order):
 
    ```
-   1. If literature-review-[project-name].md exists -> Workflow complete, inform user
+   1. If literature-review-[project-name].md exists -> Phase 6 was interrupted:
+      resume Phase 6 as its "Resuming Phase 6" note says
 
    2. If synthesis-section-*.md files exist:
       - Count existing section files
@@ -148,7 +157,10 @@ This phase validates conditions for subsequent phases to function.
 
    6. If task-progress.md exists but no other files -> Resume at Phase 2
 
-   7. Otherwise -> Treat as fresh review (proceed to step 6)
+   7. Otherwise ([workdir] exists but holds no review files: init ran,
+      nothing else did) -> skip step 7's init, create
+      [workdir]/task-progress.md as step 7 describes (including its write
+      check), and continue at Phase 2
    ```
 
    Output: "Resuming from Phase [N]: [phase name]..."
@@ -159,21 +171,27 @@ This phase validates conditions for subsequent phases to function.
    - **Full Autopilot**: Execute all phases automatically without pausing for feedback between phases. With `/phillit:setup` having merged PhilLit's permission rules into this directory's `.claude/settings.json`, no approval prompts should appear.
    - **Human-in-the-Loop**: Phase-by-phase with feedback
 
-7. Create working directory and write the active-review pointer:
+7. Create the review:
    ```bash
-   mkdir -p reviews/[project-short-name]
-   echo "reviews/[project-short-name]" > reviews/.active-review
+   bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/workdir.py init [project-short-name]
    ```
-   Use a short, descriptive name (e.g., `epistemic-autonomy-ai`, `mechanistic-interp`).
+   Use a short, descriptive name (e.g., `epistemic-autonomy-ai`, `mechanistic-interp`): letters, digits, `.`, `_` and `-`, at most 64 characters. This name is `[project-name]` in every later step.
 
-   Then create the progress tracker inside the review directory (see the template in "Critical: Task List Management" above):
-   `reviews/[project-short-name]/task-progress.md`
+   It prints `mode`, `workdir` (the absolute working directory, `[workdir]` from now on) and `destination` (`reviews/[project-short-name]/`, where the finished review will appear). Output: "Working in [workdir]; the finished review will appear in reviews/[project-short-name]/". If it prints a `reason`, the review runs in the workspace folder itself: tell the user the reason once.
 
-   **Guard — name collision**: If `reviews/[project-short-name]/literature-review-[project-short-name].md` already exists, warn the user that a completed review occupies that path. Ask whether to overwrite or choose a different name (e.g., append `-2`).
+   **Guard — name taken**: If `init` refuses and prints a `suggested_name`, a review (finished or not) already occupies the name. Human-in-the-Loop: ask the user to accept the suggestion or give another name. Full Autopilot: take the suggestion. Then run `init` again.
 
-   **Guard — concurrent review**: If `reviews/.active-review` already exists and points to a *different* directory, warn the user that another review appears to be in progress. Ask whether to abandon the previous review or resume it instead.
+   **Guard — completed review**: If `init` printed `"existing_review": true`, a completed review occupies `reviews/[project-short-name]/`, and a delivered review is never changed. Run `workdir.py publish --abandon` (here it only clears the pointer), then choose a new name as in "name taken" and run `init` again.
 
-   **CRITICAL**: All subsequent file operations happen in `reviews/[project-short-name]/`. Pass this path to ALL subagents.
+   **Guard — concurrent review**: If `init` refuses because a review is already active, it names that review under `active`. Ask the user whether to resume it (go back to step 5) or abandon it with `workdir.py publish --abandon` — its files then appear in `reviews/` and can be resumed later — and then run `init` again. **PRECONDITION for `publish --abandon`**: nothing the active review started is still running — no dispatched agent without its completion, no evidence barrier or other command in the background. `publish` copies a tree that nothing else may be writing; if you cannot account for every agent and command, resume the review instead.
+
+   Then create the progress tracker with the **Write** tool at `[workdir]/task-progress.md` (template under "Critical: Task List Management"). **Write check**: if `init` printed `"mode": "local"` and that Write is denied, run
+   ```bash
+   bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/workdir.py demote
+   ```
+   It moves the fresh review into the workspace and prints a new `workdir` and a `reason`. Tell the user the reason once, and write the tracker again at the new `[workdir]/task-progress.md`. If the review already runs in place (`"mode": "inplace"`) and the Write is denied, `demote` cannot help: stop and tell the user that file writes in `reviews/` are not permitted here, and that `/phillit:setup` merges the rule that allows them.
+
+   **CRITICAL**: All subsequent file operations happen in `[workdir]`. Pass it to ALL subagents as ``Working directory: `[workdir]` ``, with the path in backticks.
 
 ---
 
@@ -183,10 +201,10 @@ This phase validates conditions for subsequent phases to function.
 2. Use the Agent tool to invoke `literature-review-planner` agent with research idea:
    - subagent_type: "phillit:literature-review-planner"
    - prompt: Include full research idea, requirements, AND working directory path
-   - Example prompt: "Research idea: [idea]. Working directory: reviews/[project-name]/. Write output to reviews/[project-name]/lit-review-plan.md"
+   - Example prompt: "Research idea: [idea]. Working directory: `[workdir]`. Write output to `[workdir]/lit-review-plan.md`"
 3. Wait for `literature-review-planner` agent to structure the literature review into domains
-4. Read `reviews/[project-name]/lit-review-plan.md` (generated by agent)
-5. Get user feedback on plan, iterate if needed using the Agent tool to invoke `literature-review-planner` agent again
+4. Read `[workdir]/lit-review-plan.md` (generated by agent)
+5. Get user feedback on plan, iterate if needed using the Agent tool to invoke `literature-review-planner` agent again. In Human-in-the-Loop mode, give the user the full path `[workdir]/lit-review-plan.md` when asking for feedback.
 6. **Update task-progress.md**
 
 Never advance to a next step in this phase before completing the current step.
@@ -195,20 +213,20 @@ Never advance to a next step in this phase before completing the current step.
 
 ## Phase 3: Research Literature in Domains
 
-1. Identify and enumerate N domains (typically 3-8) listed in `reviews/[project-name]/lit-review-plan.md`
+1. Identify and enumerate N domains (typically 3-8) listed in `[workdir]/lit-review-plan.md`
 2. **Launch all N domain researchers in parallel** using a single message with multiple Agent tool calls:
    - subagent_type: "phillit:domain-literature-researcher"
    - prompt: Include domain focus, key questions, research idea, working directory, AND output filename
-   - Example prompt for domain 1: "Domain: [name]. Focus: [focus]. Key questions: [questions]. Research idea: [idea]. Working directory: reviews/[project-name]/. Write output to: reviews/[project-name]/literature-domain-1.bib"
+   - Example prompt for domain 1: "Domain: [name]. Focus: [focus]. Key questions: [questions]. Research idea: [idea]. Working directory: `[workdir]`. Write output to: `[workdir]/literature-domain-1.bib`"
    - description: "Domain [N]: [domain name]"
    - **CRITICAL**: Include ALL Agent tool calls in a single message to enable parallel execution
    - **CRITICAL — foreground, never background**: never set `run_in_background: true`; pass `false` where the tool lists the parameter (see Agent Tool Usage).
-3. Wait until every one of the N agents has completed — inline results, or one completion notification per agent (see Agent Tool Usage; an immediate "launched" return is not completion). Expected outputs: `reviews/[project-name]/literature-domain-1.bib` through `literature-domain-N.bib`. **Update task-progress.md after all domains complete**
+3. Wait until every one of the N agents has completed — inline results, or one completion notification per agent (see Agent Tool Usage; an immediate "launched" return is not completion). Expected outputs: `[workdir]/literature-domain-1.bib` through `literature-domain-N.bib`. **Update task-progress.md after all domains complete**
 4. **Collect source issues**: Note any "Source issues:" reported by domain researchers for the final summary
 5. **Evidence barrier (REQUIRED, after all researchers complete)**: run
 
    ```bash
-   bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/evidence_barrier.py "reviews/[project-name]" --domains N
+   bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/evidence_barrier.py "[workdir]" --domains N
    ```
 
    **CRITICAL — foreground, never background**: run this command in the foreground (never set `run_in_background`) with the maximum Bash timeout (600000 ms) — rate-limited encyclopedia fetches can take 10+ minutes on a cold cache. A backgrounded barrier can be orphaned when the session ends, leaving every entry unstamped (all `EVIDENCE-NONE`). If the tool still moves the command to the background at its timeout ceiling, WAIT for its completion notification — do not start Phase 4 until `intermediate_files/json/evidence_report.json` exists with status `complete` or `degraded`.
@@ -257,10 +275,10 @@ Never advance to Phase 4 before all domain researchers have completed AND the ev
 1. Use the Agent tool to invoke `synthesis-planner` agent:
    - subagent_type: "phillit:synthesis-planner"
    - prompt: Include research idea, working directory, list of BibTeX files, original plan path, and — only if the user stated one in their request — the target length
-   - Example prompt: "Research idea: [idea]. Target length: [user's stated length, or omit this sentence]. Working directory: reviews/[project-name]/. BibTeX files: literature-domain-1.bib through literature-domain-N.bib. Plan: lit-review-plan.md. Write output to: reviews/[project-name]/synthesis-outline.md"
+   - Example prompt: "Research idea: [idea]. Target length: [user's stated length, or omit this sentence]. Working directory: `[workdir]`. BibTeX files: literature-domain-1.bib through literature-domain-N.bib. Plan: lit-review-plan.md. Write output to: `[workdir]/synthesis-outline.md`"
    - description: "Plan synthesis structure"
 2. Planner reads BibTeX files and creates tight outline
-3. Wait for the planner to complete — its inline result, or its completion notification (see Agent Tool Usage). Expected output: `reviews/[project-name]/synthesis-outline.md` (an 800-1500 word outline)
+3. Wait for the planner to complete — its inline result, or its completion notification (see Agent Tool Usage). Expected output: `[workdir]/synthesis-outline.md` (an 800-1500 word outline)
 4. **Update task-progress.md**
 
 Never advance to a next step in this phase before completing the current step.
@@ -269,7 +287,7 @@ Never advance to a next step in this phase before completing the current step.
 
 ## Phase 5: Write Review Sections in Parallel
 
-1. Read synthesis outline `reviews/[project-name]/synthesis-outline.md` to identify sections
+1. Read synthesis outline `[workdir]/synthesis-outline.md` to identify sections
 2. For each section: identify relevant BibTeX .bib files from the outline
 3. **Launch all N synthesis writers in parallel** using a single message with multiple Agent tool calls:
    - subagent_type: "phillit:synthesis-writer"
@@ -281,22 +299,22 @@ Never advance to a next step in this phase before completing the current step.
      to write the wrong section or produce inconsistent headings. Output filenames should be
      numbered sequentially (synthesis-section-1.md through synthesis-section-N.md) for correct
      assembly order.
-   - Example prompt: "Working directory: reviews/[project-name]/. Write the section headed
+   - Example prompt: "Working directory: `[workdir]`. Write the section headed
      '## Introduction' from the outline. Outline: synthesis-outline.md. Relevant BibTeX files:
      literature-domain-1.bib, literature-domain-3.bib. Write output to:
-     reviews/[project-name]/synthesis-section-1.md"
+     `[workdir]/synthesis-section-1.md`"
    - description: "Write section [N]: [section name]"
    - **CRITICAL**: Include ALL Agent tool calls in a single message to enable parallel execution
    - **CRITICAL — foreground, never background**: never set `run_in_background: true`; pass `false` where the tool lists the parameter (see Agent Tool Usage).
-4. Wait until every one of the N writers has completed — inline results, or one completion notification per agent (see Agent Tool Usage; an immediate "launched" return is not completion). Expected outputs: `reviews/[project-name]/synthesis-section-1.md` through `synthesis-section-N.md`. **Update task-progress.md after all sections complete**
+4. Wait until every one of the N writers has completed — inline results, or one completion notification per agent (see Agent Tool Usage; an immediate "launched" return is not completion). Expected outputs: `[workdir]/synthesis-section-1.md` through `synthesis-section-N.md`. **Update task-progress.md after all sections complete**
 
 Never advance to Phase 6 before all synthesis writers have completed.
 
 ---
 
-## Phase 6: Assemble Final Review Files and Move Intermediate Files
+## Phase 6: Assemble, Deliver and Publish the Review
 
-**Working directory**: `reviews/[project-name]/`
+**Working directory**: `[workdir]`
 
 **Expected outputs of this phase** (final) — one purpose each:
 - `literature-review-[project-name].md` — the complete review, with YAML frontmatter
@@ -305,13 +323,19 @@ Never advance to Phase 6 before all synthesis writers have completed.
 - `literature-[project-name]-annotated.bib` — the REFERENCE-MANAGER IMPORT (Zotero, BibDesk, ...): the same works with standard fields, topical keywords, and the researchers' reading notes with fault-line tags spelled out. No verdict tokens and none of the eight engine-derived fields. Zotero imports the notes as notes and the keywords as tags.
 - `research-notes-[project-name].md` — the per-domain analysis the researchers recorded (overview, key positions, gaps, synthesis guidance, relevance), for reading.
 
+**Resuming Phase 6** (Phase 1 found the final review file). Exactly one test decides where:
+- If `[workdir]/intermediate_files/lit-review-plan.md` exists, step 8 had started, so steps 1-7 had finished. Run steps 5 and 6 again (both only read; step 6's `CHECK` lines belong in the final summary), then steps 8, 9, 10 and 11. Step 8's moves skip whatever is already moved.
+- Otherwise run Phase 6 again from step 1. Every step before step 8 rebuilds its output from the sections and domain bibs, which are all still in `[workdir]`, so a repeat is safe. It redoes the fixes made at steps 3 and 5, because the year-conflict lines and the lint report them again. It also covers a crash in the middle of any step, including step 1.
+
+A resume that starts at step 8 cannot reproduce the split's `SPLIT-*` lines or the researchers' source issues, since both lived in the interrupted conversation. Say in the final summary that those lines were lost, rather than implying there were none.
+
 1. Assemble final review with YAML frontmatter:
 
    ```bash
    bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/assemble_review.py \
-     "reviews/[project-name]/literature-review-[project-name].md" \
+     "[workdir]/literature-review-[project-name].md" \
      --title "[Research Topic]" \
-     reviews/[project-name]/synthesis-section-*.md
+     "[workdir]"/synthesis-section-*.md
    ```
 
    Then use **Read** to verify section ordering and transitions.
@@ -320,7 +344,7 @@ Never advance to Phase 6 before all synthesis writers have completed.
 
    ```bash
    bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/normalize_headings.py \
-     "reviews/[project-name]/literature-review-[project-name].md"
+     "[workdir]/literature-review-[project-name].md"
    ```
 
    The script enforces consistent numbering: `## Section N: Title` for body sections,
@@ -334,9 +358,9 @@ Never advance to Phase 6 before all synthesis writers have completed.
 
    ```bash
    bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/dedupe_bib.py \
-     "reviews/[project-name]/literature-[project-name].bib" \
-     --evidence-report "reviews/[project-name]/intermediate_files/json/evidence_report.json" \
-     reviews/[project-name]/literature-domain-*.bib
+     "[workdir]/literature-[project-name].bib" \
+     --evidence-report "[workdir]/intermediate_files/json/evidence_report.json" \
+     "[workdir]"/literature-domain-*.bib
    ```
 
    The script will:
@@ -353,8 +377,8 @@ Never advance to Phase 6 before all synthesis writers have completed.
 
    ```bash
    bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/generate_bibliography.py \
-     "reviews/[project-name]/literature-review-[project-name].md" \
-     "reviews/[project-name]/literature-[project-name].bib"
+     "[workdir]/literature-review-[project-name].md" \
+     "[workdir]/literature-[project-name].bib"
    ```
 
    The script will:
@@ -367,7 +391,7 @@ Never advance to Phase 6 before all synthesis writers have completed.
 
    ```bash
    bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/lint_md.py \
-     "reviews/[project-name]/literature-review-[project-name].md"
+     "[workdir]/literature-review-[project-name].md"
    ```
 
    Fix any reported issues before proceeding. The References section is now in scope for linting — verify no false positives from italicized journal names, DOI URLs, or other bibliography formatting.
@@ -399,7 +423,7 @@ Never advance to Phase 6 before all synthesis writers have completed.
 6. **Evidence checker (telemetry)**: run
 
    ```bash
-   bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/check_evidence.py "reviews/[project-name]/literature-review-[project-name].md" "reviews/[project-name]/literature-[project-name].bib"
+   bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/check_evidence.py "[workdir]/literature-review-[project-name].md" "[workdir]/literature-[project-name].bib"
    ```
 
    Include every `CHECK` line **verbatim** in the final summary (they are telemetry, not blockers) — never summarize, count, or gloss them: a live run's summary once reported four findings as "two minor notes", which hid a do-not-cite violation from the user.
@@ -408,47 +432,46 @@ Never advance to Phase 6 before all synthesis writers have completed.
 
    ```bash
    bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/split_delivery.py \
-     "reviews/[project-name]/literature-[project-name].bib" \
-     --plan "reviews/[project-name]/lit-review-plan.md"
+     "[workdir]/literature-[project-name].bib" \
+     --plan "[workdir]/lit-review-plan.md"
    ```
 
    It rewrites `literature-[project-name].bib` as the track record and writes `literature-[project-name]-annotated.bib` and `research-notes-[project-name].md` beside it. A `SPLIT-ERROR:` line (exit 2) names a file that was NOT written and why — an unrecognised label in a domain's research notes, a fault-line tag the plan does not define, or a bib that does not parse; the files it does not name were written. A `SPLIT-NOTICE:` line names a comment block that was dropped although it held analysis. Do not edit files to get past these: report every line **verbatim** in the final summary and deliver the review with what was written.
 
    If it exits 1 (a bad input or `--plan` path, or a read/write failure), nothing was written: `literature-[project-name].bib` is still the merged bib — report the line verbatim and fix the path before re-running.
 
-   The one exception is a `SPLIT-ERROR` saying the bib is **already split**: this step ran before on this bib, and nothing was written this time. The merged bib it replaced is saved at `reviews/[project-name]/intermediate_files/literature-[project-name]-merged.bib`: copy it back over `literature-[project-name].bib` (or re-run step 3, dedupe), then run this step again. If step 8 has already run, the domain bibs and the plan are in `intermediate_files/`: point step 3's input glob at `reviews/[project-name]/intermediate_files/literature-domain-*.bib` and `--plan` at `reviews/[project-name]/intermediate_files/lit-review-plan.md`.
+   The one exception is a `SPLIT-ERROR` saying the bib is **already split**: this step ran before on this bib, and nothing was written this time. The merged bib it replaced is saved at `[workdir]/intermediate_files/literature-[project-name]-merged.bib`: copy it back over `literature-[project-name].bib` (or re-run step 3, dedupe), then run this step again. If step 8 has already run, the domain bibs and the plan are in `intermediate_files/`: point step 3's input glob at `"[workdir]"/intermediate_files/literature-domain-*.bib` and `--plan` at `[workdir]/intermediate_files/lit-review-plan.md`.
 
 8. Clean up intermediate files (use absolute paths to avoid cwd issues):
 
    Move JSON API response files to `intermediate_files/json/` for archival (allows debugging while keeping review directory clean):
    ```bash
-   mkdir -p "reviews/[project-name]/intermediate_files/json"
-   find "reviews/[project-name]" -maxdepth 1 -name "*.json" -exec mv {} "reviews/[project-name]/intermediate_files/json/" \;
+   mkdir -p "[workdir]/intermediate_files/json"
+   find "[workdir]" -maxdepth 1 -name "*.json" -exec mv {} "[workdir]/intermediate_files/json/" \;
    ```
    (`find`, not a bare `mv …/*.json` glob: under zsh an unmatched glob aborts the command before any redirection applies, so `2>/dev/null || true` cannot silence its `no matches found` error.)
 
    Move stray API-result files from project root (agents sometimes omit the `$REVIEW_DIR/` prefix).
    Use targeted prefixes — never bare `*.json`, which could swallow unrelated files:
    ```bash
-   find . -maxdepth 1 \( -name "philpapers_*.json" -o -name "pp_*.json" -o -name "s2_*.json" -o -name "openalex_*.json" -o -name "stage3_*.json" -o -name "arxiv_*.json" -o -name "core_*.json" -o -name "sep_*.json" -o -name "iep_*.json" -o -name "cites_*.json" -o -name "recommendations_*.json" -o -name "verify_*.json" -o -name "encyclopedia_entries-*.json" \) -exec mv {} "reviews/[project-name]/intermediate_files/json/" \;
-   find . -maxdepth 1 -name "*.bib" -exec mv {} "reviews/[project-name]/intermediate_files/" \;
+   find . -maxdepth 1 \( -name "philpapers_*.json" -o -name "pp_*.json" -o -name "s2_*.json" -o -name "openalex_*.json" -o -name "stage3_*.json" -o -name "arxiv_*.json" -o -name "core_*.json" -o -name "sep_*.json" -o -name "iep_*.json" -o -name "cites_*.json" -o -name "recommendations_*.json" -o -name "verify_*.json" -o -name "encyclopedia_entries-*.json" \) -exec mv {} "[workdir]/intermediate_files/json/" \;
+   find . -maxdepth 1 -name "*.bib" -exec mv {} "[workdir]/intermediate_files/" \;
    ```
 
-   Move remaining intermediate files and clear the active-review pointer.
-   Archive the pointer with `mv` (not `rm`) — moving it into the completed review's
-   `intermediate_files/` clears it from `reviews/` without triggering the `rm` permission prompt:
+   Move remaining intermediate files; every move skips what is already moved, so a resumed Phase 6 can run this step again. `lit-review-plan.md` moves FIRST, because its move is the resume test above:
    ```bash
-   mv "reviews/[project-name]/task-progress.md" "reviews/[project-name]/lit-review-plan.md" "reviews/[project-name]/synthesis-outline.md" "reviews/[project-name]/intermediate_files/"
-   mv "reviews/[project-name]/synthesis-section-"*.md "reviews/[project-name]/literature-domain-"*.bib "reviews/[project-name]/intermediate_files/"
-   mv reviews/.active-review "reviews/[project-name]/intermediate_files/.completed-review" 2>/dev/null || true
+   for f in lit-review-plan.md task-progress.md synthesis-outline.md; do
+     if [ -f "[workdir]/$f" ]; then mv "[workdir]/$f" "[workdir]/intermediate_files/"; fi
+   done
+   find "[workdir]" -maxdepth 1 \( -name 'synthesis-section-*.md' -o -name 'literature-domain-*.bib' \) -exec mv {} "[workdir]/intermediate_files/" \;
    ```
 
    Safety net — move any remaining non-final files to `intermediate_files/`:
    ```bash
-   for f in "reviews/[project-name]"/*; do
+   for f in "[workdir]"/*; do
      case "$(basename "$f")" in
        literature-review-*.md|literature-review-*.docx|literature-*.bib|research-notes-*.md|intermediate_files) ;;
-       *) mv "$f" "reviews/[project-name]/intermediate_files/" 2>/dev/null || true ;;
+       *) mv "$f" "[workdir]/intermediate_files/" 2>/dev/null || true ;;
      esac
    done
    ```
@@ -460,7 +483,7 @@ Never advance to Phase 6 before all synthesis writers have completed.
 
    **Note:** Never `cd` here either — see the rule under Agent Tool Usage above.
 
-**After cleanup** (final state):
+**After publish** (final state, in `reviews/[project-name]/`):
 ```
 reviews/[project-name]/
 ├── literature-review-[project-name].md    # Final review (markdown)
@@ -474,6 +497,7 @@ reviews/[project-name]/
     │   ├── s2_<domain>_results.json … verify_<domain>_<citekey>.json
     │   ├── cleaning_ledger-*.json, enrichment_ledger-*.json
     │   └── evidence_report.json
+    ├── .phillit-review.json      # Ownership marker (local mode): review id and state
     ├── task-progress.md
     ├── lit-review-plan.md
     ├── synthesis-outline.md
@@ -494,19 +518,29 @@ reviews/[project-name]/
 10. **Optional: Convert to DOCX** (if pandoc is installed):
    ```bash
    if command -v pandoc &> /dev/null; then
-     pandoc "reviews/[project-name]/literature-review-[project-name].md" \
+     pandoc "[workdir]/literature-review-[project-name].md" \
        --from markdown \
        --to docx \
-       --output "reviews/[project-name]/literature-review-[project-name].docx" \
+       --output "[workdir]/literature-review-[project-name].docx" \
        --citeproc \
-       --bibliography="reviews/[project-name]/literature-[project-name].bib" \
+       --bibliography="[workdir]/literature-[project-name].bib" \
        && echo "Converted to DOCX: literature-review-[project-name].docx"
    else
      echo "Pandoc not installed, skipping DOCX conversion"
    fi
    ```
 
-   **Important:** Use paths relative to repo root (not bare filenames). Do NOT use `&&/||` chaining for this check, as Pandoc errors would trigger the wrong fallback message.
+   **Important:** Use the full `[workdir]` paths (not bare filenames). Do NOT use `&&/||` chaining for this check, as Pandoc errors would trigger the wrong fallback message.
+
+11. **Publish the review** into `reviews/[project-name]/`. **PRECONDITION**: every agent this review dispatched has completed, and no command the review started is still running — `publish` copies a tree that nothing else may be writing. Make your last update to `task-progress.md` (now in `[workdir]/intermediate_files/`) BEFORE this step: after `publish`, `[workdir]` no longer exists, and a write there would recreate a stray folder outside the workspace. Never write into `[workdir]` after `publish`.
+
+   ```bash
+   bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/workdir.py publish
+   ```
+
+   It copies the review into `reviews/[project-name]/` once, verifies the copy, clears the active-review pointer and deletes the local working copy. In in-place mode it only archives the pointer as `intermediate_files/.completed-review`. A `leftover` in its output names a local folder it could not delete: mention it; it is collected later. If it refuses with "no active review", run `workdir.py activate [project-name]`, then `publish` again; if `activate` answers that `reviews/[project-name]/` is a delivered review, the earlier publish had already finished and the workflow is complete. If it refuses because the copy does not match (`changed_during_copy`, `mismatched`, `extra`), something was still writing: wait until nothing is, then run `publish` again. Any other refusal, nonzero exit or non-JSON output: report it verbatim and stop — never copy, move or delete review files by hand.
+
+   Only now is the workflow complete. The same precondition applies to `publish --abandon` (Phase 1, step 7).
 
 ---
 
@@ -539,6 +573,7 @@ Output status updates directly as text (visible to user in real-time):
 | **Workflow start** | `Starting literature review: [topic]` |
 | **Environment check** | `Phase 1/6: Verifying environment and determining execution mode...` |
 | **Environment OK** | `Environment OK. Proceeding...` |
+| **Review created** | `Working in [workdir]; the finished review will appear in reviews/[project-name]/` |
 | **Environment FAIL** | `Environment verification failed. [details]` |
 | **Phase transition** | `Phase 2/6: Structuring literature review into domains` |
 | **Phase transition** | `Phase 3/6: Researching literature in [N] domains (parallel)` |
@@ -553,7 +588,8 @@ Output status updates directly as text (visible to user in real-time):
 | **Delivery split** | `Split delivery: track record, annotated bib, research notes` |
 | **Cleanup** | `Moving intermediate files -> intermediate_files/` |
 | **DOCX conversion** | `Converted to DOCX: literature-review-[project-name].docx` |
-| **Workflow complete** | `Literature review complete: literature-review-[project-name].md ([wordcount])` |
+| **Publish** | `Published to reviews/[project-name]/` |
+| **Workflow complete** | `Literature review complete: reviews/[project-name]/literature-review-[project-name].md ([wordcount])` |
 | **Source issues (if any)** | `⚠️ Source issues: [aggregated list from domain researchers]` |
 
 ---
@@ -563,3 +599,4 @@ Output status updates directly as text (visible to user in real-time):
 - Focused, rigorous, insight-driven review — at the length the user asked for; otherwise sized to the literature found, with 4,000–10,000 words as soft guidance
 - Resumable (task-progress.md enables continuity)
 - Valid BibTeX files
+- Delivered into `reviews/[project-name]/` by `workdir.py publish`; nothing of the review is left in the local work folder

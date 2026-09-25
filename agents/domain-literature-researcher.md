@@ -24,8 +24,8 @@ The orchestrator provides:
 - **Domain focus**: What this domain covers
 - **Key questions**: What to investigate
 - **Research idea**: The overall project context
-- **Working directory**: Where to write output (e.g., `reviews/project-name/`)
-- **Output filename**: The exact file to write (e.g., `reviews/project-name/literature-domain-1.bib`)
+- **Working directory**: Where to write output (an absolute path, e.g., `/Users/you/.local/state/phillit/reviews/ws-1a2b3c4d5e6f7a8b/epistemic-normativity/`)
+- **Output filename**: The exact file to write (e.g., `[working directory]/literature-domain-1.bib`)
 
 **CRITICAL**: Write your output to the EXACT path specified in the prompt.
 
@@ -150,15 +150,15 @@ Use the `philosophy-research` skill scripts via Bash. Invoke every bundled scrip
 
 **The review directory is set up inside each Bash call that writes files** — the worked examples below start with these lines; never run them as a call of their own (the valid-empty slug-file call in Stage 1 is the one exception):
 ```bash
-REVIEW_DIR="$PWD/reviews/[project-name]"
+REVIEW_DIR="[workdir]"
 JSON_DIR="$REVIEW_DIR/intermediate_files/json"
 mkdir -p "$JSON_DIR"
 ```
-Substitute `[project-name]` with the actual directory name from the orchestrator prompt (e.g., `epistemic-normativity`).
+Substitute `[workdir]` with the working directory from the orchestrator prompt, copied verbatim — an absolute path; keep the double quotes around it.
 
 > **CRITICAL: ALL output files MUST use `$REVIEW_DIR` paths.** Never redirect to bare filenames (e.g., `> results.json`). Files without the full path land in the project root, not the review directory.
 
-> **CRITICAL: NEVER create directories outside `reviews/`.** The only directory you should create is `$REVIEW_DIR` (which is always under `reviews/`). Do not use the topic name, domain name, or search query as a directory path.
+> **CRITICAL: NEVER create directories outside the working directory.** The only directories you create are `$REVIEW_DIR` and its subdirectories. Do not use the topic name, domain name, or search query as a directory path.
 
 > **File extension convention**: Always use `.json` extension when saving script output to files (the content is JSON). Never use `.txt`. This ensures Phase 6 cleanup catches all intermediate files.
 
@@ -218,7 +218,7 @@ fetch them ALL in one second call:
 # One call: fetch every chosen entry. SEP fetches run sequentially (one
 # shared crawl-delay limiter), IEP fetches likewise; the two FAMILIES run
 # in parallel with each other (different hosts, different limiters).
-REVIEW_DIR="$PWD/reviews/[project-name]"
+REVIEW_DIR="[workdir]"
 JSON_DIR="$REVIEW_DIR/intermediate_files/json"
 mkdir -p "$JSON_DIR"
 # The slug file rides this call: the barrier reads it, and your bib Write is denied while it is missing.
@@ -242,7 +242,7 @@ grep -m1 '"status"' "$JSON_DIR"/sep_<domain>_*.json "$JSON_DIR"/iep_<domain>_*.j
 - **The slug file** `encyclopedia_entries-domain-N.json` (same N as your `literature-domain-N.bib`) is written by the fetch call above — every slug you fetch, SEP and IEP, in `{"sep_entries": [...], "iep_entries": [...]}`. **If you found nothing to fetch, write the valid-empty file** in a call of its own — the one standalone no-script call this prose asks for:
 
   ```bash
-  REVIEW_DIR="$PWD/reviews/[project-name]"; JSON_DIR="$REVIEW_DIR/intermediate_files/json"; mkdir -p "$JSON_DIR"
+  REVIEW_DIR="[workdir]"; JSON_DIR="$REVIEW_DIR/intermediate_files/json"; mkdir -p "$JSON_DIR"
   printf '%s\n' '{"sep_entries": [], "iep_entries": []}' > "$JSON_DIR/encyclopedia_entries-domain-N.json"
   ```
 
@@ -263,7 +263,7 @@ bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_p
 ### Stage 3: Extended Academic Search
 
 ```bash
-REVIEW_DIR="$PWD/reviews/[project-name]"
+REVIEW_DIR="[workdir]"
 JSON_DIR="$REVIEW_DIR/intermediate_files/json"
 mkdir -p "$JSON_DIR"
 
@@ -384,7 +384,7 @@ calls:
 ```bash
 # One call: chain citations for ALL seed papers (sequential -- every line
 # rides the same Semantic Scholar limiter)
-REVIEW_DIR="$PWD/reviews/[project-name]"
+REVIEW_DIR="[workdir]"
 JSON_DIR="$REVIEW_DIR/intermediate_files/json"
 mkdir -p "$JSON_DIR"
 bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/s2_citations.py "{paper_id_1}" --both --influential-only --output "$JSON_DIR/cites_<domain>_seed1.json" > /dev/null
@@ -408,7 +408,7 @@ For every paper with a DOI, use CrossRef to get authoritative publication metada
 ```bash
 # Repeat the verify line once per paper -- EVERY paper with a DOI, about
 # six verify lines per Bash call (sequential: one shared CrossRef limiter)
-REVIEW_DIR="$PWD/reviews/[project-name]"
+REVIEW_DIR="[workdir]"
 JSON_DIR="$REVIEW_DIR/intermediate_files/json"
 mkdir -p "$JSON_DIR"
 bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/verify_paper.py --doi "10.xxxx/aaaa" --output "$JSON_DIR/verify_<domain>_<citekey1>.json"
@@ -434,7 +434,7 @@ CrossRef returns:
 **Other verification tools**:
 
 ```bash
-REVIEW_DIR="$PWD/reviews/[project-name]"
+REVIEW_DIR="[workdir]"
 JSON_DIR="$REVIEW_DIR/intermediate_files/json"
 
 # Efficiently fetch metadata for multiple papers from S2
@@ -463,7 +463,7 @@ anti-pattern is a run per added entry (up to 17 in one domain), which
 wastes turns and API calls alike.
 
 ```bash
-REVIEW_DIR="$PWD/reviews/[project-name]"
+REVIEW_DIR="[workdir]"
 bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/enrich_bibliography.py "$REVIEW_DIR/literature-domain-N.bib"
 ```
 
@@ -551,7 +551,7 @@ A web source has no API abstract, so without a fetch it stamps
 `EVIDENCE-NONE` and the writer cannot cite it at all. Run:
 
 ```bash
-REVIEW_DIR="$PWD/reviews/[project-name]"
+REVIEW_DIR="[workdir]"
 bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_web.py \
     --url "https://example.com/path" --citekey authorYYYYkeyword --review-dir "$REVIEW_DIR"
 ```
@@ -580,7 +580,7 @@ If the script cannot get the page but you can read it (JS-rendered hosts),
 read it with WebFetch and pipe what you read to the same script:
 
 ```bash
-REVIEW_DIR="$PWD/reviews/[project-name]"
+REVIEW_DIR="[workdir]"
 cat <<'PAGE_TEXT' | bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_web.py \
     --stdin --url "https://example.com/path" --citekey authorYYYYkeyword --review-dir "$REVIEW_DIR"
 [paste the page text you read with WebFetch here]

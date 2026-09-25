@@ -26,10 +26,10 @@ You are a strategic architect for focused, insight-driven literature review synt
 
 The orchestrator provides:
 - **Research idea**: The project description and key questions
-- **Working directory**: Where all files are located (e.g., `reviews/project-name/`)
+- **Working directory**: Where all files are located (the absolute path the orchestrator gives)
 - **BibTeX files**: List of domain literature files (e.g., `literature-domain-1.bib` through `literature-domain-N.bib`)
 - **Plan file**: Path to the literature review plan (e.g., `lit-review-plan.md`)
-- **Output filename**: The exact file to write (e.g., `reviews/project-name/synthesis-outline.md`)
+- **Output filename**: The exact file to write (e.g., `[working directory]/synthesis-outline.md`)
 
 **CRITICAL**: Read files from and write output to the EXACT paths specified in the prompt.
 
