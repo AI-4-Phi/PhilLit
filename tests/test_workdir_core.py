@@ -292,6 +292,25 @@ def test_delete_workdir_of_a_vanished_folder_leaves_nothing(tmp_path):
     assert wd.delete_workdir(tmp_path / "gone") == []  # nothing unseen: nothing left over
 
 
+def test_delete_workdir_keeps_the_metadata_when_a_subfolder_reads_as_missing(tmp_path, monkeypatch):
+    # On Windows a too-long path reports FileNotFoundError: that is not a
+    # folder that vanished, and whatever it hides must keep its metadata.
+    d = tmp_path / "review"
+    _review_tree(d)
+    (d / "intermediate_files" / "notes.md").write_text("n", encoding="utf-8")
+    real_scandir = os.scandir
+
+    def scandir(p="."):
+        if Path(p) == d / "intermediate_files":
+            raise FileNotFoundError(2, "The system cannot find the path specified", str(p))
+        return real_scandir(p)
+
+    monkeypatch.setattr(os, "scandir", scandir)
+    leftover = wd.delete_workdir(d)
+    assert (d / "intermediate_files").as_posix() in leftover
+    assert wd.meta_path(d).is_file()
+
+
 def test_delete_workdir_unlinks_a_planted_dir_link_without_following(tmp_path):
     outside = tmp_path / "outside"
     outside.mkdir()

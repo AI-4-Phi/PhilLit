@@ -455,8 +455,12 @@ def delete_workdir(workdir: Path) -> list[str]:
     meta = meta_path(workdir)
 
     def _unlistable(e: OSError) -> None:
-        if not isinstance(e, FileNotFoundError):  # a vanished folder hides nothing
-            leftover.append(Path(e.filename).as_posix() if e.filename else workdir.as_posix())
+        # Only the working directory itself vanishing (a racing delete) hides
+        # nothing; any other missing path (on Windows, a too-long one reads
+        # as missing) is left over and keeps the metadata file.
+        if isinstance(e, FileNotFoundError) and e.filename and Path(e.filename) == workdir:
+            return
+        leftover.append(Path(e.filename).as_posix() if e.filename else workdir.as_posix())
 
     def _rm_link(p: Path) -> None:
         try:
@@ -551,10 +555,22 @@ def _published_copy(workspace: Path, d: Path, meta: dict) -> bool:
                 and marker.get("state") in FINAL_STATES)
 
 
+def _holds_only_clutter(d: Path) -> bool:
+    """Every entry of d is an OS clutter FILE (no entries counts): no
+    folder, no link, nothing else. A folder that cannot be listed holds
+    something."""
+    try:
+        return all(not _is_link(p) and p.is_file() and _is_clutter(p) for p in d.iterdir())
+    except OSError:
+        return False
+
+
 def _demote_interrupted(dest: Path) -> bool:
-    """reviews/<name>/ exists and holds nothing: with the local folder gone,
-    a demote crashed between its delete and its pointer rewrite."""
-    return dest.is_dir() and not _is_link(dest) and holds_no_files(dest)
+    """reviews/<name>/ exists and holds nothing but OS clutter: with the
+    local folder gone, that is exactly what a demote crash leaves (it creates
+    the folder empty, then deletes the local one). A subfolder, such as the
+    intermediate_files/ a publish crashing in step 1 leaves, disqualifies."""
+    return dest.is_dir() and not _is_link(dest) and _holds_only_clutter(dest)
 
 
 # --- garbage collection -------------------------------------------------------
@@ -659,6 +675,8 @@ def _unsynced(dest: Path, files) -> list[str]:
         return []
     out = []
     for rel, expected in sorted(files.items()):
+        if _is_clutter(Path(rel)):
+            continue  # never review content; an old marker may still list it
         p = dest / rel
         try:
             ok = (p.is_file() and not _is_link(p)
@@ -883,7 +901,9 @@ def cmd_activate(workspace: Path, name: str) -> dict:
             if missing:
                 raise Refusal(f"reviews/{name}/ is not complete yet (still syncing?): "
                               f"{len(missing)} files missing or different; try again when "
-                              "sync has finished", missing=missing)
+                              "sync has finished. If you changed those files yourself, this "
+                              "check cannot tell your edits from sync lag: restore them, or "
+                              "copy the folder elsewhere by hand", missing=missing)
             clear_marker = meta_path(dest)
         new_ptr, mode, workdir = {"form": "inplace", "name": name}, "inplace", dest
     _require_quotable(workdir)
@@ -891,9 +911,15 @@ def cmd_activate(workspace: Path, name: str) -> dict:
         create_pointer(workspace, new_ptr)  # win the race BEFORE changing anything
     except FileExistsError:
         raise Refusal("another command created the pointer first")
-    if clear_marker is not None:
-        clear_marker.unlink(missing_ok=True)  # an ordinary in-place review from now on
-    return _active(mode, name, workdir, workspace)
+    out = _active(mode, name, workdir, workspace)
+    if clear_marker is not None:  # an ordinary in-place review from now on
+        _make_writable(clear_marker)
+        try:
+            clear_marker.unlink(missing_ok=True)
+        except OSError as e:  # the pointer is written; a stale marker is harmless
+            out["warning"] = (f"could not remove the abandoned marker "
+                              f"{clear_marker.as_posix()}: {e.strerror}")
+    return out
 
 
 def cmd_demote(workspace: Path) -> dict:
@@ -917,7 +943,7 @@ def cmd_demote(workspace: Path) -> dict:
         if files != [META_REL]:
             raise Refusal("demote only moves a FRESH review; the working directory already "
                           "holds files", files=[f.as_posix() for f in files[:20]])
-        if dest.exists() and any(dest.iterdir()):
+        if dest.exists() and not _holds_only_clutter(dest):
             raise Refusal(f"{dest.as_posix()} already holds files")
         created = not dest.exists()
         dest.mkdir(parents=True, exist_ok=True)
@@ -1045,9 +1071,15 @@ def _finish_committed(workspace: Path, ptr: dict, dest: Path, marker: dict) -> d
                 # publish completes; the unprovable folder is left untouched
                 # and reported (status lists it as stranded).
                 unproven = [str(e)]
+    differing = []
     if workdir is not None:
-        differing = [rel.as_posix() for rel in tree_files(workdir)
-                     if rel != META_REL and not same_file(workdir / rel, dest / rel)]
+        try:
+            differing = [rel.as_posix() for rel in tree_files(workdir)
+                         if rel != META_REL and not same_file(workdir / rel, dest / rel)]
+        except (Refusal, OSError) as e:
+            # A folder that cannot be compared is left as it is, unmarked and
+            # undeleted, like an unprovable one; the delivery still stands.
+            workdir, unproven = None, [str(e)]
         if differing:
             w, n = workdir.as_posix(), ptr["name"]
             raise Refusal(f"the working directory {w} and the published copy in reviews/{n}/ "
@@ -1086,7 +1118,12 @@ def _copy_commit(workspace: Path, ptr: dict, workdir: Path, dest: Path, state: s
     for rel in tree_files(dest):
         if rel not in src_set:
             _make_writable(dest / rel)  # a read-only source's copy keeps its mode
-            (dest / rel).unlink()
+            try:
+                (dest / rel).unlink()
+            except OSError as e:
+                raise Refusal(f"could not remove {rel.as_posix()} from the half-published copy "
+                              f"in {dest.as_posix()}: {e.strerror}; nothing was committed; "
+                              "run publish again")
     # 3. verify: the source did not change, and the copy equals it exactly
     after = manifest(workdir, tree_files(workdir))
     copied = manifest(dest, tree_files(dest))
@@ -1102,7 +1139,7 @@ def _copy_commit(workspace: Path, ptr: dict, workdir: Path, dest: Path, state: s
     marker = {"format": FORMAT, "review_id": ptr["review_id"], "name": ptr["name"],
               "state": state, "published": now()}
     if state == "abandoned":
-        marker["files"] = {k: list(v) for k, v in after.items()}
+        marker["files"] = {k: list(v) for k, v in after.items() if not _is_clutter(Path(k))}
     write_meta(dest, marker)
     _sweep_stale_meta_temps(dest)
     return _finish(workspace, workdir, state, dest)
@@ -1125,7 +1162,8 @@ def _publish_inplace(workspace: Path, ptr: dict, state: str) -> dict:
             marker = {"format": FORMAT, "review_id": None, "name": ptr["name"],
                       "state": "abandoned", "published": now()}
             try:  # the manifest lets activate tell a half-synced copy
-                marker["files"] = {k: list(v) for k, v in manifest(dest, tree_files(dest)).items()}
+                marker["files"] = {k: list(v) for k, v in manifest(dest, tree_files(dest)).items()
+                                   if not _is_clutter(Path(k))}
             except (Refusal, OSError):
                 pass  # a link or an unreadable file: no manifest, activate cannot verify
             write_meta(dest, marker)
@@ -1166,7 +1204,11 @@ def cmd_publish(workspace: Path, abandon: bool) -> dict:
                              and all(_is_clutter(r) for r in tree_files(dest))))
         if foreign:
             raise Refusal(f"{dest.as_posix()} already exists and is not this review's; "
-                          "nothing was copied", destination=dest.as_posix())
+                          "nothing was copied. To set this review aside, delete "
+                          "reviews/.active-review by hand: its files stay in the local work "
+                          f"folder and are listed as abandoned. The folder at {dest.as_posix()} "
+                          "belongs to someone else: move or rename it before publishing under "
+                          "this name", destination=dest.as_posix())
     workdir, where = locate(workspace, ptr)
     if workdir is None:
         raise Refusal("the review's working files are not on this machine "

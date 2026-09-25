@@ -856,3 +856,51 @@ def test_a_delivered_inplace_review_is_never_offered_even_with_a_stray_tracker(h
     assert wd.cmd_status(ws)["abandoned"] == []
     with pytest.raises(wd.Refusal, match="no abandoned review"):
         wd.cmd_activate(ws, "topic")
+
+
+# --- last round -------------------------------------------------------------
+def test_clutter_in_an_interrupted_demote_is_still_recognised(home, ruled):
+    local = _interrupted_demote(ruled)
+    dest = wd.destination(ruled, "topic")
+    (dest / ".DS_Store").write_bytes(b"\x00")  # a file manager looked in
+    assert wd.cmd_status(ruled)["interrupted_demote"] is True
+    assert wd.cmd_demote(ruled)["mode"] == "inplace"
+    assert not local.exists()
+
+
+def test_a_crashed_publish_step_one_is_not_an_interrupted_demote(home, ruled):
+    wd.cmd_init(ruled, "topic")
+    wd.delete_workdir(wd.local_workdir(ruled, "topic"))
+    dest = wd.destination(ruled, "topic")
+    (dest / "intermediate_files").mkdir(parents=True)
+    (dest / "intermediate_files" / ".phillit-review.json.4182.tmp").write_text("{", encoding="utf-8")
+    out = wd.cmd_status(ruled)
+    assert "interrupted_demote" not in out
+    assert out["elsewhere"] is True and out["workdir_exists"] is False
+
+
+def test_demote_ignores_clutter_in_an_empty_destination(home, ruled):
+    wd.cmd_init(ruled, "topic")
+    dest = wd.destination(ruled, "topic")
+    dest.mkdir(parents=True)
+    (dest / "Thumbs.db").write_bytes(b"\x00")
+    assert wd.cmd_demote(ruled)["mode"] == "inplace"
+
+
+@pytest.mark.skipif(os.name == "nt" or (hasattr(os, "geteuid") and os.geteuid() == 0),
+                    reason="POSIX permission bits, as a non-root user")
+def test_activate_warns_when_the_abandoned_marker_cannot_be_removed(home, ws):
+    d = ws / "reviews" / "topic"
+    (d / "intermediate_files").mkdir(parents=True)
+    (d / "task-progress.md").write_text("x", encoding="utf-8")
+    wd.write_meta(d, {"format": 1, "review_id": None, "name": "topic", "state": "abandoned"})
+    (d / "intermediate_files").chmod(0o500)  # the marker can be read, not removed
+    try:
+        r = _cli(ws, "activate", "topic")
+    finally:
+        (d / "intermediate_files").chmod(0o755)
+    assert r.returncode == 0, r.stdout
+    out = json.loads(r.stdout)
+    assert out["mode"] == "inplace" and out["workdir"] == d.as_posix()
+    assert out["warning"].startswith(f"could not remove the abandoned marker {wd.meta_path(d).as_posix()}: ")
+    assert wd.read_pointer(ws) == {"form": "inplace", "name": "topic"}

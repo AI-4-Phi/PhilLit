@@ -731,3 +731,98 @@ def test_a_read_only_destination_only_file_is_still_removed(home, ws, windows_re
     (dest / "renamed-away.md").chmod(0o444)  # a read-only source's copy keeps its mode
     assert wd.cmd_publish(ws, abandon=False)["state"] == "published"
     assert not (dest / "renamed-away.md").exists()
+
+
+# --- last round -------------------------------------------------------------
+def test_clutter_never_blocks_activate_after_an_inplace_abandon(home, plain):
+    wd.cmd_init(plain, "topic")
+    d = plain / "reviews" / "topic"
+    (d / "lit-review-plan.md").write_text("plan", encoding="utf-8")
+    (d / ".DS_Store").write_bytes(b"\x00")
+    wd.cmd_publish(plain, abandon=True)
+    assert set(wd.read_meta(d)["files"]) == {"lit-review-plan.md"}
+    (d / ".DS_Store").unlink()  # the file manager tidied up; sync never carried it
+    assert wd.cmd_activate(plain, "topic")["mode"] == "inplace"
+
+
+def test_clutter_never_blocks_activate_after_a_local_abandon(home, ws):
+    local = _review(ws)
+    (local / ".DS_Store").write_bytes(b"\x00")
+    wd.cmd_publish(ws, abandon=True)
+    dest = ws / "reviews" / "topic"
+    assert ".DS_Store" not in wd.read_meta(dest)["files"]
+    (dest / ".DS_Store").unlink()
+    assert wd.cmd_activate(ws, "topic")["mode"] == "inplace"
+
+
+def test_an_old_manifest_listing_clutter_never_blocks_activate(home, ws):
+    d = ws / "reviews" / "topic"
+    (d / "intermediate_files").mkdir(parents=True)
+    (d / "a.md").write_text("a", encoding="utf-8")
+    wd.write_meta(d, {"format": 1, "review_id": None, "name": "topic", "state": "abandoned",
+                      "files": {"a.md": [1, wd.file_sha256(d / "a.md")],
+                                ".DS_Store": [6148, "00" * 32], "sub/._a.md": [4096, "11" * 32]}})
+    assert wd.cmd_activate(ws, "topic")["mode"] == "inplace"
+
+
+def test_a_destination_only_file_that_cannot_be_removed_refuses(home, ws, monkeypatch):
+    local = _review(ws)
+    dest = ws / "reviews" / "topic"
+    (dest / "intermediate_files").mkdir(parents=True)
+    wd._copy_file(wd.meta_path(local), wd.meta_path(dest))
+    stuck = dest / "locked.md"
+    stuck.write_text("x", encoding="utf-8")
+    real_unlink = os.unlink
+
+    def unlink(p, *a, **k):
+        if Path(p) == stuck:
+            raise PermissionError(13, "The process cannot access the file", str(p))
+        return real_unlink(p, *a, **k)
+
+    monkeypatch.setattr(os, "unlink", unlink)
+    with pytest.raises(wd.Refusal, match=r"could not remove locked\.md from the half-published "
+                                         r"copy in .*nothing was committed; run publish again"):
+        wd.cmd_publish(ws, abandon=False)
+    assert wd.committed(ws, wd.read_pointer(ws)) is None and local.exists()
+
+
+@_POSIX_PERMS
+def test_recovery_leaves_a_working_dir_it_cannot_list(home, ws):
+    local = _review(ws)
+    real_remove = wd.remove_pointer
+    wd.remove_pointer = lambda w: (_ for _ in ()).throw(OSError("crash"))
+    try:
+        with pytest.raises(OSError):
+            wd.cmd_publish(ws, abandon=False)
+    finally:
+        wd.remove_pointer = real_remove
+    hidden = local / "intermediate_files" / "json"
+    hidden.chmod(0o000)
+    try:
+        out = wd.cmd_publish(ws, abandon=False)
+    finally:
+        hidden.chmod(0o755)
+    assert out["state"] == "published" and wd.read_pointer(ws) is None
+    assert len(out["unproven"]) == 1 and "cannot list" in out["unproven"][0]
+    assert (hidden / "s2_d1.json").is_file() and wd.meta_path(local).is_file()
+
+
+def test_the_foreign_destination_refusal_names_the_way_out(home, ws):
+    _review(ws)
+    dest = ws / "reviews" / "topic"
+    dest.mkdir(parents=True)
+    (dest / "someone-elses.md").write_text("x", encoding="utf-8")
+    with pytest.raises(wd.Refusal, match="delete reviews/.active-review") as e:
+        wd.cmd_publish(ws, abandon=False)
+    assert "listed as abandoned" in str(e.value) and "move or rename it" in str(e.value)
+    assert e.value.extra["destination"] == dest.as_posix()
+
+
+def test_the_still_syncing_refusal_names_its_limit(home, plain):
+    wd.cmd_init(plain, "topic")
+    d = plain / "reviews" / "topic"
+    (d / "notes.md").write_text("n", encoding="utf-8")
+    wd.cmd_publish(plain, abandon=True)
+    (d / "notes.md").write_text("edited by the user", encoding="utf-8")
+    with pytest.raises(wd.Refusal, match="cannot tell your edits from sync lag"):
+        wd.cmd_activate(plain, "topic")
