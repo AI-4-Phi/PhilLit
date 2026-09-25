@@ -132,7 +132,9 @@ where it would be read.
   On-Demand placeholder; that read-only attributes never wedge `publish`,
   `activate` or the pointer; and that the 120-character headroom
   (`DEEP_FILE_HEADROOM`) covers the longest generated filenames
-  (`intermediate_files/json/verify_<domain>_<citekey>.json`).
+  (`intermediate_files/json/verify_<domain>_<citekey>.json`). Also:
+  `suggest_name` does not apply the Windows length check, so on a deep
+  workspace it can suggest a name that `init` then refuses as too long.
 
 - **phillit-service: adopt the off-sync working directory at the next pin** -
   PhilLit 0.5.30 moves review work to `~/.local/state/phillit/reviews/` and

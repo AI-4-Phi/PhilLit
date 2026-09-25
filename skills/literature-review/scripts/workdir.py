@@ -16,6 +16,10 @@ one JSON object on stdout: exit 2 on a refusal, exit 1 on a crash (still one
 JSON object, `{"error": "workdir.py crashed: ..."}`); a `resolve` refusal
 about the review exits 0, while a configuration error (ConfigError) exits 1,
 so the hook fails closed on it as on a crash.
+The one exception is an argparse usage error (an unknown subcommand or a
+missing argument): argparse prints its own message to stderr and exits 2
+with no JSON. Every caller treats output that is not one JSON object as a
+crash (the hook fails closed; SKILL.md reports and stops).
 
 The location is fixed (`XDG_STATE_HOME` is ignored), so one permission-rule
 string works on every machine. `ws-key` only NAMES a folder: ownership is
