@@ -88,3 +88,8 @@ def test_status_active_branch_excludes_the_flags():
 
 def test_researcher_strips_the_backticks():
     assert "the path between the backticks, without the backticks" in RESEARCHER
+
+
+def test_resume_never_skips_the_evidence_barrier():
+    rules = SKILL[SKILL.index("**Resume logic**"):SKILL.index("Output: \"Resuming from Phase")]
+    assert "evidence_report.json" in rules and "evidence barrier" in rules

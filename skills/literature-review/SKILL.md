@@ -150,7 +150,8 @@ This phase validates conditions for subsequent phases to function.
    4. If literature-domain-*.bib files exist:
       - Count existing domain files
       - Check lit-review-plan.md for total domains expected
-      - If all domains exist -> Resume at Phase 4
+      - If all domains exist -> if [workdir]/intermediate_files/json/evidence_report.json
+        is missing, run Phase 3 step 5 (the evidence barrier) first; then resume at Phase 4
       - If some domains missing -> Resume Phase 3 for missing domains only
 
    5. If lit-review-plan.md exists -> Resume at Phase 3
