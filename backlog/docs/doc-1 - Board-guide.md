@@ -10,7 +10,7 @@ PhilLit's work queue, holding open engineering work only. There is one card per 
 ## Reading a card
 
 - **Title**: the work, named so it reads without the ID.
-- **Project badge**: *why* the work matters, meaning the outcome at stake. These are not CLAUDE.md's four objectives one to one; add a value (say, `Coverage` or `Rigor`) when a card needs one:
+- **Project badge**: *why* the work matters, meaning the outcome at stake. These are not CLAUDE.md's four objectives one to one; add a value (say, `Coverage` or `Rigor`) to `projects` in `backlog/config.yml` when a card needs one:
   - `Accuracy`: only verified papers are cited, on evidence that supports the claim, and no accuracy gate passes silently. This is objective 1 in CLAUDE.md.
   - `Delivery`: the user receives the whole review, with every promised file and every domain and section.
   - `Safety`: PhilLit never harms the user's machine or changes the user's own files, delivered reviews included.

@@ -29,5 +29,5 @@ Reproduce the block drift from the 2026-09-24 run's `intermediate_files/literatu
 
 **Decision needed:** `research_notes.py` marks the label grammar "DECIDED, do not reopen", so the fix is Johannes's call. It is two questions:
 1. **Malformed headers.** How does a block whose header lacks the closing `====` rule recover? Harden the researcher prose that asks for the rule, make the parser end the header at the first IN label, or both.
-2. **Structures outside the grammar** (improvised labels, colon-less headings, section-dependent sub-labels). Accept them by growing the label sets, which cannot cover the last two; forbid them in the researcher prompt, which is PL-6 (research-notes label rules); or represent them another way.
+2. **Structures outside the grammar** (improvised labels, colon-less headings, section-dependent sub-labels). Accept them by growing the label sets, which cannot cover the last two; forbid them in the researcher prompt (PL-6, research-notes label rules, covers improvised labels; colon-less headings would need a further line); or represent them another way.
 <!-- SECTION:DESCRIPTION:END -->

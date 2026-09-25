@@ -82,3 +82,9 @@ that did not survive reading the file it concerns.
   `docs/permissions-guide.md` (evaluation order, Edit covering Write). It is
   kept: CLAUDE.md states them as the imperatives a developer session must
   obey, the guide as explanation.
+
+- README's Output Structure tree repeating SKILL.md's Phase 6 tree. Not
+  filed: README is the user-facing summary and keeps its copy by choice;
+  `docs/ARCHITECTURE.md` points at SKILL.md instead of repeating it, and the
+  three-file delivery work updated README and SKILL.md together. Revisit if
+  the two trees disagree.
