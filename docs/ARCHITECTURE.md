@@ -126,14 +126,18 @@ Orchestrator:
 - After all sections complete: run `assemble_review.py` (via `phillit-run`) to assemble synthesis-section-*.md into the final review
 ```
 
+## Working directory
+
+A review works in `~/.local/state/phillit/reviews/<ws-key>/<name>/` and is published into the workspace's `reviews/<name>/` once, at the end of Phase 6 (or when abandoned), so a synced workspace sees one burst of new files instead of hours of rewrites. `skills/literature-review/scripts/workdir.py` is the one owner of the mode, the location, the pointer `reviews/.active-review` and the publish; its docstring carries the rules. `ws-key` is the workspace basename slug plus 16 hex of the sha256 of its resolved path, and only names the folder: ownership is proven by `intermediate_files/.phillit-review.json`. `PHILLIT_WORKDIR=inplace` keeps the review in `reviews/<name>/` throughout (phillit-service pins it). Local mode needs `Edit(~/.local/state/phillit/reviews/**)`; `init` falls back to in place when the rule is missing, and Phase 1's first Write is the empirical test (`workdir.py demote` on a denial).
+
 ## File Organization
 
 **Final state** (after cleanup): see the tree in `skills/literature-review/SKILL.md`, Phase 6.
 
 
-**During workflow** (before cleanup):
+**During workflow** (in the working directory — `~/.local/state/phillit/reviews/<ws-key>/[project-name]/`, or `reviews/[project-name]/` in place):
 ```
-reviews/[project-name]/
+[workdir]/
 ├── task-progress.md                      # State tracker (CRITICAL for resume)
 │
 ├── lit-review-plan.md                    # Phase 2 output

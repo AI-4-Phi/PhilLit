@@ -26,7 +26,7 @@
 - `reviews/` — All existing and new literature reviews. Each review has its own subdirectory with an informative short name. Gitignored (local only), except the three example reviews linked from the README.
 - `.claude-plugin/` — Plugin manifest (`plugin.json`).
 - `bin/phillit-run` — Self-locating wrapper that runs every bundled Python script in the plugin's locked `uv` project environment (see "Hooks and Python").
-- `skills/literature-review/` — Main orchestration skill for the 6-phase workflow. `scripts/` contains the Phase 3-to-4 evidence barrier (`evidence_barrier.py`, helpers `resolve_context.py`, `stamp_evidence.py`, `bib_fields.py` — the depth-counting scanner that owns locating field VALUES in raw BibTeX text: every value read (`stamp_evidence.parse_entry_fields`, `enrich_bibliography.parse_bibtex_entries`, dedupe's extractors), every edit (`add_field_to_entry`, the keywords stamp and editors) and every strip (the barrier's derived fields, the context fields) goes through `iter_fields` / `remove_field`. Outside it, by design: the barrier's `\b<name>\s*=` presence COUNTERS in its splice checks, dedupe's line-based duplicate-field warning, and the one textual check in dedupe's field remover, a `name =` in the untrusted tail past an unclosed value or block — `venue_vetting.py` — the OpenAlex venue check behind the barrier's `venue_status` flag — `year_suffix.py`, the pure Chicago a/b assigner behind its `year_suffix` field, and `web_evidence.py` — URL extraction, capture validation and existence checks behind the `EVIDENCE-WEB` fetch gate, whose `urldate`/`archiveurl` the barrier also owns, and which also owns the excluded-host policy (SEP + mirrors, IEP, NDPR, PhilPapers — never earn EVIDENCE-WEB)). The barrier also stamps `same_work_group` on reprint-shaped entry groups. The barrier also owns `EVIDENCE-ABSTRACT` attestation: the enrichment ledger is candidacy only, and the tier requires a live per-source re-fetch whose text hash-matches the bib's (`enrich_bibliography.corroborate_abstract`; budgeted, fail-closed, bucketed in the report). Phase 6 tools: `assemble_review.py`, `normalize_headings.py`, `dedupe_bib.py`, `enrich_bibliography.py`, `generate_bibliography.py`, `lint_md.py`, `check_evidence.py`, `split_delivery.py` (helpers `fault_lines.py`, `research_notes.py`).
+- `skills/literature-review/` — Main orchestration skill for the 6-phase workflow. `scripts/` contains the Phase 3-to-4 evidence barrier (`evidence_barrier.py`, helpers `resolve_context.py`, `stamp_evidence.py`, `bib_fields.py` — the depth-counting scanner that owns locating field VALUES in raw BibTeX text: every value read (`stamp_evidence.parse_entry_fields`, `enrich_bibliography.parse_bibtex_entries`, dedupe's extractors), every edit (`add_field_to_entry`, the keywords stamp and editors) and every strip (the barrier's derived fields, the context fields) goes through `iter_fields` / `remove_field`. Outside it, by design: the barrier's `\b<name>\s*=` presence COUNTERS in its splice checks, dedupe's line-based duplicate-field warning, and the one textual check in dedupe's field remover, a `name =` in the untrusted tail past an unclosed value or block — `venue_vetting.py` — the OpenAlex venue check behind the barrier's `venue_status` flag — `year_suffix.py`, the pure Chicago a/b assigner behind its `year_suffix` field, and `web_evidence.py` — URL extraction, capture validation and existence checks behind the `EVIDENCE-WEB` fetch gate, whose `urldate`/`archiveurl` the barrier also owns, and which also owns the excluded-host policy (SEP + mirrors, IEP, NDPR, PhilPapers — never earn EVIDENCE-WEB)). The barrier also stamps `same_work_group` on reprint-shaped entry groups. The barrier also owns `EVIDENCE-ABSTRACT` attestation: the enrichment ledger is candidacy only, and the tier requires a live per-source re-fetch whose text hash-matches the bib's (`enrich_bibliography.corroborate_abstract`; budgeted, fail-closed, bucketed in the report). Phase 6 tools: `assemble_review.py`, `normalize_headings.py`, `dedupe_bib.py`, `enrich_bibliography.py`, `generate_bibliography.py`, `lint_md.py`, `check_evidence.py`, `split_delivery.py` (helpers `fault_lines.py`, `research_notes.py`). `workdir.py` — the one owner of the review working directory (local folder or in place), the `reviews/.active-review` pointer and the final publish into `reviews/`.
 - `skills/philosophy-research/` — API search scripts for academic sources (Semantic Scholar, OpenAlex, CORE, arXiv, SEP, IEP, PhilPapers, NDPR), abstract resolution, encyclopedia context extraction, and citation verification (CrossRef). Includes Brave web search fallback and caching, and `fetch_web.py` — the research-time fetch-and-capture tool (HTML and PDF, `--stdin` fallback) whose capture files the evidence barrier gates `EVIDENCE-WEB` on, and which refuses the excluded encyclopedia hosts (SEP + mirrors, IEP, NDPR, PhilPapers) before any request. `output.dumps()` in `output.py` is the one owner of the `ensure_ascii` decision for console output, including the Windows stdout guard behind it — never hand-pick `ensure_ascii` at a call site.
 - `skills/setup/` — The `/phillit:setup` skill: scaffolds a workspace (`.phillit/` marker, `.env`) and safely merges permission rules into the workspace's `.claude/settings.json`.
 - `agents/` — Specialized subagent definitions invoked by the literature-review skill.
@@ -45,7 +45,7 @@
 
 When asked to perform a new literature review:
 1. Invoke the `/phillit:literature-review` skill to begin the 6-phase workflow
-2. The skill creates a new directory in `reviews/` with an informative short name (e.g., `reviews/epistemic-autonomy-ai/`)
+2. The skill creates the review in the local work folder (`~/.local/state/phillit/reviews/<ws-key>/<name>/`, or `reviews/<name>/` with `PHILLIT_WORKDIR=inplace`) and publishes it into `reviews/` with an informative short name (e.g., `reviews/epistemic-autonomy-ai/`) when it finishes
 3. The skill coordinates specialized subagents via the Agent tool to complete all phases
 
 # Workflow Architecture
@@ -122,7 +122,9 @@ what into a bib and when. Gotcha: transcript timestamps are UTC; workspace
 file mtimes are local. Each record also carries a `version` field naming the
 Claude Code build, so pairing it with the tool names in the same transcript
 dates a CLI behavior change empirically instead of by guesswork — that is how
-the Task -> Agent rename was placed at 2.1.220 or earlier.
+the Task -> Agent rename was placed at 2.1.220 or earlier. An aborted run's
+review files stay under `~/.local/state/phillit/reviews/<ws-key>/`, not in
+the workspace.
 
 ## Headless review runs (free end-to-end test runs)
 
@@ -137,6 +139,7 @@ env -u ANTHROPIC_API_KEY claude --plugin-dir <checkout> --model sonnet \
 - `env -u ANTHROPIC_API_KEY` is load-bearing: if set, it silently outranks subscription auth and bills the API.
 - Bake "Full Autopilot, no questions" into the prompt — any AskUserQuestion ends a `-p` run mid-workflow.
 - Headless runs share the account's 5-hour usage window with the session driving them.
+- The review is published into the scratch workspace's `reviews/` only at the end; a run cut short leaves its files under `~/.local/state/phillit/reviews/`.
 
 ## Releasing
 

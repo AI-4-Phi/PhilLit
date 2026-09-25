@@ -65,7 +65,7 @@ Strictly follow this workflow consisting of six distinct phases:
 3. Research domains in parallel (Agent tool: `domain-literature-researcher` agents)
 4. Outline synthesis review across domains (Agent tool: `synthesis-planner` agent)
 5. Write review for each section in parallel (Agent tool: `synthesis-writer` agent)
-6. Assemble final review files and move intermediate files
+6. Assemble, deliver and publish the review
 
 Advance only to a subsequent phase after completing the current phase.
 
@@ -356,7 +356,7 @@ A resume that starts at step 8 cannot reproduce the split's `SPLIT-*` lines or t
 
 3. Aggregate and deduplicate all domain BibTeX files:
 
-   Use **Glob** to find all `literature-domain-*.bib` files. Run the deduplication script to create `literature-[project-name].bib`:
+   Run the deduplication script over every `literature-domain-*.bib` file (the command's glob picks them all up) to create `literature-[project-name].bib`:
 
    ```bash
    bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/dedupe_bib.py \
@@ -581,7 +581,7 @@ Output status updates directly as text (visible to user in real-time):
 | **Phase transition** | `Phase 3/6: Researching literature in [N] domains (parallel)` |
 | **Phase transition** | `Phase 4/6: Outlining synthesis review across domains` |
 | **Phase transition** | `Phase 5/6: Writing [N] review sections (parallel)` |
-| **Phase transition** | `Phase 6/6: Assembling final review files` |
+| **Phase transition** | `Phase 6/6: Assembling, delivering and publishing the review` |
 | **Agent launch (parallel)** | `Launching [N] domain researchers in parallel...` |
 | **Agent completion** | `Domain [N] complete: literature-domain-[N].bib ([number of sources included] sources)` |
 | **Phase completion** | `Phase [N] complete: [summary]` |

@@ -98,8 +98,8 @@ Or enable auto-update for the ai4phi marketplace in the `/plugin` → Marketplac
 PhilLit runs as a Claude Code plugin, so its skills, agents, and hooks execute with the same shell privileges as Claude Code itself.
 
 - **`/phillit:setup` writes only to the current directory.** It creates `.phillit/` and (when API keys are missing from your environment) `.env`, and merges permission rules into `./.claude/settings.json` (backing up any existing file first). It never touches anything outside that folder, and never copies API-key values from your environment into files.
-- **The merged rules grant broad `Bash`** (plus file edits scoped to `reviews/` via `Edit(reviews/**)`, which covers all file-editing tools, and `deny`/`ask` rules for dangerous commands) **in that directory only**, so reviews run without a prompt on every command. Broad `Bash` is required because the research agents build many short shell commands that no finite allowlist can enumerate.
-- **PhilLit writes review output only to `./reviews/`** and pushes nothing anywhere. Searches hit public academic APIs using the keys in your `.env` or environment.
+- **The merged rules grant broad `Bash`** (plus file edits scoped to `reviews/` via `Edit(reviews/**)` and to the local work folder via `Edit(~/.local/state/phillit/reviews/**)`, which cover all file-editing tools, and `deny`/`ask` rules for dangerous commands) **in that directory only**, so reviews run without a prompt on every command. Broad `Bash` is required because the research agents build many short shell commands that no finite allowlist can enumerate.
+- **PhilLit works on a review in `~/.local/state/phillit/reviews/`** — outside your folder, so a synced folder (OneDrive, iCloud) is not flooded with hours of rewrites — **and copies it into `./reviews/` once, when it is finished or abandoned.** It pushes nothing anywhere. Set `PHILLIT_WORKDIR=inplace` (environment or `.env`) to work in `./reviews/` directly. If several machines share a synced workspace, upgrade PhilLit on all of them. Searches hit public academic APIs using the keys in your `.env` or environment.
 
 Prefer not to auto-merge settings? Add this to your own `.claude/settings.json` instead. You still need the workspace marker that activates PhilLit's hooks — it is just an empty folder, so run `mkdir .phillit` in your working directory — plus your API keys, either exported in your environment or in a `.env` (copy the plugin's `.env.example`; the plugin folder prints with `echo $PHILLIT_ROOT` in any Claude Code session):
 
@@ -109,11 +109,14 @@ Prefer not to auto-merge settings? Add this to your own `.claude/settings.json` 
     "defaultMode": "default",
     "deny": [
       "Bash(sudo *)", "Bash(dd *)", "Bash(mkfs *)",
-      "Edit(**/enrichment_ledger-*.json)", "Edit(**/cleaning_ledger-*.json)"
+      "Edit(**/enrichment_ledger-*.json)", "Edit(**/cleaning_ledger-*.json)",
+      "Edit(~/.local/state/phillit/reviews/**/enrichment_ledger-*.json)",
+      "Edit(~/.local/state/phillit/reviews/**/cleaning_ledger-*.json)"
     ],
     "allow": [
       "Read", "Grep", "Glob", "WebSearch", "WebFetch", "Bash",
       "Edit(reviews/**)",
+      "Edit(~/.local/state/phillit/reviews/**)",
       "Skill(phillit:literature-review)", "Skill(phillit:philosophy-research)"
     ],
     "ask": ["Bash(rm *)", "Bash(rmdir *)"]
@@ -129,7 +132,7 @@ Prefer not to auto-merge settings? Add this to your own `.claude/settings.json` 
 
 ### Output Structure
 
-Each review is saved in its own directory under `reviews/`:
+Each finished review is published into its own directory under `reviews/`:
 
 ```
 reviews/[topic]/

@@ -44,14 +44,18 @@ where it would be read.
   authority" wording also sits in `docs/conventions.md` (tier section) and
   `agents/synthesis-writer.md` (tier table); the fix covers all three.
 
-- **The SubagentStop gate fails open silently on a bad review pointer** -
-  `hooks/subagent_stop_bib.sh` allows the stop with only a stderr WARNING
-  when `reviews/.active-review` is missing, malformed, or names a missing
-  directory, and stderr on exit 0 is never shown. Validation and cleaning
-  are then skipped for that researcher. The barrier later reports the
+- **The SubagentStop gate fails open silently when the review cannot be
+  resolved** - `hooks/subagent_stop_bib.sh` allows the stop with only a
+  stderr WARNING when `workdir.py resolve` answers `{error}`: no pointer, a
+  malformed pointer, an in-place pointer to a missing folder, a local review
+  whose files are elsewhere or missing, or one whose ownership cannot be
+  proven. stderr on exit 0 is never shown, so validation and cleaning are
+  skipped silently for that researcher. The barrier later reports the
   missing cleaning ledger as `degraded`, so it is not invisible downstream,
   but the gate-failure policy in CLAUDE.md forbids a silent open on an
-  accuracy gate. Decide between a `systemMessage` and a block.
+  accuracy gate. Configuration errors already fail closed (`ConfigError`,
+  exit 1). Decide between a `systemMessage` and a block for the review
+  states.
 
 - **Phase 6 moves every root-level `.bib` into the review** - SKILL.md's
   stray-file step runs `find . -maxdepth 1 -name "*.bib" -exec mv`, which
@@ -102,6 +106,16 @@ where it would be read.
   COMPARISON TABLE, FAULT LINES (...)), which no list growth can admit;
   FOR/AGAINST/CONTROL sit inside an OUT section in one block and could sit
   inside KEY_POSITIONS in another, which an IN/OUT list cannot express.
+
+- **phillit-service: adopt the off-sync working directory at the next pin** -
+  PhilLit 0.5.30 moves review work to `~/.local/state/phillit/reviews/` and
+  publishes into `reviews/<name>/` at the end. The service must set
+  `PHILLIT_WORKDIR=inplace` in its worker environment (and never write
+  another value into a workspace `.env`), and its byte-exact
+  `_substitute_review_prose` rewrites will fail loudly at re-vendor on the
+  reworded researcher and SKILL sentences, including the new
+  `existing_review` guard: map `[workdir]` to `reviews/<id>`. In-place
+  `init` accepts the `reviews/<id>/` the service pre-creates.
 
 phillit-service is deployed at 0.5.25 (engine at `da48b2c`) and owes a
 re-vendor of 0.5.29: 0.5.26's ledger content binding, 0.5.27's prompt fixes

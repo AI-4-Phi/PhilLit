@@ -47,9 +47,13 @@ workspaces which have not re-run `/phillit:setup` is the plugin-shipped
 write reaches the ledger without passing any PreToolUse gate — a complete
 bypass for anything deliberate. What these controls buy is protection against
 accidental edits and tool-default behaviour, i.e. incidence reduction. The
-glob syntax itself is also **unverified against a live Claude Code permission
-matcher** (`--dry-run` only proves the strings were serialized); the hook, not
-the rule, is what this relies on. The real closure is barrier-side live
+glob syntax was verified against a live Claude Code permission matcher
+(2.1.282). The `**/` pair denies a ledger write inside the workspace (probed
+with `--settings`). The `~/.local/state/phillit/reviews/**` pair denies one
+in the local work folder (probed in a trusted workspace whose own
+`.claude/settings.json` carried the rules, with no plugin loaded). The hook
+remains the mechanism for workspaces that have not re-run `/phillit:setup`.
+The real closure is barrier-side live
 corroboration, which makes the ledger a cache rather than an authority: shipped
 for the abstract tier, never for the existence tier — whose ledger records are
 therefore still load-bearing on their own.
