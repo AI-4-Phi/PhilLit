@@ -266,6 +266,21 @@ def test_interrupted_delete_leaves_the_metadata_file(tmp_path, monkeypatch):
     assert wd.meta_path(d).is_file()  # still says what it is
 
 
+def test_delete_workdir_keeps_the_metadata_when_a_folder_cannot_be_listed(tmp_path):
+    if os.name == "nt" or (hasattr(os, "geteuid") and os.geteuid() == 0):
+        pytest.skip("POSIX permission bits, as a non-root user")
+    d = tmp_path / "review"
+    _review_tree(d)
+    (d / "intermediate_files" / "notes.md").write_text("n", encoding="utf-8")
+    (d / "intermediate_files").chmod(0o300)  # write+search, no read: the walk cannot list it
+    try:
+        leftover = wd.delete_workdir(d)
+    finally:
+        (d / "intermediate_files").chmod(0o755)
+    assert (d / "intermediate_files").as_posix() in leftover
+    assert wd.meta_path(d).is_file()  # still says what it is
+
+
 def test_delete_workdir_unlinks_a_planted_dir_link_without_following(tmp_path):
     outside = tmp_path / "outside"
     outside.mkdir()

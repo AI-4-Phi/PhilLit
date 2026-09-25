@@ -141,6 +141,19 @@ def test_init_inplace_accepts_the_services_empty_folder(home, ws, monkeypatch):
     assert wd.read_pointer(ws) == {"form": "inplace", "name": "0123456789abcdef"}
 
 
+def test_implicit_inplace_refuses_a_finished_review(home, ws):
+    # No allow rule: init fell back to in place by itself. A delivered
+    # review is never changed, so it refuses instead of resuming Phase 6.
+    (ws / "reviews" / "topic").mkdir(parents=True)
+    (ws / "reviews" / "topic" / "literature-review-topic.md").write_text("x", encoding="utf-8")
+    with pytest.raises(wd.Refusal, match=r"a completed review occupies reviews/topic/, and a "
+                                         r"delivered review is never changed; choose another name"
+                       ) as e:
+        wd.cmd_init(ws, "topic")
+    assert e.value.extra["suggested_name"] == "topic-2"
+    assert wd.read_pointer(ws) is None
+
+
 def test_init_inplace_flags_a_finished_review(home, ws, monkeypatch):
     monkeypatch.setenv("PHILLIT_WORKDIR", "inplace")
     (ws / "reviews" / "topic").mkdir(parents=True)
@@ -175,13 +188,17 @@ def test_init_checks_destination_length_on_windows(home, ruled, monkeypatch):
 
 # --- garbage collection ------------------------------------------------------
 def _finish(ws, name, state="published"):
-    """Simulate a committed publish whose local delete failed."""
+    """Simulate a committed publish whose local delete failed: the files are
+    copied, the destination marker commits them, the local copy is marked."""
     local = wd.local_workdir(ws, name)
     meta = wd.read_meta(local)
     meta["state"] = state
     wd.write_meta(local, meta)
     dest = wd.destination(ws, name)
     (dest / "intermediate_files").mkdir(parents=True, exist_ok=True)
+    for rel in wd.tree_files(local):
+        if rel != wd.META_REL:
+            wd._copy_file(local / rel, dest / rel)
     wd.write_meta(dest, {"format": 1, "review_id": meta["review_id"], "name": name,
                          "state": state, "published": wd.now()})
     wd.remove_pointer(ws)
@@ -190,10 +207,44 @@ def _finish(ws, name, state="published"):
 
 def test_next_init_collects_a_committed_leftover(home, ruled):
     wd.cmd_init(ruled, "old")
+    (wd.local_workdir(ruled, "old") / "big.json").write_text("x", encoding="utf-8")
     local = _finish(ruled, "old")
-    (local / "big.json").write_text("x", encoding="utf-8")
     wd.cmd_init(ruled, "new")
     assert not local.exists()
+
+
+def _leftover_with(ruled, change):
+    wd.cmd_init(ruled, "old")
+    local = wd.local_workdir(ruled, "old")
+    (local / "a.md").write_text("as published", encoding="utf-8")
+    (local / "b.md").write_text("b", encoding="utf-8")
+    _finish(ruled, "old")
+    change(local)
+    wd.cmd_init(ruled, "new")
+    wd.remove_pointer(ruled)
+    return local
+
+
+@pytest.mark.parametrize("change", [
+    lambda d: (d / "a.md").write_text("edited after the commit", encoding="utf-8"),
+    lambda d: (d / "added.md").write_text("added after the commit", encoding="utf-8")])
+def test_a_leftover_that_differs_from_its_copy_is_not_collected(home, ruled, change):
+    local = _leftover_with(ruled, change)
+    assert local.exists()
+    assert {"path": local.as_posix(), "note": wd.UNCOLLECTED_NOTE} in wd.cmd_status(ruled)["stranded"]
+
+
+def test_a_partly_deleted_leftover_is_still_collected(home, ruled):
+    local = _leftover_with(ruled, lambda d: (d / "b.md").unlink())
+    assert not local.exists()
+
+
+def test_a_crashed_init_leaving_only_a_metadata_temp_is_collected(home, ruled):
+    crashed = wd.local_workdir(ruled, "crashed")
+    (crashed / "intermediate_files").mkdir(parents=True)
+    (crashed / "intermediate_files" / ".phillit-review.json.4182.tmp").write_text("{", encoding="utf-8")
+    wd.cmd_init(ruled, "new")
+    assert not crashed.exists()
 
 
 def test_collect_spares_uncommitted_and_foreign_dirs(home, ruled):
@@ -527,7 +578,7 @@ def test_activate_refuses_an_uncollectable_finished_leftover(home, ruled):
     marker = wd.read_meta(ruled / "reviews" / "topic")
     marker["review_id"] = "ff" * 16
     wd.write_meta(ruled / "reviews" / "topic", marker)
-    with pytest.raises(wd.Refusal, match="could not be collected"):
+    with pytest.raises(wd.Refusal, match="is already published but could not be collected"):
         wd.cmd_activate(ruled, "topic")
     assert local.exists()
 
@@ -781,6 +832,17 @@ def test_an_unreadable_local_root_never_breaks_an_inplace_review(home, ws, monke
     wd.remove_pointer(ws)
     out = wd.cmd_status(ws)
     assert out["active"] is False and out["stranded"] == []
+
+
+def test_a_marker_for_another_review_is_never_offered_or_removed(home, ws):
+    d = ws / "reviews" / "topic"
+    (d / "intermediate_files").mkdir(parents=True)
+    (d / "task-progress.md").write_text("x", encoding="utf-8")
+    wd.write_meta(d, {"format": 1, "review_id": None, "name": "other", "state": "abandoned"})
+    assert wd.cmd_status(ws)["abandoned"] == []
+    with pytest.raises(wd.Refusal, match="no abandoned review"):
+        wd.cmd_activate(ws, "topic")
+    assert wd.read_meta(d)["name"] == "other" and wd.read_pointer(ws) is None
 
 
 def test_a_delivered_inplace_review_is_never_offered_even_with_a_stray_tracker(home, ws):

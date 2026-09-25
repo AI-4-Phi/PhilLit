@@ -428,6 +428,48 @@ def test_review_abandoned_after_cleanup_stays_resumable(home, ws):
     assert not wd.meta_path(ws / "reviews" / "topic").exists()
 
 
+def test_activate_waits_until_an_abandoned_local_review_has_synced(home, ws):
+    _review(ws)
+    wd.cmd_publish(ws, abandon=True)
+    dest = ws / "reviews" / "topic"
+    files = wd.read_meta(dest)["files"]
+    assert set(files) == {"literature-review-topic.md", "literature-topic.bib",
+                          "intermediate_files/json/s2_d1.json"}
+    bib = dest / "literature-topic.bib"
+    text = bib.read_text(encoding="utf-8")
+    bib.unlink()  # sync has not delivered it yet
+    with pytest.raises(wd.Refusal, match=r"reviews/topic/ is not complete yet \(still syncing\?\): "
+                                         r"1 files missing or different") as e:
+        wd.cmd_activate(ws, "topic")
+    assert e.value.extra["missing"] == ["literature-topic.bib"]
+    assert wd.read_pointer(ws) is None and wd.read_meta(dest)["state"] == "abandoned"
+    bib.write_text(text, encoding="utf-8")
+    assert wd.cmd_activate(ws, "topic")["mode"] == "inplace"
+
+
+def test_activate_waits_until_an_abandoned_inplace_review_has_synced(home, plain):
+    wd.cmd_init(plain, "topic")
+    d = plain / "reviews" / "topic"
+    (d / "lit-review-plan.md").write_text("plan", encoding="utf-8")
+    wd.cmd_publish(plain, abandon=True)
+    assert wd.read_meta(d)["files"] == {"lit-review-plan.md": [4, wd.file_sha256(d / "lit-review-plan.md")]}
+    (d / "lit-review-plan.md").write_text("pl", encoding="utf-8")  # half-synced
+    with pytest.raises(wd.Refusal, match="not complete yet"):
+        wd.cmd_activate(plain, "topic")
+    (d / "lit-review-plan.md").write_text("plan", encoding="utf-8")
+    assert wd.cmd_activate(plain, "topic")["mode"] == "inplace"
+
+
+def test_inplace_abandon_without_a_readable_tree_omits_the_manifest(home, plain, tmp_path):
+    wd.cmd_init(plain, "topic")
+    d = plain / "reviews" / "topic"
+    _symlink(d / "planted", tmp_path)
+    wd.cmd_publish(plain, abandon=True)
+    marker = wd.read_meta(d)
+    assert marker["state"] == "abandoned" and "files" not in marker
+    assert wd.read_pointer(plain) is None
+
+
 def test_inplace_abandon_marks_an_unfinished_review_only(home, plain):
     wd.cmd_init(plain, "topic")
     wd.cmd_publish(plain, abandon=True)

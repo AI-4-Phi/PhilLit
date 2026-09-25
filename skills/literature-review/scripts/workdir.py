@@ -388,10 +388,14 @@ def manifest(root: Path, files: list[Path]) -> dict[str, tuple[int, str]]:
 
 def holds_no_files(d: Path) -> bool:
     """True only when d provably holds no files: a folder the walk cannot
-    list counts as holding some (fail closed; it is never collected)."""
+    list counts as holding some (fail closed; it is never collected). A
+    stale metadata temp (a crashed write) is not a file here; a link is."""
     try:
         for dirpath, dirnames, filenames in os.walk(d, onerror=_walk_error, followlinks=False):
-            if filenames or any(_is_link(Path(dirpath) / n) for n in dirnames):
+            here = Path(dirpath)
+            if (any(_is_link(here / n) or not _stale_meta_temp((here / n).relative_to(d))
+                    for n in filenames)
+                    or any(_is_link(here / n) for n in dirnames)):
                 return False
     except Refusal:
         return False
@@ -403,11 +407,15 @@ def delete_workdir(workdir: Path) -> list[str]:
     first, then the metadata file, then the empty folders. A link is removed
     itself, never walked and never chmod-ed (a chmod follows the link).
     Returns what could not be deleted; when anything is left, the metadata
-    file stays too."""
+    file stays too. A folder the walk cannot list is left over as well, so
+    an unseen file never outlives the metadata that says what it is."""
     if _is_link(workdir):
         return [workdir.as_posix()]
     leftover: list[str] = []
     meta = meta_path(workdir)
+
+    def _unlistable(e: OSError) -> None:
+        leftover.append(Path(e.filename).as_posix() if e.filename else workdir.as_posix())
 
     def _rm_link(p: Path) -> None:
         try:
@@ -433,7 +441,8 @@ def delete_workdir(workdir: Path) -> list[str]:
             except OSError:
                 leftover.append(p.as_posix())
 
-    for dirpath, dirnames, filenames in os.walk(workdir, topdown=False, followlinks=False):
+    for dirpath, dirnames, filenames in os.walk(workdir, topdown=False, onerror=_unlistable,
+                                                followlinks=False):
         d = Path(dirpath)
         for name in filenames:
             p = d / name
@@ -448,7 +457,7 @@ def delete_workdir(workdir: Path) -> list[str]:
             elif p != meta.parent:
                 _rm(p, True)
     if leftover:
-        return leftover
+        return list(dict.fromkeys(leftover))  # a walk error and its rmdir name one path
     _rm(meta, False)
     _rm(meta.parent, True)
     _rm(workdir, True)
@@ -525,13 +534,23 @@ def _subdirs(d: Path, follow_top_link: bool = False) -> list[Path]:
 
 def _collectable(workspace: Path, d: Path, meta: dict) -> bool:
     """A finished local folder whose published copy carries the same
-    review_id and state: safe to delete."""
+    review_id and state, and holds every file the folder still holds with
+    the same size and sha256: safe to delete. A file missing from the folder
+    is a partial delete and loses nothing. A folder the walk refuses (a
+    link, an unlistable folder) or a file that cannot be read is never
+    collectable."""
     if not (meta.get("state") in FINAL_STATES and meta.get("name") == d.name
             and meta.get("workspace") == workspace_id(workspace)):
         return False
-    marker = read_meta(destination(workspace, d.name))
-    return bool(marker and marker.get("review_id") == meta.get("review_id")
-                and marker.get("state") == meta.get("state"))
+    dest = destination(workspace, d.name)
+    marker = read_meta(dest)
+    if not (marker and marker.get("review_id") == meta.get("review_id")
+            and marker.get("state") == meta.get("state")):
+        return False
+    try:
+        return all(same_file(d / rel, dest / rel) for rel in tree_files(d) if rel != META_REL)
+    except (Refusal, OSError):
+        return False
 
 
 def collect(workspace: Path) -> list[str]:
@@ -582,11 +601,32 @@ def _abandoned_in_place(d: Path) -> bool:
     if (d / COMPLETED_REL).exists():
         return False  # delivered in place: its pointer was archived by publish
     marker = read_meta(d)
+    if marker is not None and marker.get("name") != d.name:
+        return False  # a marker for another review: never offered, never removed
     if marker and marker.get("state") == "published":
         return False
     if marker and marker.get("state") == "abandoned":
         return True
     return (d / "task-progress.md").is_file()
+
+
+def _unsynced(dest: Path, files) -> list[str]:
+    """The entries of an abandoned marker's manifest that dest does not hold
+    yet as a regular file with the same size and sha256 (a sync still
+    delivering them). No manifest (or an unreadable one): nothing to check."""
+    if not isinstance(files, dict):
+        return []
+    out = []
+    for rel, expected in sorted(files.items()):
+        p = dest / rel
+        try:
+            ok = (p.is_file() and not _is_link(p)
+                  and list(expected) == [p.stat().st_size, file_sha256(p)])
+        except (OSError, TypeError):
+            ok = False
+        if not ok:
+            out.append(rel)
+    return out
 
 
 def list_stranded(workspace: Path) -> list[dict]:
@@ -680,6 +720,12 @@ def cmd_init(workspace: Path, name: str) -> dict:
     else:
         _refuse_linked_destination(dest)
         existing_review = (dest / f"literature-review-{name}.md").exists()
+        if existing_review and requested_mode() != "inplace":
+            # init fell back to in place by itself (no rule, unsafe path):
+            # only the service's explicit pin accepts a finished destination
+            raise Refusal(f"a completed review occupies reviews/{name}/, and a delivered "
+                          "review is never changed; choose another name",
+                          suggested_name=suggest_name(workspace, name))
     if mode == "local":
         root = local_root()
         root.mkdir(parents=True, exist_ok=True)
@@ -775,8 +821,8 @@ def cmd_activate(workspace: Path, name: str) -> dict:
                 or meta.get("workspace") != workspace_id(workspace)):
             raise Refusal(f"{local.as_posix()}: ownership cannot be proven")
         if meta.get("state") != "active":
-            raise Refusal(f"{local.as_posix()} is a {meta.get('state')} review that could not "
-                          "be collected (its copy in reviews/ is missing or differs, or a file "
+            raise Refusal(f"{local.as_posix()} is already {meta.get('state')} but could not be "
+                          "collected (its copy in reviews/ is missing or differs, or a file "
                           "is locked); move or delete it by hand, then run activate again")
         new_ptr = {"form": "local", "review_id": meta["review_id"], "name": name,
                    "host": platform.node(), "workdir": local.as_posix()}
@@ -792,6 +838,11 @@ def cmd_activate(workspace: Path, name: str) -> dict:
             raise Refusal(f"no abandoned review named {name!r} in this workspace")
         _refuse_linked_destination(dest)
         if marker and marker.get("state") == "abandoned":
+            missing = _unsynced(dest, marker.get("files"))
+            if missing:
+                raise Refusal(f"reviews/{name}/ is not complete yet (still syncing?): "
+                              f"{len(missing)} files missing or different; try again when "
+                              "sync has finished", missing=missing)
             clear_marker = meta_path(dest)
         new_ptr, mode, workdir = {"form": "inplace", "name": name}, "inplace", dest
     _require_quotable(workdir)
@@ -1004,9 +1055,13 @@ def _copy_commit(workspace: Path, ptr: dict, workdir: Path, dest: Path, state: s
         raise Refusal("the copy does not match the working directory; nothing was "
                       "committed (was something still writing?)",
                       changed_during_copy=changed, mismatched=mismatched, extra=extra)
-    # 4. commit: the reduced marker carries no host and no path
-    write_meta(dest, {"format": FORMAT, "review_id": ptr["review_id"], "name": ptr["name"],
-                      "state": state, "published": now()})
+    # 4. commit: the reduced marker carries no host and no path. An abandoned
+    # one carries the manifest, so activate can tell a half-synced copy.
+    marker = {"format": FORMAT, "review_id": ptr["review_id"], "name": ptr["name"],
+              "state": state, "published": now()}
+    if state == "abandoned":
+        marker["files"] = {k: list(v) for k, v in after.items()}
+    write_meta(dest, marker)
     _sweep_stale_meta_temps(dest)
     return _finish(workspace, workdir, state, dest)
 
@@ -1025,8 +1080,13 @@ def _publish_inplace(workspace: Path, ptr: dict, state: str) -> dict:
         if (dest.is_dir() and not (dest / f"literature-review-{ptr['name']}.md").exists()
                 and not (dest / COMPLETED_REL).exists()):
             (dest / "intermediate_files").mkdir(exist_ok=True)
-            write_meta(dest, {"format": FORMAT, "review_id": None, "name": ptr["name"],
-                              "state": "abandoned", "published": now()})
+            marker = {"format": FORMAT, "review_id": None, "name": ptr["name"],
+                      "state": "abandoned", "published": now()}
+            try:  # the manifest lets activate tell a half-synced copy
+                marker["files"] = {k: list(v) for k, v in manifest(dest, tree_files(dest)).items()}
+            except (Refusal, OSError):
+                pass  # a link or an unreadable file: no manifest, activate cannot verify
+            write_meta(dest, marker)
         remove_pointer(workspace)
     else:
         if not dest.is_dir():
