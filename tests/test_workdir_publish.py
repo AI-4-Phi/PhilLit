@@ -403,6 +403,17 @@ def test_inplace_publish_refuses_a_linked_intermediate_files(home, tmp_path):
     assert wd.read_pointer(w) is not None
 
 
+def test_activate_after_a_double_inplace_publish_answers_delivered(home, plain, monkeypatch):
+    monkeypatch.setenv("PHILLIT_WORKDIR", "inplace")
+    wd.cmd_init(plain, "topic")
+    out = wd.cmd_publish(plain, abandon=False)
+    assert out["state"] == "published"
+    with pytest.raises(wd.Refusal, match="no active review"):
+        wd.cmd_publish(plain, abandon=False)
+    with pytest.raises(wd.Refusal, match="delivered review"):
+        wd.cmd_activate(plain, "topic")
+
+
 def test_finish_never_writes_a_partial_metadata_record(home, ws, monkeypatch):
     local = _review(ws)
     dest = wd.destination(ws, "topic")

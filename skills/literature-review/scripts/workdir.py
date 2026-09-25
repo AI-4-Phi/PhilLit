@@ -897,7 +897,7 @@ def cmd_activate(workspace: Path, name: str) -> dict:
             raise Refusal(f"review name {name!r} is not a folder name")
         dest = destination(workspace, name)
         marker = read_meta(dest)
-        if marker and marker.get("state") == "published":
+        if (marker and marker.get("state") == "published") or (dest / COMPLETED_REL).exists():
             raise Refusal(f"{dest.as_posix()} is a delivered review; it is never resumed")
         if not (dest.is_dir() and _abandoned_in_place(dest)):
             raise Refusal(f"no abandoned review named {name!r} in this workspace")

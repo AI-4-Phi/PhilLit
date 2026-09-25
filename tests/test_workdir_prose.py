@@ -144,3 +144,12 @@ def test_publish_step_names_the_foreign_destination_refusal():
     step11 = phase6[phase6.index("11. **Publish the review**"):]
     assert ("If it refuses because `reviews/[project-name]/` belongs to another review, "
             "report the refusal verbatim (it names the way out) and stop.") in step11
+
+
+def test_step11_checks_completed_review_before_activate():
+    phase6 = SKILL.split("## Phase 6")[1].split("\n## ")[0]
+    step11 = phase6[phase6.index("11. **Publish the review**"):]
+    completed = step11.index(
+        "first check whether `reviews/[project-name]/intermediate_files/.completed-review` exists")
+    otherwise = step11.index("Otherwise run `workdir.py activate [project-name]`")
+    assert -1 < completed < otherwise

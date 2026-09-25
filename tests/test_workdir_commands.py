@@ -854,7 +854,7 @@ def test_a_delivered_inplace_review_is_never_offered_even_with_a_stray_tracker(h
     (d / "intermediate_files" / ".completed-review").write_text("reviews/topic\n", encoding="utf-8")
     (d / "task-progress.md").write_text("written after publish", encoding="utf-8")
     assert wd.cmd_status(ws)["abandoned"] == []
-    with pytest.raises(wd.Refusal, match="no abandoned review"):
+    with pytest.raises(wd.Refusal, match="delivered review"):
         wd.cmd_activate(ws, "topic")
 
 
