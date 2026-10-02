@@ -271,10 +271,10 @@ Never advance to a next step in this phase before completing the current step.
    `CORE_API_KEY` set — which demotes every claimed-core entry in a keyless
    workspace — or with neither DOI nor title; claimed `s2` or `openalex`
    with no DOI; claimed `ndpr` with no title). `unusable` needs no action:
-   the abstract is a stub, a keyword list, a publisher page, an opening
-   extract or word salad (the report gives each entry's `reason`), so it
-   cannot support the tier however well it corroborates. The entry keeps a
-   lower tier, as any untiered entry does.
+   the source does serve that abstract (the fetch corroborated it), but it
+   is a stub, a keyword list, a publisher page, an opening extract or word
+   salad (the report gives each entry's `reason`), so it cannot support the
+   tier. The entry keeps a lower tier, as any untiered entry does.
 
 Never advance to Phase 4 before all domain researchers have completed AND the evidence barrier has exited zero.
 

@@ -3275,21 +3275,21 @@ STUB_FIELDS = dict(
     key="mccubbins1987administrative")
 
 
-def test_an_unusable_candidate_is_refused_before_any_fetch(tmp_path, monkeypatch):
-    """The screen runs before the corroboration fetch: no request is spent
-    on text no answer could make usable. The entry goes on like any
-    untiered one -- context acquisition, then what its identifier earns."""
+def test_a_corroborated_but_unusable_candidate_is_refused(tmp_path, monkeypatch):
+    """The source really serves the stub (the fetch corroborates it), and
+    the screen still refuses the tier. The entry goes on like any untiered
+    one -- context acquisition, then what its identifier earns."""
     eb_mod = _barrier(monkeypatch)
     key = _corroboration_domain(tmp_path, abstract=UNUSABLE_STUB, **STUB_FIELDS)
     calls = []
-    _stub_corroborator(monkeypatch, eb_mod, ("corroborated", "s2"), calls)
+    _stub_corroborator(monkeypatch, eb_mod, ("corroborated", "openalex"), calls)
     assert eb_mod.execute(tmp_path, 1) == 0
     report = _report(tmp_path)
     bib_name = "literature-domain-1.bib"
     assert report["abstract_corroboration"][bib_name][key] == {
         "outcome": "unusable", "reason": "too-thin",
-        "source": "s2", "claimed": "s2"}
-    assert calls == []
+        "source": "openalex", "claimed": "s2"}
+    assert len(calls) == 1
     assert report["attestations"][bib_name][key]["abstract_attested"] is False
     assert report["stamps"][bib_name][key] == "EVIDENCE-EXISTENCE"
     assert report["acquisition"][bib_name][key] == {"outcome": "unmatched"}
@@ -3298,12 +3298,27 @@ def test_an_unusable_candidate_is_refused_before_any_fetch(tmp_path, monkeypatch
     assert UNUSABLE_STUB in out              # the field stays; only the tier goes
 
 
-def test_the_screen_counts_in_the_printed_summary(tmp_path, monkeypatch):
+def test_a_short_forgery_still_reads_as_a_mismatch(tmp_path, monkeypatch):
+    """A fabricated text is often short. Screening before the fetch would
+    report it `unusable` and hide the forgery signal; the fetch comes
+    first, so a source serving different text still reads `mismatch`."""
+    eb_mod = _barrier(monkeypatch)
+    key = _corroboration_domain(tmp_path, abstract=UNUSABLE_STUB, **STUB_FIELDS)
+    _stub_corroborator(monkeypatch, eb_mod, ("mismatch", None), [])
+    assert eb_mod.execute(tmp_path, 1) == 0
+    assert _report(tmp_path)["abstract_corroboration"][
+        "literature-domain-1.bib"][key] == {
+            "outcome": "mismatch", "source": "s2", "claimed": "s2"}
+
+
+def test_the_screen_counts_in_the_printed_summary(tmp_path, monkeypatch, capsys):
     eb_mod = _barrier(monkeypatch)
     _corroboration_domain(tmp_path, abstract=UNUSABLE_STUB, **STUB_FIELDS)
     _stub_corroborator(monkeypatch, eb_mod, ("corroborated", "s2"), [])
     assert eb_mod.execute(tmp_path, 1) == 0
-    summary = eb_mod._corroboration_summary(_report(tmp_path))
+    printed = [json.loads(line) for line in capsys.readouterr().out.splitlines()
+               if line.startswith("{") and '"abstract_corroboration"' in line]
+    summary = printed[-1]["abstract_corroboration"]
     assert summary["unusable"] == 1 and summary["candidates"] == 1
     assert summary["corroborated"] == 0
 
@@ -3319,10 +3334,11 @@ def test_a_usable_candidate_still_reaches_the_corroborator(tmp_path, monkeypatch
     assert _report(tmp_path)["stamps"]["literature-domain-1.bib"][key] == "EVIDENCE-ABSTRACT"
 
 
-def test_a_heal_never_restores_unusable_text(tmp_path, monkeypatch):
-    """The heal restores the LEDGER's text, which candidacy never screened:
-    a hash-matching fetch of an unusable text is not restored, not
-    attested, and reported with its reason."""
+def test_an_unusable_heal_restores_the_source_text_but_earns_no_tier(
+        tmp_path, monkeypatch):
+    """The heal fetches the LEDGER's text, which no screen has seen. Text
+    that hash-matches but is unusable is still restored -- it is what the
+    source serves, which the mutated field is not -- and is not attested."""
     eb_mod = _barrier(monkeypatch)
     import stamp_evidence as se
     key = STUB_FIELDS["key"]
@@ -3358,7 +3374,7 @@ def test_a_heal_never_restores_unusable_text(tmp_path, monkeypatch):
         "claimed": "openalex", "via": "heal"}
     assert report["stamps"][bib_name][key] == "EVIDENCE-EXISTENCE"
     out = (tmp_path / bib_name).read_text(encoding="utf-8")
-    assert UNUSABLE_STUB not in out and "mutated text" in out
+    assert UNUSABLE_STUB in out and "mutated text" not in out
     assert calls == []
 
 

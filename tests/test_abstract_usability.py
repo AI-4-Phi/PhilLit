@@ -203,3 +203,22 @@ def test_non_latin_abstracts_are_counted_not_read_as_empty(text):
 def test_empty_and_missing_text_are_too_thin():
     assert au.unusable_reason("", {}) == "too-thin"
     assert au.unusable_reason(None, {}) == "too-thin"
+
+def test_superscript_footnote_calls_count():
+    text = BAROS_TEXT.replace("principle2", "principle²").replace("fit.3", "fit.³")
+    assert au.unusable_reason(text, BAROS) == "body-text"
+
+
+@pytest.mark.parametrize("spacing", ["Download&nbsp;citation file", "Download\ncitation\nfile",
+                                     "Download\u00a0citation file"])
+def test_page_chrome_survives_line_breaks_and_no_break_spaces(spacing):
+    assert au.unusable_reason(PROSE + " " + spacing + " " + PROSE, {}) == "page-chrome"
+
+
+def test_a_variable_named_capital_a_is_never_a_determiner():
+    text = ("Suppose A is preferred to B and A is cheaper. If A is chosen, A is "
+            "kept; A is first, A is best, A is safe, A is stable, and A is the "
+            "option every rational agent selects when the menu stays fixed. "
+            "We show that this ordering survives every money-pump argument.")
+    assert au.garble_hits(text) == 0
+    assert au.unusable_reason(text, {}) is None

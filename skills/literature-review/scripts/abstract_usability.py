@@ -8,14 +8,16 @@ of them was corroborated: a bare JEL keyword list, two bibliographic stubs,
 a chapter's opening paragraph and a full text that degenerates into word
 salad. Sources serve such text consistently, so the hash agrees.
 
-`unusable_reason` is that second test. It is pure and local (no network), so
-the barrier runs it before spending a corroboration fetch. A refusal only
+`unusable_reason` is that second test, pure and local (no network). The
+barrier runs it on a candidate the live fetch corroborated, on a heal's
+restored text, and on the final text before stamping. A refusal only
 withholds this tier: the entry can still earn CONTEXT, WEB or EXISTENCE.
 
 The four rules, each named by the reason it returns:
 
 * `page-chrome` -- the text holds a publisher landing page's interface
   strings ("Search for other works by this author"), so it is a page scrape.
+  Matched case-blind, with line breaks and no-break spaces read as spaces.
   None of the 22 such texts in the measured corpus held an abstract.
 * `too-thin` -- fewer than `MIN_RESIDUAL_WORDS` words remain once the
   entry's own citation is removed: its title, author and editor names,
@@ -23,7 +25,8 @@ The four rules, each named by the reason it returns:
   what a keyword list, a stub, a version notice or a funding line has in
   common: nothing to characterize the work by.
 * `body-text` -- a text under `MAX_EXTRACT_WORDS` words with two or more
-  footnote calls glued to words ("principle2 of", "fit.3"), their numbers
+  footnote calls glued to words ("principle2 of", "fit.3", or superscript
+  "fit.³"), their numbers
   distinct and increasing, at least one of them right after a sentence's
   closing punctuation: the text is the work's opening pages, not a summary
   of it. A contents list is not a footnote run: its numbers follow a heading
@@ -33,7 +36,10 @@ The four rules, each named by the reason it returns:
   which a writer can characterize it from.
 * `garbled` -- some 100-word window holds `MIN_GARBLE_HITS` or more
   determiners directly followed by a function word ("the of", "a the"):
-  the content words have dropped out of the text. Every text that passes
+  the content words have dropped out of the text. A capital "A" is never a
+  determiner here: in prose it starts a sentence, where "A of" does not
+  occur, and in logic and decision theory it names a variable ("A is
+  preferred to B"). Every text that passes
   the other rules in the measured corpus stays at 4 or below, a variable
   named "a" or "A" included.
 
@@ -82,9 +88,10 @@ _WORD = re.compile(
 _CJK_CHAR = re.compile(rf"[{_CJK}]")
 # A footnote call glued to a word: a lowercase word of 3+ letters, optional
 # punctuation and closing quote, then 1-2 digits NOT followed by a period.
+_SUPERSCRIPT = str.maketrans("⁰¹²³⁴⁵⁶⁷⁸⁹", "0123456789")
 _FOOTNOTE = re.compile(
-    r"[a-z]{3,}([.,;:!?]?)[\"”’)]?(\d{1,2})(?=\s|$|[,;:)])")
-_DETERMINERS = frozenset({"the", "a", "an"})
+    r"[a-z]{3,}([.,;:!?]?)[\"”’)]?([0-9⁰¹²³⁴⁵⁶⁷⁸⁹]{1,2})(?=\s|$|[,;:)])")
+_DETERMINERS = frozenset({"the", "a", "an"})  # compared as written, below
 _FUNCTION = frozenset({
     "the", "a", "an", "of", "and", "or", "to", "in", "on", "for", "with",
     "by", "is", "are", "was", "were", "that", "as", "at", "from", "be",
@@ -110,7 +117,7 @@ def footnote_calls(abstract: str) -> int:
     """Footnote calls in a distinct, increasing run with at least one call
     after a sentence's closing punctuation; 0 when there is none."""
     calls = _FOOTNOTE.findall(abstract)
-    numbers = [int(n) for _, n in calls]
+    numbers = [int(n.translate(_SUPERSCRIPT)) for _, n in calls]
     if (len(set(numbers)) < 2 or numbers != sorted(numbers)
             or not any(punct and punct in ".!?" for punct, _ in calls)):
         return 0
@@ -119,9 +126,10 @@ def footnote_calls(abstract: str) -> int:
 
 def garble_hits(abstract: str) -> int:
     """The most determiner + function-word pairs in any window of words."""
-    ws = _words(abstract)
-    hits = [int(a in _DETERMINERS and b in _FUNCTION)
-            for a, b in zip(ws, ws[1:])]
+    raw = [w.strip("'’-") for w in _WORD.findall(abstract)]
+    ws = [w.lower() for w in raw]
+    hits = [int(a in _DETERMINERS and raw[i] != "A" and b in _FUNCTION)
+            for i, (a, b) in enumerate(zip(ws, ws[1:]))]
     best = cur = sum(hits[:GARBLE_WINDOW])
     for i in range(GARBLE_WINDOW, len(hits)):
         cur += hits[i] - hits[i - GARBLE_WINDOW]
@@ -137,7 +145,7 @@ def unusable_reason(abstract: str, fields: dict) -> str | None:
     fires names the reason.
     """
     text = abstract or ""
-    lowered = text.lower()
+    lowered = re.sub(r"(?:\s|&nbsp;|&#160;)+", " ", text.lower())
     if any(marker in lowered for marker in PAGE_CHROME):
         return "page-chrome"
     if residual_words(text, fields) < MIN_RESIDUAL_WORDS:
