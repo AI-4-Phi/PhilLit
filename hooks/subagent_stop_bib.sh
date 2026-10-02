@@ -9,8 +9,8 @@
 #
 # Protocol: ALL decisions are stdout JSON with exit code 0.
 #   Block: {"decision": "block", "reason": "<errors>"}
-#   Allow: {} - Claude Code's `decision` takes only "block" (or the legacy
-#     "approve"); it rejects "allow" as invalid hook output.
+#   Allow: {} - omit `decision`. For this event Claude Code documents only
+#     "block", and it rejects "allow" as invalid hook output.
 #   Allow + cleaning summary: {"hookSpecificOutput": {"hookEventName":
 #     "SubagentStop", "additionalContext": "<summary>"}}
 # Never exit 2: Claude Code ignores stdout JSON on exit 2, so the reason
@@ -112,10 +112,11 @@ if [[ ! -d "$REVIEW_DIR" ]]; then
 fi
 
 # Collect .bib files from the review directory AND the researchers' strays in
-# the project root. A stray is only ever a domain bib written without the
-# review-directory prefix, so the root glob takes literature-domain-*.bib
-# alone (the names Phase 6's stray sweep moves): any other root .bib is the
-# user's own file, and the cleaner rewrites what it processes.
+# the project root: domain bibs written without the review-directory prefix.
+# The root glob takes literature-domain-*.bib alone, the names Phase 6's
+# stray sweep moves and dedupe reads. Any other root .bib never enters the
+# review, so it is treated as the user's own file: the cleaner rewrites what
+# it processes.
 # Uses globs instead of find+process substitution for Windows/Git Bash compatibility
 shopt -s nullglob
 BIB_FILES=()

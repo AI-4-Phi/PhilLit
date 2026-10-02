@@ -133,18 +133,20 @@ def test_suggest_name_stays_within_64_chars(home, ruled):
     assert len(s) <= 64 and s.endswith("-2") and wd.name_problem(s) is None
 
 
-def _windows_limit_just_fits(monkeypatch, workspace, name, mode):
-    """Windows, with the limit set so `name` just fits in `mode`: any
-    suffix pushes a folder past it."""
+def _windows_limit_just_fits(monkeypatch, folders):
+    """Windows, with the limit set so the longest of `folders` just fits:
+    any suffix on the review name pushes it past. The tests name the folders
+    themselves rather than ask _length_checked, the helper under test."""
     real = wd.length_problem
     monkeypatch.setattr(wd, "length_problem",
                         lambda paths, windows=None: real(paths, windows=True))
-    longest = max(len(p.as_posix()) for p in wd._length_checked(workspace, name, mode))
+    longest = max(len(p.as_posix()) for p in folders)
     monkeypatch.setattr(wd, "WINDOWS_PATH_LIMIT", longest + wd.DEEP_FILE_HEADROOM + 1)
 
 
 def test_local_suggestion_fits_the_windows_length_limit(home, ruled, monkeypatch):
-    _windows_limit_just_fits(monkeypatch, ruled, "topic", "local")
+    _windows_limit_just_fits(
+        monkeypatch, [wd.local_workdir(ruled, "topic"), wd.destination(ruled, "topic")])
     (ruled / "reviews" / "topic").mkdir(parents=True)
     with pytest.raises(wd.Refusal) as e:
         wd.cmd_init(ruled, "topic")
@@ -154,7 +156,7 @@ def test_local_suggestion_fits_the_windows_length_limit(home, ruled, monkeypatch
 
 
 def test_inplace_suggestion_fits_the_windows_length_limit(home, ws, monkeypatch):
-    _windows_limit_just_fits(monkeypatch, ws, "topic", "inplace")
+    _windows_limit_just_fits(monkeypatch, [wd.destination(ws, "topic")])
     (ws / "reviews" / "topic").mkdir(parents=True)
     (ws / "reviews" / "topic" / "literature-review-topic.md").write_text("x", encoding="utf-8")
     with pytest.raises(wd.Refusal) as e:

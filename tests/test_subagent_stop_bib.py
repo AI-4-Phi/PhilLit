@@ -245,8 +245,8 @@ class TestValidation:
         assert code == 0
 
     def test_every_decision_the_hook_prints_is_one_claude_code_accepts(self):
-        # Claude Code's SubagentStop schema takes decision "block" (or the
-        # legacy "approve"); "allow" fails validation on every researcher stop.
+        # Claude Code documents only decision "block" for SubagentStop (omit
+        # it to allow); "allow" fails validation on every researcher stop.
         decisions = set(re.findall(r'"decision":\s*"(\w+)"',
                                    SCRIPT.read_text(encoding="utf-8")))
         assert decisions, "the scan found no decision literal at all"
@@ -255,8 +255,9 @@ class TestValidation:
 
 class TestRootStrays:
     """The workspace root is swept for researcher strays only: a domain bib
-    written without the review-directory prefix. Any other root .bib is the
-    user's own file, and the cleaner rewrites what it processes."""
+    written without the review-directory prefix. Any other root .bib never
+    enters the review, so it is treated as the user's own file: the cleaner
+    rewrites what it processes."""
 
     def test_users_own_root_bibs_are_never_validated_or_rewritten(self, project):
         refs = project / "refs.bib"
