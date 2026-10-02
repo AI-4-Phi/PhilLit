@@ -127,11 +127,13 @@ Beyond permissions, `hooks/hooks.json` configures hooks that run automatically (
 
 Agents specify `model` and `tools` in their frontmatter (see `agents/`):
 
-| Agent | Model | Tools | Permission Mode |
-|-------|-------|-------|-----------------|
-| `domain-literature-researcher` | `sonnet` | Bash, Edit, Glob, Grep, Read, Write, WebFetch, WebSearch | `acceptEdits` |
-| `synthesis-planner` | `inherit` | Glob, Grep, Read, Write | `acceptEdits` |
-| `synthesis-writer` | `sonnet` | Glob, Grep, Read, Write | `acceptEdits` |
-| `literature-review-planner` | `sonnet` | Read, Write | `acceptEdits` |
+| Agent | Model | Tools |
+|-------|-------|-------|
+| `domain-literature-researcher` | `sonnet` | Bash, Edit, Glob, Grep, Read, Write, WebFetch, WebSearch |
+| `synthesis-planner` | `inherit` | Glob, Grep, Read, Write |
+| `synthesis-writer` | `sonnet` | Glob, Grep, Read, Write |
+| `literature-review-planner` | `sonnet` | Read, Write |
+
+**`permissionMode` does not apply in the plugin.** Each agent's frontmatter sets `permissionMode: acceptEdits`, but Claude Code ignores `permissionMode` (and `hooks` and `mcpServers`) in plugin subagents. In the plugin, every agent runs in the session's permission mode, and its file edits pass on the `Edit` rules that `/phillit:setup` merges (`Edit(reviews/**)`, `Edit(~/.local/state/phillit/reviews/**)`). The frontmatter stays because phillit-service vendors the agents as project agents (`engine/.claude/agents/`), where Claude Code honours it.
 
 Agents inherit the project-level `allow`/`deny`/`ask` rules from the workspace settings. The `Bash` allow rule is inherited by all subagents, so the `domain-literature-researcher` can run multi-line Bash scripts without prompts. The `deny` and `ask` rules are also inherited, maintaining safety.
