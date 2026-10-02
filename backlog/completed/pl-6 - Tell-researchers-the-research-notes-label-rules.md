@@ -1,10 +1,10 @@
 ---
 id: PL-6
 title: Tell researchers the research-notes label rules
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-09-25 19:18'
-updated_date: '2026-09-25 19:18'
+updated_date: '2026-10-02 14:16'
 labels:
   - agents
   - notes

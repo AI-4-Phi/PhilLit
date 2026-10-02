@@ -1,10 +1,10 @@
 ---
 id: PL-5
 title: Keep unusable abstracts out of the evidence tier
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-09-25 19:18'
-updated_date: '2026-09-25 19:24'
+updated_date: '2026-10-02 14:16'
 labels:
   - barrier
   - test-run
