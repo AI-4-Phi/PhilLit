@@ -129,8 +129,39 @@ def test_init_local_refuses_existing_local_dir_and_skips_taken_suggestions(home,
 def test_suggest_name_stays_within_64_chars(home, ruled):
     name = "a" * 64
     (ruled / "reviews" / name).mkdir(parents=True)
-    s = wd.suggest_name(ruled, name)
+    s = wd.suggest_name(ruled, name, "local")
     assert len(s) <= 64 and s.endswith("-2") and wd.name_problem(s) is None
+
+
+def _windows_limit_just_fits(monkeypatch, workspace, name, mode):
+    """Windows, with the limit set so `name` just fits in `mode`: any
+    suffix pushes a folder past it."""
+    real = wd.length_problem
+    monkeypatch.setattr(wd, "length_problem",
+                        lambda paths, windows=None: real(paths, windows=True))
+    longest = max(len(p.as_posix()) for p in wd._length_checked(workspace, name, mode))
+    monkeypatch.setattr(wd, "WINDOWS_PATH_LIMIT", longest + wd.DEEP_FILE_HEADROOM + 1)
+
+
+def test_local_suggestion_fits_the_windows_length_limit(home, ruled, monkeypatch):
+    _windows_limit_just_fits(monkeypatch, ruled, "topic", "local")
+    (ruled / "reviews" / "topic").mkdir(parents=True)
+    with pytest.raises(wd.Refusal) as e:
+        wd.cmd_init(ruled, "topic")
+    suggestion = e.value.extra["suggested_name"]
+    assert suggestion == "top-2"
+    assert wd.cmd_init(ruled, suggestion)["mode"] == "local"  # init accepts it
+
+
+def test_inplace_suggestion_fits_the_windows_length_limit(home, ws, monkeypatch):
+    _windows_limit_just_fits(monkeypatch, ws, "topic", "inplace")
+    (ws / "reviews" / "topic").mkdir(parents=True)
+    (ws / "reviews" / "topic" / "literature-review-topic.md").write_text("x", encoding="utf-8")
+    with pytest.raises(wd.Refusal) as e:
+        wd.cmd_init(ws, "topic")
+    suggestion = e.value.extra["suggested_name"]
+    assert suggestion == "top-2"
+    assert wd.cmd_init(ws, suggestion)["mode"] == "inplace"  # init accepts it
 
 
 def test_init_inplace_accepts_the_services_empty_folder(home, ws, monkeypatch):

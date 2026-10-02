@@ -737,10 +737,26 @@ def _active(mode: str, name: str, workdir: Path, workspace: Path) -> dict:
             "destination": destination(workspace, name).as_posix()}
 
 
-def suggest_name(workspace: Path, name: str) -> str | None:
+def _length_checked(workspace: Path, name: str, mode: str) -> list[Path]:
+    """The folders init's Windows length check covers in this mode."""
+    dest = destination(workspace, name)
+    return [local_workdir(workspace, name), dest] if mode == "local" else [dest]
+
+
+def suggest_name(workspace: Path, name: str, mode: str) -> str | None:
+    """A free name that init accepts in `mode`: `<name>-<n>`, with the base
+    cut short when the suffix would push a folder past the Windows length
+    limit (Full Autopilot takes the suggestion as given)."""
     for n in range(2, 1000):
         suffix = f"-{n}"
-        candidate = name[:64 - len(suffix)].rstrip(".") + suffix
+        base = name[:64 - len(suffix)]
+        while base:
+            candidate = base.rstrip(".") + suffix
+            if not length_problem(_length_checked(workspace, candidate, mode)):
+                break
+            base = base[:-1]
+        else:
+            return None  # even a one-character base is too long; longer suffixes only grow
         if name_problem(candidate):
             continue
         if not (os.path.lexists(destination(workspace, candidate))
@@ -767,7 +783,7 @@ def cmd_init(workspace: Path, name: str) -> dict:
                                        "the review's shell commands cannot quote safely")
     workdir = local if mode == "local" else dest
     _require_quotable(workdir)
-    problem = length_problem([local, dest] if mode == "local" else [dest])
+    problem = length_problem(_length_checked(workspace, name, mode))
     if problem:
         raise Refusal(problem)
     leftover = collect(workspace)  # before the clash check: a finished leftover never blocks
@@ -779,7 +795,7 @@ def cmd_init(workspace: Path, name: str) -> dict:
         taken = [p for p in (dest, local) if os.path.lexists(p)]
         if taken:
             raise Refusal(f"the name {name!r} is taken: {taken[0].as_posix()} exists",
-                          suggested_name=suggest_name(workspace, name))
+                          suggested_name=suggest_name(workspace, name, mode))
     else:
         _refuse_linked_destination(dest)
         existing_review = (dest / f"literature-review-{name}.md").exists()
@@ -788,7 +804,7 @@ def cmd_init(workspace: Path, name: str) -> dict:
             # only the service's explicit pin accepts a finished destination
             raise Refusal(f"a completed review occupies reviews/{name}/, and a delivered "
                           "review is never changed; choose another name",
-                          suggested_name=suggest_name(workspace, name))
+                          suggested_name=suggest_name(workspace, name, mode))
     if mode == "local":
         root = local_root()
         root.mkdir(parents=True, exist_ok=True)
@@ -799,7 +815,7 @@ def cmd_init(workspace: Path, name: str) -> dict:
             local.mkdir()  # no exist_ok: a racing init fails instead of sharing
         except FileExistsError:
             raise Refusal(f"{local.as_posix()} appeared while init ran",
-                          suggested_name=suggest_name(workspace, name))
+                          suggested_name=suggest_name(workspace, name, mode))
         (local / "intermediate_files").mkdir()
         review_id, host = uuid.uuid4().hex, platform.node()
         write_meta(local, {"format": FORMAT, "review_id": review_id, "name": name,
@@ -822,7 +838,7 @@ def cmd_init(workspace: Path, name: str) -> dict:
         out["reason"] = reason
     if existing_review:
         out["existing_review"] = True
-        out["suggested_name"] = suggest_name(workspace, name)
+        out["suggested_name"] = suggest_name(workspace, name, mode)
     if leftover:
         out["leftover"] = leftover
     return out
