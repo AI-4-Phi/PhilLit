@@ -3,6 +3,7 @@
 Pins the Claude Code hook protocol contract:
 - ALL decisions are stdout JSON with exit code 0 (JSON is ignored on exit 2).
 - Block: {"decision": "block", "reason": <syntax errors>}.
+- Allow: {} (Claude Code rejects {"decision": "allow"} as invalid hook output).
 - Cleaning summary: hookSpecificOutput.additionalContext (allow path).
 - Self-scopes with NO matcher: validates only inside a .phillit workspace, when
   agent_type contains "domain-literature-researcher", and workdir.py resolves an active review.
@@ -14,6 +15,7 @@ bib_validator.py / metadata_cleaner.py validators resolve from CLAUDE_PLUGIN_ROO
 
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -172,7 +174,7 @@ def test_no_marker_allows_and_does_not_touch_bib(tmp_path):
         env=env,
     )
     assert r.returncode == 0
-    assert '"decision": "allow"' in r.stdout
+    assert json.loads(r.stdout) == {}
     assert bib.read_text(encoding="utf-8") == original  # untouched
 
 
@@ -184,7 +186,7 @@ class TestGuards:
             {"agent_type": "domain-literature-researcher", "stop_hook_active": True},
             project,
         )
-        assert out == {"decision": "allow"}
+        assert out == {}
         assert code == 0
 
     def test_other_agent_type_allows(self, project):
@@ -192,12 +194,12 @@ class TestGuards:
             INVALID_BIB, encoding="utf-8"
         )
         out, code, _ = run_hook({"agent_type": "synthesis-writer"}, project)
-        assert out == {"decision": "allow"}
+        assert out == {}
         assert code == 0
 
     def test_missing_agent_type_allows(self, project):
         out, code, _ = run_hook({}, project)
-        assert out == {"decision": "allow"}
+        assert out == {}
         assert code == 0
 
     def test_namespaced_agent_type_validates(self, project):
@@ -215,7 +217,7 @@ class TestGuards:
     def test_no_active_review_allows(self, project):
         (project / "reviews" / ".active-review").unlink()
         out, code, _ = run_hook(RESEARCHER, project)
-        assert out == {"decision": "allow"}
+        assert out == {}
         assert code == 0
 
 
@@ -225,7 +227,7 @@ class TestValidation:
             VALID_BIB, encoding="utf-8"
         )
         out, code, _ = run_hook(RESEARCHER, project)
-        assert out == {"decision": "allow"}
+        assert out == {}
         assert code == 0
 
     def test_invalid_bib_blocks_with_reason_and_exit_zero(self, project):
@@ -239,8 +241,46 @@ class TestValidation:
 
     def test_no_bib_files_allows(self, project):
         out, code, _ = run_hook(RESEARCHER, project)
-        assert out == {"decision": "allow"}
+        assert out == {}
         assert code == 0
+
+    def test_every_decision_the_hook_prints_is_one_claude_code_accepts(self):
+        # Claude Code's SubagentStop schema takes decision "block" (or the
+        # legacy "approve"); "allow" fails validation on every researcher stop.
+        decisions = set(re.findall(r'"decision":\s*"(\w+)"',
+                                   SCRIPT.read_text(encoding="utf-8")))
+        assert decisions, "the scan found no decision literal at all"
+        assert decisions <= {"block"}, decisions
+
+
+class TestRootStrays:
+    """The workspace root is swept for researcher strays only: a domain bib
+    written without the review-directory prefix. Any other root .bib is the
+    user's own file, and the cleaner rewrites what it processes."""
+
+    def test_users_own_root_bibs_are_never_validated_or_rewritten(self, project):
+        refs = project / "refs.bib"
+        refs.write_text(HALLUCINATED_NUMBER_BIB, encoding="utf-8")
+        draft = project / "draft.bib"
+        draft.write_text(INVALID_BIB, encoding="utf-8")
+        # Evidence beside them that would make the cleaner strip `number`.
+        (project / "s2_results.json").write_text(
+            json.dumps(S2_NATURE_JSON), encoding="utf-8")
+        (project / "verify_awad.json").write_text(
+            json.dumps(VERIFY_AWAD_JSON), encoding="utf-8")
+        out, code, _ = run_hook(RESEARCHER, project)
+        assert code == 0
+        assert out == {}, "a user's own root .bib was validated or cleaned"
+        assert refs.read_text(encoding="utf-8") == HALLUCINATED_NUMBER_BIB
+        assert draft.read_text(encoding="utf-8") == INVALID_BIB
+
+    def test_a_researcher_stray_at_the_root_is_still_validated(self, project):
+        (project / "literature-domain-3.bib").write_text(
+            INVALID_BIB, encoding="utf-8")
+        out, code, _ = run_hook(RESEARCHER, project)
+        assert code == 0
+        assert out["decision"] == "block"
+        assert "journal" in out["reason"]
 
 
 class TestGateFailurePolicy:
@@ -384,7 +424,7 @@ class TestMetadataCleaning:
         bib.write_text(original, encoding="utf-8")
         out, code, _ = run_hook(RESEARCHER, project)
         assert code == 0
-        assert out == {"decision": "allow"}
+        assert out == {}
         assert bib.read_text(encoding="utf-8") == original  # untouched
 
     def test_blocked_resume_still_writes_final_pass_ledger(self, project):
@@ -585,7 +625,7 @@ class TestCleanerFailureIsNeverSilent:
         out, code, stderr = self._run(project, root)
         assert code == 0
         assert "metadata_cleaner.py failed" not in stderr
-        assert out == {"decision": "allow"}
+        assert out == {}
 
     def test_valid_json_reporting_failure_is_not_treated_as_success(self, project, tmp_path):
         """The shape metadata_cleaner.main() ACTUALLY emits on an unexpected
@@ -681,7 +721,7 @@ def test_resolver_error_warns_and_allows(tmp_path):
     proj, workdir = _local_review(tmp_path, extra)
     shutil.rmtree(workdir)  # the files are "elsewhere"
     out, code, err = _run(RESEARCHER, proj, extra)
-    assert out == {"decision": "allow"} and "not on this machine" in err
+    assert out == {} and "not on this machine" in err
 
 
 def test_resolver_crash_fails_closed(tmp_path):
@@ -783,7 +823,7 @@ def test_the_stub_resolver_positive_control_allows(tmp_path):
            "PHILLIT_UV": UV}
     proc = subprocess.run([BASH, str(SCRIPT)], input=json.dumps(RESEARCHER), capture_output=True,
                           text=True, encoding="utf-8", env=env)
-    assert json.loads(proc.stdout) == {"decision": "allow"}
+    assert json.loads(proc.stdout) == {}
 
 
 def test_an_invalid_workdir_mode_blocks_instead_of_skipping(tmp_path):

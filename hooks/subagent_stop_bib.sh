@@ -9,7 +9,8 @@
 #
 # Protocol: ALL decisions are stdout JSON with exit code 0.
 #   Block: {"decision": "block", "reason": "<errors>"}
-#   Allow: {"decision": "allow"}
+#   Allow: {} - Claude Code's `decision` takes only "block" (or the legacy
+#     "approve"); it rejects "allow" as invalid hook output.
 #   Allow + cleaning summary: {"hookSpecificOutput": {"hookEventName":
 #     "SubagentStop", "additionalContext": "<summary>"}}
 # Never exit 2: Claude Code ignores stdout JSON on exit 2, so the reason
@@ -21,7 +22,7 @@
 set -e
 
 allow() {
-    echo '{"decision": "allow"}'
+    echo '{}'
     exit 0
 }
 
@@ -110,14 +111,18 @@ if [[ ! -d "$REVIEW_DIR" ]]; then
     allow
 fi
 
-# Collect .bib files from review directory AND project root (strays)
+# Collect .bib files from the review directory AND the researchers' strays in
+# the project root. A stray is only ever a domain bib written without the
+# review-directory prefix, so the root glob takes literature-domain-*.bib
+# alone (the names Phase 6's stray sweep moves): any other root .bib is the
+# user's own file, and the cleaner rewrites what it processes.
 # Uses globs instead of find+process substitution for Windows/Git Bash compatibility
 shopt -s nullglob
 BIB_FILES=()
 for f in "$REVIEW_DIR"/*.bib; do
     [[ -f "$f" ]] && BIB_FILES+=("$f")
 done
-for f in "$CLAUDE_PROJECT_DIR"/*.bib; do
+for f in "$RESOLVE_WS"/literature-domain-*.bib; do
     [[ -f "$f" ]] && BIB_FILES+=("$f")
 done
 shopt -u nullglob
