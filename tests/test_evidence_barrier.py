@@ -15,6 +15,12 @@ from ledger_binding import (  # noqa: E402
     bib_file_sha256, bib_text_sha256,
 )
 
+# Every abstract a test expects to be attested must pass
+# abstract_usability: a placeholder sentence alone is refused as
+# "too-thin". Appending this sentence keeps a fixture realistic.
+_PROSE = (" It traces the argument through several historical cases and "
+          "assesses what each implies for current institutional design debates.")
+
 KUHN = """@book{kuhn1962structure,
   author = {Kuhn, Thomas S.},
   title = {The Structure of Scientific Revolutions},
@@ -648,7 +654,7 @@ def test_heal_abstract_restores_on_hash_match(monkeypatch):
     sys.path.insert(0, str(SCRIPTS_DIR))
     import evidence_barrier
     import stamp_evidence as se
-    true_text = "The original attested abstract text."
+    true_text = "The original attested abstract text." + _PROSE
     ledger_entry = {"abstract_source": "s2",
                     "abstract_sha256": se.abstract_hash(true_text)}
     fields = {"title": "T", "author": "Doe, Jane",
@@ -700,7 +706,7 @@ def test_heal_abstract_uses_ndpr_resolver_for_ndpr_source(monkeypatch):
     sys.path.insert(0, str(SCRIPTS_DIR))
     import evidence_barrier
     import stamp_evidence as se
-    true_text = "Reviewer summary text from NDPR."
+    true_text = "Reviewer summary text from NDPR." + _PROSE
     ledger_entry = {"abstract_source": "ndpr",
                     "abstract_sha256": se.abstract_hash(true_text)}
     monkeypatch.setattr(evidence_barrier.eb, "resolve_ndpr_abstract",
@@ -946,7 +952,7 @@ def test_barrier_heals_quoted_style_bib_two_entries(tmp_path, monkeypatch):
     import evidence_barrier
     import stamp_evidence as se
 
-    true_text = "The original attested abstract, full and intact."
+    true_text = "The original attested abstract, full and intact." + _PROSE
     bib = ('@article{healme2020,\n'
            '    author = "Doe, Jane",\n'
            '    title = "Healable",\n'
@@ -1010,7 +1016,7 @@ def test_barrier_heals_deleted_abstract_field(tmp_path, monkeypatch):
     _sys.path.insert(0, str(SCRIPTS_DIR))
     import evidence_barrier
     import stamp_evidence as se
-    true_text = "The abstract a re-emission deleted."
+    true_text = "The abstract a re-emission deleted." + _PROSE
     bib = ('@article{gone2020,\n'
            '  author = {Doe, Jane},\n'
            '  title = {Gone},\n'
@@ -1054,7 +1060,7 @@ def test_barrier_heals_two_level_nested_mutated_abstract_end_to_end(tmp_path, mo
     import evidence_barrier
     import stamp_evidence as se
 
-    true_text = "The plain original abstract, no braces at all."
+    true_text = "The plain original abstract, no braces at all." + _PROSE
     mutated = "We show {\\it Kant's {a priori}} fails."
     bib = ('@article{nested2020,\n'
            '  author = {Doe, Jane},\n'
@@ -1105,7 +1111,7 @@ def test_barrier_guard_drops_heal_on_unbalanced_restored_value(tmp_path, monkeyp
 
     # The ledger attests exactly this (unbalanced) text -- hash-gated
     # legitimacy, independent of whether it happens to be well-formed.
-    broken_text = "Restored text with a rogue { brace."
+    broken_text = "Restored text with a rogue { brace." + _PROSE
     bib = ('@article{broken2020,\n'
            '  author = {Doe, Jane},\n'
            '  title = {Broken},\n'
@@ -1154,7 +1160,7 @@ def test_barrier_rederivation_demotes_when_splice_is_noop(tmp_path, monkeypatch)
     import evidence_barrier
     import stamp_evidence as se
 
-    true_text = "The original attested abstract text, restored."
+    true_text = "The original attested abstract text, restored." + _PROSE
     bib = ('@article{pasq2019,\n'
            '  abstract_source = {s2},\n'
            '  abstract = {mutated text},\n'
@@ -2856,7 +2862,7 @@ def test_excluded_host_entry_is_counted_in_the_printed_not_promoted_summary(tmp_
 # go untested) and rc.fetch_articles, so the suite stays offline.
 
 CORROB_TEXT = ("We argue that reward hacking is a specification problem "
-               "rather than a capability problem.")
+               "rather than a capability problem." + _PROSE)
 
 
 def _corroboration_domain(review_dir, *, abstract=CORROB_TEXT, source="s2",
@@ -2921,7 +2927,7 @@ def test_forged_ledger_record_does_not_attest_without_corroboration(tmp_path, mo
     exactly like any unattested entry: context acquisition, then whatever
     the identifier attestation earns (EXISTENCE here)."""
     eb_mod = _barrier(monkeypatch)
-    key = _corroboration_domain(tmp_path, abstract="FABRICATED FINDINGS.")
+    key = _corroboration_domain(tmp_path, abstract="FABRICATED FINDINGS." + _PROSE)
     calls = []
     _stub_corroborator(monkeypatch, eb_mod, ("mismatch", None), calls)
 
@@ -3160,7 +3166,7 @@ def test_an_uncorroborated_entry_can_still_earn_context(tmp_path, monkeypatch):
     article it matches."""
     eb_mod = _barrier(monkeypatch)
     key = _corroboration_domain(
-        tmp_path, abstract="FABRICATED FINDINGS.", author="Kuhn, Thomas S.",
+        tmp_path, abstract="FABRICATED FINDINGS." + _PROSE, author="Kuhn, Thomas S.",
         year="1962", title="The Structure of Scientific Revolutions",
         cleaning_entries={},
         slugs='{"sep_entries": ["test-entry"], "iep_entries": []}')
@@ -3183,7 +3189,7 @@ def test_a_heal_is_its_own_corroboration_and_fetches_only_once(tmp_path, monkeyp
     corroborator must never be called for it."""
     eb_mod = _barrier(monkeypatch)
     import stamp_evidence as se
-    true_text = "The original attested abstract text, restored."
+    true_text = "The original attested abstract text, restored." + _PROSE
     bib = ('@article{pasq2019,\n'
            '  abstract_source = {s2},\n'
            '  abstract = {mutated text},\n'
@@ -3225,7 +3231,7 @@ def test_a_failed_heal_splice_corrects_the_corroboration_bucket(tmp_path, monkey
     corroborated outcomes is inflated by splices that never landed."""
     eb_mod = _barrier(monkeypatch)
     import stamp_evidence as se
-    broken_text = "Restored text with a rogue { brace."
+    broken_text = "Restored text with a rogue { brace." + _PROSE
     bib = ('@article{broken2020,\n'
            '  author = {Doe, Jane},\n'
            '  title = {Broken},\n'
@@ -3255,6 +3261,121 @@ def test_a_failed_heal_splice_corrects_the_corroboration_bucket(tmp_path, monkey
         "outcome": "unhealed", "source": "s2", "claimed": "s2", "via": "heal"}
     assert report["stamps"][bib_name]["broken2020"] == "EVIDENCE-EXISTENCE"
     assert calls == []
+
+
+# --- The usability screen (abstract_usability, PL-5) ---------------------
+# A stub as the 2026-09-10 run's OpenAlex served it: corroboration agrees
+# with it (the source serves it consistently), yet it supports nothing.
+UNUSABLE_STUB = ("MATHEW D. MCCUBBINS, ROGER G. NOLL, BARRY R. WEINGAST; "
+                 "Administrative Procedures as Instruments of Political "
+                 "Control, The Journal of Law, Economics, and Or")
+STUB_FIELDS = dict(
+    author="McCubbins, Mathew D. and Noll, Roger G. and Weingast, Barry R.",
+    title="Administrative Procedures as Instruments of Political Control",
+    key="mccubbins1987administrative")
+
+
+def test_an_unusable_candidate_is_refused_before_any_fetch(tmp_path, monkeypatch):
+    """The screen runs before the corroboration fetch: no request is spent
+    on text no answer could make usable. The entry goes on like any
+    untiered one -- context acquisition, then what its identifier earns."""
+    eb_mod = _barrier(monkeypatch)
+    key = _corroboration_domain(tmp_path, abstract=UNUSABLE_STUB, **STUB_FIELDS)
+    calls = []
+    _stub_corroborator(monkeypatch, eb_mod, ("corroborated", "s2"), calls)
+    assert eb_mod.execute(tmp_path, 1) == 0
+    report = _report(tmp_path)
+    bib_name = "literature-domain-1.bib"
+    assert report["abstract_corroboration"][bib_name][key] == {
+        "outcome": "unusable", "reason": "too-thin",
+        "source": "s2", "claimed": "s2"}
+    assert calls == []
+    assert report["attestations"][bib_name][key]["abstract_attested"] is False
+    assert report["stamps"][bib_name][key] == "EVIDENCE-EXISTENCE"
+    assert report["acquisition"][bib_name][key] == {"outcome": "unmatched"}
+    out = (tmp_path / bib_name).read_text(encoding="utf-8")
+    assert "EVIDENCE-ABSTRACT" not in out
+    assert UNUSABLE_STUB in out              # the field stays; only the tier goes
+
+
+def test_the_screen_counts_in_the_printed_summary(tmp_path, monkeypatch):
+    eb_mod = _barrier(monkeypatch)
+    _corroboration_domain(tmp_path, abstract=UNUSABLE_STUB, **STUB_FIELDS)
+    _stub_corroborator(monkeypatch, eb_mod, ("corroborated", "s2"), [])
+    assert eb_mod.execute(tmp_path, 1) == 0
+    summary = eb_mod._corroboration_summary(_report(tmp_path))
+    assert summary["unusable"] == 1 and summary["candidates"] == 1
+    assert summary["corroborated"] == 0
+
+
+def test_a_usable_candidate_still_reaches_the_corroborator(tmp_path, monkeypatch):
+    """Sibling of the refusal above: the screen must not stop every probe."""
+    eb_mod = _barrier(monkeypatch)
+    key = _corroboration_domain(tmp_path)
+    calls = []
+    _stub_corroborator(monkeypatch, eb_mod, ("corroborated", "s2"), calls)
+    assert eb_mod.execute(tmp_path, 1) == 0
+    assert len(calls) == 1
+    assert _report(tmp_path)["stamps"]["literature-domain-1.bib"][key] == "EVIDENCE-ABSTRACT"
+
+
+def test_a_heal_never_restores_unusable_text(tmp_path, monkeypatch):
+    """The heal restores the LEDGER's text, which candidacy never screened:
+    a hash-matching fetch of an unusable text is not restored, not
+    attested, and reported with its reason."""
+    eb_mod = _barrier(monkeypatch)
+    import stamp_evidence as se
+    key = STUB_FIELDS["key"]
+    bib = ('@article{' + key + ',\n'
+           '  abstract_source = {openalex},\n'
+           '  abstract = {mutated text},\n'
+           f'  author = {{{STUB_FIELDS["author"]}}},\n'
+           f'  title = {{{STUB_FIELDS["title"]}}},\n'
+           '  journal = {The Journal of Law, Economics, and Organization},\n'
+           '  doi = {10.1093/oxfordjournals.jleo.a036930},\n'
+           '  year = {1987},\n'
+           '  keywords = {topic, High}\n'
+           '}')
+    _domain(tmp_path, 1, bib,
+            cleaning=_cleaning(1, {key: {
+                "api_matched": True, "verified_identifier": "doi",
+                "verified_identifier_value": "10.1093/oxfordjournals.jleo.a036930",
+                "entry_type": "article"}}),
+            enrichment=_enrichment(1, {key: {
+                "abstract_source": "openalex",
+                "abstract_sha256": se.abstract_hash(UNUSABLE_STUB)}}))
+    calls = []
+    _stub_corroborator(monkeypatch, eb_mod, ("corroborated", "openalex"), calls)
+    monkeypatch.setattr(eb_mod.eb, "resolve_abstract_for_entry",
+                        lambda *a, **k: (UNUSABLE_STUB, "openalex"))
+    assert eb_mod.execute(tmp_path, 1) == 0
+    report = _report(tmp_path)
+    bib_name = "literature-domain-1.bib"
+    assert report["healed"][bib_name][key] == {
+        "outcome": "unusable", "reason": "too-thin", "source": "openalex"}
+    assert report["abstract_corroboration"][bib_name][key] == {
+        "outcome": "unusable", "reason": "too-thin", "source": "openalex",
+        "claimed": "openalex", "via": "heal"}
+    assert report["stamps"][bib_name][key] == "EVIDENCE-EXISTENCE"
+    out = (tmp_path / bib_name).read_text(encoding="utf-8")
+    assert UNUSABLE_STUB not in out and "mutated text" in out
+    assert calls == []
+
+
+def test_the_final_stamp_screens_the_text_whatever_the_attestation_loop_said(
+        tmp_path, monkeypatch):
+    """Defence in depth: even if a future path marked an unusable text
+    corroborated, the output loop's own screen keeps the tier off it."""
+    eb_mod = _barrier(monkeypatch)
+    key = _corroboration_domain(tmp_path, abstract=UNUSABLE_STUB, **STUB_FIELDS)
+    monkeypatch.setattr(
+        eb_mod, "_corroborate_candidate",
+        lambda fields, budget, debug=False: {
+            "outcome": eb_mod.eb.CORROBORATED, "source": "s2", "claimed": "s2"})
+    monkeypatch.setattr(eb_mod.rc, "fetch_articles",
+                        lambda union, debug=False: ({}, []))
+    assert eb_mod.execute(tmp_path, 1) == 0
+    assert _report(tmp_path)["stamps"]["literature-domain-1.bib"][key] != "EVIDENCE-ABSTRACT"
 
 
 def test_no_bucket_and_no_probe_for_an_entry_without_a_ledger_record(tmp_path, monkeypatch):
@@ -3353,7 +3474,7 @@ def test_the_printed_summary_counts_corroboration_outcomes(tmp_path, monkeypatch
     summary = json.loads(r.stdout)["abstract_corroboration"]
     assert summary == {"candidates": 1, "corroborated": 0, "mismatch": 0,
                        "source_empty": 0, "transport_failed": 0,
-                       "probe_unavailable": 1, "probe_error": 0,
+                       "probe_unavailable": 1, "unusable": 0, "probe_error": 0,
                        "corroboration_deadline": 0, "other": 0}
     report = _report(rd)
     assert report["stamps"]["literature-domain-1.bib"][key] == "EVIDENCE-EXISTENCE"
@@ -3365,7 +3486,7 @@ def test_heal_buckets_are_excluded_from_the_summary_counts(tmp_path, monkeypatch
     count the corroboration rate reads."""
     eb_mod = _barrier(monkeypatch)
     import stamp_evidence as se
-    true_text = "The original attested abstract text, restored."
+    true_text = "The original attested abstract text, restored." + _PROSE
     bib = ('@article{pasq2019,\n'
            '  abstract_source = {s2},\n'
            '  abstract = {mutated text},\n'
@@ -3388,7 +3509,7 @@ def test_heal_buckets_are_excluded_from_the_summary_counts(tmp_path, monkeypatch
         "pasq2019"]["via"] == "heal"
     assert eb_mod._corroboration_summary(report) == {
         "candidates": 0, "corroborated": 0, "mismatch": 0, "source_empty": 0,
-        "transport_failed": 0, "probe_unavailable": 0, "probe_error": 0,
+        "transport_failed": 0, "probe_unavailable": 0, "unusable": 0, "probe_error": 0,
         "corroboration_deadline": 0, "other": 0}
 
 
@@ -3398,7 +3519,7 @@ def _multi_candidate_domain(review_dir, keys, *, source="s2"):
     import stamp_evidence as se
     chunks, entries = [], {}
     for n, key in enumerate(keys, start=1):
-        text = f"Abstract number {n} for the corroboration budget tests."
+        text = f"Abstract number {n} for the corroboration budget tests." + _PROSE
         chunks.append('@article{' + key + ',\n'
                       '  author = {Doe, Jane},\n'
                       f'  title = {{Study {n}}},\n'
@@ -3499,7 +3620,7 @@ def test_the_budget_is_one_per_run_not_one_per_domain(tmp_path, monkeypatch):
     monkeypatch.setattr(eb_mod, "CORROBORATION_PASS_DEADLINE_SECONDS", -1.0)
     import stamp_evidence as se
     for i in (1, 2):
-        text = f"Domain {i}'s abstract for the shared-budget test."
+        text = f"Domain {i}'s abstract for the shared-budget test." + _PROSE
         bib = ('@article{k' + str(i) + ',\n'
                '  author = {Doe, Jane},\n'
                f'  title = {{Study {i}}},\n'
@@ -3577,7 +3698,7 @@ def test_a_skipped_candidate_neither_counts_nor_resets_the_streak(tmp_path, monk
     chunks, entries = [], {}
     for n, key in enumerate(order, start=1):
         source = {"skip_allow": "crossref", "skip_core": "core"}.get(key, "s2")
-        text = f"Streak abstract {n}."
+        text = f"Streak abstract {n}." + _PROSE
         chunks.append('@article{' + key + ',\n'
                       '  author = {Doe, Jane},\n'
                       f'  title = {{Study {n}}},\n'
@@ -3621,7 +3742,7 @@ def test_a_doiless_openalex_claim_does_not_reset_the_streak(tmp_path, monkeypatc
     for n, key in enumerate(order, start=1):
         source = "openalex" if key.startswith("skip_oa") else "s2"
         doi_line = "" if key.startswith("skip_oa") else f"  doi = {{10.1/{key}}},\n"
-        text = f"Streak abstract {n}."
+        text = f"Streak abstract {n}." + _PROSE
         chunks.append('@article{' + key + ',\n'
                       '  author = {Doe, Jane},\n'
                       f'  title = {{Study {n}}},\n'

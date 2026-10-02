@@ -32,6 +32,7 @@ import stamp_evidence as se
 import bib_fields  # noqa: E402
 import web_evidence as wv
 import year_suffix as ys
+import abstract_usability as au
 
 # The same sys.path dance year_suffix.py does, and self-sufficient on
 # purpose: reaching bib_identity only because year_suffix happened to import
@@ -232,9 +233,15 @@ def _heal_abstract(fields: dict, ledger_entry: dict, debug: bool = False):
     return None
 
 
-# Three corroboration outcomes this file owns, on top of the four
+# Four corroboration outcomes this file owns, on top of the four
 # enrich_bibliography.corroborate_abstract returns. None is evidence: like
 # every non-corroborated outcome they leave the entry unattested.
+#
+# ABSTRACT_UNUSABLE: the text fails `abstract_usability` -- a stub, a page
+# scrape, an opening extract or word salad -- so no fetch could make it
+# support the tier, and none is spent. The bucket carries the rule's
+# `reason`. Not a failure of anything: the source serves that text, and the
+# entry goes on to the context channel like any other untiered one.
 #
 # PROBE_UNAVAILABLE: `compute_tier` could never grant this claim, or the
 # CLAIMED source cannot be asked at all in THIS environment -- decided
@@ -264,6 +271,7 @@ def _heal_abstract(fields: dict, ledger_entry: dict, debug: bool = False):
 # `transport_failed`: the barrier re-derives every attestation on every run,
 # so a re-run restores the tier, and an outage can only lower tiers.
 PROBE_UNAVAILABLE = "probe_unavailable"
+ABSTRACT_UNUSABLE = "unusable"
 PROBE_ERROR = "probe_error"
 CORROBORATION_DEADLINE = "corroboration_deadline"
 
@@ -310,8 +318,8 @@ class _CorroborationBudget:
 
     A SKIPPED candidate is neither, and deliberately does not touch the
     streak (the same thing venue_vetting says about cache hits): the free
-    bound and the environment pre-classification return before `record` is
-    ever called, because the streak counts consecutive non-answers from the
+    bound, the usability screen and the environment pre-classification
+    return before `record` is ever called, because the streak counts consecutive non-answers from the
     network, not "candidates since the last network success". Resetting on a
     skip would let a run of unprobeable claims hide a live outage.
 
@@ -354,10 +362,10 @@ class _CorroborationBudget:
             self.consecutive_errors = 0
 
 
-def _heal_bucket(source: str, outcome: str) -> dict:
+def _heal_bucket(source: str, outcome: str, reason: str | None = None) -> dict:
     """A heal-path corroboration bucket, in one place because it is written
-    from three sites (restored, unhealed, and the output loop's correction
-    when the splice is dropped) and they must not drift apart.
+    from four sites (restored, unhealed, unusable, and the output loop's
+    correction when the splice is dropped) and they must not drift apart.
 
     `via: heal` marks the population: candidacy FAILED for these entries, so
     they are not part of the candidate rate -- their own
@@ -371,8 +379,11 @@ def _heal_bucket(source: str, outcome: str) -> dict:
     `abstract_source` may say something else entirely, and it is the ledger
     record that this bucket is reporting on.
     """
-    return {"outcome": outcome, "source": source, "claimed": source,
-            "via": "heal"}
+    bucket = {"outcome": outcome, "source": source, "claimed": source,
+              "via": "heal"}
+    if reason is not None:
+        bucket["reason"] = reason
+    return bucket
 
 
 def _claimed_source_unprobeable(fields: dict, claimed: str) -> bool:
@@ -456,17 +467,24 @@ def _corroborate_candidate(fields: dict, budget: "_CorroborationBudget",
     records the claim, not an answerer (attribution imprecision only -- no
     outcome is decided by it).
 
-    Three gates run BEFORE any request, in cost order. The free bound comes
+    Four gates run BEFORE any request, in cost order. The free bound comes
     first: a claim outside `se.ATTESTED_ABSTRACT_SOURCES` can never reach
     TIER_ABSTRACT whatever a fetch says (compute_tier requires membership),
-    so probing it spends a fetch on a decision already made. Then the
+    so probing it spends a fetch on a decision already made. The usability
+    screen is the same kind of decision, made on the text itself. Then the
     environment pre-classification, then the pass budget -- so an entry
     skipped for a reason of its own is labelled with that reason rather
     than with the budget's.
     """
     claimed = (fields.get("abstract_source") or "").strip().lower()
-    if (claimed not in se.ATTESTED_ABSTRACT_SOURCES
-            or _claimed_source_unprobeable(fields, claimed)):
+    if claimed not in se.ATTESTED_ABSTRACT_SOURCES:
+        return {"outcome": PROBE_UNAVAILABLE, "source": claimed,
+                "claimed": claimed}
+    reason = au.unusable_reason(fields.get("abstract") or "", fields)
+    if reason is not None:
+        return {"outcome": ABSTRACT_UNUSABLE, "reason": reason,
+                "source": claimed, "claimed": claimed}
+    if _claimed_source_unprobeable(fields, claimed):
         return {"outcome": PROBE_UNAVAILABLE, "source": claimed,
                 "claimed": claimed}
     if not budget.allows_probe():
@@ -502,7 +520,8 @@ def _corroboration_summary(report: dict) -> dict:
     """
     counts = {k: 0 for k in (eb.CORROBORATED, eb.MISMATCH, eb.SOURCE_EMPTY,
                              eb.TRANSPORT_FAILED, PROBE_UNAVAILABLE,
-                             PROBE_ERROR, CORROBORATION_DEADLINE)}
+                             ABSTRACT_UNUSABLE, PROBE_ERROR,
+                             CORROBORATION_DEADLINE)}
     counts["other"] = 0
     total = 0
     for per_bib in (report.get("abstract_corroboration") or {}).values():
@@ -941,7 +960,18 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                 # the only real cost is re-deriving the same no.
                 restored = _heal_abstract(fields, e_rec, debug=debug)
                 src = ((e_rec.get("abstract_source") or "").strip().lower())
-                if restored is not None:
+                # A heal restores the LEDGER's text, which the candidacy
+                # screen never saw: screen it before it reaches the bib.
+                reason = (au.unusable_reason(restored, fields)
+                          if restored is not None else None)
+                if reason is not None:
+                    report["healed"].setdefault(d["bib_name"], {})[key] = {
+                        "outcome": ABSTRACT_UNUSABLE, "reason": reason,
+                        "source": src}
+                    report["abstract_corroboration"].setdefault(
+                        d["bib_name"], {})[key] = _heal_bucket(
+                            src, ABSTRACT_UNUSABLE, reason)
+                elif restored is not None:
                     # The FIELD must carry the ledger's source -- that is
                     # what attest_abstract compares against. Which resolver
                     # actually served the text is integrity-irrelevant
@@ -1400,9 +1430,14 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
             # one, and the corroboration set proves a live fetch backed it
             # this run. Dropping the second re-grants the tier to every
             # forged ledger record the gate above just refused.
+            # The usability screen is the third conjunct, on the FINAL text
+            # for the same reason: no path, present or future, may stamp
+            # the tier on text the screen refuses.
             att.abstract_attested = bool(
                 se.attest_abstract(fields, e_entries.get(key))
-                and (i, key) in corroborated)
+                and (i, key) in corroborated
+                and au.unusable_reason(fields.get("abstract") or "",
+                                       fields) is None)
             # Re-derived per chunk for the same fail-closed reason as the line
             # above: the flag is keyed (i, key), so an index skew must never
             # promote a neighbouring entry.

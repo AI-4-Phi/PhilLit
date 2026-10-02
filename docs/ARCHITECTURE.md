@@ -182,6 +182,7 @@ skills/literature-review/
     ├── bib_fields.py                     # Depth-counting scanner: locates field values in raw BibTeX text for every value read, edit and strip in this directory
     ├── venue_vetting.py                  # OpenAlex venue check behind venue_status (barrier helper, venue vetting)
     ├── year_suffix.py                    # Chicago a/b assignment over work identity (barrier helper, Chicago a/b disambiguation)
+    ├── abstract_usability.py             # Is an abstract usable as evidence? (barrier helper, the screen behind EVIDENCE-ABSTRACT)
     ├── web_evidence.py                   # URL extraction, capture checks, existence (barrier helper, the EVIDENCE-WEB gate; owns the excluded-host policy — SEP + mirrors, IEP, NDPR, PhilPapers — which never earn EVIDENCE-WEB)
     ├── check_evidence.py                 # Phase 6 evidence-tier telemetry checker
     ├── split_delivery.py                 # Phase 6: track-record bib, annotated bib, research notes
