@@ -17,11 +17,16 @@ The four rules, each named by the reason it returns:
 
 * `page-chrome` -- the text holds a publisher landing page's interface
   strings ("Search for other works by this author"), so it is a page scrape.
-  Matched case-blind, with line breaks and no-break spaces read as spaces.
+  Project MUSE labels its own stand-in the same way ("In lieu of an
+  abstract, here is a brief excerpt"): an opening excerpt, not a summary.
+  Matched case-blind, after HTML entities are decoded and line breaks and
+  no-break spaces read as spaces.
   None of the 22 such texts in the measured corpus held an abstract.
 * `too-thin` -- fewer than `MIN_RESIDUAL_WORDS` words remain once the
   entry's own citation is removed: its title, author and editor names,
-  venue, publisher, series, and citation apparatus (Vol., pp., ...). This is
+  venue, publisher, series, and citation apparatus (Vol., pp., ...). Words
+  are compared with accents folded, so a field's `D{\'e}mocratie` removes
+  the abstract's "démocratie". This is
   what a keyword list, a stub, a version notice or a funding line has in
   common: nothing to characterize the work by.
 * `body-text` -- a text under `MAX_EXTRACT_WORDS` words with two or more
@@ -34,9 +39,10 @@ The four rules, each named by the reason it returns:
   a period ("Overview2. Four Arguments"). Nor is one number repeated, which
   is a variable name ("polity2"). A longer text is most of the work itself,
   which a writer can characterize it from.
-* `garbled` -- some 100-word window holds `MIN_GARBLE_HITS` or more
-  determiners directly followed by a function word ("the of", "a the"):
-  the content words have dropped out of the text. A capital "A" is never a
+* `garbled` -- some window of 100 word pairs holds `MIN_GARBLE_HITS` or
+  more determiners directly followed by a function word ("the of", "a the"):
+  the content words have dropped out of the text. English function words
+  only: word salad in another language passes. A capital "A" is never a
   determiner here: in prose it starts a sentence, where "A of" does not
   occur, and in logic and decision theory it names a variable ("A is
   preferred to B"). Every text that passes
@@ -49,13 +55,16 @@ The script, its output and a README listing every refusal are in
 page-chrome, 26 too-thin, 5 body-text, 4 garbled. Of the 448 tier-stamped
 abstracts 11 are refused, each one a real defect, the five known cases
 among them. The rules were tuned on this same corpus, so the counts are
-in-sample. Some thin but real texts are refused too, and some junk passes;
-the README lists both. Long, readable texts pass (NDPR reviews, full texts
+in-sample. Some thin but real texts are refused too, and some junk passes,
+two tier-stamped texts among it (a publisher's self-description and a dash
+list of topics); the README lists both kinds. Long, readable texts pass (NDPR reviews, full texts
 that stay prose): length alone is never a reason.
 """
 from __future__ import annotations
 
+import html
 import re
+import unicodedata
 
 MIN_RESIDUAL_WORDS = 15
 MAX_EXTRACT_WORDS = 1000
@@ -69,6 +78,7 @@ PAGE_CHROME = (
     "you do not currently have access to this content",
     "download citation file",
     "authors info & claims",
+    "in lieu of an abstract",
 )
 
 # The entry's own citation fields: their words are the work citing itself.
@@ -80,12 +90,15 @@ CITATION_TOKENS = frozenset({
     "in", "a", "an"})
 
 # Words in Unicode letters, so a Greek or Cyrillic abstract is counted, not
-# read as empty. Chinese and Japanese write no spaces between words, so each
-# of their characters counts as one word.
-_CJK = "\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff"
+# read as empty. Chinese, Japanese, Thai, Lao, Khmer and Burmese write no
+# spaces between words, so each of their characters counts as one word.
+_UNSPACED = ("\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff"
+             "\u0e00-\u0eff\u1780-\u17ff\u1000-\u109f")
 _WORD = re.compile(
-    rf"[{_CJK}]|[^\W\d_{_CJK}](?:[^\W\d_{_CJK}]|['’-])*")
-_CJK_CHAR = re.compile(rf"[{_CJK}]")
+    rf"[{_UNSPACED}]|[^\W\d_{_UNSPACED}](?:[^\W\d_{_UNSPACED}]|['’-])*")
+_UNSPACED_CHAR = re.compile(rf"[{_UNSPACED}]")
+# A LaTeX accent command (\'e, \"{o}, \v{c}), dropped before braces go.
+_LATEX_ACCENT = re.compile(r"\\(?:[`'^\"~=.]|[uvHtcdbk](?![A-Za-z]))\s*")
 # A footnote call glued to a word: a lowercase word of 3+ letters, optional
 # punctuation and closing quote, then 1-2 digits NOT followed by a period.
 _SUPERSCRIPT = str.maketrans("⁰¹²³⁴⁵⁶⁷⁸⁹", "0123456789")
@@ -98,18 +111,25 @@ _FUNCTION = frozenset({
     "this", "these", "its", "their"})
 
 
+def _fold(word: str) -> str:
+    """Lowercase with accents removed: "Démocratie" -> "democratie"."""
+    return "".join(c for c in unicodedata.normalize("NFKD", word.lower())
+                   if not unicodedata.combining(c))
+
+
 def _words(text: str) -> list[str]:
-    return [w.lower().strip("'’-") for w in _WORD.findall(text)]
+    return [_fold(w).strip("'’-") for w in _WORD.findall(text)]
 
 
 def residual_words(abstract: str, fields: dict) -> int:
     """Words the text says beyond citing its own entry."""
     own: set[str] = set()
     for name in OWN_FIELDS:
-        own.update(_words(re.sub(r"[{}\\]", "", fields.get(name) or "")))
+        value = _LATEX_ACCENT.sub("", fields.get(name) or "")
+        own.update(_words(re.sub(r"[{}\\]", "", value)))
     # A one-letter word is an initial or a variable; a CJK character is a word.
     return sum(1 for w in _words(abstract)
-               if (len(w) > 1 or _CJK_CHAR.match(w))
+               if (len(w) > 1 or _UNSPACED_CHAR.match(w))
                and w not in own and w not in CITATION_TOKENS)
 
 
@@ -144,8 +164,8 @@ def unusable_reason(abstract: str, fields: dict) -> str | None:
     in `OWN_FIELDS` are read. Rules run cheapest first, and the first that
     fires names the reason.
     """
-    text = abstract or ""
-    lowered = re.sub(r"(?:\s|&nbsp;|&#160;)+", " ", text.lower())
+    text = html.unescape(abstract or "")
+    lowered = re.sub(r"\s+", " ", text.lower())
     if any(marker in lowered for marker in PAGE_CHROME):
         return "page-chrome"
     if residual_words(text, fields) < MIN_RESIDUAL_WORDS:

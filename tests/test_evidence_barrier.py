@@ -3,6 +3,8 @@ import json
 import os
 import subprocess
 import sys
+
+import pytest
 from pathlib import Path
 
 SCRIPT = (Path(__file__).parent.parent / "skills" / "literature-review"
@@ -17,7 +19,8 @@ from ledger_binding import (  # noqa: E402
 
 # Every abstract a test expects to be attested must pass
 # abstract_usability: a placeholder sentence alone is refused as
-# "too-thin". Appending this sentence keeps a fixture realistic.
+# "too-thin". This sentence alone carries 16 residual words, one above
+# MIN_RESIDUAL_WORDS: raise that threshold and these fixtures need more.
 _PROSE = (" It traces the argument through several historical cases and "
           "assesses what each implies for current institutional design debates.")
 
@@ -3296,6 +3299,27 @@ def test_a_corroborated_but_unusable_candidate_is_refused(tmp_path, monkeypatch)
     out = (tmp_path / bib_name).read_text(encoding="utf-8")
     assert "EVIDENCE-ABSTRACT" not in out
     assert UNUSABLE_STUB in out              # the field stays; only the tier goes
+
+
+@pytest.mark.parametrize("text, reason", [
+    ("An abstract is not available for this content so a preview has been "
+     "provided." + _PROSE, "page-chrome"),
+    ("Separation of powers has returned to the forefront of public attention "
+     "as a matter of principle.1 Recent developments in Hungary and Poland "
+     "show how fragile the balance remains.2" + _PROSE, "body-text"),
+    ("We study how institutions constrain executive power across many "
+     "countries and decades." + _PROSE + " the of the and a of the that the "
+     "to the in the for the on the at the by the with the" * 2, "garbled"),
+])
+def test_every_screen_reason_reaches_the_report(tmp_path, monkeypatch, text, reason):
+    eb_mod = _barrier(monkeypatch)
+    key = _corroboration_domain(tmp_path, abstract=text)
+    _stub_corroborator(monkeypatch, eb_mod, ("corroborated", "s2"), [])
+    assert eb_mod.execute(tmp_path, 1) == 0
+    report = _report(tmp_path)
+    bib_name = "literature-domain-1.bib"
+    assert report["abstract_corroboration"][bib_name][key]["reason"] == reason
+    assert report["stamps"][bib_name][key] != "EVIDENCE-ABSTRACT"
 
 
 def test_a_short_forgery_still_reads_as_a_mismatch(tmp_path, monkeypatch):

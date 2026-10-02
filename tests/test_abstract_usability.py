@@ -195,6 +195,7 @@ def test_a_variable_named_a_is_not_word_salad(text):
     "народу, осуществляющему её непосредственно или через избранных "
     "представителей, подотчётных избирателям и ограниченных разделением властей.",
     "民主主义是一种政治制度，人民通过选举代表来行使权力，并通过分权制衡来限制政府。",
+    "ประชาธิปไตยคือระบอบการปกครองที่อำนาจสูงสุดเป็นของประชาชน",
 ])
 def test_non_latin_abstracts_are_counted_not_read_as_empty(text):
     assert au.unusable_reason(text, {}) is None
@@ -222,3 +223,33 @@ def test_a_variable_named_capital_a_is_never_a_determiner():
             "We show that this ordering survives every money-pump argument.")
     assert au.garble_hits(text) == 0
     assert au.unusable_reason(text, {}) is None
+
+
+def test_html_entities_are_decoded_before_any_rule():
+    assert au.unusable_reason(
+        "Authors Info &amp; Claims " + PROSE, {}) == "page-chrome"
+    # an entity is not a word: "&amp;" must not pad a thin text
+    assert au.unusable_reason("Granlund &amp; Co &lt;D72&gt; " * 3, {}) == "too-thin"
+
+
+def test_an_accented_title_is_removed_from_a_stub_in_latex_or_unicode():
+    """The bib spells the title in LaTeX accents, the stub in Unicode. Only
+    the fold removes the ten accented words, which the stub repeats: left
+    in, they would carry it past the threshold."""
+    fields = {"title": "Les {\\'e}l{\\'e}ments th{\\'e}oriques de la s{\\'e}paration "
+                       "des pouvoirs: d{\\'e}mocratie, l{\\'e}gitimit{\\'e}, "
+                       "r{\\'e}publique, souverainet{\\'e}, int{\\'e}r{\\^e}t "
+                       "g{\\'e}n{\\'e}ral et {\\'e}quilibre",
+              "author": "Dupont, Jean", "journal": "Revue d'histoire"}
+    title = ("Les éléments théoriques de la séparation des pouvoirs: démocratie, "
+             "légitimité, république, souveraineté, intérêt général et équilibre")
+    stub = f"{title}. Jean Dupont: {title}, Revue d'histoire 12 (1999)"
+    assert au.residual_words(stub, fields) < au.MIN_RESIDUAL_WORDS
+    assert au.residual_words(stub, {}) >= au.MIN_RESIDUAL_WORDS
+    assert au.unusable_reason(stub, fields) == "too-thin"
+
+
+def test_a_project_muse_excerpt_is_refused():
+    """MUSE serves an opening excerpt in the abstract slot and says so."""
+    text = "In lieu of an abstract, here is a brief excerpt of the content: " + PROSE
+    assert au.unusable_reason(text, {}) == "page-chrome"

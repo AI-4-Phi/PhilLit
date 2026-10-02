@@ -1435,8 +1435,8 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
             # this run. Dropping the second re-grants the tier to every
             # forged ledger record the gate above just refused.
             # The usability screen is the third conjunct, on the FINAL text
-            # for the same reason: no path, present or future, may stamp
-            # the tier on text the screen refuses.
+            # for the same reason: whatever the attestation loop decided,
+            # this stamp never puts the tier on text the screen refuses.
             att.abstract_attested = bool(
                 se.attest_abstract(fields, e_entries.get(key))
                 and (i, key) in corroborated
