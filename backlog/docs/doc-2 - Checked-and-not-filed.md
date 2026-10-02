@@ -88,3 +88,14 @@ that did not survive reading the file it concerns.
   `docs/ARCHITECTURE.md` points at SKILL.md instead of repeating it, and the
   three-file delivery work updated README and SKILL.md together. Revisit if
   the two trees disagree.
+- Narrowing the SubagentStop root sweep from `literature-domain-*.bib` to
+  digits only (`literature-domain-<n>.bib`), so a user file named
+  `literature-domain-notes.bib` is never touched. Not filed: the prefix is
+  PhilLit's namespace. Phase 6's stray sweep already moves every file that
+  matches it, and dedupe reads every one, so a digits-only hook would let a
+  misnamed researcher bib reach the review unvalidated.
+- `suggest_name` treating a name as taken when only its folder in the other
+  mode exists: a local work folder during an in-place init, or the service's
+  pre-created empty `reviews/<name>/`. The suggestion is then one number
+  higher than it needs to be, and init still accepts it. Kept on purpose: a
+  name that is free in both places stays usable if the mode changes.
