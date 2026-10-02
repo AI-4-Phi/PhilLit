@@ -28,20 +28,22 @@ The four rules, each named by the reason it returns:
   sides lose LaTeX accents and braces and are accent-folded, so a field's
   `D{\'e}mocratie` removes the abstract's "démocratie" or "D{\'e}mocratie".
   The fields are the bib's own, so a title rewritten after enrichment
-  weakens this rule. This is
-  what a keyword list, a stub, a version notice or a funding line has in
-  common: nothing to characterize the work by.
+  weakens this rule. Each Chinese or Japanese character counts as a word,
+  so a CJK keyword list passes (accepted: the measured corpus holds no CJK
+  abstract to set a better rule on). This is what a keyword list, a stub, a
+  version notice or a funding line has in common: nothing to characterize
+  the work by.
 * `body-text` -- a text under `MAX_EXTRACT_WORDS` words with two or more
   footnote calls glued to words ("principle2 of", "fit.3", or superscript
-  "fit.³"), their numbers
-  strictly increasing, at least one of them right after a sentence's
-  closing punctuation: the text is the work's opening pages, not a summary
-  of it. A contents list is not a footnote run: its numbers follow a heading
-  word with no punctuation ("Introduction2 Making Time") or are followed by
-  a period ("Overview2. Four Arguments"). Nor is a run with a repeated
-  number, which is a variable name ("polity2"). A longer text is most of
-  the work itself,
-  which a writer can characterize it from.
+  "fit.³"), their numbers strictly increasing, at least one of them right
+  after a sentence's closing punctuation: the text is the work's opening
+  pages, not a summary of it. A contents list is not a footnote run: its
+  numbers follow a heading word with no punctuation ("Introduction2 Making
+  Time") or are followed by a period ("Overview2. Four Arguments"). Nor is
+  a run with a repeated number, which is a variable name ("polity2"). Calls
+  the pattern cannot see pass: spaced ("principle 2") or after an accented
+  letter ("Orbán3"). A longer text is most of the work itself, which a
+  writer can characterize it from.
 * `garbled` -- some window of 100 word pairs holds `MIN_GARBLE_HITS` or
   more determiners directly followed by a function word ("the of", "a the"):
   the content words have dropped out of the text. English function words
