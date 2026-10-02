@@ -26,5 +26,5 @@ The barrier later reports the missing cleaning ledger as `degraded`, so the skip
 
 **Decision needed:** for these review states, a `systemMessage` (visible, and the stop is allowed) or a block?
 
-Ship it with PL-1 (the root `.bib` sweep) if that has not shipped yet: both change the same file.
+PL-1 (stop the SubagentStop hook rewriting user bibs) shipped in 0.5.33: the root sweep takes `literature-domain-*.bib` only, and an allow prints `{}`.
 <!-- SECTION:DESCRIPTION:END -->

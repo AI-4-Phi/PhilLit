@@ -1,9 +1,10 @@
 ---
 id: PL-3
 title: One owner each for the env-var and hooks-wiring docs
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-09-25 19:18'
+updated_date: '2026-10-02 12:56'
 labels: []
 dependencies: []
 references:

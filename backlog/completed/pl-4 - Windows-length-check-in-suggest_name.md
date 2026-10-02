@@ -1,9 +1,10 @@
 ---
 id: PL-4
 title: Windows length check in suggest_name
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-09-25 19:18'
+updated_date: '2026-10-02 12:56'
 labels:
   - workdir
 dependencies: []

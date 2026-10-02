@@ -26,7 +26,7 @@ On a real Windows machine, check four things:
 - Read-only attributes never wedge `publish`, `activate` or the pointer.
 - The 120-character headroom (`DEEP_FILE_HEADROOM`) covers the longest generated filenames (`intermediate_files/json/verify_<domain>_<citekey>.json`).
 
-The one part that needs no Windows machine is PL-4 (the Windows length check in `suggest_name`).
+The part that needed no Windows machine shipped in 0.5.33: `suggest_name` applies the same length check as `init`.
 
 **What brings it forward:** the first Windows bug report, or a Windows machine to test on (CLAUDE.md, Cross-Platform).
 <!-- SECTION:DESCRIPTION:END -->

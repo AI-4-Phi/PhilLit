@@ -1,10 +1,10 @@
 ---
 id: PL-1
 title: Stop the SubagentStop hook rewriting user bibs
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-09-25 19:18'
-updated_date: '2026-09-25 19:24'
+updated_date: '2026-10-02 12:56'
 labels:
   - hooks
 dependencies: []
@@ -22,5 +22,5 @@ ordinal: 1000
 
 The SubagentStop hook cleans every workspace-root `.bib`. Phase 6's stray sweep moves only `literature-domain-*.bib`, but `hooks/subagent_stop_bib.sh` still collects every `"$CLAUDE_PROJECT_DIR"/*.bib` as a researcher stray, validates it and runs `metadata_cleaner.py` on it. Scope the root glob to the names researchers write (`literature-domain-*.bib`).
 
-The same file carries PL-8 (the SubagentStop gate failing open silently). If that ruling is in by then, ship both together.
+The same fix makes an allow print `{}`. The hook printed `{"decision": "allow"}`, which Claude Code rejects as invalid output: for SubagentStop it documents only `"block"`, and omitting `decision` allows the stop.
 <!-- SECTION:DESCRIPTION:END -->
