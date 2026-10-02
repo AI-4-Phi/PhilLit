@@ -729,6 +729,8 @@ KEY_POSITIONS:
 }
 ```
 
+**`@comment` labels — REQUIRED: use only the template's.** The header takes `DOMAIN`, `SEARCH_DATE`, `PAPERS_FOUND` and `SEARCH_SOURCES`; the body takes `DOMAIN_OVERVIEW`, `RELEVANCE_TO_PROJECT`, `NOTABLE_GAPS`, `SYNTHESIS_GUIDANCE` and `KEY_POSITIONS`. Put any further analysis inside one of those sections, as prose or bullets. Do not add a label of your own: no line in the block may start with another ALL-CAPS word or phrase and a colon (`GREY_LITERATURE:`, `FOR:`). The user's research-notes file is built from this block, and one unknown label withholds the whole file.
+
 **Never write `abstract` or `abstract_source` fields yourself** — `enrich_bibliography.py` (Stage 5.5) is their sole author. The evidence barrier attests a hand-written abstract only if it matches
 an API's text exactly (whitespace-insensitive); anything else earns no
 citability tier. Do not rely on that safety net — let the script be the
@@ -796,7 +798,7 @@ See `$PHILLIT_ROOT/docs/conventions.md` for citation key format, author name for
 ✅ **File Quality**:
 - [ ] Valid BibTeX syntax (hooks validate automatically; fix if Write is denied)
 - [ ] UTF-8 encoding preserved
-- [ ] @comment section complete
+- [ ] @comment section complete, with the template's labels only (extra analysis sits inside one of them)
 - [ ] 10-20 papers per domain
 
 **If any check fails, fix before submitting.**
