@@ -58,7 +58,10 @@ def check_env_vars() -> dict[str, dict[str, Any]]:
             "Optional - only if you run 5+ reviews a day. FREE key, 10x the "
             "daily budget ($1/day vs $0.10) and unmetered DOI lookups"
         ),
-        "CORE_API_KEY": "Optional for CORE API (improves rate limits)",
+        "CORE_API_KEY": (
+            "Optional - without it CORE searches and the CORE abstract "
+            "fallback are skipped"
+        ),
     }
 
     for var, description in required.items():
@@ -118,9 +121,10 @@ _REQUIRED_APIS = ("brave", "crossref")
 
 
 def check_core_connectivity() -> dict:
-    """Probe CORE only when a key is configured. CORE is optional; without a
-    key the unauthenticated tier merely rate-limits (429/backoff), so we skip
-    the probe entirely and report a skipped state instead of a failure."""
+    """Probe CORE only when a key is configured. CORE is optional, and
+    without a key PhilLit skips it entirely (the unauthenticated tier only
+    rate-limits), so there is nothing to probe: report a skipped state
+    instead of a failure."""
     api_key = os.environ.get("CORE_API_KEY", "")
     if not api_key:
         return {

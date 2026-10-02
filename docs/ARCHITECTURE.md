@@ -202,14 +202,14 @@ skills/setup/
     └── setup_workspace.py                # Creates .phillit/ (+ .env for keys missing from the environment); merges PHILLIT_RULES into .claude/settings.json
 
 hooks/
-├── hooks.json                            # Hook wiring (single source of truth)
-├── setup-environment.sh                  # SessionStart: thin bootstrap — bridge PHILLIT_ROOT/PHILLIT_UV (and PHILLIT_ACTIVE inside a workspace) into CLAUDE_ENV_FILE
+├── hooks.json                            # Hook wiring (single source of truth); events and matchers: docs/permissions-guide.md, Hook Configuration
+├── setup-environment.sh                  # Session bootstrap: bridge PHILLIT_ROOT/PHILLIT_UV (and PHILLIT_ACTIVE inside a workspace) into CLAUDE_ENV_FILE
 ├── fast_gate.sh                          # Shell pre-filter for per-call gates: .phillit marker + stdin needle before uv starts
-├── subagent_stop_bib.sh                  # SubagentStop: validate researcher BibTeX, clean metadata (self-scoped to .phillit workspaces)
-├── validate_bib_write.py                 # PreToolUse (Write) + PostToolUse (Edit): validate .bib
-├── block_background_bash.py              # PreToolUse (Bash): block run_in_background in subagents
-├── block_subagent_background_dispatch.py # PreToolUse (Agent/Task): review agents must dispatch foreground
-├── block_ledger_write.py                 # PreToolUse (Write/Edit/NotebookEdit): refuse tool-writes to the attestation ledgers (ledger write-protection)
+├── subagent_stop_bib.sh                  # Validate researcher BibTeX and clean its metadata when a researcher stops
+├── validate_bib_write.py                 # Validate .bib files as they are written and edited
+├── block_background_bash.py              # Block run_in_background in subagents
+├── block_subagent_background_dispatch.py # Review agents must dispatch foreground
+├── block_ledger_write.py                 # Refuse file-tool writes to the attestation ledgers (ledger write-protection)
 ├── bib_validator.py                      # BibTeX validation logic
 ├── bib_comments.py                       # NOT a hook — the one owner of the @comment/@string/@preamble block grammar (is_verbatim_block, comment_defects)
 ├── cleaning_marker.py                    # NOT a hook — the one owner of the METADATA_CLEANED marker grammar (marker_removed_fields, marker_type_changed, has_marker)

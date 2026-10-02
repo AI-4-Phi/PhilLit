@@ -35,7 +35,7 @@
   - `bib_identity.py` — bibliography identity, comparison keys and name folds. `venue_key` is a VERIFICATION key, never dedup identity (`normalize_journal`'s job). Split author lists ONLY through `split_author_list`. `first_author_surname` (identity text) and `first_author_prose_surname` (text to search for in prose) are two rules: never collapse them, and never restate their divergence as a list of shapes — every attempt to enumerate it was wrong; the docstring transcribes it off the code.
 
   Sites bind these shared objects as **aliases**, never a local copy, and tests assert `is` identity. An alias may keep a historic name or take a clearer one, but it must never SHADOW a different shared object's name (why `resolve_context`'s alias is `prose_surname`).
-- `hooks/hooks.json` — Plugin hook definitions (single source of truth): SessionStart bootstrap; marker-gated PreToolUse/PostToolUse/SubagentStop.
+- `hooks/hooks.json` — Plugin hook definitions (single source of truth): SessionStart bootstrap; marker-gated PreToolUse/PostToolUse/SubagentStop. Its wiring is documented only in the Hook Configuration table of `docs/permissions-guide.md`; other docs name files and purpose.
 - `backlog/` — The work queue: a backlog-md board, one card per open item (see Work Queue below).
 - `docs/` — Project documentation: shared specs (`ARCHITECTURE.md`, `conventions.md`, `permissions-guide.md`), `known-issues/` (measurement scripts and their data — the reproduction path for measured decisions, not issue write-ups), and `ideas/` (design ideas and deferred plans).
 

@@ -233,22 +233,9 @@ Exit codes: 0=success, 1=not found, 2=config error, 3=API error, 4=`--output` wr
 
 ## Environment
 
-Required environment variables (set in the shell environment or in `.env` at the project root — a `.env` value takes priority):
-```bash
-BRAVE_API_KEY        # Required for SEP/PhilPapers discovery
-CROSSREF_MAILTO      # Required for CrossRef polite pool
-S2_API_KEY           # Recommended for Semantic Scholar
-OPENALEX_EMAIL       # Recommended for OpenAlex polite pool
-OPENALEX_API_KEY     # Optional: OpenAlex meters by daily spend, and one review
-                     # costs a quarter to a half of the unkeyed $0.10/day. Only
-                     # needed above ~4 reviews/day; free at
-                     # https://openalex.org/settings/api. On exhaustion PhilLit
-                     # says so and continues without OpenAlex.
-CORE_API_KEY         # Optional: CORE searches and CORE abstract fallback are
-                     # skipped without it; free at https://core.ac.uk/services/api
-```
+The API keys and settings are listed in one place, the plugin's `.env.example` (`$PHILLIT_ROOT/.env.example`): which are required, what each does, and how a workspace `.env` value relates to the shell environment.
 
-Check setup with:
+Check which are set with:
 ```bash
 bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/check_setup.py
 ```
