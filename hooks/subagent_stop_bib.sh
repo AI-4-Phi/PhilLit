@@ -113,10 +113,10 @@ fi
 
 # Collect .bib files from the review directory AND the researchers' strays in
 # the project root: domain bibs written without the review-directory prefix.
-# The root glob takes literature-domain-*.bib alone, the names Phase 6's
-# stray sweep moves and dedupe reads. Any other root .bib never enters the
-# review, so it is treated as the user's own file: the cleaner rewrites what
-# it processes.
+# The root glob takes literature-domain-*.bib alone: that prefix is PhilLit's
+# namespace (researchers write it, and Phase 6's stray sweep moves every root
+# file that has it). Any other root .bib is outside it, so it is treated as
+# the user's own file: the cleaner rewrites what it processes.
 # Uses globs instead of find+process substitution for Windows/Git Bash compatibility
 shopt -s nullglob
 BIB_FILES=()

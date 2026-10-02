@@ -255,9 +255,9 @@ class TestValidation:
 
 class TestRootStrays:
     """The workspace root is swept for researcher strays only: a domain bib
-    written without the review-directory prefix. Any other root .bib never
-    enters the review, so it is treated as the user's own file: the cleaner
-    rewrites what it processes."""
+    written without the review-directory prefix, named in PhilLit's
+    literature-domain-*.bib namespace. Any other root .bib is treated as the
+    user's own file: the cleaner rewrites what it processes."""
 
     def test_users_own_root_bibs_are_never_validated_or_rewritten(self, project):
         refs = project / "refs.bib"

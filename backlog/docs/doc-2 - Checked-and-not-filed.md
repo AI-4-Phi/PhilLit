@@ -91,9 +91,9 @@ that did not survive reading the file it concerns.
 - Narrowing the SubagentStop root sweep from `literature-domain-*.bib` to
   digits only (`literature-domain-<n>.bib`), so a user file named
   `literature-domain-notes.bib` is never touched. Not filed: the prefix is
-  PhilLit's namespace. Phase 6's stray sweep already moves every file that
-  matches it, and dedupe reads every one, so a digits-only hook would let a
-  misnamed researcher bib reach the review unvalidated.
+  PhilLit's namespace: Phase 6's stray sweep already moves every root file
+  that matches it, so a digits-only hook would not protect such a file, and
+  the hook and the sweep would disagree about what a stray is.
 - `suggest_name` treating a name as taken when only its folder in the other
   mode exists: a local work folder during an in-place init, or the service's
   pre-created empty `reviews/<name>/`. The suggestion is then one number
