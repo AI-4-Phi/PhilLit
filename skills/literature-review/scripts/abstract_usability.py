@@ -24,20 +24,23 @@ The four rules, each named by the reason it returns:
   None of the 22 such texts in the measured corpus held an abstract.
 * `too-thin` -- fewer than `MIN_RESIDUAL_WORDS` words remain once the
   entry's own citation is removed: its title, author and editor names,
-  venue, publisher, series, and citation apparatus (Vol., pp., ...). Words
-  are compared with accents folded, so a field's `D{\'e}mocratie` removes
-  the abstract's "démocratie". This is
+  venue, publisher, series, and citation apparatus (Vol., pp., ...). Both
+  sides lose LaTeX accents and braces and are accent-folded, so a field's
+  `D{\'e}mocratie` removes the abstract's "démocratie" or "D{\'e}mocratie".
+  The fields are the bib's own, so a title rewritten after enrichment
+  weakens this rule. This is
   what a keyword list, a stub, a version notice or a funding line has in
   common: nothing to characterize the work by.
 * `body-text` -- a text under `MAX_EXTRACT_WORDS` words with two or more
   footnote calls glued to words ("principle2 of", "fit.3", or superscript
   "fit.³"), their numbers
-  distinct and increasing, at least one of them right after a sentence's
+  strictly increasing, at least one of them right after a sentence's
   closing punctuation: the text is the work's opening pages, not a summary
   of it. A contents list is not a footnote run: its numbers follow a heading
   word with no punctuation ("Introduction2 Making Time") or are followed by
-  a period ("Overview2. Four Arguments"). Nor is one number repeated, which
-  is a variable name ("polity2"). A longer text is most of the work itself,
+  a period ("Overview2. Four Arguments"). Nor is a run with a repeated
+  number, which is a variable name ("polity2"). A longer text is most of
+  the work itself,
   which a writer can characterize it from.
 * `garbled` -- some window of 100 word pairs holds `MIN_GARBLE_HITS` or
   more determiners directly followed by a function word ("the of", "a the"):
@@ -121,24 +124,29 @@ def _words(text: str) -> list[str]:
     return [_fold(w).strip("'’-") for w in _WORD.findall(text)]
 
 
+def _plain(text: str) -> str:
+    """BibTeX text without LaTeX accent commands, braces or backslashes."""
+    return re.sub(r"[{}\\]", "", _LATEX_ACCENT.sub("", text or ""))
+
+
 def residual_words(abstract: str, fields: dict) -> int:
     """Words the text says beyond citing its own entry."""
     own: set[str] = set()
     for name in OWN_FIELDS:
-        value = _LATEX_ACCENT.sub("", fields.get(name) or "")
-        own.update(_words(re.sub(r"[{}\\]", "", value)))
+        own.update(_words(_plain(fields.get(name) or "")))
     # A one-letter word is an initial or a variable; a CJK character is a word.
-    return sum(1 for w in _words(abstract)
+    return sum(1 for w in _words(_plain(abstract))
                if (len(w) > 1 or _UNSPACED_CHAR.match(w))
                and w not in own and w not in CITATION_TOKENS)
 
 
 def footnote_calls(abstract: str) -> int:
-    """Footnote calls in a distinct, increasing run with at least one call
+    """Footnote calls in a strictly increasing run with at least one call
     after a sentence's closing punctuation; 0 when there is none."""
     calls = _FOOTNOTE.findall(abstract)
     numbers = [int(n.translate(_SUPERSCRIPT)) for _, n in calls]
-    if (len(set(numbers)) < 2 or numbers != sorted(numbers)
+    if (len(numbers) < 2
+            or any(b <= a for a, b in zip(numbers, numbers[1:]))
             or not any(punct and punct in ".!?" for punct, _ in calls)):
         return 0
     return len(numbers)

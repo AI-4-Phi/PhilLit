@@ -1,7 +1,7 @@
 """abstract_usability: the barrier's second abstract test.
 
 The positive cases are the five corroborated-but-unusable abstracts from the
-2026-09-10 separation-of-powers run (PL-5). The negative controls are the
+2026-09-10 separation-of-powers run. The negative controls are the
 near misses the rules were refined on, from the local corpus measurement
 (docs/known-issues/abstract-usability-measurement-2026-10-02/README.md).
 """
@@ -253,3 +253,22 @@ def test_a_project_muse_excerpt_is_refused():
     """MUSE serves an opening excerpt in the abstract slot and says so."""
     text = "In lieu of an abstract, here is a brief excerpt of the content: " + PROSE
     assert au.unusable_reason(text, {}) == "page-chrome"
+
+
+def test_a_run_with_a_repeated_number_is_never_a_footnote_run():
+    """A variable used three times plus one footnote-shaped call is not a
+    run: footnote numbers only ever increase."""
+    assert au.footnote_calls(
+        "the polity2 score and polity2 again, polity2 as noted.3 robustly") == 0
+
+
+def test_a_tex_encoded_stub_is_compared_like_a_unicode_one():
+    fields = {"title": "La s{\\'e}paration des pouvoirs chez Montesquieu",
+              "author": "Dupont, Jean", "journal": "Revue de droit constitutionnel"}
+    stub = ("Jean Dupont, La s{\\'e}paration des pouvoirs chez Montesquieu. "
+            "Jean Dupont, La s{\\'e}paration des pouvoirs chez Montesquieu, "
+            "Revue de droit constitutionnel 12 (1999), {\\'e}d. r{\\'e}vis{\\'e}e")
+    assert au.residual_words(stub, fields) == au.residual_words(
+        stub.replace("s{\\'e}paration", "séparation"), fields)
+    assert au.unusable_reason(stub, fields) == "too-thin"
+

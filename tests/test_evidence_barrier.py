@@ -3266,7 +3266,7 @@ def test_a_failed_heal_splice_corrects_the_corroboration_bucket(tmp_path, monkey
     assert calls == []
 
 
-# --- The usability screen (abstract_usability, PL-5) ---------------------
+# --- The usability screen (abstract_usability) ---------------------------
 # A stub as the 2026-09-10 run's OpenAlex served it: corroboration agrees
 # with it (the source serves it consistently), yet it supports nothing.
 UNUSABLE_STUB = ("MATHEW D. MCCUBBINS, ROGER G. NOLL, BARRY R. WEINGAST; "
@@ -3415,7 +3415,11 @@ def test_the_final_stamp_screens_the_text_whatever_the_attestation_loop_said(
     monkeypatch.setattr(eb_mod.rc, "fetch_articles",
                         lambda union, debug=False: ({}, []))
     assert eb_mod.execute(tmp_path, 1) == 0
-    assert _report(tmp_path)["stamps"]["literature-domain-1.bib"][key] != "EVIDENCE-ABSTRACT"
+    report = _report(tmp_path)
+    assert report["stamps"]["literature-domain-1.bib"][key] != "EVIDENCE-ABSTRACT"
+    # never silent: the bucket names the refusal this conjunct made
+    bucket = report["abstract_corroboration"]["literature-domain-1.bib"][key]
+    assert bucket["outcome"] == "unusable" and bucket["reason"] == "too-thin"
 
 
 def test_no_bucket_and_no_probe_for_an_entry_without_a_ledger_record(tmp_path, monkeypatch):

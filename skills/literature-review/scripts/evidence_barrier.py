@@ -1437,11 +1437,18 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
             # The usability screen is the third conjunct, on the FINAL text
             # for the same reason: whatever the attestation loop decided,
             # this stamp never puts the tier on text the screen refuses.
-            att.abstract_attested = bool(
+            # Should it be the conjunct that decides, the bucket says so:
+            # a withheld tier is never silent.
+            attested = bool(
                 se.attest_abstract(fields, e_entries.get(key))
-                and (i, key) in corroborated
-                and au.unusable_reason(fields.get("abstract") or "",
-                                       fields) is None)
+                and (i, key) in corroborated)
+            reason = (au.unusable_reason(fields.get("abstract") or "", fields)
+                      if attested else None)
+            if reason is not None:
+                per_bib = report["abstract_corroboration"].setdefault(bib_name, {})
+                per_bib[key] = {**(per_bib.get(key) or {}),
+                                "outcome": ABSTRACT_UNUSABLE, "reason": reason}
+            att.abstract_attested = attested and reason is None
             # Re-derived per chunk for the same fail-closed reason as the line
             # above: the flag is keyed (i, key), so an index skew must never
             # promote a neighbouring entry.
