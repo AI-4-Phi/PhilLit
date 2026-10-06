@@ -50,12 +50,17 @@ SUBAGENT_CONTEXT=$(cat)
 # on every resumed pass, leaving a stale ledger from the blocked pass — the
 # evidence barrier assumes cleaning (and its ledger) precede it.
 STOP_HOOK_ACTIVE=$(echo "$SUBAGENT_CONTEXT" | jq -r '.stop_hook_active // false')
+# A native jq.exe under Git Bash ends its output in CRLF and $(...) strips
+# only the LF: a bare "true\r" would defeat the loop guard. Strip the one
+# trailing CR from every scalar compared below.
+STOP_HOOK_ACTIVE=${STOP_HOOK_ACTIVE%$'\r'}
 
 # Self-scoping guard: this hook has no matcher, so it fires for every
 # SubagentStop. Validate only when agent_type contains
 # domain-literature-researcher (substring tolerates plugin namespacing, e.g.
 # phillit:domain-literature-researcher); empty/missing agent_type also allows.
 AGENT_TYPE=$(echo "$SUBAGENT_CONTEXT" | jq -r '.agent_type // empty')
+AGENT_TYPE=${AGENT_TYPE%$'\r'}
 if [[ "$AGENT_TYPE" != *"domain-literature-researcher"* ]]; then
     allow
 fi
@@ -163,12 +168,15 @@ for bib_file in "${BIB_FILES[@]}"; do
         continue
     fi
     rm -f "$STDERR_LOG"
-    if ! VALID=$(echo "$RESULT" | jq -r 'if has("valid") then .valid | tostring else "true" end' 2>/dev/null); then
-        echo "WARNING: bib_validator.py produced non-JSON output: $RESULT" >&2
+    # Fail closed on any shape but an object with a boolean `valid`: a
+    # missing or non-boolean field once read as valid, a silent pass.
+    if ! VALID=$(echo "$RESULT" | jq -r 'if type == "object" and (.valid | type) == "boolean" then .valid | tostring else error("no boolean valid") end' 2>/dev/null); then
+        echo "WARNING: bib_validator.py output was not an object with a boolean valid: $RESULT" >&2
         SYNTAX_ERRORS="${SYNTAX_ERRORS}bib_validator.py crashed for $bib_file: $RESULT
 "
         continue
     fi
+    VALID=${VALID%$'\r'}
 
     if [[ "$VALID" == "false" ]]; then
         ERRORS=$(echo "$RESULT" | jq -r '.errors[]' 2>/dev/null || echo "$RESULT")
@@ -236,6 +244,8 @@ ${CLEAN_REPORTED}${CLEAN_ERR_TAIL}
 
         FIELDS_REMOVED=$(echo "$CLEAN_RESULT" | jq -r '.total_fields_removed // 0' 2>/dev/null || echo "0")
         ENTRIES_CLEANED=$(echo "$CLEAN_RESULT" | jq -r '.entries_cleaned // 0' 2>/dev/null || echo "0")
+        FIELDS_REMOVED=${FIELDS_REMOVED%$'\r'}
+        ENTRIES_CLEANED=${ENTRIES_CLEANED%$'\r'}
 
         if [[ "$FIELDS_REMOVED" =~ ^[0-9]+$ ]] && [[ "$FIELDS_REMOVED" -gt 0 ]]; then
             CLEANED_ENTRIES=$(echo "$CLEAN_RESULT" | jq -r '.cleaned_entries | to_entries[] | "  - \(.key): \(.value | join(", "))"' 2>/dev/null || true)

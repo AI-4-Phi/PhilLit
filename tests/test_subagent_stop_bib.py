@@ -718,7 +718,7 @@ def test_local_review_bibs_are_validated(tmp_path):
 
 
 def test_resolver_error_allows_with_a_visible_system_message(tmp_path):
-    # A review-state error (here: the files are "elsewhere") allows the stop,
+    # A review-state error (here: the local files are missing) allows the stop,
     # since the researcher cannot repair it, but never silently: stderr on
     # exit 0 is never shown, so the skip must ride a systemMessage.
     extra = {}
@@ -734,8 +734,8 @@ def test_resolver_error_on_resumed_pass_is_a_system_message(tmp_path):
     extra = {}
     proj, workdir = _local_review(tmp_path, extra)
     shutil.rmtree(workdir)
-    out, _, _ = _run({**RESEARCHER, "stop_hook_active": True}, proj, extra)
-    assert "decision" not in out and "SKIPPED" in out["systemMessage"]
+    out, code, _ = _run({**RESEARCHER, "stop_hook_active": True}, proj, extra)
+    assert code == 0 and "decision" not in out and "SKIPPED" in out["systemMessage"]
 
 
 def test_resolver_crash_fails_closed(tmp_path):
@@ -833,7 +833,7 @@ def test_a_resolved_folder_that_does_not_exist_is_a_system_message(tmp_path):
     proc = subprocess.run([BASH, str(SCRIPT)], input=json.dumps(RESEARCHER), capture_output=True,
                           text=True, encoding="utf-8", env=env)
     out = json.loads(proc.stdout)
-    assert "decision" not in out
+    assert proc.returncode == 0 and "decision" not in out
     assert missing in out["systemMessage"] and "SKIPPED" in out["systemMessage"]
 
 
@@ -874,3 +874,57 @@ def test_an_invalid_workdir_mode_blocks_instead_of_skipping(tmp_path):
     (proj / ".env").write_text("PHILLIT_WORKDIR=lcoal\n", encoding="utf-8")  # a typo
     out, _, _ = _run(RESEARCHER, proj, extra)
     assert out.get("decision") == "block" and "'lcoal'" in out["reason"]
+
+
+def _crlf_jq(tmp_path: Path) -> dict:
+    """PATH with a `jq` that ends every output line in CRLF, as a native
+    jq.exe does under Git Bash. pipefail keeps jq's own exit status, which
+    the hook's `jq -e` shape checks rely on."""
+    shim_dir = tmp_path / "crlf-jq"
+    shim_dir.mkdir()
+    shim = shim_dir / "jq"
+    shim.write_text("#!/usr/bin/env bash\nset -o pipefail\n"
+                    f"'{shutil.which('jq')}' \"$@\" | sed 's/$/\\r/'\n", encoding="utf-8")
+    shim.chmod(0o755)
+    return {"PATH": f"{shim_dir}{os.pathsep}{os.environ['PATH']}"}
+
+
+def _run_with(payload: dict, project_dir: Path, extra_env: dict, root: Path = REPO_ROOT):
+    env = {**os.environ, "CLAUDE_PROJECT_DIR": str(project_dir),
+           "CLAUDE_PLUGIN_ROOT": str(root), "PHILLIT_UV": UV, **extra_env}
+    proc = subprocess.run([BASH, str(SCRIPT)], input=json.dumps(payload), capture_output=True,
+                          text=True, encoding="utf-8", env=env)
+    return json.loads(proc.stdout.strip().splitlines()[-1]), proc.returncode
+
+
+class TestCrlfJq:
+    def test_invalid_bib_still_blocks(self, project, tmp_path):
+        (project / "reviews" / "test-review" / "d1.bib").write_text(INVALID_BIB, encoding="utf-8")
+        out, code = _run_with(RESEARCHER, project, _crlf_jq(tmp_path))
+        assert code == 0 and out.get("decision") == "block"
+
+    def test_resumed_pass_never_reblocks(self, project, tmp_path):
+        (project / "reviews" / "test-review" / "d1.bib").write_text(INVALID_BIB, encoding="utf-8")
+        out, code = _run_with({**RESEARCHER, "stop_hook_active": True}, project, _crlf_jq(tmp_path))
+        assert code == 0 and "decision" not in out and "BibTeX errors remain" in out["systemMessage"]
+
+
+@pytest.mark.parametrize("validator_stdout", ['{"errors": []}', '{"valid": "true"}', '[true]'])
+def test_validator_output_without_a_boolean_valid_fails_closed(project, tmp_path, validator_stdout):
+    (project / "reviews" / "test-review" / "d1.bib").write_text(VALID_BIB, encoding="utf-8")
+    out_file = tmp_path / "validator-out.txt"
+    out_file.write_text(validator_stdout + "\n", encoding="utf-8")
+    root = tmp_path / "stub-plugin"
+    (root / "bin").mkdir(parents=True)
+    run = root / "bin" / "phillit-run"
+    run.write_text(
+        "#!/usr/bin/env bash\n"
+        "case \"$1\" in\n"
+        "  *workdir.py) printf '{\"workdir\": \"%s/reviews/test-review\"}\\n' \"$CLAUDE_PROJECT_DIR\" ;;\n"
+        f"  *bib_validator.py) cat '{out_file}' ;;\n"
+        "esac\n",
+        encoding="utf-8",
+    )
+    run.chmod(0o755)
+    out, code = _run_with(RESEARCHER, project, {}, root)
+    assert code == 0 and out.get("decision") == "block" and "crashed" in out["reason"]
