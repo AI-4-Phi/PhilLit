@@ -9,9 +9,15 @@ label opens a kept section, an OUT label a dropped one (to the next label).
 Any other label - or text under no label, such as a colon-less heading after
 a `====` rule - raises UnknownLabel naming every offender: the list is not
 closed, and a silent default would either leak telemetry or drop analysis.
-Grow IN_LABELS or OUT_LABELS to admit a new label; never guess. The header
-block admits only `DOMAIN` and OUT labels: an IN label there is unknown, not
-a section. This is a LABEL list, never a sentence-level edit: run-mechanics
+The label sets do not grow to admit improvised labels: the researcher
+prompt forbids them, colon-less headings and section-dependent sub-labels
+(FOR:/AGAINST:). The header block admits only `DOMAIN` and OUT labels, and
+it ends at its closing rule or, when the researcher left that rule out, at
+the first IN label: an IN label is never legal in a header, so the cut is
+unambiguous. A block that raises UnknownLabel is withheld ALONE
+(`parse_or_withhold`): the notes file is still delivered, and the block's
+place names its unknown labels and counts its unlabelled lines, never
+quoting them. This is a LABEL list, never a sentence-level edit: run-mechanics
 prose inside NOTABLE_GAPS and writer-directed sentences inside
 RELEVANCE_TO_PROJECT stay untouched, and a provenance label appearing inside
 a kept note's own text is never normalised.
@@ -59,9 +65,10 @@ class UnknownLabel(ValueError):
     label, text before the block's own `====` header) - never conflated,
     since one names a token to add to a list and the other names prose."""
 
-    def __init__(self, labels=(), texts=()):
+    def __init__(self, labels=(), texts=(), title=""):
         self.labels = sorted(set(labels))
         self.texts = sorted(set(texts))
+        self.title = title                # the block's DOMAIN: value, if it has one
         parts = []
         if self.labels:
             parts.append("unrecognised label(s): " + ", ".join(self.labels))
@@ -75,6 +82,7 @@ class DomainNotes:
     title: str
     number: int | None
     sections: list[tuple[str, str]] = field(default_factory=list)
+    withheld: UnknownLabel | None = None  # set: render names it in place of the sections
 
 
 def is_comment_block(chunk: str) -> bool:
@@ -100,24 +108,49 @@ def _body(chunk: str) -> str:
     return chunk[start + 1: chunk.rstrip().rfind(close)]
 
 
+def _is_in_label(line: str) -> bool:
+    return (m := _LABEL_RE.match(line)) is not None and m.group(1) in IN_LABELS
+
+
+def _domain_title(lines: list[str]) -> str:
+    """The `DOMAIN:` value, joined across the lines it wraps onto (up to the
+    next label, rule or blank line)."""
+    for i, line in enumerate(lines):
+        m = _LABEL_RE.match(line)
+        if m and m.group(1) == "DOMAIN":
+            parts = [m.group(2).strip()]
+            for cont in lines[i + 1:]:
+                if not cont.strip() or _RULE_RE.match(cont) or _LABEL_RE.match(cont):
+                    break
+                parts.append(cont.strip())
+            return " ".join(p for p in parts if p)
+    return ""
+
+
 def parse_block(chunk: str) -> DomainNotes:
     lines = _body(chunk).split("\n")
-    rules = [i for i, line in enumerate(lines) if _RULE_RE.match(line)]
-    if len(rules) < 2:
-        raise UnknownLabel(texts=["<research block without its ==== header>"])
+    start = next((i for i, line in enumerate(lines) if _RULE_RE.match(line)), None)
+    # The header ends at its closing rule, or at the first IN label when the
+    # researcher left that rule out (see the module docstring).
+    end = None if start is None else next(
+        (i for i in range(start + 1, len(lines))
+         if _RULE_RE.match(lines[i]) or _is_in_label(lines[i])), None)
+    if end is None:
+        raise UnknownLabel(texts=["<research block without its ==== header>"],
+                           title=_domain_title(lines))
+    body_start = end + 1 if _RULE_RE.match(lines[end]) else end
     unknown_labels: list[str] = []
     unknown_texts: list[str] = []
-    for line in lines[:rules[0]]:
+    for line in lines[:start]:
         if line.strip():
             unknown_texts.append(line.strip()[:60])   # text before the block's own header
-    title = ""
-    for line in lines[rules[0] + 1: rules[1]]:
+    header = lines[start + 1: end]
+    title = _domain_title(header)
+    for line in header:
         m = _LABEL_RE.match(line)
         if not m:
             continue                      # a wrapped header value
-        if m.group(1) == "DOMAIN":
-            title = m.group(2).strip()
-        elif m.group(1) not in OUT_LABELS:
+        if m.group(1) != "DOMAIN" and m.group(1) not in OUT_LABELS:
             unknown_labels.append(m.group(1))
     num = _NUMBER_RE.match(title)
     notes = DomainNotes(title=title, number=int(num.group(1)) if num else None)
@@ -129,7 +162,7 @@ def parse_block(chunk: str) -> DomainNotes:
         if current and "\n".join(buf).strip():
             notes.sections.append((current, "\n".join(buf).strip()))
 
-    for line in lines[rules[1] + 1:]:
+    for line in lines[body_start:]:
         if _RULE_RE.match(line):
             flush()
             current, buf = None, []
@@ -154,8 +187,29 @@ def parse_block(chunk: str) -> DomainNotes:
         buf.append(line)
     flush()
     if unknown_labels or unknown_texts:
-        raise UnknownLabel(unknown_labels, unknown_texts)
+        raise UnknownLabel(unknown_labels, unknown_texts, title)
     return notes
+
+
+def parse_or_withhold(chunk: str) -> DomainNotes:
+    """`parse_block`, but a block outside the grammar comes back withheld
+    (no sections, `withheld` set) instead of raising, so it costs the
+    reader only its own domain's notes."""
+    try:
+        return parse_block(chunk)
+    except UnknownLabel as e:
+        num = _NUMBER_RE.match(e.title)
+        return DomainNotes(title=e.title, number=int(num.group(1)) if num else None, withheld=e)
+
+
+def _withheld_line(e: UnknownLabel) -> str:
+    what = []
+    if e.labels:
+        what.append("labels the notes format does not recognise (" + ", ".join(e.labels) + ")")
+    if e.texts:
+        what.append(f"{len(e.texts)} line(s) of text outside any section")
+    return ("> Notes withheld: this domain's research block used " + " and ".join(what)
+            + ". Its works are in the annotated bibliography.")
 
 
 def render(domains: list[DomainNotes], defs: dict[str, str], project: str) -> str:
@@ -172,12 +226,14 @@ def render(domains: list[DomainNotes], defs: dict[str, str], project: str) -> st
     ordered = (sorted(domains, key=lambda d: d.number)
                if all(d.number is not None for d in domains) else list(domains))
     kept = "\n".join([d.title for d in ordered]
-                     + [t for d in ordered for _, t in d.sections])
+                     + [t for d in ordered for _, t in d.sections])   # withheld: title only
     missing = [t for t in fault_lines.tags_in(kept) if t not in defs]
     if missing:
         raise fault_lines.UndefinedFaultLine(missing)
     for d in ordered:
         out += [f"## {fault_lines.substitute(d.title or 'Domain', defs)}", ""]
+        if d.withheld is not None:
+            out += [_withheld_line(d.withheld), ""]
         for label, text in d.sections:
             out += [f"### {_heading(label)}", "", fault_lines.substitute(text, defs), ""]
     return "\n".join(out).rstrip() + "\n"

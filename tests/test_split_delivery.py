@@ -185,20 +185,35 @@ def test_a_dropped_comment_that_held_analysis_is_noticed(tmp_path):
     assert "SPLIT-NOTICE:" in _out(r) and "KEY_POSITIONS" not in bib.read_text(encoding="utf-8")
 
 
-def test_an_unknown_label_writes_the_bibs_but_not_the_notes(tmp_path):
-    bad = COMMENT.replace("SYNTHESIS_GUIDANCE:", "SCOPE NOTE:").replace("FL1.1", "FL9.9")
-    bib, plan = _review(tmp_path, bad + "\n" + ENTRY)
+def test_an_unknown_label_withholds_only_that_domains_notes(tmp_path):
+    bad = (COMMENT.replace("1 -- Anatomy", "2 -- Grey")
+           .replace("SYNTHESIS_GUIDANCE:", "SCOPE NOTE:").replace("FL1.1", "FL9.9"))
+    bib, plan = _review(tmp_path, COMMENT + "\n" + bad + "\n" + ENTRY)
+    r = _cli(bib, plan)
+    assert r.returncode == 0
+    out = _out(r)
+    assert "SPLIT-ERROR:" not in out
+    assert "SPLIT-NOTICE:" in out and "'2 -- Grey'" in out and "SCOPE NOTE" in out
+    assert ("the research blocks are kept in "
+            "intermediate_files/literature-sop-merged.bib") in out
+    s = _summary(r)
+    assert s["written"] == ["literature-sop.bib", "literature-sop-annotated.bib",
+                            "research-notes-sop.md"]
+    assert s["domains"] == 2 and s["withheld_domains"] == 1
+    notes = (tmp_path / "research-notes-sop.md").read_text(encoding="utf-8")
+    assert "## 1 -- Anatomy" in notes and "## 2 -- Grey" in notes
+    assert "Notes withheld" in notes and "FL9.9" not in notes   # the withheld text never ships
+
+
+def test_an_undefined_tag_in_delivered_notes_withholds_the_file(tmp_path):
+    bib, plan = _review(tmp_path, COMMENT.replace("FL1.1", "FL9.9") + "\n" + ENTRY)
     stale = tmp_path / "research-notes-sop.md"
     stale.write_text("an older run's notes", encoding="utf-8")
     r = _cli(bib, plan)
     assert r.returncode == 2
     out = _out(r)
-    assert "SPLIT-ERROR:" in out and "SCOPE NOTE" in out
-    assert "FL9.9" in out                       # every offender named in one run
-    assert _summary(r)["written"] == ["literature-sop.bib", "literature-sop-annotated.bib"]
+    assert "SPLIT-ERROR: research-notes-sop.md not written" in out and "FL9.9" in out
     assert not stale.exists()                   # no stale file beside fresh ones
-    assert ("the research blocks are kept in "
-            "intermediate_files/literature-sop-merged.bib") in out
 
 
 def test_an_undefined_tag_withholds_only_the_annotated_bib(tmp_path):
@@ -261,11 +276,11 @@ def test_a_non_utf8_input_is_a_clean_error(tmp_path):
     assert r.returncode == 1 and "SPLIT-ERROR:" in _out(r)
 
 
-def test_error_lines_stay_ascii_for_a_non_ascii_label(tmp_path):
+def test_report_lines_stay_ascii_for_a_non_ascii_label(tmp_path):
     bad = COMMENT.replace("SYNTHESIS_GUIDANCE:", f"{RULE}\nÉTUDE ANNEXE\n")
     bib, plan = _review(tmp_path, bad + "\n" + ENTRY)
     r = _cli(bib, plan)
-    assert r.returncode == 2
+    assert r.returncode == 0
     assert "\\xc9TUDE" in _out(r)              # escaped, and _out() proves all-ASCII
 
 

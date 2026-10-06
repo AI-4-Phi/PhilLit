@@ -21,8 +21,10 @@ never by shape, since an ALL-CAPS topical keyword (XCONST, POLCON, ...)
 shares that shape; the track record keeps them all. Each output is computed
 whole in memory; the track record is always written unless it fails to
 parse; the annotated bib is withheld when a note or keyword carries an
-undefined fault-line tag; the notes file is withheld on an unrecognised
-label, unlabelled text, or an undefined tag in its text; a file this run
+undefined fault-line tag; a domain's research block is withheld alone (a
+SPLIT-NOTICE, its place named in the notes file) on an unrecognised label
+or unlabelled text, and the notes file only on an undefined tag in the
+text it would deliver; a file this run
 does not write is deleted if an older copy exists. Before the track record
 overwrites the merged bib (its only input), the merged bib is saved to
 `intermediate_files/literature-<project>-merged.bib`.
@@ -247,30 +249,21 @@ def split(bib_path: Path, plan_path: Path | None) -> dict:
         errors.append(annotated_error)
 
     notes_md = None
-    domains, unknown_labels, unknown_texts = [], set(), set()
-    for chunk in research:
-        try:
-            domains.append(research_notes.parse_block(chunk))
-        except research_notes.UnknownLabel as e:
-            unknown_labels.update(e.labels)
-            unknown_texts.update(e.texts)
+    domains = [research_notes.parse_or_withhold(chunk) for chunk in research]
     # The backup is written below whenever track_text is not None -- named
     # here too (mirroring the annotated-withheld addendum) so an operator
-    # knows the research blocks survive even when the notes file does not.
+    # knows the research blocks survive even when their notes do not.
     kept_at = (f"; the research blocks are kept in intermediate_files/{backup_path.name}"
               if track_text is not None else "")
-    if unknown_labels or unknown_texts:
-        raw_undefined = [t for t in fault_lines.tags_in("\n".join(research)) if t not in defs]
-        msg = (f"{notes_path.name} not written: "
-              + str(research_notes.UnknownLabel(unknown_labels, unknown_texts)))
-        if raw_undefined:
-            msg += "; " + str(fault_lines.UndefinedFaultLine(raw_undefined))
-        errors.append(msg + kept_at)
-    else:
-        try:
-            notes_md = research_notes.render(domains, defs, project)
-        except fault_lines.UndefinedFaultLine as e:
-            errors.append(f"{notes_path.name} not written: {e}" + kept_at)
+    for d in domains:
+        if d.withheld is not None:
+            notices.append(f"{notes_path.name}: the notes for domain "
+                           f"'{d.title or '(no DOMAIN: line)'}' were withheld: {d.withheld}"
+                           + kept_at)
+    try:
+        notes_md = research_notes.render(domains, defs, project)
+    except fault_lines.UndefinedFaultLine as e:
+        errors.append(f"{notes_path.name} not written: {e}" + kept_at)
 
     # The merged bib -- notes, comment blocks and all -- is backed up to
     # intermediate_files/ BEFORE anything else is written, whenever the track
@@ -298,7 +291,9 @@ def split(bib_path: Path, plan_path: Path | None) -> dict:
         written.insert(0, bib_path.name)
     return {"written": written, "errors": errors, "notices": notices,
             "entries": entries, "research_blocks": len(research),
-            "domains": len(domains), "backup": backup_name}
+            "domains": len(domains),
+            "withheld_domains": sum(d.withheld is not None for d in domains),
+            "backup": backup_name}
 
 
 def _say(line: str) -> None:

@@ -729,7 +729,7 @@ KEY_POSITIONS:
 }
 ```
 
-**`@comment` labels — REQUIRED: use only the template's.** The header takes `DOMAIN`, `SEARCH_DATE`, `PAPERS_FOUND` and `SEARCH_SOURCES`; the body takes `DOMAIN_OVERVIEW`, `RELEVANCE_TO_PROJECT`, `NOTABLE_GAPS`, `SYNTHESIS_GUIDANCE` and `KEY_POSITIONS`. Put any further analysis inside one of those sections, as prose or bullets. Do not add a label of your own: no line in the block may start with another ALL-CAPS word or phrase and a colon (`GREY_LITERATURE:`, `FOR:`). The user's research-notes file is built from this block, and one unknown label withholds the whole file.
+**`@comment` labels — REQUIRED: use only the template's.** The header takes `DOMAIN`, `SEARCH_DATE`, `PAPERS_FOUND` and `SEARCH_SOURCES`; the body takes `DOMAIN_OVERVIEW`, `RELEVANCE_TO_PROJECT`, `NOTABLE_GAPS`, `SYNTHESIS_GUIDANCE` and `KEY_POSITIONS`. Put any further analysis inside one of those sections, as prose or bullets. Do not add a label of your own: no line in the block may start with another ALL-CAPS word or phrase and a colon (`GREY_LITERATURE:`, `INCOMPLETE:`), and that includes sub-labels inside a section (`FOR:`, `AGAINST:`, `CONTROL:`) — write those as bullets (`- For: ...`). Do not write a heading without a colon either (`FAULT LINES (proposition, positions)` on a line of its own). **The block has exactly three `====` lines, as in the template:** one opening it, one closing the header right after `SEARCH_SOURCES`, one closing the block. Never leave out the second. The user's research-notes file is built from this block: a block that breaks these rules loses your domain's notes, and the file shows "Notes withheld" in their place.
 
 **Never write `abstract` or `abstract_source` fields yourself** — `enrich_bibliography.py` (Stage 5.5) is their sole author. The evidence barrier attests a hand-written abstract only if it matches
 an API's text exactly (whitespace-insensitive); anything else earns no
@@ -798,7 +798,7 @@ See `$PHILLIT_ROOT/docs/conventions.md` for citation key format, author name for
 ✅ **File Quality**:
 - [ ] Valid BibTeX syntax (hooks validate automatically; fix if Write is denied)
 - [ ] UTF-8 encoding preserved
-- [ ] @comment section complete, with the template's labels only (extra analysis sits inside one of them)
+- [ ] @comment section complete: the template's labels only (extra analysis sits inside one of them, no sub-labels, no colon-less headings) and all three `====` lines
 - [ ] 10-20 papers per domain
 
 **If any check fails, fix before submitting.**

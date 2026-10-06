@@ -192,3 +192,55 @@ New content.
     d = rn.parse_block(block(body=body))
     md = rn.render([d], DEFS, "p")
     assert "### Extra section" in md
+
+
+def test_a_header_missing_its_closing_rule_ends_at_the_first_in_label():
+    # The 2026-09-24 drift: the rule after SEARCH_SOURCES left out, so the
+    # header once ran down to the block's final rule.
+    chunk = block().replace(f"SEARCH_SOURCES: SEP, PhilPapers\n{RULE}\n", "SEARCH_SOURCES: SEP, PhilPapers\n", 1)
+    assert chunk.count(RULE) == 2
+    d = rn.parse_block(chunk)
+    assert d.title == "1 -- Conceptual Anatomy"
+    assert [label for label, _ in d.sections] == [
+        "DOMAIN_OVERVIEW", "KEY_POSITIONS", "NOTABLE_GAPS",
+        "SYNTHESIS_GUIDANCE", "RELEVANCE_TO_PROJECT"]
+    text = "\n".join(t for _, t in d.sections)
+    assert "SEARCH_DATE" not in text and "7 article" not in text
+
+
+def test_a_header_with_neither_closing_rule_nor_in_label_still_fails():
+    chunk = f"@comment{{\n{RULE}\nDOMAIN: 2 -- X\nSEARCH_DATE: 2026-09-10\n}}\n"
+    with pytest.raises(rn.UnknownLabel) as exc:
+        rn.parse_block(chunk)
+    assert exc.value.title == "2 -- X"
+
+
+def test_a_failing_block_is_withheld_alone_and_named_in_its_place():
+    bad = rn.parse_or_withhold(block("6 -- Grey", body=BODY.replace("NOTABLE_GAPS:", "GREY_LITERATURE:\nx\n\nNOTABLE_GAPS:")))
+    good = rn.parse_or_withhold(block("2 -- Fine"))
+    assert bad.withheld is not None and bad.number == 6 and bad.sections == []
+    assert good.withheld is None
+    md = rn.render([bad, good], DEFS, "p")
+    assert "## 6 -- Grey" in md and "GREY_LITERATURE" in md and "Notes withheld" in md
+    assert "annotated bibliography" in md
+    assert md.count("### Domain overview") == 1           # only the good block's sections
+    assert md.index("## 2 -- Fine") < md.index("## 6 -- Grey")
+
+
+def test_a_withheld_block_names_unlabelled_text_by_count_not_content():
+    d = rn.parse_or_withhold(block(body="\nSome private run mechanics.\n\nDOMAIN_OVERVIEW:\nKept.\n"))
+    md = rn.render([d], DEFS, "p")
+    assert "1 line(s) of text outside any section" in md
+    assert "private run mechanics" not in md
+
+
+def test_a_withheld_blocks_own_tags_never_fail_the_render():
+    d = rn.parse_or_withhold(block(body=BODY.replace("KEY_POSITIONS:", "FOR:\nFL9.9\n\nKEY_POSITIONS:")))
+    assert d.withheld is not None
+    assert "Notes withheld" in rn.render([d], DEFS, "p")   # FL9.9 sat in the withheld text
+
+
+def test_a_wrapped_domain_title_is_joined():
+    d = rn.parse_block(block("8 -- Critical Perspectives -- Deflationism, and\n        Skepticism about the Framing"))
+    assert d.title == "8 -- Critical Perspectives -- Deflationism, and Skepticism about the Framing"
+    assert d.number == 8
