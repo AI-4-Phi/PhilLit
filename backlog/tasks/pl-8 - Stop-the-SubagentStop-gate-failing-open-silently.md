@@ -1,9 +1,10 @@
 ---
 id: PL-8
 title: Stop the SubagentStop gate failing open silently
-status: Needs Johannes
+status: To Do
 assignee: []
 created_date: '2026-09-25 19:18'
+updated_date: '2026-10-06 07:11'
 labels:
   - hooks
 dependencies: []
@@ -12,7 +13,7 @@ references:
   - skills/literature-review/scripts/workdir.py
 type: bug
 project: Accuracy
-ordinal: 2000
+ordinal: 1000
 ---
 
 ## Description
@@ -24,7 +25,7 @@ The SubagentStop gate fails open silently when the review cannot be resolved. Wh
 
 The barrier later reports the missing cleaning ledger as `degraded`, so the skip shows up downstream. Configuration errors already fail closed (`ConfigError`, exit 1).
 
-**Decision needed:** for these review states, a `systemMessage` (visible, and the stop is allowed) or a block?
+**Ruling:** emit a `systemMessage` that names the cause and says validation and cleaning were skipped, and allow the stop. Do not block: the researcher cannot repair a pointer or a missing folder, so a block costs a wasted turn and ends in the same state. The fix covers both silent allows in `hooks/subagent_stop_bib.sh`: the resolver `{error}` answer and the resolved folder that does not exist. Pin both in the hook tests.
 
 PL-1 (stop the SubagentStop hook rewriting user bibs) shipped in 0.5.33: the root sweep takes `literature-domain-*.bib` only, and an allow prints `{}`.
 <!-- SECTION:DESCRIPTION:END -->

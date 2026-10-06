@@ -1,9 +1,10 @@
 ---
 id: PL-11
 title: Confirm how in-place init treats finished reviews
-status: Needs Johannes
+status: Done
 assignee: []
 created_date: '2026-09-25 19:18'
+updated_date: '2026-10-06 07:27'
 labels:
   - workdir
 dependencies: []

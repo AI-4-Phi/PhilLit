@@ -1,9 +1,10 @@
 ---
 id: PL-10
 title: Barrier self-check on its own output
-status: Needs Johannes
+status: To Do
 assignee: []
 created_date: '2026-09-25 19:18'
+updated_date: '2026-10-06 07:15'
 labels:
   - barrier
 dependencies: []
@@ -24,5 +25,5 @@ The barrier blesses its own output wholesale, not just its stamps. After writing
 
 The guard is an invariant: the output must equal the input under a canonical projection that strips what the barrier owns: the `EVIDENCE-*` tokens in `keywords`, and the `year_suffix`, `web_span`, `venue_status`, `same_work_group`, `urldate` and `archiveurl` fields.
 
-**Decision needed:** build a narrow guard (check the invariant and keep re-pointing), or use the same projection AS the binding, which removes the need to re-point at all? Weigh the two before building either.
+**Ruling: narrow guard.** Keep the re-point. Before `_repoint_binding` runs for a domain, check that the input bib and the written bib are equal under the projection. If they differ, do not re-point: the domain fails loudly, naming the entries that changed. No ledger schema change. The projection must use `bib_fields.iter_fields` / `remove_field`, never a new field regex. Pin it with a mutation test: a renderer that alters a key, title, year or author, or drops an entry, must trip the guard.
 <!-- SECTION:DESCRIPTION:END -->

@@ -1,19 +1,21 @@
 ---
 id: PL-7
-title: 'Research-notes label grammar: choose the fix'
-status: Needs Johannes
+title: 'Research-notes grammar: header recovery and per-block withholding'
+status: To Do
 assignee: []
 created_date: '2026-09-25 19:18'
+updated_date: '2026-10-06 07:13'
 labels:
   - notes
+  - test-run
 dependencies: []
 references:
   - skills/literature-review/scripts/research_notes.py
   - skills/literature-review/scripts/split_delivery.py
   - agents/domain-literature-researcher.md
-type: decision
+type: feature
 project: Delivery
-ordinal: 1000
+ordinal: 2000
 ---
 
 ## Description
@@ -27,7 +29,9 @@ ordinal: 1000
 
 Reproduce the block drift from the 2026-09-24 run's `intermediate_files/literature-<id>-merged.bib`, always on a COPY, because the split rewrites its input. A reproducer is saved locally (untracked) in `docs/known-issues/research-notes-split-2026-09-24/`.
 
-**Decision needed:** `research_notes.py` marks the label grammar "DECIDED, do not reopen", so the fix is Johannes's call. It is two questions:
-1. **Malformed headers.** How does a block whose header lacks the closing `====` rule recover? Harden the researcher prose that asks for the rule, make the parser end the header at the first IN label, or both.
-2. **Structures outside the grammar** (improvised labels, colon-less headings, section-dependent sub-labels). Accept them by growing the label sets, which cannot cover the last two; forbid them in the researcher prompt (it forbids improvised labels since 0.5.34; colon-less headings would need a further line); or represent them another way.
+**Ruling:**
+1. **Malformed headers: both.** The researcher prompt makes the closing `====` rule a REQUIRED item with an example. The parser ends the header at the first IN label, since an IN label is never legal in a header. This replaces the docstring sentence "an IN label there is unknown, not a section".
+2. **Structures outside the grammar: forbid, and withhold per block.** The grammar stays strict and the label sets do not grow. The researcher prompt also forbids colon-less headings and section-dependent sub-labels (FOR/AGAINST/CONTROL). An `UnknownLabel` withholds only the offending domain's block: the notes file is still delivered, and that domain's place carries a visible line naming every unknown label and pointing to the annotated bibliography.
+
+Update the DECIDED docstring in `research_notes.py` to the new rule. Validate with the 2026-09-24 reproducer (on a copy) and one headless run.
 <!-- SECTION:DESCRIPTION:END -->
