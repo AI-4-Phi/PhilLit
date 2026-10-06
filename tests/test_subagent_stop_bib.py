@@ -894,7 +894,9 @@ def _run_with(payload: dict, project_dir: Path, extra_env: dict, root: Path = RE
            "CLAUDE_PLUGIN_ROOT": str(root), "PHILLIT_UV": UV, **extra_env}
     proc = subprocess.run([BASH, str(SCRIPT)], input=json.dumps(payload), capture_output=True,
                           text=True, encoding="utf-8", env=env)
-    return json.loads(proc.stdout.strip().splitlines()[-1]), proc.returncode
+    lines = proc.stdout.strip().splitlines()
+    assert len(lines) == 1, proc.stdout     # one decision, never two
+    return json.loads(lines[0]), proc.returncode
 
 
 class TestCrlfJq:
@@ -909,7 +911,11 @@ class TestCrlfJq:
         assert code == 0 and "decision" not in out and "BibTeX errors remain" in out["systemMessage"]
 
 
-@pytest.mark.parametrize("validator_stdout", ['{"errors": []}', '{"valid": "true"}', '[true]'])
+@pytest.mark.parametrize("validator_stdout", [
+    '{"errors": []}', '{"valid": "true"}', '[true]',
+    ' ', '\r',                                     # whitespace parses to NO value
+    '{"valid": false}\n{"valid": false}',          # two answers, "false<LF>false"
+])
 def test_validator_output_without_a_boolean_valid_fails_closed(project, tmp_path, validator_stdout):
     (project / "reviews" / "test-review" / "d1.bib").write_text(VALID_BIB, encoding="utf-8")
     out_file = tmp_path / "validator-out.txt"
@@ -928,3 +934,26 @@ def test_validator_output_without_a_boolean_valid_fails_closed(project, tmp_path
     run.chmod(0o755)
     out, code = _run_with(RESEARCHER, project, {}, root)
     assert code == 0 and out.get("decision") == "block" and "crashed" in out["reason"]
+
+
+class TestErrTrap:
+    """A set -e death would exit nonzero with no JSON: a silent allow. The
+    ERR trap turns it into a decision. A failing mktemp is the probe."""
+
+    @staticmethod
+    def _failing_mktemp(tmp_path: Path) -> dict:
+        shim_dir = tmp_path / "bad-mktemp"
+        shim_dir.mkdir()
+        shim = shim_dir / "mktemp"
+        shim.write_text("#!/bin/sh\nexit 1\n", encoding="utf-8")
+        shim.chmod(0o755)
+        return {"PATH": f"{shim_dir}{os.pathsep}{os.environ['PATH']}"}
+
+    def test_first_pass_blocks(self, project, tmp_path):
+        out, code = _run_with(RESEARCHER, project, self._failing_mktemp(tmp_path))
+        assert code == 0 and out.get("decision") == "block" and "failed at line" in out["reason"]
+
+    def test_resumed_pass_allows_visibly(self, project, tmp_path):
+        out, code = _run_with({**RESEARCHER, "stop_hook_active": True}, project,
+                              self._failing_mktemp(tmp_path))
+        assert code == 0 and "decision" not in out and "failed at line" in out["systemMessage"]

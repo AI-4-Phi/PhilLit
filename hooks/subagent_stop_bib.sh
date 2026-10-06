@@ -21,6 +21,23 @@
 
 set -e
 
+# Any command that kills the script under set -e would exit nonzero with no
+# JSON, and Claude Code treats that as an allow: a SILENT fail-open. The trap
+# turns it into a decision. Fixed text only (no jq: it may be the failure).
+# It blocks only on a first pass that is KNOWN to be one; on a resumed pass,
+# or before stdin is parsed, it allows visibly, so a crash cannot loop.
+STOP_HOOK_ACTIVE=""
+on_error() {
+    local msg="subagent_stop_bib.sh failed at line $1 - BibTeX validation and cleaning did not complete for this researcher."
+    if [[ "$STOP_HOOK_ACTIVE" == "false" ]]; then
+        printf '{"decision": "block", "reason": "%s"}\n' "$msg"
+    else
+        printf '{"systemMessage": "PhilLit: %s"}\n' "$msg"
+    fi
+    exit 0
+}
+trap 'on_error $LINENO' ERR
+
 allow() {
     echo '{}'
     exit 0
@@ -114,10 +131,12 @@ skipped() {
     exit 0
 }
 
-# tr: a native jq.exe under Git Bash emits CRLF, and $(...) strips only the LF.
-REVIEW_DIR=$(echo "$RESOLVED" | jq -r '.workdir // empty' | tr -d '\r')
+# A native jq.exe under Git Bash emits CRLF, and $(...) strips only the LF.
+REVIEW_DIR=$(echo "$RESOLVED" | jq -r '.workdir // empty')
+REVIEW_DIR=${REVIEW_DIR%$'\r'}
 if [[ -z "$REVIEW_DIR" ]]; then
-    skipped "no active review directory ($(echo "$RESOLVED" | jq -r '.error' | tr -d '\r'))"
+    RESOLVE_ERROR=$(echo "$RESOLVED" | jq -r '.error')
+    skipped "no active review directory (${RESOLVE_ERROR%$'\r'})"
 fi
 
 if [[ ! -d "$REVIEW_DIR" ]]; then
@@ -177,6 +196,15 @@ for bib_file in "${BIB_FILES[@]}"; do
         continue
     fi
     VALID=${VALID%$'\r'}
+    # Exactly one true or false: whitespace-only output parses to NO value
+    # (jq exits 0, VALID empty) and two objects give "false<LF>false", and
+    # either would otherwise read as valid. Exit status cannot replace this:
+    # the validator exits 1 for invalid BibTeX AND for an uncaught exception.
+    if [[ "$VALID" != "true" && "$VALID" != "false" ]]; then
+        SYNTAX_ERRORS="${SYNTAX_ERRORS}bib_validator.py crashed for $bib_file (output was not one object with a boolean valid): $RESULT
+"
+        continue
+    fi
 
     if [[ "$VALID" == "false" ]]; then
         ERRORS=$(echo "$RESULT" | jq -r '.errors[]' 2>/dev/null || echo "$RESULT")
