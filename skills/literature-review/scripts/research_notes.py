@@ -70,12 +70,7 @@ class UnknownLabel(ValueError):
         self.texts = sorted(set(texts))
         self.title = title                # the block's DOMAIN: value, if it has one
         self.no_header = no_header        # no ==== rule to open a header at all
-        parts = []
-        if self.labels:
-            parts.append("unrecognised label(s): " + ", ".join(self.labels))
-        if self.texts:
-            parts.append("unlabelled text: " + ", ".join(self.texts))
-        super().__init__("; ".join(parts))
+        super().__init__(self.reader_summary())   # never the texts themselves
 
     def reader_summary(self) -> str:
         """What went wrong, for the reader and the user: label NAMES only.
@@ -132,15 +127,19 @@ _TITLE_WRAP_LINES = 2     # measured: real titles wrap onto one line at most
 _TITLE_MAX = 200
 
 
-def _domain_title(lines: list[str]) -> str:
+def _domain_title(lines: list[str], join: bool = True) -> str:
     """The `DOMAIN:` value, joined across at most two lines it wraps onto
     (up to the next label, rule or blank line). A join past _TITLE_MAX keeps
     the first line: the title is delivered even when its block is withheld,
-    so it must not swallow a stray paragraph."""
+    so it must not swallow a stray paragraph. `join=False` gives the first
+    line alone: the name of a WITHHELD block, whose wrap could be a stray
+    line (run telemetry, a tag) that would otherwise ship."""
     for i, line in enumerate(lines):
         m = _LABEL_RE.match(line)
         if m and m.group(1) == "DOMAIN":
             first = m.group(2).strip()
+            if not join:
+                return first
             parts = [first]
             for cont in lines[i + 1: i + 1 + _TITLE_WRAP_LINES]:
                 if not cont.strip() or _RULE_RE.match(cont) or _LABEL_RE.match(cont):
@@ -161,7 +160,7 @@ def parse_block(chunk: str) -> DomainNotes:
          if _RULE_RE.match(lines[i]) or _is_in_label(lines[i])), None)
     if end is None:
         raise UnknownLabel(texts=["<research block without its ==== header>"],
-                           title=_domain_title(lines), no_header=start is None)
+                           title=_domain_title(lines, join=False), no_header=start is None)
     body_start = end + 1 if _RULE_RE.match(lines[end]) else end
     unknown_labels: list[str] = []
     unknown_texts: list[str] = []
@@ -220,7 +219,7 @@ def parse_block(chunk: str) -> DomainNotes:
         buf.append(line)
     flush()
     if unknown_labels or unknown_texts:
-        raise UnknownLabel(unknown_labels, unknown_texts, title)
+        raise UnknownLabel(unknown_labels, unknown_texts, _domain_title(header, join=False))
     return notes
 
 
@@ -250,9 +249,9 @@ def render(domains: list[DomainNotes], defs: dict[str, str], project: str) -> st
         out.append("No per-domain research notes were recorded.")
         return "\n".join(out) + "\n"
     # Numbered headers sort by number (the glob that feeds dedupe puts
-    # domain-10 before domain-2); otherwise the order dedupe carried them in.
-    ordered = (sorted(domains, key=lambda d: d.number)
-               if all(d.number is not None for d in domains) else list(domains))
+    # domain-10 before domain-2); a numberless block (a withheld one can be)
+    # goes last, in the order dedupe carried it in (sorted is stable).
+    ordered = sorted(domains, key=lambda d: (d.number is None, d.number or 0))
     kept = "\n".join([d.title for d in ordered]
                      + [t for d in ordered for _, t in d.sections])   # withheld: title only
     missing = [t for t in fault_lines.tags_in(kept) if t not in defs]

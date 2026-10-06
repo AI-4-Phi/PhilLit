@@ -281,8 +281,44 @@ def test_a_block_with_no_rule_says_so():
 
 
 def test_when_every_block_is_withheld_the_file_still_names_each():
-    a = rn.parse_or_withhold(block("1 -- A", body="\nFOR: x\n"))
-    b = rn.parse_or_withhold(block("2 -- B", body="\nAGAINST: y\n"))
+    a = rn.parse_or_withhold(block("1 -- A", body="\nFOR: zzqx-one\n"))
+    b = rn.parse_or_withhold(block("2 -- B", body="\nAGAINST: zzqx-two\n"))
     md = rn.render([b, a], DEFS, "p")
     assert md.count("Notes withheld") == 2 and md.index("## 1 -- A") < md.index("## 2 -- B")
-    assert "x" not in md.split("## 1 -- A")[1].split("## 2")[0].replace("text outside", "")
+    assert "zzqx" not in md
+
+
+def test_a_withheld_block_is_named_by_its_first_title_line_only():
+    # The join can swallow a stray line; a withheld block's title is
+    # delivered (heading and notice), so it must not carry one.
+    d = rn.parse_or_withhold(block("7 -- Drones\nrun id 9f3a2c, tokens 48211", body="\nFOR: x\n"))
+    assert d.title == "7 -- Drones"
+    assert "9f3a2c" not in rn.render([d], DEFS, "p")
+
+
+def test_an_undefined_tag_in_a_withheld_blocks_title_tail_spares_the_file():
+    d = rn.parse_or_withhold(block("3 -- X\nsee FL9.9 for the framing", body="\nFOR: bad\n"))
+    assert "Notes withheld" in rn.render([d], DEFS, "p")
+
+
+def test_numberless_domains_sort_after_numbered_ones():
+    d10, d2 = rn.parse_block(block("10 -- Late")), rn.parse_block(block("2 -- Early"))
+    bare = rn.parse_or_withhold("@comment{\nDOMAIN_OVERVIEW:\nx\n}\n")
+    md = rn.render([d10, bare, d2], DEFS, "p")
+    assert md.index("## 2 -- Early") < md.index("## 10 -- Late") < md.index("\n## Domain\n")
+
+
+def test_a_missing_closing_rule_with_a_blank_line_before_the_first_in_label_recovers():
+    chunk = block().replace(f"SEARCH_SOURCES: SEP, PhilPapers\n{RULE}\n", "SEARCH_SOURCES: SEP, PhilPapers\n\n", 1)
+    assert [label for label, _ in rn.parse_block(chunk).sections][0] == "DOMAIN_OVERVIEW"
+
+
+def test_a_trailing_blank_line_in_a_well_formed_header_is_fine():
+    chunk = block().replace(f"SEARCH_SOURCES: SEP, PhilPapers\n{RULE}\n", f"SEARCH_SOURCES: SEP, PhilPapers\n\n{RULE}\n", 1)
+    assert rn.parse_block(chunk).title == "1 -- Conceptual Anatomy"
+
+
+def test_the_exception_text_never_quotes_unlabelled_text():
+    with pytest.raises(rn.UnknownLabel) as exc:
+        rn.parse_block(block(body="\nSecret telemetry.\n\nDOMAIN_OVERVIEW:\nKept.\n"))
+    assert "Secret telemetry" not in str(exc.value)

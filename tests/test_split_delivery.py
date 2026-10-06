@@ -367,3 +367,10 @@ def test_the_safety_net_keeps_the_three_deliverables(tmp_path):
     for name in keep:
         assert (rd / name).exists(), name
     assert (rd / "intermediate_files" / "stray.txt").exists()
+
+
+def test_a_block_without_a_header_rule_is_named_so_in_the_notice(tmp_path):
+    bare = "@comment{\nDOMAIN: 2 -- Bare\nDOMAIN_OVERVIEW:\nx\n}\n"
+    bib, plan = _review(tmp_path, COMMENT + "\n" + bare + "\n" + ENTRY)
+    r = _cli(bib, plan)
+    assert r.returncode == 0 and "'2 -- Bare' were withheld: the block had no ==== header" in _out(r)
