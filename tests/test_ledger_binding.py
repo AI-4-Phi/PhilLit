@@ -625,3 +625,69 @@ class TestEnrichmentVersionIsPinnedToItsOwnProducer:
         for v in (2, 3):
             rep = self._review(tmp_path / f"v{v}", v)
             assert rep["domains"]["1"]["enrichment_ledger"] == "malformed", v
+
+
+class TestBarrierSelfCheck:
+    """PL-10: the barrier re-points the binding to text it wrote, so a bug in
+    its renderer would be trusted at once. Before writing anything, the
+    output must equal the input with the barrier's own fields set aside;
+    otherwise the run fails and nothing is written or re-pointed."""
+
+    _scaffold = TestRepointSurvivesPartialFailure._scaffold
+
+    def _run_with_mutation(self, tmp_path, monkeypatch, mutate):
+        import evidence_barrier as eb
+        rd, ij = self._scaffold(tmp_path, 1)
+        real = eb.run_barrier
+
+        def mutated(*a, **kw):
+            report, outputs = real(*a, **kw)
+            return report, {p: mutate(c) for p, c in outputs.items()}
+
+        monkeypatch.setattr(eb, "run_barrier", mutated)
+        code = eb.execute(rd, 1)
+        rep = json.loads((ij / "evidence_report.json").read_text(encoding="utf-8"))
+        led = json.loads((ij / "cleaning_ledger-literature-domain-1.json")
+                         .read_text(encoding="utf-8"))
+        return code, rep, led, rd
+
+    @pytest.mark.parametrize("mutate", [
+        lambda c: c.replace("kuhn1962structure", "kuhn1962structurex"),
+        lambda c: c.replace("Scientific Revolutions", "Scientific Evolutions"),
+        lambda c: c.replace("1962", "1963"),
+        lambda c: c.replace("Kuhn, Thomas", "Kuhn, T."),
+        lambda c: c.split("@book")[0],                      # the entry dropped
+        lambda c: c + "\n@misc{extra2020, title = {Added}}\n",
+    ], ids=["key", "title", "year", "author", "dropped", "added"])
+    def test_a_renderer_change_fails_the_run_and_writes_nothing(
+            self, tmp_path, monkeypatch, mutate):
+        code, rep, led, rd = self._run_with_mutation(tmp_path, monkeypatch, mutate)
+        assert code == 1 and rep["status"] == "failed"
+        assert rep["self_check_failed"]["literature-domain-1.bib"]
+        assert (rd / "literature-domain-1.bib").read_text(encoding="utf-8") == KUHN
+        assert led["bib_sha256"] == lb.bib_text_sha256(KUHN)   # never re-pointed
+
+    @pytest.mark.parametrize("mutate", [
+        lambda c: c.replace("EVIDENCE-", "EVIDENCE-X"),     # its own tier token
+        lambda c: c.replace("@book{kuhn1962structure,",
+                            "@book{kuhn1962structure,\n  venue_status = {low-visibility},"),
+        lambda c: c.replace("@book{kuhn1962structure,",
+                            "@book{kuhn1962structure,\n  sep_context = {x},"),
+    ], ids=["tier", "derived", "context"])
+    def test_the_barriers_own_fields_pass(self, tmp_path, monkeypatch, mutate):
+        code, rep, _, _ = self._run_with_mutation(tmp_path, monkeypatch, mutate)
+        assert code == 0 and "self_check_failed" not in rep
+
+    def test_an_abstract_change_on_an_unhealed_entry_fails(self, tmp_path, monkeypatch):
+        code, rep, _, _ = self._run_with_mutation(
+            tmp_path, monkeypatch, lambda c: c.replace(
+                "@book{kuhn1962structure,", "@book{kuhn1962structure,\n  abstract = {Forged.},"))
+        assert code == 1 and rep["self_check_failed"]
+
+    def test_an_unmutated_run_and_its_rerun_pass(self, tmp_path):
+        import evidence_barrier as eb
+        rd, ij = self._scaffold(tmp_path, 2)
+        assert eb.execute(rd, 2) == 0
+        assert eb.execute(rd, 2) == 0
+        rep = json.loads((ij / "evidence_report.json").read_text(encoding="utf-8"))
+        assert "self_check_failed" not in rep

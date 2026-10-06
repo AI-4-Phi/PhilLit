@@ -1589,9 +1589,8 @@ def _repoint_binding(ledger_path: Path, authored: str) -> str | None:
 
     The cleaner still OWNS the ledger: the attestation is untouched, and
     stamping cannot change which entries matched an API record -- an
-    invariant nothing enforces yet (backlog card PL-10, the barrier
-    self-check on its own output). Only the field that tracks the barrier's own
-    edit moves.
+    invariant `_self_check` enforces before anything is written. Only the
+    field that tracks the barrier's own edit moves.
 
     `authored` is the text the barrier GENERATED, not a read-back of the
     file. Reading the file back would bind whatever happens to be on disk at
@@ -1614,6 +1613,51 @@ def _repoint_binding(ledger_path: Path, authored: str) -> str | None:
         return None
     except (OSError, UnicodeDecodeError, json.JSONDecodeError) as e:
         return f"{ledger_path.name}: {type(e).__name__}: {e}"
+
+
+def _projection(text: str, healed_keys: set) -> dict:
+    """What the barrier must never change: every chunk with the barrier's own
+    fields set aside. Those are the derived fields, the encyclopedia context
+    fields, the keyword tokens the stamper owns (both sides go through
+    `stamp_keywords(v, None)`, so its reordering and dropping cancel out),
+    and, on an entry this run healed, `abstract` and `abstract_source`.
+    Fields are read with the shared scanner, never a regex. Keyed by entry
+    key; non-entry chunks under one key, in order."""
+    owned = _DERIVED_FIELDS | rc._CONTEXT_FIELDS
+    proj = {"<non-entry chunks>": []}
+    for chunk in se.split_entries(text):
+        if not chunk.strip():
+            continue
+        header = se.entry_header(chunk)
+        if header is None:
+            proj["<non-entry chunks>"].append(chunk.strip())
+            continue
+        etype, key = header
+        skip = owned | ({"abstract", "abstract_source"} if key in healed_keys else set())
+        fields = []
+        for f in bib_fields.iter_fields(chunk):
+            name = f.name.lower()
+            if name in skip:
+                continue
+            value = f.value
+            if name == "keywords":
+                value = se.stamp_keywords(value, None)
+                if not value:
+                    continue
+            fields.append((name, value))
+        proj.setdefault(key, []).append((etype.lower(), sorted(fields)))
+    return proj
+
+
+def _self_check(before: str, after: str, healed_keys: set) -> list[str]:
+    """The keys (or "<non-entry chunks>") whose projection the barrier's
+    output changed: empty when stamping touched only what it owns. This is
+    what makes the re-point safe: `_repoint_binding` binds the barrier's own
+    text as trusted, so a renderer bug that altered a key, title, year or
+    author, or dropped or added an entry, would otherwise be trusted by the
+    next run."""
+    a, b = _projection(before, healed_keys), _projection(after, healed_keys)
+    return sorted(k for k in set(a) | set(b) if a.get(k) != b.get(k))
 
 
 def _accepted_ledger_for(review_dir: Path, ijson: Path, report: dict,
@@ -1643,6 +1687,22 @@ def execute(review_dir: Path, n_domains: int, debug: bool = False) -> int:
     except Exception as exc:  # crash = run-level failure; nothing was written
         report = {"schema_version": 2, "status": "failed", "error": repr(exc)}
     try:
+        if report["status"] != "failed":
+            # Self-check every output BEFORE anything is written: a failure
+            # is run-level, like a crash, so no bib is stamped and no
+            # binding is re-pointed (see _self_check).
+            healed = report.get("healed") or {}
+            changed = {}
+            for path, content in outputs.items():
+                keys = _self_check(path.read_text(encoding="utf-8"), content,
+                                   set(healed.get(path.name) or {}))
+                if keys:
+                    changed[path.name] = keys
+            if changed:
+                report = {"schema_version": 2, "status": "failed",
+                          "error": "self-check: the barrier's output changed "
+                                   "fields it does not own; nothing was written",
+                          "self_check_failed": changed}
         _atomic_write(report_path, json.dumps(report, indent=2))
         if report["status"] != "failed":
             repoint_warnings = []
@@ -1688,6 +1748,8 @@ def execute(review_dir: Path, n_domains: int, debug: bool = False) -> int:
         same_work_summary["compute_failed"] = report["same_work"]["compute_failed"]
     print(json.dumps({
         "status": report["status"],
+        **({"self_check_failed": report["self_check_failed"]}
+           if "self_check_failed" in report else {}),
         "stamped": sum(len(v) for v in (report.get("stamps") or {}).values()),
         "tiers": tiers,
         # Replaces the flat web_sources_none count: that number could not
