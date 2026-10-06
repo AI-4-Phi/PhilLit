@@ -678,7 +678,7 @@ def enrich_entry(
 def _usable_for(entry: dict):
     """The usability screen as an `accept` test for this entry: enrichment
     is stubborn and keeps looking past a stub, a keyword list or a page
-    scrape (PL-15). The barrier's screen stays the final gate."""
+    scrape. The barrier's screen stays the final gate."""
     return lambda text: unusable_reason(text, entry['fields']) is None
 
 
@@ -940,7 +940,7 @@ def enrich_bibliography(
     # Only attempt NDPR for @book entries that:
     # 1. Still lack an abstract after the main enrichment pass
     # 2. Have High or Medium importance (as noted in keywords)
-    # A book whose every API text was unusable tries NDPR too (PL-15).
+    # A book whose every API text was unusable tries NDPR too.
     book_entries_without_abstract = [
         (i, e) for i, e in enumerate(entries)
         if e['entry_type'] == 'book'

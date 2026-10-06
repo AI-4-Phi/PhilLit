@@ -1,4 +1,4 @@
-"""PL-15: enrichment tries the next abstract source when one is unusable.
+"""Enrichment tries the next abstract source when one is unusable.
 
 The usability screen (abstract_usability.unusable_reason) used to run only
 at the barrier, after the one source enrichment had kept. A work whose first

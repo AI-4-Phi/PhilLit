@@ -628,7 +628,7 @@ class TestEnrichmentVersionIsPinnedToItsOwnProducer:
 
 
 class TestBarrierSelfCheck:
-    """PL-10: the barrier re-points the binding to text it wrote, so a bug in
+    """The barrier re-points the binding to text it wrote, so a bug in
     its renderer would be trusted at once. Before writing anything, the
     output must equal the input with the barrier's own fields set aside;
     otherwise the run fails and nothing is written or re-pointed."""

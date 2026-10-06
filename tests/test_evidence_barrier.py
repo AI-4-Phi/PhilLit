@@ -4558,7 +4558,7 @@ def test_an_absent_surname_also_stays_at_existence(tmp_path, monkeypatch):
 
 
 def test_a_degraded_run_names_its_causes_in_the_report_and_the_summary(tmp_path, monkeypatch, capsys):
-    """PL-16: a bare `degraded` let an orchestrator report "I did not find
+    """A bare `degraded` let an orchestrator report "I did not find
     out why"; the 2026-10-06 cause was one failed SEP article."""
     import sys as _sys
     _sys.path.insert(0, str(SCRIPTS_DIR))
