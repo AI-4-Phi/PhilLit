@@ -1,10 +1,10 @@
 ---
 id: PL-9
 title: 'Citability: tier override for a user-requested work'
-status: In Progress
+status: Done
 assignee: []
 created_date: '2026-09-25 19:18'
-updated_date: '2026-10-06 08:31'
+updated_date: '2026-10-06 10:13'
 labels:
   - agents
   - test-run
