@@ -842,6 +842,7 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
         "abstract_corroboration": {},
     }
     degraded = False
+    degraded_by = []   # why, in the operator summary (a bare "degraded" hid it)
     domains = {}
     slug_paths = []
     for i in range(1, n_domains + 1):
@@ -873,6 +874,9 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
             report["domains"][str(i)]["enrichment_ledger_reason"] = e_why
         if b_state != "present" or c_state != "present" or e_state != "present":
             degraded = True
+            degraded_by += [f"domain {i}: {name} {state}" for name, state in
+                            (("bib", b_state), ("cleaning_ledger", c_state),
+                             ("enrichment_ledger", e_state)) if state != "present"]
         if b_state == "present":
             domains[i] = {"bib": bib, "bib_name": bib_name,
                           "cleaning": c_data, "enrichment": e_data}
@@ -883,6 +887,7 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
         report["domains"][str(i)]["slug_file"] = s
         if s in ("missing", "malformed"):
             degraded = True
+            degraded_by.append(f"domain {i}: slug_file {s}")
 
     if not domains:
         report["status"] = "failed"
@@ -893,6 +898,7 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
     report["articles"]["failed"] = failed
     if failed:
         degraded = True
+        degraded_by.append("encyclopedia articles failed to fetch: " + ", ".join(sorted(failed)))
 
     # Per-domain parse + attestations (KEYED PER DOMAIN -- never bare keys).
     parsed = {}        # i -> list[chunk]
@@ -1562,6 +1568,8 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                     report["demoted_would_be_existence_v4"].append(qual)
         outputs[d["bib"]] = "\n".join(final_chunks)
     report["status"] = "degraded" if degraded else "complete"
+    if degraded:
+        report["degraded_by"] = degraded_by
     return report, outputs
 
 
@@ -1807,6 +1815,8 @@ def execute(review_dir: Path, n_domains: int, debug: bool = False) -> int:
         "status": report["status"],
         **({"self_check_failed": report["self_check_failed"]}
            if "self_check_failed" in report else {}),
+        **({"degraded_by": report["degraded_by"]}
+           if report["status"] == "degraded" and "degraded_by" in report else {}),
         "stamped": sum(len(v) for v in (report.get("stamps") or {}).values()),
         "tiers": tiers,
         # Replaces the flat web_sources_none count: that number could not

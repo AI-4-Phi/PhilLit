@@ -4555,3 +4555,37 @@ def test_an_absent_surname_also_stays_at_existence(tmp_path, monkeypatch):
         "outcome": "unmatched"}
     assert report["stamps"]["literature-domain-1.bib"]["vf1980"] == "EVIDENCE-EXISTENCE"
     assert "sep_context" not in content
+
+
+def test_a_degraded_run_names_its_causes_in_the_report_and_the_summary(tmp_path, monkeypatch, capsys):
+    """PL-16: a bare `degraded` let an orchestrator report "I did not find
+    out why"; the 2026-10-06 cause was one failed SEP article."""
+    import sys as _sys
+    _sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    rd = tmp_path / "review"
+    _domain(rd, 1, KUHN, cleaning=_cleaning(1, {}), enrichment=_enrichment(1),
+            slugs='{"sep_entries": ["adam-smith"], "iep_entries": []}')
+    _domain(rd, 2, KUHN.replace("kuhn1962structure", "kuhn1970x"), cleaning=None,
+            enrichment=_enrichment(2))
+    monkeypatch.setattr(evidence_barrier.rc, "fetch_articles",
+                        lambda union, debug=False: ({}, ["sep:adam-smith"]))
+    assert evidence_barrier.execute(rd, 2) == 0
+    printed = json.loads(capsys.readouterr().out.strip().splitlines()[-1])
+    report = _report(rd)
+    assert report["status"] == "degraded" == printed["status"]
+    assert report["degraded_by"] == printed["degraded_by"]
+    assert "encyclopedia articles failed to fetch: sep:adam-smith" in report["degraded_by"]
+    assert "domain 2: cleaning_ledger missing" in report["degraded_by"]
+
+
+def test_a_complete_run_prints_no_degraded_by(tmp_path, monkeypatch, capsys):
+    import sys as _sys
+    _sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    rd = tmp_path / "review"
+    _domain(rd, 1, KUHN, cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
+    monkeypatch.setattr(evidence_barrier.rc, "fetch_articles", lambda union, debug=False: ({}, []))
+    evidence_barrier.execute(rd, 1)
+    printed = json.loads(capsys.readouterr().out.strip().splitlines()[-1])
+    assert printed["status"] == "complete" and "degraded_by" not in printed
