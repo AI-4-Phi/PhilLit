@@ -1,10 +1,10 @@
 ---
 id: PL-10
 title: Barrier self-check on its own output
-status: In Progress
+status: Done
 assignee: []
 created_date: '2026-09-25 19:18'
-updated_date: '2026-10-06 08:32'
+updated_date: '2026-10-06 09:22'
 labels:
   - barrier
 dependencies: []
