@@ -70,9 +70,10 @@ fi
 # else - a nonzero exit, empty or non-JSON output, another shape - is a
 # resolver CRASH and fails CLOSED like a validator crash: this is an
 # accuracy gate. A resolver {error} (no pointer, files on another machine)
-# is today's warn-and-allow. workdir.py exits 1 for a configuration error (a
-# bad PHILLIT_WORKDIR, or the inplace pin meeting a local review), so a
-# config typo blocks loudly instead of skipping validation.
+# allows with a visible systemMessage (below). workdir.py exits 1 for a
+# configuration error (a bad PHILLIT_WORKDIR, or the inplace pin meeting a
+# local review), so a config typo blocks loudly instead of skipping
+# validation.
 RESOLVE_WS="${CLAUDE_PROJECT_DIR:-$PWD}"
 RESOLVE_STDERR=$(mktemp)
 RESOLVE_STATUS=0
@@ -97,18 +98,25 @@ if [[ $RESOLVE_STATUS -ne 0 ]] || [[ -z "$RESOLVED" ]] || \
 fi
 rm -f "$RESOLVE_STDERR"
 
+# A review-state error (no pointer, files elsewhere or missing) allows the
+# stop: the researcher cannot repair it, so a block would only cost a turn
+# and end in the same state. But never silently - stderr on exit 0 is never
+# shown, so the skip rides a user-visible systemMessage (gate-failure
+# policy). The barrier reports the missing cleaning ledger as degraded.
+skipped() {
+    jq -cn --arg msg "PhilLit: $1 - BibTeX validation and metadata cleaning were SKIPPED for this researcher." \
+        '{"systemMessage": $msg}'
+    exit 0
+}
+
 # tr: a native jq.exe under Git Bash emits CRLF, and $(...) strips only the LF.
 REVIEW_DIR=$(echo "$RESOLVED" | jq -r '.workdir // empty' | tr -d '\r')
 if [[ -z "$REVIEW_DIR" ]]; then
-    RESOLVE_ERROR=$(echo "$RESOLVED" | jq -r '.error // "no working directory"')
-    echo "WARNING: no active review directory ($RESOLVE_ERROR) - skipping BibTeX validation" >&2
-    allow
+    skipped "no active review directory ($(echo "$RESOLVED" | jq -r '.error' | tr -d '\r'))"
 fi
 
-# Validate directory exists
 if [[ ! -d "$REVIEW_DIR" ]]; then
-    echo "WARNING: Review directory $REVIEW_DIR does not exist" >&2
-    allow
+    skipped "the review directory $REVIEW_DIR does not exist"
 fi
 
 # Collect .bib files from the review directory AND the researchers' strays in

@@ -1,10 +1,10 @@
 ---
 id: PL-8
 title: Stop the SubagentStop gate failing open silently
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-09-25 19:18'
-updated_date: '2026-10-06 07:11'
+updated_date: '2026-10-06 07:35'
 labels:
   - hooks
 dependencies: []

@@ -214,11 +214,11 @@ class TestGuards:
         assert out["decision"] == "block"
         assert "journal" in out["reason"]
 
-    def test_no_active_review_allows(self, project):
+    def test_no_active_review_allows_visibly(self, project):
         (project / "reviews" / ".active-review").unlink()
         out, code, _ = run_hook(RESEARCHER, project)
-        assert out == {}
-        assert code == 0
+        assert code == 0 and "decision" not in out
+        assert "SKIPPED" in out["systemMessage"]
 
 
 class TestValidation:
@@ -717,12 +717,25 @@ def test_local_review_bibs_are_validated(tmp_path):
     assert out.get("decision") == "block" and "journal" in out["reason"]
 
 
-def test_resolver_error_warns_and_allows(tmp_path):
+def test_resolver_error_allows_with_a_visible_system_message(tmp_path):
+    # A review-state error (here: the files are "elsewhere") allows the stop,
+    # since the researcher cannot repair it, but never silently: stderr on
+    # exit 0 is never shown, so the skip must ride a systemMessage.
     extra = {}
     proj, workdir = _local_review(tmp_path, extra)
-    shutil.rmtree(workdir)  # the files are "elsewhere"
-    out, code, err = _run(RESEARCHER, proj, extra)
-    assert out == {} and "not on this machine" in err
+    shutil.rmtree(workdir)
+    out, code, _ = _run(RESEARCHER, proj, extra)
+    assert code == 0 and "decision" not in out
+    msg = out["systemMessage"]
+    assert "not on this machine" in msg and "SKIPPED" in msg
+
+
+def test_resolver_error_on_resumed_pass_is_a_system_message(tmp_path):
+    extra = {}
+    proj, workdir = _local_review(tmp_path, extra)
+    shutil.rmtree(workdir)
+    out, _, _ = _run({**RESEARCHER, "stop_hook_active": True}, proj, extra)
+    assert "decision" not in out and "SKIPPED" in out["systemMessage"]
 
 
 def test_resolver_crash_fails_closed(tmp_path):
@@ -795,6 +808,33 @@ def test_resolver_reads_the_workspace_env(tmp_path):
     # The .env pin meets a local review: a configuration error, so the gate
     # blocks loudly instead of skipping validation.
     assert out.get("decision") == "block" and "unset PHILLIT_WORKDIR" in out["reason"]
+
+
+def test_a_resolved_folder_that_does_not_exist_is_a_system_message(tmp_path):
+    proj = tmp_path / "proj"
+    (proj / ".phillit").mkdir(parents=True)
+    root = tmp_path / "stub-plugin"
+    (root / "bin").mkdir(parents=True)
+    out_file = tmp_path / "resolver-out.txt"
+    missing = (tmp_path / "gone").as_posix()
+    out_file.write_text(json.dumps({"workdir": missing}) + "\n", encoding="utf-8")
+    run = root / "bin" / "phillit-run"
+    run.write_text(
+        "#!/usr/bin/env bash\n"
+        "case \"$1\" in\n"
+        f"  *workdir.py) cat '{out_file}' ;;\n"
+        "  *) echo '{\"valid\": true, \"errors\": []}' ;;\n"
+        "esac\n",
+        encoding="utf-8",
+    )
+    run.chmod(0o755)
+    env = {**os.environ, "CLAUDE_PROJECT_DIR": str(proj), "CLAUDE_PLUGIN_ROOT": str(root),
+           "PHILLIT_UV": UV}
+    proc = subprocess.run([BASH, str(SCRIPT)], input=json.dumps(RESEARCHER), capture_output=True,
+                          text=True, encoding="utf-8", env=env)
+    out = json.loads(proc.stdout)
+    assert "decision" not in out
+    assert missing in out["systemMessage"] and "SKIPPED" in out["systemMessage"]
 
 
 def test_the_stub_resolver_positive_control_allows(tmp_path):
