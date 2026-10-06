@@ -228,7 +228,7 @@ Similar to sep_context but from IEP.
 
 ### Evidence Tiers (EVIDENCE-* keyword)
 
-The `EVIDENCE-*` token in `keywords` is the **single authority on citability**, stamped mechanically by the evidence barrier at the Phase 3-to-4 boundary (and re-stamped attestation-aware on dedup merge — the one sanctioned mutation after the barrier; no stage adds content-evidence fields after it):
+The `EVIDENCE-*` token in `keywords` is the **single authority on citability** (one exception: a work the user asked for by name, which the orchestrator passes to the planner and writers as a `Tier override (user request)` line; they may then cite it, and must disclose in prose that its characterization is unverified), stamped mechanically by the evidence barrier at the Phase 3-to-4 boundary (and re-stamped attestation-aware on dedup merge — the one sanctioned mutation after the barrier; no stage adds content-evidence fields after it):
 
 - `EVIDENCE-ABSTRACT` — abstract corroborated at the barrier by a live fetch that still served the same text; the enrichment ledger's hash still binds that text and decides candidacy, it is just no longer sufficient on its own. The text must also pass the barrier's usability screen (`abstract_usability.py`): a stub, keyword list, publisher page, opening extract or word salad earns no tier, however well it corroborates. Characterize/summarize/quote from the sourced abstract text
 - `EVIDENCE-CONTEXT` — barrier-written `sep_context`/`iep_context`: characterize from that description only, attributed in prose

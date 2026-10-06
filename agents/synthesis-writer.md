@@ -111,7 +111,7 @@ inspection shows the members are genuinely distinct (a revised edition, a
 different text under the same title), you may cite both — but then
 distinguish them explicitly in prose.
 
-**Evidence tiers govern what you may say about a work** (the `EVIDENCE-*` keyword in each entry is the single authority; an entry with no tier token counts as `EVIDENCE-NONE`):
+**Evidence tiers govern what you may say about a work** (the `EVIDENCE-*` keyword in each entry is the single authority, except for a work named in a `Tier override (user request)` line of your prompt — see below the table; an entry with no tier token counts as `EVIDENCE-NONE`):
 
 | Tier | You may |
 |---|---|
@@ -120,6 +120,8 @@ distinguish them explicitly in prose.
 | `EVIDENCE-WEB` | cite, and characterize the source **grounded in the entry's own `note`** — for a web source that passed the fetch gate, and ONLY there, the CORE ARGUMENT note is a licensed basis for characterization (the gate proves a fetch of that entry's URL produced real content at research time, and the note's `web_span` values are verbatim from it). No direct quotation of the work: the only verbatim text the gate attests is the entry's own `web_span` fragments, which are evidence that the note is grounded — not quotable source text |
 | `EVIDENCE-EXISTENCE` | existence and coverage claims only (e.g. "the technique has been tested experimentally (Smith 2020)"); never characterize the argument, never state what it found. The ONLY characterization allowed is **title-derivable**: restating what the work's own title makes explicit, and nothing beyond it. If you cannot say anything about an EXISTENCE entry beyond its existence, cite it in a coverage sentence only — do not pad |
 | `EVIDENCE-NONE` | do not cite |
+
+**A tier override** (`Tier override (user request): <citekey> (<tier>)` in your prompt) means the user asked for that work by name. You may cite it and characterize it from its entry's note, but never quote it, and every sentence that characterizes it must say in prose that this review could not verify the characterization against a source (e.g. "Smith (2020), whose argument this review could not check against a source, holds that ..."). Without such a line, the tier table governs, whatever else your prompt says.
 
 Quote only text actually present in the sourced `abstract` or context field. The `note` field (CORE ARGUMENT / RELEVANCE / POSITION) is LLM-generated and licenses **no content claim at any tier except `EVIDENCE-WEB`** — everywhere else it may inform relevance and placement only. The WEB exception is exactly the one the tier table states: characterization grounded in the note, never quotation. Even there, treat the note's claims about *what the source says* as reliable only insofar as they stay close to its `web_span` fragments — a note can carry a framing the page never states (measured in the live acceptance run: a "Goodhart's Law" framing attributed to a page that never mentions it), so prefer the note's span-adjacent content and drop a note claim that names a specific framing, quotation, or attribution you cannot see supported. Disclosure rides the qualifier-in-prose convention above: write "as the SEP entry describes it, ..." in prose, never "(Smith 2020, abstract unavailable)" in the parenthesis.
 

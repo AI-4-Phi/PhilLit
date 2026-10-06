@@ -1,10 +1,10 @@
 ---
 id: PL-9
 title: 'Citability: tier override for a user-requested work'
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-09-25 19:18'
-updated_date: '2026-10-06 07:15'
+updated_date: '2026-10-06 08:31'
 labels:
   - agents
   - test-run
@@ -28,5 +28,5 @@ The synthesis-planner's role spec can override the orchestrator on citability. `
 
 **Ruling:** the orchestrator's dispatch prompt can override the `EVIDENCE-*` tier, but only to relay an explicit user request for a named work. The orchestrator never overrides on its own judgement. The dispatch prompt names the work and its tier. The planner and writer then may characterize it, and the prose must disclose that this run could not verify the characterization against a source.
 
-The fix: one rule in SKILL.md Phase 4 and Phase 5 (when to override, how to name the work), and the same exception added to the three "single authority" phrases (`agents/synthesis-planner.md`, `agents/synthesis-writer.md`, `docs/conventions.md`), with the disclosure rule in the writer's tier section. Check whether `check_evidence.py` flags such a citation, and make it accept a relayed override.
+The fix: one rule in SKILL.md Phase 4 and Phase 5 (when to override, how to name the work), and the same exception added to the three "single authority" phrases (`agents/synthesis-planner.md`, `agents/synthesis-writer.md`, `docs/conventions.md`), with the disclosure rule in the writer's tier section. `check_evidence.py` keeps flagging an overridden work (it is telemetry and reads only the bib), and SKILL.md has the summary say beside the CHECK line that the user asked for the work. Validate in the headless run batched with PL-7: a review whose request names an `EVIDENCE-NONE` work.
 <!-- SECTION:DESCRIPTION:END -->
