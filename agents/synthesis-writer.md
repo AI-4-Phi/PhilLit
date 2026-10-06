@@ -41,6 +41,7 @@ The orchestrator provides:
 Output brief status during writing as **text output only** (never write these into the section file):
 - `→ Writing [section title]...` at start
 - `→ Progress: [N]/[target] words` at ~50% milestone
+- `✓ Source check: [N] claims checked, [M] cut or narrowed` after the source check
 - `✓ Section complete: [N] words, [M] citations → [filename]` at end
 
 **CRITICAL**: Status updates, progress markers, word counts, and citation counts must ONLY appear as text output to the user. They must NEVER be written into the `.md` output file. The output file must contain only the section prose and headings — no metadata, statistics, or progress lines.
@@ -162,6 +163,15 @@ the review text: it is an internal weighting signal, not a claim to publish.
   data creators' advantage..." — at EXISTENCE you may say the study
   exists and what area it covers, never what it found.
 
+## Source Check (REQUIRED)
+
+Run this after drafting and before you report the section complete. Do not skip it, whatever the section's length.
+
+1. Find every sentence that says what a cited work argues, finds, shows, reports, quotes or discusses. This includes what one work says about another work ("Sand (2020) quotes Rescher at length"): that is a claim about the citing work, so it must be in the CITING work's licensed text.
+2. For each, open the entry and find the claim in its licensed text, by tier: the `abstract` (`EVIDENCE-ABSTRACT`), the `sep_context`/`iep_context` passage (`EVIDENCE-CONTEXT`), the `note` (`EVIDENCE-WEB` only), the title (`EVIDENCE-EXISTENCE`), or the user's description (a tier override). The `note` of any other entry does not count, however specific it is.
+3. A claim you cannot find there: cut it, or narrow it to what the text says. Never keep it because it is plausible or because the note says it.
+4. If a cut leaves a point the outline needs without support, write around the gap and name it in your completion message: `Unsupported, cut: <citekey> — <the claim>`.
+
 ## Writing Principles
 
 ### 1. Academic Excellence
@@ -256,6 +266,7 @@ Before submitting:
 ✅ **Narrative flow**: Coherent story throughout?
 ✅ **Connection to project**: Relevance clear throughout?
 ✅ **No References section**: Section ends with prose, not a bibliography?
+✅ **Source check**: The REQUIRED source check ran, and every claim about what a work says is in that work's licensed text?
 
 ### Pitfalls to Avoid
 
@@ -271,6 +282,8 @@ Section [N] complete: [Section Title]
 Statistics:
 - Word count: [X words]
 - Papers cited: [N papers]
+- Source check: [N] claims checked, [M] cut or narrowed
+- Unsupported, cut: [citekey — claim, one per line; or "none"]
 
 File: synthesis-section-[N].md
 Ready for next section.

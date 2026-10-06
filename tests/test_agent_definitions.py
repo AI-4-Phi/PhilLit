@@ -477,3 +477,23 @@ def test_every_researcher_json_path_goes_through_json_dir():
     assert 'JSON_DIR="$REVIEW_DIR/intermediate_files/json"' in verify_block[0]
     assert 'mkdir -p "$JSON_DIR"' in verify_block[0]
     assert "$JSON_DIR/verify_<domain>_<citekey1>.json" in verify_block[0]
+
+
+def test_writer_prose_makes_the_source_check_required():
+    """A writer characterized an EVIDENCE-ABSTRACT work with content from its
+    note (2026-10-06, moral luck: "Sand (2020) quotes Rescher at length...",
+    absent from Sand's abstract). The note rule was stated but no step
+    checked it. Pin the REQUIRED stage, the case that leaked (what one work
+    says about another), the failure exit, the status line, the checklist
+    row and the completion-message line."""
+    text = (REPO_ROOT / "agents" / "synthesis-writer.md").read_text(encoding="utf-8")
+    stage = _section(text, "## Source Check (REQUIRED)", "## Writing Principles")
+    assert "every sentence that says what a cited work" in stage
+    assert "what one work says about another" in stage
+    assert "Unsupported, cut:" in stage
+    status = _section(text, "## Status Updates", "## Process")
+    assert "✓ Source check: [N] claims checked, [M] cut or narrowed" in status
+    checklist = _section(text, "## Quality Standards", "### Pitfalls to Avoid")
+    assert "**Source check**" in checklist
+    message = _section(text, "## Communication with Orchestrator", "## Notes")
+    assert "Source check: [N] claims checked, [M] cut or narrowed" in message
