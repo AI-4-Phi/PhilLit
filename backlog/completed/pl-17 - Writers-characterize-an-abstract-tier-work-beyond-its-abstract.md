@@ -1,10 +1,10 @@
 ---
 id: PL-17
 title: Writers characterize an abstract-tier work beyond its abstract
-status: In Progress
+status: Done
 assignee: []
 created_date: '2026-10-06 10:13'
-updated_date: '2026-10-06 14:16'
+updated_date: '2026-10-06 14:49'
 labels:
   - agents
 dependencies: []
