@@ -99,3 +99,9 @@ that did not survive reading the file it concerns.
   pre-created empty `reviews/<name>/`. The suggestion is then one number
   higher than it needs to be, and init still accepts it. Kept on purpose: a
   name that is free in both places stays usable if the mode changes.
+- A corroborated abstract that belongs to another work: in the 2026-10-06
+  headless run (moral luck and the control principle), the Nagel entry's
+  attested abstract is a passage about Kant, which the live source serves,
+  so corroboration passes. Not filed, by Johannes's decision: the writer's
+  source check refused to build on it, and the barrier cannot see a source's
+  wrong record.
