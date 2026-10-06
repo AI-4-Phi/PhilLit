@@ -709,7 +709,8 @@ class TestBarrierSelfCheckEdges:
         after_ok = KUHN.replace("year = {1962},",
                                 "year = {1962},\n  abstract = {Restored.},\n  abstract_source = {s2},")
         heal = {"kuhn1962structure": {"outcome": "restored", "source": "s2",
-                                      "abstract_sha256": se.abstract_hash("Restored.")}}
+                                      "abstract_sha256": se.abstract_hash("Restored."),
+                                      "abstract_source": "S2"}}   # ledger casing differs
         assert eb._self_check(KUHN, after_ok, heal) == []
         assert eb._self_check(KUHN, after_ok.replace("Restored.", "Forged."), heal) == ["kuhn1962structure"]
         assert eb._self_check(KUHN, after_ok.replace("{s2}", "{core}"), heal) == ["kuhn1962structure"]
@@ -729,3 +730,32 @@ class TestBarrierSelfCheckEdges:
         import evidence_barrier as eb
         other = KUHN.replace("kuhn1962structure", "kuhn1970postscript")
         assert eb._self_check(KUHN + "\n" + other, other + "\n" + KUHN, {}) == ["<entry order>"]
+
+
+    def test_the_expected_source_is_the_ledgers_not_the_reports(self):
+        import evidence_barrier as eb
+        import stamp_evidence as se
+        after = KUHN.replace("year = {1962},",
+                             "year = {1962},\n  abstract = {Restored.},\n  abstract_source = {openalex},")
+        heal = {"kuhn1962structure": {"outcome": "restored", "source": "openalex",
+                                      "abstract_sha256": se.abstract_hash("Restored."),
+                                      "abstract_source": "s2"}}
+        assert eb._self_check(KUHN, after, heal) == ["kuhn1962structure"]
+
+    def test_an_upper_case_abstract_field_is_still_verified(self):
+        import evidence_barrier as eb
+        import stamp_evidence as se
+        after = KUHN.replace("year = {1962},",
+                             "year = {1962},\n  ABSTRACT = {Forged.},\n  ABSTRACT_SOURCE = {s2},")
+        heal = {"kuhn1962structure": {"outcome": "restored", "source": "s2",
+                                      "abstract_sha256": se.abstract_hash("Restored."),
+                                      "abstract_source": "s2"}}
+        assert eb._self_check(KUHN, after, heal) == ["kuhn1962structure"]
+
+    def test_a_landed_heal_whose_splice_did_not_land_passes(self):
+        # The barrier changed nothing; the per-chunk re-derivation demotes it.
+        import evidence_barrier as eb
+        before = KUHN.replace("year = {1962},", "year = {1962},\n  abstract = {Mutated.},")
+        heal = {"kuhn1962structure": {"outcome": "restored", "source": "s2",
+                                      "abstract_sha256": "x", "abstract_source": "s2"}}
+        assert eb._self_check(before, before, heal) == []

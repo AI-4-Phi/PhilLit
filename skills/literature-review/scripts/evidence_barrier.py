@@ -1664,10 +1664,17 @@ def _self_check(before: str, after: str, heals: dict) -> list[str]:
     by the next run.
 
     `heals` is this bib's `report["healed"]`, each record carrying the
-    enrichment ledger's `abstract_sha256` for that key (execute adds it: a
-    heal restores exactly the text the ledger attests). Only a heal that
-    landed exempts the abstract, and then the output must carry that text
-    and the recorded source."""
+    enrichment ledger's `abstract_sha256` and `abstract_source` for that key
+    (execute adds them: a heal restores exactly the text the ledger attests,
+    from the source it names). Only a heal that landed exempts the abstract,
+    and then the output must leave it alone or carry that text and source.
+    A heal whose splice did not land leaves the input's abstract, which the
+    barrier did not change; the tier is re-derived from the final text, so
+    it earns no ABSTRACT stamp.
+
+    This proves NON-INTERFERENCE: the output differs from the input only in
+    fields the barrier owns. It does not prove those fields are right; the
+    stamps are re-derived per chunk from the final text."""
     landed = {k: h for k, h in heals.items()
               if isinstance(h, dict) and h.get("outcome") in _LANDED_HEALS}
     a, b = _projection(before, set(landed)), _projection(after, set(landed))
@@ -1678,9 +1685,9 @@ def _self_check(before: str, after: str, heals: dict) -> list[str]:
         for chunk in se.split_entries(text):
             header = se.entry_header(chunk)
             if header is not None and header[1] in landed:
-                f = se.parse_entry_fields(chunk)
+                f = {x.name.lower(): x.value for x in bib_fields.iter_fields(chunk)}
                 out[header[1]] = (f.get("abstract") or "",
-                                  (f.get("abstract_source") or "").strip())
+                                  (f.get("abstract_source") or "").strip().lower())
         return out
 
     old, new = abstracts(before), abstracts(after)
@@ -1689,7 +1696,7 @@ def _self_check(before: str, after: str, heals: dict) -> list[str]:
         # attested text with the recorded source - nothing else.
         if key in new and new[key] != old.get(key) and (
                 se.abstract_hash(new[key][0]) != h.get("abstract_sha256")
-                or new[key][1] != h.get("source")):
+                or new[key][1] != (h.get("abstract_source") or "").strip().lower()):
             changed.add(key)
     for chunk in se.split_entries(after):
         header = se.entry_header(chunk)
@@ -1741,8 +1748,9 @@ def execute(review_dir: Path, n_domains: int, debug: bool = False) -> int:
                     except (OSError, UnicodeDecodeError, json.JSONDecodeError):
                         ledger = {}
                     attested = (ledger.get("entries") if isinstance(ledger, dict) else None) or {}
-                    heals = {k: {**h, "abstract_sha256":
-                                 (attested.get(k) or {}).get("abstract_sha256")}
+                    heals = {k: {**h,
+                                 "abstract_sha256": (attested.get(k) or {}).get("abstract_sha256"),
+                                 "abstract_source": (attested.get(k) or {}).get("abstract_source")}
                              for k, h in heals.items() if isinstance(h, dict)}
                 keys = _self_check(path.read_text(encoding="utf-8"), content, heals)
                 if keys:
