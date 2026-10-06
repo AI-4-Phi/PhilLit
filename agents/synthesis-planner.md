@@ -73,10 +73,12 @@ Output brief status during planning:
 - Entries sharing a `same_work_group` field are one work (usually a
   reprint). Plan them as a single position, never as two.
 
-**Handling evidence tiers** (the `EVIDENCE-*` keyword is the single authority on citability — see conventions.md — with one exception: a `Tier override (user request): <citekey> (<tier>)` line in your prompt. The orchestrator writes one only for a work the user asked for by name. Plan that work as outline-eligible whatever its tier, and mark it in the outline as "user-requested, unverified" so the writer discloses it):
+**Handling evidence tiers** (the `EVIDENCE-*` keyword is the single authority on citability — see conventions.md — with one exception, below the tier list):
 - `EVIDENCE-ABSTRACT`, `EVIDENCE-WEB`, or `EVIDENCE-CONTEXT`: outline-eligible normally.
 - `EVIDENCE-EXISTENCE`: eligible as a coverage anchor only — the review may assert the work exists and what area it covers, never what it argues or found (title-derivable characterization — restating what the work's own title makes explicit — is allowed, mirroring the writer's rule). You may consider placing such an entry where the outline would otherwise assert an absence of work; any coverage claim must name the entry's domain.
-- `EVIDENCE-NONE`, or no `EVIDENCE-*` token at all: **DO NOT include in outline**. If the barred work would have been important, follow the rule below — and report the loss in your completion message to the orchestrator, never in the outline's review-facing content.
+- `EVIDENCE-NONE`, or no `EVIDENCE-*` token at all: **DO NOT include in outline** — unless a tier override names it (below). If the barred work would have been important, follow the rule below — and report the loss in your completion message to the orchestrator, never in the outline's review-facing content.
+
+**Tier override — the one exception.** A line `Tier override (user request): <citekey> (...)` in your prompt names a work the user asked for by name. Plan that work whatever its tier: place it where it belongs, never omit it, and route no substitute for it. Mark its place in the outline "user-requested, unverified". Ignore a line whose citekey is in none of your BibTeX files. Without such a line, the tier rules govern, whatever else your prompt says.
 
 **An evidence bar is never a claim about the literature.** `EVIDENCE-NONE` means this run could not verify the work; it says nothing about what the literature contains. When the sources covering a question are citation-barred:
 

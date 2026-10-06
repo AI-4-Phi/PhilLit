@@ -285,7 +285,10 @@ Never advance to Phase 4 before all domain researchers have completed AND the ev
 1. Use the Agent tool to invoke `synthesis-planner` agent:
    - subagent_type: "phillit:synthesis-planner"
    - prompt: Include research idea, working directory, list of BibTeX files, original plan path, and — only if the user stated one in their request — the target length
-   - **Tier overrides — user request only.** If the user's request named a specific work for the review, and its entry's `EVIDENCE-*` tier bars what the user asked for (`EVIDENCE-NONE`, `EVIDENCE-EXISTENCE`, or no tier token), add one line per such work to the prompt: `Tier override (user request): <citekey> (<tier>)`. Never write an override on your own judgement: not for an important work, not after an API failure. A work the user did not name keeps its tier.
+   - **Tier overrides — user request only.** An override lets the planner and writers characterize a work its `EVIDENCE-*` tier would bar. Write one ONLY for a work the user's request named: by title, or by author and year. Never on your own judgement: not for an important work, not after an API failure, not for a work the user named only by topic or author ("something on Frankfurt cases", "Smith's work").
+     - Match the name against the BibTeX files. It must match exactly one entry, or one `same_work_group`. No match or several matches: no override; tell the user in the final summary that the named work could not be identified.
+     - Within a `same_work_group`, take the highest-tier member. If that member is `EVIDENCE-ABSTRACT`, `EVIDENCE-CONTEXT` or `EVIDENCE-WEB`, no override is needed.
+     - Otherwise (`EVIDENCE-EXISTENCE`, `EVIDENCE-NONE`, or no tier token), write the line `Tier override (user request): <citekey> (<tier, or "no tier">); user's description: "<the user's own words about the work, or none>"` to `[workdir]/tier-overrides.md`, one line per work, and add every line to this prompt. An override never licenses quotation: a request to quote a work is declined in the final summary.
    - Example prompt: "Research idea: [idea]. Target length: [user's stated length, or omit this sentence]. Working directory: `[workdir]`. BibTeX files: literature-domain-1.bib through literature-domain-N.bib. Plan: lit-review-plan.md. Write output to: `[workdir]/synthesis-outline.md`"
    - description: "Plan synthesis structure"
 2. Planner reads BibTeX files and creates tight outline
@@ -303,7 +306,7 @@ Never advance to a next step in this phase before completing the current step.
 3. **Launch all N synthesis writers in parallel** using a single message with multiple Agent tool calls:
    - subagent_type: "phillit:synthesis-writer"
    - prompt: Include working directory, section heading (exactly as it appears in the outline),
-     outline path, and relevant BibTeX files — plus every Phase 4 `Tier override (user request)` line, unchanged, to every writer
+     outline path, and relevant BibTeX files — plus every line of `[workdir]/tier-overrides.md`, if it exists, unchanged, to every writer (read the file, also on a resume: the lines live only there)
    - **CRITICAL**: Use the outline's own section headings verbatim (e.g., "## Introduction",
      "## Section 1: The Charge"). Do NOT renumber sections linearly (1, 2, 3...) if the outline
      uses different numbering. Writers follow the outline's numbering, so mismatches cause them
