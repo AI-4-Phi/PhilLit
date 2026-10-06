@@ -26,6 +26,11 @@ set -e
 # turns it into a decision. Fixed text only (no jq: it may be the failure).
 # It blocks only on a first pass that is KNOWN to be one; on a resumed pass,
 # or before stdin is parsed, it allows visibly, so a crash cannot loop.
+# Never interpolate a variable into its printf: only $LINENO (a number) is
+# safe there; a quote in a path would break the JSON. Functions do not
+# inherit the trap (no set -E: the trap would then fire inside $(...) and
+# print into the captured value), so each function's jq carries its own
+# || fallback. SIGKILL and a bash that cannot start stay uncatchable.
 STOP_HOOK_ACTIVE=""
 on_error() {
     local msg="subagent_stop_bib.sh failed at line $1 - BibTeX validation and cleaning did not complete for this researcher."
@@ -71,6 +76,7 @@ STOP_HOOK_ACTIVE=$(echo "$SUBAGENT_CONTEXT" | jq -r '.stop_hook_active // false'
 # only the LF: a bare "true\r" would defeat the loop guard. Strip the one
 # trailing CR from every scalar compared below.
 STOP_HOOK_ACTIVE=${STOP_HOOK_ACTIVE%$'\r'}
+[[ "$STOP_HOOK_ACTIVE" == "true" ]] || STOP_HOOK_ACTIVE="false"   # one reading for the trap and the main path
 
 # Self-scoping guard: this hook has no matcher, so it fires for every
 # SubagentStop. Validate only when agent_type contains
@@ -127,7 +133,8 @@ rm -f "$RESOLVE_STDERR"
 # policy). The barrier reports the missing cleaning ledger as degraded.
 skipped() {
     jq -cn --arg msg "PhilLit: $1 - BibTeX validation and metadata cleaning were SKIPPED for this researcher." \
-        '{"systemMessage": $msg}'
+        '{"systemMessage": $msg}' \
+        || printf '{"systemMessage": "PhilLit: BibTeX validation and metadata cleaning were SKIPPED for this researcher (the report could not be rendered)."}\n'
     exit 0
 }
 
@@ -201,7 +208,7 @@ for bib_file in "${BIB_FILES[@]}"; do
     # either would otherwise read as valid. Exit status cannot replace this:
     # the validator exits 1 for invalid BibTeX AND for an uncaught exception.
     if [[ "$VALID" != "true" && "$VALID" != "false" ]]; then
-        SYNTAX_ERRORS="${SYNTAX_ERRORS}bib_validator.py crashed for $bib_file (output was not one object with a boolean valid): $RESULT
+        SYNTAX_ERRORS="${SYNTAX_ERRORS}bib_validator.py crashed for $bib_file (output was not exactly one true or false valid): $RESULT
 "
         continue
     fi
@@ -315,8 +322,10 @@ fi
 # Surface cleaning summary to the model as non-error feedback (v2.1.163+;
 # harmlessly ignored by older Claude Code versions).
 if [[ -n "$CLEANING_SUMMARY" ]]; then
+    # A failed rendering must not reach the ERR trap: cleaning never blocks.
     jq -cn --arg ctx "METADATA CLEANING REPORT:$CLEANING_SUMMARY" \
-        '{"hookSpecificOutput": {"hookEventName": "SubagentStop", "additionalContext": $ctx}}'
+        '{"hookSpecificOutput": {"hookEventName": "SubagentStop", "additionalContext": $ctx}}' \
+        || printf '{"systemMessage": "PhilLit: metadata cleaning ran, but its report could not be rendered."}\n'
     exit 0
 fi
 

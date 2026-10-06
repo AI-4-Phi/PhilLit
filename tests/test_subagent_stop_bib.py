@@ -957,3 +957,17 @@ class TestErrTrap:
         out, code = _run_with({**RESEARCHER, "stop_hook_active": True}, project,
                               self._failing_mktemp(tmp_path))
         assert code == 0 and "decision" not in out and "failed at line" in out["systemMessage"]
+
+    def test_a_failing_report_in_skipped_still_emits_json(self, project, tmp_path):
+        # skipped() is a function, so the ERR trap does not cover it: its own
+        # || fallback must. The shim fails only jq's output-building calls.
+        shim_dir = tmp_path / "bad-jq-cn"
+        shim_dir.mkdir()
+        shim = shim_dir / "jq"
+        shim.write_text("#!/usr/bin/env bash\n[ \"$1\" = -cn ] && exit 1\n"
+                        f"exec '{shutil.which('jq')}' \"$@\"\n", encoding="utf-8")
+        shim.chmod(0o755)
+        (project / "reviews" / ".active-review").unlink()
+        out, code = _run_with(RESEARCHER, project,
+                              {"PATH": f"{shim_dir}{os.pathsep}{os.environ['PATH']}"})
+        assert code == 0 and "decision" not in out and "SKIPPED" in out["systemMessage"]
