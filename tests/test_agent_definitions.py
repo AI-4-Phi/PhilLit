@@ -490,7 +490,10 @@ def test_writer_prose_makes_the_source_check_required():
     stage = _section(text, "## Source Check (REQUIRED)", "## Writing Principles")
     assert "every sentence that says what a cited work" in stage
     assert "what one work says about another" in stage
-    assert "Unsupported, cut:" in stage
+    assert "Unsupported, cut:" in stage and "Narrowed:" in stage
+    assert "<citekey> | <licensed field> |" in stage        # evidence, not a self-report
+    assert "under the drop rule above" in stage             # WEB keeps its drop rule
+    assert "only in A's voice" in stage
     status = _section(text, "## Status Updates", "## Process")
     assert "✓ Source check: [N] claims checked, [M] cut or narrowed" in status
     checklist = _section(text, "## Quality Standards", "### Pitfalls to Avoid")

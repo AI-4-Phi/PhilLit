@@ -41,7 +41,7 @@ The orchestrator provides:
 Output brief status during writing as **text output only** (never write these into the section file):
 - `→ Writing [section title]...` at start
 - `→ Progress: [N]/[target] words` at ~50% milestone
-- `✓ Source check: [N] claims checked, [M] cut or narrowed` after the source check
+- `✓ Source check: [N] claims checked, [M] cut or narrowed` after the source check (N is the number of support lines you wrote)
 - `✓ Section complete: [N] words, [M] citations → [filename]` at end
 
 **CRITICAL**: Status updates, progress markers, word counts, and citation counts must ONLY appear as text output to the user. They must NEVER be written into the `.md` output file. The output file must contain only the section prose and headings — no metadata, statistics, or progress lines.
@@ -167,10 +167,11 @@ the review text: it is an internal weighting signal, not a claim to publish.
 
 Run this after drafting and before you report the section complete. Do not skip it, whatever the section's length.
 
-1. Find every sentence that says what a cited work argues, finds, shows, reports, quotes or discusses. This includes what one work says about another work ("Sand (2020) quotes Rescher at length"): that is a claim about the citing work, so it must be in the CITING work's licensed text.
-2. For each, open the entry and find the claim in its licensed text, by tier: the `abstract` (`EVIDENCE-ABSTRACT`), the `sep_context`/`iep_context` passage (`EVIDENCE-CONTEXT`), the `note` (`EVIDENCE-WEB` only), the title (`EVIDENCE-EXISTENCE`), or the user's description (a tier override). The `note` of any other entry does not count, however specific it is.
-3. A claim you cannot find there: cut it, or narrow it to what the text says. Never keep it because it is plausible or because the note says it.
-4. If a cut leaves a point the outline needs without support, write around the gap and name it in your completion message: `Unsupported, cut: <citekey> — <the claim>`.
+1. Find every sentence that says what a cited work argues, finds, shows, reports, quotes or discusses — in any form, including a clause or phrase whose truth depends on what the work says ("Sand's challenge to Rescher").
+2. Count what one work says about another work as a claim about the CITING work: "Sand (2020) quotes Rescher at length" must be in Sand's licensed text. A claim about work B taken from work A may appear only in A's voice, with A's citation ("on Sand's report, Rescher denies ..."), never as a characterization of B in its own right.
+3. For each claim, write one line in your reply (never in the section file): `<citekey> | <licensed field> | "<the words in that field that support the claim>"`. The licensed field, by tier: `abstract` (`EVIDENCE-ABSTRACT`); `sep_context`/`iep_context` (`EVIDENCE-CONTEXT`); `note` (`EVIDENCE-WEB` only, under the drop rule above: a note claim naming a specific framing, quotation or attribution its `web_span` fragments do not support does not count); `title` (`EVIDENCE-EXISTENCE`, or a tier override with no description); `user's description` (a tier override with one). The quoted words must say what the sentence says, not merely share its topic. The `note` of any other entry never counts, however specific it is.
+4. A claim you cannot quote support for: cut it, or narrow it to what the quoted words say. Never keep it because it is plausible or because the note says it. Where a cut leaves the passage resting on nothing, rewrite the passage so it no longer needs the claim; never say instead that the literature lacks support.
+5. Name every cut and every narrowing in your completion message, one per line: `Unsupported, cut: <citekey> — <the claim>` or `Narrowed: <citekey> — <the claim> -> <what remains>`.
 
 ## Writing Principles
 
@@ -266,7 +267,7 @@ Before submitting:
 ✅ **Narrative flow**: Coherent story throughout?
 ✅ **Connection to project**: Relevance clear throughout?
 ✅ **No References section**: Section ends with prose, not a bibliography?
-✅ **Source check**: The REQUIRED source check ran, and every claim about what a work says is in that work's licensed text?
+✅ **Source check**: The REQUIRED source check ran, one support line per claim, and every claim about what a work says is in that work's licensed text?
 
 ### Pitfalls to Avoid
 
@@ -283,7 +284,7 @@ Statistics:
 - Word count: [X words]
 - Papers cited: [N papers]
 - Source check: [N] claims checked, [M] cut or narrowed
-- Unsupported, cut: [citekey — claim, one per line; or "none"]
+- Unsupported, cut: / Narrowed: [one line each; or "none"]
 
 File: synthesis-section-[N].md
 Ready for next section.
