@@ -689,28 +689,37 @@ def replace_unusable_abstract(
     core_api_key: Optional[str],
     debug: bool = False,
     ledger_writes: Optional[dict] = None,
-) -> tuple[str, bool]:
+) -> tuple[str, bool, Optional[str]]:
     """An entry whose abstract fails the usability screen: look for a
     usable text at every source and, if one is found, replace the abstract
     and its source and record the attestation. Otherwise a no-op.
 
-    Returns (entry_text, replaced)."""
+    Returns (entry_text, replaced, source)."""
     try:
         found, source = resolve_abstract_for_entry(
             entry, s2_api_key, openalex_email, core_api_key, debug,
             accept=_usable_for(entry))
     except Exception as e:
         log_progress(f"  Retry for a usable abstract failed ({e})")
-        return entry['raw'], False
+        return entry['raw'], False, None
     if not found or not _usable_for(entry)(found):
-        return entry['raw'], False
+        return entry['raw'], False, None
     text = add_field_to_entry(entry['raw'], 'abstract', found)
     text = add_field_to_entry(text, 'abstract_source', source)
+    text = remove_keyword_from_entry(text, 'INCOMPLETE')
+    text = remove_keyword_from_entry(text, 'no-abstract')
     if ledger_writes is not None:
         ledger_writes[entry['key']] = {"abstract_source": source,
                                        "abstract_sha256": abstract_hash(found)}
     log_progress(f"  Replaced an unusable abstract with {source}'s")
-    return text, True
+    return text, True, source
+
+
+def _important(entry_text: str) -> bool:
+    """High or Medium in keywords: the importance half of _is_ndpr_candidate."""
+    field = _keywords_field(entry_text)
+    return field is not None and any(
+        t.strip() in ('High', 'Medium') for t in field.value.split(','))
 
 
 def attest_prefilled_entry(
@@ -851,7 +860,9 @@ def enrich_bibliography(
     # prior ledger by _update_enrichment_ledger at the end of this function.
     ledger_writes: dict = {}
     prior_ledger = _load_prior_ledger(output_path or input_path)
-    unusable_keys: set = set()   # enriched, but every API source was unusable
+    # key -> the counted source of the unusable abstract it holds (None for a
+    # prefilled one): every API source was unusable, so NDPR may be tried.
+    unusable_keys: dict = {}
 
     for entry in entries:
         # Skip comments
@@ -868,15 +879,22 @@ def enrich_bibliography(
         # abstract was otherwise structurally unattestable (A/B root
         # cause 1). Fail-closed: on any miss the entry is untouched.
         if has_abstract(entry):
+            # An unusable abstract is re-searched BEFORE the prior-ledger fast
+            # path, on every run. Accepted cost: rare (57 of 2,645 abstracts
+            # measured), and an attested stub with no usable alternative then
+            # takes the fast path as before.
             if not _usable_for(entry)(entry['fields']['abstract']):
-                new_text, replaced = replace_unusable_abstract(
+                new_text, replaced, new_source = replace_unusable_abstract(
                     entry, s2_api_key, openalex_email, core_api_key, debug,
                     ledger_writes=ledger_writes)
                 if replaced:
                     enriched_entries.append(new_text)
                     stats['already_had_abstract'] += 1
                     stats['unusable_replaced'] += 1
+                    stats['sources'][new_source] = stats['sources'].get(new_source, 0) + 1
                     continue
+                if entry['entry_type'] == 'book':
+                    unusable_keys[entry['key']] = None   # NDPR may still have one
             prior = prior_ledger.get(entry['key']) or {}
             cur_source = (entry['fields'].get('abstract_source') or '').strip().lower()
             if (prior.get('abstract_sha256') == abstract_hash(entry['fields']['abstract'])
@@ -907,7 +925,7 @@ def enrich_bibliography(
             stats['sources'][source] = stats['sources'].get(source, 0) + 1
             fields = parse_bibtex_entries(enriched_text)[0]['fields']
             if not _usable_for(entry)(fields.get('abstract') or ''):
-                unusable_keys.add(entry['key'])   # every source was unusable
+                unusable_keys[entry['key']] = source   # every source was unusable
         else:
             stats['marked_incomplete'] += 1
             stats['incomplete_keys'].append(entry['key'])
@@ -921,7 +939,7 @@ def enrich_bibliography(
         (i, e) for i, e in enumerate(entries)
         if e['entry_type'] == 'book'
         and ((not has_abstract(e) and _is_ndpr_candidate(enriched_entries[i]))
-             or e['key'] in unusable_keys)
+             or (e['key'] in unusable_keys and _important(enriched_entries[i])))
     ]
 
     if book_entries_without_abstract:
@@ -945,7 +963,10 @@ def enrich_bibliography(
                 enriched_entries[idx] = add_field_to_entry(enriched_entries[idx], 'abstract_source', 'ndpr')
                 ledger_writes[entry['key']] = {"abstract_source": "ndpr",
                                                "abstract_sha256": abstract_hash(abstract)}
-                unusable_keys.discard(entry['key'])
+                counted = unusable_keys.pop(entry['key'])
+                if counted:   # the source counts describe the final output
+                    stats['sources'][counted] -= 1
+                stats['sources']['ndpr'] += 1
                 stats['unusable_replaced'] += 1
                 log_progress(f"  Replaced an unusable abstract with NDPR's for: {entry['key']}")
                 continue

@@ -96,3 +96,64 @@ def test_a_book_whose_sources_are_all_unusable_tries_ndpr(monkeypatch, tmp_path)
     out = bib.read_text(encoding="utf-8")
     assert "second-order volitions" in out and "abstract_source = {ndpr}" in out
     assert out.count("abstract =") == 1
+
+
+def _book(tmp_path, extra=""):
+    bib = tmp_path / "literature-domain-1.bib"
+    bib.write_text(ENTRY.replace("@article", "@book").replace("journal =", "publisher =")
+                   .replace("doi = {10.2307/2024717},", "doi = {10.2307/2024717}," + extra),
+                   encoding="utf-8")
+    return bib
+
+
+def test_a_prefilled_book_stub_with_no_usable_api_text_tries_ndpr(monkeypatch, tmp_path):
+    _sources(monkeypatch, STUB, None)
+    monkeypatch.setattr(eb, "resolve_ndpr_abstract", lambda title, author=None, debug=False: (GOOD, "ndpr"))
+    bib = _book(tmp_path, "\n  abstract = {" + STUB + "},")
+    stats = eb.enrich_bibliography(bib, None, None, None, None)
+    out = bib.read_text(encoding="utf-8")
+    assert "second-order volitions" in out and "abstract_source = {ndpr}" in out
+    assert out.count("abstract =") == 1 and stats["sources"]["ndpr"] == 1
+
+
+def test_a_replacement_drops_the_incomplete_keywords_and_counts_the_final_source(monkeypatch, tmp_path):
+    _sources(monkeypatch, STUB, GOOD)
+    bib = tmp_path / "literature-domain-1.bib"
+    bib.write_text(ENTRY.replace("doi = {10.2307/2024717},",
+                                 "doi = {10.2307/2024717},\n  abstract = {" + STUB + "},")
+                   .replace("{free-will, High}", "{free-will, High, INCOMPLETE, no-abstract}"),
+                   encoding="utf-8")
+    stats = eb.enrich_bibliography(bib, None, None, None, None)
+    out = bib.read_text(encoding="utf-8")
+    fields = eb.parse_bibtex_entries(out)[0]["fields"]
+    assert "INCOMPLETE" not in fields["keywords"] and "no-abstract" not in fields["keywords"]
+    assert out.count("abstract =") == 1 and out.count("abstract_source =") == 1
+    assert stats["sources"]["openalex"] == 1
+
+
+def test_ndpr_replacing_an_api_stub_moves_the_source_count(monkeypatch, tmp_path):
+    _sources(monkeypatch, STUB, None)
+    monkeypatch.setattr(eb, "resolve_ndpr_abstract", lambda title, author=None, debug=False: (GOOD, "ndpr"))
+    stats = eb.enrich_bibliography(_book(tmp_path), None, None, None, None)
+    assert stats["sources"]["s2"] == 0 and stats["sources"]["ndpr"] == 1
+
+
+def test_a_low_importance_book_stub_does_not_try_ndpr(monkeypatch, tmp_path):
+    _sources(monkeypatch, STUB, None)
+    calls = []   # the NDPR pass swallows exceptions, so record calls instead
+    monkeypatch.setattr(eb, "resolve_ndpr_abstract",
+                        lambda *a, **k: calls.append(a) or (GOOD, "ndpr"))
+    bib = _book(tmp_path)
+    bib.write_text(bib.read_text(encoding="utf-8").replace("High", "Low"), encoding="utf-8")
+    eb.enrich_bibliography(bib, None, None, None, None)
+    assert calls == []
+
+
+def test_an_unusable_ndpr_text_keeps_the_api_text(monkeypatch, tmp_path):
+    _sources(monkeypatch, STUB, None)
+    monkeypatch.setattr(eb, "resolve_ndpr_abstract",
+                        lambda title, author=None, debug=False: (STUB + " Reviewed.", "ndpr"))
+    bib = _book(tmp_path)
+    eb.enrich_bibliography(bib, None, None, None, None)
+    out = bib.read_text(encoding="utf-8")
+    assert "abstract_source = {s2}" in out and out.count("abstract =") == 1

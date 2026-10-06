@@ -38,7 +38,7 @@ SAMPLE_BOOK_WITH_ABSTRACT = """@book{nozick1974anarchy,
   title = {Anarchy, State, and Utopia},
   publisher = {Basic Books},
   year = {1974},
-  abstract = {This book argues for a minimal state limited to protection against force and fraud.},
+  abstract = {This book argues for a minimal state limited to protection against force, theft and fraud, and holds that any more extensive state violates individual rights. It develops an entitlement theory of justice in holdings and replies to Rawls on distributive justice.},
   keywords = {libertarianism, political-philosophy, High},
 }"""
 
