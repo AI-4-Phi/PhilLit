@@ -830,3 +830,28 @@ class TestLetterlessCiteOfALetteredYear:
             'Khoury, Andrew. 2010a. "Politics in the 2010s."',
             'Khoury, Andrew. 2010b. "Second work."'])
         assert len(errors) == 1 and "2010a, 2010b" in errors[0] and "2010s" not in errors[0]
+
+    def test_a_two_author_cite_does_not_match_a_three_author_entry(self):
+        errors, _, _ = self._check_refs("(Khoury and Patel 2018) argue this.", [
+            'Khoury, Andrew, and Bea Patel. 2018a. "First work."',
+            'Khoury, Andrew, Bea Patel, and Cara Chen. 2018b. "Second work."'])
+        assert not any("without its letter" in e for e in errors)
+
+    def test_a_given_name_is_not_a_surname(self):
+        errors, _, _ = self._check_refs("(Andrew and Patel 2018) argue this.", [
+            'Khoury, Andrew, and Bea Patel. 2018a. "First work."',
+            'Khoury, Andrew, and Bea Patel. 2018b. "Second work."'])
+        assert not any("without its letter" in e for e in errors)
+
+    def test_a_two_author_ambiguity_is_still_caught(self):
+        errors, _, _ = self._check_refs("(Khoury and Patel 2018) argue this.", [
+            'Khoury, Andrew, and Bea Patel. 2018a. "First work."',
+            'Khoury, Andrew, and Bea Patel. 2018b. "Second work."'])
+        assert sum("without its letter" in e for e in errors) == 1
+
+    def test_et_al_meets_only_three_or_more_authors(self):
+        errors, _, _ = self._check_refs("(Khoury et al. 2018) argue this.", [
+            'Khoury, Andrew, Bea Patel, and Cara Chen. 2018a. "First work."',
+            'Khoury, Andrew, Dan Ode, and Eve Fox. 2018b. "Second work."',
+            'Khoury, Andrew. 2018c. "Solo work."'])
+        assert sum("2018a, 2018b" in e for e in errors) == 1

@@ -343,35 +343,57 @@ def _fold_uncontracted(s: str) -> frozenset:
 _REF_YEAR_RE = re.compile(r"^(.*?)\s(\d{4})([a-z]?)(?:/\d{4}[a-z]?)?\.(?=\s|$)")
 
 
+def _entry_surnames(authors: str) -> list[str]:
+    """Surnames of a rendered Chicago author part: "Khoury, Andrew, Bea
+    Patel, and Cara Chen" -> [Khoury, Patel, Chen]. The first author is
+    inverted (surname before the first comma); each later author is "Given
+    Surname", so its last word is the surname. An "ed."/"eds." segment is
+    dropped."""
+    parts = [p.strip() for p in re.split(r",\s*", authors.strip().rstrip("."))]
+    if not parts or not parts[0]:
+        return []
+    out = [parts[0]]
+    for p in parts[2:]:
+        p = re.sub(r"^and\s+", "", p).strip()
+        if not p or re.fullmatch(r"eds?\.?", p):
+            continue
+        out.append(p.split()[-1])
+    return out
+
+
+def _same_name(token: str, surname: str) -> bool:
+    return bool(_fold_variants(token) & _fold_variants(surname))
+
+
 def _letterless_error(lineno, raw, raw_ascii, tokens, base, ref_lines):
     """An ERROR when a letterless `base` year names an author group whose
     References entries for that year are ALL lettered, two letters or more
     (2018a, 2018b): the cite does not say which work carries the claim.
 
-    Compared on parsed fields, not line text: the author part must name the
-    same group (a solo cite meets only solo entries led by that surname; a
-    multi-author cite meets only entries naming every cited surname) and
-    the year is the entry's publication-year field. A reprint cite
+    Compared on parsed fields, not line text: the entry's surnames must be
+    the cite's author group, same lead and same count ("et al." meets three
+    or more), and the year is the entry's publication-year field. Misses,
+    never false ERRORs: a corporate author of several words, a particle
+    surname the cite spells differently ("van der Berg" vs "Berg"), two
+    people sharing a surname, and an entry whose year field is not a year. A reprint cite
     (2018/2020) never reaches here: its second year may pick out the work.
     Known limit: a narrative "Khoury and Patel (2018)" yields only the token
     nearest the year, so it is checked as a solo cite of that surname and
     usually matches nothing (a miss, never a false ERROR)."""
-    multi = len(tokens) > 1 or "et al" in raw
+    et_al = "et al" in raw
     letters = set()
     for ln in ref_lines:
         m = _REF_YEAR_RE.match(ln.strip())
         if not m or m.group(2) != base:
             continue
-        authors = m.group(1)
-        folded = _fold_variants(authors)
-        def names(tok):
-            return any(re.search(r"\b" + re.escape(tv) + r"\b", fv)
-                       for tv in _fold_variants(tok) for fv in folded)
-        line_multi = " and " in authors or "et al" in authors
-        if multi != line_multi or not all(names(t) for t in tokens):
+        surnames = _entry_surnames(m.group(1))
+        if not surnames or not _same_name(tokens[0], surnames[0]):
             continue
-        if not multi and not any(fv.startswith(tv) for tv in _fold_variants(tokens[0])
-                                 for fv in folded):
+        if et_al:
+            if len(surnames) < 3:
+                continue
+        elif len(surnames) != len(tokens) or not all(
+                any(_same_name(t, sn) for sn in surnames) for t in tokens):
             continue
         if not m.group(3):
             return None            # a bare-year entry of the same group exists

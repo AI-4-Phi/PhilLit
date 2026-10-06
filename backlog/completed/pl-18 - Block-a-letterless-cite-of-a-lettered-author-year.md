@@ -1,9 +1,10 @@
 ---
 id: PL-18
 title: Block a letterless cite of a lettered author-year
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-10-06 14:49'
+updated_date: '2026-10-06 15:26'
 labels: []
 dependencies: []
 references:
