@@ -795,3 +795,38 @@ class TestLetterlessCiteOfALetteredYear:
     def test_an_unlettered_author_year_passes(self):
         errors, _, _ = self._check("Smith (2018) argues it.")
         assert errors == []
+
+    def _check_refs(self, body, refs):
+        from lint_md import check_citations
+        return check_citations("# R\n\n" + body + "\n\n## References\n\n" + "\n\n".join(refs) + "\n")
+
+    def test_a_co_authored_bare_year_entry_does_not_silence_a_solo_ambiguity(self):
+        errors, _, _ = self._check_refs("Khoury (2018) argues this.", [
+            'Khoury, Andrew. 2018a. "First work."',
+            'Khoury, Andrew. 2018b. "Second work."',
+            'Jones, Jane, and Andrew Khoury. 2018. "Joint work."'])
+        assert len(errors) == 1 and "2018a, 2018b" in errors[0]
+
+    def test_a_year_in_a_title_does_not_silence_it(self):
+        errors, _, _ = self._check_refs("Khoury (2018) argues this.", [
+            'Khoury, Andrew. 2018a. "First work."',
+            'Khoury, Andrew. 2018b. "A History of 2018."'])
+        assert len(errors) == 1
+
+    def test_a_co_author_that_picks_out_one_work_is_no_ambiguity(self):
+        errors, _, _ = self._check_refs("(Khoury and Patel 2018) argue this.", [
+            'Khoury, Andrew, and Bea Patel. 2018a. "First work."',
+            'Khoury, Andrew, and Cara Chen. 2018b. "Second work."'])
+        assert not any("without its letter" in e for e in errors)
+
+    def test_a_reprint_cite_is_left_to_the_straddle_check(self):
+        errors, _, _ = self._check_refs("Khoury (2018/2020) argues this.", [
+            'Khoury, Andrew. 2018a/2020. "First work."',
+            'Khoury, Andrew. 2018b. "Second work."'])
+        assert not any("without its letter" in e for e in errors)
+
+    def test_a_decade_word_is_not_a_letter(self):
+        errors, _, _ = self._check_refs("Khoury (2010) argues this.", [
+            'Khoury, Andrew. 2010a. "Politics in the 2010s."',
+            'Khoury, Andrew. 2010b. "Second work."'])
+        assert len(errors) == 1 and "2010a, 2010b" in errors[0] and "2010s" not in errors[0]

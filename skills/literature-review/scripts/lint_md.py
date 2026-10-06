@@ -337,6 +337,52 @@ def _fold_uncontracted(s: str) -> frozenset:
     return ascii_variants(s, contract=False)
 
 
+# A rendered References line's author part and publication-year field:
+# "Khoury, Andrew C. 2018a. ..." / "... 2018a/2020. ...". The FIRST such
+# field is the year, so a year inside the title never counts.
+_REF_YEAR_RE = re.compile(r"^(.*?)\s(\d{4})([a-z]?)(?:/\d{4}[a-z]?)?\.(?=\s|$)")
+
+
+def _letterless_error(lineno, raw, raw_ascii, tokens, base, ref_lines):
+    """An ERROR when a letterless `base` year names an author group whose
+    References entries for that year are ALL lettered, two letters or more
+    (2018a, 2018b): the cite does not say which work carries the claim.
+
+    Compared on parsed fields, not line text: the author part must name the
+    same group (a solo cite meets only solo entries led by that surname; a
+    multi-author cite meets only entries naming every cited surname) and
+    the year is the entry's publication-year field. A reprint cite
+    (2018/2020) never reaches here: its second year may pick out the work.
+    Known limit: a narrative "Khoury and Patel (2018)" yields only the token
+    nearest the year, so it is checked as a solo cite of that surname and
+    usually matches nothing (a miss, never a false ERROR)."""
+    multi = len(tokens) > 1 or "et al" in raw
+    letters = set()
+    for ln in ref_lines:
+        m = _REF_YEAR_RE.match(ln.strip())
+        if not m or m.group(2) != base:
+            continue
+        authors = m.group(1)
+        folded = _fold_variants(authors)
+        def names(tok):
+            return any(re.search(r"\b" + re.escape(tv) + r"\b", fv)
+                       for tv in _fold_variants(tok) for fv in folded)
+        line_multi = " and " in authors or "et al" in authors
+        if multi != line_multi or not all(names(t) for t in tokens):
+            continue
+        if not multi and not any(fv.startswith(tv) for tv in _fold_variants(tokens[0])
+                                 for fv in folded):
+            continue
+        if not m.group(3):
+            return None            # a bare-year entry of the same group exists
+        letters.add(base + m.group(3))
+    if len(letters) < 2:
+        return None
+    return (f"line {lineno}: citation '{raw_ascii}' gives {base} without its "
+            f"letter, but References lists {', '.join(sorted(letters))} for it; "
+            f"add the letter of the work the claim is about (ERROR)")
+
+
 def check_citations(text: str) -> tuple[list[str], list[str], bool]:
     """Verify every in-text author-year citation resolves to a References
     entry. Returns (errors, warnings, checked); checked=False when the file
@@ -478,24 +524,10 @@ def check_citations(text: str) -> tuple[list[str], list[str], bool]:
         for original, base in zip(years, base_years):
             letter = original[len(base):]
             if not letter:
-                # A LETTERLESS year whose candidate lines all carry it with a
-                # letter (2018a, 2018b): the author has two or more works
-                # that year and the cite does not say which, so a reader
-                # cannot tell which work carries the claim. ERROR, unlike
-                # the stray-letter WARN below: the remedy is always the same
-                # edit (add the letter), and the wrong work otherwise gets
-                # the claim. Same per-citation limit as that WARN: a sibling
-                # token's bare-year line silences it.
-                bare_re = re.compile(rf"(?<!\d){re.escape(base)}(?![a-z\d])")
-                lettered = sorted({m.group(0) for ln in candidate_lines
-                                   for m in re.finditer(
-                                       rf"(?<!\d){re.escape(base)}[a-z](?![a-z\d])", ln)})
-                if len(lettered) >= 2 and not any(bare_re.search(ln) for ln in candidate_lines):
-                    errors.append(
-                        f"line {lineno}: citation '{raw_ascii}' gives {base} "
-                        f"without its letter, but References lists "
-                        f"{', '.join(lettered)} for it; add the letter of the "
-                        f"work the claim is about (ERROR)")
+                if len(base_years) == 1:
+                    err = _letterless_error(lineno, raw, raw_ascii, tokens, base, ref_lines)
+                    if err:
+                        errors.append(err)
                 continue
             token_re = re.compile(
                 rf"(?<!\d){re.escape(base)}{re.escape(letter)}\b")
