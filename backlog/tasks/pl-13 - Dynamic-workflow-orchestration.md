@@ -23,4 +23,6 @@ ordinal: 2000
 The design, its verified facts and its gates are in `docs/ideas/dynamic-workflow-refactor.md`.
 
 **What brings it forward:** the design doc's "Gates before step 2". The first gate answered no: phillit-service cannot deliver a workspace workflow file, so the step-3 redesign comes before the headless run for gate 2.
+
+**On hold by Johannes (2026-10-06):** he doubts this is worth doing at all, because so large a change may create problems nobody can foresee. Do not propose it, even when a gate clears; only he reopens it.
 <!-- SECTION:DESCRIPTION:END -->
