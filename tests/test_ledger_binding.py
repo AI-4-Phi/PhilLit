@@ -691,3 +691,41 @@ class TestBarrierSelfCheck:
         assert eb.execute(rd, 2) == 0
         rep = json.loads((ij / "evidence_report.json").read_text(encoding="utf-8"))
         assert "self_check_failed" not in rep
+
+
+class TestBarrierSelfCheckEdges:
+    """Second review round: exemptions that were too wide."""
+
+    def test_an_unhealed_entrys_abstract_is_checked(self):
+        import evidence_barrier as eb
+        before = KUHN.replace("year = {1962},", "year = {1962},\n  abstract = {Original.},")
+        after = before.replace("Original.", "Forged.")
+        heals = {"kuhn1962structure": {"outcome": "unhealed", "source": "s2"}}
+        assert eb._self_check(before, after, heals) == ["kuhn1962structure"]
+
+    def test_a_heal_must_land_the_attested_text(self):
+        import evidence_barrier as eb
+        import stamp_evidence as se
+        after_ok = KUHN.replace("year = {1962},",
+                                "year = {1962},\n  abstract = {Restored.},\n  abstract_source = {s2},")
+        heal = {"kuhn1962structure": {"outcome": "restored", "source": "s2",
+                                      "abstract_sha256": se.abstract_hash("Restored.")}}
+        assert eb._self_check(KUHN, after_ok, heal) == []
+        assert eb._self_check(KUHN, after_ok.replace("Restored.", "Forged."), heal) == ["kuhn1962structure"]
+        assert eb._self_check(KUHN, after_ok.replace("{s2}", "{core}"), heal) == ["kuhn1962structure"]
+
+    def test_a_duplicated_owned_field_fails(self):
+        import evidence_barrier as eb
+        after = KUHN.replace("year = {1962},",
+                             "year = {1962},\n  venue_status = {a},\n  venue_status = {b},")
+        assert eb._self_check(KUHN, after, {}) == ["kuhn1962structure"]
+
+    def test_a_second_keywords_field_fails(self):
+        import evidence_barrier as eb
+        after = KUHN.replace("year = {1962},", "year = {1962},\n  keywords = {EVIDENCE-FAKE},")
+        assert eb._self_check(KUHN, after, {}) == ["kuhn1962structure"]
+
+    def test_reordered_entries_fail(self):
+        import evidence_barrier as eb
+        other = KUHN.replace("kuhn1962structure", "kuhn1970postscript")
+        assert eb._self_check(KUHN + "\n" + other, other + "\n" + KUHN, {}) == ["<entry order>"]

@@ -1615,16 +1615,20 @@ def _repoint_binding(ledger_path: Path, authored: str) -> str | None:
         return f"{ledger_path.name}: {type(e).__name__}: {e}"
 
 
-def _projection(text: str, healed_keys: set) -> dict:
+_LANDED_HEALS = frozenset({"restored", ABSTRACT_UNUSABLE})  # both splice the text
+
+
+def _projection(text: str, exempt_abstract: set) -> dict:
     """What the barrier must never change: every chunk with the barrier's own
     fields set aside. Those are the derived fields, the encyclopedia context
     fields, the keyword tokens the stamper owns (both sides go through
     `stamp_keywords(v, None)`, so its reordering and dropping cancel out),
-    and, on an entry this run healed, `abstract` and `abstract_source`.
-    Fields are read with the shared scanner, never a regex. Keyed by entry
-    key; non-entry chunks under one key, in order."""
+    and `abstract`/`abstract_source` on the keys in `exempt_abstract` (heals
+    that landed; `_self_check` verifies those separately). Fields are read
+    with the shared scanner, never a regex. Keyed by entry key, plus the
+    entry order and the non-entry chunks."""
     owned = _DERIVED_FIELDS | rc._CONTEXT_FIELDS
-    proj = {"<non-entry chunks>": []}
+    proj = {"<non-entry chunks>": [], "<entry order>": []}
     for chunk in se.split_entries(text):
         if not chunk.strip():
             continue
@@ -1633,7 +1637,8 @@ def _projection(text: str, healed_keys: set) -> dict:
             proj["<non-entry chunks>"].append(chunk.strip())
             continue
         etype, key = header
-        skip = owned | ({"abstract", "abstract_source"} if key in healed_keys else set())
+        proj["<entry order>"].append(key)
+        skip = owned | ({"abstract", "abstract_source"} if key in exempt_abstract else set())
         fields = []
         for f in bib_fields.iter_fields(chunk):
             name = f.name.lower()
@@ -1649,15 +1654,49 @@ def _projection(text: str, healed_keys: set) -> dict:
     return proj
 
 
-def _self_check(before: str, after: str, healed_keys: set) -> list[str]:
-    """The keys (or "<non-entry chunks>") whose projection the barrier's
-    output changed: empty when stamping touched only what it owns. This is
-    what makes the re-point safe: `_repoint_binding` binds the barrier's own
-    text as trusted, so a renderer bug that altered a key, title, year or
-    author, or dropped or added an entry, would otherwise be trusted by the
-    next run."""
-    a, b = _projection(before, healed_keys), _projection(after, healed_keys)
-    return sorted(k for k in set(a) | set(b) if a.get(k) != b.get(k))
+def _self_check(before: str, after: str, heals: dict) -> list[str]:
+    """The keys (or "<entry order>", "<non-entry chunks>") the barrier's
+    output changed outside what it owns: empty when stamping touched only
+    its own fields. This is what makes the re-point safe: `_repoint_binding`
+    binds the barrier's own text as trusted, so a renderer bug that altered
+    a key, title, year or author, dropped, added or reordered an entry, or
+    duplicated a field (pybtex rejects the file) would otherwise be trusted
+    by the next run.
+
+    `heals` is this bib's `report["healed"]`, each record carrying the
+    enrichment ledger's `abstract_sha256` for that key (execute adds it: a
+    heal restores exactly the text the ledger attests). Only a heal that
+    landed exempts the abstract, and then the output must carry that text
+    and the recorded source."""
+    landed = {k: h for k, h in heals.items()
+              if isinstance(h, dict) and h.get("outcome") in _LANDED_HEALS}
+    a, b = _projection(before, set(landed)), _projection(after, set(landed))
+    changed = {k for k in set(a) | set(b) if a.get(k) != b.get(k)}
+
+    def abstracts(text):
+        out = {}
+        for chunk in se.split_entries(text):
+            header = se.entry_header(chunk)
+            if header is not None and header[1] in landed:
+                f = se.parse_entry_fields(chunk)
+                out[header[1]] = (f.get("abstract") or "",
+                                  (f.get("abstract_source") or "").strip())
+        return out
+
+    old, new = abstracts(before), abstracts(after)
+    for key, h in landed.items():
+        # Either left alone (a splice that did not land) or exactly the
+        # attested text with the recorded source - nothing else.
+        if key in new and new[key] != old.get(key) and (
+                se.abstract_hash(new[key][0]) != h.get("abstract_sha256")
+                or new[key][1] != h.get("source")):
+            changed.add(key)
+    for chunk in se.split_entries(after):
+        header = se.entry_header(chunk)
+        names = [f.name.lower() for f in bib_fields.iter_fields(chunk)] if header else []
+        if len(names) != len(set(names)):
+            changed.add(header[1])
+    return sorted(changed)
 
 
 def _accepted_ledger_for(review_dir: Path, ijson: Path, report: dict,
@@ -1694,8 +1733,18 @@ def execute(review_dir: Path, n_domains: int, debug: bool = False) -> int:
             healed = report.get("healed") or {}
             changed = {}
             for path, content in outputs.items():
-                keys = _self_check(path.read_text(encoding="utf-8"), content,
-                                   set(healed.get(path.name) or {}))
+                heals = healed.get(path.name) or {}
+                if heals:
+                    try:   # unreadable: no hash, so the heal fails the check (closed)
+                        ledger = json.loads((ijson / f"enrichment_ledger-{path.stem}.json")
+                                            .read_text(encoding="utf-8"))
+                    except (OSError, UnicodeDecodeError, json.JSONDecodeError):
+                        ledger = {}
+                    attested = (ledger.get("entries") if isinstance(ledger, dict) else None) or {}
+                    heals = {k: {**h, "abstract_sha256":
+                                 (attested.get(k) or {}).get("abstract_sha256")}
+                             for k, h in heals.items() if isinstance(h, dict)}
+                keys = _self_check(path.read_text(encoding="utf-8"), content, heals)
                 if keys:
                     changed[path.name] = keys
             if changed:
