@@ -55,6 +55,7 @@ from stamp_evidence import (
     abstract_hash,
     normalize_abstract_for_hash,
 )
+from abstract_usability import unusable_reason  # noqa: E402 - same directory
 
 
 def log_progress(message: str) -> None:
@@ -238,10 +239,12 @@ def resolve_abstract_for_entry(
     s2_api_key: Optional[str],
     openalex_email: Optional[str],
     core_api_key: Optional[str],
-    debug: bool = False
+    debug: bool = False,
+    accept=None,
 ) -> tuple[Optional[str], Optional[str]]:
     """
-    Try to resolve abstract for a BibTeX entry.
+    Try to resolve abstract for a BibTeX entry. `accept`: see
+    get_abstract.resolve_abstract.
 
     Returns:
         Tuple of (abstract, source) or (None, None)
@@ -266,7 +269,8 @@ def resolve_abstract_for_entry(
         s2_api_key=s2_api_key,
         openalex_email=openalex_email,
         core_api_key=core_api_key,
-        debug=debug
+        debug=debug,
+        accept=accept,
     )
 
 
@@ -649,8 +653,8 @@ def enrich_entry(
     log_progress(f"Resolving abstract for: {entry['key']}")
 
     abstract, source = resolve_abstract_for_entry(
-        entry, s2_api_key, openalex_email, core_api_key, debug
-    )
+        entry, s2_api_key, openalex_email, core_api_key, debug,
+        accept=_usable_for(entry))
 
     if abstract:
         # Add abstract and source fields
@@ -669,6 +673,44 @@ def enrich_entry(
         entry_text = add_keyword_to_entry(entry_text, 'no-abstract')
         log_progress(f"  No abstract found, marked INCOMPLETE")
         return entry_text, False, None
+
+
+def _usable_for(entry: dict):
+    """The usability screen as an `accept` test for this entry: enrichment
+    is stubborn and keeps looking past a stub, a keyword list or a page
+    scrape (PL-15). The barrier's screen stays the final gate."""
+    return lambda text: unusable_reason(text, entry['fields']) is None
+
+
+def replace_unusable_abstract(
+    entry: dict,
+    s2_api_key: Optional[str],
+    openalex_email: Optional[str],
+    core_api_key: Optional[str],
+    debug: bool = False,
+    ledger_writes: Optional[dict] = None,
+) -> tuple[str, bool]:
+    """An entry whose abstract fails the usability screen: look for a
+    usable text at every source and, if one is found, replace the abstract
+    and its source and record the attestation. Otherwise a no-op.
+
+    Returns (entry_text, replaced)."""
+    try:
+        found, source = resolve_abstract_for_entry(
+            entry, s2_api_key, openalex_email, core_api_key, debug,
+            accept=_usable_for(entry))
+    except Exception as e:
+        log_progress(f"  Retry for a usable abstract failed ({e})")
+        return entry['raw'], False
+    if not found or not _usable_for(entry)(found):
+        return entry['raw'], False
+    text = add_field_to_entry(entry['raw'], 'abstract', found)
+    text = add_field_to_entry(text, 'abstract_source', source)
+    if ledger_writes is not None:
+        ledger_writes[entry['key']] = {"abstract_source": source,
+                                       "abstract_sha256": abstract_hash(found)}
+    log_progress(f"  Replaced an unusable abstract with {source}'s")
+    return text, True
 
 
 def attest_prefilled_entry(
@@ -787,7 +829,8 @@ def enrich_bibliography(
         'skipped': 0,
         'prefilled_attested': 0,
         'prefilled_unverified': 0,
-        'sources': {'s2': 0, 'openalex': 0, 'core': 0, 'ndpr': 0}
+        'sources': {'s2': 0, 'openalex': 0, 'core': 0, 'ndpr': 0},
+        'unusable_replaced': 0,
     }
 
     # Drop-direction backstop, BEFORE any work. A zero-entry parse of a
@@ -808,6 +851,7 @@ def enrich_bibliography(
     # prior ledger by _update_enrichment_ledger at the end of this function.
     ledger_writes: dict = {}
     prior_ledger = _load_prior_ledger(output_path or input_path)
+    unusable_keys: set = set()   # enriched, but every API source was unusable
 
     for entry in entries:
         # Skip comments
@@ -824,6 +868,15 @@ def enrich_bibliography(
         # abstract was otherwise structurally unattestable (A/B root
         # cause 1). Fail-closed: on any miss the entry is untouched.
         if has_abstract(entry):
+            if not _usable_for(entry)(entry['fields']['abstract']):
+                new_text, replaced = replace_unusable_abstract(
+                    entry, s2_api_key, openalex_email, core_api_key, debug,
+                    ledger_writes=ledger_writes)
+                if replaced:
+                    enriched_entries.append(new_text)
+                    stats['already_had_abstract'] += 1
+                    stats['unusable_replaced'] += 1
+                    continue
             prior = prior_ledger.get(entry['key']) or {}
             cur_source = (entry['fields'].get('abstract_source') or '').strip().lower()
             if (prior.get('abstract_sha256') == abstract_hash(entry['fields']['abstract'])
@@ -852,6 +905,9 @@ def enrich_bibliography(
         if was_enriched and source:
             stats['enriched'] += 1
             stats['sources'][source] = stats['sources'].get(source, 0) + 1
+            fields = parse_bibtex_entries(enriched_text)[0]['fields']
+            if not _usable_for(entry)(fields.get('abstract') or ''):
+                unusable_keys.add(entry['key'])   # every source was unusable
         else:
             stats['marked_incomplete'] += 1
             stats['incomplete_keys'].append(entry['key'])
@@ -860,11 +916,12 @@ def enrich_bibliography(
     # Only attempt NDPR for @book entries that:
     # 1. Still lack an abstract after the main enrichment pass
     # 2. Have High or Medium importance (as noted in keywords)
+    # A book whose every API text was unusable tries NDPR too (PL-15).
     book_entries_without_abstract = [
         (i, e) for i, e in enumerate(entries)
         if e['entry_type'] == 'book'
-        and not has_abstract(e)
-        and _is_ndpr_candidate(enriched_entries[i])
+        and ((not has_abstract(e) and _is_ndpr_candidate(enriched_entries[i]))
+             or e['key'] in unusable_keys)
     ]
 
     if book_entries_without_abstract:
@@ -880,6 +937,17 @@ def enrich_bibliography(
                 # blanket -- there the same exception must read as a
                 # transport non-answer, not a no-match.
                 log_progress(f"  NDPR error for '{title}': {e}")
+                continue
+            if abstract and entry['key'] in unusable_keys and not _usable_for(entry)(abstract):
+                continue      # keep the API text: NDPR's is no better
+            if abstract and entry['key'] in unusable_keys:
+                enriched_entries[idx] = add_field_to_entry(enriched_entries[idx], 'abstract', abstract)
+                enriched_entries[idx] = add_field_to_entry(enriched_entries[idx], 'abstract_source', 'ndpr')
+                ledger_writes[entry['key']] = {"abstract_source": "ndpr",
+                                               "abstract_sha256": abstract_hash(abstract)}
+                unusable_keys.discard(entry['key'])
+                stats['unusable_replaced'] += 1
+                log_progress(f"  Replaced an unusable abstract with NDPR's for: {entry['key']}")
                 continue
             if abstract:
                 enriched_entries[idx] = add_field_to_entry(enriched_entries[idx], 'abstract', abstract)

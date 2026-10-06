@@ -195,6 +195,7 @@ The paper's actual abstract. Must come from API sources only (S2, OpenAlex, CORE
 
 - Populated ONLY by `enrich_bibliography.py` (Stage 5.5) — researchers never write `abstract` or `abstract_source` by hand; the enrichment ledger attests source and text hash, and unattested abstracts earn no citability tier.
 - Never written by agent from memory
+- Enrichment screens each source's text with the barrier's usability screen (`abstract_usability.py`) and moves on to the next source (S2, OpenAlex, CORE, then NDPR for a book) when one is unusable; an unusable prefilled abstract is replaced the same way. If no source is usable, the first text found is kept, and the barrier refuses it the tier.
 - If missing from all sources: Omit field, add INCOMPLETE to keywords
 
 ### abstract_source Field

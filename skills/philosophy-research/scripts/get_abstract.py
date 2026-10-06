@@ -504,15 +504,36 @@ def resolve_abstract(
     s2_api_key: Optional[str] = None,
     openalex_email: Optional[str] = None,
     core_api_key: Optional[str] = None,
-    debug: bool = False
+    debug: bool = False,
+    accept=None,
 ) -> tuple[Optional[str], Optional[str]]:
     """
     Try to resolve abstract from multiple sources.
+
+    `accept`, if given, is a test a source's text must pass to win: a text
+    that fails it sends the search on to the next source (enrichment passes
+    the usability screen, so a stub at one source does not hide a real
+    abstract at another). When no text passes, the first text found is
+    returned, so nothing is lost; the evidence barrier still screens it.
 
     Returns:
         Tuple of (abstract, source) where source is "s2", "openalex", or "core"
         Returns (None, None) if no abstract found
     """
+    first: tuple[Optional[str], Optional[str]] = (None, None)
+
+    def take(abstract, source):
+        nonlocal first
+        if not abstract:
+            return False
+        if accept is None or accept(abstract):
+            return True
+        if first == (None, None):
+            first = (abstract, source)
+        if debug:
+            log_progress(f"  {source} abstract unusable -- trying the next source")
+        return False
+
     ctx = build_source_context(s2_api_key)
     s2_limiter = ctx["s2_limiter"]
     openalex_limiter = ctx["openalex_limiter"]
@@ -526,13 +547,13 @@ def resolve_abstract(
             s2_id=s2_id, api_key=s2_api_key, limiter=s2_limiter,
             backoff=s2_backoff, debug=debug, doi=doi
         )
-        if abstract:
+        if take(abstract, "s2"):
             return abstract, "s2"
 
     # Source 2: OpenAlex (if DOI provided)
     if doi:
         abstract = get_abstract_from_openalex(doi, openalex_email, openalex_limiter, other_backoff, debug)
-        if abstract:
+        if take(abstract, "openalex"):
             return abstract, "openalex"
 
     # Source 3: CORE (by DOI or title+author) — only when a CORE key was
@@ -547,12 +568,12 @@ def resolve_abstract(
             doi=doi, title=title, author=author, year=year,
             api_key=core_api_key, limiter=core_limiter, backoff=other_backoff, debug=debug
         )
-        if abstract:
+        if take(abstract, "core"):
             return abstract, "core"
     elif debug:
         log_progress("Skipping CORE (no CORE_API_KEY configured)")
 
-    return None, None
+    return first
 
 
 def main():
