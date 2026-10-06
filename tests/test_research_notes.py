@@ -256,9 +256,9 @@ def test_text_after_a_blank_line_in_the_header_is_unlabelled():
     assert exc.value.texts == ["OVERVIEW (colon-less)", "Private analysis"]
 
 
-def test_a_title_join_stops_after_two_continuation_lines():
+def test_a_title_join_stops_after_one_continuation_line():
     d = rn.parse_or_withhold(block("3 -- A\nb\nc\nd"))
-    assert d.title == "3 -- A b c"
+    assert d.title == "3 -- A b"
 
 
 def test_an_overlong_title_join_keeps_the_first_line():
@@ -322,3 +322,31 @@ def test_the_exception_text_never_quotes_unlabelled_text():
     with pytest.raises(rn.UnknownLabel) as exc:
         rn.parse_block(block(body="\nSecret telemetry.\n\nDOMAIN_OVERVIEW:\nKept.\n"))
     assert "Secret telemetry" not in str(exc.value)
+
+
+def test_text_before_the_first_header_label_is_unlabelled():
+    chunk = block().replace(f"{RULE}\nDOMAIN:", f"{RULE}\nPrivate run note: rerun\nDOMAIN:", 1)
+    with pytest.raises(rn.UnknownLabel) as exc:
+        rn.parse_block(chunk)
+    assert exc.value.texts == ["Private run note: rerun"]
+
+
+def test_a_header_that_never_closes_says_so():
+    d = rn.parse_or_withhold(f"@comment{{\n{RULE}\nDOMAIN: 2 -- X\nSEARCH_DATE: 2026-09-10\n}}\n")
+    assert d.withheld.reader_summary() == "had a ==== header that never closed before any section"
+
+
+def test_a_tag_on_a_withheld_blocks_first_title_line_still_fails_the_file():
+    # The first line is delivered (heading and notice), so its tag must be defined.
+    d = rn.parse_or_withhold(block("3 -- The FL9.9 debate", body="\nFOR: bad\n"))
+    with pytest.raises(fl.UndefinedFaultLine):
+        rn.render([d], DEFS, "p")
+
+
+def test_a_title_joins_one_wrapped_line_only():
+    # Measured: real titles wrap one line at most. A second continuation is a
+    # stray line, and a tag in it would cost the whole file.
+    d = rn.parse_block(block("8 -- Critical perspectives on deflationism and\n"
+                             "skepticism about the framing\nrun id 9f3a2c, see FL9.9"))
+    assert d.title == "8 -- Critical perspectives on deflationism and skepticism about the framing"
+    assert "9f3a2c" not in rn.render([d], DEFS, "p")    # and the render does not raise

@@ -17,7 +17,9 @@ the first IN label: an IN label is never legal in a header, so the cut is
 unambiguous. A block that raises UnknownLabel is withheld ALONE
 (`parse_or_withhold`): the notes file is still delivered, and the block's
 place names its unknown labels and says it held unlabelled text, never
-quoting or counting it. This is a LABEL list, never a sentence-level edit: run-mechanics
+quoting or counting it. Accepted residual: an ALL-CAPS line shaped like a
+label (`RUN ID 9F3A2C:`) is named like any unknown label, since nothing
+tells it from an improvised one. This is a LABEL list, never a sentence-level edit: run-mechanics
 prose inside NOTABLE_GAPS and writer-directed sentences inside
 RELEVANCE_TO_PROJECT stay untouched, and a provenance label appearing inside
 a kept note's own text is never normalised.
@@ -65,11 +67,12 @@ class UnknownLabel(ValueError):
     label, text before the block's own `====` header) - never conflated,
     since one names a token to add to a list and the other names prose."""
 
-    def __init__(self, labels=(), texts=(), title="", no_header=False):
+    def __init__(self, labels=(), texts=(), title="", no_header=False, never_closed=False):
         self.labels = sorted(set(labels))
         self.texts = sorted(set(texts))
         self.title = title                # the block's DOMAIN: value, if it has one
         self.no_header = no_header        # no ==== rule to open a header at all
+        self.never_closed = never_closed  # a header with no closing rule and no IN label
         super().__init__(self.reader_summary())   # never the texts themselves
 
     def reader_summary(self) -> str:
@@ -79,6 +82,8 @@ class UnknownLabel(ValueError):
         any count would be wrong."""
         if self.no_header:
             return "had no ==== header"
+        if self.never_closed:
+            return "had a ==== header that never closed before any section"
         what = []
         if self.labels:
             what.append("used labels the notes format does not recognise ("
@@ -123,12 +128,13 @@ def _is_in_label(line: str) -> bool:
     return (m := _LABEL_RE.match(line)) is not None and m.group(1) in IN_LABELS
 
 
-_TITLE_WRAP_LINES = 2     # measured: real titles wrap onto one line at most
+_TITLE_WRAP_LINES = 1     # measured: real titles wrap onto one line at most; a
+                          # second line is a stray, and a tag in it costs the file
 _TITLE_MAX = 200
 
 
 def _domain_title(lines: list[str], join: bool = True) -> str:
-    """The `DOMAIN:` value, joined across at most two lines it wraps onto
+    """The `DOMAIN:` value, joined across the one line it may wrap onto
     (up to the next label, rule or blank line). A join past _TITLE_MAX keeps
     the first line: the title is delivered even when its block is withheld,
     so it must not swallow a stray paragraph. `join=False` gives the first
@@ -160,7 +166,8 @@ def parse_block(chunk: str) -> DomainNotes:
          if _RULE_RE.match(lines[i]) or _is_in_label(lines[i])), None)
     if end is None:
         raise UnknownLabel(texts=["<research block without its ==== header>"],
-                           title=_domain_title(lines, join=False), no_header=start is None)
+                           title=_domain_title(lines, join=False), no_header=start is None,
+                           never_closed=start is not None)
     body_start = end + 1 if _RULE_RE.match(lines[end]) else end
     unknown_labels: list[str] = []
     unknown_texts: list[str] = []
@@ -169,19 +176,20 @@ def parse_block(chunk: str) -> DomainNotes:
             unknown_texts.append(line.strip()[:60])   # text before the block's own header
     header = lines[start + 1: end]
     title = _domain_title(header)
-    after_blank = False
+    after_blank = seen_label = False
     for line in header:
         m = _LABEL_RE.match(line)
         if not m:
-            # A wrapped header value - unless a blank line came first: no
-            # well-formed header holds one (0 of 563 measured blocks), so
-            # text after it is a heading or analysis the header would hide.
+            # A wrapped header value - unless no label came before it to
+            # wrap, or a blank line came first: no well-formed header holds
+            # one (0 of 563 measured blocks), so text after it is a heading
+            # or analysis the header would hide.
             if not line.strip():
                 after_blank = True
-            elif after_blank:
+            elif after_blank or not seen_label:
                 unknown_texts.append(line.strip()[:60])
             continue
-        after_blank = False
+        after_blank, seen_label = False, True
         if m.group(1) != "DOMAIN" and m.group(1) not in OUT_LABELS:
             unknown_labels.append(m.group(1))
     num = _NUMBER_RE.match(title)
