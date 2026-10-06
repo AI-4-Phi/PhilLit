@@ -1,10 +1,10 @@
 ---
 id: PL-15
 title: 'Enrichment: try the next abstract source when one is unusable'
-status: In Progress
+status: Done
 assignee: []
 created_date: '2026-10-06 07:32'
-updated_date: '2026-10-06 08:45'
+updated_date: '2026-10-06 09:29'
 labels:
   - barrier
 dependencies: []

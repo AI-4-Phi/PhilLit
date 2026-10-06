@@ -157,3 +157,38 @@ def test_an_unusable_ndpr_text_keeps_the_api_text(monkeypatch, tmp_path):
     eb.enrich_bibliography(bib, None, None, None, None)
     out = bib.read_text(encoding="utf-8")
     assert "abstract_source = {s2}" in out and out.count("abstract =") == 1
+
+
+def test_an_ndpr_rescue_of_a_prefilled_stub_drops_the_incomplete_keywords(monkeypatch, tmp_path):
+    _sources(monkeypatch, STUB, None)
+    monkeypatch.setattr(eb, "resolve_ndpr_abstract", lambda title, author=None, debug=False: (GOOD, "ndpr"))
+    bib = _book(tmp_path, "\n  abstract = {" + STUB + "},")
+    bib.write_text(bib.read_text(encoding="utf-8").replace("{free-will, High}",
+                                                           "{free-will, High, INCOMPLETE, no-abstract}"),
+                   encoding="utf-8")
+    eb.enrich_bibliography(bib, None, None, None, None)
+    kw = eb.parse_bibtex_entries(bib.read_text(encoding="utf-8"))[0]["fields"]["keywords"]
+    assert "INCOMPLETE" not in kw and "no-abstract" not in kw
+
+
+def test_a_usable_prefilled_abstract_triggers_no_search(monkeypatch, tmp_path):
+    calls = []
+    monkeypatch.setattr(eb, "resolve_abstract_for_entry", lambda *a, **k: calls.append(1) or (None, None))
+    bib = tmp_path / "literature-domain-1.bib"
+    bib.write_text(ENTRY.replace("doi = {10.2307/2024717},",
+                                 "doi = {10.2307/2024717},\n  abstract = {" + GOOD + "},"), encoding="utf-8")
+    eb.enrich_bibliography(bib, None, None, None, None)
+    assert len(calls) == 1      # the ordinary attestation fetch only, no usability retry
+
+
+def test_a_second_run_over_an_unrescuable_stub_changes_nothing(monkeypatch, tmp_path):
+    _sources(monkeypatch, STUB, None)
+    bib = tmp_path / "literature-domain-1.bib"
+    bib.write_text(ENTRY, encoding="utf-8")
+    eb.enrich_bibliography(bib, None, None, None, None)
+    first = bib.read_text(encoding="utf-8")
+    ledger = tmp_path / "intermediate_files" / "json" / "enrichment_ledger-literature-domain-1.json"
+    first_ledger = ledger.read_text(encoding="utf-8")
+    eb.enrich_bibliography(bib, None, None, None, None)
+    assert bib.read_text(encoding="utf-8") == first
+    assert json.loads(ledger.read_text(encoding="utf-8"))["entries"] == json.loads(first_ledger)["entries"]

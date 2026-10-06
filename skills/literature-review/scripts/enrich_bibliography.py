@@ -860,8 +860,13 @@ def enrich_bibliography(
     # prior ledger by _update_enrichment_ledger at the end of this function.
     ledger_writes: dict = {}
     prior_ledger = _load_prior_ledger(output_path or input_path)
-    # key -> the counted source of the unusable abstract it holds (None for a
-    # prefilled one): every API source was unusable, so NDPR may be tried.
+    # entry index -> the counted source of the unusable abstract it holds
+    # (None for a prefilled one): every API source was unusable, so NDPR may
+    # be tried. Keyed by index, not citekey: a duplicated key must not route
+    # its second entry past the usability check.
+    # Stats: `sources` counts the source of every abstract this run WROTE, so
+    # sum(sources) == enriched + prefilled replacements (`unusable_replaced`
+    # counts both the prefilled and the NDPR replacements).
     unusable_keys: dict = {}
 
     for entry in entries:
@@ -880,7 +885,8 @@ def enrich_bibliography(
         # cause 1). Fail-closed: on any miss the entry is untouched.
         if has_abstract(entry):
             # An unusable abstract is re-searched BEFORE the prior-ledger fast
-            # path, on every run. Accepted cost: rare (57 of 2,645 abstracts
+            # path, on every run: every API source, and NDPR for a High or
+            # Medium book. Accepted cost: rare (57 of 2,645 abstracts
             # measured), and an attested stub with no usable alternative then
             # takes the fast path as before.
             if not _usable_for(entry)(entry['fields']['abstract']):
@@ -894,7 +900,7 @@ def enrich_bibliography(
                     stats['sources'][new_source] = stats['sources'].get(new_source, 0) + 1
                     continue
                 if entry['entry_type'] == 'book':
-                    unusable_keys[entry['key']] = None   # NDPR may still have one
+                    unusable_keys[len(enriched_entries)] = None   # NDPR may still have one
             prior = prior_ledger.get(entry['key']) or {}
             cur_source = (entry['fields'].get('abstract_source') or '').strip().lower()
             if (prior.get('abstract_sha256') == abstract_hash(entry['fields']['abstract'])
@@ -925,7 +931,7 @@ def enrich_bibliography(
             stats['sources'][source] = stats['sources'].get(source, 0) + 1
             fields = parse_bibtex_entries(enriched_text)[0]['fields']
             if not _usable_for(entry)(fields.get('abstract') or ''):
-                unusable_keys[entry['key']] = source   # every source was unusable
+                unusable_keys[len(enriched_entries) - 1] = source   # every source was unusable
         else:
             stats['marked_incomplete'] += 1
             stats['incomplete_keys'].append(entry['key'])
@@ -939,7 +945,7 @@ def enrich_bibliography(
         (i, e) for i, e in enumerate(entries)
         if e['entry_type'] == 'book'
         and ((not has_abstract(e) and _is_ndpr_candidate(enriched_entries[i]))
-             or (e['key'] in unusable_keys and _important(enriched_entries[i])))
+             or (i in unusable_keys and _important(enriched_entries[i])))
     ]
 
     if book_entries_without_abstract:
@@ -956,14 +962,16 @@ def enrich_bibliography(
                 # transport non-answer, not a no-match.
                 log_progress(f"  NDPR error for '{title}': {e}")
                 continue
-            if abstract and entry['key'] in unusable_keys and not _usable_for(entry)(abstract):
+            if abstract and idx in unusable_keys and not _usable_for(entry)(abstract):
                 continue      # keep the API text: NDPR's is no better
-            if abstract and entry['key'] in unusable_keys:
+            if abstract and idx in unusable_keys:
                 enriched_entries[idx] = add_field_to_entry(enriched_entries[idx], 'abstract', abstract)
                 enriched_entries[idx] = add_field_to_entry(enriched_entries[idx], 'abstract_source', 'ndpr')
+                enriched_entries[idx] = remove_keyword_from_entry(enriched_entries[idx], 'INCOMPLETE')
+                enriched_entries[idx] = remove_keyword_from_entry(enriched_entries[idx], 'no-abstract')
                 ledger_writes[entry['key']] = {"abstract_source": "ndpr",
                                                "abstract_sha256": abstract_hash(abstract)}
-                counted = unusable_keys.pop(entry['key'])
+                counted = unusable_keys.pop(idx)
                 if counted:   # the source counts describe the final output
                     stats['sources'][counted] -= 1
                 stats['sources']['ndpr'] += 1
