@@ -478,6 +478,24 @@ def check_citations(text: str) -> tuple[list[str], list[str], bool]:
         for original, base in zip(years, base_years):
             letter = original[len(base):]
             if not letter:
+                # A LETTERLESS year whose candidate lines all carry it with a
+                # letter (2018a, 2018b): the author has two or more works
+                # that year and the cite does not say which, so a reader
+                # cannot tell which work carries the claim. ERROR, unlike
+                # the stray-letter WARN below: the remedy is always the same
+                # edit (add the letter), and the wrong work otherwise gets
+                # the claim. Same per-citation limit as that WARN: a sibling
+                # token's bare-year line silences it.
+                bare_re = re.compile(rf"(?<!\d){re.escape(base)}(?![a-z\d])")
+                lettered = sorted({m.group(0) for ln in candidate_lines
+                                   for m in re.finditer(
+                                       rf"(?<!\d){re.escape(base)}[a-z](?![a-z\d])", ln)})
+                if len(lettered) >= 2 and not any(bare_re.search(ln) for ln in candidate_lines):
+                    errors.append(
+                        f"line {lineno}: citation '{raw_ascii}' gives {base} "
+                        f"without its letter, but References lists "
+                        f"{', '.join(lettered)} for it; add the letter of the "
+                        f"work the claim is about (ERROR)")
                 continue
             token_re = re.compile(
                 rf"(?<!\d){re.escape(base)}{re.escape(letter)}\b")

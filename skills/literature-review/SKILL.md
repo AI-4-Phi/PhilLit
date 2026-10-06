@@ -415,7 +415,7 @@ A resume that starts at step 8 cannot reproduce the split's `SPLIT-*` lines or t
    The linter also verifies every in-text author-year citation resolves to a
    References entry (ERROR + nonzero exit otherwise, printed as
    `ERROR citation: ...`). This channel carries two distinct cases with two
-   distinct remedies — read which one fired before touching anything:
+   distinct remedies, plus a third for a missing letter — read which one fired before touching anything:
 
    - **Does not resolve to any References entry**: the References generator
      dropped a cited work — fix the body/bib author spelling divergence (or
@@ -424,6 +424,7 @@ A resume that starts at step 8 cannot reproduce the split's `SPLIT-*` lines or t
      regulations, treaties, reports): they are cited like any other work, so
      they need a bib entry — the sanctioned remedy for an unresolved
      "(GDPR 2016)" is adding the @misc entry, not removing the citation.
+   - **Letterless year** ("gives 2018 without its letter, but References lists 2018a, 2018b"): the author has several works that year. Add the letter of the work the claim is about, judged from the sentence and the entries' titles; never drop the citation to silence the check.
    - **Reprint-form straddle** ("uses the reprint form but its two years
      resolve to two DIFFERENT References entries"): the bib is correct as
      is — do NOT edit it. The fix is in the PROSE: cite the one year whose

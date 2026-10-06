@@ -767,3 +767,31 @@ class TestReprintStraddle:
         assert len(errors) == 1
         assert "does not resolve" in errors[0]
         assert not any("two listings" in e for e in errors)
+
+
+class TestLetterlessCiteOfALetteredYear:
+    """A cite without its Chicago letter, when References letters every work
+    of that author-year, cannot be resolved by a reader: an ERROR, naming the
+    letters (2026-10-06 run: "Khoury (2018)" against 2018a and 2018b)."""
+
+    REFS = ("\n## References\n\n"
+            "Khoury, Andrew C. 2018a. \"Criminal Attempts and the Penal Lottery.\" *AJP* 96 (4).\n\n"
+            "Khoury, Andrew C. 2018b. \"The Objects of Moral Responsibility.\" *Phil Studies* 175.\n\n"
+            "Smith, Ann. 2018. \"A Paper.\" *Mind* 1.\n")
+
+    def _check(self, body):
+        from lint_md import check_citations
+        return check_citations("# R\n\n" + body + "\n" + self.REFS)
+
+    def test_a_letterless_cite_is_an_error_naming_the_letters(self):
+        errors, _, _ = self._check("Khoury (2018) argues that the lottery fails.")
+        assert len(errors) == 1
+        assert "Khoury (2018)" in errors[0] and "2018a, 2018b" in errors[0]
+
+    def test_a_lettered_cite_passes(self):
+        errors, warnings, _ = self._check("Khoury (2018a) argues it; see also (Khoury 2018b).")
+        assert errors == [] and warnings == []
+
+    def test_an_unlettered_author_year_passes(self):
+        errors, _, _ = self._check("Smith (2018) argues it.")
+        assert errors == []
