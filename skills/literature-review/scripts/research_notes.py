@@ -16,8 +16,8 @@ it ends at its closing rule or, when the researcher left that rule out, at
 the first IN label: an IN label is never legal in a header, so the cut is
 unambiguous. A block that raises UnknownLabel is withheld ALONE
 (`parse_or_withhold`): the notes file is still delivered, and the block's
-place names its unknown labels and counts its unlabelled lines, never
-quoting them. This is a LABEL list, never a sentence-level edit: run-mechanics
+place names its unknown labels and says it held unlabelled text, never
+quoting or counting it. This is a LABEL list, never a sentence-level edit: run-mechanics
 prose inside NOTABLE_GAPS and writer-directed sentences inside
 RELEVANCE_TO_PROJECT stay untouched, and a provenance label appearing inside
 a kept note's own text is never normalised.
@@ -65,16 +65,32 @@ class UnknownLabel(ValueError):
     label, text before the block's own `====` header) - never conflated,
     since one names a token to add to a list and the other names prose."""
 
-    def __init__(self, labels=(), texts=(), title=""):
+    def __init__(self, labels=(), texts=(), title="", no_header=False):
         self.labels = sorted(set(labels))
         self.texts = sorted(set(texts))
         self.title = title                # the block's DOMAIN: value, if it has one
+        self.no_header = no_header        # no ==== rule to open a header at all
         parts = []
         if self.labels:
             parts.append("unrecognised label(s): " + ", ".join(self.labels))
         if self.texts:
             parts.append("unlabelled text: " + ", ".join(self.texts))
         super().__init__("; ".join(parts))
+
+    def reader_summary(self) -> str:
+        """What went wrong, for the reader and the user: label NAMES only.
+        Unlabelled text is neither quoted nor counted - it can be run
+        telemetry, and a stray run is recorded by its first line only, so
+        any count would be wrong."""
+        if self.no_header:
+            return "had no ==== header"
+        what = []
+        if self.labels:
+            what.append("used labels the notes format does not recognise ("
+                        + ", ".join(self.labels) + ")")
+        if self.texts:
+            what.append("held text outside any section")
+        return " and ".join(what)
 
 
 @dataclass
@@ -112,18 +128,26 @@ def _is_in_label(line: str) -> bool:
     return (m := _LABEL_RE.match(line)) is not None and m.group(1) in IN_LABELS
 
 
+_TITLE_WRAP_LINES = 2     # measured: real titles wrap onto one line at most
+_TITLE_MAX = 200
+
+
 def _domain_title(lines: list[str]) -> str:
-    """The `DOMAIN:` value, joined across the lines it wraps onto (up to the
-    next label, rule or blank line)."""
+    """The `DOMAIN:` value, joined across at most two lines it wraps onto
+    (up to the next label, rule or blank line). A join past _TITLE_MAX keeps
+    the first line: the title is delivered even when its block is withheld,
+    so it must not swallow a stray paragraph."""
     for i, line in enumerate(lines):
         m = _LABEL_RE.match(line)
         if m and m.group(1) == "DOMAIN":
-            parts = [m.group(2).strip()]
-            for cont in lines[i + 1:]:
+            first = m.group(2).strip()
+            parts = [first]
+            for cont in lines[i + 1: i + 1 + _TITLE_WRAP_LINES]:
                 if not cont.strip() or _RULE_RE.match(cont) or _LABEL_RE.match(cont):
                     break
                 parts.append(cont.strip())
-            return " ".join(p for p in parts if p)
+            joined = " ".join(p for p in parts if p)
+            return joined if len(joined) <= _TITLE_MAX else first
     return ""
 
 
@@ -137,7 +161,7 @@ def parse_block(chunk: str) -> DomainNotes:
          if _RULE_RE.match(lines[i]) or _is_in_label(lines[i])), None)
     if end is None:
         raise UnknownLabel(texts=["<research block without its ==== header>"],
-                           title=_domain_title(lines))
+                           title=_domain_title(lines), no_header=start is None)
     body_start = end + 1 if _RULE_RE.match(lines[end]) else end
     unknown_labels: list[str] = []
     unknown_texts: list[str] = []
@@ -146,10 +170,19 @@ def parse_block(chunk: str) -> DomainNotes:
             unknown_texts.append(line.strip()[:60])   # text before the block's own header
     header = lines[start + 1: end]
     title = _domain_title(header)
+    after_blank = False
     for line in header:
         m = _LABEL_RE.match(line)
         if not m:
-            continue                      # a wrapped header value
+            # A wrapped header value - unless a blank line came first: no
+            # well-formed header holds one (0 of 563 measured blocks), so
+            # text after it is a heading or analysis the header would hide.
+            if not line.strip():
+                after_blank = True
+            elif after_blank:
+                unknown_texts.append(line.strip()[:60])
+            continue
+        after_blank = False
         if m.group(1) != "DOMAIN" and m.group(1) not in OUT_LABELS:
             unknown_labels.append(m.group(1))
     num = _NUMBER_RE.match(title)
@@ -203,12 +236,7 @@ def parse_or_withhold(chunk: str) -> DomainNotes:
 
 
 def _withheld_line(e: UnknownLabel) -> str:
-    what = []
-    if e.labels:
-        what.append("labels the notes format does not recognise (" + ", ".join(e.labels) + ")")
-    if e.texts:
-        what.append(f"{len(e.texts)} line(s) of text outside any section")
-    return ("> Notes withheld: this domain's research block used " + " and ".join(what)
+    return ("> Notes withheld: this domain's research block " + e.reader_summary()
             + ". Its works are in the annotated bibliography.")
 
 

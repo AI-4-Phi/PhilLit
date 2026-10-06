@@ -213,6 +213,7 @@ def test_an_undefined_tag_in_delivered_notes_withholds_the_file(tmp_path):
     assert r.returncode == 2
     out = _out(r)
     assert "SPLIT-ERROR: research-notes-sop.md not written" in out and "FL9.9" in out
+    assert _summary(r)["written"] == ["literature-sop.bib", "literature-sop-annotated.bib"]
     assert not stale.exists()                   # no stale file beside fresh ones
 
 
@@ -277,11 +278,14 @@ def test_a_non_utf8_input_is_a_clean_error(tmp_path):
 
 
 def test_report_lines_stay_ascii_for_a_non_ascii_label(tmp_path):
-    bad = COMMENT.replace("SYNTHESIS_GUIDANCE:", f"{RULE}\nÉTUDE ANNEXE\n")
+    bad = (COMMENT.replace("1 -- Anatomy", "1 -- Études")
+           .replace("SYNTHESIS_GUIDANCE:", f"{RULE}\nÉTUDE ANNEXE\n"))
     bib, plan = _review(tmp_path, bad + "\n" + ENTRY)
     r = _cli(bib, plan)
     assert r.returncode == 0
-    assert "\\xc9TUDE" in _out(r)              # escaped, and _out() proves all-ASCII
+    out = _out(r)                                # _out() proves all-ASCII
+    assert "\\xc9tudes" in out                   # the title, escaped
+    assert "TUDE ANNEXE" not in out              # unlabelled text is never quoted
 
 
 def test_a_run_that_withholds_both_siblings_still_blocks_a_note_less_rerun(tmp_path):

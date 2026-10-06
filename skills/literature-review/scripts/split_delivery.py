@@ -255,15 +255,19 @@ def split(bib_path: Path, plan_path: Path | None) -> dict:
     # knows the research blocks survive even when their notes do not.
     kept_at = (f"; the research blocks are kept in intermediate_files/{backup_path.name}"
               if track_text is not None else "")
-    for d in domains:
-        if d.withheld is not None:
-            notices.append(f"{notes_path.name}: the notes for domain "
-                           f"'{d.title or '(no DOMAIN: line)'}' were withheld: {d.withheld}"
-                           + kept_at)
     try:
         notes_md = research_notes.render(domains, defs, project)
     except fault_lines.UndefinedFaultLine as e:
         errors.append(f"{notes_path.name} not written: {e}" + kept_at)
+    else:
+        # Only for a file that IS written: a withheld block is analysis left
+        # out of it. The summary names labels only (reader_summary), since
+        # SKILL.md relays this line to the user verbatim.
+        for d in domains:
+            if d.withheld is not None:
+                notices.append(f"{notes_path.name}: the notes for domain "
+                               f"'{d.title or '(no DOMAIN: line)'}' were withheld: the block "
+                               f"{d.withheld.reader_summary()}" + kept_at)
 
     # The merged bib -- notes, comment blocks and all -- is backed up to
     # intermediate_files/ BEFORE anything else is written, whenever the track

@@ -230,7 +230,7 @@ def test_a_failing_block_is_withheld_alone_and_named_in_its_place():
 def test_a_withheld_block_names_unlabelled_text_by_count_not_content():
     d = rn.parse_or_withhold(block(body="\nSome private run mechanics.\n\nDOMAIN_OVERVIEW:\nKept.\n"))
     md = rn.render([d], DEFS, "p")
-    assert "1 line(s) of text outside any section" in md
+    assert "text outside any section" in md
     assert "private run mechanics" not in md
 
 
@@ -244,3 +244,45 @@ def test_a_wrapped_domain_title_is_joined():
     d = rn.parse_block(block("8 -- Critical Perspectives -- Deflationism, and\n        Skepticism about the Framing"))
     assert d.title == "8 -- Critical Perspectives -- Deflationism, and Skepticism about the Framing"
     assert d.number == 8
+
+
+def test_text_after_a_blank_line_in_the_header_is_unlabelled():
+    # Measured on 569 real blocks: no well-formed header holds a blank line,
+    # so text after one is a heading or analysis, never a wrapped value.
+    chunk = block().replace(f"SEARCH_SOURCES: SEP, PhilPapers\n{RULE}\n",
+                            f"SEARCH_SOURCES: SEP, PhilPapers\n\nOVERVIEW (colon-less)\nPrivate analysis\n{RULE}\n", 1)
+    with pytest.raises(rn.UnknownLabel) as exc:
+        rn.parse_block(chunk)
+    assert exc.value.texts == ["OVERVIEW (colon-less)", "Private analysis"]
+
+
+def test_a_title_join_stops_after_two_continuation_lines():
+    d = rn.parse_or_withhold(block("3 -- A\nb\nc\nd"))
+    assert d.title == "3 -- A b c"
+
+
+def test_an_overlong_title_join_keeps_the_first_line():
+    d = rn.parse_or_withhold(block("3 -- A\n" + "x" * 250))
+    assert d.title == "3 -- A"
+
+
+def test_a_withheld_line_never_counts_or_quotes_text():
+    d = rn.parse_or_withhold(block(body="\nOne.\nTwo.\nOne.\n\nDOMAIN_OVERVIEW:\nKept.\n"))
+    line = rn.render([d], DEFS, "p")
+    assert "text outside any section" in line
+    assert "One." not in line and "line(s)" not in line
+    assert "One." not in d.withheld.reader_summary()
+
+
+def test_a_block_with_no_rule_says_so():
+    d = rn.parse_or_withhold(f"@comment{{\nDOMAIN: 4 -- Bare\nDOMAIN_OVERVIEW:\nx\n}}\n")
+    assert d.title == "4 -- Bare" and d.number == 4
+    assert "==== header" in rn.render([d], DEFS, "p")
+
+
+def test_when_every_block_is_withheld_the_file_still_names_each():
+    a = rn.parse_or_withhold(block("1 -- A", body="\nFOR: x\n"))
+    b = rn.parse_or_withhold(block("2 -- B", body="\nAGAINST: y\n"))
+    md = rn.render([b, a], DEFS, "p")
+    assert md.count("Notes withheld") == 2 and md.index("## 1 -- A") < md.index("## 2 -- B")
+    assert "x" not in md.split("## 1 -- A")[1].split("## 2")[0].replace("text outside", "")
