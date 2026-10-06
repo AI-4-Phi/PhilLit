@@ -1,10 +1,10 @@
 ---
 id: PL-7
 title: 'Research-notes grammar: header recovery and per-block withholding'
-status: In Progress
+status: Done
 assignee: []
 created_date: '2026-09-25 19:18'
-updated_date: '2026-10-06 08:23'
+updated_date: '2026-10-06 09:52'
 labels:
   - notes
   - test-run
