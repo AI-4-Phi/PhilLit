@@ -279,6 +279,7 @@ LIMITERS = {
     "iep_fetch": lambda: RateLimiter("iep_fetch", 1.0),
     "core": lambda: RateLimiter("core", 2.0),  # 5 req/10 sec = 1 req/2 sec
     "ndpr": lambda: RateLimiter("ndpr", 1.0),  # 1 req/sec, conservative for web scraping
+    "youcom": lambda: RateLimiter("youcom", 1.5),  # keyless free profile: pace like brave
 }
 
 
@@ -288,7 +289,7 @@ def get_limiter(api_name: str, authenticated: Optional[bool] = None) -> RateLimi
 
     Args:
         api_name: One of: semantic_scholar, brave, crossref, openalex, arxiv,
-                  sep_fetch, iep_fetch, core, ndpr
+                  sep_fetch, iep_fetch, core, ndpr, youcom
         authenticated: For APIs with auth-aware tiers (e.g., semantic_scholar).
                        True/None = use default (authenticated) interval.
                        False = use slower unauthenticated interval.
