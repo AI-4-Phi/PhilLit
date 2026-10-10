@@ -41,7 +41,7 @@ PhilLit itself is free. Running it requires [Claude Code](https://docs.anthropic
 
 - [Claude Code](https://docs.anthropic.com/en/docs/claude-code) — the AI coding tool that runs PhilLit
 - [`uv`](https://docs.astral.sh/uv/getting-started/installation/) and [`jq`](https://jqlang.github.io/jq/download/) on your PATH — PhilLit runs its Python through `uv` and parses JSON with `jq`
-- A [Brave Search API key](https://brave.com/search/api/) (free tier) and, optionally, a [Semantic Scholar key](https://www.semanticscholar.org/product/api#api-key) for better search results
+- A [Brave Search API key](https://brave.com/search/api/) (free tier) — or no key at all, by setting `PHILLIT_SEARCH_PROVIDER=youcom` (or passing `--provider youcom`), which searches via You.com's keyless endpoint — and, optionally, a [Semantic Scholar key](https://www.semanticscholar.org/product/api#api-key) for better search results
 
 **1. Install the plugin** in Claude Code:
 

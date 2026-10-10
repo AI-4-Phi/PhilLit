@@ -31,6 +31,7 @@ from rate_limiter import (
     openalex_headers,
     openalex_key_unusable,
     openalex_params,
+    user_agent,
 )
 
 # Mirror venue_vetting._ON_TOKENS/_OFF_TOKENS (the owner) -- deliberately
@@ -40,15 +41,34 @@ _VET_ON_TOKENS = ("1", "true", "yes", "on")
 _VET_OFF_TOKENS = ("0", "false", "no", "off")
 
 
+def _search_provider() -> str:
+    """Normalized PHILLIT_SEARCH_PROVIDER (see .env.example): 'brave' (the
+    default) or 'youcom' -- the keyless You.com site search. Decides which
+    web-search API the setup check requires and probes."""
+    return (os.environ.get("PHILLIT_SEARCH_PROVIDER", "") or "brave").strip().lower() or "brave"
+
+
+def _required_apis() -> tuple[str, ...]:
+    """APIs whose reachability gates status: the selected web-search
+    provider plus CrossRef."""
+    return ("crossref", "youcom") if _search_provider() == "youcom" else ("brave", "crossref")
+
+
 def check_env_vars() -> dict[str, dict[str, Any]]:
     """Check environment variables."""
     results = {}
 
     # Required
-    required = {
-        "BRAVE_API_KEY": "Required for SEP/PhilPapers discovery",
-        "CROSSREF_MAILTO": "Required for CrossRef polite pool",
-    }
+    if _search_provider() == "youcom":
+        # Keyless You.com site search selected: BRAVE_API_KEY is not needed.
+        required = {
+            "CROSSREF_MAILTO": "Required for CrossRef polite pool",
+        }
+    else:
+        required = {
+            "BRAVE_API_KEY": "Required for SEP/PhilPapers discovery",
+            "CROSSREF_MAILTO": "Required for CrossRef polite pool",
+        }
 
     # Recommended
     recommended = {
@@ -63,6 +83,15 @@ def check_env_vars() -> dict[str, dict[str, Any]]:
             "fallback are skipped"
         ),
     }
+    if _search_provider() == "youcom":
+        recommended["BRAVE_API_KEY"] = (
+            "Optional - only needed if you switch back "
+            "(PHILLIT_SEARCH_PROVIDER=brave)"
+        )
+        recommended["YDC_API_KEY"] = (
+            "Optional - authenticated You.com endpoint; unset uses the "
+            "keyless free profile"
+        )
 
     for var, description in required.items():
         value = os.environ.get(var, "")
@@ -117,9 +146,6 @@ def check_dependencies() -> dict[str, dict[str, Any]]:
     return results
 
 
-_REQUIRED_APIS = ("brave", "crossref")
-
-
 def check_core_connectivity() -> dict:
     """Probe CORE only when a key is configured. CORE is optional, and
     without a key PhilLit skips it entirely (the unauthenticated tier only
@@ -169,20 +195,22 @@ def check_core_connectivity() -> dict:
 def _json_status(env_results: dict, dep_results: dict, api_results: dict) -> tuple[str, list[str]]:
     """Compute --json overall status + optional-failure list.
 
-    Only required env vars, all deps, and the required APIs (brave, crossref)
-    gate status — matching text mode. A required API whose record is ABSENT
-    fails the check (never silently passes). Optional APIs that are
-    unreachable (and not skipped for a missing key) are reported in
-    optional_failures but never flip status to error."""
+    Only required env vars, all deps, and the required APIs (the selected
+    web-search provider, crossref) gate status — matching text mode. A
+    required API whose record is ABSENT fails the check (never silently
+    passes). Optional APIs that are unreachable (and not skipped for a
+    missing key) are reported in optional_failures but never flip status to
+    error."""
     required_env_ok = all(info["set"] for info in env_results.values() if info["required"])
     deps_ok = all(info["installed"] for info in dep_results.values())
+    required = _required_apis()
     required_apis_ok = all(
         a in api_results and api_results[a].get("reachable") is True
-        for a in _REQUIRED_APIS
+        for a in required
     )
     optional_failures = [
         api for api, info in api_results.items()
-        if api not in _REQUIRED_APIS
+        if api not in required
         and not info.get("skipped_no_key")
         and not info.get("reachable")
     ]
@@ -330,7 +358,14 @@ def check_api_connectivity(verbose: bool = False) -> dict[str, dict[str, Any]]:
             results["brave"] = {
                 "reachable": False,
                 "status_code": None,
-                "message": "BRAVE_API_KEY not set",
+                "message": (
+                    "BRAVE_API_KEY not set"
+                    + (
+                        " - keyless You.com provider selected"
+                        if _search_provider() == "youcom"
+                        else " (optional alternative: PHILLIT_SEARCH_PROVIDER=youcom, keyless)"
+                    )
+                ),
             }
         else:
             response = requests.get(
@@ -352,6 +387,55 @@ def check_api_connectivity(verbose: bool = False) -> dict[str, dict[str, Any]]:
             "status_code": None,
             "message": str(e),
         }
+
+    # You.com (probed only when selected via PHILLIT_SEARCH_PROVIDER=youcom;
+    # stateless MCP endpoint, so one minimal you-search call is the probe)
+    if _search_provider() == "youcom":
+        try:
+            from youcom_search import YOUCOM_MCP_URL, YOUCOM_MCP_FREE_URL
+
+            limiter = get_limiter("youcom")
+            limiter.wait()
+            api_key = os.environ.get("YDC_API_KEY", "")
+            headers = {
+                "Content-Type": "application/json",
+                "Accept": "application/json, text/event-stream",
+                "User-Agent": user_agent(),
+            }
+            if api_key:
+                headers["Authorization"] = f"Bearer {api_key}"
+            payload = {
+                "jsonrpc": "2.0",
+                "id": 1,
+                "method": "tools/call",
+                "params": {"name": "you-search", "arguments": {"query": "test", "count": 1}},
+            }
+            response = requests.post(
+                YOUCOM_MCP_URL if api_key else YOUCOM_MCP_FREE_URL,
+                json=payload,
+                headers=headers,
+                timeout=10,
+            )
+            limiter.record()
+
+            results["youcom"] = {
+                "reachable": response.status_code == 200,
+                "status_code": response.status_code,
+                "authenticated": bool(api_key),
+                "message": (
+                    "Responding"
+                    + (" (authenticated)" if api_key else " (keyless free profile)")
+                    if response.status_code == 200
+                    else f"Error: {response.status_code}"
+                ),
+            }
+        except Exception as e:
+            results["youcom"] = {
+                "reachable": False,
+                "status_code": None,
+                "authenticated": bool(os.environ.get("YDC_API_KEY", "")),
+                "message": str(e),
+            }
 
     # arXiv (no auth needed, just check reachability)
     try:
@@ -419,8 +503,8 @@ def print_results(env_results: dict, dep_results: dict, api_results: dict, verbo
             print(f"[OK] {api}: {info['message']}")
         else:
             print(f"[FAIL] {api}: {info['message']}")
-            # Only fail on required APIs
-            if api in ("brave", "crossref"):
+            # Only fail on required APIs (selected web-search provider, crossref)
+            if api in _required_apis():
                 all_passed = False
 
     print()
