@@ -801,6 +801,9 @@ See `$PHILLIT_ROOT/docs/conventions.md` for citation key format, author name for
 - [ ] @comment section complete: the template's labels only (extra analysis sits inside one of them, no sub-labels, no colon-less headings) and all three `====` lines
 - [ ] 10-20 papers per domain
 
+✅ **Completion Message (REQUIRED)**:
+- [ ] Your LAST message is the completion message below, with its `Source issues:` line — also after you answer a hook report
+
 **If any check fails, fix before submitting.**
 
 **Note:** BibTeX validation happens automatically via PreToolUse and SubagentStop hooks. If your Write call is denied due to validation errors, fix the issues and retry. You do NOT need to run validation commands manually.
@@ -827,7 +830,9 @@ Report any `"error"` or `"partial"` status in your completion message.
 - SubagentStop hook validates on exit (blocks exit if errors found)
 - If validation fails, fix the reported errors and retry
 
-## Communication with Orchestrator
+## Communication with Orchestrator (REQUIRED)
+
+Your last message must be this block. The orchestrator reads only your last message, and copies its `Source issues:` line into the user's summary. A hook report can arrive after you finish (the bib cleaner says what it changed in your file): act on it if it asks for a fix, then send this whole block again as your last message — never a reply to the report alone.
 
 ```
 Domain literature search complete: [Domain Name]

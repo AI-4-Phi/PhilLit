@@ -285,6 +285,20 @@ barrier-assigned `year_suffix` letter that References render and prose must
 match exactly, e.g. `Menary (2010a)` / `Menary (2010b)` (see the Year Suffix
 Field section above).
 
+**The citation year of a journal article is its issue (print) year.** For an
+article published online first (online 2017, in an issue 2019), `year` is the
+issue year: the metadata cleaner corrects it from the entry's own CrossRef
+record, whose year comes from `published-print` first. Never instruct agents
+to use the online year; it is overwritten in every domain file. Where the
+online date matters, give it in prose ("first published online in 2017").
+
+**A work with no bib entry gets no year.** When a cited work discusses a work
+the bibliography does not hold, prose names that work's author without a year,
+in the citing work's voice: "Parfit, as Gardner (2019) reports, ...". Never
+"Parfit (1986)" or "(Parfit 1986, cited in Gardner 2019)": the year is
+unverified, and the Phase 6 lint fails every author-year citation without a
+References entry.
+
 ### Bibliography Format
 
 **Journal Article**:
@@ -320,7 +334,7 @@ Hooks validate BibTeX automatically at two points: `validate_bib_write.py` check
 
 **Purpose**: Prevents LLM hallucination of bibliographic metadata by verifying entries against API output, removing venue values it cannot verify and detail values an identity-verified record contradicts.
 
-This is a *fix*, not a block: the cleaner removes what it cannot verify and lets the subagent finish. Nothing in this pipeline blocks on metadata provenance.
+This is a *fix*, not a block: the cleaner removes what it cannot verify, and nothing in this pipeline blocks on metadata provenance. Its report (fields removed, years corrected, and year conflicts that made it abstain) reaches the researcher once, on the first SubagentStop pass. Claude Code continues the subagent's turn for any SubagentStop `additionalContext`, so the report costs one turn; a resumed pass sends nothing.
 
 **Cleanable fields** — every value is compared three ways against the entry's own matched API record (MATCH / CONTRADICT / NO-EVIDENCE), and each field class has its own removal rule:
 

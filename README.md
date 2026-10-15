@@ -138,6 +138,7 @@ Each finished review is published into its own directory under `reviews/`:
 reviews/[topic]/
 ├── literature-review-[topic].md      # Complete review (markdown)
 ├── literature-review-[topic].docx    # Complete review (Word, requires pandoc)
+├── literature-review-[topic].pdf     # Complete review (PDF, requires pandoc and lualatex)
 ├── literature-[topic].bib            # Track record: every agent verdict
 ├── literature-[topic]-annotated.bib  # Reference-manager import: notes + topical keywords
 ├── research-notes-[topic].md         # Per-domain research notes
