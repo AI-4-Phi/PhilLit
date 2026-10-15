@@ -1273,6 +1273,11 @@ REVISED_FILES = ("literature-review-{}.md", "literature-{}.bib", "literature-{}-
                  "research-notes-{}.md")
 MERGED_BIB = "literature-{}-merged.bib"
 REGENERATED = ("literature-review-{}.docx", "literature-review-{}.pdf")
+# Written BEFORE the first file is copied, so a revision interrupted at any
+# point is told apart from an interrupted Phase 6 (whose resume rule would
+# publish the unedited copy). A source's own marker is never copied: the new
+# one names the review this revision was made from.
+REVISION_REL = Path("intermediate_files") / ".phillit-revision"
 
 
 def _copy_content(src: Path, dst: Path) -> None:
@@ -1297,7 +1302,7 @@ def _revision_plan(src: Path, old: str, new: str) -> tuple[list[tuple[Path, Path
     inter = Path("intermediate_files")
     renames = {Path(t.format(old)): Path(t.format(new)) for t in REVISED_FILES}
     renames[inter / MERGED_BIB.format(old)] = inter / MERGED_BIB.format(new)
-    skipped = {Path(t.format(old)) for t in REGENERATED} | {META_REL, COMPLETED_REL}
+    skipped = {Path(t.format(old)) for t in REGENERATED} | {META_REL, COMPLETED_REL, REVISION_REL}
     carry = inter / f"carried-from-{old}"
     plan, carried = [], []
     for rel in tree_files(src):
@@ -1416,6 +1421,13 @@ def cmd_revise(workspace: Path, name: str, new_name: str | None = None) -> dict:
     try:
         if _overlaps(workdir, src):  # _undo_revise leaves such a folder alone
             raise Refusal(f"the new review's folder overlaps the delivered reviews/{name}/")
+        marker = workdir / REVISION_REL
+        marker.parent.mkdir(parents=True, exist_ok=True)
+        with open(marker, "w", encoding="utf-8") as f:
+            json.dump({"revised_from": name}, f)
+            f.write("\n")
+            f.flush()
+            os.fsync(f.fileno())
         for rel, new_rel in plan:
             _copy_content(src / rel, workdir / new_rel)
         after = manifest(src, [rel for rel, _ in plan])

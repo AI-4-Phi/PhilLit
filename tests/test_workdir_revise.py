@@ -96,6 +96,7 @@ def _rel_files(root: Path):
 
 
 EXPECTED_NEW = [
+    "intermediate_files/.phillit-revision",
     "intermediate_files/json/evidence_report.json",
     "intermediate_files/lit-review-plan.md",
     "intermediate_files/literature-topic-r2-merged.bib",
@@ -117,7 +118,7 @@ def test_revise_local_seeds_a_new_active_review(home, ws):
     assert out["mode"] == "local" and out["name"] == "topic-r2"
     assert out["workdir"] == new.as_posix()
     assert out["destination"] == (ws / "reviews" / "topic-r2").as_posix()
-    assert out["revised_from"] == "topic" and out["files"] == len(EXPECTED_NEW)
+    assert out["revised_from"] == "topic" and out["files"] == len(EXPECTED_NEW) - 1  # the marker is written, not copied
     assert "carried" not in out
     # the new review's own metadata, no old marker, no docx/pdf
     assert [f for f in _rel_files(new) if f != wd.META_REL.as_posix()] == EXPECTED_NEW
@@ -429,3 +430,36 @@ def test_the_cleanup_never_deletes_the_source(home, plain, monkeypatch):
     with pytest.raises(wd.Refusal, match="delivered"):
         wd.cmd_revise(plain, "topic")
     assert _snapshot(src) == before
+
+
+# --- the revision marker: written before any copy, never inherited ---------------
+
+def test_revision_marker_exists_before_the_first_copy(home, ws, monkeypatch):
+    _delivered_local(ws)
+    seen = []
+    real = wd._copy_content
+
+    def spy(src, dst):
+        if not seen:
+            seen.append((Path(wd.local_workdir(ws, "topic-r2")) / wd.REVISION_REL).is_file())
+        real(src, dst)
+
+    monkeypatch.setattr(wd, "_copy_content", spy)
+    out = wd.cmd_revise(ws, "topic")
+    assert seen == [True]
+    marker = Path(out["workdir"]) / wd.REVISION_REL
+    assert json.loads(marker.read_text(encoding="utf-8")) == {"revised_from": "topic"}
+
+
+def test_revision_of_a_revision_names_its_own_source(home, ws):
+    _delivered_local(ws)
+    out = wd.cmd_revise(ws, "topic")
+    md = Path(out["workdir"]) / "literature-review-topic-r2.md"
+    md.write_text(md.read_text(encoding="utf-8") + "\nRevised.\n", encoding="utf-8")
+    wd.cmd_publish(ws, abandon=False)
+    delivered = ws / "reviews" / "topic-r2"
+    assert json.loads((delivered / wd.REVISION_REL).read_text(encoding="utf-8")) == {
+        "revised_from": "topic"}
+    out2 = wd.cmd_revise(ws, "topic-r2")
+    assert json.loads((Path(out2["workdir"]) / wd.REVISION_REL).read_text(
+        encoding="utf-8")) == {"revised_from": "topic-r2"}

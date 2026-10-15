@@ -345,11 +345,9 @@ Never advance to Phase 6 before all synthesis writers have completed.
 - `literature-[project-name]-annotated.bib` — the REFERENCE-MANAGER IMPORT (Zotero, BibDesk, ...): the same works with standard fields, topical keywords, and the researchers' reading notes with fault-line tags spelled out. No verdict tokens and none of the eight engine-derived fields. Zotero imports the notes as notes and the keywords as tags.
 - `research-notes-[project-name].md` — the per-domain analysis the researchers recorded (overview, key positions, gaps, synthesis guidance, relevance), for reading.
 
-**Resuming Phase 6** (Phase 1 found the final review file). Exactly one test decides where:
+**Resuming Phase 6** (Phase 1 found the final review file). First: if `[workdir]/intermediate_files/.phillit-revision` exists, the review is a revision, and it resumes as "Revising a Delivered Review" says, not by the rules below. Otherwise exactly one test decides where:
 - If `[workdir]/intermediate_files/lit-review-plan.md` exists, step 8 had started, so steps 1-7 had finished. Run steps 5 and 6 again (both only read; step 6's `CHECK` lines belong in the final summary), then steps 8, 9, 10 and 11. Step 8's moves skip whatever is already moved.
 - Otherwise run Phase 6 again from step 1. Every step before step 8 rebuilds its output from the sections and domain bibs, which are all still in `[workdir]`, so a repeat is safe. It redoes the fixes made at steps 3 and 5, because the year-conflict lines and the lint report them again. It also covers a crash in the middle of any step, including step 1.
-
-A revision (see "Revising a Delivered Review"; its tracker says so) resumes as that section says, not by the two rules above.
 
 A resume that starts at step 8 cannot reproduce the split's `SPLIT-*` lines or the researchers' source issues, since both lived in the interrupted conversation. Say in the final summary that those lines were lost, rather than implying there were none.
 
@@ -594,13 +592,13 @@ A delivered review is never changed. When the user wants one revised (new eviden
    ```bash
    bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/workdir.py revise [delivered-name]
    ```
-   (add `--as [new-name]` for a name of the user's choosing; by default it takes `[delivered-name]-r2`, `-r3`, ...). It prints what `init` prints plus `revised_from`. From here on, `[workdir]` and `[project-name]` are the new review's. It copies the delivered review into `[workdir]` with every file renamed to the new name; `reviews/[delivered-name]/` stays as it was. A refusal, nonzero exit or non-JSON output: report it verbatim and stop. If it prints `carried`, those top-level files of the old review were moved into `intermediate_files/carried-from-[delivered-name]/`.
+   (add `--as [new-name]` for a name of the user's choosing; by default it takes `[delivered-name]-r2`, `-r3`, ...). It prints what `init` prints plus `revised_from`. From here on, `[workdir]` and `[project-name]` are the new review's. It copies the delivered review into `[workdir]`, renaming the four deliverables and the merged bib to the new name (everything else in `intermediate_files/` keeps its name; never rename files by hand), and writes `intermediate_files/.phillit-revision`, which marks the review as a revision. `reviews/[delivered-name]/` stays as it was. A refusal, nonzero exit or non-JSON output: report it verbatim and stop. If it prints `carried`, those top-level files of the old review were moved into `intermediate_files/carried-from-[delivered-name]/`.
 3. Add a line to `[workdir]/intermediate_files/task-progress.md`: `Revision of [delivered-name]: [what changes and why]`.
 4. Edit `[workdir]/literature-review-[project-name].md`. A revision changes prose only, under the writers' rules: every claim about a work stays within what its tier (or its override line) licenses, and no workflow language enters the prose. It cannot add works to the bibliography; for that, run a new review.
 5. Run Phase 6 steps 4 (against `[workdir]/literature-[project-name].bib`, the track record), 5, 6 (with `--overrides "[workdir]/intermediate_files/tier-overrides.md"`), 10 and 11. Do not run steps 1-3, 7 or 8: the bib is already merged and split, and the files are already in place.
 6. In the final summary, name the delivered review it revises and what changed.
 
-To resume an interrupted revision, run step 5's list again from step 4.
+To resume an interrupted revision (`intermediate_files/.phillit-revision` exists), read the tracker's `Revision of` line for what to change. If it is missing, the revision was interrupted before step 3: ask the user what to revise (Full Autopilot: stop and say so). Then continue from step 4.
 
 ---
 
