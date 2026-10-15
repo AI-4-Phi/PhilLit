@@ -3252,6 +3252,18 @@ class TestMainSuffixGuards:
         assert "## References" in review.read_text(encoding="utf-8")
         assert "annotated bibliography" not in capsys.readouterr().err
 
+    def test_annotated_bib_with_an_evidence_word_in_an_abstract_is_refused(
+            self, tmp_path, capsys, monkeypatch):
+        import pytest
+        prose = "## Review\n\nMenary (2010a) argues so.\n"
+        gb, review = self._run(
+            tmp_path, monkeypatch, "literature-foo-annotated.bib",
+            "  abstract = {EVIDENCE-BASED practice},\n", prose)
+        with pytest.raises(SystemExit) as exc:
+            gb.main()
+        assert exc.value.code == 2
+        assert review.read_text(encoding="utf-8") == prose
+
     def test_lettered_cite_without_any_year_suffix_warns_and_continues(
             self, tmp_path, capsys, monkeypatch):
         gb, review = self._run(

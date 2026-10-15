@@ -16,6 +16,8 @@ from pathlib import Path
 
 from pybtex.database import parse_file
 
+from stamp_evidence import TIER_RANK  # same directory
+
 # Import LATEX_ESCAPES from bib_validator and identity keys from bib_identity
 # (single source of truth)
 _hook_dir = Path(__file__).resolve().parent.parent.parent.parent / "hooks"
@@ -2118,6 +2120,12 @@ def apply_references(review_text: str, references_section: str) -> str:
 _LETTERED_YEAR_RE = re.compile(r"(?<!\d)(?:1[6-9]|20)\d{2}[a-rt-z]\b")
 
 
+# The barrier's tier tokens, exactly: a bare "EVIDENCE-" also occurs in
+# abstracts ("EVIDENCE-BASED"), which would let an annotated bib through.
+_TIER_TOKEN_RE = re.compile(
+    r"\b(?:" + "|".join(map(re.escape, TIER_RANK)) + r")\b")
+
+
 def _suffix_missing_warning(review_text: str, bib_data) -> str | None:
     """A loud advisory when the prose cites lettered years but the bib carries
     no `year_suffix` at all: the regenerated References would print every
@@ -2145,8 +2153,8 @@ def main():
     review_path = Path(sys.argv[1])
     bib_path = Path(sys.argv[2])
 
-    if (bib_path.name.endswith("-annotated.bib")
-            and "EVIDENCE-" not in bib_path.read_text(encoding="utf-8")):
+    if (bib_path.name.endswith("-annotated.bib") and bib_path.is_file()
+            and not _TIER_TOKEN_RE.search(bib_path.read_text(encoding="utf-8"))):
         # The delivery split strips the engine field year_suffix (and the
         # EVIDENCE-* keywords) from the annotated bib; regenerating
         # References from it silently drops the year letters (2009a/2009b
