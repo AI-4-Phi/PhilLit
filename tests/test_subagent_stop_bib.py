@@ -4,7 +4,9 @@ Pins the Claude Code hook protocol contract:
 - ALL decisions are stdout JSON with exit code 0 (JSON is ignored on exit 2).
 - Block: {"decision": "block", "reason": <syntax errors>}.
 - Allow: {} (Claude Code rejects {"decision": "allow"} as invalid hook output).
-- Cleaning summary: hookSpecificOutput.additionalContext (allow path).
+- Cleaning summary: hookSpecificOutput.additionalContext, first pass only (it
+  continues the subagent's turn); a resumed pass reports only a cleaner
+  failure, as a systemMessage.
 - Self-scopes with NO matcher: validates only inside a .phillit workspace, when
   agent_type contains "domain-literature-researcher", and workdir.py resolves an active review.
 
@@ -113,6 +115,42 @@ VERIFY_AWAD_JSON = {
     "count": 1,
     "errors": [],
 }
+
+
+# The year-correction case from a real run: the bib's year (2017) is also a
+# broad dump's, so the pooled sources disagree; the entry-scoped CrossRef
+# record (published-print 2018) settles it, and the cleaner rewrites the year.
+WRONG_YEAR_BIB = """@article{awad2018moral,
+  author = {Awad, Edmond and Dsouza, Sohan},
+  title = {The Moral Machine experiment},
+  journal = {Nature},
+  year = {2017},
+  doi = {10.1038/s41586-018-0637-6}
+}
+"""
+
+S2_WRONG_YEAR_JSON = {**S2_NATURE_JSON, "results": [
+    {**S2_NATURE_JSON["results"][0], "year": 2017}]}
+
+VERIFY_AWAD_PRINT_YEAR_JSON = {**VERIFY_AWAD_JSON, "results": [{
+    "verified": True,
+    "doi": "10.1038/s41586-018-0637-6",
+    "title": "The Moral Machine experiment",
+    "container_title": "Nature",
+    "year": 2018,
+    "year_basis": "published-print",
+    "type": "journal-article",
+}]}
+
+
+def seed_year_correction(review: Path) -> Path:
+    bib = review / "d1.bib"
+    bib.write_text(WRONG_YEAR_BIB, encoding="utf-8")
+    (review / "s2_results.json").write_text(
+        json.dumps(S2_WRONG_YEAR_JSON), encoding="utf-8")
+    (review / "verify_awad.json").write_text(
+        json.dumps(VERIFY_AWAD_PRINT_YEAR_JSON), encoding="utf-8")
+    return bib
 
 
 @pytest.fixture
@@ -501,6 +539,41 @@ class TestMetadataCleaning:
         assert "journal" in out.get("systemMessage", ""), (
             f"unresolved BibTeX errors must surface in a systemMessage: {out}"
         )
+        assert "hookSpecificOutput" not in out
+
+    def test_first_pass_reports_the_year_correction_once(self, project):
+        """The cleaner's year rewrite is named in the first-pass report (key,
+        old -> new, basis), and a disagreement the scoped record SETTLED is
+        not reported at all."""
+        review = project / "reviews" / "test-review"
+        bib = seed_year_correction(review)
+        out, code, _ = run_hook(RESEARCHER, project)
+        assert code == 0
+        assert "decision" not in out
+        ctx = out["hookSpecificOutput"]["additionalContext"]
+        assert "awad2018moral: 2017 -> 2018" in ctx
+        assert "verify_awad.json" in ctx and "published-print" in ctx
+        assert "disagree" not in ctx
+        assert "Removed" not in ctx          # no field was removed
+        assert "year = {2018}" in bib.read_text(encoding="utf-8")
+
+    def test_resumed_pass_sends_no_report_but_still_cleans(self, project):
+        """A SubagentStop additionalContext continues the subagent's turn, so
+        a report on every pass kept researchers answering the same report
+        until Claude Code's stop-hook cap. On a resumed pass the hook allows
+        with {} - but the cleaner and its ledger still run (the barrier
+        needs a ledger for the final text)."""
+        review = project / "reviews" / "test-review"
+        bib = seed_year_correction(review)
+        out, code, _ = run_hook({**RESEARCHER, "stop_hook_active": True}, project)
+        assert code == 0
+        assert out == {}
+        text = bib.read_text(encoding="utf-8")
+        assert "year = {2018}" in text, "resumed pass did not run the cleaner"
+        ledger = review / "intermediate_files" / "json" / "cleaning_ledger-d1.json"
+        ldata = json.loads(ledger.read_text(encoding="utf-8"))
+        assert ldata["bib_sha256"] == bib_text_sha256(text)
+        assert "awad2018moral" in ldata["entries"]
 
     def test_cleaner_warnings_surface_in_additional_context(self, project):
         # Never-silent: a salvage/skip notice from the cleaner must
@@ -554,7 +627,8 @@ class TestMetadataCleaning:
 class TestCleanerFailureIsNeverSilent:
     """A crashed cleaner must not read as a clean run (never-silent policy)."""
 
-    def _stub_root(self, tmp_path: Path, cleaner_stdout: str, cleaner_rc: int) -> Path:
+    def _stub_root(self, tmp_path: Path, cleaner_stdout: str, cleaner_rc: int,
+                   validator: str = "echo '{\"valid\": true, \"errors\": []}'") -> Path:
         root = tmp_path / "stub-plugin"
         (root / "bin").mkdir(parents=True)
         run = root / "bin" / "phillit-run"
@@ -562,7 +636,7 @@ class TestCleanerFailureIsNeverSilent:
             "#!/usr/bin/env bash\n"
             "case \"$1\" in\n"
             "  *workdir.py) printf '{\"workdir\": \"%s/reviews/test-review\"}\\n' \"$CLAUDE_PROJECT_DIR\" ;;\n"
-            "  *bib_validator.py) echo '{\"valid\": true, \"errors\": []}' ;;\n"
+            f"  *bib_validator.py) {validator} ;;\n"
             f"  *metadata_cleaner.py) {cleaner_stdout}\n"
             f"                        exit {cleaner_rc} ;;\n"
             "esac\n",
@@ -571,9 +645,10 @@ class TestCleanerFailureIsNeverSilent:
         run.chmod(0o755)
         return root
 
-    def _run(self, project: Path, root: Path) -> tuple[dict, int, str]:
+    def _run(self, project: Path, root: Path,
+             payload: dict = RESEARCHER) -> tuple[dict, int, str]:
         proc = subprocess.run(
-            [BASH, str(SCRIPT)], input=json.dumps(RESEARCHER),
+            [BASH, str(SCRIPT)], input=json.dumps(payload),
             capture_output=True, text=True, encoding="utf-8",
             env={**os.environ, "CLAUDE_PROJECT_DIR": str(project),
                  "CLAUDE_PLUGIN_ROOT": str(root), "PHILLIT_UV": UV},
@@ -586,6 +661,36 @@ class TestCleanerFailureIsNeverSilent:
         jdir = review / "intermediate_files" / "json"
         jdir.mkdir(parents=True)
         (jdir / "s2.json").write_text(json.dumps(S2_NATURE_JSON), encoding="utf-8")
+
+    _YEAR_FIX = (
+        "echo '{\"success\": true, \"total_fields_removed\": 0, "
+        "\"entries_cleaned\": 0, \"warnings\": [], \"cleaned_entries\": {}, "
+        "\"applied_year_corrections\": [{\"key\": \"k2017\", \"old\": \"2017\", "
+        "\"new\": \"2019\", \"source_file\": \"verify_1_k.json\", "
+        "\"year_basis\": \"published-print\"}]}'")
+
+    def test_first_pass_block_carries_the_cleaning_report(self, project, tmp_path):
+        # The block is this stop's one continuation and the resumed pass
+        # sends no report, so a year fix made on the blocked pass must ride
+        # in the block reason or it is never shown.
+        self._seed(project)
+        root = self._stub_root(
+            tmp_path, self._YEAR_FIX, 0,
+            validator="echo '{\"valid\": false, \"errors\": [\"bad brace\"]}'; exit 1")
+        out, code, _ = self._run(project, root)
+        assert code == 0 and out.get("decision") == "block"
+        assert "bad brace" in out["reason"]
+        assert "METADATA CLEANING REPORT" in out["reason"]
+        assert "k2017: 2017 -> 2019" in out["reason"]
+
+    def test_valid_output_with_a_nonzero_exit_fails_closed(self, project, tmp_path):
+        self._seed(project)
+        root = self._stub_root(
+            tmp_path, self._YEAR_FIX, 0,
+            validator="echo '{\"valid\": true, \"errors\": []}'; exit 2")
+        out, code, _ = self._run(project, root)
+        assert code == 0 and out.get("decision") == "block"
+        assert "treated as a crash" in out["reason"]
 
     def test_traceback_is_reported_not_swallowed(self, project, tmp_path):
         self._seed(project)
@@ -648,6 +753,38 @@ class TestCleanerFailureIsNeverSilent:
         ctx = out.get("hookSpecificOutput", {}).get("additionalContext", "")
         assert "FAILED for d1.bib" in ctx
         assert "RuntimeError: boom" in ctx      # the structured .errors[] is surfaced
+
+    def test_failure_on_resumed_pass_is_a_system_message(self, project, tmp_path):
+        """A resumed pass sends no additionalContext (it would continue the
+        turn again), but a cleaner failure must still not read as a clean
+        run: it reaches the user as a systemMessage."""
+        self._seed(project)
+        root = self._stub_root(
+            tmp_path,
+            "echo '{\"success\": false, \"errors\": "
+            "[\"metadata_cleaner crashed on d1.bib: RuntimeError: boom\"]}'",
+            2)
+        out, code, _ = self._run(
+            project, root, {**RESEARCHER, "stop_hook_active": True})
+        assert code == 0
+        assert "decision" not in out and "hookSpecificOutput" not in out
+        assert "FAILED for d1.bib" in out["systemMessage"]
+        assert "RuntimeError: boom" in out["systemMessage"]
+
+    def test_success_on_resumed_pass_allows_silently(self, project, tmp_path):
+        """Warnings and removals are first-pass news; a resumed pass with a
+        successful cleaner returns {}."""
+        self._seed(project)
+        root = self._stub_root(
+            tmp_path,
+            "echo '{\"success\": true, \"total_fields_removed\": 1, "
+            "\"entries_cleaned\": 1, \"warnings\": [\"w\"], "
+            "\"cleaned_entries\": {\"k\": [\"number\"]}}'",
+            0)
+        out, code, _ = self._run(
+            project, root, {**RESEARCHER, "stop_hook_active": True})
+        assert code == 0
+        assert out == {}
 
     def test_non_object_json_is_not_treated_as_success(self, project, tmp_path):
         """`jq -e .` also passes a bare scalar or an unrelated object."""

@@ -3,8 +3,9 @@
 Fix for the year-corruption defect: broad
 keyword-search dumps (s2_*, openalex_*, ...) must never overwrite a
 field value; only entry-scoped CrossRef verification files (verify_*)
-carry correction authority. Same-DOI year disagreements across pooled
-sources are surfaced as warnings.
+carry correction authority. A same-DOI year disagreement across pooled
+sources is surfaced as a warning when it makes the cleaner abstain; one an
+entry-scoped record settles is not.
 """
 
 import json
@@ -341,10 +342,12 @@ class TestYearCorrectionAuthority:
 
 
 class TestConflictVisibility:
-    def test_conflicting_years_produce_warning(self, tmp_path):
-        """Option D: a same-DOI year disagreement across pooled sources is
-        logged in the cleaning report, naming values and files - even when
-        the resolution leaves the bib untouched."""
+    def test_settled_conflict_produces_no_warning(self, tmp_path):
+        """A same-DOI disagreement that an entry-scoped record SETTLES is
+        not reported: the cleaner did not abstain, so there is nothing for
+        the researcher to act on. Reporting it on every run is what fed the
+        SubagentStop loop (the identical warning, every stop, every
+        researcher)."""
         json_dir = make_json_dir(tmp_path, {
             "s2_roff.json": S2_DUMP,
             "verify_3_sparrow2007.json": VERIFY_RESULT,
@@ -354,12 +357,63 @@ class TestConflictVisibility:
 
         result = clean_bibtex(bib_file, json_dir)
 
-        conflict_warnings = [w for w in result["warnings"] if "disagree" in w]
-        assert len(conflict_warnings) == 1
-        w = conflict_warnings[0]
-        assert "sparrow2007" in w
-        assert "2007" in w and "2019" in w
-        assert "verify_3_sparrow2007.json" in w and "s2_roff.json" in w
+        assert result["abstained_entries"] == 0
+        assert not [w for w in result["warnings"] if "disagree" in w]
+
+    def test_settled_conflict_with_a_correction_reports_the_correction(self, tmp_path):
+        """The settled case that DOES change the bib: the year rewrite is
+        reported in `applied_year_corrections` (key, old, new, basis), and
+        still with no disagreement warning."""
+        json_dir = make_json_dir(tmp_path, {
+            "s2_roff.json": S2_DUMP,
+            "verify_3_sparrow2007.json": VERIFY_RESULT,
+        })
+        bib_file = tmp_path / "test.bib"
+        bib_file.write_text(SPARROW_BIB_WRONG_YEAR, encoding="utf-8")
+
+        result = clean_bibtex(bib_file, json_dir)
+
+        assert result["years_corrected"] == 1
+        assert result["applied_year_corrections"] == [{
+            "key": "sparrow2007", "old": "1999", "new": "2007",
+            "source_file": "verify_3_sparrow2007.json",
+            "year_basis": "published-print",
+        }]
+        assert not [w for w in result["warnings"] if "disagree" in w]
+
+    def test_no_correction_reports_an_empty_list(self, tmp_path):
+        json_dir = make_json_dir(tmp_path, {
+            "verify_3_sparrow2007.json": VERIFY_RESULT,
+        })
+        bib_file = tmp_path / "test.bib"
+        bib_file.write_text(SPARROW_BIB_CORRECT, encoding="utf-8")
+
+        result = clean_bibtex(bib_file, json_dir)
+
+        assert result["applied_year_corrections"] == []
+
+    def test_refused_rewrite_reports_no_correction(self, tmp_path, monkeypatch):
+        """A rewrite refused after the apply loop ran leaves the bib
+        untouched, so the pass must not report a correction that never
+        landed (_refuse zeroes every applied figure)."""
+        import metadata_cleaner
+
+        def refuse(*args, **kwargs):
+            raise metadata_cleaner.RewriteRefused("test refusal")
+
+        monkeypatch.setattr(metadata_cleaner, "write_bibtex", refuse)
+        json_dir = make_json_dir(tmp_path, {
+            "verify_3_sparrow2007.json": VERIFY_RESULT,
+        })
+        bib_file = tmp_path / "test.bib"
+        bib_file.write_text(SPARROW_BIB_WRONG_YEAR, encoding="utf-8")
+
+        result = clean_bibtex(bib_file, json_dir)
+
+        assert result["success"] is False
+        assert result["years_corrected"] == 0
+        assert result["applied_year_corrections"] == []
+        assert "1999" in bib_file.read_text(encoding="utf-8")
 
     def test_no_warning_when_sources_agree(self, tmp_path):
         """A single source (or agreeing sources) produces no conflict noise."""
@@ -978,7 +1032,14 @@ class TestConflictedDoiAbstention:
 
         result = clean_bibtex(bib, json_dir)
 
-        assert any("disagree on year" in w for w in result["warnings"])
+        conflict_warnings = [w for w in result["warnings"] if "disagree" in w]
+        assert len(conflict_warnings) == 1
+        w = conflict_warnings[0]
+        assert "disagree on year" in w
+        assert "sparrow2007" in w
+        assert "2019" in w and "2015" in w
+        assert "s2_a.json" in w and "s2_b.json" in w
+        assert result["abstained_entries"] == 1
 
 
 VERIFY_RESULT_DISAGREEING = {

@@ -5,7 +5,8 @@
 # marker), the agent_type contains domain-literature-researcher, and
 # workdir.py resolves an active review. When the researcher exits:
 #   1. Validates BibTeX syntax — blocks on errors (agent must fix them)
-#   2. Cleans hallucinated metadata fields — informational, does not block
+#   2. Cleans hallucinated metadata fields and corrects years — never a
+#      decision, but its report is sent on the FIRST pass only (below)
 #
 # Protocol: ALL decisions are stdout JSON with exit code 0.
 #   Block: {"decision": "block", "reason": "<errors>"}
@@ -13,11 +14,22 @@
 #     "block", and it rejects "allow" as invalid hook output.
 #   Allow + cleaning summary: {"hookSpecificOutput": {"hookEventName":
 #     "SubagentStop", "additionalContext": "<summary>"}}
+#     This is NOT a passive note: Claude Code treats a SubagentStop
+#     additionalContext like a block and continues the subagent's turn
+#     (capped by CLAUDE_CODE_STOP_HOOK_BLOCK_CAP, default 8). Sent on every
+#     pass, it kept each researcher answering the same report until the cap.
+#     So it is sent once, on the first pass (stop_hook_active=false).
 # Never exit 2: Claude Code ignores stdout JSON on exit 2, so the reason
 # would be lost and the agent would see only stderr.
 # Resumed pass (stop_hook_active=true): validation + cleaning still run (the
 # cleaning ledger must reflect the FINAL pass), but a block is never emitted
-# again — unresolved errors surface as a systemMessage instead.
+# again — unresolved errors surface as a systemMessage instead — and the
+# cleaning report is not sent again: the pass allows with {}, or with a
+# systemMessage when the cleaner itself failed (never silent, and a
+# systemMessage does not continue the turn). Accepted cost: a warning that
+# first appears on a resumed pass (say, after the researcher edited its bib
+# in reply to the report) is not sent either; the barrier's report is the
+# backstop. Do not "fix" this by re-sending: that restores the turn loop.
 
 set -e
 
@@ -172,9 +184,12 @@ if [[ ${#BIB_FILES[@]} -eq 0 ]]; then
     allow
 fi
 
-# Track syntax errors (these block) and cleaning summaries (informational)
+# Track syntax errors (these block) and cleaning summaries (informational).
+# CLEANING_FAILURES repeats the cleaner-failure lines of CLEANING_SUMMARY:
+# the one part a resumed pass still reports.
 SYNTAX_ERRORS=""
 CLEANING_SUMMARY=""
+CLEANING_FAILURES=""
 
 for bib_file in "${BIB_FILES[@]}"; do
     # Step 1: BibTeX syntax validation (blocks on errors). Capture stdout only —
@@ -182,7 +197,8 @@ for bib_file in "${BIB_FILES[@]}"; do
     # on first run), which would otherwise corrupt the JSON parsed below. Keep
     # stderr in a temp file so a crash can be reported with its cause.
     STDERR_LOG=$(mktemp)
-    RESULT=$(bash "$CLAUDE_PLUGIN_ROOT/bin/phillit-run" hooks/bib_validator.py "$bib_file" 2>"$STDERR_LOG" || true)
+    VALIDATOR_STATUS=0
+    RESULT=$(bash "$CLAUDE_PLUGIN_ROOT/bin/phillit-run" hooks/bib_validator.py "$bib_file" 2>"$STDERR_LOG") || VALIDATOR_STATUS=$?
     if [[ -z "$RESULT" ]]; then
         # Fail CLOSED (gate-failure policy): empty output means the validator or
         # uv crashed before emitting JSON. jq exits 0 on empty input, so without
@@ -209,6 +225,14 @@ for bib_file in "${BIB_FILES[@]}"; do
     # the validator exits 1 for invalid BibTeX AND for an uncaught exception.
     if [[ "$VALID" != "true" && "$VALID" != "false" ]]; then
         SYNTAX_ERRORS="${SYNTAX_ERRORS}bib_validator.py crashed for $bib_file (output was not exactly one true or false valid): $RESULT
+"
+        continue
+    fi
+
+    # A valid file exits 0. "valid": true with a nonzero exit means the
+    # process failed after printing, so it is a crash, not a pass.
+    if [[ "$VALID" == "true" && "$VALIDATOR_STATUS" -ne 0 ]]; then
+        SYNTAX_ERRORS="${SYNTAX_ERRORS}bib_validator.py exited $VALIDATOR_STATUS for $bib_file after reporting it valid (treated as a crash): $RESULT
 "
         continue
     fi
@@ -269,10 +293,12 @@ for bib_file in "${BIB_FILES[@]}"; do
             # into the hook's JSON output.
             [[ -z "$CLEAN_REPORTED" ]] && CLEAN_REPORTED=$(echo "$CLEAN_RESULT" | tail -c 1000)
             echo "WARNING: metadata_cleaner.py failed (exit $CLEAN_STATUS) for $bib_file: ${CLEAN_REPORTED}${CLEAN_ERR_TAIL}" >&2
-            CLEANING_SUMMARY="${CLEANING_SUMMARY}
+            CLEAN_FAILURE="
 metadata_cleaner.py FAILED for $(basename "$bib_file") (exit $CLEAN_STATUS) - metadata was NOT verified:
 ${CLEAN_REPORTED}${CLEAN_ERR_TAIL}
 "
+            CLEANING_SUMMARY="${CLEANING_SUMMARY}${CLEAN_FAILURE}"
+            CLEANING_FAILURES="${CLEANING_FAILURES}${CLEAN_FAILURE}"
             continue
         fi
         rm -f "$CLEAN_STDERR_LOG"
@@ -287,6 +313,17 @@ ${CLEAN_REPORTED}${CLEAN_ERR_TAIL}
             CLEANING_SUMMARY="${CLEANING_SUMMARY}
 Cleaned $(basename "$bib_file"): Removed $FIELDS_REMOVED unverifiable field(s) from $ENTRIES_CLEANED entry(ies):
 $CLEANED_ENTRIES
+"
+        fi
+
+        # A year rewrite is reported on its own, removals or not: the
+        # METADATA_CLEANED marker records it in the bib, but without this
+        # line the researcher never learns its year changed.
+        YEAR_CORRECTIONS=$(echo "$CLEAN_RESULT" | jq -r '.applied_year_corrections[]? | "  - \(.key): \(.old) -> \(.new) (\(.source_file), \(.year_basis // "basis not recorded"))"' 2>/dev/null || true)
+        if [[ -n "$YEAR_CORRECTIONS" ]]; then
+            CLEANING_SUMMARY="${CLEANING_SUMMARY}
+Corrected year(s) in $(basename "$bib_file") from the entry's own CrossRef record:
+$YEAR_CORRECTIONS
 "
         fi
 
@@ -315,12 +352,34 @@ if [[ -n "$SYNTAX_ERRORS" ]]; then
             '{"systemMessage": $msg}'
         exit 0
     fi
-    jq -cn --arg reason "$SYNTAX_ERRORS" '{"decision": "block", "reason": $reason}'
+    # First pass: the block is the one continuation this stop gets, and the
+    # resumed pass sends no cleaning report, so the report rides in the block
+    # reason - otherwise a year correction made on this pass is never shown.
+    BLOCK_REASON="$SYNTAX_ERRORS"
+    if [[ -n "$CLEANING_SUMMARY" ]]; then
+        BLOCK_REASON="${SYNTAX_ERRORS}
+METADATA CLEANING REPORT:${CLEANING_SUMMARY}"
+    fi
+    jq -cn --arg reason "$BLOCK_REASON" '{"decision": "block", "reason": $reason}'
     exit 0
 fi
 
-# Surface cleaning summary to the model as non-error feedback (v2.1.163+;
-# harmlessly ignored by older Claude Code versions).
+# Resumed pass: the report went out on the first pass, and sending it again
+# would continue the turn again. Only a cleaner failure is reported, to the
+# user, as a systemMessage (gate-failure policy: never silent).
+if [[ "$STOP_HOOK_ACTIVE" == "true" ]]; then
+    if [[ -n "$CLEANING_FAILURES" ]]; then
+        jq -cn --arg msg "PhilLit: metadata cleaning failed on the researcher's resumed pass:$CLEANING_FAILURES" \
+            '{"systemMessage": $msg}' \
+            || printf '{"systemMessage": "PhilLit: metadata cleaning failed on a resumed pass, and its report could not be rendered."}\n'
+        exit 0
+    fi
+    allow
+fi
+
+# First pass: send the cleaning summary to the model as additionalContext.
+# This continues the subagent's turn (see the header), which is why it is
+# sent on the first pass only.
 if [[ -n "$CLEANING_SUMMARY" ]]; then
     # A failed rendering must not reach the ERR trap: cleaning never blocks.
     jq -cn --arg ctx "METADATA CLEANING REPORT:$CLEANING_SUMMARY" \

@@ -342,9 +342,12 @@ def find_doi_year_conflicts(doi: str, index: 'MetadataIndex') -> dict:
     split is not a disagreement. Returns {} unless at least two distinct
     canonical years exist.
 
-    Option D of the year-corruption fix: a same-DOI disagreement should be
-    visible in the cleaning report however it is resolved - silent
-    resolution is what let bad broad-dump years overwrite verified ones."""
+    Option D of the year-corruption fix: silent resolution is what let bad
+    broad-dump years overwrite verified ones. A disagreement that makes the
+    cleaner ABSTAIN is warned about in clean_bibtex; one an entry-scoped
+    record settles is not, because nothing is left for the researcher to do
+    (and the SubagentStop report must not repeat it every run). A year the
+    settling record then rewrites is reported in `applied_year_corrections`."""
     if not doi:
         return {}
     norm_doi = normalize_doi(doi)
@@ -1210,6 +1213,9 @@ def plan_entry_cleaning(entry, index: MetadataIndex, api_entry: dict) -> dict:
         "removed_field_names": [],
         "removed_fields": [],
         "year_corrected": None,
+        # (source_file, year_basis) of the record that licensed
+        # year_corrected - reported, never consulted by a decision.
+        "year_correction_basis": None,
         "year_correction_declined": None,
         "type_downgraded": None,
         "unverified_fields": [],
@@ -1260,6 +1266,9 @@ def plan_entry_cleaning(entry, index: MetadataIndex, api_entry: dict) -> dict:
                         bound_reason)
                 else:
                     plan["year_corrected"] = (bib_year, api_year)
+                    plan["year_correction_basis"] = (
+                        api_entry.get("source_file") or "?",
+                        api_entry.get("year_basis"))
             else:
                 # COUNTABLE, not silent. A refusal is itself information, and
                 # until it is recorded there is no way to tell "corruption
@@ -1641,6 +1650,7 @@ def _refuse(result: dict, bib_path: Path, message: str) -> dict:
         result[key] = 0
     result["cleaned_entries"] = {}
     result["applied_fields_removed_by_name"] = {}
+    result["applied_year_corrections"] = []
     _discard_stale_ledger(result, bib_path)
     return result
 
@@ -1738,6 +1748,10 @@ def clean_bibtex(bib_path: Path, json_dirs) -> dict:
         "applied_entries_cleaned": 0,
         "applied_fields_removed_by_name": {},
         "applied_demotions": 0,
+        # One {key, old, new, source_file, year_basis} per year rewritten, so
+        # the SubagentStop report can name the rewrite instead of leaving it
+        # silent (the METADATA_CLEANED marker records it in the bib only).
+        "applied_year_corrections": [],
         "skipped_files": [],
         "salvaged_files": [],
         "errors": [],
@@ -1816,21 +1830,23 @@ def clean_bibtex(bib_path: Path, json_dirs) -> dict:
     plans = []  # (entry_key, entry, plan)
     ledger_entries = {}  # entry_key -> cleaning-ledger record
     for entry_key, entry in bib_data.entries.items():
-        # Emit the same-DOI year-disagreement warning BEFORE the match check:
-        # a conflicted DOI with no entry-scoped record now abstains, and this
-        # warning is the only signal that it did.
-        doi_value = entry.fields.get('doi', '')
-        conflicts = find_doi_year_conflicts(doi_value, index)
-        if conflicts:
-            detail = "; ".join(
-                f"{year} ({', '.join(files)})"
-                for year, files in sorted(conflicts.items()))
-            result["warnings"].append(
-                f"{entry_key}: indexed sources disagree on year for DOI "
-                f"{normalize_doi(doi_value)}: {detail}")
-
         api_entry = find_api_entry_for_bib_entry(entry, index)
         if isinstance(api_entry, CleaningAbstention):
+            # The year-disagreement warning is the only signal of an
+            # abstention, so it is raised here and only here. A disagreement
+            # an entry-scoped record settled is not warned about: the cleaner
+            # acted on it, and any year it rewrote is reported in
+            # applied_year_corrections. (Warning on every conflict repeated
+            # the same lines in every SubagentStop report.) Both abstention
+            # reasons imply a pooled conflict; the reason is the fallback.
+            doi_value = entry.fields.get('doi', '')
+            conflicts = find_doi_year_conflicts(doi_value, index)
+            detail = "; ".join(
+                f"{year} ({', '.join(files)})"
+                for year, files in sorted(conflicts.items())) or api_entry.reason
+            result["warnings"].append(
+                f"{entry_key}: indexed sources disagree on year for DOI "
+                f"{api_entry.normalized_doi}: {detail}")
             # The DOI matched - existence is confirmed - but the year
             # evidence is contradictory, so cleaning declines. The
             # ledger attests existence with an additive refusal reason;
@@ -1936,6 +1952,14 @@ def clean_bibtex(bib_path: Path, json_dirs) -> dict:
                 result["applied_fields_removed_by_name"].get(fname, 0) + 1)
         if plan["year_corrected"]:
             result["years_corrected"] += 1
+            source_file, year_basis = plan["year_correction_basis"] or ("?", None)
+            result["applied_year_corrections"].append({
+                "key": entry_key,
+                "old": str(plan["year_corrected"][0]),
+                "new": str(plan["year_corrected"][1]),
+                "source_file": source_file,
+                "year_basis": year_basis,
+            })
         if plan["type_downgraded"]:
             result["types_downgraded"] += 1
             result["applied_demotions"] += 1
