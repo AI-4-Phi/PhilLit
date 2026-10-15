@@ -183,3 +183,18 @@ def test_fallback_key_none_when_year_missing():
 def test_fallback_key_none_when_author_missing():
     e = "@article{x,\n  title = {Minds},\n  year = {2020},\n}"
     assert _fallback_key(e) is None
+
+
+def test_dedupe_by_title_key_records_remaps():
+    seen = {
+        "doe2020a": ("@article{doe2020a,\n  author = {Doe, Jane},\n"
+                     "  title = {A Study of Minds},\n  year = {2020},\n}"),
+        "doe2020b": ("@article{doe2020b,\n  author = {Doe, Jane},\n"
+                     "  title = {A Study of Minds},\n  year = {2020},\n"
+                     "  abstract = {Has one.},\n}"),
+    }
+    remaps = {}
+    removed = dedupe_by_title_key(seen, remaps=remaps)
+    assert len(removed) == 1
+    (survivor,) = seen
+    assert remaps == {removed[0]: survivor}

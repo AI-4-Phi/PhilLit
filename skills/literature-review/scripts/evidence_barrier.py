@@ -891,6 +891,15 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
 
     if not domains:
         report["status"] = "failed"
+        # .get(): this is the failure path, and it must explain, not crash.
+        bib_states = [report["domains"].get(str(i), {}).get("bib", "unknown")
+                      for i in range(1, n_domains + 1)]
+        unusable = [
+            f"literature-domain-{i}.bib"
+            + ("" if state == "missing" else f" ({state})")
+            for i, state in enumerate(bib_states, start=1)]
+        report["error"] = ("no domain bib files found: "
+                           + ", ".join(unusable) + " are missing or unusable")
         return report, {}
 
     articles, failed = rc.fetch_articles(slug_union, debug=debug)
@@ -1817,6 +1826,11 @@ def execute(review_dir: Path, n_domains: int, debug: bool = False) -> int:
            if "self_check_failed" in report else {}),
         **({"degraded_by": report["degraded_by"]}
            if report["status"] == "degraded" and "degraded_by" in report else {}),
+        # A failed run says WHY in the summary itself: the orchestrator pipes
+        # this through `tail`, which hides the exit code.
+        **({"error": report.get("error", "unknown failure (see the report)"),
+            **({"domains": report["domains"]} if report.get("domains") else {})}
+           if report["status"] == "failed" else {}),
         "stamped": sum(len(v) for v in (report.get("stamps") or {}).values()),
         "tiers": tiers,
         # Replaces the flat web_sources_none count: that number could not

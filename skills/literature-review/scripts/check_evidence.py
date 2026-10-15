@@ -26,6 +26,7 @@ live, 2026-07-28 A/B run + 2026-08-02 gate-(b) validation run):
 """
 from __future__ import annotations
 
+import argparse
 import json
 import re
 import sys
@@ -266,16 +267,63 @@ def cite_sentences(md: str, positions: list[int]) -> list[str]:
     return out
 
 
+_OVERRIDE_PREFIX = "Tier override (user request):"
+_OVERRIDE_TAG = " [user-requested override]"
+
+
+def parse_override_keys(text: str) -> set[str]:
+    """Citekeys named by the orchestrator's tier-overrides.md.
+
+    Each line looks like
+    `Tier override (user request): k1, k2 (EVIDENCE-EXISTENCE); user's
+    description: "..."`; the keys are the ", "-separated names before the
+    first ` (` (the tier part may be `(no tier)`, the description part is
+    optional). Lines without the prefix are ignored.
+    """
+    keys: set[str] = set()
+    for line in text.splitlines():
+        line = line.strip()
+        if not line.startswith(_OVERRIDE_PREFIX):
+            continue
+        head = line[len(_OVERRIDE_PREFIX):].split(" (", 1)[0]
+        keys.update(k.strip() for k in head.split(",") if k.strip())
+    return keys
+
+
+def _load_override_keys(path_arg: str | None) -> set[str]:
+    """Keys from the overrides file; a missing/unreadable file warns, never fails."""
+    if not path_arg:
+        return set()
+    path = Path(path_arg)
+    try:
+        return parse_override_keys(path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError):
+        print(_ascii(f"WARNING: check_evidence: overrides file not readable, "
+                     f"no override tagging: {path_arg}"), file=sys.stderr)
+        return set()
+
+
 def _ascii(text: str) -> str:
     return text.encode("ascii", "replace").decode("ascii")
 
 
 def main() -> int:
-    if len(sys.argv) != 3:
-        print("Usage: check_evidence.py <review.md> <merged.bib>")
+    usage = ("check_evidence.py <review.md> <merged.bib> "
+             "[--overrides <tier-overrides.md>]")
+    parser = argparse.ArgumentParser(prog="check_evidence.py", usage=usage)
+    parser.add_argument("review")
+    parser.add_argument("bib")
+    parser.add_argument("--overrides", default=None)
+    try:
+        args = parser.parse_args(sys.argv[1:])
+    except SystemExit as e:
+        if e.code == 0:  # --help
+            raise
+        print(f"Usage: {usage}")
         return 1
-    md = Path(sys.argv[1]).read_text(encoding="utf-8")
-    bib_content = Path(sys.argv[2]).read_text(encoding="utf-8")
+    md = Path(args.review).read_text(encoding="utf-8")
+    bib_content = Path(args.bib).read_text(encoding="utf-8")
+    override_keys = _load_override_keys(args.overrides)
 
     # Bare-key map is safe here (unlike the barrier's per-domain maps): this
     # checker consumes one already-merged .bib, where citation keys are
@@ -310,11 +358,12 @@ def main() -> int:
         if not positions:
             continue
         tier = info["tier"]
+        tag = _OVERRIDE_TAG if key in override_keys else ""
         if tier is None:
-            print(f"CHECK unstamped-cited: {key}")
+            print(f"CHECK unstamped-cited: {key}{tag}")
             counts["unstamped"] += 1
         if tier == se.TIER_NONE:
-            print(f"CHECK none-cited: {key}")
+            print(f"CHECK none-cited: {key}{tag}")
             counts["none_cited"] += 1
         if tier in _LOW_TRUST_TIERS:
             # cite_sentences() already dedupes per-key sentences (its own
@@ -324,7 +373,7 @@ def main() -> int:
                 if _VERB_RE.search(sentence):
                     label = tier or "unstamped"
                     snippet = _ascii(sentence[:120])
-                    print(f"CHECK reporting-verb: {key} ({label}): {snippet}")
+                    print(f"CHECK reporting-verb: {key} ({label}): {snippet}{tag}")
                     counts["reporting_verb"] += 1
 
     print("CHECK-SUMMARY: " + json.dumps(counts))

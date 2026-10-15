@@ -96,3 +96,76 @@ def test_main_preserves_lint_returncode(tmp_path, monkeypatch):
     md.write_text("Clean prose with no issues.\n", encoding="utf-8")
     monkeypatch.setattr(lint_md, "lint_markdown", lambda p: 3)
     assert lint_md.main([str(md)]) == 3
+
+
+# --- workflow (process) language in review prose -----------------------------
+
+def test_process_language_phrases_warn():
+    for phrase in (
+        "orchestrator",
+        "writer notes", "writer-notes", "Writer Notes",
+        "tier override", "tier-overrides",
+        "research brief", "research request",
+        "user's description", "user\u2019s description",
+        "synthesis outline", "synthesis-outline",
+        "could not check that account", "could not check its argument",
+        "could not verify the work",
+        "EVIDENCE-ABSTRACT",
+    ):
+        text = f"The text mentions the {phrase} in passing."
+        warnings = lint_md.check_prose_quality(text)
+        assert any(
+            "workflow language in review prose: rewrite for the reader" in w
+            and phrase in w
+            for w in warnings
+        ), phrase
+
+
+def test_process_language_real_leaks_warn():
+    for text in (
+        "The research request describes Gardner (2019) as a defence; this "
+        "review could not check that account.",
+        "On the orchestrator's reading of her notes, the view is weaker.",
+        "The research brief also lists a third position.",
+    ):
+        warnings = lint_md.check_prose_quality(text)
+        assert any("workflow language" in w for w in warnings), text
+
+
+def test_sanctioned_reader_facing_hedges_do_not_warn():
+    for text in (
+        "Smith (2020) is reported to argue that harm is comparative; its "
+        "full text was not available for this review.",
+        "This review does not cover the legal literature.",
+        "The agent could not check whether the door was locked.",
+        "The evidence for this claim is mixed.",
+        # The writer's sanctioned disclosure forms (agents/synthesis-writer.md):
+        "Smith (2020) is taken here to offer a compatibilist reply to "
+        "Frankfurt; this review did not verify that account.",
+        "On that account, the reply concedes the first premise.",
+        "Smith (2020), whose title identifies it as a study of moral luck, "
+        "is relevant; this review did not verify its argument.",
+        "The work itself could not be verified for this review.",
+        "Parfit, as Gardner (2019) reports, accepts the comparative account.",
+    ):
+        assert lint_md.check_prose_quality(text) == [], text
+
+
+def test_process_language_is_whole_word_and_skips_code_and_headings():
+    assert lint_md.check_prose_quality("The orchestrators of the plan met.") == []
+    assert lint_md.check_prose_quality("## The research brief\n") == []
+    fenced = "```\nthe orchestrator ran\n```\n"
+    assert lint_md.check_prose_quality(fenced) == []
+
+
+def test_process_language_warn_never_changes_exit_code(tmp_path, capsys):
+    md = tmp_path / "r.md"
+    md.write_text("# T\n\nThe orchestrator decided.\n", encoding="utf-8")
+    sys.argv = ["lint_md.py", str(md)]
+    try:
+        rc = lint_md.main()
+    except SystemExit as e:
+        rc = e.code
+    out = capsys.readouterr().out
+    assert "WARN prose-quality:" in out and "workflow language" in out
+    assert not rc

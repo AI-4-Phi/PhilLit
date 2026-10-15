@@ -192,6 +192,33 @@ def test_no_bibs_fails_closed(tmp_path):
     assert not list(rd.glob("*.bib"))  # nothing was created or stamped
 
 
+def test_no_bibs_summary_explains_why(tmp_path):
+    """A failed run's printed summary must say why: the orchestrator pipes it
+    through `tail`, which hides the exit code."""
+    rd = tmp_path / "review"
+    _domain(rd, 1, None)
+    _domain(rd, 2, None)
+    r = _run(rd, 2)
+    assert r.returncode == 1
+    summary = json.loads(r.stdout)
+    assert summary["status"] == "failed"
+    assert "no domain bib files found" in summary["error"]
+    assert "literature-domain-1.bib" in summary["error"]
+    assert "literature-domain-2.bib" in summary["error"]
+    assert summary["domains"]["1"]["bib"] == "missing"
+    assert summary["domains"]["2"]["bib"] == "missing"
+    assert _report(rd)["error"] == summary["error"]
+
+
+def test_complete_summary_has_no_error_or_domains_key(tmp_path):
+    rd = tmp_path / "review"
+    _domain(rd, 1, KUHN)
+    r = _run(rd, 1)
+    summary = json.loads(r.stdout)
+    assert summary["status"] != "failed"
+    assert "error" not in summary and "domains" not in summary
+
+
 def test_nonzero_exit_stamps_nothing(tmp_path):
     rd = tmp_path / "review"
     _domain(rd, 1, None)  # domain 1 has no bib -> run must fail

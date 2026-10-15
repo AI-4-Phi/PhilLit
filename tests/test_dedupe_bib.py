@@ -2158,3 +2158,72 @@ def test_verbatim_blocks_are_decided_by_the_shared_predicate_first(tmp_path, cap
     assert "not a command" not in content
     err = capsys.readouterr().err
     assert "WARNING" in err and "test1.bib" in err and "@ not a command at all" in err
+
+
+# =============================================================================
+# [KEY-REMAP] consolidated block
+# =============================================================================
+
+def _gardner(key, abstract=False):
+    return (f"@article{{{key},\n  author = {{Gardner, Sarah}},\n"
+            f"  title = {{When Good Is Not Enough {key}}},\n  year = {{2017}},\n"
+            f"  doi = {{10.1000/gardner}},\n"
+            + ("  abstract = {An abstract.},\n" if abstract else "")
+            + "  keywords = {x}\n}\n")
+
+
+def test_key_remap_lines_cover_doi_merges_and_resolve_to_survivor(tmp_path, capsys):
+    bib = tmp_path / "in.bib"
+    bib.write_text("\n".join([_gardner("gardner2017good"),
+                              _gardner("gardner2017whengood", abstract=True),
+                              _gardner("gardner2017when")]), encoding="utf-8")
+    out = tmp_path / "out.bib"
+    deduplicate_bib([bib], out)
+    stdout = capsys.readouterr().out
+    survivors = re.findall(r"^@article\{([^,]+),", out.read_text(encoding="utf-8"), re.M)
+    assert len(survivors) == 1
+    survivor = survivors[0]
+    remap_lines = [l for l in stdout.splitlines() if l.startswith("[KEY-REMAP]")]
+    removed = sorted({"gardner2017good", "gardner2017whengood", "gardner2017when"} - {survivor})
+    assert remap_lines == [f"[KEY-REMAP] {k} -> {survivor}" for k in removed]
+    assert len(remap_lines) == 2
+    # the block comes after the per-pair DEDUPE-DOI lines
+    assert stdout.index("[DEDUPE-DOI]") < stdout.index("[KEY-REMAP]")
+
+
+def test_key_remap_absent_when_nothing_merged(tmp_path, capsys, sample_entry_high):
+    bib = tmp_path / "in.bib"
+    bib.write_text(sample_entry_high, encoding="utf-8")
+    deduplicate_bib([bib], tmp_path / "out.bib")
+    assert "[KEY-REMAP]" not in capsys.readouterr().out
+
+
+def test_key_remap_ignores_same_key_duplicates(tmp_path, capsys, sample_entry_high):
+    bib1, bib2 = tmp_path / "a.bib", tmp_path / "b.bib"
+    bib1.write_text(sample_entry_high, encoding="utf-8")
+    bib2.write_text(sample_entry_high, encoding="utf-8")
+    deduplicate_bib([bib1, bib2], tmp_path / "out.bib")
+    assert "[KEY-REMAP]" not in capsys.readouterr().out
+
+
+def test_format_key_remaps_resolves_chains_and_sorts():
+    from dedupe_bib import format_key_remaps
+    assert format_key_remaps({}) == []
+    assert format_key_remaps({"b": "c", "a": "b", "z": "y"}) == [
+        "[KEY-REMAP] a -> c", "[KEY-REMAP] b -> c", "[KEY-REMAP] z -> y"]
+
+
+def test_key_remap_covers_title_merges(tmp_path, capsys):
+    def e(key, extra=""):
+        return (f"@article{{{key},\n  author = {{Doe, Jane}},\n"
+                f"  title = {{A Study of Minds}},\n  year = {{2020}},\n{extra}"
+                "  keywords = {x}\n}\n")
+    bib = tmp_path / "in.bib"
+    bib.write_text(e("doe2020a") + "\n" + e("doe2020b", "  abstract = {Yes.},\n"),
+                   encoding="utf-8")
+    deduplicate_bib([bib], tmp_path / "out.bib")
+    out = capsys.readouterr().out
+    assert "[DEDUPE-TITLE]" in out
+    keeper = re.search(r"keeping '([^']+)'", out).group(1)
+    loser = ({"doe2020a", "doe2020b"} - {keeper}).pop()
+    assert f"[KEY-REMAP] {loser} -> {keeper}" in out.splitlines()

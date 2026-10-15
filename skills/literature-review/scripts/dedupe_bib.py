@@ -598,6 +598,7 @@ def dedupe_by_title_key(
     seen: dict[str, str],
     origin: dict[str, tuple] | None = None,
     merged_from: dict[tuple, set] | None = None,
+    remaps: dict[str, str] | None = None,
 ) -> list[str]:
     """Third dedup pass: catch same-work duplicates that share no DOI, keyed on
     (normalized_title, year, first-author surname). Winner via merge_entries()
@@ -609,7 +610,8 @@ def dedupe_by_title_key(
 
     When `origin`/`merged_from` are given (see deduplicate_bib), contributor
     tracking is maintained across merges: the removed key's provenance is
-    absorbed transitively into the survivor's.
+    absorbed transitively into the survivor's. When `remaps` is given, each
+    merge records `removed key -> surviving key` in it (see format_key_remaps).
     """
     seen_titles: dict[tuple, str] = {}
     group_dois: dict[str, set] = {}
@@ -640,6 +642,8 @@ def dedupe_by_title_key(
                 group_dois.pop(existing_key, None)
                 group_dois[key] = merged_dois
                 title_dupes.append(existing_key)
+                if remaps is not None:
+                    remaps[existing_key] = key
                 if origin is not None and merged_from is not None:
                     _absorb(merged_from, origin[key], origin.pop(existing_key))
             else:
@@ -650,12 +654,33 @@ def dedupe_by_title_key(
                 del seen[key]
                 group_dois[existing_key] = merged_dois
                 title_dupes.append(key)
+                if remaps is not None:
+                    remaps[key] = existing_key
                 if origin is not None and merged_from is not None:
                     _absorb(merged_from, origin[existing_key], origin.pop(key))
         else:
             seen_titles[fkey] = key
             group_dois[key] = new_dois
     return title_dupes
+
+
+def format_key_remaps(remaps: dict[str, str]) -> list[str]:
+    """One `[KEY-REMAP] <removed> -> <survivor>` line per removed key, sorted.
+
+    `remaps` maps each key removed by a DOI or title merge to the key that
+    absorbed it. Chains are resolved transitively (a->b then b->c yields
+    a->c and b->c), so a reader holding ANY removed key finds the key that is
+    actually in the output. Empty when nothing was remapped.
+    """
+    lines = []
+    for removed in sorted(remaps):
+        final = remaps[removed]
+        hops = 0
+        while final in remaps and hops <= len(remaps):  # hops: cycle backstop
+            final = remaps[final]
+            hops += 1
+        lines.append(f"[KEY-REMAP] {removed} -> {final}")
+    return lines
 
 
 def deduplicate_bib(
@@ -689,6 +714,7 @@ def deduplicate_bib(
     # surviving identity to every identity absorbed into it (transitive).
     origin: dict[str, tuple] = {}
     merged_from: dict[tuple, set] = {}
+    remaps: dict[str, str] = {}  # removed key -> surviving key (DOI + title merges)
 
     for bib_file in input_files:
         content = bib_file.read_text(encoding='utf-8')
@@ -766,6 +792,7 @@ def deduplicate_bib(
                 seen[key] = merged
                 seen_dois[doi] = key
                 doi_dupes.append(existing_key)
+                remaps[existing_key] = key
                 _absorb(merged_from, origin[key], origin.pop(existing_key))
             else:
                 # Existing entry won
@@ -773,6 +800,7 @@ def deduplicate_bib(
                 seen[existing_key] = merged
                 del seen[key]
                 doi_dupes.append(key)
+                remaps[key] = existing_key
                 _absorb(merged_from, origin[existing_key], origin.pop(key))
         else:
             seen_dois[doi] = key
@@ -781,7 +809,7 @@ def deduplicate_bib(
 
     # Third pass: title-key deduplication (catches the same work with no shared
     # DOI — e.g. after a cleaner stripped DOIs from both copies).
-    title_dupes = dedupe_by_title_key(seen, origin, merged_from)
+    title_dupes = dedupe_by_title_key(seen, origin, merged_from, remaps)
     duplicates.extend(title_dupes)
 
     # Attestation-aware re-stamp of the merged entries (before writing).
@@ -797,6 +825,9 @@ def deduplicate_bib(
         for key, entry in seen.items():
             f.write(entry.rstrip())
             f.write('\n\n')
+
+    for line in format_key_remaps(remaps):
+        print(line)
 
     return duplicates
 

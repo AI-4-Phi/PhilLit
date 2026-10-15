@@ -3203,3 +3203,79 @@ class TestSameWorkCitedAdvisory:
         assert len(lines) == 2
         assert "reiman1984privacy" in lines[0] and "reiman2017privacy" in lines[0]
         assert "aaronson2000zzz" in lines[1] and "aaronson2010zzz" in lines[1]
+
+
+# =============================================================================
+# main(): the annotated bib is refused; missing year_suffix is flagged loudly
+# =============================================================================
+
+class TestMainSuffixGuards:
+    _BIB = (
+        "@book{menary2010a,\n  author = {Menary, Richard},\n"
+        "  title = {The Extended Mind},\n  year = {2010},\n"
+        "  publisher = {MIT Press},\n%s}\n")
+
+    def _run(self, tmp_path, monkeypatch, bib_name, bib_extra, prose):
+        import sys
+        import generate_bibliography as gb
+        review = tmp_path / "review.md"
+        bib = tmp_path / bib_name
+        review.write_text(prose, encoding="utf-8")
+        bib.write_text(self._BIB % bib_extra, encoding="utf-8")
+        monkeypatch.setattr(
+            sys, "argv", ["generate_bibliography.py", str(review), str(bib)])
+        return gb, review
+
+    def test_annotated_bib_refused_without_touching_review(
+            self, tmp_path, capsys, monkeypatch):
+        import pytest
+        prose = "## Review\n\nMenary (2010a) argues so.\n"
+        gb, review = self._run(
+            tmp_path, monkeypatch, "literature-foo-annotated.bib", "", prose)
+        with pytest.raises(SystemExit) as exc:
+            gb.main()
+        assert exc.value.code == 2
+        err = capsys.readouterr().err
+        assert "-annotated.bib" in err and "year_suffix" in err
+        assert "literature-<name>.bib" in err and "-merged.bib" in err
+        assert err.isascii()
+        assert review.read_text(encoding="utf-8") == prose
+
+    def test_track_record_of_a_review_named_annotated_is_not_refused(
+            self, tmp_path, capsys, monkeypatch):
+        prose = "## Review\n\nMenary (2010a) argues so.\n"
+        gb, review = self._run(
+            tmp_path, monkeypatch, "literature-foo-annotated.bib",
+            "  keywords = {High, EVIDENCE-EXISTENCE},\n"
+            "  year_suffix = {a},\n", prose)
+        gb.main()
+        assert "## References" in review.read_text(encoding="utf-8")
+        assert "annotated bibliography" not in capsys.readouterr().err
+
+    def test_lettered_cite_without_any_year_suffix_warns_and_continues(
+            self, tmp_path, capsys, monkeypatch):
+        gb, review = self._run(
+            tmp_path, monkeypatch, "literature-foo.bib", "",
+            "## Review\n\nMenary (2010a) argues so.\n")
+        gb.main()
+        err = capsys.readouterr().err
+        assert "WARNING [SUFFIX-MISSING]" in err
+        assert err.isascii()
+        assert "## References" in review.read_text(encoding="utf-8")
+
+    def test_lettered_cite_with_a_year_suffix_does_not_warn(
+            self, tmp_path, capsys, monkeypatch):
+        gb, _ = self._run(
+            tmp_path, monkeypatch, "literature-foo.bib",
+            "  year_suffix = {a},\n",
+            "## Review\n\nMenary (2010a) argues so.\n")
+        gb.main()
+        assert "SUFFIX-MISSING" not in capsys.readouterr().err
+
+    def test_plain_years_and_decades_do_not_warn(
+            self, tmp_path, capsys, monkeypatch):
+        gb, _ = self._run(
+            tmp_path, monkeypatch, "literature-foo.bib", "",
+            "## Review\n\nIn the 1990s Menary (2010) argues so.\n")
+        gb.main()
+        assert "SUFFIX-MISSING" not in capsys.readouterr().err

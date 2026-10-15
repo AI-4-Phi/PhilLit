@@ -148,6 +148,31 @@ _H2_META_LABEL_RE = re.compile(
     r"^\s*##\s+.*\(([A-Z][A-Za-z]+(?:\s+[A-Z][A-Za-z]+)+)\)\s*$"
 )
 
+# Workflow vocabulary that leaked into a delivered review ("The research
+# request describes Gardner (2019)...; this review could not check that
+# account", "on the orchestrator's reading of her notes"). Whole words,
+# case-insensitive. The sanctioned reader-facing hedges ("its full text was
+# not available for this review", "this review does not cover ...") match
+# none of these.
+_PROCESS_LANGUAGE_RE = re.compile(
+    r"\b(?:"
+    r"orchestrator"
+    r"|writer[ -]notes"
+    r"|tier[ -]overrides?"
+    r"|research[ ]brief"
+    r"|research[ ]request"
+    r"|user['\u2019]s[ ]description"
+    r"|synthesis[ -]outline"
+    r"|could[ ]not[ ]check[ ]that[ ]account"
+    r"|could[ ]not[ ]check[ ]its[ ]argument"
+    r"|could[ ]not[ ]verify[ ]the[ ]work"
+    r")\b",
+    re.IGNORECASE,
+)
+# An engine evidence tier token (case-sensitive: EVIDENCE-ABSTRACT, not
+# the English word "evidence").
+_EVIDENCE_TOKEN_RE = re.compile(r"\bEVIDENCE-[A-Z]+\b")
+
 
 def check_prose_quality(text: str) -> list[str]:
     """Return WARN-level advisories about prose-quality issues.
@@ -155,8 +180,10 @@ def check_prose_quality(text: str) -> list[str]:
     Heuristic, WARN-only — the caller must never let these affect the exit
     code. Detects: (1) citation parentheses carrying process annotations,
     (2) in-prose "Section N(.M)" cross-references, (3) H2 headings ending in a
-    parenthesized Title-Case meta-label. Fenced code blocks and heading lines
-    are exempt from the prose checks.
+    parenthesized Title-Case meta-label, (4) workflow language in review
+    prose (orchestrator, writer notes, research brief, EVIDENCE-* tokens,
+    ...). Fenced code blocks and heading lines are exempt from the prose
+    checks.
     """
     warnings: list[str] = []
     in_fence = False
@@ -195,6 +222,14 @@ def check_prose_quality(text: str) -> list[str]:
                 f"line {lineno}: in-prose cross-reference '{m.group(0)}' - "
                 f"cross-reference sections by title, not number (display "
                 f"renumbering makes numbers off-by-one) (WARN)"
+            )
+
+        matches = [m.group(0) for m in _PROCESS_LANGUAGE_RE.finditer(line)]
+        matches += [m.group(0) for m in _EVIDENCE_TOKEN_RE.finditer(line)]
+        for phrase in dict.fromkeys(matches):
+            warnings.append(
+                f"line {lineno}: workflow language in review prose: rewrite "
+                f"for the reader ('{phrase}') (WARN)"
             )
     return warnings
 

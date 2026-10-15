@@ -411,3 +411,82 @@ def test_search_rule_never_raises_and_find_cites_escapes_whatever_it_yields():
         # None or stripped text: main()'s falsiness guard is the whole guard.
         assert surname is None or (surname and surname.strip() == surname)
         check_evidence.find_cites(md, surname or "", "2020")
+
+
+# --- tier-override tagging ---------------------------------------------------
+
+def _run_ov(tmp_path, md_text, overrides_text=None, overrides_path=None):
+    (tmp_path / "r.md").write_text(md_text, encoding="utf-8")
+    (tmp_path / "b.bib").write_text(BIB, encoding="utf-8")
+    cmd = [sys.executable, str(CHECKER),
+           str(tmp_path / "r.md"), str(tmp_path / "b.bib")]
+    if overrides_text is not None:
+        (tmp_path / "ov.md").write_text(overrides_text, encoding="utf-8")
+        cmd += ["--overrides", str(tmp_path / "ov.md")]
+    elif overrides_path is not None:
+        cmd += ["--overrides", str(overrides_path)]
+    return subprocess.run(cmd, capture_output=True, text=True)
+
+
+def test_parse_override_keys_single_multi_and_no_tier():
+    text = (
+        "# Tier overrides\n"
+        "Tier override (user request): kuhn1962structure (EVIDENCE-EXISTENCE); "
+        'user\'s description: "the classic"\n'
+        "Tier override (user request): a2017good, a2017whengood, a2017when "
+        "(EVIDENCE-EXISTENCE); user's description: \"x, y (z)\"\n"
+        "Tier override (user request): solo2020 (no tier)\n"
+        "unrelated line (kuhn1962structure)\n"
+    )
+    assert check_evidence.parse_override_keys(text) == {
+        "kuhn1962structure", "a2017good", "a2017whengood", "a2017when", "solo2020"}
+    assert check_evidence.parse_override_keys("") == set()
+
+
+def test_override_tags_lines_without_changing_count(tmp_path):
+    md = ("Kuhn (1962) argues that paradigms shift. As noted online (Blogger 2024). "
+          "See Ghost (2019).")
+    plain = _run_ov(tmp_path, md)
+    tagged = _run_ov(
+        tmp_path, md,
+        "Tier override (user request): other1, kuhn1962structure, blog2024 "
+        "(EVIDENCE-EXISTENCE); user's description: \"d\"\n")
+    p_lines = plain.stdout.splitlines()
+    t_lines = tagged.stdout.splitlines()
+    assert len(p_lines) == len(t_lines)
+    tag = " [user-requested override]"
+    for p, t in zip(p_lines, t_lines):
+        if "kuhn1962structure" in p or "blog2024" in p:
+            assert t == p + tag
+        else:
+            assert t == p  # untouched, incl. ghost2019 and the summary
+    assert any(l.startswith("CHECK reporting-verb: kuhn1962structure") and l.endswith(tag)
+               for l in t_lines)
+    assert "CHECK none-cited: blog2024" + tag in t_lines
+    assert "CHECK unstamped-cited: ghost2019" in t_lines
+
+
+def test_override_missing_file_warns_and_continues(tmp_path):
+    md = "Kuhn (1962) argues that paradigms shift."
+    plain = _run_ov(tmp_path, md)
+    r = _run_ov(tmp_path, md, overrides_path=tmp_path / "nope.md")
+    assert r.returncode == 0
+    assert r.stdout == plain.stdout
+    assert r.stderr.startswith("WARNING") and "nope.md" in r.stderr
+    assert r.stderr.isascii()
+
+
+def test_override_empty_file_is_no_tagging(tmp_path):
+    md = "Kuhn (1962) argues that paradigms shift."
+    plain = _run_ov(tmp_path, md)
+    r = _run_ov(tmp_path, md, "")
+    assert r.stdout == plain.stdout and r.stderr == ""
+
+
+def test_override_flag_without_value_is_usage_error(tmp_path):
+    (tmp_path / "r.md").write_text("x", encoding="utf-8")
+    (tmp_path / "b.bib").write_text(BIB, encoding="utf-8")
+    r = subprocess.run([sys.executable, str(CHECKER), str(tmp_path / "r.md"),
+                        str(tmp_path / "b.bib"), "--overrides"],
+                       capture_output=True, text=True)
+    assert r.returncode == 1 and "Usage" in r.stdout

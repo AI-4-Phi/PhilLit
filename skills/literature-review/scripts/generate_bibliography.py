@@ -2113,6 +2113,30 @@ def apply_references(review_text: str, references_section: str) -> str:
         return review_text.rstrip("\n") + "\n\n" + references_section + "\n"
 
 
+# A lettered author-year citation year ("2009a"). The letter "s" is left out
+# so a decade ("the 1990s") is not read as a citation.
+_LETTERED_YEAR_RE = re.compile(r"(?<!\d)(?:1[6-9]|20)\d{2}[a-rt-z]\b")
+
+
+def _suffix_missing_warning(review_text: str, bib_data) -> str | None:
+    """A loud advisory when the prose cites lettered years but the bib carries
+    no `year_suffix` at all: the regenerated References would print every
+    year without its letter. None when nothing is amiss. Advisory only:
+    fixtures and a typo like "2009x" exist, so it never fails the run."""
+    prose = _strip_references_section(review_text)
+    m = _LETTERED_YEAR_RE.search(prose)
+    if not m:
+        return None
+    if any(_get_field(e, "year_suffix") for e in bib_data.entries.values()):
+        return None
+    return (f"WARNING [SUFFIX-MISSING]: the review cites a lettered year "
+            f"('{m.group(0)}') but no entry in the bibliography has a "
+            f"year_suffix field, so References will print every year "
+            f"WITHOUT its letter. Use literature-<name>.bib (barrier-stamped), "
+            f"the track record, or intermediate_files/literature-<name>-"
+            f"merged.bib, not the delivery-split -annotated.bib.")
+
+
 def main():
     if len(sys.argv) != 3:
         print("Usage: generate_bibliography.py <review.md> <literature.bib>", file=sys.stderr)
@@ -2120,6 +2144,22 @@ def main():
 
     review_path = Path(sys.argv[1])
     bib_path = Path(sys.argv[2])
+
+    if (bib_path.name.endswith("-annotated.bib")
+            and "EVIDENCE-" not in bib_path.read_text(encoding="utf-8")):
+        # The delivery split strips the engine field year_suffix (and the
+        # EVIDENCE-* keywords) from the annotated bib; regenerating
+        # References from it silently drops the year letters (2009a/2009b
+        # became 2009). Refuse before touching anything. The EVIDENCE test
+        # spares the track record of a review whose own name ends in
+        # "-annotated": every barrier-stamped bib carries the tokens.
+        print(f"Error: {bib_path.name} is the delivery-split annotated "
+              f"bibliography; it lacks the engine field year_suffix, so "
+              f"References would silently lose year letters (2009a -> 2009). "
+              f"Use literature-<name>.bib, the track record, or "
+              f"intermediate_files/literature-<name>-merged.bib instead. "
+              f"The review was not modified.", file=sys.stderr)
+        sys.exit(2)
 
     if not review_path.exists():
         print(f"Error: Review file not found: {review_path}", file=sys.stderr)
@@ -2130,6 +2170,10 @@ def main():
 
     review_text = review_path.read_text(encoding="utf-8")
     bib_data = parse_file(str(bib_path), bib_format="bibtex")
+
+    suffix_warning = _suffix_missing_warning(review_text, bib_data)
+    if suffix_warning:
+        print(suffix_warning, file=sys.stderr)
 
     cited = find_cited_entries(review_text, bib_data)
 
