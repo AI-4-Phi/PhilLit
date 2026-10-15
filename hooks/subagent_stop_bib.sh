@@ -348,7 +348,7 @@ if [[ -n "$SYNTAX_ERRORS" ]]; then
         # Resumed pass: never re-block (infinite-loop prevention), but never
         # silent either (gate-failure policy) — surface the unresolved errors
         # to the user as a systemMessage.
-        jq -cn --arg msg "PhilLit: BibTeX errors remain after the researcher's resumed pass (not re-blocking to avoid a stop-hook loop): $SYNTAX_ERRORS" \
+        jq -cn --arg msg "PhilLit: BibTeX errors remain after the researcher's resumed pass (not re-blocking to avoid a stop-hook loop): $SYNTAX_ERRORS$CLEANING_FAILURES" \
             '{"systemMessage": $msg}'
         exit 0
     fi

@@ -683,6 +683,17 @@ class TestCleanerFailureIsNeverSilent:
         assert "METADATA CLEANING REPORT" in out["reason"]
         assert "k2017: 2017 -> 2019" in out["reason"]
 
+    def test_resumed_pass_with_syntax_errors_still_names_a_cleaner_failure(
+            self, project, tmp_path):
+        self._seed(project)
+        root = self._stub_root(
+            tmp_path, "echo 'boom' >&2", 1,
+            validator="echo '{\"valid\": false, \"errors\": [\"bad brace\"]}'; exit 1")
+        out, code, _ = self._run(project, root, {**RESEARCHER, "stop_hook_active": True})
+        assert code == 0 and "decision" not in out
+        assert "bad brace" in out["systemMessage"]
+        assert "FAILED for d1.bib" in out["systemMessage"]
+
     def test_valid_output_with_a_nonzero_exit_fails_closed(self, project, tmp_path):
         self._seed(project)
         root = self._stub_root(
