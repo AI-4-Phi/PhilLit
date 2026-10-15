@@ -42,6 +42,8 @@ Decided, do not reopen:
   explicit `PHILLIT_WORKDIR=inplace` (the service's pin); the automatic
   fallback refuses it, since a delivered review is never changed.
 - A linked root is accepted: dotfile managers link `~/.local`.
+- A delivered review is revised only as a NEW review: `revise` seeds one
+  from it by copying, and never writes into the delivered folder.
 - A configuration error fails the SubagentStop hook closed; a review-state
   error allows the stop with a user-visible systemMessage, since the
   researcher cannot repair it.
@@ -577,6 +579,14 @@ def _demote_interrupted(dest: Path) -> bool:
     return dest.is_dir() and not _is_link(dest) and _holds_only_clutter(dest)
 
 
+def _delivered(dest: Path) -> bool:
+    """reviews/<name>/ is a delivered review: a local publish's marker says
+    `published`, or an in-place publish archived the pointer as
+    `.completed-review`. A finished file alone proves nothing."""
+    marker = read_meta(dest)
+    return bool(marker and marker.get("state") == "published") or (dest / COMPLETED_REL).exists()
+
+
 # --- garbage collection -------------------------------------------------------
 
 def _subdirs(d: Path, follow_top_link: bool = False) -> list[Path]:
@@ -743,12 +753,12 @@ def _length_checked(workspace: Path, name: str, mode: str) -> list[Path]:
     return [local_workdir(workspace, name), dest] if mode == "local" else [dest]
 
 
-def suggest_name(workspace: Path, name: str, mode: str) -> str | None:
-    """A free name that init accepts in `mode`: `<name>-<n>`, with the base
-    cut short when the suffix would push a folder past the Windows length
-    limit (Full Autopilot takes the suggestion as given)."""
+def suggest_name(workspace: Path, name: str, mode: str, sep: str = "-") -> str | None:
+    """A free name that init accepts in `mode`: `<name><sep><n>` from n = 2,
+    with the base cut short when the suffix would push a folder past the
+    Windows length limit (Full Autopilot takes the suggestion as given)."""
     for n in range(2, 1000):
-        suffix = f"-{n}"
+        suffix = f"{sep}{n}"
         base = name[:64 - len(suffix)]
         while base:
             candidate = base.rstrip(".") + suffix
@@ -765,22 +775,34 @@ def suggest_name(workspace: Path, name: str, mode: str) -> str | None:
     return None
 
 
-def cmd_init(workspace: Path, name: str) -> dict:
+def _refuse_if_active(workspace: Path) -> None:
+    """The concurrent-review guard of every command that starts a review."""
     ptr = current_pointer(workspace)
     if ptr is not None:
         raise Refusal("a review is already active: resume it, or abandon it first with "
                       "`workdir.py publish --abandon`", active=_describe(ptr))
-    problem = name_problem(name)
-    if problem:
-        raise Refusal(problem)
+
+
+def _init_mode(workspace: Path, name: str) -> tuple[str, str | None]:
+    """The mode a new review works in, and the reason when init fell back
+    to in place by itself."""
     mode, reason = requested_mode() or "local", None
-    dest, local = destination(workspace, name), local_workdir(workspace, name)
     if mode == "local":
         if not allow_rule_present(workspace):
             mode, reason = "inplace", MISSING_RULE_REASON
-        elif (ch := unsafe_char(local)) is not None:
+        elif (ch := unsafe_char(local_workdir(workspace, name))) is not None:
             mode, reason = "inplace", (f"the local work folder path contains {ch!r}, which "
                                        "the review's shell commands cannot quote safely")
+    return mode, reason
+
+
+def cmd_init(workspace: Path, name: str) -> dict:
+    _refuse_if_active(workspace)
+    problem = name_problem(name)
+    if problem:
+        raise Refusal(problem)
+    mode, reason = _init_mode(workspace, name)
+    dest, local = destination(workspace, name), local_workdir(workspace, name)
     workdir = local if mode == "local" else dest
     _require_quotable(workdir)
     problem = length_problem(_length_checked(workspace, name, mode))
@@ -859,8 +881,7 @@ def cmd_status(workspace: Path) -> dict:
             # sync lag, never "created but not started"
             return {"active": True, "missing": True, "mode": "inplace", "name": name,
                     "workdir": dest.as_posix()}
-        marker = read_meta(dest)
-        if (dest / COMPLETED_REL).exists() or (marker is not None and marker.get("state") == "published"):
+        if _delivered(dest):
             # an init whose completed-review guard was interrupted, or a
             # folder a local publish delivered
             return {"active": True, "delivered": True, "mode": "inplace", "name": name,
@@ -913,7 +934,7 @@ def cmd_activate(workspace: Path, name: str) -> dict:
             raise Refusal(f"review name {name!r} is not a folder name")
         dest = destination(workspace, name)
         marker = read_meta(dest)
-        if (marker and marker.get("state") == "published") or (dest / COMPLETED_REL).exists():
+        if _delivered(dest):
             raise Refusal(f"{dest.as_posix()} is a delivered review; it is never resumed")
         if not (dest.is_dir() and _abandoned_in_place(dest)):
             raise Refusal(f"no abandoned review named {name!r} in this workspace")
@@ -1244,6 +1265,190 @@ def cmd_publish(workspace: Path, abandon: bool) -> dict:
     return _copy_commit(workspace, ptr, workdir, dest, state)
 
 
+# --- revise -------------------------------------------------------------------------
+
+# The deliverables a revision renames, and the exports it leaves out because
+# Phase 6 regenerates them from the renamed review.
+REVISED_FILES = ("literature-review-{}.md", "literature-{}.bib", "literature-{}-annotated.bib",
+                 "research-notes-{}.md")
+MERGED_BIB = "literature-{}-merged.bib"
+REGENERATED = ("literature-review-{}.docx", "literature-review-{}.pdf")
+
+
+def _copy_content(src: Path, dst: Path) -> None:
+    """Copy src's BYTES to dst and fsync them. No mode, file flags or times
+    (unlike _copy_file): a read-only delivered file must still give a
+    working copy the review can edit."""
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(src, dst)
+    with open(dst, "rb+") as f:  # a write handle: Windows fsync needs one
+        os.fsync(f.fileno())
+
+
+def _revision_plan(src: Path, old: str, new: str) -> tuple[list[tuple[Path, Path]], list[str]]:
+    """(source path, new path) for every file a revision copies, both
+    relative, and the top-level extras it carries. The deliverables and the
+    merged bib are renamed; the rest of intermediate_files/ keeps its paths;
+    a top-level file or folder Phase 6 would not deliver goes under
+    intermediate_files/carried-from-<old>/, so it is neither dropped, nor
+    delivered again as a stale deliverable, nor written over a file of the
+    same name in intermediate_files/. Left out: the regenerated exports, the
+    old review's markers (the new one's come from init) and OS clutter."""
+    inter = Path("intermediate_files")
+    renames = {Path(t.format(old)): Path(t.format(new)) for t in REVISED_FILES}
+    renames[inter / MERGED_BIB.format(old)] = inter / MERGED_BIB.format(new)
+    skipped = {Path(t.format(old)) for t in REGENERATED} | {META_REL, COMPLETED_REL}
+    carry = inter / f"carried-from-{old}"
+    plan, carried = [], []
+    for rel in tree_files(src):
+        if rel in skipped or _is_clutter(rel):
+            continue
+        if rel in renames:
+            plan.append((rel, renames[rel]))
+        elif rel.parts[0] == inter.name and len(rel.parts) > 1:
+            plan.append((rel, rel))
+        else:
+            plan.append((rel, carry / rel))
+            carried.append(rel.as_posix())
+    targets = [t for _, t in plan]
+    clashes = sorted({t.as_posix() for t in targets if targets.count(t) > 1})
+    if clashes:
+        raise Refusal(f"reviews/{old}/ holds files that would be copied to the same place in "
+                      "the revision; rename them by hand first", clashes=clashes)
+    return plan, carried
+
+
+def _overlaps(a: Path, b: Path) -> bool:
+    """a and b are one folder, or one holds the other."""
+    a, b = a.resolve(), b.resolve()
+    return a == b or a in b.parents or b in a.parents
+
+
+def _undo_revise(workspace: Path, out: dict, src: Path) -> list[str]:
+    """Remove the review a failed revise half-made, as init made it. A local
+    folder is marked `abandoned` first, then the pointer goes, then the
+    folder: a delete that leaves files never leaves a half copy that status
+    resumes or lists as abandoned. A workdir that overlaps the delivered
+    source is never written or deleted. Returns what could not be deleted."""
+    workdir = Path(out["workdir"])
+    if out["mode"] == "local" and not _overlaps(workdir, src):
+        meta = read_meta(workdir)
+        if meta is not None:
+            meta["state"] = "abandoned"
+            try:
+                write_meta(workdir, meta)
+            except OSError:
+                pass
+    try:
+        ptr = read_pointer(workspace)
+    except Refusal:
+        ptr = None
+    if ptr is not None and ptr["name"] == out["name"]:
+        remove_pointer(workspace)
+    if _overlaps(workdir, src):
+        return []  # never delete what holds or is held by the delivered review
+    leftover = delete_workdir(workdir)
+    if out["mode"] == "local" and not leftover:
+        try:
+            workdir.parent.rmdir()
+        except OSError:
+            pass
+    return leftover
+
+
+def cmd_revise(workspace: Path, name: str, new_name: str | None = None) -> dict:
+    """A NEW review seeded from the delivered reviews/<name>/, which is only
+    ever read. Every refusal runs before anything is created; then init
+    makes the new review exactly as `init <new_name>` would, and the
+    delivered files are copied in and verified against the source. A failure
+    after init removes the new review again. Default name: the first free
+    `<base>-r<n>` from n = 2, where base is <name> without a trailing
+    `-r<n>`, so a revision of topic-r2 is topic-r3, never topic-r2-r2."""
+    _refuse_if_active(workspace)
+    problem = name_problem(name)
+    if problem:
+        raise Refusal(problem)
+    src = destination(workspace, name)
+    for p in (src, src / "intermediate_files"):
+        if _is_link(p):
+            raise Refusal(f"{p.as_posix()} is a link; refusing to copy through it")
+    if not src.is_dir():
+        raise Refusal(f"no review named {name!r} in reviews/")
+    if not _delivered(src):
+        marker = read_meta(src)
+        if marker and marker.get("state") == "abandoned":
+            raise Refusal(f"reviews/{name}/ is an abandoned review, not a delivered one; "
+                          f"resume it with `workdir.py activate {name}` instead")
+        raise Refusal(f"reviews/{name}/ is not a delivered review: it carries no delivery "
+                      f"marker (a `published` {META_REL.as_posix()}, or "
+                      f"{COMPLETED_REL.as_posix()}). Only a review delivered by "
+                      "`workdir.py publish` can be revised, so one delivered before these "
+                      "markers existed cannot; an unfinished review is resumed with "
+                      f"`workdir.py activate {name}` instead")
+    for required in (f"literature-review-{name}.md", f"literature-{name}.bib"):
+        # The bib is the track record a revision regenerates References from.
+        if not (src / required).is_file():
+            raise Refusal(f"reviews/{name}/ has no {required} (still syncing?); "
+                          "there is nothing to revise")
+    # The source name stands in for the new one here: the mode only scopes
+    # suggest_name's search, and cmd_init below decides the real mode.
+    mode, _ = _init_mode(workspace, name)
+    if new_name is None:
+        new_name = suggest_name(workspace, re.sub(r"-r\d+$", "", name) or name, mode, sep="-r")
+        if new_name is None:
+            raise Refusal(f"no free revision name for {name!r}; choose one with --as")
+    else:
+        problem = name_problem(new_name)
+        if problem:
+            raise Refusal(problem)
+        taken = [p for p in (destination(workspace, new_name), local_workdir(workspace, new_name))
+                 if os.path.lexists(p)]
+        if taken:  # stricter than in-place init: a revision always starts in a new folder
+            raise Refusal(f"the name {new_name!r} is taken: {taken[0].as_posix()} exists",
+                          suggested_name=suggest_name(workspace, new_name, mode))
+    if any(_overlaps(p, src) for p in (destination(workspace, new_name),
+                                        local_workdir(workspace, new_name))):
+        raise Refusal(f"the new review's folder would overlap the delivered reviews/{name}/")
+    plan, carried = _revision_plan(src, name, new_name)
+    before = manifest(src, [rel for rel, _ in plan])
+    out = cmd_init(workspace, new_name)
+    workdir = Path(out["workdir"])
+    try:
+        if _overlaps(workdir, src):  # _undo_revise leaves such a folder alone
+            raise Refusal(f"the new review's folder overlaps the delivered reviews/{name}/")
+        for rel, new_rel in plan:
+            _copy_content(src / rel, workdir / new_rel)
+        after = manifest(src, [rel for rel, _ in plan])
+        copied = {rel.as_posix(): ((workdir / new_rel).stat().st_size,
+                                   file_sha256(workdir / new_rel)) for rel, new_rel in plan}
+        if _revision_plan(src, name, new_name) != (plan, carried) or not before == after == copied:
+            changed = sorted(k for k in before.keys() | after.keys()
+                             if before.get(k) != after.get(k))
+            raise Refusal(f"reviews/{name}/ changed while it was copied, or a copy differs "
+                          "(still syncing?); try again when nothing is writing it",
+                          changed_during_copy=changed,
+                          mismatched=sorted(k for k in after if copied.get(k) != after[k]))
+        if out["mode"] == "local":
+            meta = read_meta(workdir)
+            meta["revised_from"] = name
+            write_meta(workdir, meta)
+    except Exception as e:
+        leftover = _undo_revise(workspace, out, src)
+        reason = str(e) if isinstance(e, Refusal) else f"{type(e).__name__}: {e}"
+        extra = dict(e.extra) if isinstance(e, Refusal) else {}
+        if leftover:
+            raise Refusal(f"could not seed the revision: {reason}. The pointer was removed, "
+                          f"but these files of the half-made review in {workdir.as_posix()} "
+                          f"could not be deleted; delete them by hand. reviews/{name}/ is "
+                          "unchanged", leftover=leftover, **extra) from e
+        raise Refusal(f"could not seed the revision: {reason}; the half-made review was "
+                      f"removed, and reviews/{name}/ is unchanged", **extra) from e
+    out.update(revised_from=name, files=len(plan))
+    if carried:
+        out["carried"] = carried
+    return out
+
+
 # --- CLI ------------------------------------------------------------------------------
 
 def main(argv: list[str] | None = None) -> int:
@@ -1262,6 +1467,10 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("publish", help="copy the review into reviews/<name>/ and clear the pointer")
     p.add_argument("--abandon", action="store_true", help="set an unfinished review aside")
     sub.add_parser("resolve", help="print the active working directory (for hooks; exits 0)")
+    p = sub.add_parser("revise", help="start a new review seeded from a delivered one")
+    p.add_argument("name", help="the delivered review in reviews/<name>/ (only read)")
+    p.add_argument("--as", dest="new_name", default=None,
+                   help="the new review's name (default: <name>-r2, -r3, ...)")
     args = parser.parse_args(argv)
     try:
         workspace = (args.workspace or Path.cwd()).resolve()
@@ -1276,6 +1485,8 @@ def main(argv: list[str] | None = None) -> int:
             result = cmd_demote(workspace)
         elif args.command == "publish":
             result = cmd_publish(workspace, args.abandon)
+        elif args.command == "revise":
+            result = cmd_revise(workspace, args.name, args.new_name)
         else:
             result = cmd_resolve(workspace)
     except Refusal as e:

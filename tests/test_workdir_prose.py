@@ -36,7 +36,7 @@ def test_skill_commands_never_hardcode_the_review_folder():
 def test_skill_pointer_is_owned_by_workdir_py():
     for block in _code_blocks(SKILL):
         assert ".active-review" not in block
-    for sub in ("status", "init", "activate", "demote", "publish"):
+    for sub in ("status", "init", "activate", "demote", "publish", "revise"):
         assert f"workdir.py {sub}" in SKILL, sub
     assert "workdir.py publish --abandon" in SKILL
 
