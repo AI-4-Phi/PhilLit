@@ -151,7 +151,9 @@ _H2_META_LABEL_RE = re.compile(
 # Workflow vocabulary that leaked into a delivered review ("The research
 # request describes Gardner (2019)...; this review could not check that
 # account", "on the orchestrator's reading of her notes"). Whole words,
-# case-insensitive. The sanctioned reader-facing hedges ("its full text was
+# case-insensitive. "could not check/verify" alone is ordinary philosophy
+# ("Descartes could not verify the work of the senses by the senses"), so
+# only "this review could not ..." counts. The sanctioned reader-facing hedges ("its full text was
 # not available for this review", "this review does not cover ...") match
 # none of these.
 _PROCESS_LANGUAGE_RE = re.compile(
@@ -164,8 +166,7 @@ _PROCESS_LANGUAGE_RE = re.compile(
     r"|user['\u2019]s[ ]description"
     r"|synthesis[ -]outline"
     r"|could[ ]not[ ]check[ ]that[ ]account"
-    r"|could[ ]not[ ]check[ ]its[ ]argument"
-    r"|could[ ]not[ ]verify[ ]the[ ]work"
+    r"|this[ ]review[ ]could[ ]not[ ](?:check|verify)"
     r")\b",
     re.IGNORECASE,
 )

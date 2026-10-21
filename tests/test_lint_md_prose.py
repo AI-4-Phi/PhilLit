@@ -108,8 +108,8 @@ def test_process_language_phrases_warn():
         "research brief", "research request",
         "user's description", "user\u2019s description",
         "synthesis outline", "synthesis-outline",
-        "could not check that account", "could not check its argument",
-        "could not verify the work",
+        "could not check that account", "this review could not check",
+        "this review could not verify",
         "EVIDENCE-ABSTRACT",
     ):
         text = f"The text mentions the {phrase} in passing."
@@ -138,6 +138,8 @@ def test_sanctioned_reader_facing_hedges_do_not_warn():
         "full text was not available for this review.",
         "This review does not cover the legal literature.",
         "The agent could not check whether the door was locked.",
+        "Descartes could not verify the work of the senses by the senses alone.",
+        "Kant could not check its argument against experience.",
         "The evidence for this claim is mixed.",
         # The writer's sanctioned disclosure forms (agents/synthesis-writer.md):
         "Smith (2020) is taken here to offer a compatibilist reply to "

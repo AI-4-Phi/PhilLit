@@ -289,7 +289,8 @@ Field section above).
 article published online first (online 2017, in an issue 2019), `year` is the
 issue year: the metadata cleaner corrects it from the entry's own CrossRef
 record, whose year comes from `published-print` first. Never instruct agents
-to use the online year; it is overwritten in every domain file. Where the
+to use the online year; the cleaner overwrites it wherever the entry's own
+CrossRef record licenses the change. Where the
 online date matters, give it in prose ("first published online in 2017"). An
 article with no issue date (online only) keeps its online year.
 
