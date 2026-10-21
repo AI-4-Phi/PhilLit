@@ -11,8 +11,9 @@ that did not survive reading the file it concerns.
 - A lock protocol between the cleaner and the barrier. Both write the same
   workspace, and a concurrent writer could in principle swap a cleaning ledger
   between the barrier accepting it and re-pointing it. Not filed: the
-  workspace is single-writer by design - the cleaner runs from one
-  SubagentStop hook, the barrier once at the Phase 3-4 boundary - and a real
+  workspace is single-writer by design - the cleaner runs at each
+  researcher's SubagentStop on that researcher's own bib only, the barrier
+  once at the Phase 3-4 boundary after every researcher has stopped - and a real
   fix needs a lock both participate in, which is a larger change than the
   exposure warrants. The cheap half is already done: the re-point binds the
   text the barrier AUTHORED, so the bib cannot be swapped under it. Revisit if

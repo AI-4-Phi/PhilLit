@@ -165,7 +165,39 @@ def project(tmp_path):
     return tmp_path
 
 
+def write_transcript(path: Path, prompt: str, written: tuple[str, ...] = ()) -> Path:
+    """A subagent transcript in Claude Code's JSONL shape (checked against a
+    real researcher's): the dispatch prompt as the first user record, then
+    one assistant record per file-tool Write."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    records = [{"type": "user", "isSidechain": True,
+                "message": {"role": "user", "content": prompt}}]
+    for fp in written:
+        records.append({"type": "assistant", "isSidechain": True, "message": {
+            "role": "assistant", "content": [{"type": "tool_use", "id": "t", "name": "Write",
+                                              "input": {"file_path": fp, "content": ""}}]}})
+    path.write_text("".join(json.dumps(r) + "\n" for r in records), encoding="utf-8")
+    return path
+
+
+def with_transcript(payload: dict, project_dir: Path) -> dict:
+    """Tests about validation and cleaning, not scoping, get a transcript that
+    owns every bib under the workspace (and literature-domain-1.bib, a local
+    review's), so the hook scopes to exactly the files it used to sweep. A
+    payload that names a transcript, or no researcher, is left alone."""
+    if ("domain-literature-researcher" not in str(payload.get("agent_type", ""))
+            or "agent_transcript_path" in payload or "transcript_path" in payload):
+        return payload
+    names = {"literature-domain-1.bib"}
+    for _root, _dirs, files in os.walk(project_dir):     # never follows symlinks
+        names.update(f for f in files if f.endswith(".bib"))
+    t = write_transcript(project_dir / ".transcripts" / "agent-auto.jsonl",
+                         "Write output to: `literature-domain-1.bib`", tuple(sorted(names)))
+    return {**payload, "agent_transcript_path": str(t)}
+
+
 def run_hook(payload: dict, project_dir: Path) -> tuple[dict, int, str]:
+    payload = with_transcript(payload, project_dir)
     env = {
         **os.environ,
         "CLAUDE_PROJECT_DIR": str(project_dir),
@@ -224,7 +256,8 @@ class TestGuards:
             {"agent_type": "domain-literature-researcher", "stop_hook_active": True},
             project,
         )
-        assert out == {}
+        # Nothing to validate, but the researcher's own bib is missing: said.
+        assert "decision" not in out and "was not found" in out["systemMessage"]
         assert code == 0
 
     def test_other_agent_type_allows(self, project):
@@ -277,9 +310,10 @@ class TestValidation:
         assert out["decision"] == "block"
         assert "journal" in out["reason"]
 
-    def test_no_bib_files_allows(self, project):
+    def test_no_bib_files_allows_and_says_the_own_bib_is_missing(self, project):
         out, code, _ = run_hook(RESEARCHER, project)
-        assert out == {}
+        assert "decision" not in out and "hookSpecificOutput" not in out
+        assert "was not found" in out["systemMessage"]
         assert code == 0
 
     def test_every_decision_the_hook_prints_is_one_claude_code_accepts(self):
@@ -309,7 +343,8 @@ class TestRootStrays:
             json.dumps(VERIFY_AWAD_JSON), encoding="utf-8")
         out, code, _ = run_hook(RESEARCHER, project)
         assert code == 0
-        assert out == {}, "a user's own root .bib was validated or cleaned"
+        assert "decision" not in out and "hookSpecificOutput" not in out, \
+            "a user's own root .bib was validated or cleaned"
         assert refs.read_text(encoding="utf-8") == HALLUCINATED_NUMBER_BIB
         assert draft.read_text(encoding="utf-8") == INVALID_BIB
 
@@ -636,6 +671,7 @@ class TestCleanerFailureIsNeverSilent:
             "#!/usr/bin/env bash\n"
             "case \"$1\" in\n"
             "  *workdir.py) printf '{\"workdir\": \"%s/reviews/test-review\"}\\n' \"$CLAUDE_PROJECT_DIR\" ;;\n"
+            "  *researcher_bibs.py) echo '{\"bibs\": [\"d1.bib\"]}' ;;\n"
             f"  *bib_validator.py) {validator} ;;\n"
             f"  *metadata_cleaner.py) {cleaner_stdout}\n"
             f"                        exit {cleaner_rc} ;;\n"
@@ -848,6 +884,7 @@ def _local_review(tmp_path, monkeypatch_env):
 
 
 def _run(payload, proj, extra_env, cwd=None):
+    payload = with_transcript(payload, proj)
     env = {**os.environ, "CLAUDE_PROJECT_DIR": str(proj), "CLAUDE_PLUGIN_ROOT": str(REPO_ROOT),
            "PHILLIT_UV": UV, **extra_env}
     env.pop("PHILLIT_WORKDIR", None)
@@ -932,6 +969,7 @@ def test_malformed_resolver_output_fails_closed(tmp_path, resolver_stdout):
         "#!/usr/bin/env bash\n"
         "case \"$1\" in\n"
         f"  *workdir.py) cat '{out_file}' ;;\n"
+        "  *researcher_bibs.py) echo '{\"bibs\": [\"d1.bib\"]}' ;;\n"
         "  *) echo '{\"valid\": true, \"errors\": []}' ;;\n"
         "esac\n",
         encoding="utf-8",
@@ -971,6 +1009,7 @@ def test_a_resolved_folder_that_does_not_exist_is_a_system_message(tmp_path):
         "#!/usr/bin/env bash\n"
         "case \"$1\" in\n"
         f"  *workdir.py) cat '{out_file}' ;;\n"
+        "  *researcher_bibs.py) echo '{\"bibs\": [\"d1.bib\"]}' ;;\n"
         "  *) echo '{\"valid\": true, \"errors\": []}' ;;\n"
         "esac\n",
         encoding="utf-8",
@@ -1003,6 +1042,7 @@ def test_the_stub_resolver_positive_control_allows(tmp_path):
         "#!/usr/bin/env bash\n"
         "case \"$1\" in\n"
         f"  *workdir.py) cat '{out_file}' ;;\n"
+        "  *researcher_bibs.py) echo '{\"bibs\": [\"d1.bib\"]}' ;;\n"
         "  *) echo '{\"valid\": true, \"errors\": []}' ;;\n"
         "esac\n",
         encoding="utf-8",
@@ -1038,6 +1078,7 @@ def _crlf_jq(tmp_path: Path) -> dict:
 
 
 def _run_with(payload: dict, project_dir: Path, extra_env: dict, root: Path = REPO_ROOT):
+    payload = with_transcript(payload, project_dir)
     env = {**os.environ, "CLAUDE_PROJECT_DIR": str(project_dir),
            "CLAUDE_PLUGIN_ROOT": str(root), "PHILLIT_UV": UV, **extra_env}
     proc = subprocess.run([BASH, str(SCRIPT)], input=json.dumps(payload), capture_output=True,
@@ -1119,3 +1160,179 @@ class TestErrTrap:
         out, code = _run_with(RESEARCHER, project,
                               {"PATH": f"{shim_dir}{os.pathsep}{os.environ['PATH']}"})
         assert code == 0 and "decision" not in out and "SKIPPED" in out["systemMessage"]
+
+
+class TestScopeToTheStoppingResearcher:
+    """Researchers run in parallel: one's stop must validate and clean only
+    its own bib, never a sibling's that may still be mid-write (PL-20's
+    incident: a sibling's year was corrected, and reported, at the wrong
+    researcher's stop)."""
+
+    @staticmethod
+    def _two_domains(project: Path) -> tuple[Path, Path]:
+        review = project / "reviews" / "test-review"
+        (review / "s2_results.json").write_text(json.dumps(S2_WRONG_YEAR_JSON), encoding="utf-8")
+        (review / "verify_awad.json").write_text(
+            json.dumps(VERIFY_AWAD_PRINT_YEAR_JSON), encoding="utf-8")
+        mine, sibling = review / "literature-domain-1.bib", review / "literature-domain-2.bib"
+        mine.write_text(WRONG_YEAR_BIB, encoding="utf-8")
+        sibling.write_text(WRONG_YEAR_BIB, encoding="utf-8")
+        return mine, sibling
+
+    @staticmethod
+    def _payload(project: Path, prompt: str, written=(), **extra) -> dict:
+        t = write_transcript(project / ".transcripts" / "agent-r1.jsonl", prompt, tuple(written))
+        return {**RESEARCHER, "agent_transcript_path": str(t), **extra}
+
+    def test_only_the_researchers_own_bib_is_cleaned_and_reported(self, project):
+        mine, sibling = self._two_domains(project)
+        out, code, _ = run_hook(self._payload(
+            project, "Domain: X. Write output to: `/w/literature-domain-1.bib`"), project)
+        assert code == 0 and "systemMessage" not in out
+        ctx = out["hookSpecificOutput"]["additionalContext"]
+        assert "literature-domain-1.bib" in ctx and "literature-domain-2.bib" not in ctx
+        assert "year = {2018}" in mine.read_text(encoding="utf-8")
+        assert sibling.read_text(encoding="utf-8") == WRONG_YEAR_BIB    # byte-identical
+
+    def test_a_siblings_half_written_bib_does_not_block_this_researcher(self, project):
+        review = project / "reviews" / "test-review"
+        (review / "literature-domain-1.bib").write_text(VALID_BIB, encoding="utf-8")
+        (review / "literature-domain-2.bib").write_text(INVALID_BIB, encoding="utf-8")
+        out, code, _ = run_hook(self._payload(
+            project, "Write output to: `literature-domain-1.bib`"), project)
+        assert code == 0 and out == {}
+
+    def test_a_bib_written_with_a_file_tool_is_owned_too(self, project):
+        _mine, sibling = self._two_domains(project)
+        out, code, _ = run_hook(self._payload(
+            project, "Write output to: `literature-domain-1.bib`",
+            written=[str(sibling)]), project)
+        assert code == 0
+        assert "year = {2018}" in sibling.read_text(encoding="utf-8")
+
+    def test_a_root_stray_of_a_sibling_is_left_alone(self, project):
+        (project / "reviews" / "test-review" / "literature-domain-1.bib").write_text(
+            VALID_BIB, encoding="utf-8")
+        stray = project / "literature-domain-2.bib"
+        stray.write_text(INVALID_BIB, encoding="utf-8")
+        out, code, _ = run_hook(self._payload(
+            project, "Write output to: `literature-domain-1.bib`"), project)
+        assert code == 0 and out == {}
+        assert stray.read_text(encoding="utf-8") == INVALID_BIB
+
+    def test_the_researchers_own_root_stray_is_validated(self, project):
+        (project / "literature-domain-1.bib").write_text(INVALID_BIB, encoding="utf-8")
+        out, code, _ = run_hook(self._payload(
+            project, "Write output to: `literature-domain-1.bib`"), project)
+        assert code == 0 and out["decision"] == "block"
+
+    def test_names_match_without_regard_to_case(self, project):
+        (project / "reviews" / "test-review" / "literature-domain-1.bib").write_text(
+            INVALID_BIB, encoding="utf-8")
+        out, code, _ = run_hook(self._payload(
+            project, "Write output to: `LITERATURE-DOMAIN-1.BIB`"), project)
+        assert code == 0 and out["decision"] == "block"
+
+    def test_an_own_bib_not_written_yet_allows_visibly_and_touches_no_sibling(self, project):
+        review = project / "reviews" / "test-review"
+        (review / "literature-domain-2.bib").write_text(INVALID_BIB, encoding="utf-8")
+        out, code, _ = run_hook(self._payload(
+            project, "Write output to: `literature-domain-1.bib`"), project)
+        assert code == 0 and "decision" not in out
+        assert "literature-domain-1.bib) was not found" in out["systemMessage"]
+
+    def test_two_owned_bibs_are_both_processed(self, project):
+        mine, sibling = self._two_domains(project)
+        out, code, _ = run_hook(self._payload(
+            project, "Write output to: `literature-domain-1.bib`", written=[str(sibling)]), project)
+        ctx = out["hookSpecificOutput"]["additionalContext"]
+        assert "literature-domain-1.bib" in ctx and "literature-domain-2.bib" in ctx
+
+    def test_scoping_survives_a_crlf_jq(self, project, tmp_path):
+        mine, sibling = self._two_domains(project)
+        out, code = _run_with(self._payload(
+            project, "Write output to: `literature-domain-1.bib`"), project, _crlf_jq(tmp_path))
+        assert code == 0 and "systemMessage" not in out
+        assert "year = {2018}" in mine.read_text(encoding="utf-8")
+        assert sibling.read_text(encoding="utf-8") == WRONG_YEAR_BIB
+
+    def test_a_blank_agent_transcript_path_is_derived_from_the_session(self, project):
+        mine, sibling = self._two_domains(project)
+        session = project / ".transcripts" / "sess.jsonl"
+        write_transcript(project / ".transcripts" / "sess" / "subagents" / "agent-abc.jsonl",
+                         "Write output to: `literature-domain-1.bib`")
+        out, code, _ = run_hook({**RESEARCHER, "agent_transcript_path": "",
+                                 "transcript_path": str(session), "agent_id": "abc"}, project)
+        assert code == 0 and "systemMessage" not in out
+        assert sibling.read_text(encoding="utf-8") == WRONG_YEAR_BIB
+
+    def test_the_resumed_pass_scopes_the_same_way(self, project):
+        review = project / "reviews" / "test-review"
+        (review / "literature-domain-1.bib").write_text(INVALID_BIB, encoding="utf-8")
+        (review / "literature-domain-2.bib").write_text(INVALID_BIB, encoding="utf-8")
+        out, code, _ = run_hook(self._payload(
+            project, "Write output to: `literature-domain-1.bib`", stop_hook_active=True), project)
+        assert code == 0 and "decision" not in out
+        msg = out["systemMessage"]
+        assert "BibTeX errors remain" in msg and "could not tell" not in msg
+        assert msg.count("journal") == 1      # domain 1's error only, not domain 2's
+
+    def test_no_transcript_falls_back_to_every_bib_and_says_so(self, project):
+        mine, sibling = self._two_domains(project)
+        out, code, _ = run_hook({**RESEARCHER, "agent_transcript_path": "/nonexistent/a.jsonl"},
+                                project)
+        assert code == 0
+        assert "could not tell which bib this researcher owns" in out["systemMessage"]
+        assert "/nonexistent/a.jsonl" in out["systemMessage"]
+        assert "year = {2018}" in sibling.read_text(encoding="utf-8")   # old behaviour
+        assert "additionalContext" in out["hookSpecificOutput"]
+
+    def test_the_fallback_note_rides_beside_a_block(self, project):
+        (project / "reviews" / "test-review" / "literature-domain-2.bib").write_text(
+            INVALID_BIB, encoding="utf-8")
+        out, code, _ = run_hook({**RESEARCHER, "agent_transcript_path": ""}, project)
+        assert code == 0 and out["decision"] == "block"
+        assert "could not tell" in out["systemMessage"]
+
+    def test_the_fallback_note_goes_out_on_a_resumed_pass_too(self, project):
+        # A systemMessage does not continue the turn, so a fallback that
+        # happens on a resumed pass is never silent either.
+        (project / "reviews" / "test-review" / "literature-domain-2.bib").write_text(
+            VALID_BIB, encoding="utf-8")
+        out, code, _ = run_hook({**RESEARCHER, "agent_transcript_path": "",
+                                 "stop_hook_active": True}, project)
+        assert code == 0 and "decision" not in out and "hookSpecificOutput" not in out
+        assert "could not tell" in out["systemMessage"]
+
+    def test_a_sibling_named_in_the_prompt_is_not_owned(self, project):
+        _mine, sibling = self._two_domains(project)
+        out, code, _ = run_hook(self._payload(
+            project, "Avoid overlap with literature-domain-2.bib.\n"
+                     "Write output to: `/w/literature-domain-1.bib`"), project)
+        assert code == 0 and "systemMessage" not in out
+        assert sibling.read_text(encoding="utf-8") == WRONG_YEAR_BIB
+
+    @pytest.mark.parametrize("helper_stdout", [
+        '{"bibs": ["d1.bib"]}\n{"bibs": ["d2.bib"]}',   # two answers
+        '{"bibs": [3]}', '{"bibs": ["a/d1.bib"]}', '{"bibs": [""]}', '{"bibs": "d1.bib"}',
+    ])
+    def test_a_malformed_helper_answer_falls_back_visibly(self, project, tmp_path, helper_stdout):
+        review = project / "reviews" / "test-review"
+        (review / "d1.bib").write_text(VALID_BIB, encoding="utf-8")
+        (review / "d2.bib").write_text(INVALID_BIB, encoding="utf-8")
+        out_file = tmp_path / "helper-out.txt"
+        out_file.write_text(helper_stdout + "\n", encoding="utf-8")
+        root = tmp_path / "stub-plugin"
+        (root / "bin").mkdir(parents=True)
+        run = root / "bin" / "phillit-run"
+        run.write_text(
+            "#!/usr/bin/env bash\n"
+            "case \"$1\" in\n"
+            "  *workdir.py) printf '{\"workdir\": \"%s/reviews/test-review\"}\\n' \"$CLAUDE_PROJECT_DIR\" ;;\n"
+            f"  *researcher_bibs.py) cat '{out_file}' ;;\n"
+            f"  *) exec bash '{REPO_ROOT}/bin/phillit-run' \"$@\" ;;\n"
+            "esac\n", encoding="utf-8")
+        run.chmod(0o755)
+        out, code = _run_with({**RESEARCHER, "agent_transcript_path": "/x.jsonl"}, project, {}, root)
+        assert code == 0 and out["decision"] == "block"          # d2 was validated
+        assert "could not tell" in out["systemMessage"]

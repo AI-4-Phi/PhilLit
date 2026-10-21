@@ -321,7 +321,7 @@ Nelkin, Dana Kay. 2011. "Freedom and Responsibility." In The Oxford Handbook of 
 
 ## Automated Validation
 
-Hooks validate BibTeX automatically at two points: `validate_bib_write.py` checks `.bib` content at write time (PreToolUse on Write, PostToolUse on Edit), and the `SubagentStop` hook validates the files written by `domain-literature-researcher`:
+Hooks validate BibTeX automatically at two points: `validate_bib_write.py` checks `.bib` content at write time (PreToolUse on Write, PostToolUse on Edit), and the `SubagentStop` hook validates the bib of the `domain-literature-researcher` that stopped (its own file only, since its siblings may still be writing theirs):
 
 ### 1. BibTeX Syntax Validation (`bib_validator.py`)
 - UTF-8 encoding check

@@ -3,7 +3,9 @@
 # Fires for ALL SubagentStop events (hooks.json registers it with no matcher)
 # and self-scopes: it no-ops unless the cwd is a PhilLit workspace (.phillit
 # marker), the agent_type contains domain-literature-researcher, and
-# workdir.py resolves an active review. When the researcher exits:
+# workdir.py resolves an active review. When the researcher exits, for the
+# bibs THIS researcher owns (researcher_bibs.py; every bib, visibly, when
+# that cannot be told):
 #   1. Validates BibTeX syntax — blocks on errors (agent must fix them)
 #   2. Cleans hallucinated metadata fields and corrects years — never a
 #      decision, but its report is sent on the FIRST pass only (below)
@@ -179,8 +181,82 @@ for f in "$RESOLVE_WS"/literature-domain-*.bib; do
 done
 shopt -u nullglob
 
-# No .bib files found — nothing to validate
+# Every decision after scoping goes out through here, so a scoping fallback
+# (SCOPE_NOTE) reaches the user as a systemMessage beside it, on a resumed
+# pass too: a systemMessage does not continue the turn. If the merge fails,
+# the decision itself still goes out (a block must never be lost), and a bare
+# allow carries a fixed note instead.
+emit() {
+    local out="$1"
+    if [[ -n "$SCOPE_NOTE" ]]; then
+        out=$(printf '%s\n' "$1" | jq -c --arg n "PhilLit: $SCOPE_NOTE" \
+            'if .systemMessage then .systemMessage += "\n" + $n else . + {systemMessage: $n} end' 2>/dev/null) \
+            || out=""
+        if [[ -z "$out" ]]; then
+            out="$1"
+            [[ "$out" == "{}" ]] && out='{"systemMessage": "PhilLit: could not tell which bib this researcher owns, so every domain bib was validated and cleaned."}'
+        fi
+    fi
+    printf '%s\n' "$out"
+    exit 0
+}
+
+# Scope to the stopping researcher's own files. Researchers run in parallel,
+# so cleaning every bib here rewrote files siblings were still writing and
+# reported their corrections to the wrong researcher. researcher_bibs.py
+# names this researcher's files from its transcript (its docstring has the
+# rule). When it names none or fails, fall back to every bib - the behaviour
+# before scoping, so nothing goes unvalidated - and say so (SCOPE_NOTE): this
+# is plumbing, so it fails open, never silently. Accepted cost: a bib is
+# cleaned against the JSON present at ITS researcher's stop, so a sibling's
+# CrossRef record written later no longer reaches it; the sweep that once did
+# that is the same sweep that rewrote files mid-write.
+SCOPE_NOTE=""
+OWNED_STATUS=0
+OWNED=$(echo "$SUBAGENT_CONTEXT" | bash "$CLAUDE_PLUGIN_ROOT/bin/phillit-run" \
+    hooks/researcher_bibs.py 2>/dev/null) || OWNED_STATUS=$?
+OWNED_NAMES=""
+if [[ $OWNED_STATUS -eq 0 ]] && \
+   OWNED_NAMES=$(printf '%s\n' "$OWNED" | jq -ser 'if length == 1 and (.[0] | type) == "object"
+        and (.[0].bibs | type) == "array" and (.[0].bibs | length) > 0
+        and all(.[0].bibs[]; type == "string" and length > 0 and (test("[\n\r/\\\\]") | not))
+        then .[0].bibs[] else error("shape") end' 2>/dev/null); then
+    :
+else
+    OWNED_NAMES=""
+fi
+if [[ -n "$OWNED_NAMES" ]]; then
+    SCOPED=()
+    shopt -s nocasematch    # case-insensitive filesystems (macOS, Windows)
+    for f in ${BIB_FILES[@]+"${BIB_FILES[@]}"}; do
+        base=$(basename "$f")
+        while IFS= read -r name; do
+            name=${name%$'\r'}
+            if [[ "$base" == "$name" ]]; then
+                SCOPED+=("$f")
+                break
+            fi
+        done <<< "$OWNED_NAMES"
+    done
+    shopt -u nocasematch
+    BIB_FILES=(${SCOPED[@]+"${SCOPED[@]}"})
+else
+    OWNED_REASON=$(echo "$OWNED" | jq -r '.reason // empty' 2>/dev/null || true)
+    [[ -z "$OWNED_REASON" ]] && OWNED_REASON="researcher_bibs.py gave no usable answer (exit $OWNED_STATUS)"
+    SCOPE_NOTE="could not tell which bib this researcher owns (${OWNED_REASON%$'\r'}), so every domain bib was validated and cleaned, including any a parallel researcher is still writing."
+fi
+
+# No .bib files found — nothing to validate. When the researcher's own file
+# is the one missing (it stopped without writing it, or wrote it somewhere
+# the sweep does not look), say so: validation of its bib did not happen.
 if [[ ${#BIB_FILES[@]} -eq 0 ]]; then
+    if [[ -n "$OWNED_NAMES" ]]; then
+        MISSING_NAMES=$(printf '%s' "$OWNED_NAMES" | tr -d '\r' | tr '\n' ' ')
+        MISSING_OUT=$(jq -cn --arg msg "PhilLit: this researcher's bib (${MISSING_NAMES% }) was not found in the review folder or the workspace root, so it was not validated or cleaned here. The evidence barrier reports the domain." \
+            '{"systemMessage": $msg}') \
+            || MISSING_OUT='{"systemMessage": "PhilLit: this researcher'"'"'s bib was not found, so it was not validated or cleaned here."}'
+        emit "$MISSING_OUT"
+    fi
     allow
 fi
 
@@ -341,6 +417,7 @@ $CLEAN_WARNINGS
     fi
 done
 
+
 # Block only on syntax errors (not on metadata cleaning).
 # Exit 0: the decision is carried in the JSON, not the exit code.
 if [[ -n "$SYNTAX_ERRORS" ]]; then
@@ -348,9 +425,9 @@ if [[ -n "$SYNTAX_ERRORS" ]]; then
         # Resumed pass: never re-block (infinite-loop prevention), but never
         # silent either (gate-failure policy) — surface the unresolved errors
         # to the user as a systemMessage.
-        jq -cn --arg msg "PhilLit: BibTeX errors remain after the researcher's resumed pass (not re-blocking to avoid a stop-hook loop): $SYNTAX_ERRORS$CLEANING_FAILURES" \
-            '{"systemMessage": $msg}'
-        exit 0
+        RESUMED_OUT=$(jq -cn --arg msg "PhilLit: BibTeX errors remain after the researcher's resumed pass (not re-blocking to avoid a stop-hook loop): $SYNTAX_ERRORS$CLEANING_FAILURES" \
+            '{"systemMessage": $msg}')
+        emit "$RESUMED_OUT"
     fi
     # First pass: the block is the one continuation this stop gets, and the
     # resumed pass sends no cleaning report, so the report rides in the block
@@ -360,8 +437,10 @@ if [[ -n "$SYNTAX_ERRORS" ]]; then
         BLOCK_REASON="${SYNTAX_ERRORS}
 METADATA CLEANING REPORT:${CLEANING_SUMMARY}"
     fi
-    jq -cn --arg reason "$BLOCK_REASON" '{"decision": "block", "reason": $reason}'
-    exit 0
+    # An assignment, so a failed jq reaches the ERR trap (a block) instead
+    # of handing emit an empty decision, a silent allow.
+    BLOCK_OUT=$(jq -cn --arg reason "$BLOCK_REASON" '{"decision": "block", "reason": $reason}')
+    emit "$BLOCK_OUT"
 fi
 
 # Resumed pass: the report went out on the first pass, and sending it again
@@ -369,12 +448,12 @@ fi
 # user, as a systemMessage (gate-failure policy: never silent).
 if [[ "$STOP_HOOK_ACTIVE" == "true" ]]; then
     if [[ -n "$CLEANING_FAILURES" ]]; then
-        jq -cn --arg msg "PhilLit: metadata cleaning failed on the researcher's resumed pass:$CLEANING_FAILURES" \
-            '{"systemMessage": $msg}' \
-            || printf '{"systemMessage": "PhilLit: metadata cleaning failed on a resumed pass, and its report could not be rendered."}\n'
-        exit 0
+        RESUMED_OUT=$(jq -cn --arg msg "PhilLit: metadata cleaning failed on the researcher's resumed pass:$CLEANING_FAILURES" \
+            '{"systemMessage": $msg}') \
+            || RESUMED_OUT='{"systemMessage": "PhilLit: metadata cleaning failed on a resumed pass, and its report could not be rendered."}'
+        emit "$RESUMED_OUT"
     fi
-    allow
+    emit '{}'
 fi
 
 # First pass: send the cleaning summary to the model as additionalContext.
@@ -382,10 +461,10 @@ fi
 # sent on the first pass only.
 if [[ -n "$CLEANING_SUMMARY" ]]; then
     # A failed rendering must not reach the ERR trap: cleaning never blocks.
-    jq -cn --arg ctx "METADATA CLEANING REPORT:$CLEANING_SUMMARY" \
-        '{"hookSpecificOutput": {"hookEventName": "SubagentStop", "additionalContext": $ctx}}' \
-        || printf '{"systemMessage": "PhilLit: metadata cleaning ran, but its report could not be rendered."}\n'
-    exit 0
+    CTX_OUT=$(jq -cn --arg ctx "METADATA CLEANING REPORT:$CLEANING_SUMMARY" \
+        '{"hookSpecificOutput": {"hookEventName": "SubagentStop", "additionalContext": $ctx}}') \
+        || CTX_OUT='{"systemMessage": "PhilLit: metadata cleaning ran, but its report could not be rendered."}'
+    emit "$CTX_OUT"
 fi
 
-allow
+emit '{}'
