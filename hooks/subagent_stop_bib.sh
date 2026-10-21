@@ -181,20 +181,24 @@ for f in "$RESOLVE_WS"/literature-domain-*.bib; do
 done
 shopt -u nullglob
 
-# Every decision after scoping goes out through here, so a scoping fallback
-# (SCOPE_NOTE) reaches the user as a systemMessage beside it, on a resumed
-# pass too: a systemMessage does not continue the turn. If the merge fails,
-# the decision itself still goes out (a block must never be lost), and a bare
-# allow carries a fixed note instead.
+# Every decision after scoping goes out through here, so the scoping notes
+# (SCOPE_NOTE: the owner could not be told; MISSING_NOTE: the owner's
+# assigned bib is not on disk) reach the user as a systemMessage beside it,
+# on a resumed pass too: a systemMessage does not continue the turn. If the
+# merge fails, the decision itself still goes out (a block must never be
+# lost), and a bare allow carries a fixed note instead.
 emit() {
-    local out="$1"
-    if [[ -n "$SCOPE_NOTE" ]]; then
-        out=$(printf '%s\n' "$1" | jq -c --arg n "PhilLit: $SCOPE_NOTE" \
+    local out="$1" notes=""
+    [[ -n "$SCOPE_NOTE" ]] && notes="PhilLit: $SCOPE_NOTE"
+    [[ -n "$MISSING_NOTE" ]] && notes="${notes:+$notes
+}PhilLit: $MISSING_NOTE"
+    if [[ -n "$notes" ]]; then
+        out=$(printf '%s\n' "$1" | jq -c --arg n "$notes" \
             'if .systemMessage then .systemMessage += "\n" + $n else . + {systemMessage: $n} end' 2>/dev/null) \
             || out=""
         if [[ -z "$out" ]]; then
             out="$1"
-            [[ "$out" == "{}" ]] && out='{"systemMessage": "PhilLit: could not tell which bib this researcher owns, so every domain bib was validated and cleaned."}'
+            [[ "$out" == "{}" ]] && out='{"systemMessage": "PhilLit: this researcher'"'"'s bib could not be scoped or found; see the hook for details."}'
         fi
     fi
     printf '%s\n' "$out"
@@ -206,22 +210,34 @@ emit() {
 # reported their corrections to the wrong researcher. researcher_bibs.py
 # names this researcher's files from its transcript (its docstring has the
 # rule). When it names none or fails, fall back to every bib - the behaviour
-# before scoping, so nothing goes unvalidated - and say so (SCOPE_NOTE): this
-# is plumbing, so it fails open, never silently. Accepted cost: a bib is
+# before scoping, so nothing goes unvalidated - and say so: to the user
+# (SCOPE_NOTE) and to the researcher (SCOPE_CAVEAT, on its block reason or
+# report, so it does not take a sibling's errors for its own). This is
+# plumbing, so it fails open, never silently. Accepted cost: a bib is
 # cleaned against the JSON present at ITS researcher's stop, so a sibling's
 # CrossRef record written later no longer reaches it; the sweep that once did
 # that is the same sweep that rewrote files mid-write.
 SCOPE_NOTE=""
+SCOPE_CAVEAT=""
+MISSING_NOTE=""
 OWNED_STATUS=0
-OWNED=$(echo "$SUBAGENT_CONTEXT" | bash "$CLAUDE_PLUGIN_ROOT/bin/phillit-run" \
-    hooks/researcher_bibs.py 2>/dev/null) || OWNED_STATUS=$?
+OWNED_STDERR=$(mktemp)
+OWNED=$(printf '%s\n' "$SUBAGENT_CONTEXT" | bash "$CLAUDE_PLUGIN_ROOT/bin/phillit-run" \
+    hooks/researcher_bibs.py 2>"$OWNED_STDERR") || OWNED_STATUS=$?
+OWNED_ERR_TAIL=$(tail -c 300 "$OWNED_STDERR" 2>/dev/null || true)
+rm -f "$OWNED_STDERR"
+# One answer: an object whose "bibs" is a nonempty array of plain basenames
+# (and "assigned", if present, the same); anything else is no answer.
+OWNED_SHAPE='length == 1 and (.[0] | type) == "object"
+    and (.[0].bibs | type) == "array" and (.[0].bibs | length) > 0
+    and ((.[0].assigned // []) | type) == "array"
+    and all((.[0].bibs + (.[0].assigned // []))[];
+            type == "string" and length > 0 and (test("[\n\r/\\\\]") | not))'
 OWNED_NAMES=""
+ASSIGNED_NAMES=""
 if [[ $OWNED_STATUS -eq 0 ]] && \
-   OWNED_NAMES=$(printf '%s\n' "$OWNED" | jq -ser 'if length == 1 and (.[0] | type) == "object"
-        and (.[0].bibs | type) == "array" and (.[0].bibs | length) > 0
-        and all(.[0].bibs[]; type == "string" and length > 0 and (test("[\n\r/\\\\]") | not))
-        then .[0].bibs[] else error("shape") end' 2>/dev/null); then
-    :
+   OWNED_NAMES=$(printf '%s\n' "$OWNED" | jq -ser "if $OWNED_SHAPE then .[0].bibs[] else error(\"shape\") end" 2>/dev/null); then
+    ASSIGNED_NAMES=$(printf '%s\n' "$OWNED" | jq -sr '.[0].assigned // [] | .[]' 2>/dev/null || true)
 else
     OWNED_NAMES=""
 fi
@@ -238,26 +254,45 @@ if [[ -n "$OWNED_NAMES" ]]; then
             fi
         done <<< "$OWNED_NAMES"
     done
+    # An assigned bib that matched no swept file was never validated here:
+    # the researcher stopped without writing it, or wrote it where the sweep
+    # does not look. Say so, even when another owned file was processed.
+    MISSING=""
+    while IFS= read -r name; do
+        name=${name%$'\r'}
+        [[ -z "$name" ]] && continue
+        found=""
+        for f in ${SCOPED[@]+"${SCOPED[@]}"}; do
+            [[ "$(basename "$f")" == "$name" ]] && found=1 && break
+        done
+        [[ -z "$found" ]] && MISSING="${MISSING:+$MISSING, }$name"
+    done <<< "$ASSIGNED_NAMES"
     shopt -u nocasematch
     BIB_FILES=(${SCOPED[@]+"${SCOPED[@]}"})
+    if [[ -n "$MISSING" ]]; then
+        MISSING_NOTE="this researcher's bib ($MISSING) was not found in the review folder or the workspace root, so it was not validated or cleaned here. The evidence barrier reports the domain."
+    fi
 else
-    OWNED_REASON=$(echo "$OWNED" | jq -r '.reason // empty' 2>/dev/null || true)
-    [[ -z "$OWNED_REASON" ]] && OWNED_REASON="researcher_bibs.py gave no usable answer (exit $OWNED_STATUS)"
-    SCOPE_NOTE="could not tell which bib this researcher owns (${OWNED_REASON%$'\r'}), so every domain bib was validated and cleaned, including any a parallel researcher is still writing."
+    OWNED_REASON=$(printf '%s\n' "$OWNED" | jq -r '.reason // empty' 2>/dev/null || true)
+    OWNED_REASON=${OWNED_REASON%$'\r'}
+    if [[ -z "$OWNED_REASON" ]]; then
+        if [[ $OWNED_STATUS -eq 0 ]]; then
+            OWNED_REASON="researcher_bibs.py exited 0 but did not give one {\"bibs\": [...]} answer"
+        else
+            OWNED_REASON="researcher_bibs.py failed (exit $OWNED_STATUS): $OWNED_ERR_TAIL"
+        fi
+    fi
+    if [[ ${#BIB_FILES[@]} -eq 0 ]]; then
+        SCOPE_NOTE="could not tell which bib this researcher owns ($OWNED_REASON), and no domain bib was found, so nothing was validated."
+    else
+        SCOPE_NOTE="could not tell which bib this researcher owns ($OWNED_REASON), so every domain bib was validated and cleaned, including any a parallel researcher is still writing."
+        SCOPE_CAVEAT="NOTE: PhilLit could not tell which bib file is yours, so what follows covers every domain bib in the review. Fix only errors in your own file; another researcher may still be writing the others."
+    fi
 fi
 
-# No .bib files found — nothing to validate. When the researcher's own file
-# is the one missing (it stopped without writing it, or wrote it somewhere
-# the sweep does not look), say so: validation of its bib did not happen.
+# No .bib files found — nothing to validate (any note above goes out).
 if [[ ${#BIB_FILES[@]} -eq 0 ]]; then
-    if [[ -n "$OWNED_NAMES" ]]; then
-        MISSING_NAMES=$(printf '%s' "$OWNED_NAMES" | tr -d '\r' | tr '\n' ' ')
-        MISSING_OUT=$(jq -cn --arg msg "PhilLit: this researcher's bib (${MISSING_NAMES% }) was not found in the review folder or the workspace root, so it was not validated or cleaned here. The evidence barrier reports the domain." \
-            '{"systemMessage": $msg}') \
-            || MISSING_OUT='{"systemMessage": "PhilLit: this researcher'"'"'s bib was not found, so it was not validated or cleaned here."}'
-        emit "$MISSING_OUT"
-    fi
-    allow
+    emit '{}'
 fi
 
 # Track syntax errors (these block) and cleaning summaries (informational).
@@ -437,6 +472,9 @@ if [[ -n "$SYNTAX_ERRORS" ]]; then
         BLOCK_REASON="${SYNTAX_ERRORS}
 METADATA CLEANING REPORT:${CLEANING_SUMMARY}"
     fi
+    BLOCK_REASON="${SCOPE_CAVEAT:+$SCOPE_CAVEAT
+
+}$BLOCK_REASON"
     # An assignment, so a failed jq reaches the ERR trap (a block) instead
     # of handing emit an empty decision, a silent allow.
     BLOCK_OUT=$(jq -cn --arg reason "$BLOCK_REASON" '{"decision": "block", "reason": $reason}')
@@ -461,7 +499,9 @@ fi
 # sent on the first pass only.
 if [[ -n "$CLEANING_SUMMARY" ]]; then
     # A failed rendering must not reach the ERR trap: cleaning never blocks.
-    CTX_OUT=$(jq -cn --arg ctx "METADATA CLEANING REPORT:$CLEANING_SUMMARY" \
+    CTX_OUT=$(jq -cn --arg ctx "${SCOPE_CAVEAT:+$SCOPE_CAVEAT
+
+}METADATA CLEANING REPORT:$CLEANING_SUMMARY" \
         '{"hookSpecificOutput": {"hookEventName": "SubagentStop", "additionalContext": $ctx}}') \
         || CTX_OUT='{"systemMessage": "PhilLit: metadata cleaning ran, but its report could not be rendered."}'
     emit "$CTX_OUT"

@@ -77,7 +77,7 @@ def test_cli_falls_through_to_the_derived_transcript(tmp_path):
                                         encoding="utf-8")
     out = _cli(json.dumps({"agent_transcript_path": str(tmp_path / "gone.jsonl"),
                            "transcript_path": str(tmp_path / "s1.jsonl"), "agent_id": "a9"}))
-    assert out == {"bibs": ["literature-domain-7.bib"]}
+    assert out == {"bibs": ["literature-domain-7.bib"], "assigned": ["literature-domain-7.bib"]}
 
 
 def _cli(stdin: str) -> dict:
@@ -90,10 +90,10 @@ def _cli(stdin: str) -> dict:
 def test_cli_reports_a_reason_for_every_empty_answer(tmp_path):
     assert _cli("not json")["bibs"] == []
     assert "no transcript" in _cli("{}")["reason"]
-    assert "could not be read" in _cli(json.dumps({"agent_transcript_path": str(tmp_path / "x")}))["reason"]
+    assert "No such file" in _cli(json.dumps({"agent_transcript_path": str(tmp_path / "x")}))["reason"]
     t = tmp_path / "t.jsonl"
     t.write_text(user("no bib here") + "\n", encoding="utf-8")
-    assert "names no bib" in _cli(json.dumps({"agent_transcript_path": str(t)}))["reason"]
+    assert "names no bib file" in _cli(json.dumps({"agent_transcript_path": str(t)}))["reason"]
 
 
 def test_cli_lists_owned_bibs_sorted(tmp_path):
@@ -101,7 +101,8 @@ def test_cli_lists_owned_bibs_sorted(tmp_path):
     t.write_text(user("Write output to: literature-domain-2.bib") + "\n"
                  + tool("Write", file_path="/w/literature-domain-1.bib") + "\n", encoding="utf-8")
     assert _cli(json.dumps({"agent_transcript_path": str(t)})) == {
-        "bibs": ["literature-domain-1.bib", "literature-domain-2.bib"]}
+        "bibs": ["literature-domain-1.bib", "literature-domain-2.bib"],
+        "assigned": ["literature-domain-2.bib"]}
 
 
 def test_a_sibling_mentioned_in_the_prompt_is_not_owned():
@@ -127,3 +128,29 @@ def test_a_tool_input_that_is_not_an_object_is_skipped():
         {"type": "tool_use", "name": "Write", "input": "literature-domain-9.bib"}]}})
     assert owned_bibs([user("Write output to: literature-domain-1.bib"), bad]) == {
         "literature-domain-1.bib"}
+
+
+def test_parsed_records_are_accepted_too():
+    records = [json.loads(user("Write output to: literature-domain-1.bib")),
+               json.loads(tool("Edit", file_path="/w/literature-domain-1.bib"))]
+    assert owned_bibs(records) == {"literature-domain-1.bib"}
+
+
+def test_output_line_variants_assign():
+    for prompt in ("Write your output to /w/literature-domain-3.bib",
+                   "Put the output into literature-domain-3.bib",
+                   "WRITE OUTPUT TO: literature-domain-3.bib"):
+        assert owned_bibs([user("Avoid literature-domain-9.bib.\n" + prompt)]) == {
+            "literature-domain-3.bib"}, prompt
+
+
+def test_cli_moves_on_when_the_first_transcript_names_nothing(tmp_path):
+    first = tmp_path / "empty.jsonl"
+    first.write_text("", encoding="utf-8")
+    sub = tmp_path / "s1" / "subagents"
+    sub.mkdir(parents=True)
+    (sub / "agent-a9.jsonl").write_text(user("Write output to: literature-domain-5.bib") + "\n",
+                                        encoding="utf-8")
+    out = _cli(json.dumps({"agent_transcript_path": str(first),
+                           "transcript_path": str(tmp_path / "s1.jsonl"), "agent_id": "a9"}))
+    assert out["bibs"] == ["literature-domain-5.bib"]

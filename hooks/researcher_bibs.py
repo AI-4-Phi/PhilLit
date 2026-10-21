@@ -10,8 +10,9 @@ names its files, so the hook can scope to them.
 A researcher owns the union of:
   1. its assigned output, from the dispatch prompt (the first user record of
      its transcript): the `literature-domain-*.bib` named on SKILL.md's
-     Phase 3 "Write output to: `[workdir]/literature-domain-N.bib`" line,
-     or, when no such line names one, the prompt's one domain bib if it
+     Phase 3 "Write output to: `[workdir]/literature-domain-N.bib`" line
+     (any line with "output to/into/at/in": the orchestrator is a model and
+     may not copy the template exactly), or, when no such line names one, the prompt's one domain bib if it
      names exactly one. A prompt may mention a sibling's file ("do not
      overlap with literature-domain-2.bib"); a mention is not ownership.
   2. every `.bib` it wrote with a file tool (Write, Edit, MultiEdit).
@@ -25,7 +26,10 @@ read, `<transcript_path without .jsonl>/subagents/agent-<agent_id>.jsonl`
 
 Usage: python researcher_bibs.py < <SubagentStop payload JSON>
 Output: one JSON object on stdout, exit 0:
-  {"bibs": [<basename>, ...]}            at least one file identified
+  {"bibs": [<basename>, ...], "assigned": [<basename>, ...]}
+                                         at least one file identified;
+                                         "assigned" is part 1 alone, the
+                                         file the hook reports if missing
   {"bibs": [], "reason": "<why not>"}    nothing identified; the hook then
                                          falls back to every bib, visibly
 """
@@ -39,7 +43,7 @@ from pathlib import Path
 # `literature-domain-1.bib.bak`; a sentence's closing period is fine.
 DOMAIN_BIB = re.compile(r"(?<![A-Za-z0-9_.-])literature-domain-[A-Za-z0-9_-]+\.bib"
                         r"(?![A-Za-z0-9_-]|\.[A-Za-z0-9])", re.IGNORECASE)
-OUTPUT_LINE = re.compile(r"output to:[^\n]*", re.IGNORECASE)
+OUTPUT_LINE = re.compile(r"\boutput\s+(?:to|into|at|in)\b[^\n]*", re.IGNORECASE)
 FILE_TOOLS = {"Write", "Edit", "MultiEdit"}
 
 
@@ -78,15 +82,26 @@ def assigned_bibs(prompt: str) -> set[str]:
 
 def owned_bibs(lines) -> set[str]:
     """Basenames named by the first user record and written by file tools.
-    Unparseable lines are skipped: a transcript line cut mid-write must not
-    hide the rest."""
+    `lines` holds transcript JSONL lines or records already parsed (dicts);
+    phillit-service imports this with its own records. Unparseable lines are
+    skipped: a transcript line cut mid-write must not hide the rest."""
+    assigned, written = ownership(lines)
+    return assigned | written
+
+
+def ownership(lines) -> tuple[set[str], set[str]]:
+    """(assigned by the prompt, written with a file tool), as owned_bibs."""
+    assigned: set[str] = set()
     names: set[str] = set()
     seen_prompt = False
     for line in lines:
-        try:
-            rec = json.loads(line)
-        except ValueError:
-            continue
+        if isinstance(line, dict):
+            rec = line
+        else:
+            try:
+                rec = json.loads(line)
+            except ValueError:
+                continue
         if not isinstance(rec, dict):
             continue
         message = rec.get("message")
@@ -94,7 +109,7 @@ def owned_bibs(lines) -> set[str]:
             continue
         if rec.get("type") == "user" and not seen_prompt:
             seen_prompt = True
-            names.update(assigned_bibs(_text(message.get("content"))))
+            assigned = assigned_bibs(_text(message.get("content")))
         elif rec.get("type") == "assistant" and isinstance(message.get("content"), list):
             for block in message["content"]:
                 if not (isinstance(block, dict) and block.get("type") == "tool_use"
@@ -104,7 +119,7 @@ def owned_bibs(lines) -> set[str]:
                 path = inp.get("file_path") if isinstance(inp, dict) else None
                 if isinstance(path, str) and path.lower().endswith(".bib"):
                     names.add(re.split(r"[\\/]", path)[-1])
-    return names
+    return assigned, names
 
 
 def main() -> None:
@@ -121,18 +136,16 @@ def main() -> None:
     for path in paths:
         try:
             with open(path, encoding="utf-8", errors="replace") as f:
-                names = owned_bibs(f)
-            break
+                assigned, written = ownership(f)
         except OSError as e:
             failures.append(f"{e.strerror}: {path}")
-    else:
-        print(json.dumps({"bibs": [], "reason": "the transcript could not be read ("
-                          + "; ".join(failures) + ")"}))
-        return
-    if not names:
-        print(json.dumps({"bibs": [], "reason": f"the transcript names no bib file ({path})"}))
-        return
-    print(json.dumps({"bibs": sorted(names)}))
+            continue
+        if assigned or written:
+            print(json.dumps({"bibs": sorted(assigned | written), "assigned": sorted(assigned)}))
+            return
+        failures.append(f"names no bib file: {path}")   # a later path may hold more
+    print(json.dumps({"bibs": [], "reason": "no transcript identified this researcher's bib ("
+                      + "; ".join(failures) + ")"}))
 
 
 if __name__ == "__main__":

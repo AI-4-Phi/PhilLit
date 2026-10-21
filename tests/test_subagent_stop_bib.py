@@ -191,8 +191,9 @@ def with_transcript(payload: dict, project_dir: Path) -> dict:
     names = {"literature-domain-1.bib"}
     for _root, _dirs, files in os.walk(project_dir):     # never follows symlinks
         names.update(f for f in files if f.endswith(".bib"))
+    # The prompt assigns no file, so a test without one gets no "missing" note.
     t = write_transcript(project_dir / ".transcripts" / "agent-auto.jsonl",
-                         "Write output to: `literature-domain-1.bib`", tuple(sorted(names)))
+                         "Research your domain.", tuple(sorted(names)))
     return {**payload, "agent_transcript_path": str(t)}
 
 
@@ -256,8 +257,7 @@ class TestGuards:
             {"agent_type": "domain-literature-researcher", "stop_hook_active": True},
             project,
         )
-        # Nothing to validate, but the researcher's own bib is missing: said.
-        assert "decision" not in out and "was not found" in out["systemMessage"]
+        assert out == {}
         assert code == 0
 
     def test_other_agent_type_allows(self, project):
@@ -310,10 +310,9 @@ class TestValidation:
         assert out["decision"] == "block"
         assert "journal" in out["reason"]
 
-    def test_no_bib_files_allows_and_says_the_own_bib_is_missing(self, project):
+    def test_no_bib_files_allows(self, project):
         out, code, _ = run_hook(RESEARCHER, project)
-        assert "decision" not in out and "hookSpecificOutput" not in out
-        assert "was not found" in out["systemMessage"]
+        assert out == {}
         assert code == 0
 
     def test_every_decision_the_hook_prints_is_one_claude_code_accepts(self):
@@ -343,8 +342,7 @@ class TestRootStrays:
             json.dumps(VERIFY_AWAD_JSON), encoding="utf-8")
         out, code, _ = run_hook(RESEARCHER, project)
         assert code == 0
-        assert "decision" not in out and "hookSpecificOutput" not in out, \
-            "a user's own root .bib was validated or cleaned"
+        assert out == {}, "a user's own root .bib was validated or cleaned"
         assert refs.read_text(encoding="utf-8") == HALLUCINATED_NUMBER_BIB
         assert draft.read_text(encoding="utf-8") == INVALID_BIB
 
@@ -1240,6 +1238,34 @@ class TestScopeToTheStoppingResearcher:
             project, "Write output to: `literature-domain-1.bib`"), project)
         assert code == 0 and "decision" not in out
         assert "literature-domain-1.bib) was not found" in out["systemMessage"]
+
+    def test_an_assigned_bib_missing_beside_a_written_one_is_reported(self, project):
+        mine, sibling = self._two_domains(project)
+        mine.unlink()
+        out, code, _ = run_hook(self._payload(
+            project, "Write output to: `literature-domain-1.bib`", written=[str(sibling)]), project)
+        assert code == 0 and "additionalContext" in out["hookSpecificOutput"]
+        assert "(literature-domain-1.bib) was not found" in out["systemMessage"]
+
+    def test_an_output_line_without_the_templates_colon_still_assigns(self, project):
+        _mine, sibling = self._two_domains(project)
+        out, code, _ = run_hook(self._payload(
+            project, "Avoid literature-domain-2.bib.\n"
+                     "Write your output to /w/literature-domain-1.bib"), project)
+        assert code == 0 and "systemMessage" not in out
+        assert sibling.read_text(encoding="utf-8") == WRONG_YEAR_BIB
+
+    def test_the_fallback_tells_the_researcher_too(self, project):
+        review = project / "reviews" / "test-review"
+        (review / "literature-domain-2.bib").write_text(INVALID_BIB, encoding="utf-8")
+        out, code, _ = run_hook({**RESEARCHER, "agent_transcript_path": ""}, project)
+        assert out["decision"] == "block"
+        assert out["reason"].startswith("NOTE: PhilLit could not tell which bib file is yours")
+
+    def test_the_fallback_with_no_bib_at_all_is_not_silent(self, project):
+        out, code, _ = run_hook({**RESEARCHER, "agent_transcript_path": "/gone.jsonl"}, project)
+        assert code == 0 and "decision" not in out
+        assert "no domain bib was found, so nothing was validated" in out["systemMessage"]
 
     def test_two_owned_bibs_are_both_processed(self, project):
         mine, sibling = self._two_domains(project)
