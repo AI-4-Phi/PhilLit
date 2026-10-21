@@ -16,8 +16,6 @@ from pathlib import Path
 
 from pybtex.database import parse_file
 
-from stamp_evidence import TIER_RANK  # same directory
-
 # Import LATEX_ESCAPES from bib_validator and identity keys from bib_identity
 # (single source of truth)
 _hook_dir = Path(__file__).resolve().parent.parent.parent.parent / "hooks"
@@ -36,8 +34,12 @@ sys.path.pop(0)
 # (apply_references), lint_md has a third, and all three must agree on what
 # counts as the boundary. They did not - lint_md was fence-aware and this
 # script was not - see find_refs_heading's docstring for what that cost.
+# Same-directory imports go through the explicit insert too: the implicit
+# script-directory entry is absent under `python -P` / PYTHONSAFEPATH and
+# when a caller loads this file by path.
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lint_md import find_refs_heading  # noqa: E402
+from stamp_evidence import TIER_RANK  # noqa: E402
 
 sys.path.pop(0)
 

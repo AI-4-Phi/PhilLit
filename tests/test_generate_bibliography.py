@@ -3291,3 +3291,13 @@ class TestMainSuffixGuards:
             "## Review\n\nIn the 1990s Menary (2010) argues so.\n")
         gb.main()
         assert "SUFFIX-MISSING" not in capsys.readouterr().err
+
+
+def test_imports_without_the_implicit_script_directory():
+    # Under `python -P` (PYTHONSAFEPATH) the script's own directory is not on
+    # sys.path, so every same-directory import must be explicit.
+    import subprocess
+    r = subprocess.run([sys.executable, "-P", str(SCRIPT_DIR / "generate_bibliography.py")],
+                       capture_output=True, text=True, encoding="utf-8")
+    assert "ModuleNotFoundError" not in r.stderr, r.stderr
+    assert "Usage" in r.stdout + r.stderr
