@@ -28,7 +28,7 @@ import sys
 from typing import Optional
 
 import requests
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, NavigableString
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from output import log_progress as _log_progress, output_success, output_error, set_output_path, add_output_arg
@@ -49,6 +49,35 @@ def log_progress(message: str) -> None:
     _log_progress(SCRIPT_NAME, message)
 
 
+def extract_reviewed_books(soup: BeautifulSoup) -> list[dict]:
+    """The books a review is OF, from its bibliographic header: one
+    `.meta-item__bibliography` paragraph per book, "Authors, <em>Title</em>,
+    Publisher, Year, ...". A paragraph without an <em> title is skipped; a
+    page with no usable paragraph falls back to the `search_authors` /
+    `search_title` meta pair (blank on some pages, so never the first
+    choice)."""
+    books = []
+    for para in soup.select(".meta-item__bibliography p"):
+        em = para.find("em")
+        if em is None:
+            continue
+        title = em.get_text(" ", strip=True)
+        before = []
+        for node in para.descendants:
+            if node is em:
+                break
+            if isinstance(node, NavigableString):
+                before.append(str(node))
+        authors = " ".join("".join(before).split()).strip(" ,")
+        if title:
+            books.append({"authors": authors, "title": title})
+    if books:
+        return books
+    meta = lambda name: (soup.find("meta", {"name": name}) or {}).get("content", "").strip()
+    authors, title = meta("search_authors"), meta("search_title")
+    return [{"authors": authors, "title": title}] if authors and title else []
+
+
 def extract_review_content(html: str) -> dict:
     """Extract opening paragraphs and metadata from an NDPR review page.
 
@@ -61,8 +90,11 @@ def extract_review_content(html: str) -> dict:
         - paragraphs: List of individual paragraph texts
         - reviewer: Reviewer name if found
         - review_date: Review date if found
+        - books: The reviewed books from the page's bibliographic header,
+          [{"authors": ..., "title": ...}], [] when the page has none
     """
     soup = BeautifulSoup(html, "lxml")
+    books = extract_reviewed_books(soup)
 
     # Extract reviewer and date from metadata
     reviewer = None
@@ -105,6 +137,7 @@ def extract_review_content(html: str) -> dict:
             "paragraphs": [],
             "reviewer": reviewer,
             "review_date": review_date,
+            "books": books,
         }
 
     # Get all <p> tags from the content area
@@ -133,6 +166,7 @@ def extract_review_content(html: str) -> dict:
         "paragraphs": summary_paragraphs,
         "reviewer": reviewer,
         "review_date": review_date,
+        "books": books,
     }
 
 

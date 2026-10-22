@@ -3,6 +3,9 @@
 Search Notre Dame Philosophical Reviews (NDPR) for book reviews.
 
 Uses NDPR's sitemap to find review URLs, then matches by normalized title similarity.
+A slug match is only a candidate: a later book whose slug holds every title word
+scores as high as the book itself. `review_matches` decides identity from the
+fetched page's bibliographic header; check it before using a review's text.
 NDPR publishes scholarly book reviews that typically open with summary paragraphs —
 useful as abstract substitutes for books missing abstracts from standard APIs.
 
@@ -25,6 +28,11 @@ from typing import Optional
 import requests
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+# hooks/ for bib_identity (single source of truth for title and name folds)
+sys.path.insert(0, os.path.join(
+    os.path.dirname(os.path.dirname(os.path.dirname(
+        os.path.dirname(os.path.abspath(__file__))))), "hooks"))
+from bib_identity import ascii_variants, title_key  # noqa: E402
 from output import log_progress as _log_progress, output_success, output_error, set_output_path, add_output_arg
 from rate_limiter import ExponentialBackoff, get_limiter, user_agent
 
@@ -33,6 +41,10 @@ SITEMAP_URL = "https://ndpr.nd.edu/sitemap.xml"
 
 # Module-level sitemap cache for batch use within a single process
 _sitemap_cache: Optional[list[str]] = None
+
+# Accepted candidates the resolver may fetch, best first. Each costs one
+# review fetch at 1 req/s, and the barrier's corroboration pass is budgeted.
+MAX_CANDIDATES = 3
 
 # Pure function words: dropped from title/slug tokens so coincidental overlap
 # on "and"/"the"/"for" can't inflate the match score. Content-
@@ -195,24 +207,31 @@ def fetch_sitemap(limiter, backoff: ExponentialBackoff) -> list[str]:
     raise RuntimeError("Max retries exceeded fetching sitemap")
 
 
-def search_ndpr(
+def _slug_extra(full_title: str, slug: str) -> int:
+    """Slug tokens the FULL title (subtitle kept) lacks: the tiebreak among
+    equal scores. Coverage is one-directional, so a later book whose slug
+    holds every title word scores 1.0 as well; the right slug has the fewest
+    words of its own."""
+    full = title_to_tokens(re.sub(r"[^a-z0-9\s]", " ", full_title.lower()))
+    return len(title_to_tokens(slug.replace("-", " ")) - full)
+
+
+def search_ndpr_candidates(
     title: str,
     author: Optional[str] = None,
     limiter=None,
     backoff: Optional[ExponentialBackoff] = None,
     debug: bool = False,
-) -> Optional[dict]:
-    """Search NDPR sitemap for a review matching the given book title.
+    limit: int = MAX_CANDIDATES,
+) -> list[dict]:
+    """Every sitemap review that passes the acceptance threshold, best first:
+    score, then fewest extra slug words, then sitemap order. At most `limit`.
 
-    Args:
-        title: Book title to search for
-        author: Optional author last name for better matching
-        limiter: Rate limiter instance (created if None)
-        backoff: Backoff instance (created if None)
-        debug: Enable debug output
+    A candidate is a slug match only. Whether the review is OF this book is
+    `review_matches` on the fetched page's header.
 
     Returns:
-        Dict with 'url', 'slug', 'score' if match found, else None
+        List of dicts with 'url', 'slug', 'score'
     """
     if limiter is None:
         limiter = get_limiter("ndpr")
@@ -221,38 +240,81 @@ def search_ndpr(
 
     urls = fetch_sitemap(limiter, backoff)
     if not urls:
-        return None
+        return []
 
     normalized = normalize_title(title)
     if debug:
         print(f"DEBUG: Normalized title: '{normalized}'", file=sys.stderr)
 
-    best_score = 0.0
-    best_url = None
-    best_slug = None
-    best_confirmed = False
-
-    for url in urls:
+    ranked = []
+    for order, url in enumerate(urls):
         slug = slug_from_url(url)
         if not slug:
             continue
         score, confirmed = score_match(normalized, slug, author)
-        if score > best_score:
-            best_score = score
-            best_url = url
-            best_slug = slug
-            best_confirmed = confirmed
+        # Tiered acceptance: 0.75 outright, or 0.6 when the author is
+        # confirmed in the slug. The stopword-inflated Wallace/Adam-Smith
+        # pair (0.667, no author) rejects; descriptive-slug matches pass.
+        if score >= 0.75 or (confirmed and score >= 0.6):
+            ranked.append((-score, _slug_extra(title, slug), order,
+                           {"url": url, "slug": slug, "score": score}))
+    ranked.sort(key=lambda r: r[:3])
+    found = [r[3] for r in ranked[:limit]]
 
     if debug:
-        print(f"DEBUG: Best match: {best_slug} (score={best_score:.3f})", file=sys.stderr)
+        print(f"DEBUG: Candidates: {[c['slug'] for c in found]}", file=sys.stderr)
+    return found
 
-    # Tiered acceptance: 0.75 outright, or 0.6 when the author is confirmed in
-    # the slug. The stopword-inflated Wallace/Adam-Smith pair
-    # (0.667, no author) now rejects; descriptive-slug book matches still pass.
-    if best_score >= 0.75 or (best_confirmed and best_score >= 0.6):
-        return {"url": best_url, "slug": best_slug, "score": best_score}
 
-    return None
+def search_ndpr(
+    title: str,
+    author: Optional[str] = None,
+    limiter=None,
+    backoff: Optional[ExponentialBackoff] = None,
+    debug: bool = False,
+) -> Optional[dict]:
+    """The best `search_ndpr_candidates` match, or None.
+
+    Returns:
+        Dict with 'url', 'slug', 'score' if match found, else None
+    """
+    found = search_ndpr_candidates(title, author, limiter, backoff, debug, limit=1)
+    return found[0] if found else None
+
+
+def _main_title_tokens(title: str) -> set[str]:
+    """Content words of a title before its first colon."""
+    return title_to_tokens(title_key(title.split(":")[0]))
+
+
+def _name_words(text: str) -> set[str]:
+    """Word-bounded ASCII folds of a name or a name list."""
+    return {" " + " ".join(re.sub(r"[^a-z0-9]", " ", v).split()) + " "
+            for v in ascii_variants(text, contract=False)}
+
+
+def review_matches(books: list[dict], title: str, surname: Optional[str]) -> bool:
+    """Is this NDPR review OF the book? `books` is the page's bibliographic
+    header (`fetch_ndpr.extract_review_content`), one dict per reviewed book.
+
+    One header book must carry the surname as a whole word in its authors
+    AND the same main-title content words (before the first colon, function
+    words dropped) as `title`. Plain text in: decode BibTeX first. The year
+    is not compared: NDPR reviews an edition, and 3 of the 6 right matches
+    in the measured sample were dated one year off the bib."""
+    if not surname or not title:
+        return False
+    want = _main_title_tokens(title)
+    needles = {n for n in _name_words(surname) if n.strip()}
+    if not want or not needles:
+        return False
+    for book in books:
+        if _main_title_tokens(book.get("title") or "") != want:
+            continue
+        hay = _name_words(book.get("authors") or "")
+        if any(n in h for n in needles for h in hay):
+            return True
+    return False
 
 
 def clear_sitemap_cache() -> None:

@@ -302,7 +302,7 @@ Never advance to a next step in this phase before completing the current step.
    the tier, and one this environment cannot ask (claimed `core` with no
    `CORE_API_KEY` set — which demotes every claimed-core entry in a keyless
    workspace — or with neither DOI nor title; claimed `s2` or `openalex`
-   with no DOI; claimed `ndpr` with no title). `unusable` needs no action:
+   with no DOI; claimed `ndpr` with no title or no author surname). `unusable` needs no action:
    the source does serve that abstract (the fetch corroborated it), but it
    is a stub, a keyword list, a publisher page, an opening extract or word
    salad (the report gives each entry's `reason`), so it cannot support the

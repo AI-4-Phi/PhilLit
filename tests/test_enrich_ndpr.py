@@ -350,7 +350,9 @@ MOCK_SITEMAP_XML = """<?xml version="1.0" encoding="UTF-8"?>
   <url><loc>https://ndpr.nd.edu/reviews/a-theory-of-justice/</loc></url>
 </urlset>"""
 
-MOCK_REVIEW_HTML = """<html><body><article><div class="entry-content">
+MOCK_REVIEW_HTML = """<html><body><article>
+<div class="meta-item__bibliography"><p><strong>John Rawls, <em>A Theory of Justice</em>, Harvard University Press, 1971.</strong></p></div>
+<div class="entry-content">
 <p>In this landmark work, Rawls develops a comprehensive theory of justice as fairness, arguing that principles of justice are those that would be chosen by rational agents behind a veil of ignorance.</p>
 <p>The book's central argument proceeds through an elaborate thought experiment in which parties in an 'original position' must choose principles to govern the basic structure of society without knowing their particular place in it.</p>
 <p>Rawls argues that two principles would emerge from this procedure: first, that each person has an equal right to the most extensive basic liberties compatible with similar liberties for others.</p>
@@ -363,24 +365,24 @@ class TestNdprTransportErrorPropagation:
         must not swallow it into (None, None) -- that made an outage
         indistinguishable from a genuine no-match in every run report."""
         import enrich_bibliography
-        with patch("search_ndpr.search_ndpr",
+        with patch("search_ndpr.search_ndpr_candidates",
                    side_effect=RuntimeError("Network error fetching sitemap")):
             with pytest.raises(RuntimeError):
                 enrich_bibliography.resolve_ndpr_abstract("Some Book", "Doe")
 
     def test_no_match_is_still_none(self):
         import enrich_bibliography
-        with patch("search_ndpr.search_ndpr", return_value=None):
+        with patch("search_ndpr.search_ndpr_candidates", return_value=[]):
             assert enrich_bibliography.resolve_ndpr_abstract(
-                "Some Book") == (None, None)
+                "Some Book", "Doe") == (None, None)
 
     def test_fetch_transport_error_propagates_too(self):
         """The swallow covered BOTH stages; a future try/except around only
         the review fetch would leave the conflation half-intact."""
         import enrich_bibliography
-        with patch("search_ndpr.search_ndpr",
-                   return_value={"url": "https://ndpr.nd.edu/reviews/x/",
-                                 "slug": "x", "score": 0.9}), \
+        with patch("search_ndpr.search_ndpr_candidates",
+                   return_value=[{"url": "https://ndpr.nd.edu/reviews/x/",
+                                  "slug": "x", "score": 0.9}]), \
              patch("fetch_ndpr.fetch_ndpr_review",
                    side_effect=RuntimeError("HTTP 503 fetching review")):
             with pytest.raises(RuntimeError):

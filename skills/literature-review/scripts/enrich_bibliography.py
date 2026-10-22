@@ -283,7 +283,16 @@ def resolve_ndpr_abstract(
     Try to find and extract a book summary from NDPR.
 
     Returns (summary_text, "ndpr") on a match, (None, None) when NDPR has
-    no matching review. Transport failures PROPAGATE (search_ndpr and
+    no review OF this book. A slug match is only a candidate: a later book
+    whose slug holds every title word scores as high as the book (measured
+    2026-10-22: 10 of 11 NDPR abstracts in the service's delivered reviews
+    and 2 of 7 here came from a review of another book). So each candidate
+    page's bibliographic header must name the book (`review_matches`), and
+    with no author surname there is no NDPR text at all. This is the one
+    gate on every path to an NDPR abstract: enrichment, the corroboration
+    probe and the barrier heal all call this function.
+
+    Transport failures PROPAGATE (search_ndpr and
     fetch_ndpr raise RuntimeError on network errors): swallowing them here
     made an outage indistinguishable from a genuine no-match, so NDPR
     demotion counts were unattributable in any run report. Each caller
@@ -295,19 +304,26 @@ def resolve_ndpr_abstract(
     """
     import search_ndpr
     import fetch_ndpr
+    from generate_bibliography import clean_bibtex_str
 
-    match = search_ndpr.search_ndpr(title, author, debug=debug)
-    if not match:
-        if debug:
-            log_progress(f"  NDPR: no sitemap match for '{title}'")
+    title = clean_bibtex_str(title or "")
+    surname = clean_bibtex_str(author or "")
+    if not title or not surname:
         return None, None
 
-    result = fetch_ndpr.fetch_ndpr_review(match["url"], debug=debug)
-    summary = result.get("summary_text", "")
+    for match in search_ndpr.search_ndpr_candidates(title, surname, debug=debug):
+        result = fetch_ndpr.fetch_ndpr_review(match["url"], debug=debug)
+        if not search_ndpr.review_matches(result.get("books") or [], title, surname):
+            if debug:
+                log_progress(f"  NDPR: {match['slug']} reviews another book")
+            continue
+        summary = result.get("summary_text", "")
+        if summary and len(summary) > 50:
+            return summary, "ndpr"
+        return None, None
 
-    if summary and len(summary) > 50:
-        return summary, "ndpr"
-
+    if debug:
+        log_progress(f"  NDPR: no review of '{title}'")
     return None, None
 
 
@@ -476,7 +492,7 @@ def _probe_candidate(
                 api_key=core_api_key, limiter=ctx['core_limiter'],
                 backoff=ctx['other_backoff'], debug=debug)
         if source == 'ndpr':
-            if not title:
+            if not title or not author:
                 return ga.PROBE_EMPTY, None
             # resolve_ndpr_abstract propagates transport errors
             # (RuntimeError from the sitemap or review fetch), so an NDPR

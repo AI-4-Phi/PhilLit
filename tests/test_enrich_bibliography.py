@@ -1783,7 +1783,7 @@ def test_ndpr_outage_reads_as_transport_failed_not_source_empty():
     import get_abstract
     import search_ndpr
     calls = []
-    with patch.object(search_ndpr, "search_ndpr",
+    with patch.object(search_ndpr, "search_ndpr_candidates",
                       side_effect=RuntimeError("Network error fetching sitemap")), \
          patch.object(get_abstract, "probe_s2",
                       _ProbeStub(calls, "s2", ("empty", None))), \

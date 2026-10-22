@@ -3157,17 +3157,22 @@ def test_claimed_openalex_with_a_doi_is_corroborated_normally(tmp_path, monkeypa
     assert len(calls) == 1
 
 
-def test_claimed_ndpr_without_a_title_is_unprobeable_and_with_one_is_not(monkeypatch):
-    """Unit-level parity pin for the ndpr shape (near-unreachable in a real
-    bib, so no execute()-level fixture): `_probe_candidate` gates ndpr on
-    `if not title` after `.strip()` -- the predicate must make the same
-    call. Without this branch, a title-less DOI-less ndpr claim in a
+def test_claimed_ndpr_without_a_title_or_author_is_unprobeable(monkeypatch):
+    """Unit-level parity pin for the ndpr shape: `_probe_candidate` gates
+    ndpr on `if not title or not author` (stripped title,
+    `get_author_last_name`) -- the predicate must make the same call. The
+    no-author half is an editor-only @book, whose NDPR claim the identity
+    check can never accept. Without this branch, a title-less DOI-less ndpr claim in a
     keyless-CORE workspace is a zero-network source_empty that resets the
     consecutive-transport streak, the same defect as the openalex shape."""
     eb_mod = _barrier(monkeypatch)
     assert eb_mod._claimed_source_unprobeable({"title": "   "}, "ndpr") is True
     assert eb_mod._claimed_source_unprobeable({}, "ndpr") is True
-    assert eb_mod._claimed_source_unprobeable({"title": "A Book"}, "ndpr") is False
+    assert eb_mod._claimed_source_unprobeable({"title": "A Book"}, "ndpr") is True
+    assert eb_mod._claimed_source_unprobeable(
+        {"title": "A Book", "editor": "Doe, Jane"}, "ndpr") is True
+    assert eb_mod._claimed_source_unprobeable(
+        {"title": "A Book", "author": "Doe, Jane"}, "ndpr") is False
 
 
 def test_claimed_core_with_a_key_but_no_doi_or_title_is_unprobeable(monkeypatch):

@@ -128,7 +128,7 @@ bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_n
 bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_ndpr.py --url REVIEW_URL
 ```
 
-NDPR extracts are tagged with `abstract_source = {ndpr}` in BibTeX entries. Note: NDPR content is primarily descriptive of the book's arguments but may include reviewer evaluation.
+A search match is only a candidate: NDPR often reviewed a later book whose title contains this one's words. `fetch_ndpr.py` returns the reviewed `books` (authors and title from the page header); use the text only when one of them is this book. NDPR extracts are tagged with `abstract_source = {ndpr}` in BibTeX entries. Note: NDPR content is primarily descriptive of the book's arguments but may include reviewer evaluation.
 
 The batch `enrich_bibliography.py` script handles both 6a and 6b automatically.
 

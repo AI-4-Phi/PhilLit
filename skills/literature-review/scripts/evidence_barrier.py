@@ -428,9 +428,11 @@ def _claimed_source_unprobeable(fields: dict, claimed: str) -> bool:
       would demote an honest attestation, the one error direction that
       costs a tier. Both need a field the entry's own enrichment must have
       had (both resolvers are DOI-gated), i.e. a later deletion.
-    * `ndpr` with no title -- NDPR resolution is a title search over
-      review essays; `_probe_candidate` gates on the stripped title, so
-      the same expression is used here (parity again). NOT the same
+    * `ndpr` with no title or no author surname -- NDPR resolution is a
+      title search over review essays, accepted only when the review's
+      header names the author; `_probe_candidate` gates on the stripped
+      title and `eb.get_author_last_name`, so the same expressions are
+      used here (parity again). An editor-only @book lands here. NOT the same
       zero-network shape as s2/openalex whenever a DOI survives: those
       probes gate on DOI, so a title-less ndpr claim with a DOI would
       still reach a full corroboration's DOI-gated s2/openalex fallbacks
@@ -456,7 +458,8 @@ def _claimed_source_unprobeable(fields: dict, claimed: str) -> bool:
     if claimed in ("s2", "openalex"):
         return not eb.get_doi({"fields": fields})
     if claimed == "ndpr":
-        return not (fields.get("title") or "").strip()
+        return (not (fields.get("title") or "").strip()
+                or not eb.get_author_last_name({"fields": fields}))
     return False
 
 
