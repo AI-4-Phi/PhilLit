@@ -66,9 +66,12 @@ phillit-service re-vendor.
   140 right papers (95%) and 0 wrong ones. Rejected: the DOI string alone
   (accepts only 62% of right papers); and title words plus surname (accepts
   1 wrong paper in 148).
+- **No write-block hook on `fulltext/`.** The barrier re-extracts the PDF,
+  checks both hashes and re-runs the identity check, so an edited or forged
+  file fails there. Rejected: a hook like `block_ledger_write.py`; it is no
+  security boundary (Bash bypasses it) and costs a `fast_gate.sh` needle.
 
 **Open questions for Johannes** (to adjudicate one at a time):
-2. Add a write-block hook on `fulltext/`?
 3. Page numbers: printed pages (offset from the `pages` field, checked
    against page headers); PDF page index; or printed where derivable, else
    none.
