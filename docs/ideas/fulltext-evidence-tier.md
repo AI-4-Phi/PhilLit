@@ -103,6 +103,11 @@ phillit-service re-vendor.
   named works only (leaves reachable gaps); any entry with an OA PDF (about
   40% of entries, mostly upgrades, at the cost of downloads, barrier time
   and writer reading load).
+  Gap candidates are entries a researcher left without an `abstract` (the
+  tier is known only after the barrier); this also tries entries that
+  later earn CONTEXT or WEB and misses abstracts that fail corroboration.
+  Rejected: the exact EXISTENCE set via a second barrier run (doubles the
+  barrier's time near the 600 s Bash ceiling).
 - **Sources, in order: the user's Zotero library (local sessions only), then
   OpenAlex, then Semantic Scholar.** "With an OA PDF" in the scope ruling
   reads "with a PDF from these sources". Zotero comes first because a
