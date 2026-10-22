@@ -469,6 +469,26 @@ class TestZotero:
         assert af.zotero_file_path("file://localhost/tmp/a.pdf",
                                    url2pathname=POSIX_URL2PATHNAME) == ("/tmp/a.pdf", "ok")
 
+    @pytest.mark.parametrize("loc", [
+        "file:////server/share/p.pdf",          # empty host, path //server
+        "file://///server/share/p.pdf",
+        "file:///%5C%5Cserver/share/p.pdf",     # escaped backslashes
+        "file:////%5Cserver/share/p.pdf",
+    ])
+    def test_share_with_empty_host_refused(self, loc):
+        import warnings
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore", DeprecationWarning)
+            import nturl2path
+        assert af.zotero_file_path(loc, url2pathname=POSIX_URL2PATHNAME) == (None, "unc_host")
+        assert af.zotero_file_path(loc, url2pathname=nturl2path.url2pathname) == (None, "unc_host")
+        assert af.zotero_file_path(loc) == (None, "unc_host")   # this platform's own
+
+    def test_share_after_url2pathname_refused(self):
+        # A converter that turns an innocent-looking path into a share.
+        assert af.zotero_file_path("file:///x/a.pdf",
+                                   url2pathname=lambda p: "\\\\server\\x\\a.pdf") == (None, "unc_host")
+
     @pytest.mark.parametrize("loc,why", [
         ("file://fileserver/share/a.pdf", "unc_host"),
         ("http://localhost:23119/a.pdf", "not_file_url"),
@@ -637,6 +657,27 @@ class TestFolder:
         code, data = run_json(capsys, workdir, "--doi", DOI)
         folder_try = data["tried"][1]
         assert "walk_limit" in folder_try["detail"] and folder_try["outcome"] == "not_found"
+
+    def test_unreadable_subtree_reported_and_cache_kept(self, http, workdir, capsys, tmp_path):
+        if os.name == "nt" or (hasattr(os, "geteuid") and os.geteuid() == 0):
+            pytest.skip("chmod 000 does not block listing here")
+        folder = self._folder(tmp_path, {"top.pdf": other_pdf()})
+        sub = folder / "sub"
+        sub.mkdir()
+        (sub / "scan.pdf").write_bytes(work_pdf())
+        run_json(capsys, workdir, "--doi", DOI)   # indexes sub/scan.pdf
+        idx_file = next((tmp_path / "pdf-index").glob("*.json"))
+        assert "sub/scan.pdf" in json.loads(idx_file.read_text(encoding="utf-8"))["files"]
+        sub.chmod(0)
+        try:
+            code, data = run_json(capsys, workdir, "--title", "Other", "--author", "Nobody",
+                                  "--year", YEAR)
+            folder_try = data["tried"][1]
+            assert "walk_error:1" in folder_try["detail"]
+            index = json.loads(idx_file.read_text(encoding="utf-8"))
+            assert "sub/scan.pdf" in index["files"]   # kept, not dropped
+        finally:
+            sub.chmod(0o755)
 
     def test_missing_folder_is_unavailable(self, http, workdir, capsys, tmp_path):
         write_env(f"PHILLIT_PDF_DIR={tmp_path / 'nowhere'}\n")
@@ -842,6 +883,30 @@ class TestGaps:
         # The source the deadline cut inside an entry is reported as such.
         k2 = report["entries"][2]["tried"]
         assert {"source": "s2", "outcome": "deadline"} in k2
+
+    def test_entry_crash_named_in_summary_and_report(self, http, workdir, capsys, monkeypatch):
+        (workdir / "literature-domain-1.bib").write_text(
+            bib_entry("ok", doi="10.1/fine") + bib_entry("bad", doi="10.1/boom"), encoding="utf-8")
+        real = af.acquire_one
+
+        def flaky(wd, ident, settings, deadline, pdf_path=None):
+            if ident["doi"] == "10.1/boom":
+                raise RuntimeError("kaput")
+            return real(wd, ident, settings, deadline, pdf_path)
+        monkeypatch.setattr(af, "acquire_one", flaky)
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        assert code == 0
+        summary = json.loads(out)
+        expected = [{"entry": "1/bad", "reason": "error:RuntimeError: kaput"}]
+        assert summary["status"] == "done_with_errors" and summary["errors"] == expected
+        report = json.loads((workdir / af.REPORT_REL).read_text(encoding="utf-8"))
+        assert report["status"] == "done_with_errors" and report["errors"] == expected
+
+    def test_clean_pass_says_done(self, http, workdir, capsys):
+        (workdir / "literature-domain-1.bib").write_text(bib_entry("ok", doi="10.1/fine"), encoding="utf-8")
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        summary = json.loads(out)
+        assert summary["status"] == "done" and summary["errors"] == []
 
     def test_same_work_in_two_domains_acquired_once(self, http, workdir, capsys):
         for i in (1, 2):

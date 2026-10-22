@@ -100,7 +100,7 @@ import urllib.request
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import quote, urljoin, urlparse
+from urllib.parse import quote, unquote, urljoin, urlparse
 
 import requests
 from dotenv import find_dotenv, load_dotenv
@@ -147,7 +147,7 @@ PDF_DIR_ENV = "PHILLIT_PDF_DIR"
 
 ZOTERO_BASE = "http://localhost:23119/api/users/0"
 ZOTERO_TIMEOUT = 10
-ZOTERO_SEARCH_LIMIT = 25
+ZOTERO_SEARCH_LIMIT = 100
 OPENALEX_BASE = "https://api.openalex.org"
 
 DOWNLOAD_TIMEOUT = 30
@@ -351,7 +351,13 @@ def zotero_file_path(location: str, url2pathname=urllib.request.url2pathname) ->
     `url2pathname` decodes percent-escapes itself (on POSIX and on Windows),
     so the path is NOT unquoted first: a second decode would turn a file
     name holding a literal `%41` into `A`. Swappable so the Windows drive
-    form (`nturl2path.url2pathname`) is testable on any platform."""
+    form (`nturl2path.url2pathname`) is testable on any platform.
+
+    A share is refused however it is spelled: a host in the URL
+    (`file://server/...`), or an empty host with a path that begins `//`
+    (`file:////server/...`), in the raw path, in its decoded form
+    (`%5C%5Cserver`) or in what `url2pathname` makes of it (`\\\\server`).
+    `unquote` here only TESTS; the returned path is decoded once."""
     try:
         p = urlparse(location or "")
     except ValueError:
@@ -362,7 +368,21 @@ def zotero_file_path(location: str, url2pathname=urllib.request.url2pathname) ->
         return None, "unc_host"
     if not p.path:
         return None, "bad_location"
-    return url2pathname(p.path), "ok"
+    if _unc_like(p.path) or _unc_like(unquote(p.path)):
+        return None, "unc_host"
+    try:
+        path = url2pathname(p.path)
+    except Exception:   # newer Pythons raise URLError on a host-like path
+        return None, "unc_host"
+    if _unc_like(path):
+        return None, "unc_host"
+    return path, "ok"
+
+
+def _unc_like(path: str) -> bool:
+    """A path naming a network share: it begins with two separators, either
+    kind (`//server`, `\\\\server`, `/\\\\server`)."""
+    return path.replace("\\", "/").startswith("//")
 
 
 def _zotero_json(path: str, params: dict | None, deadline: Deadline):
@@ -549,6 +569,7 @@ class FolderIndex:
         self.entries: dict[str, dict] = {}
         self.files: list[str] = []   # every PDF the walk saw, relative posix paths
         self.notes: list[str] = []
+        self.unreadable: list[str] = []
         self.refreshed = False
 
     def _load(self) -> None:
@@ -562,8 +583,16 @@ class FolderIndex:
             self.entries = {k: v for k, v in data["files"].items() if isinstance(v, dict)}
 
     def _walk(self) -> dict[str, tuple[int, float]]:
+        """Every PDF under the folder. A directory that cannot be listed is
+        recorded in `self.unreadable` (relative posix paths, "." for the
+        folder itself), never skipped silently."""
         found, count = {}, 0
-        for root, dirs, names in os.walk(self.folder, followlinks=False):
+        self.unreadable = []
+
+        def onerror(err: OSError) -> None:
+            where = err.filename or str(self.folder)
+            self.unreadable.append(Path(os.path.relpath(where, self.folder)).as_posix())
+        for root, dirs, names in os.walk(self.folder, followlinks=False, onerror=onerror):
             dirs[:] = sorted(d for d in dirs if not os.path.islink(os.path.join(root, d)))
             for name in sorted(names):
                 count += 1
@@ -597,9 +626,18 @@ class FolderIndex:
                 del self.entries[rel]   # stale: matches by file name until re-read
                 changed.append(rel)
         dirty = bool(changed)
+        if self.unreadable:
+            self.notes.append(f"walk_error:{len(self.unreadable)}")
         for rel in [r for r in self.entries if r not in found]:
+            if self._under_unreadable(rel):
+                # Not seen because its directory could not be listed: keep the
+                # cached entry, and keep the file a candidate (a failed read
+                # of it is reported like any other).
+                self.files.append(rel)
+                continue
             del self.entries[rel]
             dirty = True
+        self.files.sort()
         queue = sorted(changed) + sorted(new)
         done = 0
         for rel in queue:
@@ -615,6 +653,9 @@ class FolderIndex:
             self.notes.append(f"index_incomplete:{len(queue) - done}")
         if dirty:
             self._save()
+
+    def _under_unreadable(self, rel: str) -> bool:
+        return any(d == "." or rel.startswith(d + "/") for d in self.unreadable)
 
     def _save(self) -> None:
         payload = {"schema": INDEX_SCHEMA,
@@ -1021,12 +1062,18 @@ def run_gaps(workdir: Path, n_domains: int, settings: Settings) -> dict:
     counts: dict[str, int] = {}
     for e in entries:
         counts[e["outcome"]] = counts.get(e["outcome"], 0) + 1
-    report = {"schema": 1, "generated_at": _now_iso(), "deadline_seconds": GAPS_DEADLINE,
+    # An entry that crashed is named in the summary itself, never only
+    # counted: the orchestrator reads the summary line, not the report.
+    errors = [{"entry": f"{e['domain']}/{e['key']}",
+               "reason": e["tried"][0]["outcome"] if e["tried"] else "error"}
+              for e in entries if e["outcome"] == "error"]
+    report = {"schema": 1, "status": "done_with_errors" if errors else "done",
+              "generated_at": _now_iso(), "deadline_seconds": GAPS_DEADLINE,
               "elapsed_seconds": round(_clock() - started, 1),
               "licensed_only": settings.licensed_only,
               "sources": {"zotero": "on" if settings.zotero_on and not settings.licensed_only else "off",
                           "folder": "on" if settings.pdf_dir is not None and not settings.licensed_only else "off"},
-              "domains": domains, "candidates": len(entries), "counts": counts, "entries": entries}
+              "domains": domains, "candidates": len(entries), "counts": counts, "errors": errors, "entries": entries}
     path = workdir / REPORT_REL
     path.parent.mkdir(parents=True, exist_ok=True)
     ft.write_text_atomic(path, json.dumps(report, indent=2, ensure_ascii=False) + "\n")
@@ -1081,8 +1128,9 @@ def main(argv=None) -> int:
             settings = settings_from_env(licensed_only, INDEX_BUDGET_GAPS)
             report = run_gaps(workdir, args.domains, settings)
             # One line, as the barrier prints its summary (escaped ASCII).
-            print(json.dumps({"status": "done", "candidates": report["candidates"],
-                              "counts": report["counts"], "report": REPORT_REL}))
+            print(json.dumps({"status": report["status"], "candidates": report["candidates"],
+                              "counts": report["counts"], "errors": report["errors"],
+                              "report": REPORT_REL}))
             return 0
         settings = settings_from_env(licensed_only, INDEX_BUDGET_SINGLE)
         identity = make_identity(args.doi, args.title, args.author, args.year)
