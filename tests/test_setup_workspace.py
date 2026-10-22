@@ -335,3 +335,245 @@ def test_local_rules_merge_idempotently(tmp_path):
     twice = sw.merge_permissions(once, RULES)
     assert once == twice
     assert once["allow"].count(LOCAL_ALLOW) == 1
+
+
+# --- optional full-text sources: --probe-zotero / --check-pdf-dir -------------
+
+import io  # noqa: E402
+import urllib.error  # noqa: E402
+
+
+class _FakeResp:
+    def __init__(self, body: bytes, status: int = 200):
+        self._body, self.status = body, status
+
+    def read(self, n=-1):
+        return self._body
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *exc):
+        return False
+
+
+def _fake_opener(result):
+    class _Opener:
+        def open(self, req, timeout=None):
+            self.timeout = timeout
+            if isinstance(result, BaseException):
+                raise result
+            return result
+
+    return _Opener()
+
+
+def _patch_opener(monkeypatch, result):
+    opener = _fake_opener(result)
+    monkeypatch.setattr(sw.urllib.request, "build_opener", lambda *a, **k: opener)
+    return opener
+
+
+def test_probe_zotero_ok(monkeypatch):
+    opener = _patch_opener(monkeypatch, _FakeResp(b"[]"))
+    assert sw.probe_zotero()["zotero"] == "ok"
+    assert opener.timeout == 5
+
+
+def test_probe_zotero_nothing_listening(monkeypatch):
+    _patch_opener(monkeypatch, urllib.error.URLError(ConnectionRefusedError()))
+    out = sw.probe_zotero()
+    assert out["zotero"] == "unavailable" and "ConnectionRefusedError" in out["detail"]
+
+
+def test_probe_zotero_timeout_and_garbage(monkeypatch):
+    _patch_opener(monkeypatch, TimeoutError("timed out"))
+    assert sw.probe_zotero()["zotero"] == "unavailable"
+    _patch_opener(monkeypatch, _FakeResp(b"<html>not zotero</html>"))
+    assert sw.probe_zotero()["zotero"] == "unavailable"
+    _patch_opener(monkeypatch, _FakeResp(b'{"not": "a list"}'))
+    assert sw.probe_zotero()["zotero"] == "unavailable"
+    import http.client
+    _patch_opener(monkeypatch, http.client.BadStatusLine("x"))
+    assert sw.probe_zotero()["zotero"] == "unavailable"
+
+
+def test_probe_zotero_api_switched_off_is_403(monkeypatch):
+    err = urllib.error.HTTPError("u", 403, "Forbidden", {}, io.BytesIO(b""))
+    _patch_opener(monkeypatch, err)
+    out = sw.probe_zotero()
+    assert out["zotero"] == "unavailable" and "switched off" in out["detail"]
+
+
+def test_probe_zotero_redirect_is_not_followed(monkeypatch):
+    # The real opener, a local server answering 302: the redirect must surface
+    # as unavailable, and the redirect target must never be requested.
+    import http.server
+    import threading
+
+    hits = []
+
+    class H(http.server.BaseHTTPRequestHandler):
+        def do_GET(self):
+            hits.append(self.path)
+            if self.path.startswith("/api"):
+                self.send_response(302)
+                self.send_header("Location", "/elsewhere")
+                self.end_headers()
+            else:
+                self.send_response(200)
+                self.end_headers()
+
+        def log_message(self, *a):
+            pass
+
+    srv = http.server.HTTPServer(("127.0.0.1", 0), H)
+    threading.Thread(target=srv.serve_forever, daemon=True).start()
+    try:
+        out = sw.probe_zotero(url=f"http://127.0.0.1:{srv.server_port}/api/users/0/items?limit=1")
+    finally:
+        srv.shutdown()
+        srv.server_close()
+    assert out["zotero"] == "unavailable"
+    assert hits == ["/api/users/0/items?limit=1"]
+
+
+def test_probe_zotero_real_closed_port_does_not_crash():
+    import socket
+    s = socket.socket()
+    s.bind(("127.0.0.1", 0))
+    port = s.getsockname()[1]
+    s.close()
+    out = sw.probe_zotero(url=f"http://127.0.0.1:{port}/api/users/0/items?limit=1", timeout=2)
+    assert out["zotero"] == "unavailable"
+
+
+def test_check_pdf_dir_counts_recursively_case_insensitively(tmp_path):
+    (tmp_path / "a.pdf").write_bytes(b"%PDF-")
+    (tmp_path / "B.PDF").write_bytes(b"%PDF-")
+    (tmp_path / "notes.txt").write_text("x", encoding="utf-8")
+    (tmp_path / "sub" / "deep").mkdir(parents=True)
+    (tmp_path / "sub" / "deep" / "c.Pdf").write_bytes(b"%PDF-")
+    out = sw.check_pdf_dir(str(tmp_path))
+    assert (out["exists"], out["is_dir"], out["pdf_count"]) == (True, True, 3)
+    assert "\\" not in out["path"] and out["path"].endswith(tmp_path.name)
+
+
+def test_check_pdf_dir_strips_quotes_and_expands_home(tmp_path, monkeypatch):
+    (tmp_path / "Papers").mkdir()
+    (tmp_path / "Papers" / "a.pdf").write_bytes(b"%PDF-")
+    monkeypatch.setenv("HOME", str(tmp_path))
+    monkeypatch.setenv("USERPROFILE", str(tmp_path))
+    for raw in ('"~/Papers"', "'~/Papers'", '  "~/Papers"  '):
+        out = sw.check_pdf_dir(raw)
+        assert out["is_dir"] and out["pdf_count"] == 1, raw
+        assert out["path"] == str(tmp_path / "Papers").replace("\\", "/")
+
+
+def test_check_pdf_dir_missing_file_and_empty(tmp_path):
+    out = sw.check_pdf_dir(str(tmp_path / "nope"))
+    assert (out["exists"], out["is_dir"], out["pdf_count"]) == (False, False, 0)
+    f = tmp_path / "file.pdf"
+    f.write_bytes(b"%PDF-")
+    out = sw.check_pdf_dir(str(f))
+    assert (out["exists"], out["is_dir"], out["pdf_count"]) == (True, False, 0)
+    out = sw.check_pdf_dir("")
+    assert (out["exists"], out["is_dir"]) == (False, False)
+    assert sw.check_pdf_dir(str(tmp_path))["pdf_count"] == 1
+
+
+def test_check_pdf_dir_skips_symlinks(tmp_path):
+    import pytest
+    real = tmp_path / "real"
+    real.mkdir()
+    (real / "a.pdf").write_bytes(b"%PDF-")
+    root = tmp_path / "root"
+    root.mkdir()
+    try:
+        (root / "link.pdf").symlink_to(real / "a.pdf")
+        (root / "linkdir").symlink_to(real, target_is_directory=True)
+    except (OSError, NotImplementedError):
+        pytest.skip("symlinks unavailable")
+    (root / "own.pdf").write_bytes(b"%PDF-")
+    assert sw.check_pdf_dir(str(root))["pdf_count"] == 1
+
+
+def test_check_pdf_dir_stops_at_the_file_limit(tmp_path):
+    for i in range(7):
+        (tmp_path / f"{i}.pdf").write_bytes(b"%PDF-")
+    out = sw.check_pdf_dir(str(tmp_path), limit=5)
+    assert out["truncated"] is True and out["pdf_count"] == 5
+    assert sw.check_pdf_dir(str(tmp_path), limit=7)["truncated"] is False
+
+
+def _run_main(monkeypatch, capsys, argv):
+    monkeypatch.setattr(sys, "argv", ["setup_workspace.py"] + argv)
+    rc = sw.main()
+    return rc, capsys.readouterr().out
+
+
+def test_cli_check_pdf_dir_prints_one_json_object_without_plugin_root(tmp_path, monkeypatch, capsys):
+    (tmp_path / "a.pdf").write_bytes(b"%PDF-")
+    rc, out = _run_main(monkeypatch, capsys, ["--check-pdf-dir", str(tmp_path)])
+    assert rc == 0
+    assert out.count("\n") == 1 and json.loads(out)["pdf_count"] == 1
+    assert out.isascii()
+
+
+def test_cli_probe_zotero_prints_one_json_object_and_touches_nothing(tmp_path, monkeypatch, capsys):
+    _patch_opener(monkeypatch, urllib.error.URLError(ConnectionRefusedError()))
+    monkeypatch.chdir(tmp_path)
+    rc, out = _run_main(monkeypatch, capsys, ["--probe-zotero"])
+    assert rc == 0
+    assert json.loads(out)["zotero"] == "unavailable"
+    assert list(tmp_path.iterdir()) == []
+
+
+def test_cli_nonascii_path_stays_ascii_on_stdout(tmp_path, monkeypatch, capsys):
+    d = tmp_path / "Bücher"
+    d.mkdir()
+    rc, out = _run_main(monkeypatch, capsys, ["--check-pdf-dir", str(d)])
+    assert rc == 0 and out.isascii() and json.loads(out)["is_dir"] is True
+
+
+def test_cli_apply_still_requires_plugin_root(monkeypatch, capsys):
+    import pytest
+    monkeypatch.setattr(sys, "argv", ["setup_workspace.py"])
+    with pytest.raises(SystemExit) as e:
+        sw.main()
+    assert e.value.code == 2
+
+
+def test_cli_probe_flags_do_not_combine_with_apply_flags(tmp_path, monkeypatch):
+    import pytest
+    for argv in (["--probe-zotero", "--check-pdf-dir", str(tmp_path)],
+                 ["--probe-zotero", "--dry-run"],
+                 ["--check-pdf-dir", str(tmp_path), "--plugin-root", str(tmp_path)]):
+        monkeypatch.setattr(sys, "argv", ["setup_workspace.py"] + argv)
+        with pytest.raises(SystemExit) as e:
+            sw.main()
+        assert e.value.code == 2
+
+
+def test_new_env_keys_pass_through_the_scaffold_as_comments(tmp_path, monkeypatch):
+    # The two consent keys are not API keys: the scaffold must keep them
+    # commented (an active empty line would be an override trap, and an
+    # unwritten key must mean "no consent").
+    for k in sw.ENV_KEYS:
+        monkeypatch.delenv(k, raising=False)
+    plugin_root = Path(sw.__file__).parent.parent.parent.parent
+    ws = tmp_path / "ws"
+    ws.mkdir()
+    sw.apply(workspace=ws, plugin_root=plugin_root, dry_run=False)
+    from dotenv import dotenv_values
+    text = (ws / ".env").read_text(encoding="utf-8")
+    assert "# PHILLIT_ZOTERO=" in text and "# PHILLIT_PDF_DIR=" in text
+    assert dotenv_values(ws / ".env") == {}
+    assert "PHILLIT_FULLTEXT_LICENSED_ONLY" not in (plugin_root / ".env.example").read_text(encoding="utf-8")
+
+
+def test_skill_documents_both_consent_questions_and_the_flags():
+    skill = (Path(sw.__file__).parent.parent / "SKILL.md").read_text(encoding="utf-8")
+    for needle in ("--probe-zotero", "--check-pdf-dir", "PHILLIT_ZOTERO=on", "PHILLIT_PDF_DIR",
+                   "Allow other applications on this computer to communicate with Zotero"):
+        assert needle in skill, needle

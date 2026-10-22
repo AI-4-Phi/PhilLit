@@ -6,12 +6,19 @@ API keys not already set in the environment (skipped entirely when the environme
 has them all), and safely merges PhilLit's permission rules into
 ./.claude/settings.json (parse, merge, dedupe, back up, write atomically; fail
 closed on malformed existing JSON).
+
+Two read-only helper modes for the setup skill's optional full-text sources each
+print one JSON object and change nothing: --probe-zotero (does Zotero's local API
+answer?) and --check-pdf-dir PATH (does the folder exist and hold PDFs?). The skill
+itself writes PHILLIT_ZOTERO / PHILLIT_PDF_DIR into .env, as it does for API keys.
 """
 import argparse
 import json
 import os
 import shutil
 import sys
+import urllib.error
+import urllib.request
 from pathlib import Path
 
 # Keys scripts read from .env. The scaffolded file must never contain an ACTIVE
@@ -190,12 +197,105 @@ def apply(workspace: Path, plugin_root: Path, dry_run: bool) -> int:
     return 0
 
 
+ZOTERO_PROBE_URL = "http://localhost:23119/api/users/0/items?limit=1"
+ZOTERO_PROBE_TIMEOUT = 5
+PDF_SCAN_FILE_LIMIT = 50_000
+
+
+class _NoRedirect(urllib.request.HTTPRedirectHandler):
+    """Refuse redirects: a 3xx surfaces as an HTTPError instead of being followed."""
+
+    def redirect_request(self, *args, **kwargs):
+        return None
+
+
+def probe_zotero(url: str = ZOTERO_PROBE_URL, timeout: float = ZOTERO_PROBE_TIMEOUT) -> dict:
+    """Ask Zotero 7's local API for one item. Never raises.
+
+    No proxy (a proxy variable must not capture a localhost call) and no redirects.
+    Returns {"zotero": "ok"|"unavailable", "detail": str}.
+    """
+    opener = urllib.request.build_opener(urllib.request.ProxyHandler({}), _NoRedirect())
+    try:
+        with opener.open(urllib.request.Request(url), timeout=timeout) as resp:
+            body = resp.read(1_000_000)
+            status = resp.status
+    except urllib.error.HTTPError as e:
+        if e.code == 403:
+            return {"zotero": "unavailable",
+                    "detail": "Zotero is running but its local API is switched off (HTTP 403)"}
+        return {"zotero": "unavailable", "detail": f"Zotero answered with HTTP {e.code}"}
+    except (urllib.error.URLError, OSError, ValueError) as e:
+        reason = getattr(e, "reason", e)
+        return {"zotero": "unavailable",
+                "detail": f"No answer from Zotero on this computer ({type(reason).__name__})"}
+    except Exception as e:  # http.client errors, e.g. a non-HTTP service on the port
+        return {"zotero": "unavailable", "detail": f"Unexpected answer ({type(e).__name__})"}
+    if status != 200:
+        return {"zotero": "unavailable", "detail": f"Zotero answered with HTTP {status}"}
+    try:
+        ok = isinstance(json.loads(body.decode("utf-8")), list)
+    except (ValueError, UnicodeDecodeError):
+        ok = False
+    if not ok:
+        return {"zotero": "unavailable", "detail": "The service on port 23119 is not Zotero's local API"}
+    return {"zotero": "ok", "detail": "Zotero's local API answered"}
+
+
+def _strip_quotes(text: str) -> str:
+    text = text.strip()
+    while len(text) >= 2 and text[0] == text[-1] and text[0] in "\"'":
+        text = text[1:-1].strip()
+    return text
+
+
+def check_pdf_dir(raw: str, limit: int = PDF_SCAN_FILE_LIMIT) -> dict:
+    """Report whether `raw` is a folder and how many PDFs sit under it.
+
+    Counts *.pdf case-insensitively, recursively, skipping symbolic links (files and
+    folders), and stops after `limit` files seen. The path is reported absolute with
+    forward slashes. Never raises on an unreadable tree.
+    """
+    text = _strip_quotes(raw)
+    path = os.path.abspath(os.path.expanduser(text)) if text else ""
+    shown = path.replace("\\", "/")
+    is_dir = bool(path) and os.path.isdir(path)
+    out = {"exists": bool(path) and os.path.exists(path), "is_dir": is_dir,
+           "pdf_count": 0, "truncated": False, "path": shown}
+    if not is_dir:
+        return out
+    seen = 0
+    for root, dirs, files in os.walk(path, followlinks=False):
+        for name in files:
+            seen += 1
+            if seen > limit:
+                out["truncated"] = True
+                return out
+            if name.lower().endswith(".pdf") and not os.path.islink(os.path.join(root, name)):
+                out["pdf_count"] += 1
+    return out
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--plugin-root", required=True)
+    parser.add_argument("--plugin-root", help="required unless --probe-zotero / --check-pdf-dir is used")
     parser.add_argument("--workspace", default=".")
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--probe-zotero", action="store_true",
+                        help="print whether Zotero's local API answers, as one JSON object")
+    parser.add_argument("--check-pdf-dir", metavar="PATH",
+                        help="print whether PATH is a folder and how many PDFs it holds, as one JSON object")
     args = parser.parse_args()
+    if args.probe_zotero or args.check_pdf_dir is not None:
+        if args.probe_zotero and args.check_pdf_dir is not None:
+            parser.error("--probe-zotero and --check-pdf-dir are separate calls")
+        if args.dry_run or args.plugin_root:
+            parser.error("--probe-zotero / --check-pdf-dir do not combine with --plugin-root or --dry-run")
+        result = probe_zotero() if args.probe_zotero else check_pdf_dir(args.check_pdf_dir)
+        print(json.dumps(result))
+        return 0
+    if not args.plugin_root:
+        parser.error("--plugin-root is required")
     return apply(Path(args.workspace).resolve(), Path(args.plugin_root).resolve(), args.dry_run)
 
 

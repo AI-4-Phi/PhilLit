@@ -86,6 +86,54 @@ def check_env_vars() -> dict[str, dict[str, Any]]:
     return results
 
 
+ZOTERO_PROBE_URL = "http://localhost:23119/api/users/0/items?limit=1"
+
+
+def check_fulltext_sources(probe: bool = True) -> dict[str, dict[str, Any]]:
+    """Report the two optional full-text sources. Informational only: never a failure.
+
+    Zotero: PHILLIT_ZOTERO on, plus (when `probe`) whether the local API answers.
+    PDF folder: PHILLIT_PDF_DIR set, plus whether it exists as a folder. The probe
+    mirrors skills/setup/scripts/setup_workspace.py probe_zotero (no cross-skill
+    runtime import); it is localhost only.
+    """
+    results: dict[str, dict[str, Any]] = {}
+
+    zotero_on = os.environ.get("PHILLIT_ZOTERO", "").strip().lower() in _VET_ON_TOKENS
+    if not zotero_on:
+        results["zotero"] = {"enabled": False, "reachable": None,
+                             "message": "Not enabled (optional; /phillit:setup can set it up)"}
+    elif not probe:
+        results["zotero"] = {"enabled": True, "reachable": None,
+                             "message": "Enabled; reachability not checked (--skip-api)"}
+    else:
+        import requests
+        try:
+            with requests.Session() as session:
+                session.trust_env = False  # no proxy for a localhost call
+                resp = session.get(ZOTERO_PROBE_URL, timeout=5, allow_redirects=False)
+            reachable = resp.status_code == 200
+            message = ("Enabled; Zotero's local API answers" if reachable else
+                       f"Enabled, but Zotero's local API answered HTTP {resp.status_code}"
+                       " (is the local API switched on in Zotero's settings?)")
+        except requests.RequestException:
+            reachable = False
+            message = "Enabled, but Zotero is not answering (is Zotero running?)"
+        results["zotero"] = {"enabled": True, "reachable": reachable, "message": message}
+
+    raw = os.environ.get("PHILLIT_PDF_DIR", "").strip().strip("\"'").strip()
+    if not raw:
+        results["pdf_folder"] = {"set": False, "exists": None,
+                                 "message": "Not set (optional; /phillit:setup can set it up)"}
+    else:
+        exists = os.path.isdir(os.path.expanduser(raw))
+        results["pdf_folder"] = {
+            "set": True, "exists": exists, "path": raw.replace("\\", "/"),
+            "message": "Set; folder found" if exists else "Set, but the folder was not found",
+        }
+    return results
+
+
 def check_dependencies() -> dict[str, dict[str, Any]]:
     """Check Python package dependencies."""
     required_packages = {
@@ -380,7 +428,8 @@ def check_api_connectivity(verbose: bool = False) -> dict[str, dict[str, Any]]:
     return results
 
 
-def print_results(env_results: dict, dep_results: dict, api_results: dict, verbose: bool = False) -> bool:
+def print_results(env_results: dict, dep_results: dict, api_results: dict, verbose: bool = False,
+                  fulltext_results: dict | None = None) -> bool:
     """Print results in human-readable format. Returns True if all checks passed."""
     all_passed = True
 
@@ -422,6 +471,13 @@ def print_results(env_results: dict, dep_results: dict, api_results: dict, verbo
             # Only fail on required APIs
             if api in ("brave", "crossref"):
                 all_passed = False
+
+    if fulltext_results:
+        print("\nOptional Full-Text Sources (informational)")
+        print("=" * 40)
+        labels = {"zotero": "Zotero", "pdf_folder": "PDF folder"}
+        for name, info in fulltext_results.items():
+            print(f"[INFO] {labels.get(name, name)}: {info['message']}")
 
     print()
     if all_passed:
@@ -466,12 +522,15 @@ def main():
     else:
         api_results = check_api_connectivity(verbose=args.verbose)
 
+    fulltext_results = check_fulltext_sources(probe=not args.skip_api)
+
     # Output results
     if args.json:
         output = {
             "environment": env_results,
             "dependencies": dep_results,
             "apis": api_results,
+            "fulltext_sources": fulltext_results,
         }
 
         status, optional_failures = _json_status(env_results, dep_results, api_results)
@@ -481,7 +540,8 @@ def main():
         print(json.dumps(output, indent=2))
         sys.exit(0 if output["status"] == "ok" else 1)
     else:
-        all_passed = print_results(env_results, dep_results, api_results, verbose=args.verbose)
+        all_passed = print_results(env_results, dep_results, api_results, verbose=args.verbose,
+                                 fulltext_results=fulltext_results)
         sys.exit(0 if all_passed else 1)
 
 
