@@ -128,10 +128,14 @@ phillit-service re-vendor.
   needs a cached index (file name, first-page text), not a scan per review.
   Rejected: no `--pdf` route; an institutional proxy (logins and
   terms-of-use risk a distributable plugin should not carry).
+- **phillit-service: openly licensed copies plus user uploads.** The
+  service has no Zotero or local folder; it takes OpenAlex and Semantic
+  Scholar copies only when they carry an open (CC) licence, which OpenAlex
+  reports per location, and lets users upload their own PDFs for a review.
+  The licence filter is shared engine code; uploads are the service's own
+  work. Rejected: off in the service for now; licensed OA without uploads.
 
 **Open questions for Johannes** (to adjudicate one at a time):
-8. phillit-service: full text on a server has a different legal standing.
-   Plugin-only, OA-only in the service, or user upload only?
 9. Storage: `intermediate_files/` is published into `reviews/`. Keep the PDF
    and text there, or delete them at publish? The example reviews must never
    ship them.
