@@ -228,7 +228,7 @@ def _heal_abstract(fields: dict, ledger_entry: dict, debug: bool = False):
     try:
         if source == "ndpr":
             fetched, _ = eb.resolve_ndpr_abstract(
-                fields.get("title", ""), eb.get_author_last_name(entry), debug)
+                fields.get("title", ""), eb.get_ndpr_surname(entry), debug)
         else:
             fetched, _ = eb.resolve_abstract_for_entry(
                 entry,
@@ -428,11 +428,11 @@ def _claimed_source_unprobeable(fields: dict, claimed: str) -> bool:
       would demote an honest attestation, the one error direction that
       costs a tier. Both need a field the entry's own enrichment must have
       had (both resolvers are DOI-gated), i.e. a later deletion.
-    * `ndpr` with no title or no author surname -- NDPR resolution is a
-      title search over review essays, accepted only when the review's
-      header names the author; `_probe_candidate` gates on the stripped
-      title and `eb.get_author_last_name`, so the same expressions are
-      used here (parity again). An editor-only @book lands here. NOT the same
+    * `ndpr` with no title or no author or editor surname -- NDPR
+      resolution is a title search over review essays, accepted only when
+      the review's header names the author or editor; `_probe_candidate`
+      gates on the stripped title and `eb.get_ndpr_surname`, so the same
+      expressions are used here (parity again). NOT the same
       zero-network shape as s2/openalex whenever a DOI survives: those
       probes gate on DOI, so a title-less ndpr claim with a DOI would
       still reach a full corroboration's DOI-gated s2/openalex fallbacks
@@ -459,7 +459,7 @@ def _claimed_source_unprobeable(fields: dict, claimed: str) -> bool:
         return not eb.get_doi({"fields": fields})
     if claimed == "ndpr":
         return (not (fields.get("title") or "").strip()
-                or not eb.get_author_last_name({"fields": fields}))
+                or not eb.get_ndpr_surname({"fields": fields}))
     return False
 
 

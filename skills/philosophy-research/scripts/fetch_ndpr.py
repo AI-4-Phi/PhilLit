@@ -66,14 +66,18 @@ def extract_reviewed_books(soup: BeautifulSoup) -> list[dict]:
         for node in para.descendants:
             if node is em:
                 break
-            if isinstance(node, NavigableString):
+            # Exact type: Comment, CData and the like subclass it.
+            if type(node) is NavigableString:
                 before.append(str(node))
-        authors = " ".join("".join(before).split()).strip(" ,")
+        # Space-joined: a <br> or adjacent <span>s must not glue two names.
+        authors = " ".join(" ".join(before).split()).strip(" ,")
         if title:
             books.append({"authors": authors, "title": title})
     if books:
         return books
-    meta = lambda name: (soup.find("meta", {"name": name}) or {}).get("content", "").strip()
+    def meta(name):
+        tag = soup.find("meta", {"name": name})
+        return (tag.get("content") or "").strip() if tag else ""
     authors, title = meta("search_authors"), meta("search_title")
     return [{"authors": authors, "title": title}] if authors and title else []
 
@@ -146,7 +150,14 @@ def extract_review_content(html: str) -> dict:
     # Filter to substantive paragraphs (skip very short ones, metadata-like lines)
     substantive = []
     for p in all_paragraphs:
-        text = p.get_text(strip=True)
+        # The bibliographic header is identity, never summary (the
+        # <article> fallback above would otherwise include it).
+        if p.find_parent(class_="meta-item__bibliography"):
+            continue
+        # Collapse the page's own whitespace: get_text(strip=True) stripped
+        # every text node, gluing "In <em>Mind in Life</em> Evan" into
+        # "InMind in LifeEvan"; a " " separator would split "16<sup>th</sup>".
+        text = " ".join(p.get_text().split())
         # Skip very short paragraphs (likely metadata, captions, etc.)
         if len(text) < 50:
             continue
@@ -185,7 +196,8 @@ def fetch_ndpr_review(
         debug: Enable debug output
 
     Returns:
-        Dict with summary_text, paragraph_count, review_url, reviewer, review_date
+        Dict with summary_text, paragraph_count, review_url, reviewer,
+        review_date, books (the reviewed books from the page header)
     """
     if limiter is None:
         limiter = get_limiter("ndpr")

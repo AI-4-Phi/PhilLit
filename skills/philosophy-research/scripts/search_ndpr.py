@@ -225,7 +225,10 @@ def search_ndpr_candidates(
     limit: int = MAX_CANDIDATES,
 ) -> list[dict]:
     """Every sitemap review that passes the acceptance threshold, best first:
-    score, then fewest extra slug words, then sitemap order. At most `limit`.
+    score, then the author's name in the slug (the bonus saturates at 1.0),
+    then fewest extra slug words, then sitemap order. At most `limit`, so a
+    right review ranked below `limit` wrong ones is missed: a false reject,
+    never a false accept.
 
     A candidate is a slug match only. Whether the review is OF this book is
     `review_matches` on the fetched page's header.
@@ -256,10 +259,10 @@ def search_ndpr_candidates(
         # confirmed in the slug. The stopword-inflated Wallace/Adam-Smith
         # pair (0.667, no author) rejects; descriptive-slug matches pass.
         if score >= 0.75 or (confirmed and score >= 0.6):
-            ranked.append((-score, _slug_extra(title, slug), order,
+            ranked.append((-score, not confirmed, _slug_extra(title, slug), order,
                            {"url": url, "slug": slug, "score": score}))
-    ranked.sort(key=lambda r: r[:3])
-    found = [r[3] for r in ranked[:limit]]
+    ranked.sort(key=lambda r: r[:4])
+    found = [r[4] for r in ranked[:limit]]
 
     if debug:
         print(f"DEBUG: Candidates: {[c['slug'] for c in found]}", file=sys.stderr)
@@ -297,12 +300,21 @@ def review_matches(books: list[dict], title: str, surname: Optional[str]) -> boo
     """Is this NDPR review OF the book? `books` is the page's bibliographic
     header (`fetch_ndpr.extract_review_content`), one dict per reviewed book.
 
-    One header book must carry the surname as a whole word in its authors
-    AND the same main-title content words (before the first colon, function
-    words dropped) as `title`. Plain text in: decode BibTeX first. The year
-    is not compared: NDPR reviews an edition, and 3 of the 6 right matches
-    in the measured sample were dated one year off the bib."""
-    if not surname or not title:
+    The header must name exactly one book, which must carry the surname as
+    a whole word in its authors AND the same main-title content words
+    (before the first colon, function words dropped) as `title`. A review
+    of several books is refused: its opening paragraphs, the text used as
+    the abstract, may be about another of them. Plain text in: decode
+    BibTeX first. The year is not compared: NDPR reviews an edition, and 3
+    of the 6 right matches in the measured sample were dated one year off
+    the bib.
+
+    Residuals, both false accepts: subtitles, volumes and editions are not
+    compared, so the same author's two books with one main title
+    ("Collected Papers: Volume I" and "... Volume II") are one book here;
+    and the surname is matched anywhere in the authors text, so it also
+    meets a reviewed author's given name ("Paul" in "Paul Ricoeur")."""
+    if not surname or not title or len(books) != 1:
         return False
     want = _main_title_tokens(title)
     needles = {n for n in _name_words(surname) if n.strip()}

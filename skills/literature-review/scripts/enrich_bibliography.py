@@ -274,6 +274,16 @@ def resolve_abstract_for_entry(
     )
 
 
+def get_ndpr_surname(entry: dict) -> Optional[str]:
+    """The surname NDPR identity is checked against: the first author's,
+    else the first editor's. NDPR heads an edited volume's review with its
+    editors ("Robert Rosenberger and Peter-Paul Verbeek (eds.)"), so the
+    header check holds for either. NDPR-only: the API sources keep
+    `get_author_last_name`."""
+    return (get_author_last_name(entry)
+            or get_author_last_name({'fields': {'author': entry['fields'].get('editor') or ''}}))
+
+
 def resolve_ndpr_abstract(
     title: str,
     author: Optional[str] = None,
@@ -288,7 +298,7 @@ def resolve_ndpr_abstract(
     2026-10-22: 10 of 11 NDPR abstracts in the service's delivered reviews
     and 2 of 7 here came from a review of another book). So each candidate
     page's bibliographic header must name the book (`review_matches`), and
-    with no author surname there is no NDPR text at all. This is the one
+    with no surname (callers pass `get_ndpr_surname`) there is no NDPR text. This is the one
     gate on every path to an NDPR abstract: enrichment, the corroboration
     probe and the barrier heal all call this function.
 
@@ -312,15 +322,23 @@ def resolve_ndpr_abstract(
         return None, None
 
     for match in search_ndpr.search_ndpr_candidates(title, surname, debug=debug):
-        result = fetch_ndpr.fetch_ndpr_review(match["url"], debug=debug)
-        if not search_ndpr.review_matches(result.get("books") or [], title, surname):
+        try:
+            result = fetch_ndpr.fetch_ndpr_review(match["url"], debug=debug)
+        except LookupError:
+            continue      # a stale sitemap URL (404) says nothing of the rest
+        books = result.get("books") or []
+        if not books:
+            # Not "another book": a page template change would read as
+            # NDPR having no reviews at all, so say so where it is seen.
+            log_progress(f"  NDPR: {match['slug']} has no bibliographic header")
+            continue
+        if not search_ndpr.review_matches(books, title, surname):
             if debug:
                 log_progress(f"  NDPR: {match['slug']} reviews another book")
             continue
         summary = result.get("summary_text", "")
         if summary and len(summary) > 50:
             return summary, "ndpr"
-        return None, None
 
     if debug:
         log_progress(f"  NDPR: no review of '{title}'")
@@ -419,7 +437,9 @@ def corroborate_abstract(
         for _attempt in range(2):  # one retry on transport, then give up
             status, fetched = _probe_candidate(
                 source, get_abstract, ctx,
-                doi=doi, title=title, author=author, year=year,
+                doi=doi, title=title,
+                author=get_ndpr_surname(view) if source == 'ndpr' else author,
+                year=year,
                 s2_api_key=s2_api_key, openalex_email=openalex_email,
                 core_api_key=core_api_key, debug=debug,
             )
@@ -492,6 +512,7 @@ def _probe_candidate(
                 api_key=core_api_key, limiter=ctx['core_limiter'],
                 backoff=ctx['other_backoff'], debug=debug)
         if source == 'ndpr':
+            # `author` is get_ndpr_surname's here (author, else editor).
             if not title or not author:
                 return ga.PROBE_EMPTY, None
             # resolve_ndpr_abstract propagates transport errors
@@ -968,7 +989,7 @@ def enrich_bibliography(
         log_progress(f"Trying NDPR for {len(book_entries_without_abstract)} book(s) without abstracts...")
         for idx, entry in book_entries_without_abstract:
             title = entry['fields'].get('title', '')
-            author = get_author_last_name(entry)
+            author = get_ndpr_surname(entry)
             try:
                 abstract, source = resolve_ndpr_abstract(title, author, debug)
             except Exception as e:

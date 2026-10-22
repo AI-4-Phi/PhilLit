@@ -44,6 +44,9 @@ HEADERS = [
      "Friedman, Marilyn", "Autonomy, Gender, and Politics", True),
     # the bib carries a subtitle the header lacks
     ("Meaning in Life: An Analytic Study", "Metz", "Thaddeus Metz", "Meaning in Life", True),
+    # a hyphen folds to a space on both sides
+    ("Being-in-the-World: A Commentary", "Dreyfus",
+     "Hubert L. Dreyfus", "Being in the World", True),
     # wrong book
     ("Mind in Life: Biology, Phenomenology, and the Sciences of Mind", "Thompson",
      "McCulloch, Gregory", "The Life of the Mind: An Essay on Phenomenological Externalism", False),
@@ -74,10 +77,11 @@ def test_review_matches_measured_headers(title, surname, authors, book_title, ex
     assert search_ndpr.review_matches(books, title, surname) is expected
 
 
-def test_review_matches_any_book_of_a_multi_book_review():
+def test_review_matches_refuses_a_multi_book_review():
+    """Its opening paragraphs may be about the other book."""
     books = [{"authors": "Jeff Kochan", "title": "Science as Social Existence"},
              {"authors": "Helen E. Longino", "title": "Science as Social Knowledge"}]
-    assert search_ndpr.review_matches(
+    assert not search_ndpr.review_matches(
         books, "Science as Social Knowledge: Values and Objectivity", "Longino")
 
 
@@ -117,6 +121,12 @@ def test_specific_slug_outranks_an_earlier_tie(monkeypatch):
     assert search_ndpr.search_ndpr(
         "Mind in Life: Biology, Phenomenology, and the Sciences of Mind", "Thompson"
     )["slug"] == "mind-in-life-biology-phenomenology-and-the-sciences-of-mind"
+
+
+def test_author_in_slug_breaks_a_saturated_tie(monkeypatch):
+    _sitemap(monkeypatch, ["ethics-a-new-reading", "ethics-spinoza"])
+    found = search_ndpr.search_ndpr_candidates("Ethics: A New Reading", "Spinoza")
+    assert found[0]["slug"] == "ethics-spinoza"
 
 
 def test_candidates_are_capped_and_thresholded(monkeypatch):
@@ -170,6 +180,30 @@ def test_header_falls_back_to_the_search_meta():
                       "title": "Science as Social Existence: Heidegger and the Sociology of Scientific Knowledge"}]
 
 
+def test_authors_are_not_glued_across_tags_or_read_from_comments():
+    page = KOCHAN_PAGE.replace(
+        "<strong>Jeff Kochan, <em>",
+        "<strong><span>Jeff</span><br><span>Kochan</span><!-- Smith --><![CDATA[Jones]]>, <em>")
+    assert fetch_ndpr.extract_review_content(page)["books"][0]["authors"] == "Jeff Kochan"
+
+
+def test_header_is_never_summary_text():
+    """With no entry-content div the <article> is the content area, and a
+    long header paragraph used to pass the substantive-paragraph filter."""
+    page = KOCHAN_PAGE.replace('class="page-primary article-content entry-content"', "")
+    result = fetch_ndpr.extract_review_content(page)
+    assert "ISBN" not in result["summary_text"]
+    assert result["summary_text"].startswith("Jeff Kochan's book")
+
+
+def test_summary_keeps_the_spaces_around_inline_markup():
+    page = KOCHAN_PAGE.replace(
+        "<p>Jeff Kochan's book is",
+        "<p>In <em>Science as Social Existence</em> Jeff Kochan, writing in the 16<sup>th</sup> year, says his book is")
+    text = fetch_ndpr.extract_review_content(page)["summary_text"]
+    assert text.startswith("In Science as Social Existence Jeff Kochan, writing in the 16th year")
+
+
 def test_no_header_means_no_books():
     page = "<html><body><article><p>" + "x" * 80 + "</p></article></body></html>"
     assert fetch_ndpr.extract_review_content(page)["books"] == []
@@ -204,12 +238,20 @@ def test_resolver_returns_nothing_when_no_candidate_is_the_book():
 
 
 def test_resolver_needs_a_surname():
-    """An editor-only @book has no author surname: no NDPR text, no search."""
     import enrich_bibliography as eb
     search = MagicMock()
     with patch("search_ndpr.search_ndpr_candidates", search):
         assert eb.resolve_ndpr_abstract("Some Book", None) == (None, None)
     search.assert_not_called()
+
+
+def test_ndpr_surname_falls_back_to_the_editor():
+    """NDPR heads an edited volume's review with its editors."""
+    import enrich_bibliography as eb
+    assert eb.get_ndpr_surname({"fields": {"author": "Thompson, Evan",
+                                           "editor": "Doe, Jane"}}) == "Thompson"
+    assert eb.get_ndpr_surname({"fields": {"editor": "Rosenberger, Robert and Verbeek, Peter-Paul"}}) == "Rosenberger"
+    assert not eb.get_ndpr_surname({"fields": {"title": "Anonymous"}})
 
 
 def test_resolver_decodes_latex_before_matching():
@@ -220,3 +262,34 @@ def test_resolver_decodes_latex_before_matching():
                return_value=_review("Alva Noë", "Action in Perception", "RIGHT " * 20)):
         text, source = eb.resolve_ndpr_abstract("Action in Perception", 'No{\\"e}')
     assert source == "ndpr"
+
+
+def test_resolver_skips_a_dead_or_empty_candidate():
+    """A stale sitemap URL (404) or a right page with no usable text must
+    not stop the search before a later candidate."""
+    import enrich_bibliography as eb
+    cands = [{"url": "u/gone", "slug": "gone", "score": 1.0},
+             {"url": "u/empty", "slug": "empty", "score": 1.0},
+             {"url": "u/right", "slug": "right", "score": 1.0}]
+
+    def fetch(url, debug=False):
+        if url == "u/gone":
+            raise LookupError("NDPR review not found")
+        if url == "u/empty":
+            return _review("Evan Thompson", "Mind in Life", "")
+        return _review("Evan Thompson", "Mind in Life", "RIGHT " * 20)
+
+    with patch("search_ndpr.search_ndpr_candidates", return_value=cands), \
+         patch("fetch_ndpr.fetch_ndpr_review", side_effect=fetch):
+        text, source = eb.resolve_ndpr_abstract("Mind in Life", "Thompson")
+    assert source == "ndpr" and text.startswith("RIGHT")
+
+
+def test_resolver_reports_a_page_without_a_header(capsys):
+    import enrich_bibliography as eb
+    cands = [{"url": "u/x", "slug": "x", "score": 1.0}]
+    with patch("search_ndpr.search_ndpr_candidates", return_value=cands), \
+         patch("fetch_ndpr.fetch_ndpr_review",
+               return_value={"summary_text": "T " * 40, "books": []}):
+        assert eb.resolve_ndpr_abstract("Mind in Life", "Thompson") == (None, None)
+    assert "no bibliographic header" in capsys.readouterr().err

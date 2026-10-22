@@ -1921,3 +1921,11 @@ def test_is_one_brace_group_recognizes_only_a_single_outer_group():
     assert f("{}") is True
     # escaped brace counted as structural: accepted limitation
     assert f(r"{Research \{Lab}") is False
+
+
+def test_ndpr_probe_falls_back_to_the_editor_surname():
+    """An edited volume's NDPR header names its editors (get_ndpr_surname);
+    the API sources keep the author-only surname."""
+    _, _, _, stubs = _corroborate(_fields(abstract_source="ndpr", author=None,
+                                          editor="Roe, Ann and Poe, Bo"))
+    assert stubs["ndpr"].kwargs_seen[0].get("author") == "Roe"
