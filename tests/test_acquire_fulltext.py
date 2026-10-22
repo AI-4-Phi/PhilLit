@@ -335,6 +335,15 @@ class TestSourceOrder:
         assert [t["source"] for t in data["tried"]] == ["zotero"]
         assert not any("example" in u for u in http.urls())
 
+    def test_doi_alone_uses_the_zotero_items_title_when_the_pdf_lacks_its_doi(
+            self, http, workdir, capsys, tmp_path):
+        write_env("PHILLIT_ZOTERO=on\n")
+        setup_zotero(http, tmp_path, [work_pdf(doi=None)])
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert data["status"] == "acquired" and data["source"] == "zotero"
+        sidecar = ft.validate_record(workdir / ft.STORE_REL, data["slug"])
+        assert not sidecar.identity.get("title")   # the caller's identity is stored
+
     def test_folder_before_open_access(self, http, workdir, capsys, tmp_path):
         self._all_sources(http, tmp_path)
         http.add(f"{ZBASE}/items", FakeResponse(payload=[]))

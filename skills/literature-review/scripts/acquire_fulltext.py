@@ -449,10 +449,19 @@ def source_zotero(identity: dict, settings: "Settings", deadline: Deadline) -> S
                 key = item.get("key") if isinstance(item, dict) else None
                 if key and key not in seen and zotero_item_matches(item, identity):
                     seen.add(key)
-                    matched.append(key)
+                    matched.append((key, item.get("data") or {}))
             if matched:
                 break
-        for key in matched:
+        for key, idata in matched:
+            # A DOI-matched item supplies a title and surname the caller did
+            # not give, for the PDF check's title fallback only (a PDF that
+            # does not print its DOI). The sidecar keeps the caller's identity;
+            # the barrier re-checks against the bib entry.
+            check_identity = dict(identity)
+            if not check_identity.get("title"):
+                check_identity["title"] = idata.get("title") or ""
+            if not check_identity.get("surname"):
+                check_identity["surname"] = _item_surname(idata)
             children = _zotero_json(f"/items/{quote(key)}/children", None, deadline)
             for child in children if isinstance(children, list) else []:
                 cdata = (child or {}).get("data") or {}
@@ -479,7 +488,7 @@ def source_zotero(identity: dict, settings: "Settings", deadline: Deadline) -> S
                     res.detail.append(f"{att}:{why}")
                     continue
                 checked += 1
-                ok, why = check_pdf(data, identity)
+                ok, why = check_pdf(data, check_identity)
                 if ok:
                     passed += 1
                     if not res.hits:
