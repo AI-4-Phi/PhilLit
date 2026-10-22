@@ -128,11 +128,12 @@ Scaffold a scratch workspace, then drive a full review headless:
 
 ```bash
 bash <checkout>/bin/phillit-run skills/setup/scripts/setup_workspace.py --plugin-root <checkout> --workspace .
-env -u ANTHROPIC_API_KEY claude --plugin-dir <checkout> --model sonnet \
+env -u ANTHROPIC_API_KEY CLAUDE_CODE_PRINT_BG_WAIT_CEILING_MS=0 claude --plugin-dir <checkout> --model sonnet \
   --permission-mode bypassPermissions -p "/phillit:literature-review <topic> -- Full Autopilot: run all 6 phases without asking anything."
 ```
 
 - `env -u ANTHROPIC_API_KEY` is load-bearing: if set, it silently outranks subscription auth and bills the API.
+- Add `CLAUDE_CODE_PRINT_BG_WAIT_CEILING_MS=0` to that `env`. Since CLI 2.1.307 (or earlier) every Agent dispatch is asynchronous, so the orchestrator ends its turn while the researchers run, and `-p` stops background tasks 10 minutes after the last turn (measured 2026-10-22: a run died in Phase 3 this way).
 - Bake "Full Autopilot, no questions" into the prompt — any AskUserQuestion ends a `-p` run mid-workflow.
 - Headless runs share the account's 5-hour usage window with the session driving them.
 - A barrier that outlasts the Bash tool's 10-minute ceiling moves to the background, and the `-p` orchestrator ends its turn to wait for it: that ends the run, and the barrier dies with it. Run the barrier from a shell (`bash <checkout>/bin/phillit-run skills/literature-review/scripts/evidence_barrier.py "<workdir>" --domains N`, from the workspace), then relaunch headless with "resume the active review".
