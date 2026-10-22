@@ -528,7 +528,7 @@ def test_fulltext_tier_reaches_every_prompt_that_must_act_on_it():
             '"[workdir]/literature-[project-name].bib" --workdir "[workdir]" '
             '--evidence-report') in phase6
     assert "no `FAIL` and no `FIX` line. The `WARN` lines are advisory" in phase6
-    assert "`WARN uncited-fulltext`: the quoted words are in the full text" in phase6
+    assert "`WARN uncited-fulltext`: the quoted words are also in the full text" in phase6
     assert "[FULLTEXT-LOST]" in phase6
     revision = skill[skill.index("## Revising a Delivered Review"):]
     assert "REQUIRED quotation gate" in revision

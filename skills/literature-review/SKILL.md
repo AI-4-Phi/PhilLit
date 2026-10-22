@@ -504,7 +504,7 @@ A resume that starts at step 8 cannot reproduce the split's `SPLIT-*` lines, ded
    - `FAIL licence-lost`: the work no longer has a verified full text (the line says why). Cut the quotation, and check the sentences around it against what the work's tier now licenses.
    - `FIX page`: drop the page locator or correct it to the page the text gives; never cut the quotation for it. A roman-numeral or otherwise unrecognized locator: drop it.
    - `FAIL unclosed-quote`: close the quotation mark where the quotation ends, or remove it; then the gate checks the quotation.
-   - `WARN uncited-fulltext`: the quoted words are in the full text of the work the line names, on the page it gives. Add that work's citation to the sentence and run the gate again, so it checks the quotation's page and the caps.
+   - `WARN uncited-fulltext`: the quoted words are also in the full text of the work the line names (several works when it names several), at the place it gives. Decide which of them, if any, the words quote. If one does, cite only that work, then rerun as below, so the gate checks the quotation's page and the caps. If none does (the review's own question or phrase, a match by chance), leave the line.
    - `WARN uncited`: decide whether the words quote a work. If they do, add its citation (and run the gate again if that work has a full text). If they are a question, a scare quote or the review's own phrase, leave them.
    - `WARN cap`: shorten the quotation where you can. It does not block.
 

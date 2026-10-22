@@ -23,7 +23,9 @@ barrier verified:
   (works grouped across keys and slugs: same work key, or same DOI).
 - `WARN uncited-fulltext`: a quoted span of 4 words or more with no citation
   in its sentence or the next, whose words a licensed full text holds; the
-  line names the work and the page. It is a quotation of that work.
+  line names each such work and where its text has the words. Usually a
+  quotation of that work, but a common phrase or a question can match by
+  chance, and one work can quote another.
 - `WARN uncited`: any other such span (often a question or a scare-quoted
   thesis, sometimes a quotation of a work with no full text).
 
@@ -38,10 +40,11 @@ fabrication), pages and caps are pragmatic (ruling in
 telemetry's exit code means.
 
 COMPLETION RULE (SKILL.md Phase 6): rerun until there is no FAIL and no FIX.
-The WARN lines are advisory. On `WARN uncited-fulltext` the orchestrator adds
-the named citation and reruns, so the gate checks pages and caps; on `WARN
-uncited` it cites a quotation and leaves a question or scare quote alone;
-on `WARN cap` it shortens where possible.
+The WARN lines are advisory. On `WARN uncited-fulltext` the orchestrator
+decides which named work, if any, the words quote, cites it and reruns, so
+the gate checks pages and caps; on `WARN uncited` it cites a quotation and
+leaves a question or scare quote alone; on `WARN cap` it shortens where
+possible.
 
 OWNERS USED, never re-implemented: quote matching, page maps, text reading
 and hashing, identity comparison (`fulltext.py`); citation resolution
@@ -57,11 +60,15 @@ RESIDUALS (accepted, visible):
 - Uncited spans of 2 or 3 words are not reported (scare quotes).
 - An uncited MISQUOTATION of a full-text work matches no text, so it is only
   an advisory `WARN uncited`: nothing forces it to be cited and checked. A
-  blocking `WARN uncited` would close this but cost extra turns on most
-  reviews (70 lines in 27 of 43 delivered reviews, about half of them quoted
+  blocking `WARN uncited` would force a response to it, at the cost of
+  extra turns on most reviews (70 lines in 27 of 43 delivered reviews, about half of them quoted
   questions).
-- An uncited span a full text holds does not count toward the per-work cap
-  until it is cited.
+- An uncited span a full text holds counts toward neither cap until it is
+  cited.
+- A span whose sentence (or the next) cites only works WITHOUT a full text
+  is never searched: `"<Singer's words>" (Regan 1983)` gets no line at all.
+- A full-text work with no surname or no four-digit year is not citable for
+  this gate, so its text is not searched for uncited spans either.
 - A block quotation (`> ...`) without quotation marks is not checked (an
   opening mark with no close in its paragraph is `FAIL unclosed-quote`).
 - "Next sentence" attribution stays inside the paragraph.
@@ -603,8 +610,10 @@ def run(md: str, bib_text: str, report: dict, workdir: Path) -> tuple[list[str],
               "fail_unclosed_quote": 0, "fail_licence_lost": 0, "fail_verbatim": 0,
               "fail_bracket": 0, "fail_ellipsis": 0, "fix_page": 0, "warn_cap": 0,
               "warn_uncited": 0, "warn_uncited_fulltext": 0}
+    # Only citable works: citing one the gate cannot resolve would leave the
+    # line in place on every rerun.
     uncited_sources = [(k, "fulltext", licence[k][0], page_maps[k]) for k in sorted(watched)
-                       if licence[k][0] is not None]
+                       if licence[k][0] is not None and entries[k]["citable"]]
 
     def line_no(pos: int) -> int:
         return md.count("\n", 0, pos) + 1
@@ -640,10 +649,10 @@ def run(md: str, bib_text: str, report: dict, workdir: Path) -> tuple[list[str],
         shown = _show(span)
         if not cites:
             if _words(span) >= MIN_UNCITED_WORDS:
-                # Words a licensed text holds are a quotation of that work for
-                # certain: name the work and page so the citation can be added
-                # (the rerun then checks pages and caps). Anything else is left
-                # to the orchestrator's judgment (questions, scare quotes).
+                # Words a licensed text holds are most likely a quotation of
+                # that work: name the work and where, so the orchestrator can
+                # cite it (the rerun then checks pages and caps). Anything else
+                # is left to its judgment (questions, scare quotes).
                 hits, _form_error = _match_quote(_clean_span(span), uncited_sources)
                 if hits:
                     found = "; ".join(f"{k} ({_pages_desc(text, occ)})"

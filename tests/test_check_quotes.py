@@ -332,6 +332,14 @@ class TestAttribution:
         assert code == 0
         assert lines == ['WARN uncited: "the capacity for suffering is the vital characteristic" [line 5]']
 
+    def test_uncited_span_in_an_uncitable_work_is_plain(self, tmp_path, capsys):
+        f = Fix(tmp_path)
+        f.add_fulltext("singerfc", year="forthcoming", doi="10.1000/al.fc")
+        code, lines, _ = f.run(doc(
+            'Some hold that "the capacity for suffering is the vital characteristic".'), capsys)
+        assert code == 0
+        assert lines == ['WARN uncited: "the capacity for suffering is the vital characteristic" [line 5]']
+
     def test_uncited_full_text_match_does_not_count_toward_the_work_cap(self, fx, capsys):
         cap = CAP_SENTENCE.rstrip(".")
         body = " ".join(f'Some hold "{cap}" again.' for _ in range(7))

@@ -64,8 +64,9 @@ evidence.
   three (pages and caps would cut accurate quotes); telemetry only (a
   misquotation is a fabrication).
   An uncited quotation is advisory too. When a licensed full text holds its
-  words, the gate names the work and page and the orchestrator adds the
-  citation, so the quotation is checked; any other uncited span (mostly
+  words, the gate names the work and page, and the orchestrator cites the
+  work the words quote (none, if the match is by chance), so the quotation
+  is checked; any other uncited span (mostly
   quoted questions and scare quotes) is left to the orchestrator's
   judgment. Rejected: blocking on every uncited span of 4+ words (70 lines
   in 27 of 43 delivered reviews, about half of them quoted questions; extra
