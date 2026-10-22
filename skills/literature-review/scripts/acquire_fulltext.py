@@ -37,8 +37,8 @@ winning source: the first is kept and the rest are reported
 the folder's 20-candidate limit.
 
 CONSENT. Zotero and the folder are the user's own files, so they are never
-touched without their workspace `.env` keys, which `/phillit:setup` writes
-on consent: `PHILLIT_ZOTERO` (1/true/yes/on) and `PHILLIT_PDF_DIR`. Without
+touched without their workspace `.env` keys, which are written only on the
+user's consent: `PHILLIT_ZOTERO` (1/true/yes/on) and `PHILLIT_PDF_DIR`. Without
 a key, the source reports `disabled` and makes no call and no file read.
 Paywalled copies come only from the user's own copies (Zotero, the folder,
 `--pdf`) or open access, never a proxy or a shadow library.

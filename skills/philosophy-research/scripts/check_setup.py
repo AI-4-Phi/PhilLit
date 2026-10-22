@@ -102,7 +102,7 @@ def check_fulltext_sources(probe: bool = True) -> dict[str, dict[str, Any]]:
     zotero_on = os.environ.get("PHILLIT_ZOTERO", "").strip().lower() in _VET_ON_TOKENS
     if not zotero_on:
         results["zotero"] = {"enabled": False, "reachable": None,
-                             "message": "Not enabled (optional; /phillit:setup can set it up)"}
+                             "message": "Not enabled (optional)"}
     elif not probe:
         results["zotero"] = {"enabled": True, "reachable": None,
                              "message": "Enabled; reachability not checked (--skip-api)"}
@@ -124,7 +124,7 @@ def check_fulltext_sources(probe: bool = True) -> dict[str, dict[str, Any]]:
     raw = os.environ.get("PHILLIT_PDF_DIR", "").strip().strip("\"'").strip()
     if not raw:
         results["pdf_folder"] = {"set": False, "exists": None,
-                                 "message": "Not set (optional; /phillit:setup can set it up)"}
+                                 "message": "Not set (optional)"}
     else:
         exists = os.path.isdir(os.path.expanduser(raw))
         results["pdf_folder"] = {
