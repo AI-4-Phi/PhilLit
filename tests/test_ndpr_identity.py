@@ -187,6 +187,16 @@ def test_a_header_without_italics_uses_the_meta_it_contains():
          "title": "Science as Social Existence: Heidegger and the Sociology of Scientific Knowledge"}]
 
 
+def test_meta_fallback_refuses_a_two_book_header():
+    """Live shape: Conley's and Broad's books in one italic-free paragraph;
+    a meta pair naming only the first must not make it one book."""
+    page = (KOCHAN_PAGE.replace("<em>", "").replace("</em>", "")
+            .replace("ISBN 9781783744107.</strong>",
+                     "ISBN 9781783744107. Broad, Jacqueline, Women Philosophers of the "
+                     "Seventeenth Century, Cambridge, 2003, 204pp.</strong>"))
+    assert fetch_ndpr.extract_review_content(page)["books"] == []
+
+
 def test_meta_absent_from_the_header_is_not_used():
     page = (KOCHAN_PAGE.replace("<em>", "").replace("</em>", "")
             .replace('content="Jeff Kochan"', 'content="Dimitri Ginev"'))

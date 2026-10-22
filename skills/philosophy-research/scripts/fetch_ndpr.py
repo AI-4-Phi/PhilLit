@@ -66,9 +66,11 @@ def extract_reviewed_books(soup: BeautifulSoup) -> list[dict]:
 
     A header with no italics at all (4 of 120 random pages) falls back to
     the `search_authors` / `search_title` meta pair, but only when both
-    values occur verbatim in the header's visible text: the meta is blank
-    on some pages, and an unchecked value would be a guess. Otherwise no
-    book, and the page reads as unverifiable."""
+    values occur verbatim in the header's visible text (the meta is blank
+    on some pages, and an unchecked value would be a guess) and the header
+    carries exactly one year: the meta names one book, and a two-book
+    header without italics (Conley's and Broad's, 2002 and 2003) must not
+    pass as one. Otherwise no book, and the page reads as unverifiable."""
     books = []
     paras = soup.select(".meta-item__bibliography p")
     for para in paras:
@@ -97,7 +99,8 @@ def extract_reviewed_books(soup: BeautifulSoup) -> list[dict]:
         return " ".join((tag.get("content") or "").split()) if tag else ""
     header = " ".join(" ".join(p.get_text(" ") for p in paras).split()).casefold()
     authors, title = meta("search_authors"), meta("search_title")
-    if authors and title and authors.casefold() in header and title.casefold() in header:
+    if (authors and title and authors.casefold() in header
+            and title.casefold() in header and len(_YEAR.findall(header)) == 1):
         return [{"authors": authors, "title": title}]
     return []
 
