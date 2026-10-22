@@ -701,6 +701,38 @@ class TestLocateQuote:
         spans = ft.locate_quote("full page figure caption", text, pm)
         assert ft.span_pages(text, spans) == [("sheet", 2)]
 
+    def test_quote_across_a_footer_number_line(self):
+        pm = ft.PageMap((899, 900))
+        text = ft.render_text(["body of the page ends with these\nfinal words of it\n899",
+                               "- 900 -\nand the next page goes on here\nmore body"], pm)
+        spans = ft.locate_quote("final words of it and the next page goes on", text, pm)
+        assert spans is not None
+        assert ft.span_pages(text, spans) == [("page", 899), ("page", 900)]
+
+    def test_quote_across_a_running_head(self):
+        head = "Journal of Applied Philosophy Vol. 12"
+        pages = [f"{head}\nopening body text\nthe argument runs on to",
+                 f"{head}\nthe very next page here\nmiddle body",
+                 f"{head}\nthird page body text\nend"]
+        text = ft.render_text(pages, None)
+        assert ft.locate_quote("the argument runs on to the very next page", text) is not None
+
+    def test_page_number_inside_a_long_edge_line_is_not_furniture(self):
+        pm = ft.PageMap((899, 900))
+        long_line = "the court cited 899 earlier cases in a ruling that ran to many words here"
+        text = ft.render_text([f"body before\n{long_line}\nlast words here", "next page"], pm)
+        assert ft.locate_quote("body before last words here", text, pm) is None
+
+    def test_body_line_with_a_number_is_not_skipped(self):
+        pm = ft.PageMap((899, 900))
+        text = ft.render_text(["the page ends with these words",
+                               "In 1999 the court ruled\nthat the claim was void\nmore\nbody\ntext\nhere\nend"], pm)
+        assert ft.locate_quote("ends with these words that the claim was void", text, pm) is None
+        assert ft.locate_quote("ends with these words In 1999 the court ruled", text, pm) is not None
+        # A middle (non-edge) digits-only line is body, never furniture.
+        text2 = ft.render_text(["a\nb\nc\nthe sum is\n42\nexactly so\nd\ne\nf"], None)
+        assert ft.locate_quote("the sum is exactly so", text2) is None
+
     def test_all_occurrences(self):
         text = rendered(["the same words here", "and the same words here again"])
         found = ft.locate_quote_all("the same words here", text)

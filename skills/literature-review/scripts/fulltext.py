@@ -564,12 +564,57 @@ _BRACKETED_ELLIPSIS_RE = re.compile(r"\[\s*(?:\.(?:[ \t]?\.){2,}|…)\s*\]")
 _BRACKET_RE = re.compile(r"\[([^\[\]]*)\]")
 
 
+FURNITURE_MAX_WORDS = 12
+_DIGITS_ONLY_RE = re.compile(r"[\W_]*\d+[\W_]*")
+
+
+def _furniture_key(line: str) -> str:
+    return " ".join(re.sub(r"[0-9]", " ", fold(line)).split())
+
+
+def furniture_lines(text: str) -> list[tuple[int, int]]:
+    """(start, end) of the page-furniture lines of a rendered text, which the
+    quote fold skips so a quote may run across a page break. Only an EDGE line
+    (among the first 3 and last 3 non-empty lines of a page block) can be
+    furniture, and only when it (a) is digits-only, give or take punctuation
+    and spaces; or (b) on a `[[page N]]` block, carries N as a standalone
+    number and has at most 12 words; or (c) with digits removed, folds equal
+    to an edge line of at least 2 other page blocks (a running head or foot)
+    and has at most 12 words. A body line is never skipped, or a fabricated
+    quote could splice across real text. The rendered text is unchanged."""
+    blocks = page_blocks(text)
+    edges = []   # (block index, kind, number, start, end, line)
+    for b, (kind, num, start, end) in enumerate(blocks):
+        lines, pos = [], start
+        for line in text[start:end].split("\n"):
+            if line.strip():
+                lines.append((pos, pos + len(line), line))
+            pos += len(line) + 1
+        idx = sorted(set(range(min(3, len(lines)))) | set(range(max(0, len(lines) - 3), len(lines))))
+        edges += [(b, kind, num, *lines[i]) for i in idx]
+    seen: dict[str, set[int]] = {}
+    for b, _, _, _, _, line in edges:
+        key = _furniture_key(line)
+        if key:
+            seen.setdefault(key, set()).add(b)
+    out = []
+    for b, kind, num, a, e, line in edges:
+        short = len(line.split()) <= FURNITURE_MAX_WORDS
+        key = _furniture_key(line)
+        if (_DIGITS_ONLY_RE.fullmatch(line)
+                or (kind == "page" and short and str(num) in _NUM_RE.findall(line))
+                or (short and key and len(seen.get(key, set()) - {b}) >= 2)):
+            out.append((a, e))
+    return out
+
+
 @functools.lru_cache(maxsize=16)
 def _fold_map(s: str) -> tuple[str, tuple[int, ...], tuple[int, ...]]:
     """The quote fold with an index map: (folded, starts, ends), where folded
     char k comes from s[starts[k]:ends[k]].
 
-    Steps, identical for quote and text: marker lines become a newline; NFKC
+    Steps, identical for quote and text: marker lines and page-furniture
+    lines (`furniture_lines`; a quote has none) become a newline; NFKC
     per cluster (a base character and its combining marks); soft hyphens and
     zero-width characters dropped; every quote mark becomes `'`, every dash
     `-`; a `-` between two letters is dropped (also across a line break, so
@@ -577,8 +622,9 @@ def _fold_map(s: str) -> tuple[str, tuple[int, ...], tuple[int, ...]]:
     space."""
     toks: list[tuple[str, int, int]] = []
     pos = 0
-    for m in list(MARKER_RE.finditer(s)) + [None]:
-        seg_end = m.start() if m else len(s)
+    skips = sorted([(m.start(), m.end()) for m in MARKER_RE.finditer(s)] + furniture_lines(s))
+    for m in skips + [None]:
+        seg_end = m[0] if m else len(s)
         i = pos
         while i < seg_end:
             j = i + 1
@@ -596,8 +642,8 @@ def _fold_map(s: str) -> tuple[str, tuple[int, ...], tuple[int, ...]]:
                 toks.append((ch, i, j))
             i = j
         if m:
-            toks.append(("\n", m.start(), m.end()))
-            pos = m.end()
+            toks.append(("\n", m[0], m[1]))
+            pos = m[1]
     # Hyphen between letters dropped (with a line break between, too).
     out: list[tuple[str, int, int]] = []
     k = 0
