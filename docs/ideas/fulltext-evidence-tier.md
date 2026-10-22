@@ -70,11 +70,17 @@ phillit-service re-vendor.
   checks both hashes and re-runs the identity check, so an edited or forged
   file fails there. Rejected: a hook like `block_ledger_write.py`; it is no
   security boundary (Bash bypasses it) and costs a `fast_gate.sh` needle.
+- **Page numbers: printed pages only when the PDF confirms them against the
+  bib entry** (its page headers match the `pages` range, or the journal uses
+  article numbers and its pages start at 1); otherwise no page number.
+  Measured on 149 Zotero PDFs (`pagenum.py` in the same directory): 98 (66%)
+  confirmed; in all 12 of 110 disagreements the PDF was another version
+  (online-first, preprint) or the field held an article number. Rejected:
+  header numbers whenever consistent (87%, but 12 of 110 would cite another
+  version's pages); the PDF page index (not findable in the published
+  article, not Chicago).
 
 **Open questions for Johannes** (to adjudicate one at a time):
-3. Page numbers: printed pages (offset from the `pages` field, checked
-   against page headers); PDF page index; or printed where derivable, else
-   none.
 4. Quotation: a length cap? Is the Phase 6 quotation check an accuracy gate
    (fail closed) or telemetry?
 5. Scope: works the request names only, or any entry with an OA PDF?
