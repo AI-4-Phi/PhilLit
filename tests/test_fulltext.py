@@ -534,6 +534,41 @@ class TestValidateRecord:
         (tmp_path / f"{stem}.json").write_text(json.dumps(side), encoding="utf-8")
         assert ft.validate_record(tmp_path, stem) == "sidecar_unreadable"
 
+    @pytest.mark.parametrize("field,value", [
+        ("schema", "1"), ("schema", None), ("schema", 1.0), ("schema", [1]),
+        ("slug", None), ("slug", 7), ("slug", ["x"]), ("slug", {}),
+        ("identity", None), ("identity", []), ("identity", "x"),
+        ("source", []), ("source", {}), ("source", None), ("source", 3), ("source", "web"),
+        ("source_ref", []), ("source_ref", 5), ("source_ref", True),
+        ("license", []), ("license", {}), ("license", 4),
+        ("pdf_sha256", None), ("pdf_sha256", []), ("pdf_sha256", 12), ("pdf_sha256", "ABC"),
+        ("acquired_at", None), ("acquired_at", []), ("acquired_at", 20261022),
+    ])
+    def test_malformed_field_is_sidecar_unreadable(self, tmp_path, field, value):
+        stem = write_record(tmp_path, IDENT)
+        side = json.loads((tmp_path / f"{stem}.json").read_text(encoding="utf-8"))
+        side[field] = value
+        (tmp_path / f"{stem}.json").write_text(json.dumps(side), encoding="utf-8")
+        assert ft.validate_record(tmp_path, stem) == "sidecar_unreadable"
+
+    @pytest.mark.parametrize("key,value", [
+        ("doi", []), ("doi", 10), ("doi", {}),
+        ("title", []), ("title", 3), ("surname", {}), ("surname", 1),
+        ("year", []), ("year", True), ("year", {}), ("year", 1.5),
+    ])
+    def test_malformed_identity_value_is_sidecar_unreadable(self, tmp_path, key, value):
+        stem = write_record(tmp_path, IDENT)
+        side = json.loads((tmp_path / f"{stem}.json").read_text(encoding="utf-8"))
+        side["identity"][key] = value
+        (tmp_path / f"{stem}.json").write_text(json.dumps(side), encoding="utf-8")
+        assert ft.validate_record(tmp_path, stem) == "sidecar_unreadable"
+
+    def test_non_object_json_is_sidecar_unreadable(self, tmp_path):
+        stem = ft.slug_for(IDENT)
+        for raw in ("[]", "null", "3", '"x"', "[" * 100000):
+            (tmp_path / f"{stem}.json").write_text(raw, encoding="utf-8")
+            assert ft.validate_record(tmp_path, stem) == "sidecar_unreadable"
+
     def test_pdf_missing(self, tmp_path):
         stem = write_record(tmp_path, IDENT)
         (tmp_path / f"{stem}.pdf").unlink()
@@ -732,6 +767,33 @@ class TestLocateQuote:
         # A middle (non-edge) digits-only line is body, never furniture.
         text2 = ft.render_text(["a\nb\nc\nthe sum is\n42\nexactly so\nd\ne\nf"], None)
         assert ft.locate_quote("the sum is exactly so", text2) is None
+
+    def test_furniture_inside_a_page_is_never_skipped(self):
+        # "not" repeats as an edge line on 3 pages (rule c) and "42" is
+        # digits-only (rule a), but neither sits at a page break.
+        pages = [f"Consent is\n{mid}\nrequired" for mid in ("not", "not", "not")]
+        text = ft.render_text(pages, None)
+        assert ft.locate_quote("Consent is required", text) is None
+        text = ft.render_text(["Consent is\n42\nrequired"], None)
+        assert ft.locate_quote("Consent is required", text) is None
+
+    def test_body_line_with_the_page_number_is_not_spliced_out(self):
+        pm = ft.PageMap((1847, 1848))
+        for first in ("As 1848 revolutions swept Europe, Marx",
+                      "As revolutions swept Europe in 1848 and 1849, Marx and his allies wrote"):
+            text = ft.render_text(["the old order held firm until",
+                                   f"{first}\nwrote the manifesto\nmore body"], pm)
+            assert ft.locate_quote("held firm until wrote the manifesto", text, pm) is None
+        text = ft.render_text(["the old order held firm until",
+                               "body\nAs 1848 revolutions swept Europe, Marx\nwrote the manifesto\nx\ny\nz"], pm)
+        assert ft.locate_quote("Europe, Marx wrote", text, pm) is not None
+        assert ft.locate_quote("body wrote the manifesto", text, pm) is None
+
+    def test_running_head_with_number_at_break(self):
+        pm = ft.PageMap((899, 900))
+        text = ft.render_text(["the claim is that\n899 Journal of Ethics",
+                               "Journal of Ethics 900\nharm differs from action\nbody"], pm)
+        assert ft.locate_quote("the claim is that harm differs from action", text, pm) is not None
 
     def test_all_occurrences(self):
         text = rendered(["the same words here", "and the same words here again"])

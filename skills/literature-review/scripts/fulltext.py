@@ -499,9 +499,17 @@ def _sidecar_shape_ok(data) -> bool:
     year = ident["year"]
     if isinstance(year, bool) or not (isinstance(year, (str, int)) or (optional and year is None)):
         return False
-    if not isinstance(data["slug"], str) or data["source"] not in SOURCES:
+    # Type before membership: an unhashable value ("source": []) must read
+    # as a malformed sidecar, never raise.
+    if not isinstance(data["slug"], str):
+        return False
+    if not isinstance(data["source"], str) or data["source"] not in SOURCES:
+        return False
+    if not (data["source_ref"] is None or isinstance(data["source_ref"], (str, dict))):
         return False
     if data["license"] is not None and not isinstance(data["license"], str):
+        return False
+    if not isinstance(data["acquired_at"], str):
         return False
     sha = data["pdf_sha256"]
     return isinstance(sha, str) and re.fullmatch(r"[0-9a-f]{64}", sha) is not None
@@ -524,7 +532,7 @@ def validate_record(directory, stem: str) -> Record | str:
     json_path, pdf_path = d / f"{stem}.json", d / f"{stem}.pdf"
     try:
         data = json.loads(read_text(json_path))
-    except (OSError, ValueError):
+    except (OSError, ValueError, RecursionError):
         return "sidecar_unreadable"
     if not _sidecar_shape_ok(data):
         return "sidecar_unreadable"
@@ -565,6 +573,7 @@ _BRACKET_RE = re.compile(r"\[([^\[\]]*)\]")
 
 
 FURNITURE_MAX_WORDS = 12
+HEAD_MAX_OTHER_WORDS = 6
 _DIGITS_ONLY_RE = re.compile(r"[\W_]*\d+[\W_]*")
 
 
@@ -572,40 +581,64 @@ def _furniture_key(line: str) -> str:
     return " ".join(re.sub(r"[0-9]", " ", fold(line)).split())
 
 
+def _words(line: str) -> list[str]:
+    return [w for w in line.split() if any(c.isalnum() for c in w)]
+
+
 def furniture_lines(text: str) -> list[tuple[int, int]]:
     """(start, end) of the page-furniture lines of a rendered text, which the
-    quote fold skips so a quote may run across a page break. Only an EDGE line
-    (among the first 3 and last 3 non-empty lines of a page block) can be
-    furniture, and only when it (a) is digits-only, give or take punctuation
-    and spaces; or (b) on a `[[page N]]` block, carries N as a standalone
-    number and has at most 12 words; or (c) with digits removed, folds equal
-    to an edge line of at least 2 other page blocks (a running head or foot)
-    and has at most 12 words. A body line is never skipped, or a fabricated
-    quote could splice across real text. The rendered text is unchanged."""
+    quote fold skips so a quote may run across a page break. The rendered
+    text is unchanged.
+
+    Only lines AT a page break can be skipped: the contiguous run of
+    furniture lines directly after a marker and the one directly before the
+    next marker (or the end), each within the block's first or last 3
+    non-empty lines; the first non-furniture line ends a run. A line is
+    furniture when it (a) is digits-only, give or take punctuation and
+    spaces; or (b) on a `[[page N]]` block, carries N as a standalone number
+    as its first or last word, with at most 6 other words (a running head
+    with the number); or (c) with digits removed, folds equal to an edge
+    line of at least 2 other page blocks (a running head or foot) and has at
+    most 12 words. A body line is never skipped, or a fabricated quote could
+    splice across real text."""
     blocks = page_blocks(text)
-    edges = []   # (block index, kind, number, start, end, line)
-    for b, (kind, num, start, end) in enumerate(blocks):
+    per_block = []   # per block: (kind, num, [(start, end, line)] edge-first-3, edge-last-3)
+    for kind, num, start, end in blocks:
         lines, pos = [], start
         for line in text[start:end].split("\n"):
             if line.strip():
                 lines.append((pos, pos + len(line), line))
             pos += len(line) + 1
-        idx = sorted(set(range(min(3, len(lines)))) | set(range(max(0, len(lines) - 3), len(lines))))
-        edges += [(b, kind, num, *lines[i]) for i in idx]
+        per_block.append((kind, num, lines))
     seen: dict[str, set[int]] = {}
-    for b, _, _, _, _, line in edges:
+    for b, (_, _, lines) in enumerate(per_block):
+        for i in set(range(min(3, len(lines)))) | set(range(max(0, len(lines) - 3), len(lines))):
+            key = _furniture_key(lines[i][2])
+            if key:
+                seen.setdefault(key, set()).add(b)
+
+    def is_furniture(b, kind, num, line):
+        if _DIGITS_ONLY_RE.fullmatch(line):
+            return True
+        words = _words(line)
+        if (kind == "page" and words and len(words) - 1 <= HEAD_MAX_OTHER_WORDS
+                and (_NUM_RE.findall(words[0]) == [str(num)]
+                     or _NUM_RE.findall(words[-1]) == [str(num)])):
+            return True
         key = _furniture_key(line)
-        if key:
-            seen.setdefault(key, set()).add(b)
-    out = []
-    for b, kind, num, a, e, line in edges:
-        short = len(line.split()) <= FURNITURE_MAX_WORDS
-        key = _furniture_key(line)
-        if (_DIGITS_ONLY_RE.fullmatch(line)
-                or (kind == "page" and short and str(num) in _NUM_RE.findall(line))
-                or (short and key and len(seen.get(key, set()) - {b}) >= 2)):
-            out.append((a, e))
-    return out
+        return bool(key) and len(words) <= FURNITURE_MAX_WORDS and len(seen.get(key, set()) - {b}) >= 2
+
+    out = set()
+    for b, (kind, num, lines) in enumerate(per_block):
+        for i in range(min(3, len(lines))):              # leading run
+            if not is_furniture(b, kind, num, lines[i][2]):
+                break
+            out.add(lines[i][:2])
+        for i in range(len(lines) - 1, max(-1, len(lines) - 4), -1):   # trailing run
+            if not is_furniture(b, kind, num, lines[i][2]):
+                break
+            out.add(lines[i][:2])
+    return sorted(out)
 
 
 @functools.lru_cache(maxsize=16)
