@@ -63,7 +63,9 @@ phillit-service re-vendor.
   first 6 words as a phrase plus the first-author surname, with no other
   DOI on page 1.** Measured on 148 Zotero PDFs with a DOI
   (`docs/known-issues/fulltext-identity-measurement-2026-10-21/`): accepts
-  140 right papers (95%) and 0 wrong ones. Rejected: the DOI string alone
+  about 95% of right papers; against every other sampled item (148 x 147
+  pairs, `idbar_nxn.py`) it accepted 1 wrong one, a paper that cites the
+  target and has no DOI on its page 1. Rejected: the DOI string alone
   (accepts only 62% of right papers); and title words plus surname (accepts
   1 wrong paper in 148).
 - **No write-block hook on `fulltext/`.** The barrier re-extracts the PDF,
@@ -106,12 +108,14 @@ phillit-service re-vendor.
   reads "with a PDF from these sources". Zotero comes first because a
   user's copy is more often the version of record, which page confirmation
   needs. Access is Zotero 7's local API (`localhost:23119`, read-only; the
-  user enables it in Zotero's settings), never `zotero.sqlite` or an MCP
-  server; when it does not answer (Cloud, the service, Zotero closed) the
+  user enables it in Zotero's settings; `/items/<key>/file` answers with a
+  302 to the stored file's `file://` path, checked here; legacy linked
+  files stored as Mac alias blobs give no path), never `zotero.sqlite` or
+  an MCP server; when it does not answer (Cloud, the service, Zotero closed) the
   step is skipped and the report says so. Zotero also holds works without a
   DOI, so the store key, the barrier's entry binding and the identity check
   need a no-DOI path (match by title, first author and year; the PDF text
-  check is title phrase plus surname); books have no `pages` range, so they
+  bar for it is still open); books have no `pages` range, so they
   get no page numbers. Measured on the justified-harm review
   (`oa_sources.py`, `zotero_coverage.py`): of 25 EXISTENCE entries,
   OpenAlex reaches 1, Semantic Scholar 3, Zotero 3. Rejected: Unpaywall
