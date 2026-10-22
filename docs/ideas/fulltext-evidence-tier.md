@@ -28,8 +28,8 @@ cut its main arguments.
    OA URL / user file, extractor version, page offset).
 2. `acquire_fulltext.py --doi D (--pdf PATH | --url URL)`: resolve an OA
    location (OpenAlex `oa_url`, which the search scripts already return, or
-   Unpaywall), extract per page, validate identity (DOI string, or title
-   tokens plus first-author surname, in the first pages), reuse
+   Unpaywall), extract per page, validate identity (the bar under Decided),
+   reuse
    `fetch_web.py`'s printable-ratio and encrypted/no-text checks, and record
    every failure in the sidecar.
 3. Barrier: for each entry whose cleaner-verified DOI has a stored text (and
@@ -59,10 +59,16 @@ phillit-service re-vendor.
   settle the scope question (named works only) in advance. Measured on the
   justified-harm review: 25 of 127 entries were `EVIDENCE-EXISTENCE`, all
   journal articles with a DOI; none was `EVIDENCE-WEB`.
+- **Identity bar: the DOI string in the first 3 pages; else the title's
+  first 6 words as a phrase plus the first-author surname, with no other
+  DOI on page 1.** Measured on 148 Zotero PDFs with a DOI
+  (`docs/known-issues/fulltext-identity-measurement-2026-10-21/`): accepts
+  140 right papers (95%) and 0 wrong ones. Rejected: the DOI string alone
+  (accepts only 62% of right papers); and title words plus surname (accepts
+  1 wrong paper in 148).
 
 **Open questions for Johannes** (to adjudicate one at a time):
-2. Identity bar for a user-supplied PDF: the DOI string; title tokens plus
-   author surname; or either. Add a write-block hook on `fulltext/`?
+2. Add a write-block hook on `fulltext/`?
 3. Page numbers: printed pages (offset from the `pages` field, checked
    against page headers); PDF page index; or printed where derivable, else
    none.
