@@ -49,9 +49,18 @@ SKILL.md's "no override needed" list, planner and writer tier tables and
 Source Check, `conventions.md` Evidence Tiers, `split_delivery.py`, and the
 phillit-service re-vendor.
 
+**Decided** (Johannes, 2026-10-21):
+- **A new tier, `EVIDENCE-FULLTEXT`, ranked above ABSTRACT.** Rejected:
+  widening `EVIDENCE-WEB`, which would put two licences under one token (an
+  LLM note checked against page fragments, and the source text itself) and
+  reverse WEB's `@misc`-only scope and capture-is-not-input rule; and
+  attaching the text to the user-request override line, which would move a
+  content licence out of the barrier into orchestrator-written prose and
+  settle the scope question (named works only) in advance. Measured on the
+  justified-harm review: 25 of 127 entries were `EVIDENCE-EXISTENCE`, all
+  journal articles with a DOI; none was `EVIDENCE-WEB`.
+
 **Open questions for Johannes** (to adjudicate one at a time):
-1. A new tier (above), or widen WEB? Widening reverses the `@misc`-only
-   scope and the capture-is-not-input rule, and needs a re-ranking.
 2. Identity bar for a user-supplied PDF: the DOI string; title tokens plus
    author surname; or either. Add a write-block hook on `fulltext/`?
 3. Page numbers: printed pages (offset from the `pages` field, checked
