@@ -742,3 +742,30 @@ def test_loads_by_path_without_pythonpath(tmp_path):
                        text=True, env={**os.environ, "PYTHONPATH": ""})
     assert r.returncode == 0, r.stderr
     assert r.stdout.split() == ["doi-10.1_x", "250"]
+
+
+class TestEntryIdentity:
+    FIELDS = {"title": "{Justified} Harm: A Study", "author": "Gardner, John and Doe, Jane",
+              "year": "2019a", "doi": "https://doi.org/10.1/ABC"}
+
+    def test_shape_round_trips_through_json(self):
+        import json
+        ident = ft.entry_identity(self.FIELDS)
+        assert ident["doi"] == "10.1/abc" and ident["year"] == "2019"
+        assert isinstance(ident["work_key"], list)
+        assert ft.identity_matches(json.loads(json.dumps(ident)), self.FIELDS)
+
+    def test_any_part_changing_breaks_the_match(self):
+        ident = ft.entry_identity(self.FIELDS)
+        for change in ({"doi": "10.1/abd"}, {"doi": ""}, {"year": "2020"},
+                       {"title": "Another Title"}, {"author": "Smith, John"}):
+            assert not ft.identity_matches(ident, dict(self.FIELDS, **change))
+
+    def test_doi_absent_on_both_sides_matches(self):
+        fields = {k: v for k, v in self.FIELDS.items() if k != "doi"}
+        assert ft.identity_matches(ft.entry_identity(fields), fields)
+
+    def test_no_work_key_never_matches(self):
+        fields = {"year": "2019"}
+        assert not ft.identity_matches(ft.entry_identity(fields), fields)
+        assert not ft.identity_matches(None, self.FIELDS)

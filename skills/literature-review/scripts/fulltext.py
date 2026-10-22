@@ -73,7 +73,8 @@ from typing import Mapping, Optional
 # its own on import, so pop(0) would remove one of those instead.
 _hook_dir = str(Path(__file__).resolve().parent.parent.parent.parent / "hooks")
 sys.path.insert(0, _hook_dir)
-from bib_identity import normalize_doi  # noqa: E402
+from bib_identity import (  # noqa: E402
+    first_author_surname, normalize_doi, same_work_key, same_work_year)
 
 sys.path.remove(_hook_dir)
 _here = str(Path(__file__).resolve().parent)
@@ -387,6 +388,35 @@ def write_text_atomic(path, text: str) -> None:
 
 def _year_str(year) -> str:
     return str(year if year is not None else "").strip()
+
+
+def entry_identity(fields: Mapping) -> dict:
+    """The identity of a bib entry as the barrier verified it, in the form the
+    attestation blob stores (`fulltext_identity`) and dedupe and
+    `check_quotes.py` compare: the normalized DOI or None; the year-less
+    `same_work_key` (title, first-author surname) as a list or None; the
+    `same_work_year`. `fields` holds RAW values (`parse_entry_fields`)."""
+    surname = first_author_surname(fields.get("author") or "", fields.get("editor") or "")
+    key = same_work_key(fields.get("title") or "", surname)
+    return {"doi": normalize_doi(fields.get("doi") or "") or None,
+            "work_key": list(key) if key else None,
+            "year": same_work_year(fields.get("year"))}
+
+
+def identity_matches(blob_identity, fields: Mapping) -> bool:
+    """Does a stored `fulltext_identity` still describe this entry? Exact
+    equality on all three parts (DOI both absent counts as equal); an entry
+    with no work key never matches."""
+    if not isinstance(blob_identity, Mapping):
+        return False
+    now = entry_identity(fields)
+    if now["work_key"] is None:
+        return False
+    stored = {"doi": blob_identity.get("doi"), "work_key": blob_identity.get("work_key"),
+              "year": blob_identity.get("year")}
+    if isinstance(stored["work_key"], tuple):
+        stored["work_key"] = list(stored["work_key"])
+    return stored == now
 
 
 def canonical_identity(identity: Mapping) -> str:
