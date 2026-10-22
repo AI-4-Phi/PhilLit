@@ -769,3 +769,9 @@ class TestEntryIdentity:
         fields = {"year": "2019"}
         assert not ft.identity_matches(ft.entry_identity(fields), fields)
         assert not ft.identity_matches(None, self.FIELDS)
+
+
+def test_identity_ok_decodes_latex_in_raw_bib_values():
+    work = {"doi": None, "title": "{\\\"U}ber die {Grundlagen}: Studien", "surname": "M{\\\"u}ller", "year": "1990"}
+    pages = ["Über die Grundlagen\nHans Müller\n" + "body text " * 30]
+    assert ft.identity_ok(pages, work) == (True, "title_head")

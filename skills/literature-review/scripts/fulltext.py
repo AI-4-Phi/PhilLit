@@ -85,6 +85,7 @@ sys.path.remove(_here)
 _research = str(Path(__file__).resolve().parent.parent.parent / "philosophy-research" / "scripts")
 sys.path.insert(0, _research)
 from fetch_web import MIN_PRINTABLE_RATIO, _printable_ratio  # noqa: E402
+from generate_bibliography import clean_bibtex_str  # noqa: E402
 
 sys.path.remove(_research)
 
@@ -209,8 +210,11 @@ def identity_ok(pages: list[str], identity: Mapping) -> tuple[bool, str]:
     (no-DOI rule A). Reject reasons: "empty_identity", "other_doi_page1",
     "no_match"."""
     doi = normalize_doi(identity.get("doi") or "")
-    phrase_src = identity.get("title") or ""
-    surname = fold(identity.get("surname") or "")
+    # Raw bib values carry LaTeX (M{\"u}ller), which the fold would split
+    # into "m u ller"; decode first, as the References do. Idempotent on
+    # plain text, so a caller may pass decoded or raw values.
+    phrase_src = clean_bibtex_str(identity.get("title") or "")
+    surname = fold(clean_bibtex_str(identity.get("surname") or ""))
     if doi:
         raw3 = "\f".join(pages[:3]).lower()
         # A whole DOI, not the start of a longer one (10.1/abc in 10.1/abcd);
