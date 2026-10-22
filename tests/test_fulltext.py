@@ -795,6 +795,13 @@ class TestLocateQuote:
                                "Journal of Ethics 900\nharm differs from action\nbody"], pm)
         assert ft.locate_quote("the claim is that harm differs from action", text, pm) is not None
 
+    def test_digits_only_line_on_a_page_block_must_be_its_number(self):
+        pm = ft.PageMap((11, 12))
+        for first, skipped in (("3.", False), ("12", True), ("1999", False)):
+            text = ft.render_text(["the argument ends here", f"{first}\nnext premise holds\nbody"], pm)
+            found = ft.locate_quote("argument ends here next premise holds", text, pm)
+            assert (found is not None) is skipped, first
+
     def test_all_occurrences(self):
         text = rendered(["the same words here", "and the same words here again"])
         found = ft.locate_quote_all("the same words here", text)

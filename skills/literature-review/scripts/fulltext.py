@@ -595,7 +595,7 @@ def furniture_lines(text: str) -> list[tuple[int, int]]:
     next marker (or the end), each within the block's first or last 3
     non-empty lines; the first non-furniture line ends a run. A line is
     furniture when it (a) is digits-only, give or take punctuation and
-    spaces; or (b) on a `[[page N]]` block, carries N as a standalone number
+    spaces (on a `[[page N]]` block, only when that number is N); or (b) on a `[[page N]]` block, carries N as a standalone number
     as its first or last word, with at most 6 other words (a running head
     with the number); or (c) with digits removed, folds equal to an edge
     line of at least 2 other page blocks (a running head or foot) and has at
@@ -619,7 +619,9 @@ def furniture_lines(text: str) -> list[tuple[int, int]]:
 
     def is_furniture(b, kind, num, line):
         if _DIGITS_ONLY_RE.fullmatch(line):
-            return True
+            # On a confirmed page only its own number: a premise number
+            # ("3.") or a year at a page edge is body text.
+            return kind != "page" or _NUM_RE.findall(line) == [str(num)]
         words = _words(line)
         if (kind == "page" and words and len(words) - 1 <= HEAD_MAX_OTHER_WORDS
                 and (_NUM_RE.findall(words[0]) == [str(num)]
