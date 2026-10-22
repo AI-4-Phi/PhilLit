@@ -529,6 +529,8 @@ def test_fulltext_tier_reaches_every_prompt_that_must_act_on_it():
             '--evidence-report') in phase6
     assert "no `FAIL` and no `FIX` line. The `WARN` lines are advisory" in phase6
     assert "`WARN uncited-fulltext`: the quoted words are also in the full text" in phase6
+    assert "If a work the line does not name (a named work may itself quote it), cite that work instead." in phase6
+    assert "do this even when the gate is not rerun" in phase6
     assert "[FULLTEXT-LOST]" in phase6
     revision = skill[skill.index("## Revising a Delivered Review"):]
     assert "REQUIRED quotation gate" in revision

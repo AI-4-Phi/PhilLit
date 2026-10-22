@@ -59,10 +59,18 @@ RESIDUALS (accepted, visible):
 - A quote in a sentence citing two works passes when it is in either text.
 - Uncited spans of 2 or 3 words are not reported (scare quotes).
 - An uncited MISQUOTATION of a full-text work matches no text, so it is only
-  an advisory `WARN uncited`: nothing forces it to be cited and checked. A
-  blocking `WARN uncited` would force a response to it, at the cost of
-  extra turns on most reviews (70 lines in 27 of 43 delivered reviews, about half of them quoted
-  questions).
+  an advisory `WARN uncited`: nothing forces it to be cited and checked. So
+  is an accurate uncited quotation in a refused form (a bracket other than
+  one letter, an ellipsis part too short): the matcher refuses the form
+  before it searches. A blocking `WARN uncited` would force a response to
+  these, at the cost of extra turns on most reviews (70 lines in 27 of 43 delivered reviews, about half of them
+  quoted questions).
+- `WARN uncited-fulltext` names the work whose text holds the words, which
+  is not always the work quoted: a full text that itself quotes another work
+  is named for that work's words. The orchestrator decides.
+- An uncited quoted title of 4 words or more that a full text holds is
+  `WARN uncited-fulltext` (the title skip needs a citation); once cited, it
+  is skipped as a title.
 - An uncited span a full text holds counts toward neither cap until it is
   cited.
 - A span whose sentence (or the next) cites only works WITHOUT a full text
