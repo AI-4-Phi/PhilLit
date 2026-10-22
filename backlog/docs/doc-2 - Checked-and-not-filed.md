@@ -106,3 +106,11 @@ that did not survive reading the file it concerns.
   so corroboration passes. Not filed, by Johannes's decision: the writer's
   source check refused to build on it, and the barrier cannot see a source's
   wrong record.
+- Claude Code's Bash sandbox as PhilLit's safety layer. Not pursued, by
+  Johannes's decision: sandboxing and safety belong to the harness, whose
+  auto-mode classifiers keep improving. Doing it in the plugin needs
+  per-platform tooling (no native Windows sandbox, so it could only be
+  additive), adds dependency-breakage risk on every CLI change, and a network
+  allowlist would empty EVIDENCE-WEB captures and open-access full texts,
+  which reach arbitrary hosts. PhilLit keeps its deny and ask rules in
+  `/phillit:setup`. Do not refile.
