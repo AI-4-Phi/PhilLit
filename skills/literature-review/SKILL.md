@@ -499,15 +499,16 @@ A resume that starts at step 8 cannot reproduce the split's `SPLIT-*` lines, ded
    bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/check_quotes.py "[workdir]/literature-review-[project-name].md" "[workdir]/literature-[project-name].bib" --workdir "[workdir]" --evidence-report "[workdir]/intermediate_files/json/evidence_report.json"
    ```
 
-   It checks every quotation attributed to a work with a full text (an entry with a `fulltext_file` field or the `EVIDENCE-FULLTEXT` tier) against that text, and ends with one `QUOTES-SUMMARY:` line. Exit 1 means `FAIL` lines; read every line whatever the exit code, since `WARN uncited` comes with exit 0. Fix the review and run the gate again until its output has no `FAIL`, no `FIX` and no `WARN uncited` line:
+   It checks every quotation attributed to a work with a full text (an entry with a `fulltext_file` field or the `EVIDENCE-FULLTEXT` tier) against that text, and ends with one `QUOTES-SUMMARY:` line. Exit 1 means `FAIL` lines; read every line whatever the exit code, since `FIX` and `WARN` lines come with exit 0. Fix the review and run the gate again until its output has no `FAIL` and no `FIX` line. The `WARN` lines are advisory: act on them as below.
    - `FAIL verbatim`, `FAIL bracket`, `FAIL ellipsis`: the quoted words are not in the work's text, or are in a form the gate refuses. Correct the quotation against the text the entry's `fulltext_file` names (find the passage with Grep), or cut it.
    - `FAIL licence-lost`: the work no longer has a verified full text (the line says why). Cut the quotation, and check the sentences around it against what the work's tier now licenses.
    - `FIX page`: drop the page locator or correct it to the page the text gives; never cut the quotation for it. A roman-numeral or otherwise unrecognized locator: drop it.
    - `FAIL unclosed-quote`: close the quotation mark where the quotation ends, or remove it; then the gate checks the quotation.
-   - `WARN uncited`: add the quoted work's citation to the sentence, or remove the quotation marks if the words are not a quotation.
+   - `WARN uncited-fulltext`: the quoted words are in the full text of the work the line names, on the page it gives. Add that work's citation to the sentence and run the gate again, so it checks the quotation's page and the caps.
+   - `WARN uncited`: decide whether the words quote a work. If they do, add its citation (and run the gate again if that work has a full text). If they are a question, a scare quote or the review's own phrase, leave them.
    - `WARN cap`: shorten the quotation where you can. It does not block.
 
-   After a fix that adds, removes or changes a citation, run steps 4 and 5 and the telemetry checker again before the gate; the final summary takes the `CHECK` lines of its last run. Exit 2, or output with no `QUOTES-SUMMARY:` line, is a crash: stop Phase 6 (no split, no clean-up, no publish) and report the output verbatim to the user. In the final summary, give the last run's `QUOTES-SUMMARY` line and any `WARN cap` lines it still prints.
+   After a fix that adds, removes or changes a citation, run steps 4 and 5 and the telemetry checker again before the gate; the final summary takes the `CHECK` lines of its last run. Exit 2, or output with no `QUOTES-SUMMARY:` line, is a crash: stop Phase 6 (no split, no clean-up, no publish) and report the output verbatim to the user. In the final summary, give the last run's `QUOTES-SUMMARY` line and any `WARN uncited-fulltext` and `WARN cap` lines it still prints.
 
 7. **Split the delivery into its three files**:
 
@@ -702,7 +703,7 @@ Output status updates directly as text (visible to user in real-time):
 | **Phase completion** | `Phase [N] complete: [summary]` |
 | **Assembly** | `Assembling final review with YAML frontmatter...` |
 | **BibTeX aggregation** | `Aggregating BibTeX files -> literature-[project-name].bib` |
-| **Quotation gate** | `Quotation gate: [N] FAIL, [M] FIX, [K] WARN uncited; fixing and rerunning` or `Quotation gate passed` |
+| **Quotation gate** | `Quotation gate: [N] FAIL, [M] FIX, [K] WARN uncited-fulltext; fixing and rerunning` or `Quotation gate passed` |
 | **Delivery split** | `Split delivery: track record, annotated bib, research notes` |
 | **Cleanup** | `Moving intermediate files -> intermediate_files/` |
 | **DOCX conversion** | `Converted to DOCX: literature-review-[project-name].docx` |

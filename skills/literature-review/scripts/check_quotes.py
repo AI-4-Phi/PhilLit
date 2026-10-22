@@ -21,8 +21,11 @@ barrier verified:
   the quote).
 - `WARN cap`: above 40 words in one quotation, above 150 words per work
   (works grouped across keys and slugs: same work key, or same DOI).
-- `WARN uncited`: a quoted span of 4 words or more with no citation in its
-  sentence or the next.
+- `WARN uncited-fulltext`: a quoted span of 4 words or more with no citation
+  in its sentence or the next, whose words a licensed full text holds; the
+  line names the work and the page. It is a quotation of that work.
+- `WARN uncited`: any other such span (often a question or a scare-quoted
+  thesis, sometimes a quotation of a work with no full text).
 
 Then one `QUOTES-SUMMARY: {json}` line. Exit 1 when any FAIL, 0 otherwise, 2
 on a crash or unreadable input (one line on stderr).
@@ -34,8 +37,11 @@ fabrication), pages and caps are pragmatic (ruling in
 `docs/ideas/fulltext-evidence-tier.md`). Mixing the two would change what the
 telemetry's exit code means.
 
-COMPLETION RULE (SKILL.md Phase 6): rerun until there is no FAIL, no FIX and
-no `WARN uncited` line. `WARN cap` is advisory: shorten where possible.
+COMPLETION RULE (SKILL.md Phase 6): rerun until there is no FAIL and no FIX.
+The WARN lines are advisory. On `WARN uncited-fulltext` the orchestrator adds
+the named citation and reruns, so the gate checks pages and caps; on `WARN
+uncited` it cites a quotation and leaves a question or scare quote alone;
+on `WARN cap` it shortens where possible.
 
 OWNERS USED, never re-implemented: quote matching, page maps, text reading
 and hashing, identity comparison (`fulltext.py`); citation resolution
@@ -49,6 +55,13 @@ Chicago letter, last EVIDENCE token) MIRRORS the loop inline in
 RESIDUALS (accepted, visible):
 - A quote in a sentence citing two works passes when it is in either text.
 - Uncited spans of 2 or 3 words are not reported (scare quotes).
+- An uncited MISQUOTATION of a full-text work matches no text, so it is only
+  an advisory `WARN uncited`: nothing forces it to be cited and checked. A
+  blocking `WARN uncited` would close this but cost extra turns on most
+  reviews (70 lines in 27 of 43 delivered reviews, about half of them quoted
+  questions).
+- An uncited span a full text holds does not count toward the per-work cap
+  until it is cited.
 - A block quotation (`> ...`) without quotation marks is not checked (an
   opening mark with no close in its paragraph is `FAIL unclosed-quote`).
 - "Next sentence" attribution stays inside the paragraph.
@@ -518,6 +531,12 @@ def _clean_span(span: str) -> str:
     return _EMPH_UNDER_RE.sub(r"\2", s)
 
 
+def _pages_desc(text: str, occurrences) -> str:
+    """The page blocks the occurrences of a quote touch: "page 45, sheet 3"."""
+    touched = [t for spans in occurrences for t in ft.span_pages(text, spans)]
+    return ", ".join(f"{kind} {n}" for kind, n in dict.fromkeys(touched)) or "page unknown"
+
+
 def _union_groups(keys: list[str], entries: dict) -> dict:
     """Work groups for the per-work cap: two watched entries are one work when
     their work key (same_work_key) is equal or their normalized DOIs are."""
@@ -583,7 +602,9 @@ def run(md: str, bib_text: str, report: dict, workdir: Path) -> tuple[list[str],
     counts = {"spans": 0, "titles_skipped": 0, "fulltext_attributed": 0,
               "fail_unclosed_quote": 0, "fail_licence_lost": 0, "fail_verbatim": 0,
               "fail_bracket": 0, "fail_ellipsis": 0, "fix_page": 0, "warn_cap": 0,
-              "warn_uncited": 0}
+              "warn_uncited": 0, "warn_uncited_fulltext": 0}
+    uncited_sources = [(k, "fulltext", licence[k][0], page_maps[k]) for k in sorted(watched)
+                       if licence[k][0] is not None]
 
     def line_no(pos: int) -> int:
         return md.count("\n", 0, pos) + 1
@@ -619,8 +640,19 @@ def run(md: str, bib_text: str, report: dict, workdir: Path) -> tuple[list[str],
         shown = _show(span)
         if not cites:
             if _words(span) >= MIN_UNCITED_WORDS:
-                lines.append(f'WARN uncited: "{shown}" {where}')
-                counts["warn_uncited"] += 1
+                # Words a licensed text holds are a quotation of that work for
+                # certain: name the work and page so the citation can be added
+                # (the rerun then checks pages and caps). Anything else is left
+                # to the orchestrator's judgment (questions, scare quotes).
+                hits, _form_error = _match_quote(_clean_span(span), uncited_sources)
+                if hits:
+                    found = "; ".join(f"{k} ({_pages_desc(text, occ)})"
+                                      for k, _kind, text, occ in hits)
+                    lines.append(f'WARN uncited-fulltext: {found}: "{shown}" {where}')
+                    counts["warn_uncited_fulltext"] += 1
+                else:
+                    lines.append(f'WARN uncited: "{shown}" {where}')
+                    counts["warn_uncited"] += 1
             continue
         keys = sorted({k for k, _ in cites})
         wkeys = [k for k in keys if k in watched]

@@ -304,6 +304,41 @@ class TestAttribution:
         assert lines == ['WARN uncited: "this phrase has four words" [line 5]']
         assert s["warn_uncited"] == 1
 
+    def test_uncited_span_in_a_full_text_names_work_and_page(self, fx, capsys):
+        code, lines, s = fx.run(doc(
+            'Some hold that "the capacity for suffering is the vital characteristic".'), capsys)
+        assert code == 0
+        assert lines == ['WARN uncited-fulltext: singer1975 (page 45): '
+                         '"the capacity for suffering is the vital characteristic" [line 5]']
+        assert (s["warn_uncited_fulltext"], s["warn_uncited"]) == (1, 0)
+
+    def test_uncited_question_with_full_text_in_review_is_plain(self, fx, capsys):
+        code, lines, s = fx.run(doc('The question is "does suffering ground moral status?" here.'), capsys)
+        assert code == 0
+        assert lines == ['WARN uncited: "does suffering ground moral status?" [line 5]']
+        assert (s["warn_uncited_fulltext"], s["warn_uncited"]) == (0, 1)
+
+    def test_uncited_refused_form_is_plain_not_a_crash(self, fx, capsys):
+        code, lines, _ = fx.run(doc(
+            'Some hold that "[the] capacity for suffering is the vital characteristic".'), capsys)
+        assert code == 0
+        assert lines == ['WARN uncited: "[the] capacity for suffering is the vital characteristic" [line 5]']
+
+    def test_uncited_span_in_an_unlicensed_text_is_plain(self, tmp_path, capsys):
+        f = Fix(tmp_path)
+        f.add_fulltext("singer1975", year="1975", doi="10.1000/al.1975", write_blob=False)
+        code, lines, _ = f.run(doc(
+            'Some hold that "the capacity for suffering is the vital characteristic".'), capsys)
+        assert code == 0
+        assert lines == ['WARN uncited: "the capacity for suffering is the vital characteristic" [line 5]']
+
+    def test_uncited_full_text_match_does_not_count_toward_the_work_cap(self, fx, capsys):
+        cap = CAP_SENTENCE.rstrip(".")
+        body = " ".join(f'Some hold "{cap}" again.' for _ in range(7))
+        code, lines, _ = fx.run(doc(body), capsys)
+        assert code == 0
+        assert lines and all(ln.startswith("WARN uncited-fulltext: ") for ln in lines)
+
     def test_three_word_uncited_not_warned(self, fx, capsys):
         code, lines, _ = fx.run(doc('Some say "only three words" loosely.'), capsys)
         assert (code, lines) == (0, [])
