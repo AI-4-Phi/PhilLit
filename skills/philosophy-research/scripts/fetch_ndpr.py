@@ -44,42 +44,66 @@ NDPR_BASE = "https://ndpr.nd.edu/reviews"
 # shorter reviews and provides a substantial excerpt for longer ones.
 MAX_PARAGRAPHS = 8
 
+# A bibliographic entry's year: what separates one reviewed book from the next.
+_YEAR = re.compile(r"\b(1[5-9]|20)\d\d\b")
+
 
 def log_progress(message: str) -> None:
     _log_progress(SCRIPT_NAME, message)
 
 
 def extract_reviewed_books(soup: BeautifulSoup) -> list[dict]:
-    """The books a review is OF, from its bibliographic header: one
-    `.meta-item__bibliography` paragraph per book, "Authors, <em>Title</em>,
-    Publisher, Year, ...". A paragraph without an <em> title is skipped; a
-    page with no usable paragraph falls back to the `search_authors` /
-    `search_title` meta pair (blank on some pages, so never the first
-    choice)."""
+    """The books a review is OF, from its bibliographic header: the
+    `.meta-item__bibliography` paragraphs, "Authors, <em>Title</em>,
+    Publisher, Year, ..." (some pages use <i>). An italic run starts a new
+    book only when it is the paragraph's first or the text since the
+    previous one carries a year, i.e. the previous book's "Publisher, Year"
+    tail; the text before it is that book's authors. Otherwise it continues
+    the previous title, which covers the CMS splitting a title ("...Gender
+    and </em></strong><strong><em>Redress") and a title inside a title, set
+    roman ("Kuhn's </em>The Structure of Scientific Revolutions<em>
+    Revisited"). So a paragraph naming two books gives two.
+
+    A header with no italics at all (4 of 120 random pages) falls back to
+    the `search_authors` / `search_title` meta pair, but only when both
+    values occur verbatim in the header's visible text: the meta is blank
+    on some pages, and an unchecked value would be a guess. Otherwise no
+    book, and the page reads as unverifiable."""
     books = []
-    for para in soup.select(".meta-item__bibliography p"):
-        em = para.find("em")
-        if em is None:
-            continue
-        title = em.get_text(" ", strip=True)
+    paras = soup.select(".meta-item__bibliography p")
+    for para in paras:
         before = []
+        run_open = False   # an italic run in THIS paragraph that may continue
         for node in para.descendants:
-            if node is em:
-                break
+            if _is_title_tag(node) and not any(_is_title_tag(p) for p in node.parents):
+                title = node.get_text(" ", strip=True)
+                # Space-joined: a <br> or adjacent <span>s must not glue names.
+                between = " ".join(" ".join(before).split())
+                if title and run_open and not _YEAR.search(between):
+                    books[-1]["title"] = " ".join(
+                        (books[-1]["title"] + " " + between + " " + title).split())
+                elif title:
+                    books.append({"authors": between.strip(" ,."), "title": title})
+                    run_open = True
+                before = []
             # Exact type: Comment, CData and the like subclass it.
-            if type(node) is NavigableString:
+            elif type(node) is NavigableString and not any(_is_title_tag(p) for p in node.parents):
                 before.append(str(node))
-        # Space-joined: a <br> or adjacent <span>s must not glue two names.
-        authors = " ".join(" ".join(before).split()).strip(" ,")
-        if title:
-            books.append({"authors": authors, "title": title})
     if books:
         return books
+
     def meta(name):
         tag = soup.find("meta", {"name": name})
-        return (tag.get("content") or "").strip() if tag else ""
+        return " ".join((tag.get("content") or "").split()) if tag else ""
+    header = " ".join(" ".join(p.get_text(" ") for p in paras).split()).casefold()
     authors, title = meta("search_authors"), meta("search_title")
-    return [{"authors": authors, "title": title}] if authors and title else []
+    if authors and title and authors.casefold() in header and title.casefold() in header:
+        return [{"authors": authors, "title": title}]
+    return []
+
+
+def _is_title_tag(node) -> bool:
+    return getattr(node, "name", None) in ("em", "i")
 
 
 def extract_review_content(html: str) -> dict:

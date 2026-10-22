@@ -173,11 +173,66 @@ def test_extracts_every_book_of_a_multi_book_review():
     assert [b["authors"] for b in books] == ["Jeff Kochan", "McCulloch, Gregory"]
 
 
-def test_header_falls_back_to_the_search_meta():
+def test_a_title_in_i_tags_is_read():
+    page = KOCHAN_PAGE.replace("<em>", "<i>").replace("</em>", "</i>")
+    assert fetch_ndpr.extract_review_content(page)["books"][0]["authors"] == "Jeff Kochan"
+
+
+def test_a_header_without_italics_uses_the_meta_it_contains():
+    """Live shape: "Shaun Nichols, Bound: Essays on ..., Oxford ..." with no
+    italics; the search_* meta pair names the same book."""
     page = KOCHAN_PAGE.replace("<em>", "").replace("</em>", "")
+    assert fetch_ndpr.extract_review_content(page)["books"] == [
+        {"authors": "Jeff Kochan",
+         "title": "Science as Social Existence: Heidegger and the Sociology of Scientific Knowledge"}]
+
+
+def test_meta_absent_from_the_header_is_not_used():
+    page = (KOCHAN_PAGE.replace("<em>", "").replace("</em>", "")
+            .replace('content="Jeff Kochan"', 'content="Dimitri Ginev"'))
+    assert fetch_ndpr.extract_review_content(page)["books"] == []
+
+
+def test_one_paragraph_naming_two_books_gives_two():
+    page = KOCHAN_PAGE.replace(
+        "ISBN 9781783744107.</strong>",
+        "ISBN 9781783744107. Helen Longino, <em>Science as Social Knowledge</em>, Princeton, 1990.</strong>")
+    books = fetch_ndpr.extract_review_content(page)["books"]
+    assert [b["title"] for b in books] == [
+        "Science as Social Existence: Heidegger and the Sociology of Scientific Knowledge",
+        "Science as Social Knowledge"]
+    assert books[1]["authors"].endswith("Helen Longino")
+    assert not search_ndpr.review_matches(books, "Science as Social Knowledge", "Longino")
+
+
+def test_a_title_split_across_adjacent_ems_is_one_book():
+    """Live: Nuti's header, as NDPR's CMS writes it."""
+    page = KOCHAN_PAGE.replace(
+        '<strong>Jeff Kochan, <em>Science as Social Existence: Heidegger and the Sociology of Scientific Knowledge</em>, Open Book',
+        '<strong>Jeff Kochan, <em>Science as Social Existence: Heidegger and the Sociology of </em></strong> '
+        '<strong><em>Scientific Knowledge</em></strong><strong>, Open Book')
     books = fetch_ndpr.extract_review_content(page)["books"]
     assert books == [{"authors": "Jeff Kochan",
                       "title": "Science as Social Existence: Heidegger and the Sociology of Scientific Knowledge"}]
+
+
+def test_a_title_inside_a_title_set_roman_is_one_book():
+    """Live: the Kindi and Arabatzis header."""
+    page = KOCHAN_PAGE.replace(
+        "<strong>Jeff Kochan, <em>Science as Social Existence: Heidegger and the Sociology of Scientific Knowledge</em>",
+        "<strong>Vasso Kindi and Theodore Arabatzis (eds.), <em>Kuhn's </em>The Structure of Scientific "
+        "Revolutions<em> Revisited</em>")
+    books = fetch_ndpr.extract_review_content(page)["books"]
+    assert books == [{"authors": "Vasso Kindi and Theodore Arabatzis (eds.)",
+                      "title": "Kuhn's The Structure of Scientific Revolutions Revisited"}]
+
+
+def test_italics_inside_the_title_stay_one_book():
+    page = KOCHAN_PAGE.replace(
+        "<em>Science as Social Existence: Heidegger",
+        "<em>Science as Social Existence: <em>Heidegger</em>")
+    books = fetch_ndpr.extract_review_content(page)["books"]
+    assert len(books) == 1 and books[0]["authors"] == "Jeff Kochan"
 
 
 def test_authors_are_not_glued_across_tags_or_read_from_comments():

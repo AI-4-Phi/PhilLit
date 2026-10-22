@@ -56,8 +56,8 @@ The `domain-literature-researcher` subagent uses the `philosophy-research` skill
 | `get_abstract.py` | Multi-source abstract resolution | S2 → OpenAlex → CORE |
 | `get_sep_context.py` | SEP citation context extraction | Direct SEP |
 | `get_iep_context.py` | IEP citation context extraction | Direct IEP |
-| `search_ndpr.py` | NDPR discovery | Brave → NDPR |
-| `fetch_ndpr.py` | NDPR content extraction | Direct NDPR |
+| `search_ndpr.py` | NDPR candidate discovery by slug; `review_matches` decides identity from a review's header | NDPR sitemap |
+| `fetch_ndpr.py` | NDPR content and reviewed-book header extraction | Direct NDPR |
 | `fetch_web.py` | Research-time web-source capture behind the EVIDENCE-WEB gate; refuses the excluded encyclopedia hosts (SEP + mirrors, IEP, NDPR, PhilPapers) | Direct fetch |
 | `brave_search.py` | Web search fallback | Brave Search |
 | `search_cache.py` | Search result caching | — |

@@ -320,13 +320,12 @@ def review_matches(books: list[dict], title: str, surname: Optional[str]) -> boo
     needles = {n for n in _name_words(surname) if n.strip()}
     if not want or not needles:
         return False
-    for book in books:
-        if _main_title_tokens(book.get("title") or "") != want:
-            continue
-        hay = _name_words(book.get("authors") or "")
-        if any(n in h for n in needles for h in hay):
-            return True
-    return False
+    book = books[0]
+    if _main_title_tokens(book.get("title") or "") != want:
+        return False
+    # Padded strings: " noe " in " alva noe " is whole-word containment.
+    hay = _name_words(book.get("authors") or "")
+    return any(n in h for n in needles for h in hay)
 
 
 def clear_sitemap_cache() -> None:
