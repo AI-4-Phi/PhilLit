@@ -510,7 +510,7 @@ def main():
 
     args = parser.parse_args()
 
-    # Load .env file so keys are available even outside SessionStart
+    # Load the workspace .env (searched upward from the cwd); it wins over the shell
     load_dotenv(find_dotenv(usecwd=True), override=True)
 
     # Run checks
