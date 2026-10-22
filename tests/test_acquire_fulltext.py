@@ -902,11 +902,39 @@ class TestGaps:
         report = json.loads((workdir / af.REPORT_REL).read_text(encoding="utf-8"))
         assert report["status"] == "done_with_errors" and report["errors"] == expected
 
+    def test_duplicate_of_a_crashed_entry_names_the_real_reason(self, http, workdir, capsys, monkeypatch):
+        for i in (1, 2):
+            (workdir / f"literature-domain-{i}.bib").write_text(bib_entry(f"g{i}", doi=DOI),
+                                                                encoding="utf-8")
+
+        def boom(*a, **k):
+            raise RuntimeError("kaput")
+        monkeypatch.setattr(af, "acquire_one", boom)
+        code, out = run(capsys, workdir, "--gaps", "--domains", "2")
+        assert json.loads(out)["errors"] == [
+            {"entry": "1/g1", "reason": "error:RuntimeError: kaput"},
+            {"entry": "2/g2", "reason": "error:RuntimeError: kaput"}]
+
+    def test_folder_warnings_reach_the_summary_once(self, http, workdir, capsys, tmp_path, monkeypatch):
+        folder = tmp_path / "pdfs"
+        folder.mkdir()
+        for n in range(3):
+            (folder / f"f{n}.pdf").write_bytes(other_pdf())
+        write_env(f"PHILLIT_PDF_DIR={folder}\n")
+        monkeypatch.setattr(af, "MAX_WALK_FILES", 2)
+        (workdir / "literature-domain-1.bib").write_text(
+            bib_entry("a", doi="10.1/a") + bib_entry("b", doi="10.1/b"), encoding="utf-8")
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        expected = ["folder: walk_limit (stopped at 2 files)"]
+        assert json.loads(out)["warnings"] == expected
+        report = json.loads((workdir / af.REPORT_REL).read_text(encoding="utf-8"))
+        assert report["warnings"] == expected
+
     def test_clean_pass_says_done(self, http, workdir, capsys):
         (workdir / "literature-domain-1.bib").write_text(bib_entry("ok", doi="10.1/fine"), encoding="utf-8")
         code, out = run(capsys, workdir, "--gaps", "--domains", "1")
         summary = json.loads(out)
-        assert summary["status"] == "done" and summary["errors"] == []
+        assert summary["status"] == "done" and summary["errors"] == [] and summary["warnings"] == []
 
     def test_same_work_in_two_domains_acquired_once(self, http, workdir, capsys):
         for i in (1, 2):

@@ -1028,6 +1028,27 @@ def gap_candidates(workdir: Path, n_domains: int, title_route: bool):
     return out, domains
 
 
+_FOLDER_NOTE_TEXT = {
+    "walk_error": "directories PhilLit could not read",
+    "walk_limit": "stopped at {limit} files",
+    "index_incomplete": "files not yet indexed, matched by file name only",
+    "index_write_failed": "the index cache could not be saved",
+}
+
+
+def _folder_warnings(settings: Settings) -> list[str]:
+    """The folder index's run-level notes, once each, for the summary line:
+    an operator reads that line, not each entry's `tried` detail."""
+    idx = settings._index
+    out = []
+    for note in (idx.notes if idx is not None else []):
+        text = _FOLDER_NOTE_TEXT.get(note.split(":", 1)[0], "").format(limit=MAX_WALK_FILES)
+        line = f"folder: {note}" + (f" ({text})" if text else "")
+        if line not in out:
+            out.append(line)
+    return out
+
+
 def run_gaps(workdir: Path, n_domains: int, settings: Settings) -> dict:
     started = _clock()
     deadline = Deadline(GAPS_DEADLINE)
@@ -1064,16 +1085,23 @@ def run_gaps(workdir: Path, n_domains: int, settings: Settings) -> dict:
         counts[e["outcome"]] = counts.get(e["outcome"], 0) + 1
     # An entry that crashed is named in the summary itself, never only
     # counted: the orchestrator reads the summary line, not the report.
-    errors = [{"entry": f"{e['domain']}/{e['key']}",
-               "reason": e["tried"][0]["outcome"] if e["tried"] else "error"}
-              for e in entries if e["outcome"] == "error"]
+    # A duplicate row (same_work_as) names the first row's real reason.
+    errors = []
+    for e in entries:
+        if e["outcome"] != "error":
+            continue
+        src = by_slug.get(e["slug"], e)
+        errors.append({"entry": f"{e['domain']}/{e['key']}",
+                       "reason": src["tried"][0]["outcome"] if src["tried"] else "error"})
+    warnings = _folder_warnings(settings)
     report = {"schema": 1, "status": "done_with_errors" if errors else "done",
               "generated_at": _now_iso(), "deadline_seconds": GAPS_DEADLINE,
               "elapsed_seconds": round(_clock() - started, 1),
               "licensed_only": settings.licensed_only,
               "sources": {"zotero": "on" if settings.zotero_on and not settings.licensed_only else "off",
                           "folder": "on" if settings.pdf_dir is not None and not settings.licensed_only else "off"},
-              "domains": domains, "candidates": len(entries), "counts": counts, "errors": errors, "entries": entries}
+              "domains": domains, "candidates": len(entries), "counts": counts, "errors": errors, "warnings": warnings,
+              "entries": entries}
     path = workdir / REPORT_REL
     path.parent.mkdir(parents=True, exist_ok=True)
     ft.write_text_atomic(path, json.dumps(report, indent=2, ensure_ascii=False) + "\n")
@@ -1130,6 +1158,7 @@ def main(argv=None) -> int:
             # One line, as the barrier prints its summary (escaped ASCII).
             print(json.dumps({"status": report["status"], "candidates": report["candidates"],
                               "counts": report["counts"], "errors": report["errors"],
+                              "warnings": report["warnings"],
                               "report": REPORT_REL}))
             return 0
         settings = settings_from_env(licensed_only, INDEX_BUDGET_SINGLE)
