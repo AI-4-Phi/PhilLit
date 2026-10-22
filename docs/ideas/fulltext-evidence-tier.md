@@ -61,7 +61,8 @@ phillit-service re-vendor.
   journal articles with a DOI; none was `EVIDENCE-WEB`.
 - **Identity bar: the DOI string in the first 3 pages; else the title's
   first 6 words as a phrase plus the first-author surname, with no other
-  DOI on page 1.** Measured on 148 Zotero PDFs with a DOI
+  DOI on page 1** (every page-1 DOI must equal the work's in full).
+  Measured on 148 Zotero PDFs with a DOI
   (`docs/known-issues/fulltext-identity-measurement-2026-10-21/`): accepts
   about 95% of right papers; against every other sampled item (148 x 147
   pairs, `idbar_nxn.py`) it accepted 1 wrong one, a paper that cites the
@@ -126,8 +127,9 @@ phillit-service re-vendor.
   OpenAlex reaches 1, Semantic Scholar 3, Zotero 3. Rejected: Unpaywall
   (needs an email in every request; its data now comes from OpenAlex, not
   measured); OpenAlex alone.
-- **Identity bar for a work without a DOI: the title phrase (first 6
-  words) starts within the first 600 characters of one of pages 1-5, and
+- **Identity bar for a work without a DOI: the title phrase (the first 6
+  words of the title, cut at a subtitle's `:`, `?` or `.` when the main
+  title has at least 2 words) starts within the first 600 characters of one of pages 1-5, and
   the first-author surname is on that same page.** Asking where the title
   sits separates the work from a work that cites it. Measured on 179
   no-DOI Zotero PDFs, each against every other (`idbar_nodoi.py` and the
