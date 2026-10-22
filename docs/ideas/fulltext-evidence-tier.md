@@ -94,9 +94,15 @@ phillit-service re-vendor.
   is a warning to shorten, with some tolerance. Rejected: a gate on all
   three (pages and caps would cut accurate quotes); telemetry only (a
   misquotation is a fabrication).
+- **Scope: the works the request names, plus `EVIDENCE-EXISTENCE` entries
+  with an OA PDF** (gap filling, not upgrading). Measured on the
+  justified-harm review (`oa_coverage.py`): OpenAlex has an OA PDF link for
+  48 of 97 ABSTRACT entries but only 1 of 25 EXISTENCE entries. Rejected:
+  named works only (leaves reachable gaps); any entry with an OA PDF (about
+  40% of entries, mostly upgrades, at the cost of downloads, barrier time
+  and writer reading load).
 
 **Open questions for Johannes** (to adjudicate one at a time):
-5. Scope: works the request names only, or any entry with an OA PDF?
 6. OA source: OpenAlex `oa_url`, Unpaywall (needs an email in `.env`), or
    both?
 7. Paywalled copies: a distributable plugin cannot assume a proxy. OA plus
