@@ -44,7 +44,7 @@ cut its main arguments.
    PDF (Human-in-the-Loop) or record the gap prominently (Autopilot). The
    planner and researchers then read the text too.
 
-Knock-on edits: `TIER_RANK`/`compute_tier`, dedupe's re-stamp,
+Knock-on edits: `/phillit:setup` (Zotero and PDF-folder consent), `TIER_RANK`/`compute_tier`, dedupe's re-stamp,
 SKILL.md's "no override needed" list, planner and writer tier tables and
 Source Check, `conventions.md` Evidence Tiers, `split_delivery.py`, and the
 phillit-service re-vendor.
@@ -117,10 +117,19 @@ phillit-service re-vendor.
   OpenAlex reaches 1, Semantic Scholar 3, Zotero 3. Rejected: Unpaywall
   (needs an email in every request; its data now comes from OpenAlex, not
   measured); OpenAlex alone.
+- **Paywalled copies: the user's own copies only, never a proxy or shadow
+  library.** Routes: Zotero, a local PDF folder, open access, and a file
+  the user hands over (`--pdf PATH`; Human-in-the-Loop asks for a named
+  work's PDF). `/phillit:setup` asks whether the user uses Zotero and
+  whether they keep academic PDFs in a folder PhilLit may read; on consent
+  it helps set each up (Zotero: enable the local API, check it answers) and
+  saves the choice and path in the workspace `.env`. Both sources are
+  opt-in: without that consent they are never touched. A large folder
+  needs a cached index (file name, first-page text), not a scan per review.
+  Rejected: no `--pdf` route; an institutional proxy (logins and
+  terms-of-use risk a distributable plugin should not carry).
 
 **Open questions for Johannes** (to adjudicate one at a time):
-7. Paywalled copies: a distributable plugin cannot assume a proxy. OA plus
-   a user-supplied file (`--pdf`, e.g. from Zotero) only?
 8. phillit-service: full text on a server has a different legal standing.
    Plugin-only, OA-only in the service, or user upload only?
 9. Storage: `intermediate_files/` is published into `reviews/`. Keep the PDF
