@@ -151,6 +151,19 @@ collapsed to a single shared citekey, or a citekey carries two conflicting
 comparison years) — not "not a reprint." Agents must never write this field
 by hand.
 
+### Full Text File Field (barrier-stamped)
+
+`fulltext_file = {intermediate_files/fulltext/<slug>.txt}` is added by the
+evidence barrier (Phase 3→4) to entries it stamps `EVIDENCE-FULLTEXT`: the
+path, relative to the review folder, of the text the barrier rendered from the
+stored PDF. Each page opens with a marker line: `[[page N]]` when the page
+carries the printed number the entry's `pages` field predicts, otherwise
+`[[sheet N]]` (the PDF's page index, never a citable page). Dedupe carries the
+field into a merged entry and keeps the tier only when the text still hashes
+as the barrier recorded and the merged entry is the same work; otherwise it
+prints `[FULLTEXT-LOST]`. The annotated bib strips it. Agents must never write
+this field by hand.
+
 ### Field Grounding — CRITICAL
 
 **ALL bibliographic fields must come ONLY from API/tool output.**
@@ -231,6 +244,7 @@ Similar to sep_context but from IEP.
 
 The `EVIDENCE-*` token in `keywords` is the **single authority on citability** (one exception: a work the user's request asked to include, named by full title or by author and year. The orchestrator records it in `tier-overrides.md` and passes the planner and writers a `Tier override (user request)` line; they may then place it, and characterize it only from the user's own description, framed as the review's working account ("taken here to ..."), or else say no more than its title identifies; either way they say in reader-facing prose what this review did not verify ("this review did not verify that account"), never naming the request or the workflow, and never quote it. SKILL.md Phase 4 has the full rule), stamped mechanically by the evidence barrier at the Phase 3-to-4 boundary (and re-stamped attestation-aware on dedup merge — the one sanctioned mutation after the barrier; no stage adds content-evidence fields after it):
 
+- `EVIDENCE-FULLTEXT` — the work's own text. A PDF stored by `acquire_fulltext.py` (from the user's Zotero library or PDF folder, with consent; open access; or a file the user handed over) that the barrier re-extracted, matched against its acquisition record's hash, and checked against the entry's identity (its verified DOI in the first pages, else title phrase plus first-author surname). Characterize/summarize/quote from the text file `fulltext_file` names; quotations at most 40 words, run into the text, at most 150 words per work across the review; a page locator only from a `[[page N]]` marker. Phase 6's quotation gate (`check_quotes.py`) checks every quotation attributed to such a work against its text.
 - `EVIDENCE-ABSTRACT` — abstract corroborated at the barrier by a live fetch that still served the same text; the enrichment ledger's hash still binds that text and decides candidacy, it is just no longer sufficient on its own. The text must also pass the barrier's usability screen (`abstract_usability.py`): a stub, keyword list, publisher page, opening extract or word salad earns no tier, however well it corroborates. Characterize/summarize/quote from the sourced abstract text
 - `EVIDENCE-CONTEXT` — barrier-written `sep_context`/`iep_context`: characterize from that description only, attributed in prose
 - `EVIDENCE-WEB` — a `@misc` web source that passed the barrier's **fetch gate**: the URL was corroborated this run (a same-domain 2xx, a same-domain bot-block, or an existing archive snapshot) AND a research-time capture written by `fetch_web.py` bound to that same URL passed all five checks (URL binding, HTTP status for script captures, boilerplate signatures, title anchor plus a length floor, and containment of every `web_span` the entry lists). Citable, with characterization grounded in the entry's `note`; no direct quotation of the work. Barrier-authored `urldate` and `archiveurl` are delivered alongside. Encyclopedia and index hosts (SEP and its mirrors, IEP, NDPR, PhilPapers) are excluded: `fetch_web.py` refuses them and the barrier buckets them as `excluded_host` without probing — SEP/IEP content reaches evidence through the encyclopedia context channel instead.

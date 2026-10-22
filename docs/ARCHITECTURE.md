@@ -67,7 +67,7 @@ The `domain-literature-researcher` subagent uses the `philosophy-research` skill
 | `citation_context.py` | Shared SEP/IEP citation-context utilities | — |
 | `check_setup.py` | Environment verification | — |
 
-**Key benefit**: papers found via structured APIs are grounded at search time; the Phase 3-to-4 evidence barrier (`evidence_barrier.py`) then validates every domain bib and stamps each entry's `EVIDENCE-*` citability tier.
+**Key benefit**: papers found via structured APIs are grounded at search time; the Phase 3-to-4 evidence barrier (`evidence_barrier.py`) then validates every domain bib and stamps each entry's `EVIDENCE-*` citability tier. The top tier, `EVIDENCE-FULLTEXT`, rests on a PDF that `acquire_fulltext.py` stored (for works the request names, in Phase 1, and for entries left without an abstract, before the barrier) and that the barrier checked against the entry; Phase 6's `check_quotes.py` checks every quotation from such a work against its text.
 
 ## Pattern Implementation
 
@@ -98,7 +98,7 @@ Orchestrator:
 - Tracks completion in task-progress.md
 - All files used together by synthesis-planner
 - No explicit assembly needed (planner reads all)
-- Runs `evidence_barrier.py` once, after every domain has finished; Phase 4 starts only on a `complete` or `degraded` evidence report
+- Runs `acquire_fulltext.py --gaps`, then `evidence_barrier.py` once, after every domain has finished; Phase 4 starts only on a `complete` or `degraded` evidence report
 ```
 
 ### Phase 4 & 5: Synthesis Planning and Section-by-Section Writing
@@ -176,7 +176,7 @@ skills/literature-review/
     ├── normalize_headings.py             # Normalize section/subsection heading numbering
     ├── dedupe_bib.py                     # Deduplicate and merge BibTeX (re-stamps tiers via --evidence-report)
     ├── enrich_bibliography.py            # Batch abstract resolution for BibTeX
-    ├── evidence_barrier.py               # Phase 3-to-4 barrier: validate, acquire SEP/IEP context, vet venues, letter collisions, group reprints (same_work_group), gate web sources, corroborate abstracts, stamp EVIDENCE-* tiers, re-point the cleaning ledger's binding
+    ├── evidence_barrier.py               # Phase 3-to-4 barrier: validate, acquire SEP/IEP context, vet venues, letter collisions, group reprints (same_work_group), gate web sources, corroborate abstracts, verify full texts, stamp EVIDENCE-* tiers, re-point the cleaning ledger's binding
     ├── resolve_context.py                # Mechanical SEP/IEP context acquisition (barrier helper)
     ├── stamp_evidence.py                 # Evidence-tier computation and stamping (barrier helper)
     ├── bib_fields.py                     # Depth-counting scanner: locates field values in raw BibTeX text for every value read, edit and strip in this directory
@@ -184,7 +184,10 @@ skills/literature-review/
     ├── year_suffix.py                    # Chicago a/b assignment over work identity (barrier helper, Chicago a/b disambiguation)
     ├── abstract_usability.py             # Is an abstract usable as evidence? (barrier helper, the screen behind EVIDENCE-ABSTRACT)
     ├── web_evidence.py                   # URL extraction, capture checks, existence (barrier helper, the EVIDENCE-WEB gate; owns the excluded-host policy — SEP + mirrors, IEP, NDPR, PhilPapers — which never earn EVIDENCE-WEB)
+    ├── fulltext.py                       # PDF identity, page maps, text format, quote matching (owner behind EVIDENCE-FULLTEXT)
+    ├── acquire_fulltext.py               # Store a work's PDF: Zotero, PDF folder, open access, or a user's file (Phase 1 anchors, Phase 3 gaps)
     ├── check_evidence.py                 # Phase 6 evidence-tier telemetry checker
+    ├── check_quotes.py                   # Phase 6 quotation gate for EVIDENCE-FULLTEXT works
     ├── split_delivery.py                 # Phase 6: track-record bib, annotated bib, research notes
     ├── workdir.py                        # The review working directory: mode, location, the reviews/.active-review pointer, publish into reviews/
     ├── fault_lines.py                    # FLn.n definitions and substitution

@@ -90,6 +90,8 @@ reviews/*
 !reviews/extended-mind-cognitive-offloading/
 !reviews/metaphilosophy-literature-reviews/
 !reviews/moral-value-diy/
+# Full texts (PDFs and their text) stay local, example reviews included
+reviews/*/intermediate_files/fulltext/
 
 # Claude Code local files (not shared)
 .claude/settings.local.json

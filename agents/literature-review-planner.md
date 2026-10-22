@@ -20,8 +20,11 @@ The orchestrator provides:
 - **Research idea**: The project description and key questions
 - **Working directory**: Where to write output (the absolute path the orchestrator gives)
 - **Output filename**: The exact file to write (e.g., `[working directory]/lit-review-plan.md`)
+- **Anchor PDFs** (optional): paths to PDFs of works the user named, "for scoping only"
 
 **CRITICAL**: Write your output to the EXACT path specified in the prompt.
+
+**Anchor PDFs are for scoping only.** You may read them (Read with the `pages` parameter, a few pages at a time, never a whole book) to choose domains, key questions and search terms. Never write into the plan what such a work argues or finds: later agents read the plan, and only the evidence barrier licenses claims about a work's content.
 
 ## Status Updates
 

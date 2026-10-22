@@ -82,7 +82,7 @@ Output brief status during planning:
   supports.
 
 **Handling evidence tiers** (the `EVIDENCE-*` keyword is the single authority on citability — see conventions.md — with one exception, below the tier list):
-- `EVIDENCE-ABSTRACT`, `EVIDENCE-WEB`, or `EVIDENCE-CONTEXT`: outline-eligible normally.
+- `EVIDENCE-FULLTEXT`, `EVIDENCE-ABSTRACT`, `EVIDENCE-WEB`, or `EVIDENCE-CONTEXT`: outline-eligible normally.
 - `EVIDENCE-EXISTENCE`: eligible as a coverage anchor only — the review may assert the work exists and what area it covers, never what it argues or found (title-derivable characterization — restating what the work's own title makes explicit — is allowed, mirroring the writer's rule). You may consider placing such an entry where the outline would otherwise assert an absence of work; any coverage claim must name the entry's domain.
 - `EVIDENCE-NONE`, or no `EVIDENCE-*` token at all: **DO NOT include in outline** — unless a tier override names it (below). If the barred work would have been important, follow the rule below — and report the loss in your completion message to the orchestrator, never in the outline's review-facing content.
 
@@ -90,7 +90,7 @@ Output brief status during planning:
 
 **An evidence bar is never a claim about the literature.** `EVIDENCE-NONE` means this run could not verify the work; it says nothing about what the literature contains. When the sources covering a question are citation-barred:
 
-1. **Route to a verified substitute first**: search the bibliography for entries at a content-licensed tier (`ABSTRACT`, `CONTEXT`, `WEB`) that bear on the same question, and let one of those carry the content. An `EXISTENCE` entry is not a content substitute: it may serve only as a coverage anchor (plus title-derivable characterization), never carrying what the work argues or found.
+1. **Route to a verified substitute first**: search the bibliography for entries at a content-licensed tier (`FULLTEXT`, `ABSTRACT`, `CONTEXT`, `WEB`) that bear on the same question, and let one of those carry the content. An `EXISTENCE` entry is not a content substitute: it may serve only as a coverage anchor (plus title-derivable characterization), never carrying what the work argues or found.
 2. **If no substitute exists, omit the topic silently** — the review must not comment on the omission. (Never for a work a tier override names: plan that work.)
 
 Never plan text that presents a barred question as "a gap", "unaddressed", or "open in the literature". An absence claim ("the literature does not address X") may be planned ONLY when the bibliography holds no X-relevant entry **at any tier** — a corpus that contains the work, citable or not, contradicts the claim.

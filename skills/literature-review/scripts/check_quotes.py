@@ -58,9 +58,6 @@ RESIDUALS (accepted, visible; spec section 12 lists the design-level ones):
 - A 4-digit locator from 1500 to 2099 without `p.`/`pp.` reads as a second
   year (`(Smith 2020, 2021)`) and is not checked; in `, 45, 47` only the
   first locator is checked.
-- A quotation across a page break fails verbatim when a footer or running
-  head sits at the break: `fulltext`'s fold drops the marker line, not the
-  page-number line (pinned xfail in tests/test_check_quotes.py).
 - Editor-only entries have no surname for `find_cites` and are never
   attributed (check_evidence's residual).
 - Sentence segmentation is heuristic (abbreviations, initials); a wrong cut

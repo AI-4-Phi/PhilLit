@@ -158,8 +158,8 @@ def test_researcher_told_not_to_write_any_derived_field():
     """
     text = (REPO_ROOT / "agents" / "domain-literature-researcher.md").read_text(
         encoding="utf-8")
-    assert ("Never write a `venue_status`, `year_suffix`, or "
-            "`same_work_group` field yourself") in text
+    assert ("Never write a `venue_status`, `year_suffix`, `same_work_group`, "
+            "or `fulltext_file` field yourself") in text
     # And the reason, not just the prohibition -- a bare ban invites a
     # researcher to treat it as style rather than correctness.
     assert "re-derives them from scratch on every run" in text
@@ -501,3 +501,42 @@ def test_writer_prose_makes_the_source_check_required():
     assert "**Source check**" in checklist
     message = _section(text, "## Communication with Orchestrator", "## Notes")
     assert "Source check: [N] claims checked, [M] cut or narrowed" in message
+
+
+def test_fulltext_tier_reaches_every_prompt_that_must_act_on_it():
+    """EVIDENCE-FULLTEXT (PL-19): steps an orchestrator or a Sonnet agent
+    reads as optional unless they are marked REQUIRED and carry their exact
+    command. Each pin names a failure that would silently drop the tier or
+    the quotation gate."""
+    skill = (REPO_ROOT / "skills" / "literature-review" / "SKILL.md").read_text(
+        encoding="utf-8")
+    phase1 = _section(skill, "## Phase 1", "## Phase 2")
+    assert "**Acquire anchor texts (REQUIRED" in phase1
+    # The full identity, never --doi alone: a PDF without its DOI printed is
+    # matched by title and surname.
+    assert '--doi "[DOI]" --title "[full title]" --author "[surname]" --year [year]' in phase1
+    assert "never `--doi` alone" in phase1 and '--pdf "[path]"' in phase1
+    phase3 = _section(skill, "## Phase 3", "## Phase 4")
+    gaps = phase3.index("acquire_fulltext.py \"[workdir]\" --gaps --domains N")
+    assert "**Acquire gap texts (REQUIRED" in phase3
+    assert gaps < phase3.index("evidence_barrier.py")
+    phase4 = _section(skill, "## Phase 4", "## Phase 5")
+    assert "If it is `EVIDENCE-FULLTEXT`, `EVIDENCE-ABSTRACT`" in phase4
+    phase6 = _section(skill, "## Phase 6", "## Error Handling")
+    assert "**Quotation gate (REQUIRED" in phase6
+    assert ('check_quotes.py "[workdir]/literature-review-[project-name].md" '
+            '"[workdir]/literature-[project-name].bib" --workdir "[workdir]" '
+            '--evidence-report') in phase6
+    assert "no `FAIL`, no `FIX` and no `WARN uncited` line" in phase6
+    assert "[FULLTEXT-LOST]" in phase6
+    revision = skill[skill.index("## Revising a Delivered Review"):]
+    assert "REQUIRED quotation gate" in revision
+    assert "none of the nine engine-derived fields" in skill
+
+    writer = (REPO_ROOT / "agents" / "synthesis-writer.md").read_text(encoding="utf-8")
+    assert "| `EVIDENCE-FULLTEXT` |" in writer
+    assert "`fulltext_file` (`EVIDENCE-FULLTEXT`" in writer          # Source Check field
+    assert "`[[sheet N]]` page gets no locator" in writer
+    planner = (REPO_ROOT / "agents" / "synthesis-planner.md").read_text(encoding="utf-8")
+    assert "`EVIDENCE-FULLTEXT`, `EVIDENCE-ABSTRACT`" in planner
+    assert "(`FULLTEXT`, `ABSTRACT`, `CONTEXT`, `WEB`)" in planner

@@ -34,12 +34,12 @@ Once `workdir.py init` has created the review (Phase 1, step 7), create the trac
 
 ## Progress Status
 
-- [ ] Phase 1: Verify environment and determine execution mode
+- [ ] Phase 1: Verify environment and determine execution mode; acquire anchor texts (step 8)
 - [ ] Phase 2: Structure literature review domains
-- [ ] Phase 3: Research [N] domains in parallel
+- [ ] Phase 3: Research [N] domains in parallel; acquire gap texts; run the evidence barrier
 - [ ] Phase 4: Outline synthesis review across domains
 - [ ] Phase 5: Write review for each section in parallel
-- [ ] Phase 6: Assemble, deliver and publish the review (tick before step 11)
+- [ ] Phase 6: Assemble, check quotations, deliver and publish the review (tick before step 11)
 
 ## Completed Tasks
 
@@ -132,7 +132,7 @@ This phase validates conditions for subsequent phases to function.
    - `"delivered": true` → the pointer names a review that was already delivered (an interrupted "completed review" guard, step 7). Run `workdir.py publish --abandon` (it only clears the pointer; the delivered review is not touched), then run step 5 again and continue from its answer.
    - `"elsewhere": true` → **STOP.** Tell the user that this review's working files are not on this machine: it was last worked on `[host]`, where it can be resumed, or its files were removed. If `[host]` is this machine: when the printed `workdir_exists` is `true`, the workspace was probably moved, renamed or opened by another path spelling (letter case counts), its files are at the printed `workdir`, and reopening the workspace by its original path resumes it; when it is `false`, the files were removed. The user can resume on the machine that holds the files, or delete `reviews/.active-review` themselves — warn them that the pointer is one synced file, so deleting it also detaches the review on the other machine (there it stays listed as abandoned, and `workdir.py activate <name>` re-attaches it). Never treat it as a fresh review.
    - `"unproven": true` → **STOP.** Tell the user that the review's folder exists at the printed `workdir` but its ownership cannot be proven, and give the printed `error` verbatim. To detach the review, the user deletes `reviews/.active-review` by hand. The folder itself is then theirs to move or delete: depending on why ownership failed, `status` may list it as abandoned or stranded, or not at all.
-   - `"interrupted_demote": true` → run `workdir.py demote` (it finishes moving the fresh review into the workspace), then write the tracker as step 7 describes and continue at Phase 2.
+   - `"interrupted_demote": true` → run `workdir.py demote` (it finishes moving the fresh review into the workspace), then write the tracker as step 7 describes, run step 8 (anchor texts), and continue at Phase 2.
    - `"active": true` with a `workdir` and none of the flags above → apply the resume logic below in `[workdir]`.
    - `"active": false` → no review is active. If `abandoned` lists entries, offer to resume one — `workdir.py activate <name>`, which prints the same fields as an active `status` — or to start fresh (step 6). If `activate` refuses, report it verbatim. When it says the copy is not complete yet (still syncing), tell the user to try again once sync has finished; otherwise stop. In Full Autopilot, start fresh. Mention any `stranded` entries once, with their `path` and `note`.
    - An `error`, any nonzero exit, or output that is not one JSON object → report it verbatim to the user and stop.
@@ -156,17 +156,18 @@ This phase validates conditions for subsequent phases to function.
       - Check lit-review-plan.md for total domains expected
       - If all domains exist -> if [workdir]/intermediate_files/json/evidence_report.json
         is missing, or its `status` is neither `complete` nor `degraded`, run Phase 3
-        step 5 (the evidence barrier) first; then resume at Phase 4
+        steps 5 and 6 (gap texts, then the evidence barrier) first; then resume at Phase 4
       - If some domains missing -> Resume Phase 3 for missing domains only
 
    5. If lit-review-plan.md exists -> Resume at Phase 3
 
-   6. If task-progress.md exists but no other files -> Resume at Phase 2
+   6. If task-progress.md exists but no other files -> run Phase 1 step 8
+      (anchor texts; works already stored print `exists`), then resume at Phase 2
 
    7. Otherwise ([workdir] exists but holds no review files: init ran,
       nothing else did) -> skip step 7's init, create
       [workdir]/task-progress.md as step 7 describes (including its write
-      check), and continue at Phase 2
+      check), run step 8 (anchor texts), and continue at Phase 2
    ```
 
    Output: "Resuming from Phase [N]: [phase name]..."
@@ -201,6 +202,25 @@ This phase validates conditions for subsequent phases to function.
 
    **CRITICAL**: All subsequent file operations happen in `[workdir]`. Pass it to ALL subagents as ``Working directory: `[workdir]` ``, with the path in backticks.
 
+8. **Acquire anchor texts (REQUIRED when the request names works)**: an anchor work is one the user's request names by its full title, or by author and year — the same test as the Phase 4 tier-override rule. If the request names none, skip this step. For each anchor work:
+   - Resolve it to its DOI, its full title, its first author's FULL surname as published, particles included (`van Fraassen`, never `Fraassen`), and its year, with CrossRef first:
+     ```bash
+     bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/verify_paper.py --title "[title]" --author "[surname]"
+     ```
+     If CrossRef finds nothing, try `s2_search.py` or `search_openalex.py` the same way. Without a DOI, the title, surname and year must all be known; a work you cannot resolve that far gets no acquisition, and the final summary names it.
+   - Run, passing everything you resolved:
+     ```bash
+     bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/acquire_fulltext.py "[workdir]" --doi "[DOI]" --title "[full title]" --author "[surname]" --year [year]
+     ```
+     When the DOI is known, still pass `--title`, `--author` and `--year`, never `--doi` alone: a PDF that does not print its DOI is matched by title and surname instead. Without a DOI, leave out `--doi`.
+   - It prints one JSON object. By its `status`:
+     - `acquired` or `exists`: the work's PDF is stored at `[workdir]/intermediate_files/fulltext/[slug].pdf` (`slug` is printed).
+     - `not_found` (no source had a PDF) or `rejected` (a PDF was found, but it is another work or has no readable text): Human-in-the-Loop: ask the user for the path of a PDF of the work, then run the same command again with `--pdf "[path]"` added; the file goes through the same identity check, and a second `rejected` means it is not this work — tell the user. Full Autopilot: record the gap for the final summary.
+     - `refused` (`tried` names `slug_collision` or `path_too_long`): report it to the user; do not retry.
+   - Exit 1, or output that is not one JSON object: report it verbatim and continue without full texts. They are an upgrade; the review does not depend on them.
+
+   In the final summary, name every anchor work left without a PDF and why (`not_found`, `rejected`, `refused` or a failure). A stored PDF licenses nothing by itself: only the Phase 3 evidence barrier, after checking the PDF against the work's bib entry, stamps `EVIDENCE-FULLTEXT` and writes the text file the writers read (`[slug].txt`, which does not exist before the barrier runs).
+
 ---
 
 ## Phase 2: Structure Literature Review Domains
@@ -210,6 +230,7 @@ This phase validates conditions for subsequent phases to function.
    - subagent_type: "phillit:literature-review-planner"
    - prompt: Include full research idea, requirements, AND working directory path
    - Example prompt: "Research idea: [idea]. Working directory: `[workdir]`. Write output to `[workdir]/lit-review-plan.md`"
+   - If Phase 1 step 8 stored PDFs, add their paths: "Anchor PDFs, for scoping only: [workdir]/intermediate_files/fulltext/[slug].pdf, ...". They help the planner choose domains and search terms; they license no claim about the works.
    - Never prescribe a citation year, citekey or year letter to any agent. The metadata cleaner sets `year` to the CrossRef issue year wherever the entry's own CrossRef record licenses it (an online-first article published online in 2017 in a 2019 issue is cited as 2019; see `$PHILLIT_ROOT/docs/conventions.md`), and the barrier assigns letters.
 3. Wait for `literature-review-planner` agent to structure the literature review into domains
 4. Read `[workdir]/lit-review-plan.md` (generated by agent)
@@ -232,7 +253,15 @@ Never advance to a next step in this phase before completing the current step.
    - **CRITICAL — foreground, never background**: never set `run_in_background: true`; pass `false` where the tool lists the parameter (see Agent Tool Usage).
 3. Wait until every one of the N agents has completed — inline results, or one completion notification per agent (see Agent Tool Usage; an immediate "launched" return is not completion). Expected outputs: `[workdir]/literature-domain-1.bib` through `literature-domain-N.bib`. **Update task-progress.md after all domains complete**
 4. **Collect source issues**: Note any "Source issues:" reported by domain researchers for the final summary. If a researcher's last message has no `Source issues:` line, read the `NOTABLE_GAPS` part of the `@comment` header in its `literature-domain-N.bib` instead, and quote its failure lines for that domain
-5. **Evidence barrier (REQUIRED, after all researchers complete)**: run
+5. **Acquire gap texts (REQUIRED, after all researchers complete, before the barrier)**: run
+
+   ```bash
+   bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/acquire_fulltext.py "[workdir]" --gaps --domains N
+   ```
+
+   Run it exactly as shown, in the foreground (never set `run_in_background`) with the maximum Bash timeout (600000 ms); its pass stops itself after about seven minutes. It looks for a PDF of every domain-bib entry that has no `abstract`: in the user's Zotero library and PDF folder (only where `/phillit:setup` recorded the user's consent), then open access. It never edits a bib. It prints one line, `{"status": "done", "candidates": ..., "counts": {...}, "report": ...}`: give the counts once in the final summary. Exit 1, or output that is not that one JSON line: report it verbatim to the user and go on to the barrier without gap texts.
+
+6. **Evidence barrier (REQUIRED, after all researchers complete and step 5)**: run
 
    ```bash
    bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/evidence_barrier.py "[workdir]" --domains N
@@ -240,7 +269,7 @@ Never advance to a next step in this phase before completing the current step.
 
    Run it exactly as shown: never pipe it through `tail`, `head` or anything else, since a pipe hides its exit code. **CRITICAL — foreground, never background**: run this command in the foreground (never set `run_in_background`) with the maximum Bash timeout (600000 ms) — rate-limited encyclopedia fetches can take 10+ minutes on a cold cache. A backgrounded barrier can be orphaned when the session ends, leaving every entry unstamped (all `EVIDENCE-NONE`). If the tool still moves the command to the background at its timeout ceiling, WAIT for its completion notification — do not start Phase 4 until `intermediate_files/json/evidence_report.json` exists with status `complete` or `degraded`.
 
-   The barrier validates every domain's outputs, mechanically acquires SEP/IEP citation context for entries lacking attested content evidence, writes `intermediate_files/json/evidence_report.json`, and stamps every entry with an `EVIDENCE-*` citability tier. **If it exits nonzero, do NOT proceed to Phase 4** — report the failure to the user, with the summary's `error` line verbatim, and stop. If the summary reports `"status": "degraded"`, continue, and quote its `degraded_by` lines (the causes) in the final summary.
+   The barrier validates every domain's outputs, mechanically acquires SEP/IEP citation context for entries lacking attested content evidence, checks every stored PDF against its entry and renders its text, writes `intermediate_files/json/evidence_report.json`, and stamps every entry with an `EVIDENCE-*` citability tier. **If it exits nonzero, do NOT proceed to Phase 4** — report the failure to the user, with the summary's `error` line verbatim, and stop. If the summary reports `"status": "degraded"`, continue, and quote its `degraded_by` lines (the causes) in the final summary.
 
    The summary's `venue_vetting` key reports the venue check: it
    flags entries whose journal is barely indexed. `"status": "skipped"` means
@@ -279,6 +308,15 @@ Never advance to a next step in this phase before completing the current step.
    salad (the report gives each entry's `reason`), so it cannot support the
    tier. The entry keeps a lower tier, as any untiered entry does.
 
+   The summary's `fulltext` key reports the full-text pass: `stamped`
+   entries earned `EVIDENCE-FULLTEXT`; `rejected` counts, by reason, stored
+   PDFs or entries that did not (the report's `fulltext` object names
+   them); `deadline` counts PDFs the pass did not reach (a rerun of the
+   barrier reaches them); `unbound_records` counts stored PDFs that matched
+   no entry. Mention it once in the final summary when anything was
+   rejected, cut by the deadline or unbound, and when `status` is `error`:
+   then no entry earned the tier this run, and the review continues.
+
 Never advance to Phase 4 before all domain researchers have completed AND the evidence barrier has exited zero.
 
 ---
@@ -290,10 +328,10 @@ Never advance to Phase 4 before all domain researchers have completed AND the ev
    - prompt: Include research idea, working directory, list of BibTeX files, original plan path, and — only if the user stated one in their request — the target length
    - **Tier overrides — user request only.** An override lets the planner and writers include a work its `EVIDENCE-*` tier would bar. Write one ONLY for a work the user's request asked to include in the review, naming it by its full title or by author and year. Never on your own judgement: not for an important work, not after an API failure. A work the request only mentions ("building on Lewis (1986)", "against Kaufman 2011"), or names by topic or author alone ("something on Frankfurt cases", "Smith's work"), gets no override.
      - The full title (ignoring case and punctuation) or the author and year must match exactly one work in the BibTeX files: one entry, one `same_work_group`, or entries in different domain files that share one DOI (one work under several citekeys). A partial title is no match. No match or several works: no override, and the final summary says the named work could not be identified.
-     - Within a `same_work_group`, take the highest-tier member. If it is `EVIDENCE-ABSTRACT`, `EVIDENCE-CONTEXT` or `EVIDENCE-WEB`, no override is needed.
+     - Within a `same_work_group`, take the highest-tier member. If it is `EVIDENCE-FULLTEXT`, `EVIDENCE-ABSTRACT`, `EVIDENCE-CONTEXT` or `EVIDENCE-WEB`, no override is needed.
      - Otherwise (`EVIDENCE-EXISTENCE`, `EVIDENCE-NONE`, or no tier token), the work gets a line: `Tier override (user request): <citekey> (<tier, or "no tier">)`, where `<citekey>` lists every key of the work, separated by `, ` (one work in several domain files carries several keys), followed only when the request describes the work by `; user's description: "<the request's words about the work, copied verbatim on one line, with any double quote changed to a single one>"`.
      - Every time this step runs, rewrite `[workdir]/tier-overrides.md` with exactly this request's lines, one per work — an empty file when there are none, so no earlier request's line survives. Add every line to this prompt.
-     - **A named work below `EVIDENCE-ABSTRACT` is an accuracy risk to flag, not to work around.** When a work the request names (identified as above) has no member at `EVIDENCE-ABSTRACT`, `EVIDENCE-CONTEXT` or `EVIDENCE-WEB`, the review cannot say what it argues beyond the user's description or its title. Human-in-the-Loop: tell the user before dispatching the planner, name the work, and ask whether to continue. Full Autopilot: continue. Either way, open the final summary with one line per such work: the review did not verify what it argues, so any conclusion that depends on it needs the user's check against the text.
+     - **A named work below `EVIDENCE-ABSTRACT` is an accuracy risk to flag, not to work around.** When a work the request names (identified as above) has no member at `EVIDENCE-FULLTEXT`, `EVIDENCE-ABSTRACT`, `EVIDENCE-CONTEXT` or `EVIDENCE-WEB`, the review cannot say what it argues beyond the user's description or its title. Human-in-the-Loop: tell the user before dispatching the planner, name the work, and ask whether to continue. Full Autopilot: continue. Either way, open the final summary with one line per such work: the review did not verify what it argues, so any conclusion that depends on it needs the user's check against the text.
      - An override never licenses quotation: decline a request to quote in the final summary. In the final summary, name every override line with the user's words, and say whether the assembled review cites the work (search it for the citation); a work it does not cite is reported as not included, whether or not a `CHECK` line flags it.
    - Example prompt: "Research idea: [idea]. Target length: [user's stated length, or omit this sentence]. Working directory: `[workdir]`. BibTeX files: literature-domain-1.bib through literature-domain-N.bib. Plan: lit-review-plan.md. Write output to: `[workdir]/synthesis-outline.md`"
    - description: "Plan synthesis structure"
@@ -313,7 +351,7 @@ Never advance to a next step in this phase before completing the current step.
    - subagent_type: "phillit:synthesis-writer"
    - prompt: Include working directory, section heading (exactly as it appears in the outline),
      outline path, and relevant BibTeX files — plus every line of `[workdir]/tier-overrides.md`, if it exists, unchanged, to every writer, with the BibTeX files that hold any of each override's keys (read the file, also on a resume: the lines live only there)
-   - **Nothing else licenses content.** Never give writers a notes file, a list of "verified facts", or your own reading of a work, even of a full text you have read: a writer may say about a work only what its tier licenses (or its override line). Put such material in the final summary for the user instead.
+   - **Nothing else licenses content.** Never give writers a notes file, a list of "verified facts", or your own reading of a work, even of a full text you have read: a writer may say about a work only what its tier licenses (or its override line). A full text licenses content only through the entry's `EVIDENCE-FULLTEXT` tier, which the barrier stamps, and the writer reads that text itself. Put such material in the final summary for the user instead.
    - **CRITICAL**: Use the outline's own section headings verbatim (e.g., "## Introduction",
      "## Section 1: The Charge"). Do NOT renumber sections linearly (1, 2, 3...) if the outline
      uses different numbering. Writers follow the outline's numbering, so mismatches cause them
@@ -342,14 +380,14 @@ Never advance to Phase 6 before all synthesis writers have completed.
 - `literature-review-[project-name].docx` — the review as a Word document, only if pandoc is installed
 - `literature-review-[project-name].pdf` — the review as a PDF, only if pandoc and `lualatex` are installed
 - `literature-[project-name].bib` — the TRACK RECORD, for accountability and reproducibility: every work with every verdict the agents reached on it — evidence tier, relevance rating, fault-line tags, cleaning and workflow markers, and the engine-derived fields. No reading notes, no `@comment` blocks.
-- `literature-[project-name]-annotated.bib` — the REFERENCE-MANAGER IMPORT (Zotero, BibDesk, ...): the same works with standard fields, topical keywords, and the researchers' reading notes with fault-line tags spelled out. No verdict tokens and none of the eight engine-derived fields. Zotero imports the notes as notes and the keywords as tags.
+- `literature-[project-name]-annotated.bib` — the REFERENCE-MANAGER IMPORT (Zotero, BibDesk, ...): the same works with standard fields, topical keywords, and the researchers' reading notes with fault-line tags spelled out. No verdict tokens and none of the nine engine-derived fields. Zotero imports the notes as notes and the keywords as tags.
 - `research-notes-[project-name].md` — the per-domain analysis the researchers recorded (overview, key positions, gaps, synthesis guidance, relevance), for reading.
 
 **Resuming Phase 6** (Phase 1 found the final review file). First: if `[workdir]/intermediate_files/.phillit-revision` exists, the review is a revision, and it resumes as "Revising a Delivered Review" says, not by the rules below. Otherwise exactly one test decides where:
-- If `[workdir]/intermediate_files/lit-review-plan.md` exists, step 8 had started, so steps 1-7 had finished. Run steps 5 and 6 again (both only read; step 6's `CHECK` lines belong in the final summary), then steps 8, 9, 10 and 11. Step 8's moves skip whatever is already moved.
+- If `[workdir]/intermediate_files/lit-review-plan.md` exists, step 8 had started, so steps 1-7 had finished. Run steps 5 and 6 again (both only read; step 6's `CHECK` lines belong in the final summary, and its quotation gate must pass as step 6 says), then steps 8, 9, 10 and 11. Step 8's moves skip whatever is already moved.
 - Otherwise run Phase 6 again from step 1. Every step before step 8 rebuilds its output from the sections and domain bibs, which are all still in `[workdir]`, so a repeat is safe. It redoes the fixes made at steps 3 and 5, because the year-conflict lines and the lint report them again. It also covers a crash in the middle of any step, including step 1.
 
-A resume that starts at step 8 cannot reproduce the split's `SPLIT-*` lines or the researchers' source issues, since both lived in the interrupted conversation. Say in the final summary that those lines were lost, rather than implying there were none.
+A resume that starts at step 8 cannot reproduce the split's `SPLIT-*` lines, dedupe's `[FULLTEXT-LOST]` lines or the researchers' source issues, since they lived in the interrupted conversation. Say in the final summary that those lines were lost, rather than implying there were none.
 
 1. Assemble final review with YAML frontmatter:
 
@@ -394,6 +432,7 @@ A resume that starts at step 8 cannot reproduce the split's `SPLIT-*` lines or t
    - Log which duplicates were removed to console
    - Print a `year conflict` line (stderr) when two copies of one work disagree on the year. The merge still happens and the survivor is chosen by abstract and importance, not by year — so before step 4, check the survivor's year against the prose (and CrossRef) and fix the wrong one in the merged bib. A survivor whose year the prose does not cite fails step 5 as an unresolved citation.
    - Print a `[KEY-REMAP] <removed> -> <survivor>` line for each citekey merged away. When a line maps a key of a `tier-overrides.md` line to a survivor that line does not list, add the survivor to that line (`, <survivor>`) before step 6, so step 6 tags its `CHECK` lines. In the final summary, name each override's work by its surviving key.
+   - Print a `[FULLTEXT-LOST] <key>: <reason>` line (stdout) for each entry whose `EVIDENCE-FULLTEXT` did not survive the merge: the merged entry is another work's identity, or its text changed after the barrier. The entry keeps a lower tier. Quote every such line verbatim in the final summary.
    - Leave `same_work_group` pairs alone, by design: the barrier's grouping is advisory (a reprint carries its own DOI). The planner already cites one key per group, and step 4 prints a `[SAME-WORK]` line if the prose cites two.
 
 4. Generate bibliography and append to final review:
@@ -446,13 +485,28 @@ A resume that starts at step 8 cannot reproduce the split's `SPLIT-*` lines or t
    "citation-check: ... skipped" on a finished review; that message means the
    check never ran, not that it passed.
 
-6. **Evidence checker (telemetry)**: run
+6. **Evidence checks: the telemetry checker, then the quotation gate (REQUIRED)**. First the telemetry checker: run
 
    ```bash
    bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/check_evidence.py "[workdir]/literature-review-[project-name].md" "[workdir]/literature-[project-name].bib" --overrides "[workdir]/tier-overrides.md"
    ```
 
    (After step 8 the overrides file is at `[workdir]/intermediate_files/tier-overrides.md`.) Include every `CHECK` line **verbatim** in the final summary (they are telemetry, not blockers). A work cited under a tier override may raise a `CHECK` line, which then ends in `[user-requested override]`: keep it, and say beside it that the user asked for the work — never summarize, count, or gloss them: a live run's summary once reported four findings as "two minor notes", which hid a do-not-cite violation from the user.
+
+   **Quotation gate (REQUIRED, right after the telemetry checker)**: run
+
+   ```bash
+   bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/check_quotes.py "[workdir]/literature-review-[project-name].md" "[workdir]/literature-[project-name].bib" --workdir "[workdir]" --evidence-report "[workdir]/intermediate_files/json/evidence_report.json"
+   ```
+
+   It checks every quotation attributed to a work with a full text (an entry with a `fulltext_file` field or the `EVIDENCE-FULLTEXT` tier) against that text, and ends with one `QUOTES-SUMMARY:` line. Exit 1 means `FAIL` lines; read every line whatever the exit code, since `WARN uncited` comes with exit 0. Fix the review and run the gate again until its output has no `FAIL`, no `FIX` and no `WARN uncited` line:
+   - `FAIL verbatim`, `FAIL bracket`, `FAIL ellipsis`: the quoted words are not in the work's text, or are in a form the gate refuses. Correct the quotation against the text the entry's `fulltext_file` names (find the passage with Grep), or cut it.
+   - `FAIL licence-lost`: the work no longer has a verified full text (the line says why). Cut the quotation, and check the sentences around it against what the work's tier now licenses.
+   - `FIX page`: drop the page locator or correct it to the page the text gives; never cut the quotation for it.
+   - `WARN uncited`: add the quoted work's citation to the sentence, or remove the quotation marks if the words are not a quotation.
+   - `WARN cap`: shorten the quotation where you can. It does not block.
+
+   After a fix that adds, removes or changes a citation, run steps 4 and 5 and the telemetry checker again before the gate; the final summary takes the `CHECK` lines of its last run. Exit 2, or output with no `QUOTES-SUMMARY:` line, is a crash: stop Phase 6 (no split, no clean-up, no publish) and report the output verbatim to the user. In the final summary, give the last run's `QUOTES-SUMMARY` line and any `WARN cap` lines it still prints.
 
 7. **Split the delivery into its three files**:
 
@@ -523,7 +577,9 @@ reviews/[project-name]/
     ├── json/                     # JSON files archived here
     │   ├── s2_<domain>_results.json … verify_<domain>_<citekey>.json
     │   ├── cleaning_ledger-*.json, enrichment_ledger-*.json
+    │   ├── fulltext_acquisition.json
     │   └── evidence_report.json
+    ├── fulltext/                 # Full texts: <slug>.pdf, its .json record, the barrier's .txt
     ├── .phillit-review.json      # Ownership marker (local mode): review id and state
     ├── task-progress.md
     ├── lit-review-plan.md
@@ -595,7 +651,7 @@ A delivered review is never changed. When the user wants one revised (new eviden
    (add `--as [new-name]` for a name of the user's choosing; by default it takes `[delivered-name]-r2`, `-r3`, ...). It prints what `init` prints plus `revised_from`. From here on, `[workdir]` and `[project-name]` are the new review's. It copies the delivered review into `[workdir]`, renaming the four deliverables and the merged bib to the new name (everything else in `intermediate_files/` keeps its name; never rename files by hand), and writes `intermediate_files/.phillit-revision`, which marks the review as a revision. `reviews/[delivered-name]/` stays as it was. A refusal, nonzero exit or non-JSON output: report it verbatim and stop. If it prints `carried`, those top-level files of the old review were moved into `intermediate_files/carried-from-[delivered-name]/`.
 3. Add a line to `[workdir]/intermediate_files/task-progress.md`: `Revision of [delivered-name]: [what changes and why]`.
 4. Edit `[workdir]/literature-review-[project-name].md`. A revision changes prose only, under the writers' rules: every claim about a work stays within what its tier (or its override line) licenses, and no workflow language enters the prose. It cannot add works to the bibliography; for that, run a new review.
-5. Run Phase 6 steps 4 (against `[workdir]/literature-[project-name].bib`, the track record), 5, 6 (with `--overrides "[workdir]/intermediate_files/tier-overrides.md"`), 10 and 11. Do not run steps 1-3, 7 or 8: the bib is already merged and split, and the files are already in place.
+5. Run Phase 6 steps 4 (against `[workdir]/literature-[project-name].bib`, the track record), 5, 6 (with `--overrides "[workdir]/intermediate_files/tier-overrides.md"`, and its REQUIRED quotation gate), 10 and 11. Do not run steps 1-3, 7 or 8: the bib is already merged and split, and the files are already in place.
 6. In the final summary, name the delivered review it revises and what changed.
 
 To resume an interrupted revision (`intermediate_files/.phillit-revision` exists), read the tracker's `Revision of` line for what to change. If it is missing, the revision was interrupted before step 3: ask the user what to revise (Full Autopilot: stop and say so). Then continue from step 4.
@@ -633,6 +689,7 @@ Output status updates directly as text (visible to user in real-time):
 | **Environment OK** | `Environment OK. Proceeding...` |
 | **Review created** | `Working in [workdir]; the finished review will appear in reviews/[project-name]/` |
 | **Environment FAIL** | `Environment verification failed. [details]` |
+| **Anchor texts** | `Anchor texts: [N] of [M] named works stored` |
 | **Phase transition** | `Phase 2/6: Structuring literature review into domains` |
 | **Phase transition** | `Phase 3/6: Researching literature in [N] domains (parallel)` |
 | **Phase transition** | `Phase 4/6: Outlining synthesis review across domains` |
@@ -640,9 +697,11 @@ Output status updates directly as text (visible to user in real-time):
 | **Phase transition** | `Phase 6/6: Assembling, delivering and publishing the review` |
 | **Agent launch (parallel)** | `Launching [N] domain researchers in parallel...` |
 | **Agent completion** | `Domain [N] complete: literature-domain-[N].bib ([number of sources included] sources)` |
+| **Gap texts** | `Gap texts: [counts from the summary line]` |
 | **Phase completion** | `Phase [N] complete: [summary]` |
 | **Assembly** | `Assembling final review with YAML frontmatter...` |
 | **BibTeX aggregation** | `Aggregating BibTeX files -> literature-[project-name].bib` |
+| **Quotation gate** | `Quotation gate: [N] FAIL, [M] FIX, [K] WARN uncited; fixing and rerunning` or `Quotation gate passed` |
 | **Delivery split** | `Split delivery: track record, annotated bib, research notes` |
 | **Cleanup** | `Moving intermediate files -> intermediate_files/` |
 | **DOCX conversion** | `Converted to DOCX: literature-review-[project-name].docx` |

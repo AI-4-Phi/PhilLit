@@ -56,7 +56,7 @@ import stamp_evidence as se  # noqa: E402
 
 sys.path.pop(0)
 
-# The eight engine-derived fields the annotated bib strips (decided):
+# The nine engine-derived fields the annotated bib strips (decided):
 # `urldate` included, `iep_context` not.
 ENGINE_FIELDS = frozenset({
     "abstract_source", "web_span", "urldate", "archiveurl", "same_work_group",
