@@ -2227,3 +2227,178 @@ def test_key_remap_covers_title_merges(tmp_path, capsys):
     keeper = re.search(r"keeping '([^']+)'", out).group(1)
     loser = ({"doe2020a", "doe2020b"} - {keeper}).pop()
     assert f"[KEY-REMAP] {loser} -> {keeper}" in out.splitlines()
+
+
+# =============================================================================
+# EVIDENCE-FULLTEXT through the merge (spec 2026-10-22, section 7)
+# =============================================================================
+
+class TestFulltextRestamp:
+    """The re-stamp grants FULLTEXT only on the full conjunction: the blob's
+    flag, the merged `fulltext_file` naming the blob's slug, the stored
+    text's hash (read in text mode), and the verified identity."""
+
+    TEXT = "[[page 1]]\nThe stored text of the work.\n[[page 2]]\nMore of it.\n"
+
+    def _ft(self):
+        import fulltext
+        return fulltext
+
+    def _entry(self, key, *, doi=None, abstract=False, ff=None, year="2019",
+               title="Justified Harm and Its Limits"):
+        lines = [f"@incollection{{{key},", "  author = {Gardner, John},",
+                 f"  title = {{{title}}},", f"  year = {{{year}}},"]
+        if doi:
+            lines.append(f"  doi = {{{doi}}},")
+        if ff:
+            lines.append(f"  fulltext_file = {{{ff}}},")
+        if abstract:
+            lines.append("  abstract = {A sufficiently long abstract to count as present.},")
+        lines += ["  keywords = {harm, High}", "}"]
+        return "\n".join(lines) + "\n"
+
+    def _review(self, tmp_path, bibs, blobs, text=None, crlf=False):
+        """bibs: {bib name: text}; blobs: {bib name: {key: blob}}. Writes the
+        store text for slug 't-...' and the report; returns (inputs, out,
+        report path, slug)."""
+        ft = self._ft()
+        rd = tmp_path / "review"
+        store = rd / "intermediate_files" / "fulltext"
+        store.mkdir(parents=True)
+        ij = rd / "intermediate_files" / "json"
+        ij.mkdir(parents=True)
+        slug = ft.slug_for({"doi": None, "title": "Justified Harm and Its Limits",
+                            "surname": "Gardner", "year": "2019"})
+        text = self.TEXT if text is None else text
+        data = text.replace("\n", "\r\n") if crlf else text
+        (store / f"{slug}.txt").write_bytes(data.encode("utf-8"))
+        inputs = []
+        for name, body in bibs.items():
+            (rd / name).write_text(body.replace("SLUG", slug), encoding="utf-8")
+            inputs.append(rd / name)
+        report = ij / "evidence_report.json"
+        report.write_text(json.dumps({"schema_version": 2, "attestations": blobs}),
+                          encoding="utf-8")
+        return inputs, rd / "literature-all.bib", report, slug
+
+    def _blob(self, entry_text, slug, text=None):
+        import stamp_evidence as se
+        ft = self._ft()
+        return {**TestEvidenceRestamp.NO_ATT, "web_gate_passed": False, "web_url": None,
+                "fulltext_verified": True, "fulltext_slug": slug,
+                "fulltext_text_sha256": ft.text_sha256(self.TEXT if text is None else text),
+                "fulltext_identity": ft.entry_identity(se.parse_entry_fields(entry_text))}
+
+    FF = "intermediate_files/fulltext/SLUG.txt"
+
+    def _run(self, tmp_path, capsys, bibs, blob_for, **kw):
+        """blob_for: {bib name: [keys]} whose blobs claim FULLTEXT."""
+        ft = self._ft()
+        slug = ft.slug_for({"doi": None, "title": "Justified Harm and Its Limits",
+                            "surname": "Gardner", "year": "2019"})
+        blobs = {}
+        import stamp_evidence as se
+        for name, body in bibs.items():
+            body = body.replace("SLUG", slug)
+            for chunk in re.split(r"\n(?=@)", body):
+                header = se.entry_header(chunk)
+                if header and header[1] in blob_for.get(name, []):
+                    blobs.setdefault(name, {})[header[1]] = self._blob(chunk, slug)
+        inputs, out, report, slug = self._review(tmp_path, bibs, blobs, **kw)
+        deduplicate_bib(inputs, out, evidence_report=report)
+        captured = capsys.readouterr()
+        return out.read_text(encoding="utf-8"), captured, slug
+
+    def test_a_single_fulltext_entry_keeps_its_tier(self, tmp_path, capsys):
+        bibs = {"literature-domain-1.bib": self._entry("gardner2019", ff=self.FF)}
+        merged, cap, _ = self._run(tmp_path, capsys, bibs,
+                                   {"literature-domain-1.bib": ["gardner2019"]})
+        assert "EVIDENCE-FULLTEXT" in merged
+        assert "[FULLTEXT-LOST]" not in cap.out
+
+    def test_a_crlf_written_text_still_verifies(self, tmp_path, capsys):
+        bibs = {"literature-domain-1.bib": self._entry("gardner2019", ff=self.FF)}
+        merged, _, slug = self._run(tmp_path, capsys, bibs,
+                                    {"literature-domain-1.bib": ["gardner2019"]}, crlf=True)
+        raw = (tmp_path / "review" / "intermediate_files" / "fulltext" / f"{slug}.txt").read_bytes()
+        assert b"\r\n" in raw
+        assert "EVIDENCE-FULLTEXT" in merged
+
+    def test_the_field_is_carried_from_a_losing_contributor(self, tmp_path, capsys):
+        """Same key in two domains: the abstract-bearing copy wins but has no
+        fulltext_file; the loser's field and its attestation carry over."""
+        bibs = {"literature-domain-1.bib": self._entry("gardner2019", ff=self.FF),
+                "literature-domain-2.bib": self._entry("gardner2019", abstract=True)}
+        merged, cap, slug = self._run(tmp_path, capsys, bibs,
+                                      {"literature-domain-1.bib": ["gardner2019"]})
+        assert f"fulltext_file = {{intermediate_files/fulltext/{slug}.txt}}" in merged
+        assert "EVIDENCE-FULLTEXT" in merged
+        assert "copied fulltext_file from loser" in cap.out
+
+    def test_merge_entries_keeps_the_winners_differing_value_and_warns(self, capsys):
+        win = self._entry("k", abstract=True, ff="intermediate_files/fulltext/a.txt")
+        lose = self._entry("k", ff="intermediate_files/fulltext/b.txt")
+        merged, _reason, winner = merge_entries(lose, win)
+        assert winner == 2
+        assert "fulltext/a.txt" in merged and "fulltext/b.txt" not in merged
+        assert "[FULLTEXT] conflict" in capsys.readouterr().err
+
+    def test_a_winner_that_gains_a_doi_drops_fulltext_loudly(self, tmp_path, capsys):
+        """Title pass: the no-DOI FULLTEXT copy wins (abstract) and the union
+        brings in the loser's DOI -- the verified identity no longer holds."""
+        bibs = {"literature-domain-1.bib": self._entry("gardner2019a", ff=self.FF, abstract=True),
+                "literature-domain-2.bib": self._entry("gardner2019b", doi="10.1/harm")}
+        merged, cap, _ = self._run(tmp_path, capsys, bibs,
+                                   {"literature-domain-1.bib": ["gardner2019a"]})
+        assert "doi = {10.1/harm}" in merged
+        assert "EVIDENCE-FULLTEXT" not in merged
+        assert "[FULLTEXT-LOST] gardner2019a: identity changed" in cap.out
+
+    def test_a_text_tampered_after_the_barrier_drops_fulltext(self, tmp_path, capsys):
+        bibs = {"literature-domain-1.bib": self._entry("gardner2019", ff=self.FF)}
+        merged, cap, _ = self._run(tmp_path, capsys, bibs,
+                                   {"literature-domain-1.bib": ["gardner2019"]},
+                                   text=self.TEXT + "An inserted sentence.\n")
+        assert "EVIDENCE-FULLTEXT" not in merged
+        assert "[FULLTEXT-LOST] gardner2019:" in cap.out and "hash differs" in cap.out
+
+    def test_a_missing_text_drops_fulltext(self, tmp_path, capsys):
+        bibs = {"literature-domain-1.bib": self._entry("gardner2019", ff=self.FF)}
+        ft = self._ft()
+        slug = ft.slug_for({"doi": None, "title": "Justified Harm and Its Limits",
+                            "surname": "Gardner", "year": "2019"})
+        blobs = {"literature-domain-1.bib": {"gardner2019": self._blob(
+            bibs["literature-domain-1.bib"].replace("SLUG", slug), slug)}}
+        inputs, out, report, _ = self._review(tmp_path, bibs, blobs)
+        (tmp_path / "review" / "intermediate_files" / "fulltext" / f"{slug}.txt").unlink()
+        deduplicate_bib(inputs, out, evidence_report=report)
+        assert "EVIDENCE-FULLTEXT" not in out.read_text(encoding="utf-8")
+        assert "missing or unreadable" in capsys.readouterr().out
+
+    def test_a_field_naming_another_text_drops_fulltext(self, tmp_path, capsys):
+        other = "intermediate_files/fulltext/t-gardner-2019-other-000000000000.txt"
+        bibs = {"literature-domain-1.bib": self._entry("gardner2019", ff=other)}
+        merged, cap, _ = self._run(tmp_path, capsys, bibs,
+                                   {"literature-domain-1.bib": ["gardner2019"]})
+        assert "EVIDENCE-FULLTEXT" not in merged
+        assert "does not name" in cap.out
+
+    def test_the_flag_must_be_literally_true(self, tmp_path, capsys):
+        bibs = {"literature-domain-1.bib": self._entry("gardner2019", ff=self.FF)}
+        ft = self._ft()
+        slug = ft.slug_for({"doi": None, "title": "Justified Harm and Its Limits",
+                            "surname": "Gardner", "year": "2019"})
+        blob = self._blob(bibs["literature-domain-1.bib"].replace("SLUG", slug), slug)
+        blob["fulltext_verified"] = "true"
+        inputs, out, report, _ = self._review(
+            tmp_path, bibs, {"literature-domain-1.bib": {"gardner2019": blob}})
+        deduplicate_bib(inputs, out, evidence_report=report)
+        assert "EVIDENCE-FULLTEXT" not in out.read_text(encoding="utf-8")
+
+    def test_a_report_without_fulltext_keys_never_grants_it(self, tmp_path, capsys):
+        bibs = {"literature-domain-1.bib": self._entry("gardner2019", ff=self.FF)}
+        inputs, out, report, _ = self._review(
+            tmp_path, bibs, {"literature-domain-1.bib": {"gardner2019": dict(TestEvidenceRestamp.NO_ATT)}})
+        deduplicate_bib(inputs, out, evidence_report=report)
+        assert "EVIDENCE-FULLTEXT" not in out.read_text(encoding="utf-8")
+        assert "[FULLTEXT-LOST]" not in capsys.readouterr().out

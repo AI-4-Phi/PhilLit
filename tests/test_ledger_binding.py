@@ -641,8 +641,8 @@ class TestBarrierSelfCheck:
         real = eb.run_barrier
 
         def mutated(*a, **kw):
-            report, outputs = real(*a, **kw)
-            return report, {p: mutate(c) for p, c in outputs.items()}
+            report, outputs, texts = real(*a, **kw)
+            return report, {p: mutate(c) for p, c in outputs.items()}, texts
 
         monkeypatch.setattr(eb, "run_barrier", mutated)
         code = eb.execute(rd, 1)

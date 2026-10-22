@@ -29,6 +29,7 @@ import bib_fields  # noqa: E402
 
 sys.path.pop(0)
 
+TIER_FULLTEXT = "EVIDENCE-FULLTEXT"
 TIER_ABSTRACT = "EVIDENCE-ABSTRACT"
 TIER_CONTEXT = "EVIDENCE-CONTEXT"
 TIER_WEB = "EVIDENCE-WEB"
@@ -36,7 +37,7 @@ TIER_EXISTENCE = "EVIDENCE-EXISTENCE"
 TIER_NONE = "EVIDENCE-NONE"
 # Only the ORDER is meaningful -- every comparison is relative and no absolute
 # rank is persisted anywhere, which is what let WEB be inserted mid-ladder.
-TIER_RANK = {TIER_ABSTRACT: 4, TIER_CONTEXT: 3, TIER_WEB: 2,
+TIER_RANK = {TIER_FULLTEXT: 5, TIER_ABSTRACT: 4, TIER_CONTEXT: 3, TIER_WEB: 2,
              TIER_EXISTENCE: 1, TIER_NONE: 0}
 
 ATTESTED_ABSTRACT_SOURCES = {"s2", "openalex", "core", "ndpr"}
@@ -62,6 +63,10 @@ class EntryAttestation:
     # field presence -- like every other tier, the attestation comes from
     # outside the bib, not from the bib.
     web_gate_passed: bool = False
+    # EVIDENCE-FULLTEXT: set by the barrier when a valid full-text store record
+    # bound to this entry and passed the identity check against the entry's
+    # own fields THIS run (dedupe re-verifies it against the text's hash).
+    fulltext_verified: bool = False
 
 
 def normalize_publisher(value: str) -> str:
@@ -101,6 +106,10 @@ def attest_abstract(fields: dict, ledger_entry: dict | None) -> bool:
 
 
 def compute_tier(entry_type: str, fields: dict, att: EntryAttestation) -> str:
+    # First, and on the attestation alone: the barrier splices `fulltext_file`
+    # only AFTER the tier is computed, so the field cannot be a condition here.
+    if att.fulltext_verified:
+        return TIER_FULLTEXT
     source = (fields.get("abstract_source") or "").strip().lower()
     if (
         fields.get("abstract")
@@ -142,7 +151,7 @@ DROP_TOKENS = {"INCOMPLETE", "no-abstract"}
 # escapes the underscore on round-trip, so match any run of backslashes.
 _MARKER_RE = re.compile(r",?\s*(METADATA\\*_CLEANED:.*)$", re.DOTALL)
 # Strip ANY evidence-shaped token (unknown/mixed-case included); only the
-# five canonical uppercase tiers are ever emitted.
+# six canonical uppercase tiers (TIER_RANK) are ever emitted.
 _EVIDENCE_TOKEN_RE = re.compile(r"^EVIDENCE-[A-Za-z0-9_-]+$", re.IGNORECASE)
 _HEADER_RE = re.compile(r"@(\w+)\s*\{([^,\s]+)\s*,")
 

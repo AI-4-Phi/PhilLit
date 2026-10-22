@@ -2,8 +2,9 @@
 
 Order: manifest validation -> SEP/IEP context acquisition -> report -> stamp.
 Accuracy gate: fails CLOSED. run_barrier() mutates nothing -- it returns the
-report plus every domain's final stamped content, built in memory; execute()
-then atomically writes the report FIRST, then each bib, re-pointing that
+report plus every domain's final stamped content and the full texts it
+stamped from, built in memory; execute() then writes the full texts, then
+atomically the report, then each bib, re-pointing that
 domain's accepted cleaning ledger as soon as its bib lands. A crash before
 the write phase leaves every file untouched; a crash mid-write leaves a
 prefix of domains stamped and re-pointed with exit 1 (documented residual
@@ -16,6 +17,7 @@ domains never share attestations.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -54,6 +56,14 @@ try:
     import venue_vetting as vv
 except Exception:  # optional pass -- never block the accuracy gate
     vv = None
+
+# The full-text library (EVIDENCE-FULLTEXT). Guarded like venue_vetting: the
+# tier is an UPGRADE, so a broken import must cost the tier (reported as
+# `pass_error`), never the accuracy gate.
+try:
+    import fulltext as ft
+except Exception:
+    ft = None
 
 
 # The cleaning ledger's version is a FLOOR (see ledger_binding): below the
@@ -536,18 +546,19 @@ def _corroboration_summary(report: dict) -> dict:
 
 
 _DERIVED_FIELDS = frozenset({"venue_status", "year_suffix", "urldate",
-                             "archiveurl", "same_work_group"})
+                             "archiveurl", "same_work_group", "fulltext_file"})
 
 
 def _strip_derived_fields(entry_text: str) -> str:
     """Remove every pre-existing derived field.
 
-    The barrier OWNS all five (venue_status, year_suffix, urldate,
-    archiveurl and same_work_group): each is re-derived from scratch on every
-    run -- venue_status from OpenAlex, year_suffix from the current union of
-    every domain bibliography, urldate from the capture's retrieved_at,
-    archiveurl from the archive lookup and same_work_group from the current
-    union's title/surname grouping -- so a value already in the file is
+    The barrier OWNS all six (venue_status, year_suffix, urldate,
+    archiveurl, same_work_group and fulltext_file): each is re-derived from
+    scratch on every run -- venue_status from OpenAlex, year_suffix from the
+    current union of every domain bibliography, urldate from the capture's
+    retrieved_at, archiveurl from the archive lookup, same_work_group from
+    the current union's title/surname grouping and fulltext_file from this
+    run's full-text pass -- so a value already in the file is
     either stale or hand-written, and both must go before this run decides.
     Without this, a flag or letter survives a later run that had no API key,
     or whose domain set changed -- a false discredit or a wrong letter that
@@ -607,6 +618,10 @@ _ARCHIVEURL_FIELD_RE = re.compile(r"\barchiveurl\s*=", re.IGNORECASE)
 # pre/post-count logic is what handles a prose-literal false match, so do not
 # "fix" this with a line anchor.
 _SAME_WORK_FIELD_RE = re.compile(r"\bsame_work_group\s*=", re.IGNORECASE)
+
+# fulltext_file: the same verified-took splice (a presence COUNTER, which
+# _derived_field_took pairs with a field parse; not a field locator).
+_FULLTEXT_FIELD_RE = re.compile(r"\bfulltext_file\s*=", re.IGNORECASE)
 
 
 def _derived_field_took(chunk: str, pre_splice: str, field: str, intended: str,
@@ -787,7 +802,7 @@ def _stamp_optional_field(entry_text: str, field: str, value: str) -> str:
 
 
 def _att_blob(att: se.EntryAttestation, enrich_entry, context_value,
-              web_url: str | None = None):
+              web_url: str | None = None, fulltext: dict | None = None):
     """The attestation as the report records it -- and therefore as
     dedupe_bib.py rebuilds it when it re-stamps merged entries.
 
@@ -796,7 +811,14 @@ def _att_blob(att: se.EntryAttestation, enrich_entry, context_value,
     contributor's boolean must never authorize another contributor's field
     value, so the re-stamp has to be able to confirm the merged entry still
     carries the same URL this gate passed for.
+
+    `fulltext` (this entry's full-text plan, only when the tier landed) is
+    the same kind of binding for EVIDENCE-FULLTEXT: the slug the field must
+    name, the text's hash, and the entry's identity as verified
+    (`fulltext.entry_identity`), which dedupe and check_quotes.py compare
+    with `fulltext.identity_matches`.
     """
+    fulltext = fulltext if att.fulltext_verified else None
     return {
         "abstract_attested": att.abstract_attested,
         "abstract_source": (enrich_entry or {}).get("abstract_source"),
@@ -811,15 +833,205 @@ def _att_blob(att: se.EntryAttestation, enrich_entry, context_value,
         "cleaning_abstained": att.cleaning_abstained,
         "web_gate_passed": att.web_gate_passed,
         "web_url": web_url,
+        "fulltext_verified": att.fulltext_verified,
+        "fulltext_slug": fulltext["slug"] if fulltext else None,
+        "fulltext_text_sha256": fulltext["text_sha256"] if fulltext else None,
+        "fulltext_identity": fulltext["identity"] if fulltext else None,
     }
 
 
+# The full-text pass's time bound. Read at CALL time so a test can patch them.
+# The pass gets at most FULLTEXT_PASS_SECONDS, and never past
+# FULLTEXT_RUN_CEILING_SECONDS since the run started: SKILL.md runs the
+# barrier under a 600 s Bash ceiling, and a barrier that outlives it is
+# orphaned (every entry left EVIDENCE-NONE). Records not reached land in the
+# `deadline` bucket; like corroboration's deadline, a re-run restores them.
+FULLTEXT_PASS_SECONDS = 60.0
+FULLTEXT_RUN_CEILING_SECONDS = 540.0
+
+
+def _empty_fulltext_report(status: str = "complete") -> dict:
+    """The report section's full key set, shared by the complete and error
+    paths so a consumer never has to guess which keys a run printed."""
+    return {"status": status, "stamped": {}, "rejected": {}, "deadline": [],
+            "unbound_records": [], "pass_seconds": 0.0}
+
+
+def _fulltext_pass(review_dir: Path, domains: dict, parsed: dict, atts: dict,
+                   run_start: float):
+    """EVIDENCE-FULLTEXT planning (spec section 6, steps 1-4). Reads the
+    store, writes nothing. Returns (plan, texts, report):
+
+    plan: (i, key) -> {"slug", "text_sha256", "identity"} for every entry
+      that passed; texts: slug -> (rendered text, PageMap | None).
+
+    Binding is across all domains. A DOI record binds an entry whose CURRENT
+    `doi` field, normalized, equals the cleaning ledger's verified DOI
+    (api_matched, breaker not tripped) and the record's DOI. A no-DOI record
+    binds an entry with no verified DOI whose same_work_key and
+    same_work_year equal the record's (raw values, as acquisition writes
+    them). An entry bound to more than one valid record gets nothing
+    (`ambiguous_records`). Each bound record is read once (its bytes
+    re-hashed against the sidecar, closing the gap after validate_record)
+    and extracted once; `identity_ok` then runs per ENTRY against the
+    entry's own fields, and `confirm_pages` per entry against its `pages`.
+    Entries sharing a slug whose page maps differ all get the map None (no
+    `[[page N]]` markers). A per-record failure withholds that record only.
+    """
+    pass_start = time.monotonic()
+    report = _empty_fulltext_report()
+    rejected = report["rejected"]
+
+    def reject(reason, item):
+        rejected.setdefault(reason, []).append(item)
+
+    if ft is None:
+        raise RuntimeError("fulltext library unavailable")
+    store = review_dir / ft.STORE_REL
+    stems = set()
+    if store.is_dir():
+        for p in store.iterdir():
+            if p.suffix in (".json", ".pdf") and p.is_file():
+                stems.add(p.name[: -len(p.suffix)])
+    records = {}
+    for stem in sorted(stems):
+        rec = ft.validate_record(store, stem)
+        if isinstance(rec, str):
+            reject(rec, stem)
+        else:
+            records[stem] = rec
+
+    # The record side of each binding rule.
+    doi_records: dict = {}      # normalized DOI -> [slug]
+    title_records: dict = {}    # (work_key tuple, year) -> [slug]
+    for slug, rec in records.items():
+        ident = rec.identity
+        doi = se.normalize_doi(ident.get("doi") or "")
+        if doi:
+            doi_records.setdefault(doi, []).append(slug)
+            continue
+        wk = same_work_key(ident.get("title") or "", ident.get("surname") or "")
+        year = same_work_year(ident.get("year"))
+        if wk is not None and year:
+            title_records.setdefault((wk, year), []).append(slug)
+
+    bound: dict = {}      # (i, key) -> (slug, verified doi or None, fields, qual)
+    used_slugs = set()
+    candidates_of = set()
+    for i, d in domains.items():
+        for chunk in parsed[i]:
+            header = se.entry_header(chunk)
+            if not header:
+                continue
+            key = header[1]
+            qual = f"{d['bib_name']}:{key}"
+            fields = se.parse_entry_fields(chunk)
+            att = atts[i].get(key) or se.EntryAttestation()
+            field_doi = se.normalize_doi(fields.get("doi") or "")
+            verified_doi = (field_doi if (
+                att.api_matched and not att.breaker_tripped
+                and att.verified_identifier == "doi"
+                and att.verified_identifier_value
+                and field_doi and field_doi == att.verified_identifier_value)
+                else None)
+            if verified_doi:
+                hits = list(doi_records.get(verified_doi, []))
+            else:
+                ident = ft.entry_identity(fields)
+                wk = tuple(ident["work_key"]) if ident["work_key"] else None
+                hits = (list(title_records.get((wk, ident["year"]), []))
+                        if wk is not None and ident["year"] else [])
+            candidates_of.update(hits)
+            if len(hits) > 1:
+                reject("ambiguous_records", qual)
+            elif hits:
+                bound[(i, key)] = (hits[0], verified_doi, fields, qual)
+                used_slugs.add(hits[0])
+    report["unbound_records"] = sorted(set(records) - candidates_of)
+
+    # Per bound record: read, re-hash, extract -- once per slug, in slug
+    # order, under the pass deadline.
+    budget = min(FULLTEXT_PASS_SECONDS,
+                 FULLTEXT_RUN_CEILING_SECONDS - (pass_start - run_start))
+    deadline = pass_start + budget
+    pages_of: dict = {}
+    for slug in sorted(used_slugs):
+        if time.monotonic() >= deadline:
+            report["deadline"].append(slug)
+            continue
+        rec = records[slug]
+        try:
+            data = rec.pdf_path.read_bytes()
+            if hashlib.sha256(data).hexdigest() != rec.pdf_sha256:
+                reject("pdf_hash_mismatch", slug)
+                continue
+            pages_of[slug] = ft.extract_pages(data)
+        except ft.FulltextError as exc:
+            reject(f"extract_failed:{exc.reason}", slug)
+        except OSError:
+            reject("pdf_missing", slug)
+        except Exception:
+            reject("extract_failed:error", slug)
+
+    # Per bound entry: the identity check against the ENTRY, then its pages.
+    passed: dict = {}     # (i, key) -> (slug, PageMap | None, identity)
+    for ik in sorted(bound):
+        slug, verified_doi, fields, qual = bound[ik]
+        if slug not in pages_of:
+            continue
+        pages = pages_of[slug]
+        if ft.entry_identity(fields)["work_key"] is None:
+            # No title or no first-author surname: identity_ok could still
+            # pass on the DOI alone, but no later verifier (dedupe,
+            # check_quotes.py -- fulltext.identity_matches) can ever
+            # re-verify such an entry, so a stamp here would be a licence
+            # that is always lost downstream, with a misleading reason.
+            reject("no_work_key", qual)
+            continue
+        try:
+            ok, _why = ft.identity_ok(pages, {
+                "doi": verified_doi,
+                "title": fields.get("title") or "",
+                "surname": ys.first_surname_raw(fields),
+                "year": fields.get("year") or ""})
+            if not ok:
+                reject("identity_failed", qual)
+                continue
+            page_map = ft.confirm_pages(pages, fields.get("pages"))
+            passed[ik] = (slug, page_map, ft.entry_identity(fields))
+        except Exception:
+            reject("extract_failed:error", qual)
+
+    maps_by_slug: dict = {}
+    for slug, page_map, _ident in passed.values():
+        maps_by_slug.setdefault(slug, []).append(page_map)
+    texts: dict = {}
+    for slug, maps in maps_by_slug.items():
+        page_map = maps[0] if all(m == maps[0] for m in maps) else None
+        try:
+            texts[slug] = (ft.render_text(pages_of[slug], page_map), page_map)
+        except Exception:
+            reject("extract_failed:error", slug)
+    plan = {}
+    for ik, (slug, _m, ident) in passed.items():
+        if slug in texts:
+            plan[ik] = {"slug": slug,
+                        "text_sha256": ft.text_sha256(texts[slug][0]),
+                        "identity": ident}
+    report["pass_seconds"] = round(time.monotonic() - pass_start, 3)
+    return plan, texts, report
+
+
 def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
-    """Pure planning pass: returns (report, outputs) with NO file mutation.
+    """Pure planning pass: returns (report, outputs, text_outputs) with NO
+    file mutation, on every path.
 
     outputs: {bib_path: final_stamped_content} -- only parseable, present
-    domains appear in it.
+    domains appear in it. text_outputs: {slug: (rendered text, page map)}
+    for every full text at least one entry was stamped EVIDENCE-FULLTEXT
+    from; empty when the run failed.
     """
+    run_start = time.monotonic()
     ijson = review_dir / "intermediate_files" / "json"
     report = {
         # 2 (was 1): the abstract attestation in this report is
@@ -900,7 +1112,7 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
             for i, state in enumerate(bib_states, start=1)]
         report["error"] = ("no domain bib files found: "
                            + ", ".join(unusable) + " are missing or unusable")
-        return report, {}
+        return report, {}, {}
 
     articles, failed = rc.fetch_articles(slug_union, debug=debug)
     report["articles"]["fetched"] = sorted(articles)
@@ -1236,6 +1448,27 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                       "wayback_failed": [], "misc_with_abstract": []}
     report["web_sources"] = web_report
 
+    # EVIDENCE-FULLTEXT (spec section 6). An UPGRADE pass: a per-record
+    # failure withholds that record (named in `rejected`); a pass-level
+    # exception withholds every FULLTEXT stamp (`pass_error`) and leaves the
+    # run's status alone -- losing the tier is safe and visible. Round-tripped
+    # through JSON inside the try for the reason the web pass is.
+    try:
+        fulltext_plan, fulltext_texts, fulltext_report = _fulltext_pass(
+            review_dir, domains, parsed, atts, run_start)
+        fulltext_report = json.loads(json.dumps(fulltext_report))
+    except Exception as exc:
+        fulltext_plan, fulltext_texts = {}, {}
+        fulltext_report = _empty_fulltext_report("error")
+        fulltext_report["error"] = repr(exc)[:200]
+        fulltext_report["rejected"]["pass_error"] = [repr(exc)[:200]]
+    report["fulltext"] = fulltext_report
+    # By reference, after the round-trip, like the web pair below: the
+    # stamping loop appends to these.
+    fulltext_stamped = fulltext_report["stamped"]
+    fulltext_rejected = fulltext_report["rejected"]
+    fulltext_slugs_stamped = set()
+
     # A `year_suffix` that survived _strip_derived_fields. The
     # stripper only matches a field OPENING its line, an accepted limit
     # documented there and adjudicated for `venue_status` as "document, don't
@@ -1468,7 +1701,29 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
             # above: the flag is keyed (i, key), so an index skew must never
             # promote a neighbouring entry.
             att.web_gate_passed = (i, key) in web_gates
+            ftp = fulltext_plan.get((i, key))
+            att.fulltext_verified = ftp is not None
             tier = se.compute_tier(etype, fields, att)
+            if ftp is not None:
+                # FIRST of the post-tier splices, so a failed one can still
+                # recompute the tier (from the same pre-splice fields: tier
+                # invariance under splices stays structural).
+                ft_value = f"{ft.STORE_REL}/{ftp['slug']}.txt"
+                pre_ft = chunk
+                chunk = _stamp_optional_field(chunk, "fulltext_file", ft_value)
+                if _derived_field_took(chunk, pre_ft, "fulltext_file",
+                                       ft_value, _FULLTEXT_FIELD_RE):
+                    fulltext_stamped.setdefault(bib_name, []).append(key)
+                    fulltext_slugs_stamped.add(ftp["slug"])
+                else:
+                    # Revert (a duplicate field would cost all of Phase 6)
+                    # and withhold the tier: a FULLTEXT entry without its
+                    # field names no text a writer could read.
+                    chunk = pre_ft
+                    att.fulltext_verified = False
+                    tier = se.compute_tier(etype, fields, att)
+                    fulltext_rejected.setdefault("splice_failed", []).append(
+                        f"{bib_name}:{key}")
             # venue_status is spliced AFTER tier is computed, not before: it
             # is the only field splice upstream of compute_tier, and tier
             # invariance must be structural, not incidental on
@@ -1565,7 +1820,8 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
             report["attestations"][bib_name][key] = _att_blob(
                 att, e_entries.get(key), cv,
                 web_url=(wv.normalize_url(wv.extract_url(fields) or "") or None)
-                if att.web_gate_passed else None)
+                if att.web_gate_passed else None,
+                fulltext=ftp)
             qual = f"{bib_name}:{key}"
             if att.cleaning_abstained:
                 report["cleaning_abstained"].append(qual)
@@ -1579,7 +1835,9 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
     report["status"] = "degraded" if degraded else "complete"
     if degraded:
         report["degraded_by"] = degraded_by
-    return report, outputs
+    text_outputs = {slug: fulltext_texts[slug]
+                    for slug in sorted(fulltext_slugs_stamped)}
+    return report, outputs, text_outputs
 
 
 def _atomic_write(path: Path, content: str) -> None:
@@ -1740,13 +1998,34 @@ def _accepted_ledger_for(review_dir: Path, ijson: Path, report: dict,
     return None
 
 
+def _write_fulltext_texts(review_dir: Path, text_outputs: dict) -> None:
+    """Write each stamped full text (atomic, UTF-8, `\\n` newlines), only when
+    the stored content differs -- compared through `fulltext.read_text`, the
+    one way every verifier reads it. An OSError propagates: execute() fails
+    the run on it, like any other write failure."""
+    if not text_outputs:
+        return
+    store = review_dir / ft.STORE_REL
+    store.mkdir(parents=True, exist_ok=True)
+    for slug in sorted(text_outputs):
+        text = text_outputs[slug][0]
+        path = store / f"{slug}.txt"
+        try:
+            current = ft.read_text(path)
+        except (OSError, UnicodeDecodeError):
+            current = None
+        if current != text:
+            ft.write_text_atomic(path, text)
+
+
 def execute(review_dir: Path, n_domains: int, debug: bool = False) -> int:
     ijson = review_dir / "intermediate_files" / "json"
     ijson.mkdir(parents=True, exist_ok=True)
     report_path = ijson / "evidence_report.json"
     outputs = {}
+    text_outputs = {}
     try:
-        report, outputs = run_barrier(review_dir, n_domains, debug=debug)
+        report, outputs, text_outputs = run_barrier(review_dir, n_domains, debug=debug)
     except Exception as exc:  # crash = run-level failure; nothing was written
         report = {"schema_version": 2, "status": "failed", "error": repr(exc)}
     try:
@@ -1777,6 +2056,12 @@ def execute(review_dir: Path, n_domains: int, debug: bool = False) -> int:
                           "error": "self-check: the barrier's output changed "
                                    "fields it does not own; nothing was written",
                           "self_check_failed": changed}
+        if report["status"] != "failed":
+            # Texts BEFORE the report: a failure here leaves the previous
+            # report and bibs consistent with each other (their hash checks
+            # on a rewritten text then fail closed, loudly, until a run
+            # succeeds), and fails this run with nothing else written.
+            _write_fulltext_texts(review_dir, text_outputs)
         _atomic_write(report_path, json.dumps(report, indent=2))
         if report["status"] != "failed":
             repoint_warnings = []
@@ -1856,6 +2141,17 @@ def execute(review_dir: Path, n_domains: int, debug: bool = False) -> int:
                 (report.get("web_sources") or {}).get("splice_failed") or []),
         },
         "cleaning_abstained": len(report.get("cleaning_abstained") or []),
+        # EVIDENCE-FULLTEXT: what was stamped, and why the rest was not.
+        "fulltext": {
+            "status": (report.get("fulltext") or {}).get("status", "not-run"),
+            "stamped": sum(len(v) for v in ((report.get("fulltext") or {})
+                                            .get("stamped") or {}).values()),
+            "rejected": {k: len(v) for k, v in ((report.get("fulltext") or {})
+                                                .get("rejected") or {}).items()},
+            "deadline": len((report.get("fulltext") or {}).get("deadline") or []),
+            "unbound_records": len(
+                (report.get("fulltext") or {}).get("unbound_records") or []),
+        },
         # Printed for the same reason the two pairs below are: the DIFFERENCE
         # between candidates and corroborated is the finding. Every
         # non-corroborated outcome demotes an entry the ledger vouched for,

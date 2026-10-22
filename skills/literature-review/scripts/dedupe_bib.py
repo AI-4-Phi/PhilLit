@@ -171,6 +171,12 @@ def _extract_year_suffix_value(entry: str) -> str:
     return f.value.strip() if f is not None else ''
 
 
+def _extract_fulltext_file_value(entry: str) -> str:
+    """The barrier-stamped `fulltext_file` value, or '' if absent."""
+    f = _field(entry, "fulltext_file")
+    return f.value.strip() if f is not None else ''
+
+
 def _entry_key(entry_text: str) -> str:
     """Citation key parsed from a raw entry's opening line, or '' if
     unparseable. Diagnostic use only (the [SUFFIX] conflict message).
@@ -367,6 +373,25 @@ def merge_entries(entry1: str, entry2: str) -> tuple[str, str, int]:
         # cover year_suffix would make that guard necessary here.
         base = _insert_field_text(base, "year_suffix", loser_suffix)
         reason += f", copied year_suffix '{loser_suffix}' from loser"
+
+    # Carry the barrier's `fulltext_file` the same way, so all three merge
+    # passes get it: the field names the text an EVIDENCE-FULLTEXT stamp was
+    # granted from, and the re-stamp (restamp_merged) and check_quotes.py
+    # both need it on the survivor. Winner lacks it -> take the loser's;
+    # both carry different values -> keep the winner's and say so. Nothing
+    # here grants the tier: the re-stamp re-verifies the named text's hash
+    # and the merged identity before it does.
+    winner_ft = _extract_fulltext_file_value(base)
+    loser_ft = _extract_fulltext_file_value(loser_text)
+    if winner_ft and loser_ft and winner_ft != loser_ft:
+        print(
+            f"  [FULLTEXT] conflict: '{_entry_key(entry1 if winner == 1 else entry2)}' "
+            f"and '{_entry_key(loser_text)}' name '{winner_ft}' and '{loser_ft}' - "
+            f"keeping '{winner_ft}'",
+            file=sys.stderr)
+    elif not winner_ft and loser_ft:
+        base = _insert_field_text(base, "fulltext_file", loser_ft)
+        reason += ", copied fulltext_file from loser"
 
     return base, reason, winner
 
@@ -854,6 +879,10 @@ def restamp_merged(
         sys.path.insert(0, script_dir)
     import stamp_evidence as se
     import web_evidence as wv
+    try:   # the FULLTEXT re-verification; unavailable -> no FULLTEXT grant
+        import fulltext as ft
+    except Exception:
+        ft = None
 
     # The supported pipeline puts the report at
     # <review_dir>/intermediate_files/json/evidence_report.json, which is how
@@ -866,6 +895,47 @@ def restamp_merged(
         None,
     )
     capture_cache: dict = {}
+    text_hash_cache: dict = {}
+
+    def _text_hash(slug):
+        """sha256 of the stored text, read the one way every verifier reads
+        it (fulltext.file_text_sha256: text mode, UTF-8, universal newlines,
+        never raw bytes), or None when unreadable."""
+        if slug not in text_hash_cache:
+            try:
+                text_hash_cache[slug] = ft.file_text_sha256(
+                    review_dir / ft.STORE_REL / f"{slug}.txt")
+            except (OSError, UnicodeDecodeError, ValueError):
+                text_hash_cache[slug] = None
+        return text_hash_cache[slug]
+
+    def _fulltext_check(blob, fields):
+        """(claimed, ok, reason) for the blob's EVIDENCE-FULLTEXT attestation
+        against the MERGED fields. `claimed` is False when the blob carries
+        none. The grant is the full conjunction: the barrier's flag `is
+        True`; the merged `fulltext_file` names the blob slug's text; that
+        text's hash equals the blob's; and the merged identity still is the
+        one the barrier verified (fulltext.identity_matches). A merge that
+        adds or changes a DOI, title, first author or year drops it."""
+        if not blob or blob.get("fulltext_verified") is not True:
+            return False, False, None
+        if ft is None:
+            return True, False, "fulltext library unavailable"
+        slug = blob.get("fulltext_slug")
+        if not isinstance(slug, str) or not ft.SLUG_RE.match(slug):
+            return True, False, "no valid fulltext_slug in the report"
+        if (fields.get("fulltext_file") or "").strip() != f"{ft.STORE_REL}/{slug}.txt":
+            return True, False, f"fulltext_file does not name {slug}.txt"
+        if review_dir is None:
+            return True, False, "text store not locatable from the report path"
+        actual = _text_hash(slug)
+        if actual is None:
+            return True, False, f"{slug}.txt missing or unreadable"
+        if actual != blob.get("fulltext_text_sha256"):
+            return True, False, f"{slug}.txt changed since the barrier (hash differs)"
+        if not ft.identity_matches(blob.get("fulltext_identity"), fields):
+            return True, False, "identity changed in the merge (DOI, title, author or year)"
+        return True, True, None
 
     def _capture(citekey):
         if citekey not in capture_cache:
@@ -915,6 +985,7 @@ def restamp_merged(
         """Rebuild an EntryAttestation valid for the MERGED fields."""
         if not blob:
             return se.EntryAttestation()
+        _claimed, fulltext_ok, _why = _fulltext_check(blob, fields)
         # Conjoins the barrier's own boolean, exactly like the context and
         # web re-verifications below -- the hash re-check alone is NOT
         # equivalent to it. Ledger equality stopped being attestation when
@@ -988,6 +1059,7 @@ def restamp_merged(
             verified_identifier_value=blob.get("verified_identifier_value"),
             breaker_tripped=bool(blob.get("breaker_tripped")),
             web_gate_passed=web_ok,
+            fulltext_verified=fulltext_ok,
         )
 
     for key, entry in seen.items():
@@ -1001,10 +1073,20 @@ def restamp_merged(
         best = max(
             (se.compute_tier(etype, fields,
                              _reverified_att(_blob(c), fields, c[1]))
-             for c in contributing),
+             for c in sorted(contributing)),
             key=lambda t: se.TIER_RANK[t],
         )
         seen[key] = se.stamp_entry_text(entry, best)
+        # A FULLTEXT attestation that does not survive is never silent:
+        # SKILL.md carries these lines into the final summary. Only when the
+        # merged entry lost the tier -- a contributor whose text the survivor
+        # does not name is no loss while another contributor's grant holds.
+        if best != se.TIER_FULLTEXT:
+            for c in sorted(contributing):
+                claimed, ok, why = _fulltext_check(_blob(c), fields)
+                if claimed and not ok:
+                    via = "" if c == me else f" (from {c[0]}:{c[1]})"
+                    print(f"[FULLTEXT-LOST] {key}: {why}{via}")
 
 
 def main():

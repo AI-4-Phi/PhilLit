@@ -2382,7 +2382,7 @@ def _stub_net(monkeypatch, status=200, snapshot=None, final=None):
 def test_a_gate_passing_web_entry_is_stamped_web_with_derived_fields(tmp_path, monkeypatch):
     eb_mod = _stub_net(monkeypatch, snapshot="https://web.archive.org/web/2024/x")
     rd = _web_review(tmp_path)
-    report, outputs = eb_mod.run_barrier(rd, 1)
+    report, outputs, _texts = eb_mod.run_barrier(rd, 1)
     text = list(outputs.values())[0]
     assert "EVIDENCE-WEB" in text
     assert "urldate = {2026-08-14}" in text
@@ -2394,7 +2394,7 @@ def test_a_web_entry_whose_span_is_absent_stays_none_and_is_reported(tmp_path, m
     eb_mod = _stub_net(monkeypatch)
     cap = dict(_WEB_CAPTURE, text="word " * 100 + "nothing the note ever quoted")
     rd = _web_review(tmp_path, capture=cap)
-    report, outputs = eb_mod.run_barrier(rd, 1)
+    report, outputs, _texts = eb_mod.run_barrier(rd, 1)
     assert report["stamps"]["literature-domain-1.bib"]["k"] == "EVIDENCE-NONE"
     assert report["web_sources"]["capture_rejected"]["span_unverified"] == [
         "literature-domain-1.bib:k"]
@@ -2430,7 +2430,7 @@ def test_an_error_record_lands_in_fetch_error_not_no_capture(tmp_path, monkeypat
     eb_mod = _stub_net(monkeypatch)
     rd = _web_review(tmp_path, capture={"url": "https://a.example/x",
                                         "error": "fetch-failed:timeout"})
-    report, _ = eb_mod.run_barrier(rd, 1)
+    report, _, _texts = eb_mod.run_barrier(rd, 1)
     assert report["web_sources"]["fetch_error"] == ["literature-domain-1.bib:k"]
     assert report["web_sources"]["no_capture"] == []
 
@@ -2438,7 +2438,7 @@ def test_an_error_record_lands_in_fetch_error_not_no_capture(tmp_path, monkeypat
 def test_no_existence_is_its_own_bucket(tmp_path, monkeypatch):
     eb_mod = _stub_net(monkeypatch, status=404)
     rd = _web_review(tmp_path)
-    report, _ = eb_mod.run_barrier(rd, 1)
+    report, _, _texts = eb_mod.run_barrier(rd, 1)
     assert report["web_sources"]["no_existence"] == ["literature-domain-1.bib:k"]
 
 
@@ -2446,7 +2446,7 @@ def test_agent_provenance_is_counted_separately(tmp_path, monkeypatch):
     eb_mod = _stub_net(monkeypatch)
     cap = dict(_WEB_CAPTURE, provenance="agent", http_status=None)
     rd = _web_review(tmp_path, capture=cap)
-    report, _ = eb_mod.run_barrier(rd, 1)
+    report, _, _texts = eb_mod.run_barrier(rd, 1)
     assert report["web_sources"]["gate_passed"] == {"script": 0, "agent": 1}
 
 
@@ -2461,7 +2461,7 @@ def test_a_wayback_lookup_failure_lands_in_the_wayback_failed_bucket(tmp_path, m
         raise OSError("wayback 429")
     monkeypatch.setattr(eb_mod.wv, "wayback_lookup", boom)
     rd = _web_review(tmp_path)
-    report, outputs = eb_mod.run_barrier(rd, 1)
+    report, outputs, _texts = eb_mod.run_barrier(rd, 1)
     assert report["web_sources"]["gate_passed"] == {"script": 1, "agent": 0}
     assert report["web_sources"]["wayback_failed"] == ["literature-domain-1.bib:k"]
     assert "archiveurl" not in list(outputs.values())[0]
@@ -2470,7 +2470,7 @@ def test_a_wayback_lookup_failure_lands_in_the_wayback_failed_bucket(tmp_path, m
 def test_a_clean_run_reports_an_empty_wayback_failed_bucket(tmp_path, monkeypatch):
     eb_mod = _stub_net(monkeypatch, snapshot="https://web.archive.org/web/2024/x")
     rd = _web_review(tmp_path)
-    report, _ = eb_mod.run_barrier(rd, 1)
+    report, _, _texts = eb_mod.run_barrier(rd, 1)
     assert report["web_sources"]["wayback_failed"] == []
 
 
@@ -2480,7 +2480,7 @@ def test_a_stale_urldate_in_the_source_bib_is_stripped_and_re_derived(tmp_path, 
     stale = _WEB_ENTRY.replace("  year = {2008},",
                                "  year = {2008},\n  urldate = {1999-01-01},")
     rd = _web_review(tmp_path, entry=stale)
-    _, outputs = eb_mod.run_barrier(rd, 1)
+    _, outputs, _texts = eb_mod.run_barrier(rd, 1)
     text = list(outputs.values())[0]
     assert "1999-01-01" not in text
     assert text.count("urldate") == 1
@@ -2514,7 +2514,7 @@ def test_one_raising_entry_does_not_cost_its_neighbour_its_promotion(tmp_path, m
         dict(_WEB_CAPTURE, url="https://a.example/bad",
              final_url="https://a.example/bad")), encoding="utf-8")
 
-    report, _ = eb_mod.run_barrier(rd, 1)
+    report, _, _texts = eb_mod.run_barrier(rd, 1)
     stamps = report["stamps"]["literature-domain-1.bib"]
     assert stamps["k"] == "EVIDENCE-WEB", "the good entry lost its promotion"
     assert stamps["bad"] == "EVIDENCE-NONE"
@@ -2531,7 +2531,7 @@ def test_a_pass_level_failure_degrades_to_no_promotions_not_a_failed_run(tmp_pat
     monkeypatch.setattr(eb_mod.wv, "check_capture",
                         lambda *a, **k: (False, object()))   # unserializable
     rd = _web_review(tmp_path)
-    report, outputs = eb_mod.run_barrier(rd, 1)
+    report, outputs, _texts = eb_mod.run_barrier(rd, 1)
     assert report["status"] != "failed"
     assert report["web_sources"]["status"] == "error"
     assert report["web_sources"]["gate_passed"] == {"script": 0, "agent": 0}
@@ -2544,7 +2544,7 @@ def test_a_non_misc_entry_with_a_url_is_never_web_gated(tmp_path, monkeypatch):
     eb_mod = _stub_net(monkeypatch)
     art = _WEB_ENTRY.replace("@misc{k,", "@article{k,")
     rd = _web_review(tmp_path, entry=art)
-    report, _ = eb_mod.run_barrier(rd, 1)
+    report, _, _texts = eb_mod.run_barrier(rd, 1)
     assert report["web_sources"]["gate_passed"] == {"script": 0, "agent": 0}
     assert report["stamps"]["literature-domain-1.bib"]["k"] != "EVIDENCE-WEB"
 
@@ -2558,7 +2558,7 @@ def test_a_non_misc_entry_with_a_url_is_never_web_gated(tmp_path, monkeypatch):
 def test_web_derived_field_splices_that_land_are_counted_as_stamped(tmp_path, monkeypatch):
     eb_mod = _stub_net(monkeypatch, snapshot="https://web.archive.org/web/2024/x")
     rd = _web_review(tmp_path)
-    report, outputs = eb_mod.run_barrier(rd, 1)
+    report, outputs, _texts = eb_mod.run_barrier(rd, 1)
     text = list(outputs.values())[0]
     assert "urldate = {2026-08-14}" in text
     assert "web.archive.org" in text
@@ -2576,7 +2576,7 @@ def test_a_swallowed_web_splice_is_reported_not_silent(tmp_path, monkeypatch):
     rd = _web_review(tmp_path)
     monkeypatch.setattr(eb_mod, "_stamp_optional_field",
                         lambda text, field, value: text)
-    report, outputs = eb_mod.run_barrier(rd, 1)
+    report, outputs, _texts = eb_mod.run_barrier(rd, 1)
     text = list(outputs.values())[0]
     assert "urldate" not in text                       # the loss really happened
     assert report["web_sources"]["stamped_entries"] == []
@@ -2596,7 +2596,7 @@ def test_a_compact_stale_urldate_is_stripped_and_the_fresh_one_lands(tmp_path, m
     compact = _WEB_ENTRY.replace("@misc{k,",
                                  "@misc{k,urldate = {1999-01-01},", 1)
     rd = _web_review(tmp_path, entry=compact)
-    report, outputs = eb_mod.run_barrier(rd, 1)
+    report, outputs, _texts = eb_mod.run_barrier(rd, 1)
     text = list(outputs.values())[0]
     assert text.count("urldate") == 1                  # this run's, not two
     assert "1999-01-01" not in text                    # the stale one is gone
@@ -2621,7 +2621,7 @@ def test_a_failed_urldate_splice_is_reverted_and_the_archiveurl_still_lands(tmp_
                             % (value, value), 1)
     monkeypatch.setattr(eb_mod, "_stamp_optional_field", _double_urldate)
     rd = _web_review(tmp_path)
-    report, outputs = eb_mod.run_barrier(rd, 1)
+    report, outputs, _texts = eb_mod.run_barrier(rd, 1)
     text = list(outputs.values())[0]
     assert "urldate" not in text                       # reverted, not emitted twice
     parse_string(text, bib_format="bibtex")
@@ -2639,7 +2639,7 @@ def test_web_splice_keys_are_present_even_with_no_web_entries(tmp_path, monkeypa
     rd = tmp_path / "review"
     _domain(rd, 1, TWO_VENUE_BIB, cleaning=_cleaning(1, {}),
             enrichment=_enrichment(1))
-    report, _ = evidence_barrier.run_barrier(rd, 1)
+    report, _, _texts = evidence_barrier.run_barrier(rd, 1)
     assert report["web_sources"]["stamped_entries"] == []
     assert report["web_sources"]["splice_failed"] == []
 
@@ -2681,7 +2681,7 @@ def test_an_excluded_host_entry_is_bucketed_and_never_probed_or_read(tmp_path, m
     monkeypatch.setattr(eb_mod.wv, "evaluate_existence", _no_net)
     monkeypatch.setattr(eb_mod.wv, "load_capture", _no_read)
     rd = _web_review(tmp_path, entry=_SEP_ENTRY, capture=_SEP_CAPTURE)
-    report, outputs = eb_mod.run_barrier(rd, 1)
+    report, outputs, _texts = eb_mod.run_barrier(rd, 1)
     assert report["web_sources"]["excluded_host"] == ["literature-domain-1.bib:k"]
     assert report["web_sources"]["excluded_host_demoted"] == []  # no prior stamp
     assert report["web_sources"]["entry_error"] == []            # nothing raised
@@ -2720,7 +2720,7 @@ def test_a_capture_that_redirected_onto_an_excluded_host_is_not_promoted(tmp_pat
         raise AssertionError(f"existence probe ran after excluded redirect: {url}")
     monkeypatch.setattr(eb_mod.wv, "evaluate_existence", _no_net)
     rd = _web_review(tmp_path, entry=_REDIRECTED_ENTRY, capture=_REDIRECTED_CAPTURE)
-    report, outputs = eb_mod.run_barrier(rd, 1)
+    report, outputs, _texts = eb_mod.run_barrier(rd, 1)
     assert report["web_sources"]["excluded_host"] == ["literature-domain-1.bib:k"]
     assert "EVIDENCE-WEB" not in list(outputs.values())[0]
     assert report["web_sources"]["entry_error"] == []
@@ -2751,7 +2751,7 @@ def test_a_rerun_demotion_of_a_previously_promoted_entry_is_signalled(tmp_path, 
     monkeypatch.setattr(eb_mod.wv, "evaluate_existence",
                         lambda url: (_ for _ in ()).throw(AssertionError(url)))
     rd = _web_review(tmp_path, entry=_PRIOR_WEB_ENTRY, capture=_SEP_CAPTURE)
-    report, outputs = eb_mod.run_barrier(rd, 1)
+    report, outputs, _texts = eb_mod.run_barrier(rd, 1)
     assert report["web_sources"]["excluded_host"] == ["literature-domain-1.bib:k"]
     assert report["web_sources"]["excluded_host_demoted"] == [
         "literature-domain-1.bib:k"]
@@ -2780,7 +2780,7 @@ def test_a_keyword_that_merely_contains_evidence_web_does_not_signal_demotion(tm
     monkeypatch.setattr(eb_mod.wv, "evaluate_existence",
                         lambda url: (_ for _ in ()).throw(AssertionError(url)))
     rd = _web_review(tmp_path, entry=_TOKEN_LOOKALIKE_ENTRY, capture=_SEP_CAPTURE)
-    report, outputs = eb_mod.run_barrier(rd, 1)
+    report, outputs, _texts = eb_mod.run_barrier(rd, 1)
     assert report["web_sources"]["excluded_host"] == ["literature-domain-1.bib:k"]
     assert report["web_sources"]["excluded_host_demoted"] == []
     assert report["web_sources"]["entry_error"] == []
@@ -2797,7 +2797,7 @@ def test_an_excluded_host_entry_without_a_capture_still_lands_in_excluded_host(t
         raise AssertionError(f"existence probe ran for excluded host: {url}")
     monkeypatch.setattr(eb_mod.wv, "evaluate_existence", _no_net)
     rd = _web_review(tmp_path, entry=_SEP_ENTRY, capture=None)
-    report, _ = eb_mod.run_barrier(rd, 1)
+    report, _, _texts = eb_mod.run_barrier(rd, 1)
     assert report["web_sources"]["excluded_host"] == ["literature-domain-1.bib:k"]
     assert report["web_sources"]["no_capture"] == []
     assert report["web_sources"]["entry_error"] == []
@@ -2813,7 +2813,7 @@ def test_excluded_host_bucket_is_present_even_on_the_web_error_path(tmp_path, mo
     monkeypatch.setattr(eb_mod.wv, "check_capture",
                         lambda *a, **k: (False, object()))   # unserializable
     rd = _web_review(tmp_path)
-    report, _ = eb_mod.run_barrier(rd, 1)
+    report, _, _texts = eb_mod.run_barrier(rd, 1)
     assert report["web_sources"]["status"] == "error"
     assert report["web_sources"]["excluded_host"] == []
     assert report["web_sources"]["excluded_host_demoted"] == []
@@ -2832,14 +2832,14 @@ def test_web_sources_key_set_matches_between_complete_and_error_paths(tmp_path, 
     that legitimately differs is "error" itself, present only when the pass
     actually failed."""
     complete_eb_mod = _stub_net(monkeypatch)
-    complete_report, _ = complete_eb_mod.run_barrier(
+    complete_report, _, _texts = complete_eb_mod.run_barrier(
         _web_review(tmp_path / "complete"), 1)
     assert complete_report["web_sources"]["status"] == "complete"
 
     error_eb_mod = _stub_net(monkeypatch)
     monkeypatch.setattr(error_eb_mod.wv, "check_capture",
                         lambda *a, **k: (False, object()))   # unserializable
-    error_report, _ = error_eb_mod.run_barrier(
+    error_report, _, _texts = error_eb_mod.run_barrier(
         _web_review(tmp_path / "error"), 1)
     assert error_report["web_sources"]["status"] == "error"
 
@@ -3575,7 +3575,7 @@ def test_heal_buckets_are_excluded_from_the_summary_counts(tmp_path, monkeypatch
     _stub_corroborator(monkeypatch, eb_mod, ("mismatch", None), calls)
     monkeypatch.setattr(eb_mod.eb, "resolve_abstract_for_entry",
                         lambda *a, **k: (true_text, "s2"))
-    report, _ = eb_mod.run_barrier(tmp_path, 1)
+    report, _, _texts = eb_mod.run_barrier(tmp_path, 1)
     assert report["abstract_corroboration"]["literature-domain-1.bib"][
         "pasq2019"]["via"] == "heal"
     assert eb_mod._corroboration_summary(report) == {
@@ -4616,3 +4616,486 @@ def test_a_complete_run_prints_no_degraded_by(tmp_path, monkeypatch, capsys):
     evidence_barrier.execute(rd, 1)
     printed = json.loads(capsys.readouterr().out.strip().splitlines()[-1])
     assert printed["status"] == "complete" and "degraded_by" not in printed
+
+
+# ---------------------------------------------------------------------------
+# EVIDENCE-FULLTEXT (spec 2026-10-22, section 6)
+# ---------------------------------------------------------------------------
+
+sys.path.insert(0, str(Path(__file__).parent))
+from pdf_fixtures import make_pdf  # noqa: E402
+
+FT_DOI = "10.1000/xyz123"
+FT_ENTRY = """@article{smith2020data,
+  author = {Smith, Anna},
+  title = {Data and Things},
+  journal = {Journal of Data},
+  doi = {10.1000/xyz123},
+  pages = {101--104},
+  year = {2020}
+}"""
+FT_CLEAN = {"smith2020data": {
+    "api_matched": True, "verified_identifier": "doi",
+    "verified_identifier_value": FT_DOI, "entry_type": "article"}}
+
+FT_BOOK = """@incollection{gardner2019justified,
+  author = {Gardner, John},
+  title = {Justified Harm and Its Limits},
+  booktitle = {Harm Essays},
+  publisher = {Oxford University Press},
+  year = {2019}
+}"""
+FT_BOOK_IDENT = {"doi": None, "title": "Justified Harm and Its Limits",
+                 "surname": "Gardner", "year": "2019"}
+
+_FILLER = ["The argument proceeds through several stages of analysis here.",
+           "Each stage takes up an objection that critics have pressed often.",
+           "The final section draws the threads together and concludes."]
+
+
+def _ft_pages(first_lines, start=101, n=4):
+    """n pages, each opened by its printed number (start + index) and closed
+    by number-free lines, so confirm_pages votes for one offset. Digits in
+    the middle of a page cast no vote."""
+    pages = []
+    for k in range(n):
+        body = list(first_lines) if k == 0 else ["Continued discussion of the topic."]
+        pages.append([str(start + k), "Journal of Data", "Research article",
+                      *body, *_FILLER])
+    return pages
+
+
+DOI_PAGES = _ft_pages(["Data and Things", "Anna Smith", "doi 10.1000/xyz123"])
+BOOK_PAGES = _ft_pages(["Justified Harm and Its Limits", "John Gardner"], start=1)
+
+
+def _ft():
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import fulltext
+    return fulltext
+
+
+def _ft_record(review_dir, identity, pages, *, tamper=None):
+    """Write one store record (PDF + sidecar) the way acquisition does."""
+    import hashlib
+    ft = _ft()
+    store = review_dir / "intermediate_files" / "fulltext"
+    store.mkdir(parents=True, exist_ok=True)
+    slug = ft.slug_for(identity)
+    pdf = make_pdf(pages)
+    (store / f"{slug}.pdf").write_bytes(pdf)
+    side = {"schema": 1, "slug": slug, "identity": identity, "source": "user",
+            "source_ref": "/tmp/x.pdf", "license": None,
+            "pdf_sha256": hashlib.sha256(pdf).hexdigest(),
+            "acquired_at": "2026-10-22T00:00:00+00:00"}
+    (store / f"{slug}.json").write_text(json.dumps(side), encoding="utf-8")
+    return slug
+
+
+DOI_IDENT = {"doi": FT_DOI, "title": "Data and Things", "surname": "Smith",
+             "year": "2020"}
+
+
+def _ft_barrier(monkeypatch):
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    monkeypatch.setattr(evidence_barrier.rc, "fetch_articles",
+                        lambda union, debug=False: ({}, []))
+    return evidence_barrier
+
+
+def _ft_doi_review(tmp_path, bib=FT_ENTRY, clean=FT_CLEAN, pages=DOI_PAGES):
+    rd = tmp_path / "review"
+    _domain(rd, 1, bib, cleaning=_cleaning(1, clean), enrichment=_enrichment(1))
+    slug = _ft_record(rd, DOI_IDENT, pages)
+    return rd, slug
+
+
+def test_fulltext_tier_is_stamped_with_its_field_text_and_blob(tmp_path, monkeypatch, capsys):
+    eb_mod = _ft_barrier(monkeypatch)
+    ft = _ft()
+    rd, slug = _ft_doi_review(tmp_path)
+    assert eb_mod.execute(rd, 1) == 0
+    report = _report(rd)
+    assert report["stamps"]["literature-domain-1.bib"]["smith2020data"] == "EVIDENCE-FULLTEXT"
+    assert report["schema_version"] == 2
+    bib = (rd / "literature-domain-1.bib").read_text(encoding="utf-8")
+    field = f"intermediate_files/fulltext/{slug}.txt"
+    assert "fulltext_file = {" + field + "}" in bib and "EVIDENCE-FULLTEXT" in bib
+    text_path = rd / field
+    text = ft.read_text(text_path)
+    assert "[[page 101]]" in text and "[[page 104]]" in text
+    blob = report["attestations"]["literature-domain-1.bib"]["smith2020data"]
+    assert blob["fulltext_verified"] is True and blob["fulltext_slug"] == slug
+    assert blob["fulltext_text_sha256"] == ft.file_text_sha256(text_path)
+    fields = {"doi": FT_DOI, "title": "Data and Things", "author": "Smith, Anna",
+              "year": "2020"}
+    assert blob["fulltext_identity"] == ft.entry_identity(fields)
+    assert report["fulltext"]["stamped"] == {"literature-domain-1.bib": ["smith2020data"]}
+    assert report["fulltext"]["status"] == "complete"
+    assert set(report["fulltext"]) >= {"stamped", "rejected", "deadline",
+                                       "unbound_records", "pass_seconds"}
+    printed = json.loads(capsys.readouterr().out.strip().splitlines()[-1])
+    assert printed["fulltext"]["stamped"] == 1 and printed["tiers"] == {"EVIDENCE-FULLTEXT": 1}
+
+
+def test_an_unstamped_entry_blob_carries_null_fulltext_keys(tmp_path, monkeypatch):
+    eb_mod = _ft_barrier(monkeypatch)
+    rd = tmp_path / "review"
+    _domain(rd, 1, KUHN, cleaning=CLEAN_KUHN, enrichment=EMPTY_ENRICH)
+    report, _, texts = eb_mod.run_barrier(rd, 1)
+    blob = report["attestations"]["literature-domain-1.bib"]["kuhn1962structure"]
+    assert blob["fulltext_verified"] is False
+    assert blob["fulltext_slug"] is blob["fulltext_identity"] is None
+    assert texts == {} and report["fulltext"]["rejected"] == {}
+
+
+def test_each_index_reason_is_reported(tmp_path, monkeypatch):
+    eb_mod = _ft_barrier(monkeypatch)
+    ft = _ft()
+    rd, good = _ft_doi_review(tmp_path)
+    store = rd / "intermediate_files" / "fulltext"
+    # sidecar_unreadable: a PDF with no sidecar
+    orphan = ft.slug_for({"doi": "10.1/orphan"})
+    (store / f"{orphan}.pdf").write_bytes(b"%PDF-1.4")
+    # pdf_missing: a sidecar with no PDF
+    nopdf = _ft_record(rd, {"doi": "10.1/nopdf", "title": None, "surname": None,
+                            "year": None}, DOI_PAGES)
+    (store / f"{nopdf}.pdf").unlink()
+    # pdf_hash_mismatch: the PDF changed after acquisition
+    changed = _ft_record(rd, {"doi": "10.1/changed", "title": None, "surname": None,
+                              "year": None}, DOI_PAGES)
+    (store / f"{changed}.pdf").write_bytes(b"%PDF-1.4 edited")
+    # bad_slug: a file name outside the slug grammar
+    (store / "garbage.json").write_text("{}", encoding="utf-8")
+    # never indexed: the barrier's own texts and temp files
+    (store / f"{good}.txt").write_text("old", encoding="utf-8")
+    (store / f"{good}.json.tmp").write_text("{}", encoding="utf-8")
+    report, _, _ = eb_mod.run_barrier(rd, 1)
+    rej = report["fulltext"]["rejected"]
+    assert rej["sidecar_unreadable"] == [orphan]
+    assert rej["pdf_missing"] == [nopdf]
+    assert rej["pdf_hash_mismatch"] == [changed]
+    assert rej["bad_slug"] == ["garbage"]
+    # the valid record still binds and stamps
+    assert report["stamps"]["literature-domain-1.bib"]["smith2020data"] == "EVIDENCE-FULLTEXT"
+
+
+def test_doi_binding_needs_the_current_field_to_equal_the_verified_value(tmp_path, monkeypatch):
+    eb_mod = _ft_barrier(monkeypatch)
+    # The cleaner verified 10.1000/xyz123, but the field now says otherwise.
+    rd, slug = _ft_doi_review(tmp_path, bib=FT_ENTRY.replace(FT_DOI, "10.1000/other"))
+    report, _, texts = eb_mod.run_barrier(rd, 1)
+    assert report["stamps"]["literature-domain-1.bib"]["smith2020data"] == "EVIDENCE-NONE"
+    assert report["fulltext"]["unbound_records"] == [slug] and texts == {}
+
+
+def test_doi_binding_needs_an_api_match_and_no_tripped_breaker(tmp_path, monkeypatch):
+    eb_mod = _ft_barrier(monkeypatch)
+    unmatched = {"smith2020data": dict(FT_CLEAN["smith2020data"], api_matched=False)}
+    rd, slug = _ft_doi_review(tmp_path, clean=unmatched)
+    report, _, _ = eb_mod.run_barrier(rd, 1)
+    assert report["stamps"]["literature-domain-1.bib"]["smith2020data"] != "EVIDENCE-FULLTEXT"
+    assert report["fulltext"]["unbound_records"] == [slug]
+    rd2 = tmp_path / "tripped"
+    _domain(rd2, 1, FT_ENTRY, cleaning=_cleaning(1, FT_CLEAN, breaker=True),
+            enrichment=_enrichment(1))
+    _ft_record(rd2, DOI_IDENT, DOI_PAGES)
+    report2, _, _ = eb_mod.run_barrier(rd2, 1)
+    assert report2["stamps"]["literature-domain-1.bib"]["smith2020data"] != "EVIDENCE-FULLTEXT"
+
+
+def test_no_doi_binding_needs_the_year(tmp_path, monkeypatch):
+    eb_mod = _ft_barrier(monkeypatch)
+    rd = tmp_path / "review"
+    _domain(rd, 1, FT_BOOK, cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
+    slug = _ft_record(rd, FT_BOOK_IDENT, BOOK_PAGES)
+    report, _, texts = eb_mod.run_barrier(rd, 1)
+    assert report["stamps"]["literature-domain-1.bib"]["gardner2019justified"] == "EVIDENCE-FULLTEXT"
+    assert list(texts) == [slug]
+    rd2 = tmp_path / "other-year"
+    _domain(rd2, 1, FT_BOOK.replace("year = {2019}", "year = {2018}"),
+            cleaning=_cleaning(1, {}),
+            enrichment=_enrichment(1))
+    _ft_record(rd2, FT_BOOK_IDENT, BOOK_PAGES)
+    report2, _, texts2 = eb_mod.run_barrier(rd2, 1)
+    assert report2["stamps"]["literature-domain-1.bib"]["gardner2019justified"] == "EVIDENCE-NONE"
+    assert report2["fulltext"]["unbound_records"] == [slug] and texts2 == {}
+
+
+def test_an_entry_with_a_verified_doi_binds_no_no_doi_record(tmp_path, monkeypatch):
+    eb_mod = _ft_barrier(monkeypatch)
+    rd = tmp_path / "review"
+    _domain(rd, 1, FT_ENTRY, cleaning=_cleaning(1, FT_CLEAN), enrichment=_enrichment(1))
+    slug = _ft_record(rd, {"doi": None, "title": "Data and Things", "surname": "Smith",
+                           "year": "2020"}, DOI_PAGES)
+    report, _, _ = eb_mod.run_barrier(rd, 1)
+    assert report["stamps"]["literature-domain-1.bib"]["smith2020data"] == "EVIDENCE-EXISTENCE"
+    assert report["fulltext"]["unbound_records"] == [slug]
+
+
+def test_an_entry_bound_to_two_records_is_ambiguous(tmp_path, monkeypatch):
+    """Two valid no-DOI records whose slugs differ ("2019" vs "2019a") but
+    whose same_work_key and same_work_year are the entry's."""
+    eb_mod = _ft_barrier(monkeypatch)
+    rd = tmp_path / "review"
+    _domain(rd, 1, FT_BOOK, cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
+    _ft_record(rd, FT_BOOK_IDENT, BOOK_PAGES)
+    _ft_record(rd, dict(FT_BOOK_IDENT, year="2019a"), BOOK_PAGES)
+    report, _, texts = eb_mod.run_barrier(rd, 1)
+    assert report["stamps"]["literature-domain-1.bib"]["gardner2019justified"] == "EVIDENCE-NONE"
+    assert report["fulltext"]["rejected"]["ambiguous_records"] == [
+        "literature-domain-1.bib:gardner2019justified"]
+    assert texts == {} and report["fulltext"]["unbound_records"] == []
+
+
+def test_identity_is_checked_against_the_entry_not_the_record(tmp_path, monkeypatch):
+    """The record binds by DOI, but the PDF carries neither the DOI nor the
+    entry's title: the second check, against the bib, refuses it."""
+    eb_mod = _ft_barrier(monkeypatch)
+    other = _ft_pages(["A Different Paper Entirely About Rivers", "Bob Jones"])
+    rd, slug = _ft_doi_review(tmp_path, pages=other)
+    report, _, texts = eb_mod.run_barrier(rd, 1)
+    assert report["stamps"]["literature-domain-1.bib"]["smith2020data"] == "EVIDENCE-EXISTENCE"
+    assert report["fulltext"]["rejected"]["identity_failed"] == [
+        "literature-domain-1.bib:smith2020data"]
+    assert texts == {}
+
+
+def test_an_unextractable_record_is_withheld_alone(tmp_path, monkeypatch):
+    eb_mod = _ft_barrier(monkeypatch)
+    rd, slug = _ft_doi_review(tmp_path, pages=[["1"], ["2"], ["3"]])   # under 200 chars
+    report, _, _ = eb_mod.run_barrier(rd, 1)
+    assert report["fulltext"]["rejected"]["extract_failed:no-text"] == [slug]
+    assert report["stamps"]["literature-domain-1.bib"]["smith2020data"] == "EVIDENCE-EXISTENCE"
+
+
+def test_page_maps_differing_across_entries_drop_every_page_marker(tmp_path, monkeypatch):
+    eb_mod = _ft_barrier(monkeypatch)
+    rd = tmp_path / "review"
+    _domain(rd, 1, FT_ENTRY, cleaning=_cleaning(1, FT_CLEAN), enrichment=_enrichment(1))
+    # The same work in domain 2, whose pages field the PDF does not confirm.
+    _domain(rd, 2, FT_ENTRY.replace("101--104", "5--8"),
+            cleaning=_cleaning(2, FT_CLEAN), enrichment=_enrichment(2))
+    slug = _ft_record(rd, DOI_IDENT, DOI_PAGES)
+    report, _, texts = eb_mod.run_barrier(rd, 2)
+    for bib in ("literature-domain-1.bib", "literature-domain-2.bib"):
+        assert report["stamps"][bib]["smith2020data"] == "EVIDENCE-FULLTEXT"
+    text, page_map = texts[slug]
+    assert page_map is None and "[[page" not in text and "[[sheet 1]]" in text
+    # one rendered text, one hash, in both blobs
+    hashes = {report["attestations"][b]["smith2020data"]["fulltext_text_sha256"]
+              for b in ("literature-domain-1.bib", "literature-domain-2.bib")}
+    assert len(hashes) == 1
+
+
+def test_agreeing_page_maps_across_entries_keep_the_markers(tmp_path, monkeypatch):
+    eb_mod = _ft_barrier(monkeypatch)
+    rd = tmp_path / "review"
+    _domain(rd, 1, FT_ENTRY, cleaning=_cleaning(1, FT_CLEAN), enrichment=_enrichment(1))
+    _domain(rd, 2, FT_ENTRY, cleaning=_cleaning(2, FT_CLEAN), enrichment=_enrichment(2))
+    slug = _ft_record(rd, DOI_IDENT, DOI_PAGES)
+    _, _, texts = eb_mod.run_barrier(rd, 2)
+    assert "[[page 101]]" in texts[slug][0]
+
+
+def test_a_failed_fulltext_splice_reverts_and_recomputes_the_tier(tmp_path, monkeypatch):
+    eb_mod = _ft_barrier(monkeypatch)
+    rd, slug = _ft_doi_review(tmp_path)
+    real = eb_mod._stamp_optional_field
+
+    def no_fulltext(text, field, value):
+        return text if field == "fulltext_file" else real(text, field, value)
+
+    monkeypatch.setattr(eb_mod, "_stamp_optional_field", no_fulltext)
+    report, outputs, texts = eb_mod.run_barrier(rd, 1)
+    assert report["stamps"]["literature-domain-1.bib"]["smith2020data"] == "EVIDENCE-EXISTENCE"
+    assert report["fulltext"]["rejected"]["splice_failed"] == [
+        "literature-domain-1.bib:smith2020data"]
+    assert report["fulltext"]["stamped"] == {} and texts == {}
+    blob = report["attestations"]["literature-domain-1.bib"]["smith2020data"]
+    assert blob["fulltext_verified"] is False and blob["fulltext_slug"] is None
+    assert "fulltext_file" not in next(iter(outputs.values()))
+
+
+def test_a_hand_written_fulltext_file_is_stripped_and_self_check_passes(tmp_path, monkeypatch):
+    eb_mod = _ft_barrier(monkeypatch)
+    stale = FT_ENTRY.replace("  year = {2020}",
+                             "  fulltext_file = {intermediate_files/fulltext/forged.txt},\n"
+                             "  year = {2020}")
+    rd = tmp_path / "review"
+    _domain(rd, 1, stale, cleaning=_cleaning(1, FT_CLEAN), enrichment=_enrichment(1))
+    assert eb_mod.execute(rd, 1) == 0
+    assert _report(rd)["status"] == "complete"
+    bib = (rd / "literature-domain-1.bib").read_text(encoding="utf-8")
+    assert "forged.txt" not in bib and "fulltext_file" not in bib
+    assert "EVIDENCE-EXISTENCE" in bib
+
+
+def test_self_check_owns_fulltext_file_but_nothing_beside_it():
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier as eb_mod
+    after = FT_ENTRY.replace("  year = {2020}",
+                             "  fulltext_file = {intermediate_files/fulltext/x.txt},\n"
+                             "  year = {2020}")
+    assert "fulltext_file" in eb_mod._DERIVED_FIELDS
+    assert eb_mod._self_check(FT_ENTRY, after, {}) == []
+    assert eb_mod._self_check(
+        FT_ENTRY, after.replace("year = {2020}", "year = {2021}"), {}) == ["smith2020data"]
+
+
+def _tree(root):
+    return {p: p.read_bytes() for p in sorted(root.rglob("*")) if p.is_file()}
+
+
+def test_run_barrier_writes_nothing(tmp_path, monkeypatch):
+    eb_mod = _ft_barrier(monkeypatch)
+    rd, slug = _ft_doi_review(tmp_path)
+    before = _tree(rd)
+    report, outputs, texts = eb_mod.run_barrier(rd, 1)
+    assert list(texts) == [slug] and outputs
+    assert _tree(rd) == before
+    assert not (rd / "intermediate_files" / "fulltext" / f"{slug}.txt").exists()
+
+
+def test_every_run_barrier_path_returns_three_parts(tmp_path, monkeypatch):
+    eb_mod = _ft_barrier(monkeypatch)
+    rd = tmp_path / "review"
+    _domain(rd, 1, None)   # no bib: the early return
+    result = eb_mod.run_barrier(rd, 1)
+    assert len(result) == 3 and result[0]["status"] == "failed"
+    assert result[1] == {} and result[2] == {}
+
+
+def test_a_text_write_failure_fails_the_run_and_writes_no_report_or_bib(tmp_path, monkeypatch, capsys):
+    eb_mod = _ft_barrier(monkeypatch)
+    rd, slug = _ft_doi_review(tmp_path)
+    bib_before = (rd / "literature-domain-1.bib").read_bytes()
+    ledger = rd / "intermediate_files" / "json" / "cleaning_ledger-literature-domain-1.json"
+    ledger_before = ledger.read_bytes()
+
+    def boom(path, text):
+        raise OSError("disk full")
+
+    monkeypatch.setattr(eb_mod.ft, "write_text_atomic", boom)
+    assert eb_mod.execute(rd, 1) == 1
+    assert json.loads(capsys.readouterr().out.strip().splitlines()[-1])["status"] == "failed"
+    assert not (rd / "intermediate_files" / "json" / "evidence_report.json").exists()
+    assert (rd / "literature-domain-1.bib").read_bytes() == bib_before
+    assert ledger.read_bytes() == ledger_before
+
+
+def test_texts_are_written_before_the_report(tmp_path, monkeypatch):
+    eb_mod = _ft_barrier(monkeypatch)
+    rd, slug = _ft_doi_review(tmp_path)
+    order = []
+    real_text, real_atomic = eb_mod.ft.write_text_atomic, eb_mod._atomic_write
+    monkeypatch.setattr(eb_mod.ft, "write_text_atomic",
+                        lambda p, t: (order.append(Path(p).name), real_text(p, t)))
+    monkeypatch.setattr(eb_mod, "_atomic_write",
+                        lambda p, c: (order.append(Path(p).name), real_atomic(p, c)))
+    assert eb_mod.execute(rd, 1) == 0
+    assert order[:3] == [f"{slug}.txt", "evidence_report.json", "literature-domain-1.bib"]
+
+
+def test_a_rerun_rewrites_no_unchanged_text_and_keeps_the_tier(tmp_path, monkeypatch):
+    eb_mod = _ft_barrier(monkeypatch)
+    rd, slug = _ft_doi_review(tmp_path)
+    assert eb_mod.execute(rd, 1) == 0
+    text_path = rd / "intermediate_files" / "fulltext" / f"{slug}.txt"
+    # a CRLF translation on disk reads back equal: not rewritten either
+    text_path.write_bytes(text_path.read_bytes().replace(b"\n", b"\r\n"))
+    calls = []
+    real = eb_mod.ft.write_text_atomic
+    monkeypatch.setattr(eb_mod.ft, "write_text_atomic",
+                        lambda p, t: (calls.append(p), real(p, t)))
+    assert eb_mod.execute(rd, 1) == 0
+    assert calls == []
+    report = _report(rd)
+    assert report["status"] == "complete"
+    assert report["stamps"]["literature-domain-1.bib"]["smith2020data"] == "EVIDENCE-FULLTEXT"
+    assert report["attestations"]["literature-domain-1.bib"]["smith2020data"][
+        "fulltext_text_sha256"] == eb_mod.ft.file_text_sha256(text_path)
+
+
+def test_records_past_the_pass_deadline_are_bucketed_not_stamped(tmp_path, monkeypatch):
+    eb_mod = _ft_barrier(monkeypatch)
+    rd, slug = _ft_doi_review(tmp_path)
+    monkeypatch.setattr(eb_mod, "FULLTEXT_PASS_SECONDS", 0.0)
+    report, _, texts = eb_mod.run_barrier(rd, 1)
+    assert report["fulltext"]["deadline"] == [slug] and texts == {}
+    assert report["stamps"]["literature-domain-1.bib"]["smith2020data"] == "EVIDENCE-EXISTENCE"
+
+
+def test_the_deadline_is_bounded_by_the_remaining_run_ceiling(tmp_path, monkeypatch):
+    eb_mod = _ft_barrier(monkeypatch)
+    rd, slug = _ft_doi_review(tmp_path)
+    monkeypatch.setattr(eb_mod, "FULLTEXT_RUN_CEILING_SECONDS", 0.0)
+    report, _, _ = eb_mod.run_barrier(rd, 1)
+    assert report["fulltext"]["deadline"] == [slug]
+
+
+def test_a_pass_level_exception_withholds_fulltext_and_keeps_the_status(tmp_path, monkeypatch, capsys):
+    eb_mod = _ft_barrier(monkeypatch)
+    rd, slug = _ft_doi_review(tmp_path)
+
+    def boom(*a, **kw):
+        raise RuntimeError("pass broke")
+
+    monkeypatch.setattr(eb_mod, "_fulltext_pass", boom)
+    assert eb_mod.execute(rd, 1) == 0
+    report = _report(rd)
+    assert report["status"] == "complete"
+    assert report["stamps"]["literature-domain-1.bib"]["smith2020data"] == "EVIDENCE-EXISTENCE"
+    assert report["fulltext"]["status"] == "error"
+    assert "pass_error" in report["fulltext"]["rejected"]
+    assert set(report["fulltext"]) >= {"stamped", "rejected", "deadline",
+                                       "unbound_records", "pass_seconds"}
+    printed = json.loads(capsys.readouterr().out.strip().splitlines()[-1])
+    assert printed["fulltext"]["status"] == "error"
+    assert printed["fulltext"]["rejected"] == {"pass_error": 1}
+    assert not (rd / "intermediate_files" / "fulltext" / f"{slug}.txt").exists()
+
+
+def test_a_review_without_a_store_has_an_empty_fulltext_section(tmp_path, monkeypatch):
+    eb_mod = _ft_barrier(monkeypatch)
+    rd = tmp_path / "review"
+    _domain(rd, 1, KUHN, cleaning=CLEAN_KUHN, enrichment=EMPTY_ENRICH)
+    assert eb_mod.execute(rd, 1) == 0
+    assert _report(rd)["fulltext"]["stamped"] == {}
+    assert not (rd / "intermediate_files" / "fulltext").exists()
+
+
+def test_a_barrier_fulltext_stamp_survives_the_phase_6_restamp(tmp_path, monkeypatch, capsys):
+    """End to end: what the barrier writes (bib field, text, blob) is exactly
+    what dedupe's re-verification accepts -- including a CRLF translation of
+    the text on disk -- and a later edit to the text drops the tier loudly."""
+    eb_mod = _ft_barrier(monkeypatch)
+    import dedupe_bib
+    rd, slug = _ft_doi_review(tmp_path)
+    assert eb_mod.execute(rd, 1) == 0
+    text_path = rd / "intermediate_files" / "fulltext" / f"{slug}.txt"
+    text_path.write_bytes(text_path.read_bytes().replace(b"\n", b"\r\n"))
+    report = rd / "intermediate_files" / "json" / "evidence_report.json"
+    out = rd / "literature-all.bib"
+    dedupe_bib.deduplicate_bib([rd / "literature-domain-1.bib"], out, evidence_report=report)
+    assert "EVIDENCE-FULLTEXT" in out.read_text(encoding="utf-8")
+    text_path.write_text("tampered\n", encoding="utf-8")
+    capsys.readouterr()
+    dedupe_bib.deduplicate_bib([rd / "literature-domain-1.bib"], out, evidence_report=report)
+    merged = out.read_text(encoding="utf-8")
+    assert "EVIDENCE-FULLTEXT" not in merged and "EVIDENCE-EXISTENCE" in merged
+    assert "[FULLTEXT-LOST] smith2020data:" in capsys.readouterr().out
+
+
+def test_an_entry_no_later_verifier_could_recheck_is_withheld(tmp_path, monkeypatch):
+    """No author: the PDF carries the verified DOI, so identity_ok would pass,
+    but fulltext.identity_matches never matches an entry without a work key,
+    so dedupe and check_quotes.py would always revoke the licence."""
+    eb_mod = _ft_barrier(monkeypatch)
+    rd, slug = _ft_doi_review(tmp_path, bib=FT_ENTRY.replace("  author = {Smith, Anna},\n", ""))
+    report, _, texts = eb_mod.run_barrier(rd, 1)
+    assert report["stamps"]["literature-domain-1.bib"]["smith2020data"] == "EVIDENCE-EXISTENCE"
+    assert report["fulltext"]["rejected"]["no_work_key"] == [
+        "literature-domain-1.bib:smith2020data"]
+    assert texts == {}

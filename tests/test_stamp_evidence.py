@@ -526,3 +526,44 @@ class TestContextTierOnAnExistenceEligibleEntry:
     def test_the_ladder_makes_a_context_miss_a_demotion(self):
         # Relative only -- no absolute rank is persisted anywhere.
         assert TIER_RANK[TIER_CONTEXT] > TIER_RANK[TIER_WEB] > TIER_RANK[TIER_EXISTENCE]
+
+
+# ---------------------------------------------------------------------------
+# The EVIDENCE-FULLTEXT tier
+# ---------------------------------------------------------------------------
+
+def test_tier_rank_puts_fulltext_at_the_top_of_the_ladder():
+    # Pinned RELATIVELY -- no absolute rank is persisted anywhere.
+    from stamp_evidence import TIER_FULLTEXT
+    r = TIER_RANK
+    assert TIER_FULLTEXT == "EVIDENCE-FULLTEXT"
+    assert r[TIER_FULLTEXT] > r[TIER_ABSTRACT] > r[TIER_CONTEXT] > r[TIER_WEB] \
+        > r[TIER_EXISTENCE] > r[TIER_NONE]
+    assert len(r) == 6
+
+
+def test_fulltext_is_checked_first_and_on_the_attestation_alone():
+    """compute_tier runs BEFORE the barrier splices `fulltext_file`, so the
+    field cannot be a condition; everything below FULLTEXT loses to it."""
+    from stamp_evidence import TIER_FULLTEXT
+    fields = {"abstract": "x" * 50, "abstract_source": "s2", "sep_context": "c",
+              "doi": "10.1/a"}
+    att = EntryAttestation(abstract_attested=True, context_written=True,
+                           web_gate_passed=True, api_matched=True,
+                           verified_identifier="doi", verified_identifier_value="10.1/a",
+                           fulltext_verified=True)
+    assert compute_tier("article", fields, att) == TIER_FULLTEXT
+    assert compute_tier("book", {}, EntryAttestation(fulltext_verified=True)) == TIER_FULLTEXT
+    att.fulltext_verified = False
+    assert compute_tier("article", fields, att) == TIER_ABSTRACT
+
+
+def test_a_fulltext_file_field_alone_never_grants_the_tier():
+    fields = {"fulltext_file": "intermediate_files/fulltext/x.txt"}
+    assert compute_tier("article", fields, EntryAttestation()) == TIER_NONE
+
+
+def test_the_fulltext_token_is_stamped_and_replaced_like_any_tier():
+    out = stamp_keywords("tag, High, EVIDENCE-ABSTRACT", "EVIDENCE-FULLTEXT")
+    assert out == "tag, High, EVIDENCE-FULLTEXT"
+    assert stamp_keywords(out, "EVIDENCE-NONE") == "tag, High, EVIDENCE-NONE"

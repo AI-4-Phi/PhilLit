@@ -10,7 +10,7 @@ purpose each:
   (Zotero, BibDesk, ...): standard fields, topical keywords and the reading
   notes with FLn.n substituted. Zotero turns `note` into a child note and
   every keyword into a tag, so every verdict token is stripped here, and so
-  are exactly these eight engine-derived fields (ENGINE_FIELDS below;
+  are exactly these nine engine-derived fields (ENGINE_FIELDS below;
   `urldate` is included, `iep_context` is not). No `@comment` here either.
 - `research-notes-<project>.md` - the per-domain research blocks, for a
   human reader (research_notes.py).
@@ -60,7 +60,7 @@ sys.path.pop(0)
 # `urldate` included, `iep_context` not.
 ENGINE_FIELDS = frozenset({
     "abstract_source", "web_span", "urldate", "archiveurl", "same_work_group",
-    "venue_status", "sep_context", "year_suffix"})
+    "venue_status", "sep_context", "year_suffix", "fulltext_file"})
 # Workflow markers, stripped BY NAME: ALL-CAPS topical keywords (XCONST,
 # POLCON, CHECKS, ...) share their shape and must survive. Add new markers here.
 WORKFLOW_MARKERS = frozenset({"AI-RELEVANT", "ROUTING-DISPUTE", "NO-DOI"})

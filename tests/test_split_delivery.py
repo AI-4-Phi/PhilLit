@@ -27,6 +27,7 @@ ENTRY = """@article{waldron2020separation,
   url = {https://example.org/w},
   urldate = {2026-09-10},
   venue_status = {low-visibility},
+  fulltext_file = {intermediate_files/fulltext/doi-10.12660_rda.v279.2020.82914-0123456789ab.txt},
   iep_context = {An IEP passage.},
   doi = {10.12660/rda.v279.2020.82914},
   note = {
@@ -60,7 +61,7 @@ def test_track_record_drops_notes_and_keeps_every_verdict():
     e = _entries(out)["waldron2020separation"].fields
     assert "note" not in e and "CORE ARGUMENT" not in out
     for kept in ("same_work_group", "abstract_source", "year_suffix", "venue_status",
-                 "urldate", "iep_context"):
+                 "urldate", "iep_context", "fulltext_file"):
         assert kept in e
     kw = e["keywords"]
     for token in ("FL1.1", "AI-RELEVANT", "EVIDENCE-ABSTRACT", "METADATA\\_CLEANED: journal"):
@@ -68,15 +69,16 @@ def test_track_record_drops_notes_and_keeps_every_verdict():
     assert ", High," in kw and "INCOMPLETE" not in kw
 
 
-def test_annotated_substitutes_notes_strips_verdicts_and_the_eight_engine_fields():
+def test_annotated_substitutes_notes_strips_verdicts_and_the_nine_engine_fields():
     out = sd.annotated_entry(ENTRY, DEFS)
     e = _entries(out)["waldron2020separation"].fields
     assert "the “one principle or three?” fault line turns" in e["note"]
     assert not fl.tags_in(out)
     assert e["keywords"] == "separation-of-powers, XCONST, FLOW, High-modernism"
-    for gone in ("same_work_group", "abstract_source", "year_suffix", "venue_status", "urldate"):
+    for gone in ("same_work_group", "abstract_source", "year_suffix", "venue_status", "urldate",
+                 "fulltext_file"):
         assert gone not in e
-    assert e["iep_context"] == "An IEP passage."          # not one of the eight (decided)
+    assert e["iep_context"] == "An IEP passage."          # not one of the nine (decided)
     assert e["url"] == "https://example.org/w" and e["abstract"].startswith("The rationale")
 
 
@@ -374,3 +376,11 @@ def test_a_block_without_a_header_rule_is_named_so_in_the_notice(tmp_path):
     bib, plan = _review(tmp_path, COMMENT + "\n" + bare + "\n" + ENTRY)
     r = _cli(bib, plan)
     assert r.returncode == 0 and "'2 -- Bare' were withheld: the block had no ==== header" in _out(r)
+
+
+def test_fulltext_file_is_an_engine_field():
+    """EVIDENCE-FULLTEXT's barrier-stamped pointer is workflow plumbing: it
+    names a file under the review's intermediate_files, meaningless in a
+    reference manager."""
+    assert "fulltext_file" in sd.ENGINE_FIELDS
+    assert len(sd.ENGINE_FIELDS) == 9
