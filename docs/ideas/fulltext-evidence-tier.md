@@ -49,7 +49,7 @@ SKILL.md's "no override needed" list, planner and writer tier tables and
 Source Check, `conventions.md` Evidence Tiers, `split_delivery.py`, and the
 phillit-service re-vendor.
 
-**Decided** (Johannes, 2026-10-21):
+**Decided** (2026-10-21/22):
 - **A new tier, `EVIDENCE-FULLTEXT`, ranked above ABSTRACT.** Rejected:
   widening `EVIDENCE-WEB`, which would put two licences under one token (an
   LLM note checked against page fragments, and the source text itself) and
@@ -140,7 +140,7 @@ phillit-service re-vendor.
   example reviews. Rejected: deleting them at publish and re-acquiring on
   revision from the sidecar's hashes (a one-off `--pdf` would have to be
   supplied again); keeping the text only (still the copyrighted content).
-
-**Open questions for Johannes** (to adjudicate one at a time):
-10. Does FULLTEXT on a user-named work replace the tier-override framing, so
-    that FULLTEXT joins the "no override needed" list?
+- **FULLTEXT joins the "no override needed" list** (SKILL.md Phase 4): it
+  ranks above ABSTRACT, which is already on it. A named work whose text
+  could not be acquired keeps today's override line. This follows from the
+  ranking ruling; no alternative was live.
