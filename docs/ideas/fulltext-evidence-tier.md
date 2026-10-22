@@ -79,9 +79,14 @@ phillit-service re-vendor.
   header numbers whenever consistent (87%, but 12 of 110 would cite another
   version's pages); the PDF page index (not findable in the published
   article, not Chicago).
+- **Quotation length: at most 40 words per quotation, run into the text
+  (no block quotes), and at most 150 words in total from any one work
+  across the review.** The per-work total bounds copyright exposure; the
+  numbers are a judgment, not a measurement. Rejected: a per-quotation cap
+  alone (no bound on many quotes from one paper); no cap.
 
 **Open questions for Johannes** (to adjudicate one at a time):
-4. Quotation: a length cap? Is the Phase 6 quotation check an accuracy gate
+4. Quotation: is the Phase 6 quotation check an accuracy gate
    (fail closed) or telemetry?
 5. Scope: works the request names only, or any entry with an OA PDF?
 6. OA source: OpenAlex `oa_url`, Unpaywall (needs an email in `.env`), or
