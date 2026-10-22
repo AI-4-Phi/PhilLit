@@ -128,6 +128,13 @@ class TestIdentityDoi:
         work = dict(DOI_WORK, doi="https://doi.org/10.1111/PHC3.12345")
         assert ft.identity_ok([page(DOI, *body())], work) == (True, "doi")
 
+    def test_doi_must_be_whole_not_the_start_of_a_longer_one(self):
+        for longer in ("10.1111/phc3.123456", "10.1111/phc3.12345.x", "10.1111/phc3.12345/abc"):
+            assert ft.identity_ok([page(longer, *body())], DOI_WORK) == (False, "other_doi_page1")
+
+    def test_doi_followed_by_a_sentence_period_still_counts(self):
+        assert ft.identity_ok([page(f"See {DOI}.", *body())], DOI_WORK) == (True, "doi")
+
     def test_doi_only_counts_in_pages_1_to_3(self):
         pages = [page(*body())] * 3 + [page(DOI)]
         assert ft.identity_ok(pages, DOI_WORK) == (False, "no_match")

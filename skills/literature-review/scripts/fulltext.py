@@ -212,7 +212,9 @@ def identity_ok(pages: list[str], identity: Mapping) -> tuple[bool, str]:
     surname = fold(identity.get("surname") or "")
     if doi:
         raw3 = "\f".join(pages[:3]).lower()
-        if doi in raw3:
+        # A whole DOI, not the start of a longer one (10.1/abc in 10.1/abcd);
+        # a sentence's closing period may follow.
+        if re.search(re.escape(doi) + r"(?![a-z0-9_/-]|\.[a-z0-9])", raw3):
             return True, "doi"
         p1 = pages[0] if pages else ""
         if any(x.lower().rstrip(".,;)") != doi for x in DOI_RE.findall(p1)):
