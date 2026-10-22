@@ -47,10 +47,12 @@ SERVICE POLICY. `PHILLIT_FULLTEXT_LICENSED_ONLY` (1/true/yes/on) disables
 Zotero and the folder and accepts OA locations only when their licence
 starts with `cc` (case-insensitive: S2 reports `CCBY`). It is read from the
 PROCESS environment BEFORE `.env` is loaded and `.env` is ignored for it in
-both directions: the hosted service sets it for its own process, and a
-workspace `.env` (a file the user, or anything with Bash, can write) must
-never be able to switch the service's licence filter off. `--pdf` stays
-available under the policy (the service builds uploads on it).
+both directions: the hosted service sets it for its own process, so a
+workspace `.env` cannot switch the filter off. It is a policy default, not
+a security boundary: a Bash call can still unset the variable for one run.
+Every sidecar records `source`, `source_ref` and `license`, so a run can be
+audited afterwards. `--pdf` stays available under the policy (the service
+builds uploads on it).
 
 DOWNLOADS. http(s) only, re-checked on every redirect hop (at most 5,
 followed by hand); 30 s per download; a 60 MB cap enforced while streaming;
