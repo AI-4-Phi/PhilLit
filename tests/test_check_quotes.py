@@ -24,11 +24,10 @@ from pdf_fixtures import make_pdf  # noqa: E402
 CAP_SENTENCE = ("Equal consideration of interests is a basic moral principle that "
                 "extends beyond our own species and asks us to weigh like interests alike.")
 
-# WORKAROUND, not realism: page 45 carries its number as a header and the
-# others as footers, so nothing stands between the last line of page 45 and
-# the first of page 46. With a real footer (or running head) at that break,
-# fulltext's fold keeps the number line and a page-spanning quote fails
-# verbatim; test_quote_across_a_real_footer pins that the fold skips them.
+# Page 45 carries its number as a header and the others as footers, so
+# nothing stands between the last line of page 45 and the first of page 46.
+# The layout with a real footer at that break (the fold skips page
+# furniture) is test_quote_across_a_real_footer.
 PAGES = [
     ["45",
      "The capacity for suffering is the vital characteristic",
@@ -220,6 +219,29 @@ class TestVerbatim:
 # Attribution
 # ---------------------------------------------------------------------------
 
+    def test_unclosed_quote_fails(self, fx, capsys):
+        code, lines, s = fx.run(doc(
+            'Some say "this is never closed (Singer 1975). Singer\'s view stands.'), capsys)
+        assert code == 1
+        assert lines == ['FAIL unclosed-quote: "this is never closed (Singer 1975). Singer\'s view stands." [line 5]']
+        assert s["fail_unclosed_quote"] == 1
+
+    def test_quote_across_paragraphs_fails_unclosed(self, fx, capsys):
+        code, lines, _ = fx.run(doc(
+            'Singer (1975) writes \u201cthe capacity for suffering\n\nis the vital characteristic\u201d.'), capsys)
+        assert code == 1 and [ln.split(":")[0] for ln in lines] == ["FAIL unclosed-quote"]
+
+    def test_frontmatter_and_html_comments_masked(self, fx, capsys):
+        md = ('---\ntitle: "Animal Liberation and Other Wholly Invented Words"\n---\n\n'
+              + doc('<!-- "an invented quoted comment here" (Singer 1975) -->\n\nPlain prose (Singer 1975).'))
+        code, lines, s = fx.run(md, capsys)
+        assert (code, lines, s["spans"], s["titles_skipped"]) == (0, [], 0, 0)
+
+    def test_literal_asterisk_survives(self, fx, capsys):
+        code, lines, _ = fx.run(doc('"the vital * characteristic" (Singer 1975).'), capsys)
+        assert code == 1 and lines[0].startswith("FAIL verbatim: singer1975")
+
+
 class TestAttribution:
     def test_first_citation_in_a_multi_cite(self, fx, capsys):
         code, lines, _ = fx.run(doc(
@@ -257,6 +279,18 @@ class TestAttribution:
             'Singer\'s "Animal Liberation" (Singer 1975) changed the debate.'), capsys)
         assert (code, lines) == (0, [])
         assert s["titles_skipped"] == 1
+
+    def test_quoted_title_with_next_sentence_citation_excluded(self, fx, capsys):
+        code, lines, s = fx.run(doc(
+            'Consider "Animal Liberation" first. Singer (1975) wrote it.'), capsys)
+        assert (code, lines, s["titles_skipped"]) == (0, [], 1)
+
+    def test_editor_only_entry_resolves(self, fx, capsys):
+        fx.add_entry("@book{korsgaard1986,\n  editor = {Korsgaard, Christine},\n"
+                     "  title = {An Edited Volume},\n  year = {1986},\n"
+                     "  keywords = {EVIDENCE-EXISTENCE}\n}\n")
+        code, lines, _ = fx.run(doc('Some say "this phrase has four words" (Korsgaard 1986).'), capsys)
+        assert (code, lines) == (0, [])   # attributed, so no WARN uncited
 
     def test_title_of_an_uncited_work_is_not_excluded(self, fx, capsys):
         code, lines, _ = fx.run(doc(
@@ -326,6 +360,49 @@ class TestPages:
 # ---------------------------------------------------------------------------
 # Caps
 # ---------------------------------------------------------------------------
+
+class TestLocatorForms:
+    QUOTE = '"The limit of sentience" is decisive'
+
+    @pytest.mark.parametrize("loc", ["46 n. 3", "46n3", "46ff.", "46f.", "pp. 45-46", "ch. 2",
+                                     "46, emphasis added", "1990"])
+    def test_readable_and_confirmed(self, fx, capsys, loc):
+        code, lines, _ = fx.run(doc(f"{self.QUOTE} (Singer 1975, {loc})."), capsys)
+        assert (code, lines) == (0, []), loc
+
+    def test_each_listed_page_checked(self, fx, capsys):
+        code, lines, s = fx.run(doc(f"{self.QUOTE} (Singer 1975, 46, 47)."), capsys)
+        assert code == 0 and s["fix_page"] == 1
+        assert lines[0].startswith('FIX page: singer1975: drop or correct the locator "47"')
+
+    def test_unrecognized_locator_is_fix(self, fx, capsys):
+        code, lines, _ = fx.run(doc(f"{self.QUOTE} (Singer 1975, 46 et seq.)."), capsys)
+        assert lines[0].startswith('FIX page: singer1975: unrecognized locator "46 et seq."')
+
+    def test_roman_locator_is_fix_drop_it(self, fx, capsys):
+        code, lines, _ = fx.run(doc(f"{self.QUOTE} (Singer 1975, xii)."), capsys)
+        assert lines[0].startswith('FIX page: singer1975: roman locator "xii" names no confirmed page: drop it')
+
+    def test_prose_after_a_narrative_year_is_not_a_locator(self, fx, capsys):
+        code, lines, _ = fx.run(doc(
+            'In Singer 1975, 46 readers found "the limit of sentience" decisive.'), capsys)
+        assert (code, lines) == (0, [])
+
+    def test_year_like_number_is_a_page_when_the_text_has_that_page(self, tmp_path, capsys):
+        pages = [[str(n)] + PAGES[1][:-1] if i == 0 else PAGES[min(i + 1, 3)][:-1] + [str(n)]
+                 for i, n in enumerate(range(1999, 2003))]
+        extracted = ft.extract_pages(make_pdf(pages))
+        pm = ft.confirm_pages(extracted, "1999--2002")
+        assert pm is not None and pm.numbers == (1999, 2000, 2001, 2002)
+        f = Fix(tmp_path)
+        f.add_fulltext("singer1975", year="1975", doi="10.1000/al.1975", text=ft.render_text(extracted, pm))
+        ok = f.run(doc(f"{self.QUOTE} (Singer 1975, 1999)."), capsys)
+        assert ok[:2] == (0, [])
+        code, lines, _ = f.run(doc(f"{self.QUOTE} (Singer 1975, 2001)."), capsys)
+        assert lines[0].startswith('FIX page: singer1975: drop or correct the locator "2001" (quote on: page 1999)')
+        code, lines, _ = f.run(doc(f"{self.QUOTE} (Singer 1975, 1985)."), capsys)
+        assert (code, lines) == (0, [])   # no such page: a second year
+
 
 def words(n):
     """n words of the repeated cap sentence (it repeats, so any window matches)."""

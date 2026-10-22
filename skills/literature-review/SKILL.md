@@ -202,7 +202,7 @@ This phase validates conditions for subsequent phases to function.
 
    **CRITICAL**: All subsequent file operations happen in `[workdir]`. Pass it to ALL subagents as ``Working directory: `[workdir]` ``, with the path in backticks.
 
-8. **Acquire anchor texts (REQUIRED when the request names works)**: an anchor work is one the user's request names by its full title, or by author and year — the same test as the Phase 4 tier-override rule. If the request names none, skip this step. For each anchor work:
+8. **Acquire anchor texts (REQUIRED when the request names works)**: an anchor work is one the user's request asks to include, naming it by its full title or by author and year — exactly the Phase 4 tier-override test, exclusions included: a work the request only mentions ("against Kaufman 2011") or names by topic or author alone is not an anchor. If the request names none, skip this step. For each anchor work:
    - Resolve it to its DOI, its full title, its first author's FULL surname as published, particles included (`van Fraassen`, never `Fraassen`), and its year, with CrossRef first:
      ```bash
      bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/verify_paper.py --title "[title]" --author "[surname]"
@@ -219,7 +219,7 @@ This phase validates conditions for subsequent phases to function.
      - `refused` (`tried` names `slug_collision` or `path_too_long`): report it to the user; do not retry.
    - Exit 1, or output that is not one JSON object: report it verbatim and continue without full texts. They are an upgrade; the review does not depend on them.
 
-   In the final summary, name every anchor work left without a PDF and why (`not_found`, `rejected`, `refused` or a failure). A stored PDF licenses nothing by itself: only the Phase 3 evidence barrier, after checking the PDF against the work's bib entry, stamps `EVIDENCE-FULLTEXT` and writes the text file the writers read (`[slug].txt`, which does not exist before the barrier runs).
+   In the final summary, name every anchor work left without a PDF and why (`not_found`, `rejected`, `refused` or a failure), and every anchor work whose stored PDF the barrier could not bind to its bib entry (it is listed under `unbound_records` in the barrier report's `fulltext` section, with its title, surname and year; the usual cause is a year the metadata cleaner changed). A stored PDF licenses nothing by itself: only the Phase 3 evidence barrier, after checking the PDF against the work's bib entry, stamps `EVIDENCE-FULLTEXT` and writes the text file the writers read (`[slug].txt`, which does not exist before the barrier runs).
 
 ---
 
@@ -259,7 +259,7 @@ Never advance to a next step in this phase before completing the current step.
    bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/acquire_fulltext.py "[workdir]" --gaps --domains N
    ```
 
-   Run it exactly as shown, in the foreground (never set `run_in_background`) with the maximum Bash timeout (600000 ms); its pass stops itself after about seven minutes. It looks for a PDF of every domain-bib entry that has no `abstract`: in the user's Zotero library and PDF folder (only where `/phillit:setup` recorded the user's consent), then open access. It never edits a bib. It prints one line, `{"status": "done", "candidates": ..., "counts": {...}, "report": ...}`: give the counts once in the final summary. Exit 1, or output that is not that one JSON line: report it verbatim to the user and go on to the barrier without gap texts.
+   Run it exactly as shown, in the foreground (never set `run_in_background`) with the maximum Bash timeout (600000 ms); its pass stops itself after about seven minutes. It looks for a PDF of every domain-bib entry that has no `abstract`: in the user's Zotero library and PDF folder (only where `/phillit:setup` recorded the user's consent), then open access. It never edits a bib. It prints one line, `{"status": "done", "candidates": ..., "counts": {...}, "report": ...}`: give the counts once in the final summary. When `status` is `done_with_errors`, the line also has an `errors` list: name each entry and its reason in the final summary. Exit 1, or output that is not that one JSON line: report it verbatim to the user and go on to the barrier without gap texts.
 
 6. **Evidence barrier (REQUIRED, after all researchers complete and step 5)**: run
 
@@ -502,7 +502,8 @@ A resume that starts at step 8 cannot reproduce the split's `SPLIT-*` lines, ded
    It checks every quotation attributed to a work with a full text (an entry with a `fulltext_file` field or the `EVIDENCE-FULLTEXT` tier) against that text, and ends with one `QUOTES-SUMMARY:` line. Exit 1 means `FAIL` lines; read every line whatever the exit code, since `WARN uncited` comes with exit 0. Fix the review and run the gate again until its output has no `FAIL`, no `FIX` and no `WARN uncited` line:
    - `FAIL verbatim`, `FAIL bracket`, `FAIL ellipsis`: the quoted words are not in the work's text, or are in a form the gate refuses. Correct the quotation against the text the entry's `fulltext_file` names (find the passage with Grep), or cut it.
    - `FAIL licence-lost`: the work no longer has a verified full text (the line says why). Cut the quotation, and check the sentences around it against what the work's tier now licenses.
-   - `FIX page`: drop the page locator or correct it to the page the text gives; never cut the quotation for it.
+   - `FIX page`: drop the page locator or correct it to the page the text gives; never cut the quotation for it. A roman-numeral or otherwise unrecognized locator: drop it.
+   - `FAIL unclosed-quote`: close the quotation mark where the quotation ends, or remove it; then the gate checks the quotation.
    - `WARN uncited`: add the quoted work's citation to the sentence, or remove the quotation marks if the words are not a quotation.
    - `WARN cap`: shorten the quotation where you can. It does not block.
 

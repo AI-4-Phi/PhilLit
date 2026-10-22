@@ -39,27 +39,30 @@ no `WARN uncited` line. `WARN cap` is advisory: shorten where possible.
 
 OWNERS USED, never re-implemented: quote matching, page maps, text reading
 and hashing, identity comparison (`fulltext.py`); citation resolution
-(`check_evidence.find_cites` and its surname rule); the References boundary
+(`check_evidence.find_cites`, fed `bib_identity.first_author_surname` so an
+editor-only entry resolves); the References boundary
 (`lint_md.find_refs_heading`); BibTeX decoding of abstracts and titles
-(`generate_bibliography.clean_bibtex_str`). The merged-bib entry table
-(surname, year, Chicago letter, last EVIDENCE token) MIRRORS the loop inline
-in `check_evidence.main()`, which cannot be imported.
+(`generate_bibliography.clean_bibtex_str`). The merged-bib entry table (year,
+Chicago letter, last EVIDENCE token) MIRRORS the loop inline in
+`check_evidence.main()`, which cannot be imported.
 
 RESIDUALS (accepted, visible; spec section 12 lists the design-level ones):
 - A quote in a sentence citing two works passes when it is in either text.
 - Uncited spans of 2 or 3 words are not reported (scare quotes).
-- A block quotation (`> ...`) without quotation marks is not checked.
+- A block quotation (`> ...`) without quotation marks is not checked (an
+  opening mark with no close in its paragraph is `FAIL unclosed-quote`).
 - "Next sentence" attribution stays inside the paragraph.
-- Only numeric (and roman) page locators are checked: `ch. 3`, `sec. 2`,
-  `45 n. 3`, `45ff.` are not page locators here and pass unchecked.
+- Locators are read from parenthetical citations only. Every comma-separated
+  item is checked (`45 n. 3` and `45ff.` as page 45); `ch.`, `sec.`, `n.`,
+  `vol.` items and digit-free notes (`emphasis added`) name no page and are
+  skipped; a roman numeral or an unreadable item is a FIX. A bare 1500-2099
+  number without `p.`/`pp.` is a page when an attributed full text has that
+  `[[page N]]` marker, else a second year (`(Smith 2020, 2021)`), unchecked.
 - A locator in a parenthesis right after the quote (`"..." (45)`) is checked
-  against every watched work of the attribution; it passes when any of them
-  has the quote on that page.
-- A 4-digit locator from 1500 to 2099 without `p.`/`pp.` reads as a second
-  year (`(Smith 2020, 2021)`) and is not checked; in `, 45, 47` only the
-  first locator is checked.
-- Editor-only entries have no surname for `find_cites` and are never
-  attributed (check_evidence's residual).
+  against every licensed watched work of the attribution; it passes when any
+  of them has the quote on that page.
+- A LaTeX-escaped surname (`B{\\"o}hm`) matches no prose (check_evidence's
+  residual).
 - Sentence segmentation is heuristic (abbreviations, initials); a wrong cut
   moves attribution to the neighbouring sentence.
 """
@@ -85,7 +88,7 @@ if _here in sys.path:
 
 _hook_dir = str(Path(__file__).resolve().parent.parent.parent.parent / "hooks")
 sys.path.insert(0, _hook_dir)
-from bib_identity import title_key  # noqa: E402
+from bib_identity import first_author_surname, title_key  # noqa: E402
 
 sys.path.remove(_hook_dir)
 
@@ -107,19 +110,23 @@ _ABBREV = frozenset({"e.g", "i.e", "cf", "vs", "viz", "al", "ch", "chap", "p", "
                      "vol", "vols", "ed", "eds", "trans", "no", "sec", "fn", "n",
                      "nn", "esp", "repr", "ibid", "op", "cit", "approx", "ca", "c",
                      "st", "mr", "mrs", "ms", "dr", "prof"})
-_ROMAN = r"[ivxlcdm]+"
-_NUM = r"(?:\d+|" + _ROMAN + r")"
-# A page locator after a citation's year: `, 45`, `, 45-46`, `, p. 45`,
-# `, pp. 145-46`. It must end the citation (`)`, `;`, `]` or `,`).
-_LOC_RE = re.compile(
-    r"\s*,\s*(?:pp?\.\s*)?(?P<a>" + _NUM + r")\b(?:\s*[" + _DASHES + r"]+\s*(?P<b>"
-    + _NUM + r")\b)?(?=\s*[;)\],])", re.I)
-# A bare page parenthesis right after the closing quotation mark.
-_TRAIL_LOC_RE = re.compile(
-    r"\s*\(\s*(?:pp?\.\s*)?(?P<a>" + _NUM + r")\b(?:\s*[" + _DASHES + r"]+\s*(?P<b>"
-    + _NUM + r")\b)?\s*\)", re.I)
-
-
+# The locator text after a citation's year, up to the end of the citation
+# (`;`, `)` or `]`): `, 45`, `, pp. 145-46`, `, 45 n. 3`, `, 45, 47`.
+_LOC_TAIL_RE = re.compile(r"\s*,\s*([^;()\[\]\n]{1,60}?)\s*(?=[;)\]])")
+# A parenthesis right after the closing quotation mark: `"..." (45)`.
+_TRAIL_PAREN_RE = re.compile(r"\s*\(\s*([^()\n]{1,60}?)\s*\)")
+_PAGE_PREFIX_RE = re.compile(r"^pp?\.\s*", re.I)
+# Locator items that name no page: chapter, section, note, volume, line...
+_NONPAGE_RE = re.compile(r"^(?:ch|chap|chapter|sec|section|§|pt|part|bk|book|vol|vols|fig|"
+                         r"table|tab|n|nn|note|notes|fn|art|para|par|¶|l|ll|line|lines)"
+                         r"(?![A-Za-z])\.?", re.I)
+_PAGE_ITEM_RE = re.compile(
+    r"^(?P<a>\d+)(?:\s*[" + _DASHES + r"]+\s*(?P<b>\d+))?"
+    r"(?:\s*(?:nn?\.?\s*\d+(?:\s*[" + _DASHES + r"]+\s*\d+)?|ff?\.?))?$", re.I)
+_ROMAN1 = r"m{0,3}(?:cm|cd|d?c{0,3})(?:xc|xl|l?x{0,3})(?:ix|iv|v?i{0,3})"
+_ROMAN_ITEM_RE = re.compile(
+    r"^(?=[ivxlcdm])" + _ROMAN1 + r"(?:\s*[" + _DASHES + r"]+\s*(?=[ivxlcdm])" + _ROMAN1 + r")?$",
+    re.I)
 _YEARLIKE_RE = re.compile(r"^(?:1[5-9]|20)[0-9]{2}$")
 
 
@@ -160,8 +167,11 @@ def _decoded(value: str) -> str:
 
 def load_entries(bib_text: str) -> dict:
     """key -> entry info from the merged bib. Mirrors check_evidence.main()'s
-    table (surname via its search rule, 4-digit year, one-letter suffix, last
-    EVIDENCE token) and keeps the raw fields."""
+    table (4-digit year, one-letter suffix, last EVIDENCE token) and keeps the
+    raw fields. The surname differs on purpose: `first_author_surname(author,
+    editor)`, the extractor the barrier binds with, so an edited volume cited
+    by its editor resolves; case-protection braces come off (a LaTeX escape
+    group keeps them, as in check_evidence's rule)."""
     entries = {}
     for chunk in se.split_entries(bib_text):
         header = se.entry_header(chunk)
@@ -169,7 +179,9 @@ def load_entries(bib_text: str) -> dict:
             continue
         _etype, key = header
         fields = se.parse_entry_fields(chunk)
-        surname = ce.rc_surname({"fields": fields})
+        surname = first_author_surname(fields.get("author") or "", fields.get("editor") or "")
+        if "\\" not in surname:
+            surname = surname.replace("{", "").replace("}", "")
         year = (fields.get("year") or "").strip()
         raw_suffix = (fields.get("year_suffix") or "").strip().lower()
         suffix = (raw_suffix if len(raw_suffix) == 1 and raw_suffix.isalpha()
@@ -227,10 +239,18 @@ def license_status(key: str, info: dict, report: dict, workdir: Path):
 # --------------------------------------------------------------------------
 
 def mask_body(md: str) -> tuple[str, list[int]]:
-    """The body (before `## References`) with fenced code, heading lines and
-    inline code blanked (offsets kept), and the offsets of heading lines."""
+    """The body (before `## References`) with YAML frontmatter, HTML
+    comments, fenced code, heading lines and inline code blanked (offsets
+    kept), and the offsets of heading lines."""
     refs = find_refs_heading(md)
     body = md[:refs[0]] if refs else md
+
+    def blank_match(m):
+        return re.sub(r"[^\n]", " ", m.group(0))
+
+    # YAML frontmatter (a leading --- ... --- or ... block) and HTML comments.
+    body = re.sub(r"\A---[ \t]*\n.*?\n(?:---|\.\.\.)[ \t]*(?=\n|\Z)", blank_match, body, flags=re.S)
+    body = re.sub(r"<!--.*?(?:-->|\Z)", blank_match, body, flags=re.S)
     out, headings = [], []
     in_fence = False
     offset = 0
@@ -261,10 +281,11 @@ def paragraphs(masked: str) -> list[tuple[int, int]]:
     return out
 
 
-def find_spans(masked: str, paras) -> list[tuple[int, int, int]]:
-    """(open, close, paragraph index): offsets of the opening and closing
-    quotation marks of every double-quoted span, paired within a paragraph."""
-    spans = []
+def find_spans(masked: str, paras) -> tuple[list[tuple[int, int, int]], list[tuple[int, int]]]:
+    """((open, close, paragraph index) of every double-quoted span, paired
+    within a paragraph; (offset, paragraph end) of each opening mark with no
+    close in its paragraph). Single quotes and apostrophes are never quotation marks here."""
+    spans, unclosed = [], []
     for pi, (a, b) in enumerate(paras):
         i = a
         while i < b:
@@ -276,8 +297,9 @@ def find_spans(masked: str, paras) -> list[tuple[int, int, int]]:
                     spans.append((i, j, pi))
                     i = j + 1
                     continue
+                unclosed.append((i, b))
             i += 1
-    return spans
+    return spans, unclosed
 
 
 def _is_boundary(masked: str, k: int, lo: int) -> bool:
@@ -354,40 +376,76 @@ def sentences(masked: str, paras, spans) -> list[tuple[int, int, int]]:
 # Citations and locators
 # --------------------------------------------------------------------------
 
-def _page_value(raw: str) -> int | None:
-    return int(raw) if raw.isdigit() else None
-
-
-def parse_locator(m: re.Match):
-    """(lo, hi, text) of a page locator match; lo/hi None for a roman
-    numeral (never confirmable: markers carry arabic numbers)."""
-    a, b = m.group("a"), m.group("b")
-    text = m.group(0).strip(" ,()")
-    lo = _page_value(a)
+def _expand(a: str, b: str | None) -> tuple[int, int]:
+    lo = int(a)
     if b is None:
-        return lo, lo, text
-    hi = _page_value(b)
-    if lo is not None and hi is not None and hi < lo and len(b) < len(a):
+        return lo, lo
+    hi = int(b)
+    if hi < lo and len(b) < len(a):
         hi = int(a[:len(a) - len(b)] + b)   # Chicago 145-46
-    if lo is None or hi is None:
-        return None, None, text
-    return lo, hi, text
+    return lo, hi
 
 
-def citation_locator(masked: str, pos: int, info: dict):
-    """The page locator written with the citation whose surname is at pos,
+def parse_locator_items(text: str) -> list[tuple]:
+    """The comma-separated items of a locator, each one of:
+    ("page", lo, hi, raw) - `45`, `45-46`, `p. 45`, `145-46`, and `45 n. 3`
+      or `45ff.` as page 45;
+    ("year", n, raw) - a bare 1500-2099 number: a second year unless an
+      attributed text has that page (the caller decides);
+    ("roman", raw) - never confirmable, markers carry arabic numbers;
+    ("unrecognized", raw).
+    Items naming no page (`ch. 3`, `sec. 2`, `n. 4`, `emphasis added`) are
+    left out."""
+    items = []
+    for raw in (x.strip() for x in text.split(",")):
+        if not raw:
+            continue
+        pm = _PAGE_PREFIX_RE.match(raw)
+        body = raw[pm.end():] if pm else raw
+        if not pm and _NONPAGE_RE.match(body):
+            continue
+        m = _PAGE_ITEM_RE.match(body)
+        if m:
+            if not pm and m.group("b") is None and m.end("a") == len(body) \
+                    and _YEARLIKE_RE.match(m.group("a")):
+                items.append(("year", int(m.group("a")), raw))
+            else:
+                items.append(("page", *_expand(m.group("a"), m.group("b")), raw))
+        elif _ROMAN_ITEM_RE.match(body):
+            items.append(("roman", raw))
+        elif pm or any(ch.isdigit() for ch in body):
+            items.append(("unrecognized", raw))
+    return items
+
+
+def _in_parenthesis(masked: str, pos: int) -> bool:
+    lo = max(0, pos - 200)
+    return masked.rfind("(", lo, pos) > masked.rfind(")", lo, pos)
+
+
+def citation_locator(masked: str, pos: int, info: dict) -> list[tuple] | None:
+    """The locator items written with the citation whose surname is at pos
+    (parenthetical citations only: `(Smith 2020, 45)`, `Smith (2020, 45)`),
     or None."""
     year_re = re.compile(r"(?<!\d)" + re.escape(info["year"]) + r"[a-z]?(?!\d)", re.I)
     ym = year_re.search(masked, pos, min(len(masked), pos + len(info["surname"]) + ce._MATCH_WINDOW))
-    if not ym:
+    if not ym or not _in_parenthesis(masked, ym.start()):
         return None
-    lm = _LOC_RE.match(masked, ym.end())
-    if not lm:
+    lm = _LOC_TAIL_RE.match(masked, ym.end())
+    return parse_locator_items(lm.group(1)) if lm else None
+
+
+def trailing_locator(masked: str, close: int) -> list[tuple] | None:
+    """Locator items of a parenthesis right after the closing quotation mark,
+    when it reads as a locator (its first item starts with a digit, `p.` or is
+    a roman numeral), else None (`(Smith 2020)`, `(emphasis added)`)."""
+    tm = _TRAIL_PAREN_RE.match(masked, close + 1)
+    if not tm:
         return None
-    # "(Smith 2020, 2021)" cites two years, not page 2021.
-    if _YEARLIKE_RE.match(lm.group("a")) and not re.match(r"\s*,\s*pp?\.", lm.group(0), re.I):
+    first = tm.group(1).split(",")[0].strip()
+    if not (first[:1].isdigit() or _PAGE_PREFIX_RE.match(first) or _ROMAN_ITEM_RE.match(first)):
         return None
-    return parse_locator(lm)
+    return parse_locator_items(tm.group(1))
 
 
 # --------------------------------------------------------------------------
@@ -410,10 +468,15 @@ def _match_quote(quote: str, sources):
     return hits, form_error
 
 
+_EMPH_STAR_RE = re.compile(r"(?<![\w*])(\*{1,3})(?=[^\s*])(.+?)(?<=[^\s*])\1(?![\w*])")
+_EMPH_UNDER_RE = re.compile(r"(?<![A-Za-z0-9_])(_{1,3})(?=[^\s_])(.+?)(?<=[^\s_])\1(?![A-Za-z0-9_])")
+
+
 def _clean_span(span: str) -> str:
-    """Markdown emphasis is markup, not quoted text."""
-    s = re.sub(r"\*+", "", span)
-    return re.sub(r"(?<![A-Za-z0-9])_+|_+(?![A-Za-z0-9])", "", s)
+    """Markdown emphasis is markup, not quoted text: paired `*`/`_` runs at
+    word boundaries come off; a literal `*` or `_` stays."""
+    s = _EMPH_STAR_RE.sub(r"\2", span)
+    return _EMPH_UNDER_RE.sub(r"\2", s)
 
 
 def _union_groups(keys: list[str], entries: dict) -> dict:
@@ -447,7 +510,7 @@ def run(md: str, bib_text: str, report: dict, workdir: Path) -> tuple[list[str],
     entries = load_entries(bib_text)
     masked, headings = mask_body(md)
     paras = paragraphs(masked)
-    spans = find_spans(masked, paras)
+    spans, unclosed = find_spans(masked, paras)
     sents = sentences(masked, paras, spans)
     sent_starts = [s for s, _, _ in sents]
 
@@ -475,32 +538,40 @@ def run(md: str, bib_text: str, report: dict, workdir: Path) -> tuple[list[str],
 
     lines: list[str] = []
     counts = {"spans": 0, "titles_skipped": 0, "fulltext_attributed": 0,
-              "fail_licence_lost": 0, "fail_verbatim": 0, "fail_bracket": 0,
-              "fail_ellipsis": 0, "fix_page": 0, "warn_cap": 0, "warn_uncited": 0}
+              "fail_unclosed_quote": 0, "fail_licence_lost": 0, "fail_verbatim": 0,
+              "fail_bracket": 0, "fail_ellipsis": 0, "fix_page": 0, "warn_cap": 0,
+              "warn_uncited": 0}
 
     def line_no(pos: int) -> int:
         return md.count("\n", 0, pos) + 1
+
+    # Writers may not use block or multi-paragraph quotations: an opening mark
+    # with no close in its paragraph is closed or removed, never guessed at.
+    for o, para_end in unclosed:
+        lines.append(f'FAIL unclosed-quote: "{_show(md[o + 1:min(o + 61, para_end)])}" '
+                     f'[line {line_no(o)}]')
+        counts["fail_unclosed_quote"] += 1
 
     for o, c, _pi in spans:
         span = md[o + 1:c]
         if _words(span) < MIN_SPAN_WORDS:
             continue
         si = sentence_of(o)
-        own = cites_by_sentence.get(si, []) if si is not None else []
-        # A quoted title of a work cited in the same sentence is not a quotation.
-        sk = title_key(_decoded(span))
-        if sk and any((tk == sk or tk.startswith(sk + " "))
-                      for tk in (title_key(_decoded(entries[k]["fields"].get("title", "")))
-                                 for k, _ in own)):
-            counts["titles_skipped"] += 1
-            continue
-        counts["spans"] += 1
-        cites = own
+        cites = cites_by_sentence.get(si, []) if si is not None else []
         if not cites and si is not None and si + 1 < len(sents):
             nxt = sents[si + 1]
             same_para = nxt[2] == sents[si][2]
             if same_para and not any(sents[si][1] <= h < nxt[0] for h in headings):
                 cites = cites_by_sentence.get(si + 1, [])
+        # A quoted title of a work the span is attributed to (own sentence or
+        # the next) is not a quotation.
+        sk = title_key(_decoded(span))
+        if sk and any((tk == sk or tk.startswith(sk + " "))
+                      for tk in (title_key(_decoded(entries[k]["fields"].get("title", "")))
+                                 for k, _ in cites)):
+            counts["titles_skipped"] += 1
+            continue
+        counts["spans"] += 1
         where = f"[line {line_no(o)}]"
         shown = _show(span)
         if not cites:
@@ -549,36 +620,44 @@ def run(md: str, bib_text: str, report: dict, workdir: Path) -> tuple[list[str],
             continue
         ft_hits = {k: (text, occ) for k, kind, text, occ in hits if kind == "fulltext"}
         # Pages: a locator with a watched citation, or right after the quote.
+        licensed_w = [k for k in wkeys if licence[k][0] is not None]
         locs = []
         for k, pos in cites:
-            if k in ft_hits or (k in wkeys and licence[k][0] is not None):
-                loc = citation_locator(masked, pos, entries[k])
-                if loc:
-                    locs.append(([k], loc))
-        tm = _TRAIL_LOC_RE.match(masked, c + 1)
-        if tm and _YEARLIKE_RE.match(tm.group("a")) and not re.match(r"\s*\(\s*pp?\.", tm.group(0), re.I):
-            tm = None   # "(2020)": a year, not a page
-        if tm:
-            licensed_w = [k for k in wkeys if licence[k][0] is not None]
-            if licensed_w:
-                locs.append((licensed_w, parse_locator(tm)))
-        for lkeys, (lo, hi, ltext) in locs:
-            ok = False
-            touched_all = []
-            for k in lkeys:
-                if k not in ft_hits:
-                    continue
-                text, occ = ft_hits[k]
-                for spans_ in occ:
-                    touched = ft.span_pages(text, spans_)
-                    touched_all.extend(touched)
-                    nums = [n for kind, n in touched if kind == "page"]
-                    if lo is not None and any(lo <= n <= hi for n in nums):
-                        ok = True
-            if not ok:
-                desc = ", ".join(f"{kind} {n}" for kind, n in dict.fromkeys(touched_all)) or "none"
-                lines.append(f'FIX page: {", ".join(lkeys)}: drop or correct the locator '
-                             f'"{_ascii(ltext)}" (quote on: {desc}): "{shown}" {where}')
+            if k in licensed_w:
+                items = citation_locator(masked, pos, entries[k])
+                if items:
+                    locs.append(([k], items))
+        trail = trailing_locator(masked, c)
+        if trail and licensed_w:
+            locs.append((licensed_w, trail))
+        # A bare 1500-2099 number is a page only when a text has that page.
+        marker_pages = set()
+        for k in licensed_w:
+            pmap = ft.page_map_from_text(licence[k][0])
+            if pmap is not None:
+                marker_pages.update(n for n in pmap.numbers if n is not None)
+        for lkeys, items in locs:
+            touched_all = [t for k in lkeys if k in ft_hits
+                           for occ_spans in ft_hits[k][1]
+                           for t in ft.span_pages(ft_hits[k][0], occ_spans)]
+            desc = ", ".join(f"{kind} {n}" for kind, n in dict.fromkeys(touched_all)) or "none"
+            nums = [n for kind, n in touched_all if kind == "page"]
+            label = ", ".join(lkeys)
+            for item in items:
+                kind, raw = item[0], _ascii(item[-1])
+                if kind == "year":
+                    if item[1] not in marker_pages:
+                        continue   # "(Smith 2020, 2021)": a second year
+                    kind, item = "page", ("page", item[1], item[1], item[2])
+                if kind == "page":
+                    if any(item[1] <= n <= item[2] for n in nums):
+                        continue
+                    msg = f'drop or correct the locator "{raw}" (quote on: {desc})'
+                elif kind == "roman":
+                    msg = f'roman locator "{raw}" names no confirmed page: drop it'
+                else:
+                    msg = f'unrecognized locator "{raw}": drop or correct it (quote on: {desc})'
+                lines.append(f'FIX page: {label}: {msg}: "{shown}" {where}')
                 counts["fix_page"] += 1
         if ft_hits:
             n = _quote_words(span)
