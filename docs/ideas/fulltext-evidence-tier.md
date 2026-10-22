@@ -22,8 +22,8 @@ cut its main arguments.
   prompt wording cannot fix this; only a tier the barrier stamps can.
 
 **Sketch.** A new tier `EVIDENCE-FULLTEXT`, ranked above ABSTRACT.
-1. Store keyed by DOI (citekeys are minted later and diverge across
-   domains): `intermediate_files/fulltext/<doi-slug>.pdf`, a `.txt` with
+1. Store keyed by DOI, or by a title-author-year slug for a work without
+   one (citekeys are minted later and diverge across domains): `intermediate_files/fulltext/<doi-slug>.pdf`, a `.txt` with
    `[[page N]]` markers, and a `.json` sidecar (DOI, both sha256s, source:
    OA URL / user file, extractor version, page offset).
 2. `acquire_fulltext.py --doi D (--pdf PATH | --url URL)`: resolve an OA
@@ -101,10 +101,24 @@ phillit-service re-vendor.
   named works only (leaves reachable gaps); any entry with an OA PDF (about
   40% of entries, mostly upgrades, at the cost of downloads, barrier time
   and writer reading load).
+- **Sources, in order: the user's Zotero library (local sessions only), then
+  OpenAlex, then Semantic Scholar.** "With an OA PDF" in the scope ruling
+  reads "with a PDF from these sources". Zotero comes first because a
+  user's copy is more often the version of record, which page confirmation
+  needs. Access is Zotero 7's local API (`localhost:23119`, read-only; the
+  user enables it in Zotero's settings), never `zotero.sqlite` or an MCP
+  server; when it does not answer (Cloud, the service, Zotero closed) the
+  step is skipped and the report says so. Zotero also holds works without a
+  DOI, so the store key, the barrier's entry binding and the identity check
+  need a no-DOI path (match by title, first author and year; the PDF text
+  check is title phrase plus surname); books have no `pages` range, so they
+  get no page numbers. Measured on the justified-harm review
+  (`oa_sources.py`, `zotero_coverage.py`): of 25 EXISTENCE entries,
+  OpenAlex reaches 1, Semantic Scholar 3, Zotero 3. Rejected: Unpaywall
+  (needs an email in every request; its data now comes from OpenAlex, not
+  measured); OpenAlex alone.
 
 **Open questions for Johannes** (to adjudicate one at a time):
-6. OA source: OpenAlex `oa_url`, Unpaywall (needs an email in `.env`), or
-   both?
 7. Paywalled copies: a distributable plugin cannot assume a proxy. OA plus
    a user-supplied file (`--pdf`, e.g. from Zotero) only?
 8. phillit-service: full text on a server has a different legal standing.
