@@ -4787,7 +4787,7 @@ def test_doi_binding_needs_the_current_field_to_equal_the_verified_value(tmp_pat
     rd, slug = _ft_doi_review(tmp_path, bib=FT_ENTRY.replace(FT_DOI, "10.1000/other"))
     report, _, texts = eb_mod.run_barrier(rd, 1)
     assert report["stamps"]["literature-domain-1.bib"]["smith2020data"] == "EVIDENCE-NONE"
-    assert report["fulltext"]["unbound_records"] == [slug] and texts == {}
+    assert [u["slug"] for u in report["fulltext"]["unbound_records"]] == [slug] and texts == {}
 
 
 def test_doi_binding_needs_an_api_match_and_no_tripped_breaker(tmp_path, monkeypatch):
@@ -4796,7 +4796,7 @@ def test_doi_binding_needs_an_api_match_and_no_tripped_breaker(tmp_path, monkeyp
     rd, slug = _ft_doi_review(tmp_path, clean=unmatched)
     report, _, _ = eb_mod.run_barrier(rd, 1)
     assert report["stamps"]["literature-domain-1.bib"]["smith2020data"] != "EVIDENCE-FULLTEXT"
-    assert report["fulltext"]["unbound_records"] == [slug]
+    assert [u["slug"] for u in report["fulltext"]["unbound_records"]] == [slug]
     rd2 = tmp_path / "tripped"
     _domain(rd2, 1, FT_ENTRY, cleaning=_cleaning(1, FT_CLEAN, breaker=True),
             enrichment=_enrichment(1))
@@ -4820,7 +4820,7 @@ def test_no_doi_binding_needs_the_year(tmp_path, monkeypatch):
     _ft_record(rd2, FT_BOOK_IDENT, BOOK_PAGES)
     report2, _, texts2 = eb_mod.run_barrier(rd2, 1)
     assert report2["stamps"]["literature-domain-1.bib"]["gardner2019justified"] == "EVIDENCE-NONE"
-    assert report2["fulltext"]["unbound_records"] == [slug] and texts2 == {}
+    assert [u["slug"] for u in report2["fulltext"]["unbound_records"]] == [slug] and texts2 == {}
 
 
 def test_an_entry_with_a_verified_doi_binds_no_no_doi_record(tmp_path, monkeypatch):
@@ -4831,7 +4831,7 @@ def test_an_entry_with_a_verified_doi_binds_no_no_doi_record(tmp_path, monkeypat
                            "year": "2020"}, DOI_PAGES)
     report, _, _ = eb_mod.run_barrier(rd, 1)
     assert report["stamps"]["literature-domain-1.bib"]["smith2020data"] == "EVIDENCE-EXISTENCE"
-    assert report["fulltext"]["unbound_records"] == [slug]
+    assert [u["slug"] for u in report["fulltext"]["unbound_records"]] == [slug]
 
 
 def test_an_entry_bound_to_two_records_is_ambiguous(tmp_path, monkeypatch):
@@ -5099,3 +5099,106 @@ def test_an_entry_no_later_verifier_could_recheck_is_withheld(tmp_path, monkeypa
     assert report["fulltext"]["rejected"]["no_work_key"] == [
         "literature-domain-1.bib:smith2020data"]
     assert texts == {}
+
+
+def test_an_unbound_record_is_named_by_its_sidecar_identity(tmp_path, monkeypatch):
+    """So SKILL.md can name a requested work whose record did not bind (here
+    the bib's year moved after acquisition)."""
+    eb_mod = _ft_barrier(monkeypatch)
+    rd = tmp_path / "review"
+    _domain(rd, 1, FT_BOOK.replace("year = {2019}", "year = {2018}"),
+            cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
+    slug = _ft_record(rd, FT_BOOK_IDENT, BOOK_PAGES)
+    report, _, _ = eb_mod.run_barrier(rd, 1)
+    assert report["fulltext"]["unbound_records"] == [
+        {"slug": slug, "title": "Justified Harm and Its Limits", "surname": "Gardner",
+         "year": "2019", "doi": None}]
+
+
+class _FakeClock:
+    """A monotonic clock that only moves when told to."""
+    def __init__(self):
+        self.now = 1000.0
+
+    def monotonic(self):
+        return self.now
+
+
+def test_the_deadline_bounds_indexing_too(tmp_path, monkeypatch):
+    """A slow store (here one validate_record call that eats the whole
+    budget) must not run the pass past its deadline: stems not indexed, and
+    every valid record once binding cannot run, land in `deadline`."""
+    import types
+    eb_mod = _ft_barrier(monkeypatch)
+    rd, slug = _ft_doi_review(tmp_path)
+    other = _ft_record(rd, {"doi": "10.1/zzz", "title": None, "surname": None,
+                            "year": None}, DOI_PAGES)
+    clock = _FakeClock()
+    monkeypatch.setattr(eb_mod, "time", types.SimpleNamespace(monotonic=clock.monotonic))
+    real = eb_mod.ft.validate_record
+
+    def slow(directory, stem):
+        clock.now += 1000.0
+        return real(directory, stem)
+
+    monkeypatch.setattr(eb_mod.ft, "validate_record", slow)
+    report, _, texts = eb_mod.run_barrier(rd, 1)
+    # first stem (sorted) validated, then out of time: both slugs deadlined
+    assert sorted(report["fulltext"]["deadline"]) == sorted([slug, other])
+    assert report["fulltext"]["unbound_records"] == [] and texts == {}
+    assert report["stamps"]["literature-domain-1.bib"]["smith2020data"] == "EVIDENCE-EXISTENCE"
+
+
+def test_the_deadline_bounds_the_per_entry_checks(tmp_path, monkeypatch):
+    """Two entries share a slug; the clock runs out after the first one's
+    identity check. Neither is stamped (the page-map decision would rest on
+    a partial set) and the slug is in `deadline`."""
+    import types
+    eb_mod = _ft_barrier(monkeypatch)
+    rd = tmp_path / "review"
+    _domain(rd, 1, FT_ENTRY, cleaning=_cleaning(1, FT_CLEAN), enrichment=_enrichment(1))
+    _domain(rd, 2, FT_ENTRY, cleaning=_cleaning(2, FT_CLEAN), enrichment=_enrichment(2))
+    slug = _ft_record(rd, DOI_IDENT, DOI_PAGES)
+    clock = _FakeClock()
+    monkeypatch.setattr(eb_mod, "time", types.SimpleNamespace(monotonic=clock.monotonic))
+    real = eb_mod.ft.identity_ok
+
+    def slow(pages, identity):
+        clock.now += 1000.0
+        return real(pages, identity)
+
+    monkeypatch.setattr(eb_mod.ft, "identity_ok", slow)
+    report, _, texts = eb_mod.run_barrier(rd, 2)
+    assert report["fulltext"]["deadline"] == [slug] and texts == {}
+    for bib in ("literature-domain-1.bib", "literature-domain-2.bib"):
+        assert report["stamps"][bib]["smith2020data"] == "EVIDENCE-EXISTENCE"
+
+
+def test_an_editor_only_entry_with_a_particle_surname_binds_and_stamps(tmp_path, monkeypatch):
+    """One surname extractor everywhere (bib_identity.first_author_surname):
+    an edited volume falls back to its editor, and a particle stays part of
+    the surname ("van Fraassen"), on the binding and the identity check alike."""
+    eb_mod = _ft_barrier(monkeypatch)
+    rd = tmp_path / "review"
+    bib = """@book{vanfraassen1980image,
+  editor = {van Fraassen, Bas C.},
+  title = {The Scientific Image},
+  publisher = {Clarendon Press},
+  year = {1980}
+}"""
+    _domain(rd, 1, bib, cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
+    pages = _ft_pages(["The Scientific Image", "Bas C. van Fraassen"], start=1)
+    slug = _ft_record(rd, {"doi": None, "title": "The Scientific Image",
+                           "surname": "van Fraassen", "year": "1980"}, pages)
+    report, _, texts = eb_mod.run_barrier(rd, 1)
+    assert report["stamps"]["literature-domain-1.bib"]["vanfraassen1980image"] == "EVIDENCE-FULLTEXT"
+    assert list(texts) == [slug]
+    # a PDF naming only "Fraassen" (particle missing) fails the entry's check
+    rd2 = tmp_path / "noparticle"
+    _domain(rd2, 1, bib, cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
+    _ft_record(rd2, {"doi": None, "title": "The Scientific Image",
+                     "surname": "van Fraassen", "year": "1980"},
+               _ft_pages(["The Scientific Image", "Bas C. Fraassen"], start=1))
+    report2, _, _ = eb_mod.run_barrier(rd2, 1)
+    assert report2["fulltext"]["rejected"]["identity_failed"] == [
+        "literature-domain-1.bib:vanfraassen1980image"]

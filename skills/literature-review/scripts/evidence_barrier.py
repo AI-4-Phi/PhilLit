@@ -44,7 +44,8 @@ import abstract_usability as au
 # the shared placement exists to prevent.
 _hooks_dir = Path(__file__).resolve().parent.parent.parent.parent / "hooks"
 sys.path.insert(0, str(_hooks_dir))
-from bib_identity import same_work_key, same_work_year  # noqa: E402
+from bib_identity import (  # noqa: E402
+    first_author_surname, same_work_key, same_work_year)
 from ledger_binding import (  # noqa: E402
     BINDING_SCHEMA_VERSION, ENRICHMENT_SCHEMA_VERSION,
     bib_file_sha256, bib_text_sha256, binding_holds,
@@ -844,8 +845,10 @@ def _att_blob(att: se.EntryAttestation, enrich_entry, context_value,
 # The pass gets at most FULLTEXT_PASS_SECONDS, and never past
 # FULLTEXT_RUN_CEILING_SECONDS since the run started: SKILL.md runs the
 # barrier under a 600 s Bash ceiling, and a barrier that outlives it is
-# orphaned (every entry left EVIDENCE-NONE). Records not reached land in the
-# `deadline` bucket; like corroboration's deadline, a re-run restores them.
+# orphaned (every entry left EVIDENCE-NONE). The bound covers the WHOLE pass
+# (indexing, binding, extraction, per-entry checks; see _fulltext_pass);
+# what it cuts off lands in the `deadline` bucket, and, like corroboration's
+# deadline, a re-run restores it.
 FULLTEXT_PASS_SECONDS = 60.0
 FULLTEXT_RUN_CEILING_SECONDS = 540.0
 
@@ -877,10 +880,39 @@ def _fulltext_pass(review_dir: Path, domains: dict, parsed: dict, atts: dict,
     entry's own fields, and `confirm_pages` per entry against its `pages`.
     Entries sharing a slug whose page maps differ all get the map None (no
     `[[page N]]` markers). A per-record failure withholds that record only.
+
+    Reasons in `rejected` (spec section 6, plus one addition): the index
+    reasons from `fulltext.validate_record` (bad_slug, sidecar_unreadable,
+    pdf_missing, pdf_hash_mismatch -- the last two also at read time),
+    `extract_failed:<why>` (`:error` for an unexpected exception),
+    `identity_failed`, `ambiguous_records`, `no_work_key` (an entry with no
+    title or no first-author/editor surname: `identity_ok` could pass it on
+    the DOI alone, but `fulltext.identity_matches` -- dedupe and
+    check_quotes.py -- can never re-verify it, so the stamp would always be
+    revoked downstream with a misleading reason), and, from the stamping
+    loop, `splice_failed`.
+
+    The DEADLINE bounds the whole pass -- indexing, binding, extraction and
+    the per-entry checks -- each loop checking before its next unit of work.
+    Whatever it stops short of lands in `deadline` as SLUGS: stems not yet
+    indexed; every valid record when binding was cut short (a partial
+    binding could miss an ambiguity or a differing page map); records not
+    yet extracted; and a slug any of whose bound entries was not checked
+    (its passed siblings are withheld too, for the same page-map reason).
+    `unbound_records` names, from the sidecar identity, each valid record no
+    entry bound to (only when binding completed), so a requested work whose
+    record failed to bind -- e.g. its year changed -- is nameable.
     """
     pass_start = time.monotonic()
     report = _empty_fulltext_report()
     rejected = report["rejected"]
+    budget = min(FULLTEXT_PASS_SECONDS,
+                 FULLTEXT_RUN_CEILING_SECONDS - (pass_start - run_start))
+    deadline = pass_start + budget
+    deadline_slugs: set = set()
+
+    def out_of_time():
+        return time.monotonic() >= deadline
 
     def reject(reason, item):
         rejected.setdefault(reason, []).append(item)
@@ -895,6 +927,9 @@ def _fulltext_pass(review_dir: Path, domains: dict, parsed: dict, atts: dict,
                 stems.add(p.name[: -len(p.suffix)])
     records = {}
     for stem in sorted(stems):
+        if out_of_time():
+            deadline_slugs.add(stem)
+            continue
         rec = ft.validate_record(store, stem)
         if isinstance(rec, str):
             reject(rec, stem)
@@ -916,10 +951,13 @@ def _fulltext_pass(review_dir: Path, domains: dict, parsed: dict, atts: dict,
             title_records.setdefault((wk, year), []).append(slug)
 
     bound: dict = {}      # (i, key) -> (slug, verified doi or None, fields, qual)
-    used_slugs = set()
     candidates_of = set()
+    binding_complete = True
     for i, d in domains.items():
         for chunk in parsed[i]:
+            if out_of_time():
+                binding_complete = False
+                break
             header = se.entry_header(chunk)
             if not header:
                 continue
@@ -946,18 +984,26 @@ def _fulltext_pass(review_dir: Path, domains: dict, parsed: dict, atts: dict,
                 reject("ambiguous_records", qual)
             elif hits:
                 bound[(i, key)] = (hits[0], verified_doi, fields, qual)
-                used_slugs.add(hits[0])
-    report["unbound_records"] = sorted(set(records) - candidates_of)
+        if not binding_complete:
+            break
+    if binding_complete:
+        report["unbound_records"] = [
+            {"slug": slug,
+             "title": records[slug].identity.get("title"),
+             "surname": records[slug].identity.get("surname"),
+             "year": records[slug].identity.get("year"),
+             "doi": records[slug].identity.get("doi")}
+            for slug in sorted(set(records) - candidates_of)]
+    else:
+        deadline_slugs.update(records)
+        bound = {}
+    used_slugs = {b[0] for b in bound.values()}
 
-    # Per bound record: read, re-hash, extract -- once per slug, in slug
-    # order, under the pass deadline.
-    budget = min(FULLTEXT_PASS_SECONDS,
-                 FULLTEXT_RUN_CEILING_SECONDS - (pass_start - run_start))
-    deadline = pass_start + budget
+    # Per bound record: read, re-hash, extract -- once per slug, in slug order.
     pages_of: dict = {}
     for slug in sorted(used_slugs):
-        if time.monotonic() >= deadline:
-            report["deadline"].append(slug)
+        if out_of_time():
+            deadline_slugs.add(slug)
             continue
         rec = records[slug]
         try:
@@ -979,20 +1025,20 @@ def _fulltext_pass(review_dir: Path, domains: dict, parsed: dict, atts: dict,
         slug, verified_doi, fields, qual = bound[ik]
         if slug not in pages_of:
             continue
+        if out_of_time():
+            deadline_slugs.add(slug)
+            continue
         pages = pages_of[slug]
         if ft.entry_identity(fields)["work_key"] is None:
-            # No title or no first-author surname: identity_ok could still
-            # pass on the DOI alone, but no later verifier (dedupe,
-            # check_quotes.py -- fulltext.identity_matches) can ever
-            # re-verify such an entry, so a stamp here would be a licence
-            # that is always lost downstream, with a misleading reason.
+            # See `no_work_key` in the docstring.
             reject("no_work_key", qual)
             continue
         try:
             ok, _why = ft.identity_ok(pages, {
                 "doi": verified_doi,
                 "title": fields.get("title") or "",
-                "surname": ys.first_surname_raw(fields),
+                "surname": first_author_surname(fields.get("author") or "",
+                                                fields.get("editor") or ""),
                 "year": fields.get("year") or ""})
             if not ok:
                 reject("identity_failed", qual)
@@ -1001,6 +1047,10 @@ def _fulltext_pass(review_dir: Path, domains: dict, parsed: dict, atts: dict,
             passed[ik] = (slug, page_map, ft.entry_identity(fields))
         except Exception:
             reject("extract_failed:error", qual)
+    # A slug with an entry the deadline cut off stamps none of its entries:
+    # its page-map decision would rest on a partial set.
+    passed = {ik: v for ik, v in passed.items() if v[0] not in deadline_slugs}
+    report["deadline"] = sorted(deadline_slugs)
 
     maps_by_slug: dict = {}
     for slug, page_map, _ident in passed.values():
