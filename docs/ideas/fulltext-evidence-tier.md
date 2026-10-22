@@ -84,10 +84,18 @@ phillit-service re-vendor.
   across the review.** The per-work total bounds copyright exposure; the
   numbers are a judgment, not a measurement. Rejected: a per-quotation cap
   alone (no bound on many quotes from one paper); no cap.
+- **The Phase 6 quotation check is an accuracy gate on verbatim accuracy
+  only.** A quotation attributed to a FULLTEXT work that is not in its text
+  (after normalizing hyphenation, ligatures and quote marks) fails closed:
+  the orchestrator corrects or cuts it and reruns the check. Page numbers and
+  caps are pragmatic, not gates: a quotation without a page number is fine
+  when the page is unconfirmed (a page that is shown must be a confirmed
+  one, and the fix is to drop it, never to cut the quote), and a cap overrun
+  is a warning to shorten, with some tolerance. Rejected: a gate on all
+  three (pages and caps would cut accurate quotes); telemetry only (a
+  misquotation is a fabrication).
 
 **Open questions for Johannes** (to adjudicate one at a time):
-4. Quotation: is the Phase 6 quotation check an accuracy gate
-   (fail closed) or telemetry?
 5. Scope: works the request names only, or any entry with an OA PDF?
 6. OA source: OpenAlex `oa_url`, Unpaywall (needs an email in `.env`), or
    both?
