@@ -134,10 +134,13 @@ phillit-service re-vendor.
   reports per location, and lets users upload their own PDFs for a review.
   The licence filter is shared engine code; uploads are the service's own
   work. Rejected: off in the service for now; licensed OA without uploads.
+- **Storage: the PDFs and texts stay in the delivered
+  `intermediate_files/fulltext/`**, so a revision (which copies the
+  delivered folder) has them. A guard keeps them out of the git-tracked
+  example reviews. Rejected: deleting them at publish and re-acquiring on
+  revision from the sidecar's hashes (a one-off `--pdf` would have to be
+  supplied again); keeping the text only (still the copyrighted content).
 
 **Open questions for Johannes** (to adjudicate one at a time):
-9. Storage: `intermediate_files/` is published into `reviews/`. Keep the PDF
-   and text there, or delete them at publish? The example reviews must never
-   ship them.
 10. Does FULLTEXT on a user-named work replace the tier-override framing, so
     that FULLTEXT joins the "no override needed" list?
