@@ -862,7 +862,7 @@ def _empty_fulltext_report(status: str = "complete") -> dict:
 
 def _fulltext_pass(review_dir: Path, domains: dict, parsed: dict, atts: dict,
                    run_start: float):
-    """EVIDENCE-FULLTEXT planning (spec section 6, steps 1-4). Reads the
+    """EVIDENCE-FULLTEXT planning. Reads the
     store, writes nothing. Returns (plan, texts, report):
 
     plan: (i, key) -> {"slug", "text_sha256", "identity"} for every entry
@@ -881,7 +881,7 @@ def _fulltext_pass(review_dir: Path, domains: dict, parsed: dict, atts: dict,
     Entries sharing a slug whose page maps differ all get the map None (no
     `[[page N]]` markers). A per-record failure withholds that record only.
 
-    Reasons in `rejected` (spec section 6, plus one addition): the index
+    Reasons in `rejected`: the index
     reasons from `fulltext.validate_record` (bad_slug, sidecar_unreadable,
     pdf_missing, pdf_hash_mismatch -- the last two also at read time),
     `extract_failed:<why>` (`:error` for an unexpected exception),
@@ -1498,7 +1498,7 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                       "wayback_failed": [], "misc_with_abstract": []}
     report["web_sources"] = web_report
 
-    # EVIDENCE-FULLTEXT (spec section 6). An UPGRADE pass: a per-record
+    # EVIDENCE-FULLTEXT. An UPGRADE pass: a per-record
     # failure withholds that record (named in `rejected`); a pass-level
     # exception withholds every FULLTEXT stamp (`pass_error`) and leaves the
     # run's status alone -- losing the tier is safe and visible. Round-tripped

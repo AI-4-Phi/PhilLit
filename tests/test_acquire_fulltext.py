@@ -1,6 +1,6 @@
 """acquire_fulltext.py: source order, consent, the service policy, Zotero's
 file:// handoff, the PDF-folder index, the store's collision and validity
-rules, the download limits and the --gaps deadline (spec sections 3-5, 13).
+rules, the download limits and the --gaps deadline.
 HTTP is mocked throughout: every request goes through `_http_get`.
 """
 import hashlib

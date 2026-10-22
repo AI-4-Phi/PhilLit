@@ -504,7 +504,7 @@ def test_writer_prose_makes_the_source_check_required():
 
 
 def test_fulltext_tier_reaches_every_prompt_that_must_act_on_it():
-    """EVIDENCE-FULLTEXT (PL-19): steps an orchestrator or a Sonnet agent
+    """EVIDENCE-FULLTEXT: steps an orchestrator or a Sonnet agent
     reads as optional unless they are marked REQUIRED and carry their exact
     command. Each pin names a failure that would silently drop the tier or
     the quotation gate."""

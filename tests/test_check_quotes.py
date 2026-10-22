@@ -1,5 +1,5 @@
-"""check_quotes.py: the Phase 6 quotation gate for EVIDENCE-FULLTEXT works
-(spec section 9). Fixtures are built in tmp_path: real PDF bytes through
+"""check_quotes.py: the Phase 6 quotation gate for EVIDENCE-FULLTEXT works.
+Fixtures are built in tmp_path: real PDF bytes through
 pypdf extraction, page confirmation and the renderer, a merged bib, a barrier
 report with attestation blobs, and a review."""
 import json

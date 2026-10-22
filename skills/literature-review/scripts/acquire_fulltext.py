@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Acquire a work's PDF into the full-text store (EVIDENCE-FULLTEXT, PL-19).
+"""Acquire a work's PDF into the full-text store (EVIDENCE-FULLTEXT).
 
 Usage:
   acquire_fulltext.py <workdir> --doi D [--title T --author A --year Y]
@@ -7,8 +7,7 @@ Usage:
   acquire_fulltext.py <workdir> (--doi D | --title T --author A --year Y) --pdf PATH
   acquire_fulltext.py <workdir> --gaps --domains N
 
-Design: `docs/superpowers/specs/2026-10-22-fulltext-evidence-tier-design.md`
-sections 2-5; rulings: `docs/ideas/fulltext-evidence-tier.md` ("Decided").
+Rulings: `docs/ideas/fulltext-evidence-tier.md` ("Decided").
 
 WHAT IT WRITES. Only `<slug>.pdf` and then its `<slug>.json` acquisition
 sidecar in `[workdir]/intermediate_files/fulltext/` (both atomic), and in

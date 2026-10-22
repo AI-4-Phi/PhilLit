@@ -1,10 +1,9 @@
 """The one owner of "is this PDF this work", of the full-text format and of
-quote matching (EVIDENCE-FULLTEXT, PL-19).
+quote matching (EVIDENCE-FULLTEXT).
 
 Acquisition (`acquire_fulltext.py`), the evidence barrier and the Phase 6
 quotation gate (`check_quotes.py`) all call in here; none re-implements a
-rule. Design: `docs/superpowers/specs/2026-10-22-fulltext-evidence-tier-design.md`
-sections 4, 5 and 9; rulings: `docs/ideas/fulltext-evidence-tier.md`.
+rule. Rulings: `docs/ideas/fulltext-evidence-tier.md`.
 
 IDENTITY (`identity_ok`) reproduces the measured rules EXACTLY; the numbers
 below hold only while the rules do. Measurement scripts and results:
@@ -121,7 +120,7 @@ class QuoteEllipsisError(QuoteFormError):
 # Constants
 # --------------------------------------------------------------------------
 
-MAX_PDF_BYTES = 200 * 1024 * 1024   # the local-file cap (spec section 3)
+MAX_PDF_BYTES = 200 * 1024 * 1024   # the local-file cap
 MIN_TEXT_CHARS = 200
 SCHEMA = 1
 SOURCES = frozenset({"zotero", "folder", "openalex", "s2", "user"})

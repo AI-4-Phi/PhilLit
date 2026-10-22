@@ -1,4 +1,4 @@
-"""Phase 6 quotation gate for EVIDENCE-FULLTEXT works (PL-19, spec section 9).
+"""Phase 6 quotation gate for EVIDENCE-FULLTEXT works.
 
 Scans the assembled review for double-quoted spans (straight or curly, at
 least 2 words, in the body: not headings, not code, not `## References`),
@@ -46,7 +46,7 @@ editor-only entry resolves); the References boundary
 Chicago letter, last EVIDENCE token) MIRRORS the loop inline in
 `check_evidence.main()`, which cannot be imported.
 
-RESIDUALS (accepted, visible; spec section 12 lists the design-level ones):
+RESIDUALS (accepted, visible):
 - A quote in a sentence citing two works passes when it is in either text.
 - Uncited spans of 2 or 3 words are not reported (scare quotes).
 - A block quotation (`> ...`) without quotation marks is not checked (an

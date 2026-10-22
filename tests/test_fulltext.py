@@ -1,5 +1,5 @@
 """fulltext.py: extraction, the measured identity rules, page maps, the text
-format, store slugs and records, and the quote matcher (spec sections 4, 5, 9).
+format, store slugs and records, and the quote matcher.
 """
 import hashlib
 import io

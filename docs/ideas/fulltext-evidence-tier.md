@@ -1,4 +1,4 @@
-# Full-text evidence tier (sketch)
+# Full-text evidence tier: rulings
 
 **Problem.** A review whose question turns on one named paper can get that
 paper wrong, because no tier lets a writer use its full text. In the
@@ -9,47 +9,13 @@ they are distinct problems. Johansson and Risberg (2018) was CC BY and read
 in full by the orchestrator, but at `EVIDENCE-ABSTRACT` the writers had to
 cut its main arguments.
 
-**Why no current tier can carry it** (checked against the code):
-- `EVIDENCE-WEB` is `@misc` only (`evidence_barrier.py`, "a url on an
-  @article is decoration and out of scope"), and an entry with an abstract is
-  skipped. `compute_tier` ranks ABSTRACT above WEB, so an article never
-  reaches WEB.
-- A WEB capture is evidence that a fetch happened, not writer input:
-  writers read only the `note`, checked against `web_span` fragments.
-  `fetch_web.extract_pdf` joins pages with spaces, so page numbers are lost.
-- `fetch_web.py` takes only http(s) URLs; there is no path for a local PDF.
-- The writer rules correctly refuse a notes file of "verified facts", so
-  prompt wording cannot fix this; only a tier the barrier stamps can.
+**Built as** the `EVIDENCE-FULLTEXT` tier: `fulltext.py` (PDF identity, page
+maps, text format, quote matching), `acquire_fulltext.py` (Phase 1 anchor
+texts, Phase 3 gap pass), the barrier's full-text pass, and the Phase 6 gate
+`check_quotes.py`. The rulings below bind them; reopen one only with new
+evidence.
 
-**Sketch.** A new tier `EVIDENCE-FULLTEXT`, ranked above ABSTRACT.
-1. Store keyed by DOI, or by a title-author-year slug for a work without
-   one (citekeys are minted later and diverge across domains): `intermediate_files/fulltext/<doi-slug>.pdf`, a `.txt` with
-   `[[page N]]` markers, and a `.json` sidecar (DOI, both sha256s, source:
-   OA URL / user file, extractor version, page offset).
-2. `acquire_fulltext.py --doi D (--pdf PATH | --url URL)`: resolve an OA
-   location (OpenAlex `oa_url`, which the search scripts already return, or
-   Unpaywall), extract per page, validate identity (the bar under Decided),
-   reuse
-   `fetch_web.py`'s printable-ratio and encrypted/no-text checks, and record
-   every failure in the sidecar.
-3. Barrier: for each entry whose cleaner-verified DOI has a stored text (and
-   its `same_work_group`), re-extract, check both hashes, re-run the
-   identity check, stamp `EVIDENCE-FULLTEXT` and a `fulltext_file` field.
-4. Writer: the licensed field is the text file; quotation allowed with page
-   numbers from the markers.
-5. Phase 6: `check_evidence.py` verifies every quotation attributed to a
-   FULLTEXT key against the file.
-6. "Acquire anchor texts" step in Phase 1, after `workdir.py init`: resolve
-   each work the request names to a DOI, try OA, else ask the user for the
-   PDF (Human-in-the-Loop) or record the gap prominently (Autopilot). The
-   planner and researchers then read the text too.
-
-Knock-on edits: `/phillit:setup` (Zotero and PDF-folder consent), `TIER_RANK`/`compute_tier`, dedupe's re-stamp,
-SKILL.md's "no override needed" list, planner and writer tier tables and
-Source Check, `conventions.md` Evidence Tiers, `split_delivery.py`, and the
-phillit-service re-vendor.
-
-**Decided** (2026-10-21/22):
+**Decided:**
 - **A new tier, `EVIDENCE-FULLTEXT`, ranked above ABSTRACT.** Rejected:
   widening `EVIDENCE-WEB`, which would put two licences under one token (an
   LLM note checked against page fragments, and the source text itself) and
