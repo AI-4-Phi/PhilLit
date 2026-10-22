@@ -115,12 +115,23 @@ phillit-service re-vendor.
   step is skipped and the report says so. Zotero also holds works without a
   DOI, so the store key, the barrier's entry binding and the identity check
   need a no-DOI path (match by title, first author and year; the PDF text
-  bar for it is still open); books have no `pages` range, so they
+  bar is the next ruling); books have no `pages` range, so they
   get no page numbers. Measured on the justified-harm review
   (`oa_sources.py`, `zotero_coverage.py`): of 25 EXISTENCE entries,
   OpenAlex reaches 1, Semantic Scholar 3, Zotero 3. Rejected: Unpaywall
   (needs an email in every request; its data now comes from OpenAlex, not
   measured); OpenAlex alone.
+- **Identity bar for a work without a DOI: the title phrase (first 6
+  words) starts within the first 600 characters of one of pages 1-5, and
+  the first-author surname is on that same page.** Asking where the title
+  sits separates the work from a work that cites it. Measured on 179
+  no-DOI Zotero PDFs, each against every other (`idbar_nodoi.py` and the
+  strict variants in `idbar_nodoi_strict-results.txt`): accepts 135 (75%),
+  1 wrong accept in 31,862 pairs (same author, 2-word title). Rejected:
+  phrase and surname anywhere in pages 1-5 (79%, 5 wrong, all citing
+  documents); the same with the surname limited to pages 1-2 (68%, 3
+  wrong); the title-page rule plus the year for titles of 3 words or fewer
+  (65%, 0 wrong; books lose most, since a reprint's year differs).
 - **Paywalled copies: the user's own copies only, never a proxy or shadow
   library.** Routes: Zotero, a local PDF folder, open access, and a file
   the user hands over (`--pdf PATH`; Human-in-the-Loop asks for a named
