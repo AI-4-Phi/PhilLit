@@ -52,8 +52,9 @@ RESIDUALS (accepted, visible; spec section 12 lists the design-level ones):
 - A block quotation (`> ...`) without quotation marks is not checked (an
   opening mark with no close in its paragraph is `FAIL unclosed-quote`).
 - "Next sentence" attribution stays inside the paragraph.
-- Locators are read from parenthetical citations only. Every comma-separated
-  item is checked (`45 n. 3` and `45ff.` as page 45); `ch.`, `sec.`, `n.`,
+- Locators are read from parenthetical citations only (`, 45` or `: 45`
+  after the year); a locator holding its own brackets is one unrecognized
+  item (a FIX). Every comma-separated item is checked (`45 n. 3` and `45ff.` as page 45); `ch.`, `sec.`, `n.`,
   `vol.` items and digit-free notes (`emphasis added`) name no page and are
   skipped; a roman numeral or an unreadable item is a FIX. A bare 1500-2099
   number without `p.`/`pp.` is a page when an attributed full text has that
@@ -110,9 +111,8 @@ _ABBREV = frozenset({"e.g", "i.e", "cf", "vs", "viz", "al", "ch", "chap", "p", "
                      "vol", "vols", "ed", "eds", "trans", "no", "sec", "fn", "n",
                      "nn", "esp", "repr", "ibid", "op", "cit", "approx", "ca", "c",
                      "st", "mr", "mrs", "ms", "dr", "prof"})
-# The locator text after a citation's year, up to the end of the citation
-# (`;`, `)` or `]`): `, 45`, `, pp. 145-46`, `, 45 n. 3`, `, 45, 47`.
-_LOC_TAIL_RE = re.compile(r"\s*,\s*([^;()\[\]\n]{1,60}?)\s*(?=[;)\]])")
+# The start of a locator after a citation's year: `, 45` or `: 45`.
+_LOC_LEAD_RE = re.compile(r"\s*[,:]\s*")
 # A parenthesis right after the closing quotation mark: `"..." (45)`.
 _TRAIL_PAREN_RE = re.compile(r"\s*\(\s*([^()\n]{1,60}?)\s*\)")
 _PAGE_PREFIX_RE = re.compile(r"^pp?\.\s*", re.I)
@@ -418,21 +418,61 @@ def parse_locator_items(text: str) -> list[tuple]:
     return items
 
 
-def _in_parenthesis(masked: str, pos: int) -> bool:
-    lo = max(0, pos - 200)
-    return masked.rfind("(", lo, pos) > masked.rfind(")", lo, pos)
+def _in_parenthesis(masked: str, pos: int, para_lo: int) -> bool:
+    """Is pos inside an unmatched `(` opened since the paragraph start? (A
+    citation with a long author list still counts.)"""
+    depth = 0
+    for k in range(pos - 1, para_lo - 1, -1):
+        ch = masked[k]
+        if ch == ")":
+            depth += 1
+        elif ch == "(":
+            if depth == 0:
+                return True
+            depth -= 1
+    return False
 
 
-def citation_locator(masked: str, pos: int, info: dict) -> list[tuple] | None:
+def _locator_tail(masked: str, start: int, para_hi: int) -> str | None:
+    """The text from start to the end of the citation: the first `;`, `)` or
+    `]` outside nested brackets. None when the paragraph ends first."""
+    depth = 0
+    for k in range(start, para_hi):
+        ch = masked[k]
+        if ch in "([":
+            depth += 1
+        elif ch in ")]":
+            if depth == 0:
+                return masked[start:k]
+            depth -= 1
+        elif ch == ";" and depth == 0:
+            return masked[start:k]
+    return None
+
+
+def citation_locator(masked: str, pos: int, info: dict, para: tuple[int, int]) -> list[tuple] | None:
     """The locator items written with the citation whose surname is at pos
-    (parenthetical citations only: `(Smith 2020, 45)`, `Smith (2020, 45)`),
-    or None."""
+    (parenthetical citations only: `(Smith 2020, 45)`, `(Smith 2020: 45)`,
+    `Smith (2020, 45)`), or None. A tail holding its own brackets
+    (`45 (see also 47)`) cannot be read item by item: it is one unrecognized
+    item, so it is fixed, never skipped."""
     year_re = re.compile(r"(?<!\d)" + re.escape(info["year"]) + r"[a-z]?(?!\d)", re.I)
     ym = year_re.search(masked, pos, min(len(masked), pos + len(info["surname"]) + ce._MATCH_WINDOW))
-    if not ym or not _in_parenthesis(masked, ym.start()):
+    if not ym or not _in_parenthesis(masked, ym.start(), para[0]):
         return None
-    lm = _LOC_TAIL_RE.match(masked, ym.end())
-    return parse_locator_items(lm.group(1)) if lm else None
+    lead = _LOC_LEAD_RE.match(masked, ym.end())
+    if not lead:
+        return None
+    tail = _locator_tail(masked, lead.end(), para[1])
+    if tail is None:
+        raw = " ".join(masked[lead.end():min(para[1], lead.end() + 60)].split())
+        return [("unrecognized", raw)]
+    tail = " ".join(tail.split())
+    if not tail:
+        return None
+    if any(ch in tail for ch in "()[]"):
+        return [("unrecognized", tail)]
+    return parse_locator_items(tail)
 
 
 def trailing_locator(masked: str, close: int) -> list[tuple] | None:
@@ -456,8 +496,7 @@ def _match_quote(quote: str, sources):
     """Try every source; (hits, form_error). hits: [(key, kind, text,
     occurrences)] for each source holding the quote."""
     hits, form_error = [], None
-    for key, kind, text in sources:
-        pm = ft.page_map_from_text(text) if kind == "fulltext" else None
+    for key, kind, text, pm in sources:
         try:
             occ = ft.locate_quote_all(quote, text, pm)
         except ft.QuoteFormError as e:
@@ -533,6 +572,10 @@ def run(md: str, bib_text: str, report: dict, workdir: Path) -> tuple[list[str],
     watched = {k for k, info in entries.items()
                if "fulltext_file" in info["fields"] or info["tier"] == TIER_FULLTEXT}
     licence = {k: license_status(k, entries[k], report, workdir) for k in sorted(watched)}
+    # The page map each licensed text's markers carry, computed once per key.
+    page_maps = {k: ft.page_map_from_text(text) for k, (text, _why) in licence.items()
+                 if text is not None}
+    para_starts = [a for a, _ in paras]
     groups = _union_groups(sorted(watched), entries)
     group_words: dict[str, int] = {}
 
@@ -598,11 +641,12 @@ def run(md: str, bib_text: str, report: dict, workdir: Path) -> tuple[list[str],
                 lines.append(f'FAIL licence-lost: {k} ({licence[k][1]}): "{shown}" {where}')
                 counts["fail_licence_lost"] += 1
 
-        sources = [(k, "fulltext", licence[k][0]) for k in wkeys if licence[k][0] is not None]
+        sources = [(k, "fulltext", licence[k][0], page_maps[k]) for k in wkeys
+                   if licence[k][0] is not None]
         for k in keys:
             info = entries[k]
             if info["tier"] == TIER_ABSTRACT and info["fields"].get("abstract"):
-                sources.append((k, "abstract", _decoded(info["fields"]["abstract"])))
+                sources.append((k, "abstract", _decoded(info["fields"]["abstract"]), None))
         if not sources:
             report_lost()
             continue   # nothing licensed to check against: licence-lost fails
@@ -624,7 +668,8 @@ def run(md: str, bib_text: str, report: dict, workdir: Path) -> tuple[list[str],
         locs = []
         for k, pos in cites:
             if k in licensed_w:
-                items = citation_locator(masked, pos, entries[k])
+                para = paras[bisect.bisect_right(para_starts, pos) - 1]
+                items = citation_locator(masked, pos, entries[k], para)
                 if items:
                     locs.append(([k], items))
         trail = trailing_locator(masked, c)
@@ -633,7 +678,7 @@ def run(md: str, bib_text: str, report: dict, workdir: Path) -> tuple[list[str],
         # A bare 1500-2099 number is a page only when a text has that page.
         marker_pages = set()
         for k in licensed_w:
-            pmap = ft.page_map_from_text(licence[k][0])
+            pmap = page_maps[k]
             if pmap is not None:
                 marker_pages.update(n for n in pmap.numbers if n is not None)
         for lkeys, items in locs:

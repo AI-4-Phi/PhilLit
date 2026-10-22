@@ -383,6 +383,26 @@ class TestLocatorForms:
         code, lines, _ = fx.run(doc(f"{self.QUOTE} (Singer 1975, xii)."), capsys)
         assert lines[0].startswith('FIX page: singer1975: roman locator "xii" names no confirmed page: drop it')
 
+    def test_colon_form(self, fx, capsys):
+        ok = fx.run(doc(f"{self.QUOTE} (Singer 1975: 46)."), capsys)
+        assert ok[:2] == (0, [])
+        code, lines, _ = fx.run(doc(f"{self.QUOTE} (Singer 1975: 47)."), capsys)
+        assert lines[0].startswith('FIX page: singer1975: drop or correct the locator "47"')
+
+    def test_long_author_list_before_the_citation_still_checked(self, fx, capsys):
+        names = ["Abel", "Baker", "Carter", "Dalton", "Ellis", "Foster", "Grant", "Hughes",
+                 "Irwin", "Jarvis", "Keller", "Lawson", "Mercer", "Norris", "Osborne"]
+        many = ", ".join(f"{n}, {n[0]}. Q." for n in names[:-1]) + f", and {names[-1]}, O. Q."
+        assert len(many) > 200   # beyond the old 200-character look-back
+        code, lines, _ = fx.run(doc(f"{self.QUOTE} ({many} 2001; Singer 1975, 47)."), capsys)
+        assert lines[0].startswith('FIX page: singer1975: drop or correct the locator "47"')
+
+    def test_locator_with_its_own_parentheses_is_fix(self, fx, capsys):
+        code, lines, _ = fx.run(doc(f"{self.QUOTE} (Singer 1975, 46 (see also 47))."), capsys)
+        assert code == 0
+        assert lines == ['FIX page: singer1975: unrecognized locator "46 (see also 47)": drop or correct it '
+                         '(quote on: page 46): "The limit of sentience" [line 5]']
+
     def test_prose_after_a_narrative_year_is_not_a_locator(self, fx, capsys):
         code, lines, _ = fx.run(doc(
             'In Singer 1975, 46 readers found "the limit of sentience" decisive.'), capsys)
