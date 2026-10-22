@@ -1162,8 +1162,8 @@ class TestErrTrap:
 
 class TestScopeToTheStoppingResearcher:
     """Researchers run in parallel: one's stop must validate and clean only
-    its own bib, never a sibling's that may still be mid-write (PL-20's
-    incident: a sibling's year was corrected, and reported, at the wrong
+    its own bib, never a sibling's that may still be mid-write (the
+    2026-10-14 incident: a sibling's year was corrected, and reported, at the wrong
     researcher's stop)."""
 
     @staticmethod

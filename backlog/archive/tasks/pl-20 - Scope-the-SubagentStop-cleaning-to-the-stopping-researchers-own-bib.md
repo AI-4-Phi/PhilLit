@@ -1,9 +1,10 @@
 ---
 id: PL-20
 title: Scope the SubagentStop cleaning to the stopping researcher's own bib
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-10-15 13:49'
+updated_date: '2026-10-22 01:01'
 labels:
   - hooks
 dependencies: []
