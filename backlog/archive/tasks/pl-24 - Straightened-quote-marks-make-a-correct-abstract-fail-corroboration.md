@@ -1,10 +1,10 @@
 ---
 id: PL-24
 title: Straightened quote marks make a correct abstract fail corroboration
-status: In Progress
+status: Done
 assignee: []
 created_date: '2026-10-23 08:00'
-updated_date: '2026-10-23 08:45'
+updated_date: '2026-10-23 09:12'
 labels:
   - barrier
 dependencies: []
