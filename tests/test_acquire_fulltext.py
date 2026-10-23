@@ -1314,11 +1314,45 @@ class TestService:
         assert data["status"] == "rejected"
         assert list((workdir / ft.STORE_REL).iterdir()) == []
 
-    def test_stem_mismatch_is_unavailable(self, http, workdir, capsys, service):
-        service.answer({DOI: {"status": "found", "stem": "doi-10.9999_x-000000000000"}})
+    @pytest.mark.parametrize("pdf, status, outcome, details", [
+        (work_pdf(), "acquired", "acquired", ["stem_mismatch"]),
+        (None, "not_found", "unavailable", ["stem_mismatch", "copy_invalid:sidecar_unreadable"]),
+    ])
+    def test_stem_mismatch_is_a_detail_not_a_gate(self, http, workdir, capsys, service, pdf, status,
+                                                  outcome, details):
+        """The record at OUR slug is checked whatever stem the response names."""
+        service.answer({DOI: {"status": "found", "stem": "doi-10.9999_x-000000000000", "pdf": pdf}})
         code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert _service_tried(data) == {"source": "service", "outcome": outcome, "detail": details}
+        assert data["status"] == status
+
+    def test_stem_mismatch_copy_still_meets_the_backstop(self, http, workdir, capsys, service):
+        os.environ["PHILLIT_FULLTEXT_LICENSED_ONLY"] = "1"
+        service.answer({DOI: {"status": "found", "stem": "doi-10.9999_x-000000000000",
+                              "pdf": work_pdf(), "license": "oa:author"}})
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert _service_tried(data) == {"source": "service", "outcome": "unlicensed",
+                                        "detail": ["stem_mismatch",
+                                                   "licence 'oa:author' not admitted by policy"]}
+        assert list((workdir / ft.STORE_REL).iterdir()) == []
+
+    def test_field_too_long_is_unavailable_and_never_sent(self, http, workdir, capsys, service):
+        code, data = run_json(capsys, workdir, "--doi", DOI, "--title", "x" * 501,
+                              "--author", SURNAME, "--year", YEAR)
         assert _service_tried(data) == {"source": "service", "outcome": "unavailable",
-                                        "detail": ["stem_mismatch"]}
+                                        "detail": ["field_too_long"]}
+        assert _request_files(service) == []
+
+    def test_closed_write_failure_is_a_detail_and_the_outcome_stands(self, http, workdir, capsys,
+                                                                       service, monkeypatch):
+        def refuse(*a, **k):
+            raise OSError("read-only")
+        monkeypatch.setattr(af.fc, "write_closed", refuse)
+        service.answer({DOI: {"status": "found", "pdf": work_pdf()}})
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert _service_tried(data) == {"source": "service", "outcome": "acquired",
+                                        "detail": ["closed_write_failed:OSError"]}
+        assert data["status"] == "acquired" and data["source"] == "openalex"
 
     def test_unwritable_request_dir_is_unavailable_not_a_crash(self, http, workdir, capsys, tmp_path):
         blocker = tmp_path / "a-file"

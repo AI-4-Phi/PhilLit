@@ -49,12 +49,14 @@ SOURCES, in the ruled order, the first passing PDF wins:
    `fulltext_channel`'s. A worker copies each found record into the store
    under this identity's slug and answers; the engine waits until
    `SERVICE_WAIT_MARGIN` seconds before the deadline, writes `<id>.closed`,
-   and maps a key still unanswered to `deadline`. Each copy is validated as a
-   download is: `validate_record`, the licence backstop (`_licensed`), then
-   `check_pdf` against THIS run's identity; a copy refused by the backstop or
-   the identity check is removed (nothing downstream reads licences), and a
-   passing one is stored through the normal path with its own source, ref
-   and licence.
+   and maps a key still unanswered to `deadline`. For a `found` key the
+   engine checks the record at THIS identity's slug, whatever stem the
+   response names (a differing stem is the detail `stem_mismatch`, never a
+   gate). Each copy is validated as a download is: `validate_record`, the
+   licence backstop (`_licensed`), then `check_pdf` against THIS run's
+   identity; a copy refused by the backstop or the identity check is removed
+   (nothing downstream reads licences), and a passing one is stored through
+   the normal path with its own source, ref and licence.
 OpenAlex and Semantic Scholar need a DOI. Several passing PDFs within the
 winning source: the first is kept and the rest are reported
 (`multiple_candidates`); every candidate of that source is checked, up to
@@ -101,7 +103,8 @@ Windows limit). `tried` lists `{source, outcome[, detail]}` in order;
 source outcomes are `disabled`, `unavailable`, `not_found`, `rejected`,
 `acquired`, plus `no_doi` for the OA sources and the service, `unlicensed`
 for the OA sources, the repository and the service, and `deadline` for a
-source the deadline cut. Service details: `stem_mismatch`,
+source the deadline cut. Service details: `stem_mismatch` (added to the
+outcome of checking the record at this slug),
 `copy_invalid:<reason>` (the copy fails `validate_record`; it is left for
 the barrier to withhold), `field_too_long`, `request_write_failed:<error>`,
 `closed_write_failed:<error>`, and the worker's own detail token. An
@@ -1110,31 +1113,35 @@ def _remove_copy(store: Path, slug: str) -> None:
 
 def _service_result(store: Path, slug: str, identity: dict, entry: dict | None,
                     settings: Settings) -> SourceResult:
-    """One key's answer, a copied record validated as if downloaded here."""
+    """One key's answer, a copied record validated as if downloaded here.
+    The record checked is the one at OUR slug, whatever stem the response
+    names: a differing stem is only a detail, so no copy under our slug ever
+    escapes the licence backstop and the identity check."""
     outcome, detail = fc.source_outcome(entry)
     res = SourceResult("service", outcome, detail)
     if outcome != "acquired":
         return res
     res.outcome = "unavailable"
     if entry.get("stem") != slug:
-        res.detail = ["stem_mismatch"]
-        return res
+        res.detail.append("stem_mismatch")
     rec = ft.validate_record(store, slug)
     if not isinstance(rec, ft.Record):
-        res.detail = [f"copy_invalid:{rec}"]
+        res.detail.append(f"copy_invalid:{rec}")
         return res
     data, why = _read_local(str(rec.pdf_path))
     if data is None:
-        res.detail = [why]
+        res.detail.append(why)
         return res
     if not _licensed(rec.license, settings.policy):
         _remove_copy(store, slug)
-        res.outcome, res.detail = "unlicensed", [f"licence {rec.license!r} not admitted by policy"]
+        res.outcome = "unlicensed"
+        res.detail.append(f"licence {rec.license!r} not admitted by policy")
         return res
     ok, why = check_pdf(data, identity)
     if not ok:
         _remove_copy(store, slug)
-        res.outcome, res.detail = "rejected", [why]
+        res.outcome = "rejected"
+        res.detail.append(why)
         return res
     res.outcome = "acquired"
     res.hits.append(Hit(data, rec.source, rec.source_ref, rec.license))
