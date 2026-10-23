@@ -132,9 +132,11 @@ evidence.
   licences: repository-hosted copies (university repositories, SSRN,
   academia.edu), authors' or conference sites, and free-to-read PDFs on a
   publisher's own site, even with an unclear or no licence (Johannes,
-  2026-10-23). The licence rule stays one shared engine function, with a mode
-  for this wider policy; the repository and the upload flow are the
-  service's own work (its PS-79 spec). Why this loose: CLAUDE.md,
+  2026-10-23). The engine's `repository` source reads that directory first;
+  its `service` channel (`fulltext_channel.py`) asks the service's worker
+  for open-access copies by identity; `PHILLIT_FULLTEXT_POLICY=open` is the
+  one licence rule's wider mode. The repository, the worker and the upload
+  flow are the service's own (its PS-79). Why this loose: CLAUDE.md,
   Objectives (legal caution is scrappy by design). Rejected: CC-only
   copies; uploads private to their owner.
 - **Storage: the PDFs and texts stay in the delivered

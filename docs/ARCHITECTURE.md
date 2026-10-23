@@ -185,7 +185,8 @@ skills/literature-review/
     ├── abstract_usability.py             # Is an abstract usable as evidence? (barrier helper, the screen behind EVIDENCE-ABSTRACT)
     ├── web_evidence.py                   # URL extraction, capture checks, existence (barrier helper, the EVIDENCE-WEB gate; owns the excluded-host policy — SEP + mirrors, IEP, NDPR, PhilPapers — which never earn EVIDENCE-WEB)
     ├── fulltext.py                       # PDF identity, page maps, text format, quote matching (owner behind EVIDENCE-FULLTEXT)
-    ├── acquire_fulltext.py               # Store a work's PDF: Zotero, PDF folder, open access, or a user's file (Phase 1 anchors, Phase 3 gaps)
+    ├── acquire_fulltext.py               # Store a work's PDF: a shared repository, Zotero, PDF folder, open access, the service channel, or a user's file (Phase 1 anchors, Phase 3 gaps)
+    ├── fulltext_channel.py               # The service full-text channel's request/response/closed file grammar (owner; used by acquire_fulltext.py)
     ├── check_evidence.py                 # Phase 6 evidence-tier telemetry checker
     ├── check_quotes.py                   # Phase 6 quotation gate for EVIDENCE-FULLTEXT works
     ├── split_delivery.py                 # Phase 6: track-record bib, annotated bib, research notes
