@@ -20,6 +20,14 @@ here on every candidate from every source, `--pdf` included; slugs, record
 validity and the store paths are `fulltext.py`'s too.
 
 SOURCES, in the ruled order, the first passing PDF wins:
+0. The repository: a flat, read-only directory of records in the store's
+   format (`PHILLIT_FULLTEXT_REPOSITORY_DIR`, read after `.env` loads like
+   `PHILLIT_PDF_DIR`; normally unset locally), looked up by this identity's
+   slug. The record must validate, pass the licence rule and the identity
+   check against THIS run's identity. It is never copied: the PDF is stored
+   through the normal path with `source` `repository` and the original
+   source and ref nested in `source_ref` (`{stem, source, source_ref}`),
+   because the barrier binds no-DOI records on this run's own identity.
 1. Zotero, through Zotero 7's local API on localhost:23119 (never the
    database file, never an MCP server). The item's metadata must match
    (DOI equal, or title phrase + first-creator surname + year), then each
@@ -71,17 +79,17 @@ obtained and none passed extraction and the identity check) or `refused`
 nothing is overwritten; `path_too_long`: the store path would exceed the
 Windows limit). `tried` lists `{source, outcome[, detail]}` in order;
 source outcomes are `disabled`, `unavailable`, `not_found`, `rejected`,
-`acquired`, plus `no_doi` and `unlicensed` for the OA sources and
-`deadline` for a source the pass deadline cut. An invalid stored record is
+`acquired`, plus `no_doi` for the OA sources, `unlicensed` for the OA
+sources and the repository, and `deadline` for a source the pass deadline cut. An invalid stored record is
 reported as `{source: "store", outcome: "invalid_replaced:<reason>"}` when a
 new PDF replaced it (`invalid_kept:<reason>` when none was found). Exit 0
 for every status; 1 for a crash, with one JSON object `{"error": ...}`; 2
 for a usage error.
 
 `--gaps` tries every domain-bib entry with no `abstract` and either a DOI,
-or (Zotero or the folder enabled) a title, author and year, within a 420 s
-pass deadline (the Bash ceiling is 600 s); entries not reached are
-`not_attempted`. It writes the run report and prints a one-line JSON
+or (the repository, Zotero or the folder enabled) a title, author and
+year, within a 420 s pass deadline (the Bash ceiling is 600 s); entries
+not reached are `not_attempted`. It writes the run report and prints a one-line JSON
 summary with counts per outcome.
 
 IDENTITY FORMS (the barrier's binding contract). `--gaps` stores the
@@ -148,6 +156,7 @@ sys.path.remove(_research)
 
 LICENSED_ONLY_ENV = "PHILLIT_FULLTEXT_LICENSED_ONLY"
 POLICY_ENV = "PHILLIT_FULLTEXT_POLICY"
+REPOSITORY_DIR_ENV = "PHILLIT_FULLTEXT_REPOSITORY_DIR"
 ZOTERO_ENV = "PHILLIT_ZOTERO"
 PDF_DIR_ENV = "PHILLIT_PDF_DIR"
 
@@ -341,6 +350,45 @@ def _finish(result: SourceResult, checked: int, passed: int) -> SourceResult:
     else:
         result.outcome = "not_found"
     return result
+
+
+# --------------------------------------------------------------------------
+# Repository
+# --------------------------------------------------------------------------
+
+def source_repository(identity: dict, settings: "Settings", deadline: Deadline) -> SourceResult:
+    res = SourceResult("repository", "not_found")
+    if settings.repository_dir is None:
+        res.outcome = "disabled"
+        return res
+    if not settings.repository_dir.is_dir():
+        res.outcome, res.detail = "unavailable", ["repository_missing"]
+        return res
+    stem = ft.slug_for(identity)
+    if not (settings.repository_dir / f"{stem}.json").exists() \
+            and not (settings.repository_dir / f"{stem}.pdf").exists():
+        return res
+    rec = ft.validate_record(settings.repository_dir, stem)
+    if not isinstance(rec, ft.Record):
+        res.detail.append(f"invalid:{rec}")
+        return res
+    data, why = _read_local(str(rec.pdf_path))
+    if data is None:
+        res.detail.append(why)
+        return res
+    if not _licensed(rec.license, settings.policy):
+        res.outcome = "unlicensed"
+        res.detail.append(f"licence {rec.license!r} not admitted by policy")
+        return res
+    ok, why = check_pdf(data, identity)
+    if not ok:
+        res.outcome, res.detail = "rejected", [why]
+        return res
+    res.outcome = "acquired"
+    res.hits.append(Hit(data, "repository",
+                        {"stem": stem, "source": rec.source, "source_ref": rec.source_ref},
+                        rec.license))
+    return res
 
 
 # --------------------------------------------------------------------------
@@ -866,8 +914,8 @@ def source_s2(identity, settings, deadline):
     return _source_oa("s2", s2_locations, identity, settings, deadline)
 
 
-SOURCE_ORDER = ("zotero", "folder", "openalex", "s2")
-_SOURCES = {"zotero": source_zotero, "folder": source_folder,
+SOURCE_ORDER = ("repository", "zotero", "folder", "openalex", "s2")
+_SOURCES = {"repository": source_repository, "zotero": source_zotero, "folder": source_folder,
             "openalex": source_openalex, "s2": source_s2}
 
 
@@ -882,6 +930,7 @@ class Settings:
     zotero_on: bool
     pdf_dir: Path | None
     index_budget: float
+    repository_dir: Path | None = None
     _index: FolderIndex | None = None
 
     def folder_index(self) -> FolderIndex:
@@ -893,8 +942,10 @@ class Settings:
 def settings_from_env(licensed_only: bool, policy: str | None, index_budget: float) -> Settings:
     raw = os.environ.get(PDF_DIR_ENV, "").strip().strip("\"'").strip()
     pdf_dir = Path(os.path.expanduser(raw)).resolve() if raw else None
+    raw = os.environ.get(REPOSITORY_DIR_ENV, "").strip().strip("\"'").strip()
+    repository_dir = Path(os.path.expanduser(raw)).resolve() if raw else None
     return Settings(licensed_only=licensed_only, policy=policy, zotero_on=_on(os.environ.get(ZOTERO_ENV)),
-                    pdf_dir=pdf_dir, index_budget=index_budget)
+                    pdf_dir=pdf_dir, index_budget=index_budget, repository_dir=repository_dir)
 
 
 def _atomic_write_bytes(path: Path, data: bytes) -> None:
@@ -1075,7 +1126,8 @@ def _folder_warnings(settings: Settings) -> list[str]:
 def run_gaps(workdir: Path, n_domains: int, settings: Settings) -> dict:
     started = _clock()
     deadline = Deadline(GAPS_DEADLINE)
-    title_route = not settings.licensed_only and (settings.zotero_on or settings.pdf_dir is not None)
+    title_route = settings.repository_dir is not None or (
+        not settings.licensed_only and (settings.zotero_on or settings.pdf_dir is not None))
     cands, domains = gap_candidates(workdir, n_domains, title_route)
     entries, by_slug = [], {}
     for domain, key, ident in cands:
@@ -1122,7 +1174,8 @@ def run_gaps(workdir: Path, n_domains: int, settings: Settings) -> dict:
               "elapsed_seconds": round(_clock() - started, 1),
               "licensed_only": settings.licensed_only,
               "policy": settings.policy,
-              "sources": {"zotero": "on" if settings.zotero_on and not settings.licensed_only else "off",
+              "sources": {"repository": "on" if settings.repository_dir is not None else "off",
+                          "zotero": "on" if settings.zotero_on and not settings.licensed_only else "off",
                           "folder": "on" if settings.pdf_dir is not None and not settings.licensed_only else "off"},
               "domains": domains, "candidates": len(entries), "counts": counts, "errors": errors, "warnings": warnings,
               "entries": entries}

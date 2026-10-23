@@ -188,6 +188,23 @@ OA_URL = f"{af.OPENALEX_BASE}/works/doi:{DOI}"
 S2_URL = f"{af.S2_BASE_URL}/paper/DOI:{DOI}"
 
 
+def write_repo_record(repo_dir, pdf_bytes, identity, *, source, source_ref, license):
+    """A repository record (the store's format, plus the rendered text) for
+    `identity`; returns its stem."""
+    repo_dir = Path(repo_dir)
+    repo_dir.mkdir(parents=True, exist_ok=True)
+    stem = ft.slug_for(identity)
+    (repo_dir / f"{stem}.pdf").write_bytes(pdf_bytes)
+    (repo_dir / f"{stem}.txt").write_text(ft.render_text(ft.extract_pages(pdf_bytes), None),
+                                          encoding="utf-8")
+    side = {"schema": 1, "slug": stem, "identity": identity, "source": source,
+            "source_ref": source_ref, "license": license,
+            "pdf_sha256": hashlib.sha256(pdf_bytes).hexdigest(),
+            "acquired_at": "2026-10-22T00:00:00+00:00"}
+    (repo_dir / f"{stem}.json").write_text(json.dumps(side), encoding="utf-8")
+    return stem
+
+
 # ---------------------------------------------------------------------------
 # Usage and crash contract
 # ---------------------------------------------------------------------------
@@ -233,7 +250,7 @@ class TestCli:
         code, data = run_json(capsys, workdir, "--doi", DOI)
         assert code == 0
         assert data["status"] == "not_found"
-        assert [t["source"] for t in data["tried"]] == ["zotero", "folder", "openalex", "s2"]
+        assert [t["source"] for t in data["tried"]] == ["repository", "zotero", "folder", "openalex", "s2"]
 
 
 # ---------------------------------------------------------------------------
@@ -373,7 +390,7 @@ class TestSourceOrder:
         code, data = run_json(capsys, workdir, "--doi", DOI, "--title", TITLE,
                               "--author", SURNAME, "--year", YEAR)
         assert data["source"] == "zotero"
-        assert [t["source"] for t in data["tried"]] == ["zotero"]
+        assert [t["source"] for t in data["tried"]] == ["repository", "zotero"]
         assert not any("example" in u for u in http.urls())
 
     def test_doi_alone_uses_the_zotero_items_title_when_the_pdf_lacks_its_doi(
@@ -392,7 +409,7 @@ class TestSourceOrder:
                               "--author", SURNAME, "--year", YEAR)
         assert data["source"] == "folder"
         assert [(t["source"], t["outcome"]) for t in data["tried"]] == [
-            ("zotero", "not_found"), ("folder", "acquired")]
+            ("repository", "disabled"), ("zotero", "not_found"), ("folder", "acquired")]
         rec = ft.validate_record(workdir / ft.STORE_REL, data["slug"])
         # File name only: the sidecar travels with the delivered review.
         assert rec.source_ref == "folder:Gardner 2019 Justified Harm.pdf"
@@ -543,7 +560,7 @@ class TestZotero:
         setup_zotero(http, tmp_path, [work_pdf()])
         http.add(f"{ZBASE}/items/ATT0/file", FakeResponse(302, headers={"Location": "file://server/s/a.pdf"}))
         code, data = run_json(capsys, workdir, "--doi", DOI)
-        z = data["tried"][0]
+        z = data["tried"][1]
         assert z == {"source": "zotero", "outcome": "not_found", "detail": ["ATT0:unc_host"]}
 
     def test_unavailable_when_zotero_does_not_answer(self, http, workdir, capsys, monkeypatch):
@@ -557,7 +574,7 @@ class TestZotero:
             return inner(url, **kw)
         monkeypatch.setattr(af, "_http_get", refuse)
         code, data = run_json(capsys, workdir, "--doi", DOI)
-        assert data["tried"][0]["outcome"] == "unavailable"
+        assert data["tried"][1]["outcome"] == "unavailable"
 
     def test_multiple_attachments_first_wins(self, http, workdir, capsys, tmp_path):
         write_env("PHILLIT_ZOTERO=on\n")
@@ -565,7 +582,7 @@ class TestZotero:
         setup_zotero(http, tmp_path, [first, second])
         code, data = run_json(capsys, workdir, "--doi", DOI)
         assert data["status"] == "acquired"
-        assert data["tried"][0]["detail"] == ["multiple_candidates:2"]
+        assert data["tried"][1]["detail"] == ["multiple_candidates:2"]
         rec = ft.validate_record(workdir / ft.STORE_REL, data["slug"])
         assert rec.pdf_sha256 == hashlib.sha256(first).hexdigest()
         assert rec.source_ref == "zotero:PARENT/ATT0"
@@ -577,20 +594,20 @@ class TestZotero:
         code, data = run_json(capsys, workdir, "--doi", DOI)
         rec = ft.validate_record(workdir / ft.STORE_REL, data["slug"])
         assert rec.pdf_sha256 == hashlib.sha256(good).hexdigest()
-        assert data["tried"][0]["detail"][0].startswith("ATT0:identity_failed")
+        assert data["tried"][1]["detail"][0].startswith("ATT0:identity_failed")
 
     def test_all_attachments_fail_is_rejected(self, http, workdir, capsys, tmp_path):
         write_env("PHILLIT_ZOTERO=on\n")
         setup_zotero(http, tmp_path, [other_pdf()])
         code, data = run_json(capsys, workdir, "--doi", DOI)
         assert data["status"] == "rejected"
-        assert data["tried"][0]["outcome"] == "rejected"
+        assert data["tried"][1]["outcome"] == "rejected"
 
     def test_metadata_mismatch_reads_no_attachment(self, http, workdir, capsys, tmp_path):
         write_env("PHILLIT_ZOTERO=on\n")
         setup_zotero(http, tmp_path, [work_pdf()], items=[zotero_item("PARENT", doi="10.5555/else")])
         code, data = run_json(capsys, workdir, "--doi", DOI)
-        assert data["tried"][0]["outcome"] == "not_found"
+        assert data["tried"][1]["outcome"] == "not_found"
         assert not any(u.endswith("/file") or u.endswith("/children") for u in http.urls())
 
     def test_no_doi_item_matched_by_title_surname_year(self, http, workdir, capsys, tmp_path):
@@ -606,7 +623,7 @@ class TestZotero:
         setup_zotero(http, tmp_path, [work_pdf(doi=None)],
                      items=[zotero_item("PARENT", doi="", date="2011")])
         code, data = run_json(capsys, workdir, "--title", TITLE, "--author", SURNAME, "--year", YEAR)
-        assert data["tried"][0]["outcome"] == "not_found"
+        assert data["tried"][1]["outcome"] == "not_found"
 
 
 # ---------------------------------------------------------------------------
@@ -659,7 +676,7 @@ class TestFolder:
         monkeypatch.setattr(af, "INDEX_BUDGET_SINGLE", 0)   # no time to index anything
         code, data = run_json(capsys, workdir, "--title", TITLE, "--author", SURNAME, "--year", YEAR)
         assert data["source"] == "folder"
-        folder_try = data["tried"][1]
+        folder_try = data["tried"][2]
         assert any(d.startswith("index_incomplete") for d in folder_try["detail"])
 
     def test_found_by_page_head_title(self, http, workdir, capsys, tmp_path):
@@ -674,7 +691,7 @@ class TestFolder:
         real = af.check_pdf
         monkeypatch.setattr(af, "check_pdf", lambda d, i: checked.append(1) or real(d, i))
         code, data = run_json(capsys, workdir, "--title", TITLE, "--author", SURNAME, "--year", YEAR)
-        folder_try = data["tried"][1]
+        folder_try = data["tried"][2]
         assert folder_try["outcome"] == "rejected"
         assert "candidate_limit:21" in folder_try["detail"]
         assert len(checked) == 20
@@ -690,13 +707,13 @@ class TestFolder:
         except OSError:
             pytest.skip("symlinks need privileges here")
         code, data = run_json(capsys, workdir, "--doi", DOI)
-        assert data["tried"][1]["outcome"] == "not_found"
+        assert data["tried"][2]["outcome"] == "not_found"
 
     def test_walk_limit(self, http, workdir, capsys, tmp_path, monkeypatch):
         self._folder(tmp_path, {"a.pdf": other_pdf(), "b.pdf": other_pdf(), "c.pdf": work_pdf()})
         monkeypatch.setattr(af, "MAX_WALK_FILES", 2)
         code, data = run_json(capsys, workdir, "--doi", DOI)
-        folder_try = data["tried"][1]
+        folder_try = data["tried"][2]
         assert "walk_limit" in folder_try["detail"] and folder_try["outcome"] == "not_found"
 
     def test_unreadable_subtree_reported_and_cache_kept(self, http, workdir, capsys, tmp_path):
@@ -713,7 +730,7 @@ class TestFolder:
         try:
             code, data = run_json(capsys, workdir, "--title", "Other", "--author", "Nobody",
                                   "--year", YEAR)
-            folder_try = data["tried"][1]
+            folder_try = data["tried"][2]
             assert "walk_error:1" in folder_try["detail"]
             index = json.loads(idx_file.read_text(encoding="utf-8"))
             assert "sub/scan.pdf" in index["files"]   # kept, not dropped
@@ -723,7 +740,7 @@ class TestFolder:
     def test_missing_folder_is_unavailable(self, http, workdir, capsys, tmp_path):
         write_env(f"PHILLIT_PDF_DIR={tmp_path / 'nowhere'}\n")
         code, data = run_json(capsys, workdir, "--doi", DOI)
-        assert data["tried"][1] == {"source": "folder", "outcome": "unavailable",
+        assert data["tried"][2] == {"source": "folder", "outcome": "unavailable",
                                     "detail": ["folder_missing"]}
 
 
@@ -996,3 +1013,123 @@ class TestGaps:
         before = bib.read_bytes()
         run(capsys, workdir, "--gaps", "--domains", "1")
         assert bib.read_bytes() == before
+
+
+# ---------------------------------------------------------------------------
+# The repository source
+# ---------------------------------------------------------------------------
+
+OA_REF = {"url": "https://oa.example/a.pdf", "kind": "cc", "service": True}
+
+
+def _full_args():
+    return ("--doi", DOI, "--title", TITLE, "--author", SURNAME, "--year", YEAR)
+
+
+class TestRepository:
+    def test_repository_hit_is_first_and_rewrites_identity(self, http, workdir, capsys, tmp_path):
+        repo = tmp_path / "records"
+        write_repo_record(repo, work_pdf(), af.make_identity(DOI), source="openalex",
+                          source_ref=OA_REF, license="cc-by")
+        write_env(f"PHILLIT_FULLTEXT_REPOSITORY_DIR={repo}\nPHILLIT_ZOTERO=on\n")
+        code, data = run_json(capsys, workdir, *_full_args())
+        assert data["status"] == "acquired" and data["source"] == "repository"
+        assert [t["source"] for t in data["tried"]] == ["repository"]
+        rec = ft.validate_record(workdir / ft.STORE_REL, data["slug"])
+        assert rec.identity == {"doi": DOI, "title": TITLE, "surname": SURNAME, "year": YEAR}
+        assert rec.source_ref == {"stem": data["slug"], "source": "openalex", "source_ref": OA_REF}
+        assert rec.license == "cc-by" and http.calls == []
+        assert not (workdir / ft.STORE_REL / f"{data['slug']}.txt").exists()   # never copied
+
+    def test_repository_unset_is_disabled(self, http, workdir, capsys):
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert data["tried"][0] == {"source": "repository", "outcome": "disabled"}
+
+    def test_missing_repository_dir_is_unavailable(self, http, workdir, capsys, tmp_path):
+        write_env(f"PHILLIT_FULLTEXT_REPOSITORY_DIR={tmp_path / 'nowhere'}\n")
+        http.add(OA_URL, FakeResponse(payload=oa_payload([("https://oa.example/a.pdf", "cc-by")])))
+        http.add("https://oa.example/a.pdf", FakeResponse(body=work_pdf()))
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert data["tried"][0] == {"source": "repository", "outcome": "unavailable",
+                                    "detail": ["repository_missing"]}
+        assert data["status"] == "acquired" and data["source"] == "openalex"
+
+    def test_absent_stem_is_not_found(self, http, workdir, capsys, tmp_path):
+        repo = tmp_path / "records"
+        repo.mkdir()
+        write_env(f"PHILLIT_FULLTEXT_REPOSITORY_DIR={repo}\n")
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert data["tried"][0] == {"source": "repository", "outcome": "not_found"}
+
+    def test_invalid_repository_record_is_not_found_with_reason(self, http, workdir, capsys, tmp_path):
+        repo = tmp_path / "records"
+        ident = af.make_identity(DOI)
+        stem = write_repo_record(repo, work_pdf(), ident, source="user", source_ref="u.pdf",
+                                 license="upload")
+        write_env(f"PHILLIT_FULLTEXT_REPOSITORY_DIR={repo}\n")
+        (repo / f"{stem}.json").write_text("{not json", encoding="utf-8")
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert data["tried"][0] == {"source": "repository", "outcome": "not_found",
+                                    "detail": ["invalid:sidecar_unreadable"]}
+        write_repo_record(repo, work_pdf(), ident, source="user", source_ref="u.pdf", license="upload")
+        (repo / f"{stem}.pdf").write_bytes(work_pdf(marker="tampered"))
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert data["tried"][0] == {"source": "repository", "outcome": "not_found",
+                                    "detail": ["invalid:pdf_hash_mismatch"]}
+
+    def test_repository_record_of_another_work_is_rejected(self, http, workdir, capsys, tmp_path):
+        repo = tmp_path / "records"
+        write_repo_record(repo, other_pdf(), af.make_identity(DOI), source="user",
+                          source_ref="u.pdf", license="upload")
+        write_env(f"PHILLIT_FULLTEXT_REPOSITORY_DIR={repo}\n")
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        first = data["tried"][0]
+        assert first["source"] == "repository" and first["outcome"] == "rejected"
+        assert first["detail"][0].startswith("identity_failed:")
+        assert data["status"] != "acquired" or data["source"] != "repository"
+
+    def test_repository_licence_backstop(self, http, workdir, capsys, tmp_path):
+        repo = tmp_path / "records"
+        write_repo_record(repo, work_pdf(), af.make_identity(DOI), source="openalex",
+                          source_ref=OA_REF, license="oa:author")
+        write_env(f"PHILLIT_FULLTEXT_REPOSITORY_DIR={repo}\n")
+        os.environ["PHILLIT_FULLTEXT_LICENSED_ONLY"] = "1"
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert data["tried"][0] == {"source": "repository", "outcome": "unlicensed",
+                                    "detail": ["licence 'oa:author' not admitted by policy"]}
+        os.environ["PHILLIT_FULLTEXT_POLICY"] = "open"
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert data["status"] == "acquired" and data["source"] == "repository"
+        rec = ft.validate_record(workdir / ft.STORE_REL, data["slug"])
+        assert rec.license == "oa:author"
+
+    def test_repository_without_policy_admits_any_licence(self, http, workdir, capsys, tmp_path):
+        repo = tmp_path / "records"
+        write_repo_record(repo, work_pdf(), af.make_identity(DOI), source="openalex",
+                          source_ref=OA_REF, license="oa:author")
+        write_env(f"PHILLIT_FULLTEXT_REPOSITORY_DIR={repo}\n")
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert data["status"] == "acquired" and data["source"] == "repository"
+
+    def test_no_doi_identity_found_in_repository(self, http, workdir, capsys, tmp_path):
+        repo = tmp_path / "records"
+        ident = af.make_identity(None, TITLE, SURNAME, YEAR)
+        write_repo_record(repo, work_pdf(doi=None), ident, source="user", source_ref="u.pdf",
+                          license="upload")
+        write_env(f"PHILLIT_FULLTEXT_REPOSITORY_DIR={repo}\n")
+        code, data = run_json(capsys, workdir, "--title", TITLE, "--author", SURNAME, "--year", YEAR)
+        assert data["status"] == "acquired" and data["source"] == "repository"
+        rec = ft.validate_record(workdir / ft.STORE_REL, data["slug"])
+        assert rec.identity == ident
+
+    def test_gaps_no_doi_entries_are_tried_when_a_repository_is_set(self, http, workdir, capsys, tmp_path):
+        repo = tmp_path / "records"
+        repo.mkdir()
+        write_env(f"PHILLIT_FULLTEXT_REPOSITORY_DIR={repo}\n")
+        os.environ["PHILLIT_FULLTEXT_LICENSED_ONLY"] = "1"
+        (workdir / "literature-domain-1.bib").write_text(bib_entry("nodoi"), encoding="utf-8")
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        report = json.loads((workdir / af.REPORT_REL).read_text(encoding="utf-8"))
+        assert [e["key"] for e in report["entries"]] == ["nodoi"]
+        assert report["entries"][0]["tried"][0]["source"] == "repository"
+        assert report["sources"]["repository"] == "on"

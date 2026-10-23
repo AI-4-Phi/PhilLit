@@ -551,6 +551,12 @@ class TestValidateRecord:
         (tmp_path / f"{stem}.json").write_text(json.dumps(side), encoding="utf-8")
         assert ft.validate_record(tmp_path, stem) == "sidecar_unreadable"
 
+    def test_repository_is_a_source(self, tmp_path):
+        ref = {"stem": "x", "source": "openalex", "source_ref": {"url": "https://oa.example/a.pdf"}}
+        stem = write_record(tmp_path, IDENT, source="repository", source_ref=ref, license="cc-by")
+        rec = ft.validate_record(tmp_path, stem)
+        assert isinstance(rec, ft.Record) and rec.source == "repository" and rec.source_ref == ref
+
     @pytest.mark.parametrize("key,value", [
         ("doi", []), ("doi", 10), ("doi", {}),
         ("title", []), ("title", 3), ("surname", {}), ("surname", 1),

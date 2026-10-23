@@ -123,7 +123,7 @@ class QuoteEllipsisError(QuoteFormError):
 MAX_PDF_BYTES = 200 * 1024 * 1024   # the local-file cap
 MIN_TEXT_CHARS = 200
 SCHEMA = 1
-SOURCES = frozenset({"zotero", "folder", "openalex", "s2", "user"})
+SOURCES = frozenset({"repository", "zotero", "folder", "openalex", "s2", "user"})
 STORE_REL = "intermediate_files/fulltext"
 STEM_MAX = 64
 HASH_LEN = 12
