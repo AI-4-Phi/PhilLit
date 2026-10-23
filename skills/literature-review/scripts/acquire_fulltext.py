@@ -47,16 +47,22 @@ SOURCES, in the ruled order, the first passing PDF wins:
    batch of at most `fulltext_channel.MAX_PER_REQUEST` DOI identities, never
    a URL and never a no-DOI identity (`no_doi`); the grammar is
    `fulltext_channel`'s. A worker copies each found record into the store
-   under this identity's slug and answers; the engine waits until
-   `SERVICE_WAIT_MARGIN` seconds before the deadline, writes `<id>.closed`,
-   and maps a key still unanswered to `deadline`. For a `found` key the
-   engine checks the record at THIS identity's slug, whatever stem the
-   response names (a differing stem is the detail `stem_mismatch`, never a
-   gate). Each copy is validated as a download is: `validate_record`, the
-   licence backstop (`_licensed`), then `check_pdf` against THIS run's
-   identity; a copy refused by the backstop or the identity check is removed
-   (nothing downstream reads licences), and a passing one is stored through
-   the normal path with its own source, ref and licence.
+   under this identity's slug and answers; the engine waits on all its
+   requests together until `SERVICE_WAIT_MARGIN` seconds before the
+   deadline, writes `<id>.closed`, and maps a key still unanswered to
+   `deadline`. It then checks the record at THIS identity's slug for every
+   requested key, whatever the response says: for `found` whatever stem it
+   names (a differing stem is the detail `stem_mismatch`, never a gate),
+   and for any other answer, or none, whenever a file is there (a passing
+   copy is a hit noted `copied_after_response:<outcome>`). Each copy is
+   validated as a download is: `validate_record`, the licence backstop
+   (`_licensed`), the read, then `check_pdf` against THIS run's identity; a
+   copy refused by the backstop, unreadable or failing the identity check
+   is removed (nothing downstream reads licences), and a passing one is
+   stored through the normal path with its own source, ref and licence. A
+   copy that completes after that check is licence-checked on the next run
+   (a stored service copy the policy refuses is removed, `unlicensed_removed`),
+   not this one; the worker applies the same policy before fetching.
 OpenAlex and Semantic Scholar need a DOI. Several passing PDFs within the
 winning source: the first is kept and the rest are reported
 (`multiple_candidates`); every candidate of that source is checked, up to
@@ -104,14 +110,19 @@ source outcomes are `disabled`, `unavailable`, `not_found`, `rejected`,
 `acquired`, plus `no_doi` for the OA sources and the service, `unlicensed`
 for the OA sources, the repository and the service, and `deadline` for a
 source the deadline cut. Service details: `stem_mismatch` (added to the
-outcome of checking the record at this slug),
-`copy_invalid:<reason>` (the copy fails `validate_record`; it is left for
-the barrier to withhold), `field_too_long`, `request_write_failed:<error>`,
-`closed_write_failed:<error>`, and the worker's own detail token. An
-invalid stored record is reported as `{source: "store", outcome:
-"invalid_replaced:<reason>"}` when a new PDF replaced it
-(`invalid_kept:<reason>` when none was found). Exit 0 for every status; 1
-for a crash, with one JSON object `{"error": ...}`; 2 for a usage error.
+outcome of checking the record at this slug), `copied_after_response:
+<outcome>` (a copy found at this slug although the answer was not
+`found`), `copy_invalid:<reason>` (the copy fails `validate_record`; it is
+left for the barrier to withhold), `removed_copy` (a valid copy that could
+not be read), `error:<exception>` (this slug's check crashed; its copy is
+removed, `remove_failed:<error>` when that fails), `field_too_long`,
+`request_write_failed:<error>`, `closed_write_failed:<error>`, and the
+worker's own detail token. An invalid stored record is reported as
+`{source: "store", outcome: "invalid_replaced:<reason>"}` when a new PDF
+replaced it (`invalid_kept:<reason>` when none was found); a stored service
+copy the policy refuses as `{source: "store", outcome:
+"unlicensed_removed"}`. Exit 0 for every status; 1 for a crash, with one
+JSON object `{"error": ...}`; 2 for a usage error.
 
 `--gaps` tries every domain-bib entry with no `abstract` and either a DOI,
 or (the repository, Zotero or the folder enabled) a title, author and
@@ -1065,18 +1076,33 @@ def make_identity(doi=None, title=None, surname=None, year=None) -> dict:
 @dataclass
 class Attempt:
     """One work's pass: what `begin` decided and found, for `finish`. `out`
-    is set when the call was decided before any source (refused, exists)."""
+    is set when the call was decided before any source (refused, exists);
+    `store_notes` are store rows `finish` puts first in `tried`."""
     identity: dict
     slug: str
     store: Path
     invalid: str | None
     results: list[SourceResult]
     out: dict | None
+    store_notes: list[dict] = field(default_factory=list)
+
+
+def _refused_service_copy(rec: ft.Record, settings: Settings) -> bool:
+    """A stored record the service copied (`source_ref.service` true at the
+    top level) whose licence the policy refuses. A repository record nests
+    the original ref inside its own, so it is never one."""
+    ref = rec.source_ref
+    return (isinstance(ref, dict) and ref.get("service") is True
+            and not _licensed(rec.license, settings.policy))
 
 
 def begin(workdir: Path, identity: dict, settings: Settings, deadline: Deadline,
           pdf_path: str | None = None) -> Attempt:
-    """The store checks, then `--pdf` or the local sources in order."""
+    """The store checks, then `--pdf` or the local sources in order. A
+    stored service copy meets the licence rule again (a copy that landed
+    after an earlier run's arrival check is checked here, on the next run):
+    a refused one is removed and the work tried as absent. Its identity is
+    the barrier's check."""
     slug = ft.slug_for(identity)
     canon = ft.canonical_identity(identity)
     store = Path(workdir) / ft.STORE_REL
@@ -1086,6 +1112,14 @@ def begin(workdir: Path, identity: dict, settings: Settings, deadline: Deadline,
                        "tried": [{"source": "store", "outcome": "path_too_long"}]}
         return attempt
     state, info = store_state(store, slug, canon)
+    if state == "exists" and _refused_service_copy(info, settings):
+        note = {"source": "store", "outcome": "unlicensed_removed"}
+        try:
+            _remove_copy(store, slug)
+        except OSError as exc:
+            note["detail"] = [f"remove_failed:{type(exc).__name__}"]
+        attempt.store_notes.append(note)
+        state, info = "absent", None
     if state == "collision":
         attempt.out = {"status": "refused", "slug": slug, "source": None,
                        "tried": [{"source": "store", "outcome": "slug_collision", "detail": [info]}]}
@@ -1122,84 +1156,123 @@ def begin(workdir: Path, identity: dict, settings: Settings, deadline: Deadline,
 
 
 def _remove_copy(store: Path, slug: str) -> None:
-    """Remove a service copy the licence backstop or the identity check
-    refused, sidecar first, so no record is left for the barrier to bind."""
+    """Remove a service copy the licence backstop, the read or the identity
+    check refused, sidecar first, so no record is left for the barrier to
+    bind."""
     for suffix in (".json", ".txt", ".pdf"):
         (store / f"{slug}{suffix}").unlink(missing_ok=True)
 
 
 def _service_result(store: Path, slug: str, identity: dict, entry: dict | None,
-                    settings: Settings) -> SourceResult:
-    """One key's answer, a copied record validated as if downloaded here.
-    The record checked is the one at OUR slug, whatever stem the response
-    names: a differing stem is only a detail, so no copy under our slug ever
-    escapes the licence backstop and the identity check."""
+                    settings: Settings, invalid: str | None = None) -> SourceResult:
+    """One requested key's arrival check: the record at OUR slug, validated
+    as if downloaded here, whatever the response says. For `found`, a
+    differing stem is only a detail. For any other answer (or none), a file
+    at the slug is a copy that arrived without its answer: it is checked
+    the same way, and a passing one is a hit noted
+    `copied_after_response:<outcome>`. A record `begin` already knew as
+    invalid (`invalid`) is left untouched, so `invalid_kept` keeps its
+    meaning. A copy that fails `validate_record` is left (the barrier
+    withholds it) with the detail `copy_invalid:<reason>`."""
     outcome, detail = fc.source_outcome(entry)
     res = SourceResult("service", outcome, detail)
-    if outcome != "acquired":
+    note = []
+    if outcome == "acquired":
+        res.outcome = "unavailable"
+        if entry.get("stem") != slug:
+            res.detail.append("stem_mismatch")
+    elif invalid is not None or not ((store / f"{slug}.json").exists()
+                                     or (store / f"{slug}.pdf").exists()):
         return res
-    res.outcome = "unavailable"
-    if entry.get("stem") != slug:
-        res.detail.append("stem_mismatch")
+    else:
+        note = [f"copied_after_response:{outcome}"]
     rec = ft.validate_record(store, slug)
     if not isinstance(rec, ft.Record):
         res.detail.append(f"copy_invalid:{rec}")
         return res
-    hit, res.outcome, detail = _check_stored_record(rec, identity, settings, remove_on_refusal=True)
-    res.detail.extend(detail)
+    hit, res.outcome, more = _check_stored_record(rec, identity, settings, remove_on_refusal=True)
+    res.detail.extend(note + more)
     if hit is not None:
         res.hits.append(hit)
     return res
 
 
-def service_fetch(store: Path, pending: list[tuple[str, dict]], settings: Settings,
+def _wait_bound(deadline: Deadline) -> float:
+    """The seconds the service wait may take: up to SERVICE_WAIT_MARGIN
+    before the deadline (an endless deadline counts as SINGLE_DEADLINE)."""
+    left = SINGLE_DEADLINE if deadline.end is None else deadline.left()
+    return max(0.0, left - SERVICE_WAIT_MARGIN)
+
+
+def _close_requests(request_dir: Path, written: list) -> dict[str, list[str]]:
+    """Write `<id>.closed` for every written request; a failed write is the
+    detail `closed_write_failed:<error>` of that request's keys."""
+    notes = {}
+    for request_id, _ in written:
+        try:
+            fc.write_closed(request_dir, request_id)
+        except OSError as exc:
+            notes[request_id] = [f"closed_write_failed:{type(exc).__name__}"]
+    return notes
+
+
+def service_fetch(store: Path, pending: list[tuple[str, dict, str | None]], settings: Settings,
                   deadline: Deadline, mode: str) -> dict[str, SourceResult]:
-    """Ask the service channel for `pending` [(slug, identity)]; returns a
-    `service` SourceResult for every slug. DOI identities only are sent, in
-    requests of at most `fc.MAX_PER_REQUEST`; all are written first, then
-    each is waited on until `SERVICE_WAIT_MARGIN` before the deadline and
-    closed."""
+    """Ask the service channel for `pending` [(slug, identity, invalid)]
+    (`invalid`: the reason `begin` found the stored record invalid, or
+    None); returns a `service` SourceResult for every slug. DOI identities
+    only are sent, in requests of at most `fc.MAX_PER_REQUEST`; all are
+    written first, then waited on together until `SERVICE_WAIT_MARGIN`
+    before the deadline, then every written request is closed (also when
+    the wait raises), then every requested slug's store record is checked
+    (`_service_result`). One slug's crashing check is that slug's
+    `unavailable` (`error:...`) and its copy is removed."""
     if settings.request_dir is None:
-        return {slug: SourceResult("service", "disabled") for slug, _ in pending}
+        return {slug: SourceResult("service", "disabled") for slug, _, _ in pending}
     out: dict[str, SourceResult] = {}
     sendable = []
-    for slug, identity in pending:
+    for slug, identity, invalid in pending:
         if not normalize_doi(identity.get("doi") or ""):
             out[slug] = SourceResult("service", "no_doi")
             continue
         try:
-            sendable.append((slug, identity, fc.identity_payload(identity)))
+            sendable.append((slug, identity, invalid, fc.identity_payload(identity)))
         except ValueError as exc:
             out[slug] = SourceResult("service", "unavailable", [str(exc)])
-    requests_sent = []
-    for i in range(0, len(sendable), fc.MAX_PER_REQUEST):
-        chunk = sendable[i:i + fc.MAX_PER_REQUEST]
-        if deadline.clamp(deadline.left() - SERVICE_WAIT_MARGIN) <= 0:
-            for slug, _, _ in sendable[i:]:
-                out[slug] = SourceResult("service", "deadline")
-            break
-        request_id = fc.new_request_id(mode)
-        try:
-            fc.write_request(settings.request_dir, request_id, mode, [p for _, _, p in chunk])
-        except (OSError, ValueError) as exc:
-            reason = (str(exc) if isinstance(exc, ValueError) else "") or type(exc).__name__
-            for slug, _, _ in chunk:
-                out[slug] = SourceResult("service", "unavailable", [f"request_write_failed:{reason}"])
-            continue
-        requests_sent.append((request_id, chunk))
-    for request_id, chunk in requests_sent:
-        response = fc.wait_for_response(settings.request_dir, request_id,
-                                        deadline.clamp(deadline.left() - SERVICE_WAIT_MARGIN),
-                                        clock=_clock, sleep=_sleep)
-        notes = []
-        try:
-            fc.write_closed(settings.request_dir, request_id)
-        except OSError as exc:
-            notes.append(f"closed_write_failed:{type(exc).__name__}")
-        for slug, identity, payload in chunk:
-            res = _service_result(store, slug, identity, response["outcomes"].get(payload["key"]),
-                                  settings)
-            res.detail.extend(notes)
+    written = []
+    try:
+        for i in range(0, len(sendable), fc.MAX_PER_REQUEST):
+            chunk = sendable[i:i + fc.MAX_PER_REQUEST]
+            if _wait_bound(deadline) <= 0:
+                for slug, *_ in sendable[i:]:
+                    out[slug] = SourceResult("service", "deadline")
+                break
+            request_id = fc.new_request_id(mode)
+            try:
+                fc.write_request(settings.request_dir, request_id, mode, [c[3] for c in chunk])
+            except (OSError, ValueError) as exc:
+                reason = (str(exc) if isinstance(exc, ValueError) else "") or type(exc).__name__
+                for slug, *_ in chunk:
+                    out[slug] = SourceResult("service", "unavailable", [f"request_write_failed:{reason}"])
+                continue
+            written.append((request_id, chunk))
+        responses = fc.wait_for_responses(settings.request_dir, [rid for rid, _ in written],
+                                          _wait_bound(deadline), clock=_clock, sleep=_sleep)
+    finally:
+        closed_notes = _close_requests(settings.request_dir, written)
+    for request_id, chunk in written:
+        outcomes = responses[request_id]["outcomes"]
+        for slug, identity, invalid, payload in chunk:
+            try:
+                res = _service_result(store, slug, identity, outcomes.get(payload["key"]),
+                                      settings, invalid)
+            except Exception as exc:   # one slug's check never sinks the others
+                res = SourceResult("service", "unavailable", [f"error:{type(exc).__name__}: {exc}"])
+                try:
+                    _remove_copy(store, slug)
+                except OSError as rexc:
+                    res.detail.append(f"remove_failed:{type(rexc).__name__}")
+            res.detail.extend(closed_notes.get(request_id, []))
             out[slug] = res
     return out
 
@@ -1212,7 +1285,7 @@ def finish(attempt: Attempt, service: SourceResult | None) -> dict:
     if service is not None and not any(r.hits for r in results):
         results.append(service)
     winner = next((r for r in results if r.hits), None)
-    tried = [r.tried() for r in results]
+    tried = list(attempt.store_notes) + [r.tried() for r in results]
     out = {"status": None, "slug": attempt.slug, "source": None, "tried": tried}
     if winner is not None:
         write_record(attempt.store, attempt.slug, attempt.identity, winner.hits[0])
@@ -1232,8 +1305,8 @@ def acquire_one(workdir: Path, identity: dict, settings: Settings, deadline: Dea
     attempt = begin(workdir, identity, settings, deadline, pdf_path)
     service = None
     if attempt.out is None and pdf_path is None and not any(r.hits for r in attempt.results):
-        service = service_fetch(attempt.store, [(attempt.slug, identity)], settings, deadline,
-                                "single")[attempt.slug]
+        service = service_fetch(attempt.store, [(attempt.slug, identity, attempt.invalid)], settings,
+                                deadline, "single")[attempt.slug]
     return finish(attempt, service)
 
 
@@ -1331,12 +1404,12 @@ def run_gaps(workdir: Path, n_domains: int, settings: Settings) -> dict:
             by_slug[slug] = row
         entries.append(row)
     # One service request for every entry the local sources left open.
-    pending = [(a.slug, a.identity) for _, a in attempts
+    pending = [(a.slug, a.identity, a.invalid) for _, a in attempts
                if a.out is None and not any(r.hits for r in a.results)]
     try:
         service = service_fetch(workdir / ft.STORE_REL, pending, settings, deadline, "gaps")
     except Exception as exc:
-        open_slugs = {slug for slug, _ in pending}
+        open_slugs = {slug for slug, _, _ in pending}
         for row, attempt in attempts:
             if attempt.slug in open_slugs:
                 crashed(row, exc)

@@ -793,6 +793,35 @@ class TestStore:
         assert data["status"] == "not_found"
         assert data["tried"][0] == {"source": "store", "outcome": "invalid_kept:sidecar_unreadable"}
 
+    def test_an_unlicensed_service_copy_in_the_store_is_removed(self, http, workdir, capsys):
+        """A service copy that landed after an earlier run's check meets the
+        licence rule on the next run; under POLICY=open it stands."""
+        store = workdir / ft.STORE_REL
+        write_repo_record(store, work_pdf(), af.make_identity(DOI), source="openalex",
+                          source_ref=SERVICE_REF, license="oa:author")
+        os.environ["PHILLIT_FULLTEXT_LICENSED_ONLY"] = "1"
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert data["tried"][0] == {"source": "store", "outcome": "unlicensed_removed"}
+        assert [t["source"] for t in data["tried"][1:]] == ["repository", "zotero", "folder",
+                                                            "openalex", "s2", "service"]
+        assert data["status"] == "not_found"
+        assert list(store.iterdir()) == []
+        write_repo_record(store, work_pdf(), af.make_identity(DOI), source="openalex",
+                          source_ref=SERVICE_REF, license="oa:author")
+        os.environ["PHILLIT_FULLTEXT_POLICY"] = "open"
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert data["status"] == "exists"
+
+    def test_a_repository_record_is_not_a_service_copy(self, http, workdir, capsys):
+        """The repository nests the original ref: the store re-check skips it."""
+        store = workdir / ft.STORE_REL
+        write_repo_record(store, work_pdf(), af.make_identity(DOI), source="repository",
+                          source_ref={"stem": "x", "source": "openalex", "source_ref": SERVICE_REF},
+                          license="oa:author")
+        os.environ["PHILLIT_FULLTEXT_LICENSED_ONLY"] = "1"
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert data["status"] == "exists"
+
     def test_slug_collision_refused_and_nothing_overwritten(self, http, workdir, capsys, tmp_path):
         ident = af.make_identity(DOI)
         slug = ft.slug_for(ident)
@@ -1133,6 +1162,95 @@ class TestGaps:
         assert (hit["outcome"], hit["source"]) == ("acquired", "repository")
         assert crashed["outcome"] == "error"
 
+    def test_one_slugs_check_crash_is_isolated(self, http, workdir, capsys, service, monkeypatch):
+        """A removal that raises inside one slug's check is that slug's
+        `unavailable`; every request is still closed and the pass is done."""
+        monkeypatch.setattr(fc, "MAX_PER_REQUEST", 1)
+        os.environ["PHILLIT_FULLTEXT_LICENSED_ONLY"] = "1"
+
+        def refuse(store, slug):
+            raise OSError("read-only")
+        monkeypatch.setattr(af, "_remove_copy", refuse)
+        dois = ["10.1/w0", "10.1/w1", "10.1/w2"]
+        service.answer({dois[0]: {"status": "found", "pdf": work_pdf(doi=dois[0]), "license": "oa:x"}})
+        service.answer({d: {"status": "found", "pdf": work_pdf(doi=d)} for d in dois[1:]})
+        (workdir / "literature-domain-1.bib").write_text(
+            "".join(bib_entry(f"k{n}", doi=d) for n, d in enumerate(dois)), encoding="utf-8")
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        summary = json.loads(out)
+        assert summary["status"] == "done" and summary["errors"] == []
+        report = json.loads((workdir / af.REPORT_REL).read_text(encoding="utf-8"))
+        first, *rest = report["entries"]
+        assert first["outcome"] == "not_found"
+        assert _service_tried(first) == {"source": "service", "outcome": "unavailable",
+                                         "detail": ["error:OSError: read-only", "remove_failed:OSError"]}
+        assert [e["outcome"] for e in rest] == ["acquired", "acquired"]
+        requests = _request_files(service)
+        assert len(requests) == 3
+        for r in requests:
+            assert (service.request_dir / (r.name[:-len(fc.REQUEST_SUFFIX)] + fc.CLOSED_SUFFIX)).exists()
+
+    def test_a_crashing_wait_still_closes_every_request(self, http, workdir, capsys, service,
+                                                        monkeypatch):
+        monkeypatch.setattr(fc, "MAX_PER_REQUEST", 1)
+
+        def boom(*a, **k):
+            raise RuntimeError("kaput")
+        monkeypatch.setattr(fc, "wait_for_responses", boom)
+        dois = ["10.1/w0", "10.1/w1"]
+        (workdir / "literature-domain-1.bib").write_text(
+            "".join(bib_entry(f"k{n}", doi=d) for n, d in enumerate(dois)), encoding="utf-8")
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        assert json.loads(out)["status"] == "done_with_errors"
+        requests = _request_files(service)
+        assert len(requests) == 2
+        for r in requests:
+            assert (service.request_dir / (r.name[:-len(fc.REQUEST_SUFFIX)] + fc.CLOSED_SUFFIX)).exists()
+
+    def test_requests_are_waited_on_together(self, http, workdir, capsys, service, monkeypatch):
+        """Two requests, the worker answers only the second: its keys get
+        their outcomes, the first's keys `deadline`, and both requests were
+        read before the first sleep."""
+        monkeypatch.setattr(fc, "MAX_PER_REQUEST", 1)
+        dois = ["10.1/w0", "10.1/w1"]
+        service.ignore_keys = {f"doi:{dois[0]}"}
+        service.answer({d: {"status": "found", "pdf": work_pdf(doi=d)} for d in dois})
+        events = []
+        real_read = fc.read_response
+
+        def read(request_dir, request_id):
+            events.append(("read", request_id))
+            return real_read(request_dir, request_id)
+
+        def sleep(seconds):
+            events.append(("sleep", None))
+            service.sleep(seconds)
+        monkeypatch.setattr(fc, "read_response", read)
+        monkeypatch.setattr(af, "_sleep", sleep)
+        (workdir / "literature-domain-1.bib").write_text(
+            "".join(bib_entry(f"k{n}", doi=d) for n, d in enumerate(dois)), encoding="utf-8")
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        report = json.loads((workdir / af.REPORT_REL).read_text(encoding="utf-8"))
+        first, second = report["entries"]
+        assert _service_tried(first) == {"source": "service", "outcome": "deadline"}
+        assert (second["outcome"], second["source"]) == ("acquired", "openalex")
+        first_sleep = events.index(("sleep", None))
+        assert len({rid for kind, rid in events[:first_sleep] if kind == "read"}) == 2
+
+    def test_partial_response_maps_answered_keys_and_waits_to_the_bound(self, http, workdir, capsys,
+                                                                       service):
+        service.mode = "partial"
+        dois = ["10.1/w0", "10.1/w1"]
+        service.answer({dois[0]: {"status": "found", "pdf": work_pdf(doi=dois[0])}})
+        (workdir / "literature-domain-1.bib").write_text(
+            "".join(bib_entry(f"k{n}", doi=d) for n, d in enumerate(dois)), encoding="utf-8")
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        report = json.loads((workdir / af.REPORT_REL).read_text(encoding="utf-8"))
+        first, second = report["entries"]
+        assert (first["outcome"], first["source"]) == ("acquired", "openalex")
+        assert _service_tried(second) == {"source": "service", "outcome": "deadline"}
+        assert service.clock[0] >= af.GAPS_DEADLINE - af.SERVICE_WAIT_MARGIN
+
     def test_oversize_request_is_unavailable_and_never_written(self, http, workdir, capsys, service,
                                                                monkeypatch):
         monkeypatch.setattr(fc, "MAX_REQUEST_BYTES", 100)
@@ -1298,7 +1416,14 @@ SERVICE_REF = {"url": "https://oa.example/a.pdf", "kind": "oa_repository", "serv
 class FakeWorker:
     """The service worker over a fake clock: `sleep` (patched in as
     `af._sleep`) advances the clock and answers every new request at once,
-    copying a record for each `found` that registers a `pdf`."""
+    copying a record for each `found` that registers a `pdf`.
+
+    `mode` changes how it answers: `answer` (the default, complete),
+    `copy_without_answer` (copies every registered `pdf`, never writes a
+    response), `answer_none_with_copy` (copies every registered `pdf` but
+    answers `none`), `partial` (answers only the registered DOIs, `complete`
+    false) and `wrong_id` (a complete response naming another request id).
+    A request holding a key in `ignore_keys` is never answered."""
 
     def __init__(self, request_dir, store, clock):
         self.request_dir = Path(request_dir)
@@ -1306,6 +1431,8 @@ class FakeWorker:
         self.clock = clock
         self.outcomes = {}
         self.answered = set()
+        self.mode = "answer"
+        self.ignore_keys = set()
 
     def answer(self, outcomes_by_doi):
         self.outcomes.update(outcomes_by_doi)
@@ -1314,32 +1441,44 @@ class FakeWorker:
         self.clock[0] += seconds
         self.tick()
 
+    def _copy(self, spec, identity):
+        return write_repo_record(self.store, spec["pdf"], identity,
+                                 source=spec.get("source", "openalex"),
+                                 source_ref=spec.get("source_ref", SERVICE_REF),
+                                 license=spec.get("license", "cc-by"))
+
     def tick(self):
         if not self.outcomes:
             return
         for path in sorted(self.request_dir.glob("*" + fc.REQUEST_SUFFIX)):
             request = json.loads(path.read_text(encoding="utf-8"))
             rid = request["request_id"]
-            if rid in self.answered:
+            if rid in self.answered or any(i["key"] in self.ignore_keys for i in request["identities"]):
                 continue
             out = {}
             for ident in request["identities"]:
+                registered = ident["doi"] in self.outcomes
                 spec = self.outcomes.get(ident["doi"], {"status": "none"})
                 identity = {k: ident[k] for k in ("doi", "title", "surname", "year")}
                 stem = spec.get("stem")
-                if spec["status"] == "found" and spec.get("pdf") is not None:
-                    written = write_repo_record(self.store, spec["pdf"], identity,
-                                                source=spec.get("source", "openalex"),
-                                                source_ref=spec.get("source_ref", SERVICE_REF),
-                                                license=spec.get("license", "cc-by"))
+                if spec.get("pdf") is not None and (spec["status"] == "found" or self.mode in (
+                        "copy_without_answer", "answer_none_with_copy")):
+                    written = self._copy(spec, identity)
                     stem = stem or written
-                out[ident["key"]] = {"status": spec["status"],
-                                     "stem": stem or (ft.slug_for(identity) if spec["status"] == "found" else None),
-                                     "detail": spec.get("detail")}
-            ft.write_text_atomic(self.request_dir / (rid + fc.RESPONSE_SUFFIX),
-                                 json.dumps({"schema": 1, "request_id": rid, "complete": True,
-                                             "outcomes": out}))
+                if self.mode == "answer_none_with_copy":
+                    out[ident["key"]] = {"status": "none", "stem": None, "detail": None}
+                elif self.mode != "partial" or registered:
+                    out[ident["key"]] = {"status": spec["status"],
+                                         "stem": stem or (ft.slug_for(identity) if spec["status"] == "found" else None),
+                                         "detail": spec.get("detail")}
             self.answered.add(rid)
+            if self.mode == "copy_without_answer":
+                continue
+            ft.write_text_atomic(self.request_dir / (rid + fc.RESPONSE_SUFFIX),
+                                 json.dumps({"schema": 1,
+                                             "request_id": "other-0" if self.mode == "wrong_id" else rid,
+                                             "complete": self.mode != "partial",
+                                             "outcomes": out}))
 
 
 @pytest.fixture
@@ -1506,6 +1645,95 @@ class TestService:
                                         "detail": ["stem_mismatch",
                                                    "licence 'oa:author' not admitted by policy"]}
         assert list((workdir / ft.STORE_REL).iterdir()) == []
+
+    # The store is checked at every requested slug, whatever the response says.
+
+    def test_unanswered_unlicensed_copy_is_removed(self, http, workdir, capsys, service):
+        os.environ["PHILLIT_FULLTEXT_LICENSED_ONLY"] = "1"
+        service.mode = "copy_without_answer"
+        service.answer({DOI: {"status": "found", "pdf": work_pdf(), "license": "oa:author"}})
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert _service_tried(data) == {"source": "service", "outcome": "unlicensed",
+                                        "detail": ["copied_after_response:deadline",
+                                                   "licence 'oa:author' not admitted by policy"]}
+        assert data["status"] == "not_found"
+        assert list((workdir / ft.STORE_REL).iterdir()) == []
+
+    def test_unanswered_right_work_copy_is_acquired_with_a_note(self, http, workdir, capsys, service):
+        service.mode = "copy_without_answer"
+        service.answer({DOI: {"status": "found", "pdf": work_pdf()}})
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert _service_tried(data) == {"source": "service", "outcome": "acquired",
+                                        "detail": ["copied_after_response:deadline"]}
+        assert data["status"] == "acquired" and data["source"] == "openalex"
+        assert isinstance(ft.validate_record(workdir / ft.STORE_REL, data["slug"]), ft.Record)
+
+    def test_none_answer_with_a_copy_of_another_work_is_rejected_and_removed(self, http, workdir,
+                                                                            capsys, service):
+        service.mode = "answer_none_with_copy"
+        service.answer({DOI: {"status": "found", "pdf": other_pdf()}})
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        tried = _service_tried(data)
+        assert tried["outcome"] == "rejected"
+        assert tried["detail"][0] == "copied_after_response:not_found"
+        assert tried["detail"][1].startswith("identity_failed:")
+        assert data["status"] == "rejected"
+        assert list((workdir / ft.STORE_REL).iterdir()) == []
+
+    def test_unanswered_invalid_copy_is_left_with_its_reason(self, http, workdir, capsys, service,
+                                                             monkeypatch):
+        service.mode = "copy_without_answer"
+        service.answer({DOI: {"status": "found", "pdf": work_pdf()}})
+
+        def sleep(seconds):   # the worker died between the PDF and the sidecar
+            service.sleep(seconds)
+            for p in (workdir / ft.STORE_REL).glob("*.json"):
+                p.unlink()
+        monkeypatch.setattr(af, "_sleep", sleep)
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert _service_tried(data) == {"source": "service", "outcome": "deadline",
+                                        "detail": ["copy_invalid:sidecar_unreadable"]}
+        assert (workdir / ft.STORE_REL / f"{data['slug']}.pdf").exists()
+
+    def test_a_record_known_invalid_before_the_sources_is_never_touched(self, http, workdir, capsys,
+                                                                        service):
+        """An orphan PDF at the slug, the worker answers `none`: the store
+        check skips it, so `invalid_kept` keeps its meaning."""
+        store = workdir / ft.STORE_REL
+        store.mkdir(parents=True)
+        slug = ft.slug_for(af.make_identity(DOI))
+        (store / f"{slug}.pdf").write_bytes(work_pdf())
+        service.answer({DOI: {"status": "none"}})
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert data["tried"][0] == {"source": "store", "outcome": "invalid_kept:sidecar_unreadable"}
+        assert _service_tried(data) == {"source": "service", "outcome": "not_found"}
+        assert sorted(p.name for p in store.iterdir()) == [f"{slug}.pdf"]
+
+    def test_wrong_request_id_is_no_response(self, http, workdir, capsys, service):
+        service.mode = "wrong_id"
+        service.answer({DOI: {"status": "none"}})
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert _service_tried(data) == {"source": "service", "outcome": "deadline"}
+        assert service.clock[0] >= af.SINGLE_DEADLINE - af.SERVICE_WAIT_MARGIN
+
+    def test_an_infinite_deadline_waits_a_bounded_time(self, http, workdir,
+                                                                          service, monkeypatch):
+        """Deadline(None): the wait is bounded by SINGLE_DEADLINE."""
+        real = service.sleep
+
+        def sleep(seconds):
+            if service.clock[0] > 10 * af.SINGLE_DEADLINE:
+                raise AssertionError("unbounded wait")
+            real(seconds)
+        monkeypatch.setattr(af, "_sleep", sleep)
+        settings = af.settings_from_env(False, None, 1)
+        settings.request_dir = service.request_dir
+        ident = af.make_identity(DOI)
+        out = af.service_fetch(workdir / ft.STORE_REL, [(ft.slug_for(ident), ident, None)], settings,
+                               af.Deadline(None), "single")
+        assert out[ft.slug_for(ident)].outcome == "deadline"
+        assert (af.SINGLE_DEADLINE - af.SERVICE_WAIT_MARGIN <= service.clock[0]
+                < af.SINGLE_DEADLINE - af.SERVICE_WAIT_MARGIN + fc.POLL_SECONDS)
 
     def test_field_too_long_is_unavailable_and_never_sent(self, http, workdir, capsys, service):
         code, data = run_json(capsys, workdir, "--doi", DOI, "--title", "x" * 501,
