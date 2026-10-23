@@ -250,7 +250,9 @@ class TestCli:
         code, data = run_json(capsys, workdir, "--doi", DOI)
         assert code == 0
         assert data["status"] == "not_found"
-        assert [t["source"] for t in data["tried"]] == ["repository", "zotero", "folder", "openalex", "s2"]
+        assert [t["source"] for t in data["tried"]] == ["repository", "zotero", "folder", "openalex", "s2",
+                                                       "service"]
+        assert data["tried"][-1] == {"source": "service", "outcome": "disabled"}
 
 
 # ---------------------------------------------------------------------------
@@ -1133,3 +1135,216 @@ class TestRepository:
         assert [e["key"] for e in report["entries"]] == ["nodoi"]
         assert report["entries"][0]["tried"][0]["source"] == "repository"
         assert report["sources"]["repository"] == "on"
+
+
+# ---------------------------------------------------------------------------
+# The service source
+# ---------------------------------------------------------------------------
+
+import fulltext_channel as fc  # noqa: E402
+
+SERVICE_REF = {"url": "https://oa.example/a.pdf", "kind": "oa_repository", "service": True}
+
+
+class FakeWorker:
+    """The service worker over a fake clock: `sleep` (patched in as
+    `af._sleep`) advances the clock and answers every new request at once,
+    copying a record for each `found` that registers a `pdf`."""
+
+    def __init__(self, request_dir, store, clock):
+        self.request_dir = Path(request_dir)
+        self.store = Path(store)
+        self.clock = clock
+        self.outcomes = {}
+        self.answered = set()
+
+    def answer(self, outcomes_by_doi):
+        self.outcomes.update(outcomes_by_doi)
+
+    def sleep(self, seconds):
+        self.clock[0] += seconds
+        self.tick()
+
+    def tick(self):
+        if not self.outcomes:
+            return
+        for path in sorted(self.request_dir.glob("*" + fc.REQUEST_SUFFIX)):
+            request = json.loads(path.read_text(encoding="utf-8"))
+            rid = request["request_id"]
+            if rid in self.answered:
+                continue
+            out = {}
+            for ident in request["identities"]:
+                spec = self.outcomes.get(ident["doi"], {"status": "none"})
+                identity = {k: ident[k] for k in ("doi", "title", "surname", "year")}
+                stem = spec.get("stem")
+                if spec["status"] == "found" and spec.get("pdf") is not None:
+                    written = write_repo_record(self.store, spec["pdf"], identity,
+                                                source=spec.get("source", "openalex"),
+                                                source_ref=spec.get("source_ref", SERVICE_REF),
+                                                license=spec.get("license", "cc-by"))
+                    stem = stem or written
+                out[ident["key"]] = {"status": spec["status"],
+                                     "stem": stem or (ft.slug_for(identity) if spec["status"] == "found" else None),
+                                     "detail": spec.get("detail")}
+            ft.write_text_atomic(self.request_dir / (rid + fc.RESPONSE_SUFFIX),
+                                 json.dumps({"schema": 1, "request_id": rid, "complete": True,
+                                             "outcomes": out}))
+            self.answered.add(rid)
+
+
+@pytest.fixture
+def service(http, workdir, monkeypatch, tmp_path):
+    """REQUEST_DIR set in `.env`, a fake clock and a FakeWorker wired in."""
+    now = [0.0]
+    monkeypatch.setattr(af, "_clock", lambda: now[0])
+    request_dir = tmp_path / "requests"
+    worker = FakeWorker(request_dir, workdir / ft.STORE_REL, now)
+    monkeypatch.setattr(af, "_sleep", worker.sleep)
+    write_env(f"PHILLIT_FULLTEXT_REQUEST_DIR={request_dir}\n")
+    return worker
+
+
+def _service_tried(data):
+    return next(t for t in data["tried"] if t["source"] == "service")
+
+
+def _request_files(worker):
+    return sorted(worker.request_dir.glob("*" + fc.REQUEST_SUFFIX)) if worker.request_dir.exists() else []
+
+
+class TestService:
+    def test_service_replaces_open_access_and_validates_the_copy(self, http, workdir, capsys, service):
+        os.environ["PHILLIT_FULLTEXT_LICENSED_ONLY"] = "1"
+        os.environ["PHILLIT_FULLTEXT_POLICY"] = "open"
+        service.answer({DOI: {"status": "found", "pdf": work_pdf(), "source": "openalex",
+                              "source_ref": SERVICE_REF, "license": "oa:oa_repository"}})
+        code, data = run_json(capsys, workdir, *_full_args())
+        assert code == 0
+        assert data["status"] == "acquired" and data["source"] == "openalex"
+        assert data["tried"] == [
+            {"source": "repository", "outcome": "disabled"},
+            {"source": "zotero", "outcome": "disabled", "detail": ["licensed_only"]},
+            {"source": "folder", "outcome": "disabled", "detail": ["licensed_only"]},
+            {"source": "openalex", "outcome": "disabled", "detail": ["service"]},
+            {"source": "s2", "outcome": "disabled", "detail": ["service"]},
+            {"source": "service", "outcome": "acquired"}]
+        assert http.calls == []
+        [req] = _request_files(service)
+        rid = req.name[:-len(fc.REQUEST_SUFFIX)]
+        assert (service.request_dir / (rid + fc.CLOSED_SUFFIX)).exists()
+        assert json.loads(req.read_text(encoding="utf-8")) == {
+            "schema": 1, "request_id": rid, "mode": "single",
+            "identities": [{"key": f"doi:{DOI}", "doi": DOI, "title": TITLE,
+                            "surname": SURNAME, "year": YEAR}]}
+        rec = ft.validate_record(workdir / ft.STORE_REL, data["slug"])
+        assert rec.identity == {"doi": DOI, "title": TITLE, "surname": SURNAME, "year": YEAR}
+        assert (rec.source, rec.source_ref, rec.license) == ("openalex", SERVICE_REF, "oa:oa_repository")
+
+    def test_service_never_sends_a_url_or_a_no_doi_identity(self, http, workdir, capsys, service):
+        service.answer({DOI: {"status": "found", "pdf": work_pdf()}})
+        code, data = run_json(capsys, workdir, "--title", TITLE, "--author", SURNAME, "--year", YEAR)
+        assert _service_tried(data) == {"source": "service", "outcome": "no_doi"}
+        outcomes = {t["source"]: t for t in data["tried"]}
+        assert outcomes["openalex"] == {"source": "openalex", "outcome": "disabled", "detail": ["service"]}
+        assert data["status"] == "not_found"
+        assert _request_files(service) == [] and http.calls == []
+
+    @pytest.mark.parametrize("status, detail, outcome, details", [
+        ("none", None, "not_found", []),
+        ("none", "no_doi", "no_doi", []),
+        ("unlicensed", None, "unlicensed", []),
+        ("failed", "identity_rejected", "rejected", ["identity_rejected"]),
+        ("failed", "timeout", "not_found", ["timeout"]),
+        ("failed", "budget", "unavailable", ["budget"]),
+    ])
+    def test_none_and_failed_outcomes_map(self, http, workdir, capsys, service, status, detail,
+                                          outcome, details):
+        service.answer({DOI: {"status": status, "detail": detail}})
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        expected = {"source": "service", "outcome": outcome}
+        if details:
+            expected["detail"] = details
+        assert _service_tried(data) == expected
+        assert data["status"] == ("rejected" if outcome == "rejected" else "not_found")
+
+    def test_deadline_when_the_worker_never_answers(self, http, workdir, capsys, service):
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert code == 0
+        assert _service_tried(data) == {"source": "service", "outcome": "deadline"}
+        assert data["status"] == "not_found"
+        [req] = _request_files(service)
+        rid = req.name[:-len(fc.REQUEST_SUFFIX)]
+        assert (service.request_dir / (rid + fc.CLOSED_SUFFIX)).exists()
+        assert service.clock[0] < af.SINGLE_DEADLINE - af.SERVICE_WAIT_MARGIN + fc.POLL_SECONDS
+
+    @pytest.mark.parametrize("copy, reason", [("none", "sidecar_unreadable"),
+                                              ("sidecar_only", "pdf_missing")])
+    def test_found_without_a_copy_is_unavailable(self, http, workdir, capsys, service, monkeypatch,
+                                                 copy, reason):
+        if copy == "none":
+            service.answer({DOI: {"status": "found"}})
+        else:
+            service.answer({DOI: {"status": "found", "pdf": work_pdf()}})
+
+            def sleep(seconds):   # the worker died between the PDF and the sidecar
+                service.sleep(seconds)
+                for p in (workdir / ft.STORE_REL).glob("*.pdf"):
+                    p.unlink()
+            monkeypatch.setattr(af, "_sleep", sleep)
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert _service_tried(data) == {"source": "service", "outcome": "unavailable",
+                                        "detail": [f"copy_invalid:{reason}"]}
+        assert data["status"] == "not_found"
+
+    def test_unlicensed_copy_is_removed_by_the_backstop(self, http, workdir, capsys, service):
+        os.environ["PHILLIT_FULLTEXT_LICENSED_ONLY"] = "1"
+        service.answer({DOI: {"status": "found", "pdf": work_pdf(), "license": "oa:author"}})
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert _service_tried(data) == {"source": "service", "outcome": "unlicensed",
+                                        "detail": ["licence 'oa:author' not admitted by policy"]}
+        assert data["status"] == "not_found"
+        assert list((workdir / ft.STORE_REL).iterdir()) == []
+
+    def test_copy_of_another_work_is_rejected_and_removed(self, http, workdir, capsys, service):
+        service.answer({DOI: {"status": "found", "pdf": other_pdf()}})
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        tried = _service_tried(data)
+        assert tried["outcome"] == "rejected" and tried["detail"][0].startswith("identity_failed:")
+        assert data["status"] == "rejected"
+        assert list((workdir / ft.STORE_REL).iterdir()) == []
+
+    def test_stem_mismatch_is_unavailable(self, http, workdir, capsys, service):
+        service.answer({DOI: {"status": "found", "stem": "doi-10.9999_x-000000000000"}})
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert _service_tried(data) == {"source": "service", "outcome": "unavailable",
+                                        "detail": ["stem_mismatch"]}
+
+    def test_unwritable_request_dir_is_unavailable_not_a_crash(self, http, workdir, capsys, tmp_path):
+        blocker = tmp_path / "a-file"
+        blocker.write_text("", encoding="utf-8")
+        write_env(f"PHILLIT_FULLTEXT_REQUEST_DIR={blocker}\n")
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert code == 0
+        tried = _service_tried(data)
+        assert tried["outcome"] == "unavailable" and len(tried["detail"]) == 1
+        assert tried["detail"][0].startswith("request_write_failed:")
+        assert data["status"] == "not_found"
+
+    def test_local_sources_before_the_service(self, http, workdir, capsys, tmp_path, service):
+        setup_zotero(http, tmp_path, [work_pdf()])
+        write_env(f"PHILLIT_FULLTEXT_REQUEST_DIR={service.request_dir}\nPHILLIT_ZOTERO=on\n")
+        service.answer({DOI: {"status": "found", "pdf": work_pdf()}})
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert data["status"] == "acquired" and data["source"] == "zotero"
+        assert [t["source"] for t in data["tried"]] == ["repository", "zotero"]
+        assert _request_files(service) == []
+
+    def test_user_pdf_skips_the_service(self, http, workdir, capsys, tmp_path, service):
+        p = tmp_path / "mine.pdf"
+        p.write_bytes(work_pdf())
+        service.answer({DOI: {"status": "found", "pdf": work_pdf()}})
+        code, data = run_json(capsys, workdir, "--doi", DOI, "--pdf", p)
+        assert data["status"] == "acquired" and data["source"] == "user"
+        assert data["tried"] == [{"source": "user", "outcome": "acquired"}]
+        assert _request_files(service) == []

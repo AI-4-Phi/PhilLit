@@ -11,13 +11,16 @@ Rulings: `docs/ideas/fulltext-evidence-tier.md` ("Decided").
 
 WHAT IT WRITES. Only `<slug>.pdf` and then its `<slug>.json` acquisition
 sidecar in `[workdir]/intermediate_files/fulltext/` (both atomic), and in
-`--gaps` mode the run report `intermediate_files/json/fulltext_acquisition.json`.
-Never a `.txt` (the evidence barrier renders texts) and never a bib. A PDF
-here licenses nothing by itself: the barrier re-extracts it, checks its hash
-against the sidecar and re-runs the identity check against the ENTRY before
-it stamps FULLTEXT. "Is this PDF this work" is `fulltext.identity_ok`, run
-here on every candidate from every source, `--pdf` included; slugs, record
-validity and the store paths are `fulltext.py`'s too.
+`--gaps` mode the run report `intermediate_files/json/fulltext_acquisition.json`;
+with the service channel on, also its request and `.closed` files, and it
+removes a service copy that the licence backstop or the identity check
+refuses. Never a `.txt` (the evidence barrier renders texts; a service
+copy's `.txt` is left for it) and never a bib. A PDF here licenses nothing
+by itself: the barrier re-extracts it, checks its hash against the sidecar
+and re-runs the identity check against the ENTRY before it stamps FULLTEXT.
+"Is this PDF this work" is `fulltext.identity_ok`, run here on every
+candidate from every source, `--pdf` included; slugs, record validity and
+the store paths are `fulltext.py`'s too.
 
 SOURCES, in the ruled order, the first passing PDF wins:
 0. The repository: a flat, read-only directory of records in the store's
@@ -39,6 +42,19 @@ SOURCES, in the ruled order, the first passing PDF wins:
    identity check runs on each candidate file.
 3. OpenAlex (`best_oa_location`, then the other locations with a `pdf_url`).
 4. Semantic Scholar (`openAccessPdf`).
+5. The service channel (`PHILLIT_FULLTEXT_REQUEST_DIR`; it replaces 3 and 4,
+   which then report `disabled` with detail `service`). One request file per
+   batch of at most `fulltext_channel.MAX_PER_REQUEST` DOI identities, never
+   a URL and never a no-DOI identity (`no_doi`); the grammar is
+   `fulltext_channel`'s. A worker copies each found record into the store
+   under this identity's slug and answers; the engine waits until
+   `SERVICE_WAIT_MARGIN` seconds before the deadline, writes `<id>.closed`,
+   and maps a key still unanswered to `deadline`. Each copy is validated as a
+   download is: `validate_record`, the licence backstop (`_licensed`), then
+   `check_pdf` against THIS run's identity; a copy refused by the backstop or
+   the identity check is removed (nothing downstream reads licences), and a
+   passing one is stored through the normal path with its own source, ref
+   and licence.
 OpenAlex and Semantic Scholar need a DOI. Several passing PDFs within the
 winning source: the first is kept and the rest are reported
 (`multiple_candidates`); every candidate of that source is checked, up to
@@ -64,7 +80,10 @@ switch the filter off. They are a policy default, not a security boundary: a
 Bash call can still unset the variables for one run.
 Every sidecar records `source`, `source_ref` and `license`, so a run can be
 audited afterwards. `--pdf` stays available under the policy (the service
-builds uploads on it).
+builds uploads on it) and never consults the service channel. The service
+sets a third variable, `PHILLIT_FULLTEXT_REQUEST_DIR`, which turns the
+service channel on (source 5); a location, not a policy, it is read after
+`.env` loads like `PHILLIT_PDF_DIR`.
 
 DOWNLOADS. http(s) only, re-checked on every redirect hop (at most 5,
 followed by hand); 30 s per download; a 60 MB cap enforced while streaming;
@@ -72,19 +91,24 @@ the body must start `%PDF-`; only the User-Agent is sent (no API key ever
 reaches a PDF host). Local files (Zotero, folder, `--pdf`): a 200 MB cap.
 
 OUTCOMES. Single-work mode prints one JSON object `{status, slug, source,
-tried}`; `status` is `acquired`, `exists` (a valid record for this identity
+tried}`, within a 420 s deadline (`SINGLE_DEADLINE`, the Bash ceiling is
+600 s); `status` is `acquired`, `exists` (a valid record for this identity
 is already stored), `not_found` (no PDF was obtained), `rejected` (a PDF was
 obtained and none passed extraction and the identity check) or `refused`
 (`slug_collision`: a sidecar under the stem names another identity, and
 nothing is overwritten; `path_too_long`: the store path would exceed the
 Windows limit). `tried` lists `{source, outcome[, detail]}` in order;
 source outcomes are `disabled`, `unavailable`, `not_found`, `rejected`,
-`acquired`, plus `no_doi` for the OA sources, `unlicensed` for the OA
-sources and the repository, and `deadline` for a source the pass deadline cut. An invalid stored record is
-reported as `{source: "store", outcome: "invalid_replaced:<reason>"}` when a
-new PDF replaced it (`invalid_kept:<reason>` when none was found). Exit 0
-for every status; 1 for a crash, with one JSON object `{"error": ...}`; 2
-for a usage error.
+`acquired`, plus `no_doi` for the OA sources and the service, `unlicensed`
+for the OA sources, the repository and the service, and `deadline` for a
+source the deadline cut. Service details: `stem_mismatch`,
+`copy_invalid:<reason>` (the copy fails `validate_record`; it is left for
+the barrier to withhold), `field_too_long`, `request_write_failed:<error>`,
+`closed_write_failed:<error>`, and the worker's own detail token. An
+invalid stored record is reported as `{source: "store", outcome:
+"invalid_replaced:<reason>"}` when a new PDF replaced it
+(`invalid_kept:<reason>` when none was found). Exit 0 for every status; 1
+for a crash, with one JSON object `{"error": ...}`; 2 for a usage error.
 
 `--gaps` tries every domain-bib entry with no `abstract` and either a DOI,
 or (the repository, Zotero or the folder enabled) a title, author and
@@ -129,6 +153,7 @@ sys.path.remove(_hook_dir)
 _here = str(Path(__file__).resolve().parent)
 sys.path.insert(0, _here)
 import fulltext as ft  # noqa: E402
+import fulltext_channel as fc  # noqa: E402
 from stamp_evidence import entry_header, parse_entry_fields, split_entries  # noqa: E402
 from venue_vetting import _ON_TOKENS  # noqa: E402 - the shared on-token set
 
@@ -157,6 +182,7 @@ sys.path.remove(_research)
 LICENSED_ONLY_ENV = "PHILLIT_FULLTEXT_LICENSED_ONLY"
 POLICY_ENV = "PHILLIT_FULLTEXT_POLICY"
 REPOSITORY_DIR_ENV = "PHILLIT_FULLTEXT_REPOSITORY_DIR"
+REQUEST_DIR_ENV = "PHILLIT_FULLTEXT_REQUEST_DIR"
 ZOTERO_ENV = "PHILLIT_ZOTERO"
 PDF_DIR_ENV = "PHILLIT_PDF_DIR"
 
@@ -172,6 +198,8 @@ LOCAL_MAX_BYTES = ft.MAX_PDF_BYTES   # 200 MB
 API_TIMEOUT = 30
 
 GAPS_DEADLINE = 420
+SINGLE_DEADLINE = 420
+SERVICE_WAIT_MARGIN = 20   # seconds of the deadline kept for validating arrivals
 INDEX_BUDGET_GAPS = 60
 INDEX_BUDGET_SINGLE = 20
 MAX_WALK_FILES = 50_000
@@ -187,6 +215,7 @@ PDF_INDEX_DIR = Path.home() / ".cache" / "phillit" / "pdf-index"
 REPORT_REL = "intermediate_files/json/fulltext_acquisition.json"
 
 _clock = time.monotonic   # tests monkeypatch this, never sleep
+_sleep = time.sleep       # and this, for the service channel's polling
 
 
 def _now_iso() -> str:
@@ -871,6 +900,9 @@ def s2_locations(doi: str, deadline: Deadline) -> tuple[list | None, str]:
 
 def _source_oa(name: str, locate, identity: dict, settings: "Settings", deadline: Deadline) -> SourceResult:
     res = SourceResult(name, "not_found")
+    if settings.request_dir is not None:
+        res.outcome, res.detail = "disabled", ["service"]
+        return res
     doi = normalize_doi(identity.get("doi") or "")
     if not doi:
         res.outcome = "no_doi"
@@ -914,7 +946,8 @@ def source_s2(identity, settings, deadline):
     return _source_oa("s2", s2_locations, identity, settings, deadline)
 
 
-SOURCE_ORDER = ("repository", "zotero", "folder", "openalex", "s2")
+SOURCE_ORDER = ("repository", "zotero", "folder", "openalex", "s2", "service")
+LOCAL_SOURCES = SOURCE_ORDER[:-1]   # the ones _SOURCES maps, tried per work
 _SOURCES = {"repository": source_repository, "zotero": source_zotero, "folder": source_folder,
             "openalex": source_openalex, "s2": source_s2}
 
@@ -931,6 +964,7 @@ class Settings:
     pdf_dir: Path | None
     index_budget: float
     repository_dir: Path | None = None
+    request_dir: Path | None = None
     _index: FolderIndex | None = None
 
     def folder_index(self) -> FolderIndex:
@@ -944,8 +978,11 @@ def settings_from_env(licensed_only: bool, policy: str | None, index_budget: flo
     pdf_dir = Path(os.path.expanduser(raw)).resolve() if raw else None
     raw = os.environ.get(REPOSITORY_DIR_ENV, "").strip().strip("\"'").strip()
     repository_dir = Path(os.path.expanduser(raw)).resolve() if raw else None
+    raw = os.environ.get(REQUEST_DIR_ENV, "").strip().strip("\"'").strip()
+    request_dir = Path(os.path.expanduser(raw)).resolve() if raw else None
     return Settings(licensed_only=licensed_only, policy=policy, zotero_on=_on(os.environ.get(ZOTERO_ENV)),
-                    pdf_dir=pdf_dir, index_budget=index_budget, repository_dir=repository_dir)
+                    pdf_dir=pdf_dir, index_budget=index_budget, repository_dir=repository_dir,
+                    request_dir=request_dir)
 
 
 def _atomic_write_bytes(path: Path, data: bytes) -> None:
@@ -1005,28 +1042,40 @@ def make_identity(doi=None, title=None, surname=None, year=None) -> dict:
             "year": None if year is None or str(year).strip() == "" else str(year).strip()}
 
 
-def acquire_one(workdir: Path, identity: dict, settings: Settings, deadline: Deadline,
-                pdf_path: str | None = None) -> dict:
-    """Run the single-work pipeline; returns {status, slug, source, tried}."""
+@dataclass
+class Attempt:
+    """One work's pass: what `begin` decided and found, for `finish`. `out`
+    is set when the call was decided before any source (refused, exists)."""
+    identity: dict
+    slug: str
+    store: Path
+    invalid: str | None
+    results: list[SourceResult]
+    out: dict | None
+
+
+def begin(workdir: Path, identity: dict, settings: Settings, deadline: Deadline,
+          pdf_path: str | None = None) -> Attempt:
+    """The store checks, then `--pdf` or the local sources in order."""
     slug = ft.slug_for(identity)
     canon = ft.canonical_identity(identity)
-    out = {"status": None, "slug": slug, "source": None, "tried": []}
-    if not ft.path_budget_ok(workdir):
-        out.update(status="refused", tried=[{"source": "store", "outcome": "path_too_long"}])
-        return out
     store = Path(workdir) / ft.STORE_REL
+    attempt = Attempt(identity, slug, store, None, [], None)
+    if not ft.path_budget_ok(workdir):
+        attempt.out = {"status": "refused", "slug": slug, "source": None,
+                       "tried": [{"source": "store", "outcome": "path_too_long"}]}
+        return attempt
     state, info = store_state(store, slug, canon)
     if state == "collision":
-        out.update(status="refused", tried=[{"source": "store", "outcome": "slug_collision",
-                                              "detail": [info]}])
-        return out
+        attempt.out = {"status": "refused", "slug": slug, "source": None,
+                       "tried": [{"source": "store", "outcome": "slug_collision", "detail": [info]}]}
+        return attempt
     if state == "exists":
-        out.update(status="exists", source=info.source,
-                   tried=[{"source": "store", "outcome": "exists"}])
-        return out
-    invalid = info if state == "invalid" else None
+        attempt.out = {"status": "exists", "slug": slug, "source": info.source,
+                       "tried": [{"source": "store", "outcome": "exists"}]}
+        return attempt
+    attempt.invalid = info if state == "invalid" else None
 
-    results: list[SourceResult] = []
     if pdf_path is not None:
         res = SourceResult("user", "not_found")
         data, why = _read_local(pdf_path)
@@ -1039,30 +1088,142 @@ def acquire_one(workdir: Path, identity: dict, settings: Settings, deadline: Dea
                 res.hits.append(Hit(data, "user", f"user:{Path(pdf_path).name}", None))
             else:
                 res.outcome, res.detail = "rejected", [why]
-        results.append(res)
-    else:
-        for name in SOURCE_ORDER:
-            if deadline.expired():
-                results.append(SourceResult(name, "deadline"))
-                continue
-            res = _SOURCES[name](identity, settings, deadline)
-            results.append(res)
-            if res.hits:
-                break
+        attempt.results.append(res)
+        return attempt
+    for name in LOCAL_SOURCES:
+        if deadline.expired():
+            attempt.results.append(SourceResult(name, "deadline"))
+            continue
+        res = _SOURCES[name](identity, settings, deadline)
+        attempt.results.append(res)
+        if res.hits:
+            break
+    return attempt
 
+
+def _remove_copy(store: Path, slug: str) -> None:
+    """Remove a service copy the licence backstop or the identity check
+    refused, sidecar first, so no record is left for the barrier to bind."""
+    for suffix in (".json", ".txt", ".pdf"):
+        (store / f"{slug}{suffix}").unlink(missing_ok=True)
+
+
+def _service_result(store: Path, slug: str, identity: dict, entry: dict | None,
+                    settings: Settings) -> SourceResult:
+    """One key's answer, a copied record validated as if downloaded here."""
+    outcome, detail = fc.source_outcome(entry)
+    res = SourceResult("service", outcome, detail)
+    if outcome != "acquired":
+        return res
+    res.outcome = "unavailable"
+    if entry.get("stem") != slug:
+        res.detail = ["stem_mismatch"]
+        return res
+    rec = ft.validate_record(store, slug)
+    if not isinstance(rec, ft.Record):
+        res.detail = [f"copy_invalid:{rec}"]
+        return res
+    data, why = _read_local(str(rec.pdf_path))
+    if data is None:
+        res.detail = [why]
+        return res
+    if not _licensed(rec.license, settings.policy):
+        _remove_copy(store, slug)
+        res.outcome, res.detail = "unlicensed", [f"licence {rec.license!r} not admitted by policy"]
+        return res
+    ok, why = check_pdf(data, identity)
+    if not ok:
+        _remove_copy(store, slug)
+        res.outcome, res.detail = "rejected", [why]
+        return res
+    res.outcome = "acquired"
+    res.hits.append(Hit(data, rec.source, rec.source_ref, rec.license))
+    return res
+
+
+def service_fetch(store: Path, pending: list[tuple[str, dict]], settings: Settings,
+                  deadline: Deadline, mode: str) -> dict[str, SourceResult]:
+    """Ask the service channel for `pending` [(slug, identity)]; returns a
+    `service` SourceResult for every slug. DOI identities only are sent, in
+    requests of at most `fc.MAX_PER_REQUEST`; all are written first, then
+    each is waited on until `SERVICE_WAIT_MARGIN` before the deadline and
+    closed."""
+    if settings.request_dir is None:
+        return {slug: SourceResult("service", "disabled") for slug, _ in pending}
+    out: dict[str, SourceResult] = {}
+    sendable = []
+    for slug, identity in pending:
+        if not normalize_doi(identity.get("doi") or ""):
+            out[slug] = SourceResult("service", "no_doi")
+            continue
+        try:
+            sendable.append((slug, identity, fc.identity_payload(identity)))
+        except ValueError as exc:
+            out[slug] = SourceResult("service", "unavailable", [str(exc)])
+    requests_sent = []
+    for i in range(0, len(sendable), fc.MAX_PER_REQUEST):
+        chunk = sendable[i:i + fc.MAX_PER_REQUEST]
+        if deadline.clamp(deadline.left() - SERVICE_WAIT_MARGIN) <= 0:
+            for slug, _, _ in sendable[i:]:
+                out[slug] = SourceResult("service", "deadline")
+            break
+        request_id = fc.new_request_id(mode)
+        try:
+            fc.write_request(settings.request_dir, request_id, mode, [p for _, _, p in chunk])
+        except OSError as exc:
+            for slug, _, _ in chunk:
+                out[slug] = SourceResult("service", "unavailable",
+                                         [f"request_write_failed:{type(exc).__name__}"])
+            continue
+        requests_sent.append((request_id, chunk))
+    for request_id, chunk in requests_sent:
+        response = fc.wait_for_response(settings.request_dir, request_id,
+                                        deadline.clamp(deadline.left() - SERVICE_WAIT_MARGIN),
+                                        clock=_clock, sleep=_sleep)
+        notes = []
+        try:
+            fc.write_closed(settings.request_dir, request_id)
+        except OSError as exc:
+            notes.append(f"closed_write_failed:{type(exc).__name__}")
+        for slug, identity, payload in chunk:
+            res = _service_result(store, slug, identity, response["outcomes"].get(payload["key"]),
+                                  settings)
+            res.detail.extend(notes)
+            out[slug] = res
+    return out
+
+
+def finish(attempt: Attempt, service: SourceResult | None) -> dict:
+    """Store the winner, if any, and build {status, slug, source, tried}."""
+    if attempt.out is not None:
+        return attempt.out
+    results = list(attempt.results)
+    if service is not None and not any(r.hits for r in results):
+        results.append(service)
     winner = next((r for r in results if r.hits), None)
     tried = [r.tried() for r in results]
+    out = {"status": None, "slug": attempt.slug, "source": None, "tried": tried}
     if winner is not None:
-        write_record(store, slug, identity, winner.hits[0])
-        if invalid:
-            tried.insert(0, {"source": "store", "outcome": f"invalid_replaced:{invalid}"})
-        out.update(status="acquired", source=winner.hits[0].source, tried=tried)
+        write_record(attempt.store, attempt.slug, attempt.identity, winner.hits[0])
+        if attempt.invalid:
+            tried.insert(0, {"source": "store", "outcome": f"invalid_replaced:{attempt.invalid}"})
+        out.update(status="acquired", source=winner.hits[0].source)
         return out
-    if invalid:
-        tried.insert(0, {"source": "store", "outcome": f"invalid_kept:{invalid}"})
-    status = "rejected" if any(r.outcome == "rejected" for r in results) else "not_found"
-    out.update(status=status, tried=tried)
+    if attempt.invalid:
+        tried.insert(0, {"source": "store", "outcome": f"invalid_kept:{attempt.invalid}"})
+    out["status"] = "rejected" if any(r.outcome == "rejected" for r in results) else "not_found"
     return out
+
+
+def acquire_one(workdir: Path, identity: dict, settings: Settings, deadline: Deadline,
+                pdf_path: str | None = None) -> dict:
+    """Run the single-work pipeline; returns {status, slug, source, tried}."""
+    attempt = begin(workdir, identity, settings, deadline, pdf_path)
+    service = None
+    if attempt.out is None and pdf_path is None and not any(r.hits for r in attempt.results):
+        service = service_fetch(attempt.store, [(attempt.slug, identity)], settings, deadline,
+                                "single")[attempt.slug]
+    return finish(attempt, service)
 
 
 # --------------------------------------------------------------------------
@@ -1241,7 +1402,8 @@ def main(argv=None) -> int:
             return 0
         settings = settings_from_env(licensed_only, policy, INDEX_BUDGET_SINGLE)
         identity = make_identity(args.doi, args.title, args.author, args.year)
-        result = acquire_one(workdir, identity, settings, Deadline(None), pdf_path=args.pdf)
+        result = acquire_one(workdir, identity, settings, Deadline(SINGLE_DEADLINE),
+                             pdf_path=args.pdf)
         print(output.dumps(result))
         return 0
     except Exception as exc:
