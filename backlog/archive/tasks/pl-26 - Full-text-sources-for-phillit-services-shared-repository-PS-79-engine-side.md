@@ -1,10 +1,10 @@
 ---
 id: PL-26
 title: Full-text sources for phillit-service's shared repository (PS-79 engine side)
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-10-23 12:03'
-updated_date: '2026-10-23 14:09'
+updated_date: '2026-10-23 17:24'
 labels: []
 dependencies: []
 type: feature
