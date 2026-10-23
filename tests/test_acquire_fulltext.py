@@ -1237,6 +1237,25 @@ class TestRepository:
         rec = ft.validate_record(workdir / ft.STORE_REL, data["slug"])
         assert rec.license == "oa:author"
 
+    def test_repository_shares_the_service_validation_tail(self, http, workdir, capsys, tmp_path,
+                                                           monkeypatch):
+        """Licence before the read; a valid record that cannot be read is
+        unavailable; a repository record is never removed."""
+        repo = tmp_path / "records"
+        stem = write_repo_record(repo, work_pdf(), af.make_identity(DOI), source="openalex",
+                                 source_ref=OA_REF, license="oa:author")
+        write_env(f"PHILLIT_FULLTEXT_REPOSITORY_DIR={repo}\n")
+        monkeypatch.setattr(af, "LOCAL_MAX_BYTES", 10)
+        os.environ["PHILLIT_FULLTEXT_LICENSED_ONLY"] = "1"
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert data["tried"][0] == {"source": "repository", "outcome": "unlicensed",
+                                    "detail": ["licence 'oa:author' not admitted by policy"]}
+        del os.environ["PHILLIT_FULLTEXT_LICENSED_ONLY"]
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert data["tried"][0] == {"source": "repository", "outcome": "unavailable",
+                                    "detail": ["too_large"]}
+        assert sorted(p.name for p in repo.iterdir()) == [f"{stem}.json", f"{stem}.pdf", f"{stem}.txt"]
+
     def test_repository_without_policy_admits_any_licence(self, http, workdir, capsys, tmp_path):
         repo = tmp_path / "records"
         write_repo_record(repo, work_pdf(), af.make_identity(DOI), source="openalex",
@@ -1447,6 +1466,15 @@ class TestService:
         code, data = run_json(capsys, workdir, "--doi", DOI)
         assert _service_tried(data) == {"source": "service", "outcome": "unlicensed",
                                         "detail": ["licence 'oa:author' not admitted by policy"]}
+        assert list((workdir / ft.STORE_REL).iterdir()) == []
+
+    def test_unreadable_valid_copy_is_removed(self, http, workdir, capsys, service, monkeypatch):
+        monkeypatch.setattr(af, "LOCAL_MAX_BYTES", 10)
+        service.answer({DOI: {"status": "found", "pdf": work_pdf()}})
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert _service_tried(data) == {"source": "service", "outcome": "unavailable",
+                                        "detail": ["too_large", "removed_copy"]}
+        assert data["status"] == "not_found"
         assert list((workdir / ft.STORE_REL).iterdir()) == []
 
     def test_copy_of_another_work_is_rejected_and_removed(self, http, workdir, capsys, service):

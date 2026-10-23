@@ -409,23 +409,35 @@ def source_repository(identity: dict, settings: "Settings", deadline: Deadline) 
     if not isinstance(rec, ft.Record):
         res.detail.append(f"invalid:{rec}")
         return res
+    hit, res.outcome, res.detail = _check_stored_record(rec, identity, settings,
+                                                        remove_on_refusal=False)
+    if hit is not None:
+        res.hits.append(Hit(hit.data, "repository",
+                            {"stem": stem, "source": rec.source, "source_ref": rec.source_ref},
+                            rec.license))
+    return res
+
+
+def _check_stored_record(rec: ft.Record, identity: dict, settings: "Settings", *,
+                         remove_on_refusal: bool) -> tuple[Hit | None, str, list[str]]:
+    """The validation tail every stored record meets, after `validate_record`:
+    the licence backstop, the read, then `check_pdf` against THIS run's
+    identity. Returns (hit, "acquired", []) or (None, outcome, detail). With
+    `remove_on_refusal` (a service copy) a refused or unreadable record is
+    removed, so no record is left for the barrier to bind."""
+    def refuse(outcome: str, detail: list[str]):
+        if remove_on_refusal:
+            _remove_copy(rec.json_path.parent, rec.stem)
+        return None, outcome, detail
+    if not _licensed(rec.license, settings.policy):
+        return refuse("unlicensed", [f"licence {rec.license!r} not admitted by policy"])
     data, why = _read_local(str(rec.pdf_path))
     if data is None:
-        res.detail.append(why)
-        return res
-    if not _licensed(rec.license, settings.policy):
-        res.outcome = "unlicensed"
-        res.detail.append(f"licence {rec.license!r} not admitted by policy")
-        return res
+        return refuse("unavailable", [why, "removed_copy"] if remove_on_refusal else [why])
     ok, why = check_pdf(data, identity)
     if not ok:
-        res.outcome, res.detail = "rejected", [why]
-        return res
-    res.outcome = "acquired"
-    res.hits.append(Hit(data, "repository",
-                        {"stem": stem, "source": rec.source, "source_ref": rec.source_ref},
-                        rec.license))
-    return res
+        return refuse("rejected", [why])
+    return Hit(data, rec.source, rec.source_ref, rec.license), "acquired", []
 
 
 # --------------------------------------------------------------------------
@@ -1133,23 +1145,10 @@ def _service_result(store: Path, slug: str, identity: dict, entry: dict | None,
     if not isinstance(rec, ft.Record):
         res.detail.append(f"copy_invalid:{rec}")
         return res
-    if not _licensed(rec.license, settings.policy):
-        _remove_copy(store, slug)
-        res.outcome = "unlicensed"
-        res.detail.append(f"licence {rec.license!r} not admitted by policy")
-        return res
-    data, why = _read_local(str(rec.pdf_path))
-    if data is None:
-        res.detail.append(why)
-        return res
-    ok, why = check_pdf(data, identity)
-    if not ok:
-        _remove_copy(store, slug)
-        res.outcome = "rejected"
-        res.detail.append(why)
-        return res
-    res.outcome = "acquired"
-    res.hits.append(Hit(data, rec.source, rec.source_ref, rec.license))
+    hit, res.outcome, detail = _check_stored_record(rec, identity, settings, remove_on_refusal=True)
+    res.detail.extend(detail)
+    if hit is not None:
+        res.hits.append(hit)
     return res
 
 
