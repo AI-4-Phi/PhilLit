@@ -1870,6 +1870,36 @@ def test_typography_fold_table(bib, fetched):
 
 
 @pytest.mark.parametrize("bib, fetched", [
+    ("This paper argues.", "Abstract This paper argues."),
+    ("This paper argues.", "ABSTRACT This paper argues."),
+    ("This paper argues.", "Abstract: This paper argues."),
+    ("This paper argues.", "Abstract. This paper argues."),
+    ("This paper argues.", "AbstractThis paper argues."),
+    ("This paper argues.", "ABSTRACTThis paper argues."),
+    ("This paper argues.", "abstract This paper argues."),
+    ('"Fake news" is old.', 'Abstract "Fake news" is old.'),
+    ("Abstract This paper argues.", "This paper argues."),   # either side
+    ("Abstract: This paper argues.", "ABSTRACT This paper argues."),
+])
+def test_a_leading_abstract_label_is_ignored(bib, fetched):
+    from stamp_evidence import abstract_texts_agree
+
+    assert abstract_texts_agree(fetched, bib)
+
+
+@pytest.mark.parametrize("bib, fetched", [
+    ("objects are causally inert.", "Abstract objects are causally inert."),
+    ("This paper argues.", "Abstracts This paper argues."),
+    ("This paper argues.", "In the abstract This paper argues."),
+    ("This paper argues.", "Abstract Abstract This paper argues."),   # one label only
+])
+def test_abstract_label_strip_keeps_real_words(bib, fetched):
+    from stamp_evidence import abstract_texts_agree
+
+    assert not abstract_texts_agree(fetched, bib)
+
+
+@pytest.mark.parametrize("bib, fetched", [
     ("1-2", "1\u22122"),                 # a minus sign is not a dash
     ('a "b" c', "a \u00abb\u00bb c"),   # guillemets stay distinct
     ("it's", 'it"s'),                    # quote kinds stay distinct

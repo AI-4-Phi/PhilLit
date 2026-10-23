@@ -122,6 +122,18 @@ def _typography_fold(text: str) -> str:
     return re.sub(r" ?-+ ?", "-", s)
 
 
+# A leading "Abstract" label, which a source or a researcher's copy carries
+# and the other side lacks. Only a label SHAPE: the word (Abstract, abstract
+# or ABSTRACT) followed by a colon, period or dash, or by a capitalized word,
+# glued on or after a space or a quote mark ("Abstract The paper ...",
+# "AbstractThe ...", 'Abstract "Fake news" ...'). So "Abstract objects are
+# ..." keeps its first word; "Abstract Expressionism is ..." would not, an
+# accepted false strip that only equates two texts differing in that word.
+# Measured with the typography fold's script: the strip raises its 123
+# matching copies to 166 of the 505.
+_ABSTRACT_LABEL = re.compile(r"^(?:[Aa]bstract|ABSTRACT)(?: ?[:.-] ?| ?(?=[\"']?[A-Z]))")
+
+
 def abstract_texts_agree(fetched: str, existing: str) -> bool:
     """Is a fetched text the entry's abstract, up to typography?
 
@@ -132,7 +144,9 @@ def abstract_texts_agree(fetched: str, existing: str) -> bool:
     fetch against the ledger hash and writes the fetched text, stays
     hash-exact. After a fold match the ledger hash is the BIB text's, not
     the source's."""
-    return _typography_fold(fetched) == _typography_fold(existing)
+    def form(text):
+        return _ABSTRACT_LABEL.sub("", _typography_fold(text), count=1)
+    return form(fetched) == form(existing)
 
 
 def attest_abstract(fields: dict, ledger_entry: dict | None) -> bool:
