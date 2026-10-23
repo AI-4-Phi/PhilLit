@@ -116,7 +116,9 @@ is already stored), `not_found` (no PDF was obtained), `rejected` (a PDF
 was obtained and none passed extraction and the identity check) or
 `refused` (`slug_collision`: a sidecar under the stem names another
 identity, and nothing is overwritten; `path_too_long`: the store path
-would exceed the Windows limit). `tried` lists
+would exceed the Windows limit; `unlicensed_remove_failed:<error>`: a
+stored service copy the policy refuses could not be removed, and no
+source runs). `tried` lists
 `{source, outcome[, detail]}` in order; source outcomes are `disabled`,
 `unavailable`, `not_found`, `rejected`, `acquired`, plus `no_doi` for the
 OA sources and the service, `unlicensed` for the OA sources, the
@@ -1155,8 +1157,9 @@ def begin(workdir: Path, identity: dict, settings: Settings, deadline: Deadline,
     """The store checks, then `--pdf` or the local sources in order. A
     stored service copy meets the licence rule again (a copy that landed
     after an earlier run's arrival check is checked here, on the next run):
-    a refused one is removed and the work tried as absent. Its identity is
-    the barrier's check."""
+    a refused one is removed and the work tried as absent, or, when the
+    removal fails, the call is `refused` (`unlicensed_remove_failed`) and
+    no source runs. Its identity is the barrier's check."""
     slug = ft.slug_for(identity)
     canon = ft.canonical_identity(identity)
     store = Path(workdir) / ft.STORE_REL
@@ -1167,12 +1170,14 @@ def begin(workdir: Path, identity: dict, settings: Settings, deadline: Deadline,
         return attempt
     state, info = store_state(store, slug, canon)
     if state == "exists" and _refused_service_copy(info, settings):
-        note = {"source": "store", "outcome": "unlicensed_removed"}
         try:
             _remove_copy(store, slug)
         except OSError as exc:
-            note["detail"] = [f"remove_failed:{type(exc).__name__}"]
-        attempt.store_notes.append(note)
+            attempt.out = {"status": "refused", "slug": slug, "source": None,
+                           "tried": [{"source": "store",
+                                      "outcome": f"unlicensed_remove_failed:{type(exc).__name__}"}]}
+            return attempt
+        attempt.store_notes.append({"source": "store", "outcome": "unlicensed_removed"})
         state, info = "absent", None
     if state == "collision":
         attempt.out = {"status": "refused", "slug": slug, "source": None,

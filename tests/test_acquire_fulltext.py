@@ -822,6 +822,24 @@ class TestStore:
         code, data = run_json(capsys, workdir, "--doi", DOI)
         assert data["status"] == "exists"
 
+    def test_a_refused_service_copy_that_cannot_be_removed_is_refused(self, http, workdir, capsys,
+                                                                      monkeypatch):
+        """The copy stays, the run says so, and no source runs as if the
+        work were absent."""
+        store = workdir / ft.STORE_REL
+        write_repo_record(store, work_pdf(), af.make_identity(DOI), source="openalex",
+                          source_ref=SERVICE_REF, license="oa:author")
+        monkeypatch.setenv("PHILLIT_FULLTEXT_LICENSED_ONLY", "1")
+
+        def refuse(store, slug):
+            raise PermissionError("read-only")
+        monkeypatch.setattr(af, "_remove_copy", refuse)
+        monkeypatch.setitem(af._SOURCES, "repository", lambda *a: pytest.fail("a source ran"))
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert code == 0 and data["status"] == "refused" and data["source"] is None
+        assert data["tried"] == [{"source": "store", "outcome": "unlicensed_remove_failed:PermissionError"}]
+        assert len(list(store.glob("*.json"))) == 1 and http.calls == []
+
     def test_a_repository_record_is_not_a_service_copy(self, http, workdir, capsys):
         """The repository nests the original ref: the store re-check skips it."""
         store = workdir / ft.STORE_REL
