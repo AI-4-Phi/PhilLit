@@ -182,11 +182,11 @@ bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/verify_p
 | `s2_recommend.py` | Find similar papers | `--positive`, `--negative`, `--for-paper` |
 | `search_openalex.py` | Broad academic search | `--year`, `--doi`, `--id`, `--cites`, `--oa-only` |
 | `search_arxiv.py` | arXiv preprints | `--category`, `--author`, `--recent`, `--id` |
-| `search_sep.py` | SEP discovery | `--limit`, `--all-pages` |
+| `search_sep.py` | SEP discovery | `--limit`, `--all-pages`, `--provider` |
 | `fetch_sep.py` | SEP content extraction | `--sections`, `--bibliography-only`, `--related-only` |
-| `search_iep.py` | IEP discovery | `--limit`, `--all-pages` |
+| `search_iep.py` | IEP discovery | `--limit`, `--all-pages`, `--provider` |
 | `fetch_iep.py` | IEP content extraction | `--sections`, `--bibliography-only` |
-| `search_philpapers.py` | PhilPapers search | `--limit`, `--recent` |
+| `search_philpapers.py` | PhilPapers search | `--limit`, `--recent`, `--all-pages`, `--provider` |
 | `verify_paper.py` | DOI verification | `--title`, `--author`, `--year`, `--doi` |
 | `search_core.py` | CORE API (431M papers) | `--doi`, `--title`, `--author`, `--year` |
 | `get_abstract.py` | Multi-source abstract resolution | `--doi`, `--s2-id`, `--title`, `--author` |
