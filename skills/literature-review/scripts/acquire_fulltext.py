@@ -50,11 +50,12 @@ SOURCES, in the ruled order, the first passing PDF wins:
    under this identity's slug and answers; the engine waits on all its
    requests together until `SERVICE_WAIT_MARGIN` seconds before the
    deadline, writes `<id>.closed`, and maps a key still unanswered to
-   `deadline`. It then checks the record at THIS identity's slug for every
-   requested key, whatever the response says: for `found` whatever stem it
-   names (a differing stem is the detail `stem_mismatch`, never a gate),
-   and for any other answer, or none, whenever a file is there (a passing
-   copy is a hit noted `copied_after_response:<outcome>`). Each copy is
+   `deadline` (`no_outcome` when the response is complete). It then checks
+   the record at THIS identity's slug for every requested key, whatever
+   the response says: for `found` whatever stem it names (a differing stem
+   is the detail `stem_mismatch`, never a gate), and for any other answer,
+   or none, whenever a file is there (a passing copy is a hit noted
+   `copied_after_response:<outcome>`). Each copy is
    validated as a download is: `validate_record`, the licence backstop
    (`_licensed`), the read, then `check_pdf` against THIS run's identity; a
    copy refused by the backstop, unreadable or failing the identity check
@@ -116,9 +117,10 @@ would exceed the Windows limit). `tried` lists
 `unavailable`, `not_found`, `rejected`, `acquired`, plus `no_doi` for the
 OA sources and the service, `unlicensed` for the OA sources, the
 repository and the service, and `deadline` for a source the deadline cut.
-Service details: `stem_mismatch` (added to the outcome of checking the
-record at this slug), `copied_after_response:<outcome>` (a copy found at
-this slug although the answer was not `found`), `copy_invalid:<reason>`
+Service details: `no_outcome` (a complete response without this key),
+`stem_mismatch` (added to the outcome of checking the record at this
+slug), `copied_after_response:<outcome>` (a copy found at this slug
+although the answer was not `found`), `copy_invalid:<reason>`
 (the copy fails `validate_record`; it is left for the barrier to
 withhold), `removed_copy` (a valid copy that could not be read),
 `error:<exception>` (this slug's check crashed; its copy is removed,
@@ -1201,7 +1203,8 @@ def _remove_copy(store: Path, slug: str) -> None:
 
 
 def _service_result(store: Path, slug: str, identity: dict, entry: dict | None,
-                    settings: Settings, invalid: str | None = None) -> SourceResult:
+                    settings: Settings, invalid: str | None = None,
+                    complete: bool = False) -> SourceResult:
     """One requested key's arrival check: the record at OUR slug, validated
     as if downloaded here, whatever the response says. For `found`, a
     differing stem is only a detail. For any other answer (or none), a file
@@ -1210,8 +1213,9 @@ def _service_result(store: Path, slug: str, identity: dict, entry: dict | None,
     `copied_after_response:<outcome>`. A record `begin` already knew as
     invalid (`invalid`) is left untouched, so `invalid_kept` keeps its
     meaning. A copy that fails `validate_record` is left (the barrier
-    withholds it) with the detail `copy_invalid:<reason>`."""
-    outcome, detail = fc.source_outcome(entry)
+    withholds it) with the detail `copy_invalid:<reason>`. `complete`: the
+    response was complete, so a missing entry is `no_outcome`."""
+    outcome, detail = fc.source_outcome(entry, complete=complete)
     res = SourceResult("service", outcome, detail)
     note = []
     if outcome == "acquired":
@@ -1308,10 +1312,11 @@ def service_fetch(store: Path, pending: list[tuple[str, dict, str | None]], sett
         closed_notes = _close_requests(settings.request_dir, written)
     for request_id, chunk in written:
         outcomes = responses[request_id]["outcomes"]
+        complete = responses[request_id]["complete"]
         for slug, identity, invalid, payload in chunk:
             try:
                 res = _service_result(store, slug, identity, outcomes.get(payload["key"]),
-                                      settings, invalid)
+                                      settings, invalid, complete)
             except Exception as exc:   # one slug's check never sinks the others
                 res = SourceResult("service", "unavailable", [f"error:{type(exc).__name__}: {exc}"])
                 try:

@@ -1533,7 +1533,8 @@ class FakeWorker:
     response), `answer_none_with_copy` (copies every registered `pdf` but
     answers `none`), `partial` (answers only the registered DOIs, `complete`
     false) and `wrong_id` (a complete response naming another request id).
-    A request holding a key in `ignore_keys` is never answered."""
+    A request holding a key in `ignore_keys` is never answered; a key in
+    `omit_keys` is left out of an otherwise complete response."""
 
     def __init__(self, request_dir, store, clock):
         self.request_dir = Path(request_dir)
@@ -1543,6 +1544,7 @@ class FakeWorker:
         self.answered = set()
         self.mode = "answer"
         self.ignore_keys = set()
+        self.omit_keys = set()
 
     def answer(self, outcomes_by_doi):
         self.outcomes.update(outcomes_by_doi)
@@ -1575,6 +1577,8 @@ class FakeWorker:
                         "copy_without_answer", "answer_none_with_copy")):
                     written = self._copy(spec, identity)
                     stem = stem or written
+                if ident["key"] in self.omit_keys:
+                    continue
                 if self.mode == "answer_none_with_copy":
                     out[ident["key"]] = {"status": "none", "stem": None, "detail": None}
                 elif self.mode != "partial" or registered:
@@ -1818,6 +1822,17 @@ class TestService:
         assert data["tried"][0] == {"source": "store", "outcome": "invalid_kept:sidecar_unreadable"}
         assert _service_tried(data) == {"source": "service", "outcome": "not_found"}
         assert sorted(p.name for p in store.iterdir()) == [f"{slug}.pdf"]
+
+    def test_a_complete_response_without_our_key_is_no_outcome(self, http, workdir, capsys, service):
+        """The worker finished without answering this key: `no_outcome`, not
+        `deadline`, and the copy it left at the slug still meets the check."""
+        service.omit_keys = {f"doi:{DOI}"}
+        service.answer({DOI: {"status": "found", "pdf": work_pdf()}})
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert _service_tried(data) == {"source": "service", "outcome": "acquired",
+                                        "detail": ["no_outcome", "copied_after_response:unavailable"]}
+        assert data["status"] == "acquired"
+        assert service.clock[0] <= fc.POLL_SECONDS   # complete: no waiting to the bound
 
     def test_wrong_request_id_is_no_response(self, http, workdir, capsys, service):
         service.mode = "wrong_id"

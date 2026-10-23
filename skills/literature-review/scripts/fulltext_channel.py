@@ -43,14 +43,15 @@ licence refuses reuse), `failed`. `detail` is a short token or null; for
 `aborted`, ...) reads as unavailable.
 
 DEADLINE: the engine waits a bounded time over all requests of a call at
-once (`wait_for_responses`, every id read each round). A key still absent
-from `outcomes` when it stops is reported as `deadline`, and the engine
-writes `<id>.closed` so the worker can drop the remaining work. The engine
-then checks the store at every requested slug, whatever the response says,
-so a copy that arrived without its answer still meets the licence and
-identity checks. A copy that lands after that check is licence-checked on
-the engine's next run over the store; the worker applies the same policy
-before it fetches.
+once (`wait_for_responses`, every id read each round). A key absent from
+`outcomes` when it stops is reported as `deadline` while the response is
+incomplete, and as `unavailable` (`no_outcome`) once it is complete; the
+engine writes `<id>.closed` so the worker can drop the remaining work. The
+engine then checks the store at every requested slug, whatever the
+response says, so a copy that arrived without its answer still meets the
+licence and identity checks. A copy that lands after that check is
+licence-checked on the engine's next run over the store; the worker
+applies the same policy before it fetches.
 
 A reader never trusts a response: an unreadable or oversize file, a wrong
 schema or a foreign `request_id` is no response, and every outcome is
@@ -69,7 +70,7 @@ from typing import Optional
 
 _here = str(Path(__file__).resolve().parent)
 sys.path.insert(0, _here)
-from fulltext import canonical_identity, read_text, write_text_atomic  # noqa: E402
+from fulltext import canonical_identity, write_text_atomic  # noqa: E402
 
 sys.path.remove(_here)
 
@@ -158,12 +159,15 @@ def read_response(request_dir: Path, request_id: str) -> Optional[dict]:
     {"status", "stem", "detail"}}}`, or None when the file is absent,
     unreadable, larger than MAX_REQUEST_BYTES, not a JSON object, of another
     schema (the int 1, never `true`) or for another id. `complete` is true
-    only for the JSON literal `true`."""
+    only for the JSON literal `true`. The read itself stops one character
+    past the cap, so a file that grows while it is read is never held."""
     path = Path(request_dir) / (request_id + RESPONSE_SUFFIX)
     try:
-        if path.stat().st_size > MAX_REQUEST_BYTES:
+        with open(path, "r", encoding="utf-8") as f:
+            text = f.read(MAX_REQUEST_BYTES + 1)
+        if len(text) > MAX_REQUEST_BYTES or len(text.encode("utf-8")) > MAX_REQUEST_BYTES:
             return None
-        obj = json.loads(read_text(path))
+        obj = json.loads(text)
     except (OSError, ValueError, RecursionError):
         return None
     if (not isinstance(obj, dict) or type(obj.get("schema")) is not int
@@ -202,11 +206,13 @@ def wait_for_response(request_dir: Path, request_id: str, seconds: float, *,
                               clock=clock, sleep=sleep)[request_id]
 
 
-def source_outcome(entry: Optional[dict]) -> tuple[str, list[str]]:
-    """The engine outcome and detail list for one key's response entry
-    (None: the worker had not answered when the engine stopped waiting)."""
+def source_outcome(entry: Optional[dict], complete: bool = False) -> tuple[str, list[str]]:
+    """The engine outcome and detail list for one key's response entry.
+    None is `deadline` when the response was not complete (the worker had
+    not answered when the engine stopped waiting), and `unavailable` with
+    the detail `no_outcome` when it was (the worker finished without it)."""
     if entry is None:
-        return "deadline", []
+        return ("unavailable", ["no_outcome"]) if complete else ("deadline", [])
     status = entry.get("status")
     detail = entry.get("detail")
     details = [detail] if detail else []

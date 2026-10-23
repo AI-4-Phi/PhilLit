@@ -149,6 +149,20 @@ def test_oversize_response_is_absent(tmp_path, monkeypatch):
     assert fc.read_response(tmp_path, "r1") is None
 
 
+def test_oversize_response_is_absent_whatever_stat_says(tmp_path, monkeypatch):
+    """The read itself is capped: a file that stat reports small (it grew
+    after the stat) and whose JSON prefix parses is still too large."""
+    monkeypatch.setattr(fc, "MAX_REQUEST_BYTES", 200)
+    text = json.dumps(_response("r1", True, {"k": {"status": "none"}}))
+    (tmp_path / "r1.response.json").write_text(text + " " * 300, encoding="utf-8")
+    assert len(text) < 200
+
+    class Small:
+        st_size = 10
+    monkeypatch.setattr(Path, "stat", lambda self, **kw: Small())
+    assert fc.read_response(tmp_path, "r1") is None
+
+
 def test_response_absent_or_unreadable(tmp_path):
     assert fc.read_response(tmp_path, "r1") is None
     (tmp_path / "r1.response.json").mkdir()   # a directory: OSError on read
@@ -288,3 +302,11 @@ def test_write_closed(tmp_path):
 ])
 def test_source_outcome(entry, expected):
     assert fc.source_outcome(entry) == expected
+
+
+def test_a_complete_response_without_the_key_is_no_outcome():
+    """The worker finished and never answered this key: not a deadline."""
+    assert fc.source_outcome(None, complete=True) == ("unavailable", ["no_outcome"])
+    assert fc.source_outcome(None, complete=False) == ("deadline", [])
+    found = {"status": "found", "stem": "s", "detail": None}
+    assert fc.source_outcome(found, complete=True) == ("acquired", [])
