@@ -90,6 +90,41 @@ def abstract_hash(text: str) -> str:
     ).hexdigest()
 
 
+_QUOTE_FOLD = str.maketrans(
+    {c: "'" for c in "‘’‚‛′"}
+    | {c: '"' for c in "“”„‟″"}
+    | {c: "-" for c in "‐‑‒–—―−"})
+
+
+def _typography_fold(text: str) -> str:
+    """normalize_abstract_for_hash, then the typography a researcher's copy
+    changes without changing the text: curly quotes straightened, LaTeX
+    ``quotes'', Unicode dashes and LaTeX --/--- dashes, and the spaces
+    around a dash (" -- " for an em dash).
+
+    Measured 2026-10-23 on 1,799 local bib abstracts against the API JSON
+    they were copied from (research time, not live): 505 differed after
+    the hash normalization, and this fold makes 123 of them equal. Folding
+    accents and ligatures (NFKC) too would add 2, so it stays out; most of
+    the remaining 382 are real edits (another text, a dropped "Abstract"
+    prefix, a changed word)."""
+    s = normalize_abstract_for_hash(text)
+    s = s.replace("``", '"').replace("''", '"').replace("`", "'")
+    return re.sub(r" ?-+ ?", "-", s.translate(_QUOTE_FOLD))
+
+
+def abstract_texts_agree(fetched: str, existing: str) -> bool:
+    """Is a fetched text the entry's abstract, up to typography?
+
+    The comparison for a FETCH against the bib (corroboration, pre-filled
+    attestation), never for a ledger hash: `abstract_hash` stays the strict
+    form, because a changed hash would orphan every existing ledger, and a
+    hash cannot be folded after the fact. So the heal, which matches a
+    fetch against the ledger hash and writes the fetched text, stays
+    byte-exact."""
+    return _typography_fold(fetched) == _typography_fold(existing)
+
+
 def attest_abstract(fields: dict, ledger_entry: dict | None) -> bool:
     """Does the enrichment ledger attest this entry's current abstract?"""
     if not ledger_entry:

@@ -53,6 +53,7 @@ sys.path.pop(0)
 from stamp_evidence import (
     ATTESTED_ABSTRACT_SOURCES,
     abstract_hash,
+    abstract_texts_agree,
     normalize_abstract_for_hash,
 )
 from abstract_usability import unusable_reason  # noqa: E402 - same directory
@@ -382,8 +383,9 @@ def corroborate_abstract(
     """Does a live fetch still return THIS entry's abstract text?
 
     Returns (outcome, matched_source): (CORROBORATED, source) as soon as
-    some source serves text whose stamp_evidence.abstract_hash equals the
-    hash of the entry's own abstract; otherwise (MISMATCH | SOURCE_EMPTY |
+    some source serves the entry's own abstract text, up to whitespace,
+    backslashes and typography (stamp_evidence.abstract_texts_agree);
+    otherwise (MISMATCH | SOURCE_EMPTY |
     TRANSPORT_FAILED, None), preferring the most informative thing seen --
     a mismatch outranks a transport failure, which outranks "no source has
     an abstract".
@@ -412,8 +414,6 @@ def corroborate_abstract(
         if debug:
             log_progress("  corroboration: entry carries no comparable abstract text")
         return SOURCE_EMPTY, None
-
-    target = abstract_hash(existing)
 
     # get_doi/get_author_last_name/get_year read entry['fields'] and
     # nothing else, so a bare view over the fields dict reuses them
@@ -446,7 +446,7 @@ def corroborate_abstract(
             if status != get_abstract.PROBE_TRANSPORT:
                 break
         if status == get_abstract.PROBE_OK:
-            if abstract_hash(fetched or '') == target:
+            if abstract_texts_agree(fetched or '', existing):
                 return CORROBORATED, source
             saw_mismatch = True
             if debug:
@@ -771,10 +771,12 @@ def attest_prefilled_entry(
 
     The enrichment skip path made such abstracts structurally
     unattestable (2026-07-25 A/B root cause 1: mcallister2011patterns).
-    Fetches the abstract from the APIs; if the fetched text hash-matches
-    the pre-filled text (whitespace/backslash-insensitive), records the
-    ledger attestation and normalizes abstract_source to the canonical
-    source. Any miss is a no-op: fail-closed, unattested stays unattested.
+    Fetches the abstract from the APIs; if the fetched text matches the
+    pre-filled text up to whitespace, backslashes and typography
+    (abstract_texts_agree: a straightened quote is the same abstract),
+    records the ledger attestation of the PRE-FILLED text's hash and
+    normalizes abstract_source to the canonical source. Any miss is a
+    no-op: fail-closed, unattested stays unattested.
 
     Returns (entry_text, attested).
     """
@@ -788,7 +790,7 @@ def attest_prefilled_entry(
         log_progress(f"  Attestation fetch failed ({e}) -- left unattested")
         return entry_text, False
     if not fetched or not source or (
-            abstract_hash(fetched) != abstract_hash(existing)):
+            not abstract_texts_agree(fetched, existing)):
         log_progress("  Pre-filled abstract matches no API text -- left unattested")
         return entry_text, False
     entry_text = add_field_to_entry(entry_text, 'abstract_source', source)

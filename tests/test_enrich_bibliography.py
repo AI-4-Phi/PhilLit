@@ -1798,8 +1798,8 @@ def test_ndpr_outage_reads_as_transport_failed_not_source_empty():
 
 
 def test_whitespace_and_backslash_folded_text_still_corroborates():
-    """Comparison goes through stamp_evidence.abstract_hash, which folds
-    runs of whitespace and drops backslashes -- a raw `fetched == bib`
+    """Comparison goes through stamp_evidence.abstract_texts_agree, which
+    folds runs of whitespace and drops backslashes -- a raw `fetched == bib`
     comparison fails this."""
     fields = _fields(abstract="A  \\emph{cat}\nsat   on the mat.\n")
     outcome, source, _, _ = _corroborate(
@@ -1814,6 +1814,68 @@ def test_genuinely_different_text_is_not_folded_into_a_match():
         fields, s2=(("ok", "A dog sat on the mat."),))
 
     assert (outcome, source) == ("mismatch", None)
+
+
+# phillit-service run fc7edbffba104b6b: a researcher copied an OpenAlex
+# abstract with its curly quotes straightened; nothing else differed.
+STRAIGHT = 'The "capacitarian" view -- a claim about \'capacities\' --- holds.'
+CURLY = 'The \u201ccapacitarian\u201d view\u2014a claim about \u2018capacities\u2019 \u2013 holds.'
+
+
+def test_straightened_quotes_and_latex_dashes_still_corroborate():
+    outcome, source, _, _ = _corroborate(
+        _fields(abstract=STRAIGHT), s2=(("ok", CURLY),))
+
+    assert (outcome, source) == ("corroborated", "s2")
+
+
+def test_latex_quotes_corroborate_against_curly_ones():
+    outcome, source, _, _ = _corroborate(
+        _fields(abstract="The ``capacitarian'' view and `capacities'."),
+        s2=(("ok", "The \u201ccapacitarian\u201d view and \u2018capacities\u2019."),))
+
+    assert (outcome, source) == ("corroborated", "s2")
+
+
+def test_typography_fold_does_not_hide_a_changed_word():
+    outcome, source, _, _ = _corroborate(
+        _fields(abstract=STRAIGHT),
+        s2=(("ok", CURLY.replace("capacitarian", "capabilitarian")),))
+
+    assert (outcome, source) == ("mismatch", None)
+
+
+def test_abstract_hash_keeps_its_strict_form():
+    """The fold lives in the comparison only: abstract_hash is the ledger's
+    abstract_sha256, and folding it would orphan every existing ledger."""
+    import hashlib
+    from stamp_evidence import abstract_hash
+
+    assert abstract_hash(STRAIGHT) != abstract_hash(CURLY)
+    assert abstract_hash(CURLY) == hashlib.sha256(CURLY.encode("utf-8")).hexdigest()
+
+
+def test_prefilled_straight_quotes_attest_and_corroborate_end_to_end(tmp_path, monkeypatch):
+    """The reported entry's whole chain: the pre-filled check attests the bib's
+    OWN text (ledger hash of the straight-quoted text), the barrier's
+    candidacy accepts it, and the live probe corroborates it."""
+    import enrich_bibliography
+    from stamp_evidence import abstract_hash, attest_abstract, parse_entry_fields
+
+    bib = _prefilled_bib(tmp_path, abstract=STRAIGHT)
+    monkeypatch.setattr(enrich_bibliography, 'resolve_abstract_for_entry',
+                        lambda *a, **k: (CURLY, 'openalex'))
+    stats = enrich_bibliography.enrich_bibliography(bib, None, '', '', '')
+    assert stats['prefilled_attested'] == 1
+    rec = json.loads(
+        (tmp_path / "intermediate_files" / "json"
+         / "enrichment_ledger-literature-domain-1.json").read_text(encoding='utf-8'))['entries']['k1']
+    assert rec['abstract_sha256'] == abstract_hash(STRAIGHT)
+    fields = parse_entry_fields(bib.read_text(encoding='utf-8'))
+    assert fields['abstract'] == STRAIGHT
+    assert attest_abstract(fields, rec)
+    outcome, source, _, _ = _corroborate(fields, openalex=(("ok", CURLY),))
+    assert (outcome, source) == ("corroborated", "openalex")
 
 
 def test_entry_without_abstract_text_is_source_empty_without_fetching():

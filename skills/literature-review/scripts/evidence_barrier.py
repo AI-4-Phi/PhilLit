@@ -211,7 +211,11 @@ def _heal_abstract(fields: dict, ledger_entry: dict, debug: bool = False):
     A/B root cause 2 (2026-07-25, domain 5): a researcher re-emitted its
     bib after enrichment and mutated 7 attested abstracts. Re-fetch by the
     entry's identifiers; the gate is HASH EQUALITY with the ledger value,
-    so which API returns the text is irrelevant to integrity. Returns the
+    so which API returns the text is irrelevant to integrity. Byte-exact
+    on purpose, unlike corroboration's typography fold: the heal WRITES the
+    fetched text, which must hash to the ledger value. Accepted residual: a
+    pre-filled abstract attested through the fold (straight quotes, the
+    source curly) and then mutated cannot be healed and stays unattested. Returns the
     restored text or None. Never raises (fail-closed: no heal, entry
     proceeds unattested exactly as before this feature). The resolver
     stub below assumes resolve_abstract_for_entry reads only
