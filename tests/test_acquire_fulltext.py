@@ -280,8 +280,9 @@ class TestConsent:
         # Zotero is reached proxy-free, like check_setup's probe.
         assert all(c["trust_env"] is False for c in http.calls if "localhost" in c["url"])
 
-    def test_licensed_only_from_process_env_wins_over_env_file(self, http, workdir, capsys, tmp_path):
-        os.environ["PHILLIT_FULLTEXT_LICENSED_ONLY"] = "1"
+    def test_licensed_only_from_process_env_wins_over_env_file(self, http, workdir, capsys, tmp_path,
+                                                               monkeypatch):
+        monkeypatch.setenv("PHILLIT_FULLTEXT_LICENSED_ONLY", "1")
         write_env("PHILLIT_FULLTEXT_LICENSED_ONLY=0\nPHILLIT_ZOTERO=on\n"
                   f"PHILLIT_PDF_DIR={tmp_path}\n")
         setup_zotero(http, tmp_path, [work_pdf()])
@@ -296,8 +297,8 @@ class TestConsent:
         assert not any("localhost" in u or "pub.example" in u for u in http.urls())
         assert data["status"] == "not_found"
 
-    def test_licensed_only_accepts_cc_and_records_licence(self, http, workdir, capsys):
-        os.environ["PHILLIT_FULLTEXT_LICENSED_ONLY"] = "1"
+    def test_licensed_only_accepts_cc_and_records_licence(self, http, workdir, capsys, monkeypatch):
+        monkeypatch.setenv("PHILLIT_FULLTEXT_LICENSED_ONLY", "1")
         http.add(OA_URL, FakeResponse(payload=oa_payload([("https://pub.example/a.pdf", None),
                                                           ("https://repo.example/b.pdf", "cc-by")])))
         http.add("https://repo.example/b.pdf", FakeResponse(body=work_pdf()))
@@ -307,8 +308,8 @@ class TestConsent:
         assert rec.license == "cc-by" and rec.source_ref == "https://repo.example/b.pdf"
         assert "https://pub.example/a.pdf" not in http.urls()
 
-    def test_s2_uppercase_licence_counts_as_cc(self, http, workdir, capsys):
-        os.environ["PHILLIT_FULLTEXT_LICENSED_ONLY"] = "1"
+    def test_s2_uppercase_licence_counts_as_cc(self, http, workdir, capsys, monkeypatch):
+        monkeypatch.setenv("PHILLIT_FULLTEXT_LICENSED_ONLY", "1")
         http.add(S2_URL, FakeResponse(payload={"openAccessPdf": {"url": "https://s2.example/p.pdf",
                                                                  "status": "HYBRID", "license": "CCBY"}}))
         http.add("https://s2.example/p.pdf", FakeResponse(body=work_pdf()))
@@ -322,8 +323,8 @@ class TestConsent:
         code, data = run_json(capsys, workdir, "--doi", DOI)
         assert data["status"] == "acquired"
 
-    def test_pdf_route_works_under_licensed_only(self, http, workdir, capsys, tmp_path):
-        os.environ["PHILLIT_FULLTEXT_LICENSED_ONLY"] = "1"
+    def test_pdf_route_works_under_licensed_only(self, http, workdir, capsys, tmp_path, monkeypatch):
+        monkeypatch.setenv("PHILLIT_FULLTEXT_LICENSED_ONLY", "1")
         p = tmp_path / "upload.pdf"
         p.write_bytes(work_pdf())
         code, data = run_json(capsys, workdir, "--doi", DOI, "--pdf", p)
@@ -339,9 +340,9 @@ class TestConsent:
     def test_licence_rule(self, lic, policy, ok):
         assert af._licensed(lic, policy) is ok
 
-    def test_policy_open_from_process_env_admits_oa_locations(self, http, workdir, capsys):
-        os.environ["PHILLIT_FULLTEXT_LICENSED_ONLY"] = "1"
-        os.environ["PHILLIT_FULLTEXT_POLICY"] = "open"
+    def test_policy_open_from_process_env_admits_oa_locations(self, http, workdir, capsys, monkeypatch):
+        monkeypatch.setenv("PHILLIT_FULLTEXT_LICENSED_ONLY", "1")
+        monkeypatch.setenv("PHILLIT_FULLTEXT_POLICY", "open")
         write_env("PHILLIT_FULLTEXT_POLICY=\n")   # .env cannot switch it off
         http.add(OA_URL, FakeResponse(payload=oa_payload([("https://pub.example/a.pdf", "oa:publisher_free")])))
         http.add("https://pub.example/a.pdf", FakeResponse(body=work_pdf()))
@@ -349,32 +350,32 @@ class TestConsent:
         assert data["status"] == "acquired"
         assert {t["source"]: t["outcome"] for t in data["tried"]}["zotero"] == "disabled"
 
-    def test_policy_open_in_env_file_is_ignored(self, http, workdir, capsys):
-        os.environ["PHILLIT_FULLTEXT_LICENSED_ONLY"] = "1"
+    def test_policy_open_in_env_file_is_ignored(self, http, workdir, capsys, monkeypatch):
+        monkeypatch.setenv("PHILLIT_FULLTEXT_LICENSED_ONLY", "1")
         write_env("PHILLIT_FULLTEXT_POLICY=open\n")
         http.add(OA_URL, FakeResponse(payload=oa_payload([("https://pub.example/a.pdf", "oa:author")])))
         code, data = run_json(capsys, workdir, "--doi", DOI)
         assert {t["source"]: t["outcome"] for t in data["tried"]}["openalex"] == "unlicensed"
 
     @pytest.mark.parametrize("value", ["opean", "OPEN-ish", "cc"])
-    def test_an_unrecognised_policy_value_fails_closed(self, http, workdir, capsys, value):
+    def test_an_unrecognised_policy_value_fails_closed(self, http, workdir, capsys, value, monkeypatch):
         """Only `open` widens the rule; any other value admits cc only."""
-        os.environ["PHILLIT_FULLTEXT_POLICY"] = value
+        monkeypatch.setenv("PHILLIT_FULLTEXT_POLICY", value)
         http.add(OA_URL, FakeResponse(payload=oa_payload([("https://pub.example/a.pdf", "oa:author")])))
         http.add("https://pub.example/a.pdf", FakeResponse(body=work_pdf()))
         code, data = run_json(capsys, workdir, "--doi", DOI)
         assert {t["source"]: t["outcome"] for t in data["tried"]}["openalex"] == "unlicensed"
         assert data["status"] == "not_found"
 
-    def test_policy_open_alone_keeps_zotero_and_folder(self, http, workdir, capsys, tmp_path):
-        os.environ["PHILLIT_FULLTEXT_POLICY"] = "open"
+    def test_policy_open_alone_keeps_zotero_and_folder(self, http, workdir, capsys, tmp_path, monkeypatch):
+        monkeypatch.setenv("PHILLIT_FULLTEXT_POLICY", "open")
         write_env("PHILLIT_ZOTERO=on\n")
         setup_zotero(http, tmp_path, [work_pdf()])
         code, data = run_json(capsys, workdir, "--doi", DOI)
         assert data["source"] == "zotero"
 
-    def test_gaps_report_names_the_policy(self, http, workdir, capsys):
-        os.environ["PHILLIT_FULLTEXT_LICENSED_ONLY"] = "1"
+    def test_gaps_report_names_the_policy(self, http, workdir, capsys, monkeypatch):
+        monkeypatch.setenv("PHILLIT_FULLTEXT_LICENSED_ONLY", "1")
         (workdir / "literature-domain-1.bib").write_text(bib_entry("g", doi=DOI), encoding="utf-8")
         run(capsys, workdir, "--gaps", "--domains", "1")
         report = json.loads((workdir / af.REPORT_REL).read_text(encoding="utf-8"))
@@ -803,13 +804,13 @@ class TestStore:
         assert data["status"] == "not_found"
         assert data["tried"][0] == {"source": "store", "outcome": "invalid_kept:sidecar_unreadable"}
 
-    def test_an_unlicensed_service_copy_in_the_store_is_removed(self, http, workdir, capsys):
+    def test_an_unlicensed_service_copy_in_the_store_is_removed(self, http, workdir, capsys, monkeypatch):
         """A service copy that landed after an earlier run's check meets the
         licence rule on the next run; under POLICY=open it stands."""
         store = workdir / ft.STORE_REL
         write_repo_record(store, work_pdf(), af.make_identity(DOI), source="openalex",
                           source_ref=SERVICE_REF, license="oa:author")
-        os.environ["PHILLIT_FULLTEXT_LICENSED_ONLY"] = "1"
+        monkeypatch.setenv("PHILLIT_FULLTEXT_LICENSED_ONLY", "1")
         code, data = run_json(capsys, workdir, "--doi", DOI)
         assert data["tried"][0] == {"source": "store", "outcome": "unlicensed_removed"}
         assert [t["source"] for t in data["tried"][1:]] == ["repository", "zotero", "folder",
@@ -818,7 +819,7 @@ class TestStore:
         assert list(store.iterdir()) == []
         write_repo_record(store, work_pdf(), af.make_identity(DOI), source="openalex",
                           source_ref=SERVICE_REF, license="oa:author")
-        os.environ["PHILLIT_FULLTEXT_POLICY"] = "open"
+        monkeypatch.setenv("PHILLIT_FULLTEXT_POLICY", "open")
         code, data = run_json(capsys, workdir, "--doi", DOI)
         assert data["status"] == "exists"
 
@@ -840,13 +841,13 @@ class TestStore:
         assert data["tried"] == [{"source": "store", "outcome": "unlicensed_remove_failed:PermissionError"}]
         assert len(list(store.glob("*.json"))) == 1 and http.calls == []
 
-    def test_a_repository_record_is_not_a_service_copy(self, http, workdir, capsys):
+    def test_a_repository_record_is_not_a_service_copy(self, http, workdir, capsys, monkeypatch):
         """The repository nests the original ref: the store re-check skips it."""
         store = workdir / ft.STORE_REL
         write_repo_record(store, work_pdf(), af.make_identity(DOI), source="repository",
                           source_ref={"stem": "x", "source": "openalex", "source_ref": SERVICE_REF},
                           license="oa:author")
-        os.environ["PHILLIT_FULLTEXT_LICENSED_ONLY"] = "1"
+        monkeypatch.setenv("PHILLIT_FULLTEXT_LICENSED_ONLY", "1")
         code, data = run_json(capsys, workdir, "--doi", DOI)
         assert data["status"] == "exists"
 
@@ -1231,7 +1232,7 @@ class TestGaps:
         """A removal that raises inside one slug's check is that slug's
         `unavailable`; every request is still closed and the pass is done."""
         monkeypatch.setattr(fc, "MAX_PER_REQUEST", 1)
-        os.environ["PHILLIT_FULLTEXT_LICENSED_ONLY"] = "1"
+        monkeypatch.setenv("PHILLIT_FULLTEXT_LICENSED_ONLY", "1")
 
         def refuse(store, slug):
             raise OSError("read-only")
@@ -1530,16 +1531,16 @@ class TestRepository:
         assert first["detail"][0].startswith("identity_failed:")
         assert data["status"] == "rejected" and data["source"] is None
 
-    def test_repository_licence_backstop(self, http, workdir, capsys, tmp_path):
+    def test_repository_licence_backstop(self, http, workdir, capsys, tmp_path, monkeypatch):
         repo = tmp_path / "records"
         write_repo_record(repo, work_pdf(), af.make_identity(DOI), source="openalex",
                           source_ref=OA_REF, license="oa:author")
         write_env(f"PHILLIT_FULLTEXT_REPOSITORY_DIR={repo}\n")
-        os.environ["PHILLIT_FULLTEXT_LICENSED_ONLY"] = "1"
+        monkeypatch.setenv("PHILLIT_FULLTEXT_LICENSED_ONLY", "1")
         code, data = run_json(capsys, workdir, "--doi", DOI)
         assert data["tried"][0] == {"source": "repository", "outcome": "unlicensed",
                                     "detail": ["licence 'oa:author' not admitted by policy"]}
-        os.environ["PHILLIT_FULLTEXT_POLICY"] = "open"
+        monkeypatch.setenv("PHILLIT_FULLTEXT_POLICY", "open")
         code, data = run_json(capsys, workdir, "--doi", DOI)
         assert data["status"] == "acquired" and data["source"] == "repository"
         rec = ft.validate_record(workdir / ft.STORE_REL, data["slug"])
@@ -1554,11 +1555,11 @@ class TestRepository:
                                  source_ref=OA_REF, license="oa:author")
         write_env(f"PHILLIT_FULLTEXT_REPOSITORY_DIR={repo}\n")
         monkeypatch.setattr(af, "LOCAL_MAX_BYTES", 10)
-        os.environ["PHILLIT_FULLTEXT_LICENSED_ONLY"] = "1"
+        monkeypatch.setenv("PHILLIT_FULLTEXT_LICENSED_ONLY", "1")
         code, data = run_json(capsys, workdir, "--doi", DOI)
         assert data["tried"][0] == {"source": "repository", "outcome": "unlicensed",
                                     "detail": ["licence 'oa:author' not admitted by policy"]}
-        del os.environ["PHILLIT_FULLTEXT_LICENSED_ONLY"]
+        monkeypatch.delenv("PHILLIT_FULLTEXT_LICENSED_ONLY")
         code, data = run_json(capsys, workdir, "--doi", DOI)
         assert data["tried"][0] == {"source": "repository", "outcome": "unavailable",
                                     "detail": ["too_large"]}
@@ -1583,12 +1584,13 @@ class TestRepository:
         rec = ft.validate_record(workdir / ft.STORE_REL, data["slug"])
         assert rec.identity == ident
 
-    def test_gaps_no_doi_entries_are_tried_when_a_repository_is_set(self, http, workdir, capsys, tmp_path):
+    def test_gaps_no_doi_entries_are_tried_when_a_repository_is_set(self, http, workdir, capsys, tmp_path,
+                                                                    monkeypatch):
         repo = tmp_path / "records"
         write_repo_record(repo, work_pdf(doi=None), af.make_identity(None, TITLE, SURNAME, YEAR),
                           source="user", source_ref="u.pdf", license="cc-by")
         write_env(f"PHILLIT_FULLTEXT_REPOSITORY_DIR={repo}\n")
-        os.environ["PHILLIT_FULLTEXT_LICENSED_ONLY"] = "1"
+        monkeypatch.setenv("PHILLIT_FULLTEXT_LICENSED_ONLY", "1")
         (workdir / "literature-domain-1.bib").write_text(bib_entry("nodoi"), encoding="utf-8")
         code, out = run(capsys, workdir, "--gaps", "--domains", "1")
         report = json.loads((workdir / af.REPORT_REL).read_text(encoding="utf-8"))
@@ -1701,9 +1703,10 @@ def _request_files(worker):
 
 
 class TestService:
-    def test_service_replaces_open_access_and_validates_the_copy(self, http, workdir, capsys, service):
-        os.environ["PHILLIT_FULLTEXT_LICENSED_ONLY"] = "1"
-        os.environ["PHILLIT_FULLTEXT_POLICY"] = "open"
+    def test_service_replaces_open_access_and_validates_the_copy(self, http, workdir, capsys, service,
+                                                                 monkeypatch):
+        monkeypatch.setenv("PHILLIT_FULLTEXT_LICENSED_ONLY", "1")
+        monkeypatch.setenv("PHILLIT_FULLTEXT_POLICY", "open")
         service.answer({DOI: {"status": "found", "pdf": work_pdf(), "source": "openalex",
                               "source_ref": SERVICE_REF, "license": "oa:oa_repository"}})
         code, data = run_json(capsys, workdir, *_full_args())
@@ -1820,8 +1823,8 @@ class TestService:
                                         "detail": [f"copy_invalid:{reason}"]}
         assert data["status"] == "not_found"
 
-    def test_unlicensed_copy_is_removed_by_the_backstop(self, http, workdir, capsys, service):
-        os.environ["PHILLIT_FULLTEXT_LICENSED_ONLY"] = "1"
+    def test_unlicensed_copy_is_removed_by_the_backstop(self, http, workdir, capsys, service, monkeypatch):
+        monkeypatch.setenv("PHILLIT_FULLTEXT_LICENSED_ONLY", "1")
         service.answer({DOI: {"status": "found", "pdf": work_pdf(), "license": "oa:author"}})
         code, data = run_json(capsys, workdir, "--doi", DOI)
         assert _service_tried(data) == {"source": "service", "outcome": "unlicensed",
@@ -1829,9 +1832,19 @@ class TestService:
         assert data["status"] == "not_found"
         assert list((workdir / ft.STORE_REL).iterdir()) == []
 
+    def test_a_copy_without_a_licence_is_refused_under_policy_open(self, http, workdir, capsys,
+                                                                   service, monkeypatch):
+        monkeypatch.setenv("PHILLIT_FULLTEXT_POLICY", "open")
+        service.answer({DOI: {"status": "found", "pdf": work_pdf(), "license": None}})
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert _service_tried(data) == {"source": "service", "outcome": "unlicensed",
+                                        "detail": ["licence None not admitted by policy"]}
+        assert data["status"] == "not_found"
+        assert list((workdir / ft.STORE_REL).iterdir()) == []
+
     def test_backstop_runs_before_the_copy_is_read(self, http, workdir, capsys, service, monkeypatch):
         """An unlicensed copy is removed even when it could not be read."""
-        os.environ["PHILLIT_FULLTEXT_LICENSED_ONLY"] = "1"
+        monkeypatch.setenv("PHILLIT_FULLTEXT_LICENSED_ONLY", "1")
         monkeypatch.setattr(af, "LOCAL_MAX_BYTES", 10)
         service.answer({DOI: {"status": "found", "pdf": work_pdf(), "license": "oa:author"}})
         code, data = run_json(capsys, workdir, "--doi", DOI)
@@ -1868,8 +1881,8 @@ class TestService:
         assert _service_tried(data) == {"source": "service", "outcome": outcome, "detail": details}
         assert data["status"] == status
 
-    def test_stem_mismatch_copy_still_meets_the_backstop(self, http, workdir, capsys, service):
-        os.environ["PHILLIT_FULLTEXT_LICENSED_ONLY"] = "1"
+    def test_stem_mismatch_copy_still_meets_the_backstop(self, http, workdir, capsys, service, monkeypatch):
+        monkeypatch.setenv("PHILLIT_FULLTEXT_LICENSED_ONLY", "1")
         service.answer({DOI: {"status": "found", "stem": "doi-10.9999_x-000000000000",
                               "pdf": work_pdf(), "license": "oa:author"}})
         code, data = run_json(capsys, workdir, "--doi", DOI)
@@ -1880,8 +1893,8 @@ class TestService:
 
     # The store is checked at every requested slug, whatever the response says.
 
-    def test_unanswered_unlicensed_copy_is_removed(self, http, workdir, capsys, service):
-        os.environ["PHILLIT_FULLTEXT_LICENSED_ONLY"] = "1"
+    def test_unanswered_unlicensed_copy_is_removed(self, http, workdir, capsys, service, monkeypatch):
+        monkeypatch.setenv("PHILLIT_FULLTEXT_LICENSED_ONLY", "1")
         service.mode = "copy_without_answer"
         service.answer({DOI: {"status": "found", "pdf": work_pdf(), "license": "oa:author"}})
         code, data = run_json(capsys, workdir, "--doi", DOI)
