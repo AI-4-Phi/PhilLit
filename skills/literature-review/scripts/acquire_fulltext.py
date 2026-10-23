@@ -115,9 +115,14 @@ for a crash, with one JSON object `{"error": ...}`; 2 for a usage error.
 
 `--gaps` tries every domain-bib entry with no `abstract` and either a DOI,
 or (the repository, Zotero or the folder enabled) a title, author and
-year, within a 420 s pass deadline (the Bash ceiling is 600 s); entries
-not reached are `not_attempted`. It writes the run report and prints a one-line JSON
-summary with counts per outcome.
+year, within a 420 s pass deadline (the Bash ceiling is 600 s): store and
+repository (and Zotero and the folder where enabled; OpenAlex and Semantic
+Scholar while the service channel is off) per entry, then one service
+request for the entries still open, then a wait bounded by the pass
+deadline. Entries not reached are `not_attempted`; an entry whose
+work an earlier entry already tried is `same_work_as` that entry and
+takes its final outcome. It writes the run report and prints a one-line
+JSON summary with counts per outcome.
 
 IDENTITY FORMS (the barrier's binding contract). `--gaps` stores the
 entry's RAW title, `bib_identity.first_author_surname(author, editor)` and
@@ -1128,14 +1133,14 @@ def _service_result(store: Path, slug: str, identity: dict, entry: dict | None,
     if not isinstance(rec, ft.Record):
         res.detail.append(f"copy_invalid:{rec}")
         return res
-    data, why = _read_local(str(rec.pdf_path))
-    if data is None:
-        res.detail.append(why)
-        return res
     if not _licensed(rec.license, settings.policy):
         _remove_copy(store, slug)
         res.outcome = "unlicensed"
         res.detail.append(f"licence {rec.license!r} not admitted by policy")
+        return res
+    data, why = _read_local(str(rec.pdf_path))
+    if data is None:
+        res.detail.append(why)
         return res
     ok, why = check_pdf(data, identity)
     if not ok:
@@ -1177,10 +1182,10 @@ def service_fetch(store: Path, pending: list[tuple[str, dict]], settings: Settin
         request_id = fc.new_request_id(mode)
         try:
             fc.write_request(settings.request_dir, request_id, mode, [p for _, _, p in chunk])
-        except OSError as exc:
+        except (OSError, ValueError) as exc:
+            reason = (str(exc) if isinstance(exc, ValueError) else "") or type(exc).__name__
             for slug, _, _ in chunk:
-                out[slug] = SourceResult("service", "unavailable",
-                                         [f"request_write_failed:{type(exc).__name__}"])
+                out[slug] = SourceResult("service", "unavailable", [f"request_write_failed:{reason}"])
             continue
         requests_sent.append((request_id, chunk))
     for request_id, chunk in requests_sent:
@@ -1297,7 +1302,12 @@ def run_gaps(workdir: Path, n_domains: int, settings: Settings) -> dict:
     title_route = settings.repository_dir is not None or (
         not settings.licensed_only and (settings.zotero_on or settings.pdf_dir is not None))
     cands, domains = gap_candidates(workdir, n_domains, title_route)
-    entries, by_slug = [], {}
+
+    def crashed(row, exc):   # one entry's crash never sinks the pass
+        row.update(outcome="error", source=None,
+                   tried=[{"source": "pipeline", "outcome": f"error:{type(exc).__name__}: {exc}"}])
+
+    entries, by_slug, attempts, duplicates = [], {}, [], []
     for domain, key, ident in cands:
         row = {"domain": domain, "key": key}
         try:
@@ -1307,22 +1317,40 @@ def run_gaps(workdir: Path, n_domains: int, settings: Settings) -> dict:
                        tried=[{"source": "store", "outcome": "bad_identity"}])
             entries.append(row)
             continue
+        row.update(slug=slug, outcome=None, source=None, tried=[])
         if slug in by_slug:
             first = by_slug[slug]
-            row.update(slug=slug, outcome=first["outcome"], source=first["source"],
-                       tried=[{"source": "store", "outcome": f"same_work_as:{first['domain']}/{first['key']}"}])
+            row["tried"] = [{"source": "store", "outcome": f"same_work_as:{first['domain']}/{first['key']}"}]
+            duplicates.append((row, first))
         elif deadline.expired():
-            row.update(slug=slug, outcome="not_attempted", source=None, tried=[])
+            row["outcome"] = "not_attempted"
         else:
             try:
-                res = acquire_one(workdir, ident, settings, deadline)
-                row.update(slug=slug, outcome=res["status"], source=res["source"], tried=res["tried"])
-            except Exception as exc:   # one entry's crash never sinks the pass
-                row.update(slug=slug, outcome="error", source=None,
-                           tried=[{"source": "pipeline", "outcome": f"error:{type(exc).__name__}: {exc}"}])
-            if row["outcome"] != "not_attempted":
-                by_slug[slug] = row
+                attempts.append((row, begin(workdir, ident, settings, deadline)))
+            except Exception as exc:
+                crashed(row, exc)
+            by_slug[slug] = row
         entries.append(row)
+    # One service request for every entry the local sources left open.
+    pending = [(a.slug, a.identity) for _, a in attempts
+               if a.out is None and not any(r.hits for r in a.results)]
+    try:
+        service = service_fetch(workdir / ft.STORE_REL, pending, settings, deadline, "gaps")
+    except Exception as exc:
+        open_slugs = {slug for slug, _ in pending}
+        for row, attempt in attempts:
+            if attempt.slug in open_slugs:
+                crashed(row, exc)
+        attempts = [(row, a) for row, a in attempts if a.slug not in open_slugs]
+        service = {}
+    for row, attempt in attempts:
+        try:
+            res = finish(attempt, service.get(attempt.slug))
+            row.update(outcome=res["status"], source=res["source"], tried=res["tried"])
+        except Exception as exc:
+            crashed(row, exc)
+    for row, first in duplicates:
+        row.update(outcome=first["outcome"], source=first["source"])
     counts: dict[str, int] = {}
     for e in entries:
         counts[e["outcome"]] = counts.get(e["outcome"], 0) + 1
@@ -1342,9 +1370,10 @@ def run_gaps(workdir: Path, n_domains: int, settings: Settings) -> dict:
               "elapsed_seconds": round(_clock() - started, 1),
               "licensed_only": settings.licensed_only,
               "policy": settings.policy,
-              "sources": {"repository": "on" if settings.repository_dir is not None else "off",
-                          "zotero": "on" if settings.zotero_on and not settings.licensed_only else "off",
-                          "folder": "on" if settings.pdf_dir is not None and not settings.licensed_only else "off"},
+              "sources": {"zotero": "on" if settings.zotero_on and not settings.licensed_only else "off",
+                          "folder": "on" if settings.pdf_dir is not None and not settings.licensed_only else "off",
+                          "repository": "on" if settings.repository_dir is not None else "off",
+                          "service": "on" if settings.request_dir is not None else "off"},
               "domains": domains, "candidates": len(entries), "counts": counts, "errors": errors, "warnings": warnings,
               "entries": entries}
     path = workdir / REPORT_REL

@@ -948,13 +948,13 @@ class TestGaps:
     def test_entry_crash_named_in_summary_and_report(self, http, workdir, capsys, monkeypatch):
         (workdir / "literature-domain-1.bib").write_text(
             bib_entry("ok", doi="10.1/fine") + bib_entry("bad", doi="10.1/boom"), encoding="utf-8")
-        real = af.acquire_one
+        real = af.begin
 
         def flaky(wd, ident, settings, deadline, pdf_path=None):
             if ident["doi"] == "10.1/boom":
                 raise RuntimeError("kaput")
             return real(wd, ident, settings, deadline, pdf_path)
-        monkeypatch.setattr(af, "acquire_one", flaky)
+        monkeypatch.setattr(af, "begin", flaky)
         code, out = run(capsys, workdir, "--gaps", "--domains", "1")
         assert code == 0
         summary = json.loads(out)
@@ -970,7 +970,7 @@ class TestGaps:
 
         def boom(*a, **k):
             raise RuntimeError("kaput")
-        monkeypatch.setattr(af, "acquire_one", boom)
+        monkeypatch.setattr(af, "begin", boom)
         code, out = run(capsys, workdir, "--gaps", "--domains", "2")
         assert json.loads(out)["errors"] == [
             {"entry": "1/g1", "reason": "error:RuntimeError: kaput"},
@@ -1016,6 +1016,137 @@ class TestGaps:
         before = bib.read_bytes()
         run(capsys, workdir, "--gaps", "--domains", "1")
         assert bib.read_bytes() == before
+
+    # The service channel in a gap pass: one request for every open entry.
+
+    def test_gaps_sends_one_request_for_every_open_entry(self, http, workdir, capsys, tmp_path, service):
+        dois = ["10.1/w0", "10.1/w1", "10.1/w2"]
+        repo = tmp_path / "records"
+        write_repo_record(repo, work_pdf(doi=dois[0]), af.make_identity(dois[0]), source="user",
+                          source_ref="u.pdf", license="upload")
+        write_env(f"PHILLIT_FULLTEXT_REQUEST_DIR={service.request_dir}\n"
+                  f"PHILLIT_FULLTEXT_REPOSITORY_DIR={repo}\n")
+        service.answer({d: {"status": "found", "pdf": work_pdf(doi=d)} for d in dois})
+        (workdir / "literature-domain-1.bib").write_text(
+            "".join(bib_entry(f"k{n}", doi=d) for n, d in enumerate(dois)), encoding="utf-8")
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        assert code == 0
+        [req] = _request_files(service)
+        request = json.loads(req.read_text(encoding="utf-8"))
+        assert request["mode"] == "gaps"
+        assert [i["key"] for i in request["identities"]] == [f"doi:{d}" for d in dois[1:]]
+        assert (service.request_dir / (request["request_id"] + fc.CLOSED_SUFFIX)).exists()
+        report = json.loads((workdir / af.REPORT_REL).read_text(encoding="utf-8"))
+        assert report["counts"] == {"acquired": 3}
+        assert [e["source"] for e in report["entries"]] == ["repository", "openalex", "openalex"]
+        assert list(report["sources"].items()) == [("zotero", "off"), ("folder", "off"),
+                                                   ("repository", "on"), ("service", "on")]
+        assert http.calls == []
+
+    def test_more_than_fifty_identities_split_into_requests(self, http, workdir, capsys, service):
+        dois = [f"10.1/w{n}" for n in range(60)]
+        service.answer({d: {"status": "none"} for d in dois})
+        (workdir / "literature-domain-1.bib").write_text(
+            "".join(bib_entry(f"k{n}", doi=d) for n, d in enumerate(dois)), encoding="utf-8")
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        assert json.loads(out)["counts"] == {"not_found": 60}
+        requests = [json.loads(p.read_text(encoding="utf-8")) for p in _request_files(service)]
+        assert sorted(len(r["identities"]) for r in requests) == [10, 50]
+        for r in requests:
+            assert (service.request_dir / (r["request_id"] + fc.CLOSED_SUFFIX)).exists()
+        report = json.loads((workdir / af.REPORT_REL).read_text(encoding="utf-8"))
+        assert all(_service_tried(e) == {"source": "service", "outcome": "not_found"}
+                   for e in report["entries"])
+
+    def test_duplicate_row_copies_the_first_rows_final_outcome(self, http, workdir, capsys, service):
+        for i in (1, 2):
+            (workdir / f"literature-domain-{i}.bib").write_text(bib_entry(f"g{i}", doi=DOI),
+                                                                encoding="utf-8")
+        service.answer({DOI: {"status": "found", "pdf": work_pdf()}})
+        code, out = run(capsys, workdir, "--gaps", "--domains", "2")
+        report = json.loads((workdir / af.REPORT_REL).read_text(encoding="utf-8"))
+        first, dup = report["entries"]
+        assert (first["outcome"], first["source"]) == ("acquired", "openalex")
+        assert (dup["outcome"], dup["source"]) == ("acquired", "openalex")
+        assert dup["tried"] == [{"source": "store", "outcome": "same_work_as:1/g1"}]
+        [req] = _request_files(service)
+        assert [i["key"] for i in json.loads(req.read_text(encoding="utf-8"))["identities"]] == [f"doi:{DOI}"]
+
+    def test_deadline_before_the_request_marks_service_deadline(self, http, workdir, capsys, service,
+                                                                 monkeypatch):
+        """Both entries are tried locally, and the pass then lies inside the
+        wait margin: no request is written."""
+        def slow_repository(identity, settings, deadline):
+            service.clock[0] += (af.GAPS_DEADLINE - af.SERVICE_WAIT_MARGIN) / 2 + 1
+            return af.SourceResult("repository", "not_found")
+        monkeypatch.setitem(af._SOURCES, "repository", slow_repository)
+        dois = ["10.1/w0", "10.1/w1"]
+        service.answer({d: {"status": "found", "pdf": work_pdf(doi=d)} for d in dois})
+        (workdir / "literature-domain-1.bib").write_text(
+            "".join(bib_entry(f"k{n}", doi=d) for n, d in enumerate(dois)), encoding="utf-8")
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        report = json.loads((workdir / af.REPORT_REL).read_text(encoding="utf-8"))
+        assert [e["outcome"] for e in report["entries"]] == ["not_found", "not_found"]
+        assert all(_service_tried(e) == {"source": "service", "outcome": "deadline"}
+                   for e in report["entries"])
+        assert _request_files(service) == []
+        assert af.GAPS_DEADLINE - af.SERVICE_WAIT_MARGIN < service.clock[0] < af.GAPS_DEADLINE
+
+    def test_finish_crash_is_an_error_row(self, http, workdir, capsys, service, monkeypatch):
+        real = af.finish
+
+        def flaky(attempt, svc):
+            if attempt.identity["doi"] == "10.1/boom":
+                raise RuntimeError("kaput")
+            return real(attempt, svc)
+        monkeypatch.setattr(af, "finish", flaky)
+        service.answer({"10.1/fine": {"status": "found", "pdf": work_pdf(doi="10.1/fine")}})
+        (workdir / "literature-domain-1.bib").write_text(
+            bib_entry("ok", doi="10.1/fine") + bib_entry("bad", doi="10.1/boom"), encoding="utf-8")
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        assert code == 0
+        assert json.loads(out)["errors"] == [{"entry": "1/bad", "reason": "error:RuntimeError: kaput"}]
+        report = json.loads((workdir / af.REPORT_REL).read_text(encoding="utf-8"))
+        ok, bad = report["entries"]
+        assert (ok["outcome"], ok["source"]) == ("acquired", "openalex")
+        assert bad["outcome"] == "error"
+        assert bad["tried"] == [{"source": "pipeline", "outcome": "error:RuntimeError: kaput"}]
+
+    def test_service_crash_is_an_error_row_and_local_hits_stand(self, http, workdir, capsys, tmp_path,
+                                                                 service, monkeypatch):
+        repo = tmp_path / "records"
+        write_repo_record(repo, work_pdf(doi="10.1/w0"), af.make_identity("10.1/w0"), source="user",
+                          source_ref="u.pdf", license="upload")
+        write_env(f"PHILLIT_FULLTEXT_REQUEST_DIR={service.request_dir}\n"
+                  f"PHILLIT_FULLTEXT_REPOSITORY_DIR={repo}\n")
+
+        def boom(*a, **k):
+            raise RuntimeError("kaput")
+        monkeypatch.setattr(af, "service_fetch", boom)
+        (workdir / "literature-domain-1.bib").write_text(
+            bib_entry("k0", doi="10.1/w0") + bib_entry("k1", doi="10.1/w1"), encoding="utf-8")
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        assert code == 0
+        assert json.loads(out)["errors"] == [{"entry": "1/k1", "reason": "error:RuntimeError: kaput"}]
+        report = json.loads((workdir / af.REPORT_REL).read_text(encoding="utf-8"))
+        hit, crashed = report["entries"]
+        assert (hit["outcome"], hit["source"]) == ("acquired", "repository")
+        assert crashed["outcome"] == "error"
+
+    def test_oversize_request_is_unavailable_and_never_written(self, http, workdir, capsys, service,
+                                                               monkeypatch):
+        monkeypatch.setattr(fc, "MAX_REQUEST_BYTES", 100)
+        dois = ["10.1/w0", "10.1/w1"]
+        service.answer({d: {"status": "found", "pdf": work_pdf(doi=d)} for d in dois})
+        (workdir / "literature-domain-1.bib").write_text(
+            "".join(bib_entry(f"k{n}", doi=d) for n, d in enumerate(dois)), encoding="utf-8")
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        assert json.loads(out)["counts"] == {"not_found": 2}
+        report = json.loads((workdir / af.REPORT_REL).read_text(encoding="utf-8"))
+        assert all(_service_tried(e) == {"source": "service", "outcome": "unavailable",
+                                         "detail": ["request_write_failed:request_too_large"]}
+                   for e in report["entries"])
+        assert _request_files(service) == []
 
 
 # ---------------------------------------------------------------------------
@@ -1304,6 +1435,16 @@ class TestService:
         assert _service_tried(data) == {"source": "service", "outcome": "unlicensed",
                                         "detail": ["licence 'oa:author' not admitted by policy"]}
         assert data["status"] == "not_found"
+        assert list((workdir / ft.STORE_REL).iterdir()) == []
+
+    def test_backstop_runs_before_the_copy_is_read(self, http, workdir, capsys, service, monkeypatch):
+        """An unlicensed copy is removed even when it could not be read."""
+        os.environ["PHILLIT_FULLTEXT_LICENSED_ONLY"] = "1"
+        monkeypatch.setattr(af, "LOCAL_MAX_BYTES", 10)
+        service.answer({DOI: {"status": "found", "pdf": work_pdf(), "license": "oa:author"}})
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert _service_tried(data) == {"source": "service", "outcome": "unlicensed",
+                                        "detail": ["licence 'oa:author' not admitted by policy"]}
         assert list((workdir / ft.STORE_REL).iterdir()) == []
 
     def test_copy_of_another_work_is_rejected_and_removed(self, http, workdir, capsys, service):
