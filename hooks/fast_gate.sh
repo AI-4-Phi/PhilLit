@@ -9,7 +9,8 @@
 #   - the cwd is a PhilLit workspace (.phillit marker), and
 #   - the hook's stdin JSON contains <needle> literally. The needle is an
 #     over-approximation: a miss can never need blocking (a .bib file_path must
-#     contain ".bib"; the background gate only blocks run_in_background=true),
+#     contain ".bib"; the Bash gate only blocks run_in_background=true, and
+#     every Agent dispatch the foreground gate rewrites has a subagent_type),
 #     while a spurious hit just means the Python gate decides properly.
 # On a hit, pipes the captured stdin into the gate via bin/phillit-run and
 # propagates its exit status, so hooks.json's `|| echo` fail-open fallback

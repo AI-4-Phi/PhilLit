@@ -11,7 +11,13 @@ History, because the wording has flipped twice with the CLI:
   orchestrator told to expect blocking calls read the immediate return as
   failure territory and split one batch into two round trips.
 
-So the skill must be harness-neutral: pass the flag only where the tool
+- Claude Code 2.1.307 and 2.1.309 list the flag again, and there an
+  omitted flag means background: the orchestrator omitted it on all 61
+  review-agent dispatches of three runs (2026-10-22) under a conditional
+  "pass it only if listed". The dispatch hook now sets it; the wording
+  makes it REQUIRED wherever it is listed.
+
+So the skill must be harness-neutral: pass the flag wherever the tool
 lists it, never invent a parameter, treat an immediate return as success,
 wait for every agent's completion, and treat a repeat notification as a
 no-op. These assertions guard that wording.
@@ -31,8 +37,9 @@ TEXT = SKILL.read_text(encoding="utf-8")
 def test_flag_is_conditional_on_the_tool_listing_it():
     # Foreground is requested where the parameter exists - and only there.
     assert "run_in_background: false" in TEXT
-    assert "only if the tool's parameter list includes it" in TEXT
-    assert "never add a parameter the tool does not list" in TEXT
+    assert "REQUIRED whenever the tool's parameter list includes it" in TEXT
+    assert "an omitted flag runs the agent in the background" in TEXT
+    assert "Never add a parameter the tool does not list" in TEXT
 
 
 def test_no_blocking_claim():

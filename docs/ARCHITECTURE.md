@@ -212,7 +212,7 @@ hooks/
 ├── subagent_stop_bib.sh                  # Validate researcher BibTeX and clean its metadata when a researcher stops
 ├── validate_bib_write.py                 # Validate .bib files as they are written and edited
 ├── block_background_bash.py              # Block run_in_background in subagents
-├── block_subagent_background_dispatch.py # Review agents must dispatch foreground
+├── block_subagent_background_dispatch.py # Forces review-agent dispatch to the foreground
 ├── block_ledger_write.py                 # Refuse file-tool writes to the attestation ledgers (ledger write-protection)
 ├── bib_validator.py                      # BibTeX validation logic
 ├── bib_comments.py                       # NOT a hook — the one owner of the @comment/@string/@preamble block grammar (is_verbatim_block, comment_defects)

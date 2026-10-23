@@ -44,7 +44,8 @@ def test_intrusive_hooks_are_gated_by_fast_gate():
 def test_background_dispatch_gate_wired_for_agent_and_task():
     # The dispatch tool was renamed Task -> Agent in v2.1.198; wire BOTH
     # matchers so the gate survives version drift. Each routes through
-    # fast_gate.sh with the run_in_background needle, like the Bash gate.
+    # fast_gate.sh with the subagent_type needle: the call the gate exists
+    # for OMITS run_in_background, so that needle would never wake it.
     matchers = set(_matchers_for("PreToolUse", "block_subagent_background_dispatch.py"))
     assert matchers == {"Agent", "Task"}
     cmds = [
@@ -56,7 +57,7 @@ def test_background_dispatch_gate_wired_for_agent_and_task():
     for c in cmds:
         assert "fast_gate.sh" in c
         assert "${CLAUDE_PLUGIN_ROOT}" in c
-        assert '" run_in_background ' in c  # needle argument precedes the script
+        assert '" subagent_type ' in c  # needle argument precedes the script
 
 
 def test_ledger_write_gate_wired_for_every_file_editing_tool():

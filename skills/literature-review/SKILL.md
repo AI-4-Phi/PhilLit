@@ -77,7 +77,7 @@ Invoke subagents using the Agent tool with these parameters (older Claude Code s
 - `subagent_type`: The agent name with the plugin prefix (e.g., "phillit:literature-review-planner")
 - `prompt`: The instructions for the agent (include working directory and output filename)
 - `description`: Short description (3-5 words)
-- `run_in_background`: pass `run_in_background: false` **only if the tool's parameter list includes it**; never add a parameter the tool does not list. Claude Code 2.1.267 exposes no such parameter on `Agent` — every dispatch there returns "Async agent launched" at once, and the result arrives later as a `<task-notification>`.
+- `run_in_background`: **REQUIRED whenever the tool's parameter list includes it**: pass `run_in_background: false` on every review-agent dispatch, because there an omitted flag runs the agent in the background (PhilLit's dispatch hook also sets it). Never add a parameter the tool does not list. Some Claude Code versions (2.1.267) list no such parameter: every dispatch there returns "Async agent launched" at once, and the result arrives later as a `<task-notification>`.
 
 **How dispatch completes depends on the harness.** On the harnesses observed so far, either every call in a message blocks and returns its result inline (the tool lists `run_in_background`), or every call returns immediately and each agent's result arrives later as a `<task-notification>` (the tool lists no such parameter). In both models the same five rules hold:
 - Issue all N calls of a parallel phase in ONE message.

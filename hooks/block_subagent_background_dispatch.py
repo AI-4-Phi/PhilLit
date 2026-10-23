@@ -1,34 +1,50 @@
 #!/usr/bin/env python3
-"""PreToolUse hook: block background dispatch of PhilLit review subagents.
+"""PreToolUse hook: force PhilLit review subagents into the foreground.
 
-The literature-review workflow requires its subagents to run in the
-FOREGROUND (batched, results returned inline).  As of Claude Code v2.1.198
-the dispatch tool (renamed Task -> Agent) defaults to background, so a stray
-``run_in_background: true`` on an Agent dispatch silently orphans a review
-agent -- it keeps running after the orchestrator moves on and nobody reads
-its BibTeX output.  This hook denies such a dispatch at the orchestrator.
+The literature-review workflow wants its four review agents to run in the
+FOREGROUND: several dispatch calls in one message run in parallel, each
+returns its agent's result inline, and the orchestrator cannot advance
+before they finish. Where the dispatch tool (Agent, formerly Task) lists
+`run_in_background`, an OMITTED flag means background: on Claude Code
+2.1.307 the orchestrator omitted it on all 61 review-agent dispatches of
+three headless runs (2026-10-22), each returned "Async agent launched",
+and `-p` stopped the researchers mid-run. A deny on an explicit `true`,
+which this hook used to be, never saw those calls.
 
-Mirror-image of block_background_bash.py: that gate blocks background Bash
-*inside* subagents (agent_id present); this one blocks background Agent
-dispatch *at the orchestrator* (agent_id ABSENT).  Scope is limited to the
-four PhilLit review agents, so unrelated background dispatches in a PhilLit
-workspace are untouched.
+So the hook REWRITES the call instead of denying it: it sets
+`run_in_background: false` (absent or true alike) through `updatedInput`,
+without a permissionDecision, so the user's permission rules still apply
+and the call costs no extra turn. Measured on 2.1.307 and 2.1.309: the
+rewritten call returns the agent's result inline, and two rewritten calls
+in one message still run in parallel. A foreground agent stays foreground
+unless `CLAUDE_AUTO_BACKGROUND_TASKS` is set, which moves it to the
+background after 120 s (read off the 2.1.309 binary).
 
-Field names verified empirically against Claude Code 2.1.215:
-  tool_name == "Agent"; tool_input = {subagent_type, run_in_background,
-  prompt, description}; agent_id absent at orchestrator level.
-Claude Code 2.1.267 (measured 2026-09-10) exposes NO run_in_background on
-Agent at all: every dispatch is asynchronous and reports back through
-task notifications, so this gate never fires there. It is kept for the
-CLIs that still expose the flag; on 2.1.267 and later it is SKILL.md's
-dispatch rules, not this hook, that prevent a mis-dispatch - do not read
-those bullets as redundant with this file.
+All of that holds for headless (`-p`) runs. An INTERACTIVE 2.1.309 session
+runs every agent in the background whatever the flag says: there the rewrite
+lands (measured: a rewritten description appeared on the launched task) and
+the result still comes back `async_launched`. That is harmless, since an
+interactive session stays open for the completion notifications, but it is
+why SKILL.md's notification rules stay load-bearing.
 
-Reads the hook JSON from stdin (Claude Code hook protocol).
-Exits 0 with hookSpecificOutput JSON on stdout.
+No-op when `CLAUDE_CODE_DISABLE_BACKGROUND_TASKS` is set (phillit-service's
+worker sets it): the tool then lists no such flag and every dispatch is
+already inline. 2.1.309 tolerates the injected key on a flagless tool, but
+an older CLI might reject it. Untested residual: a flagless CLI without
+that variable (2.1.267 measured no flag on 2026-09-10) gets the key too.
+
+Scope: the four review agents (any plugin namespace) at the orchestrator
+(`agent_id` absent; subagents cannot dispatch). Disabling background tasks
+workspace-wide is NOT the plugin's fix: with it, a Bash command is never
+moved to the background, so a barrier that outlasts the 10-minute Bash
+ceiling would be killed.
+
+Reads the hook JSON from stdin (Claude Code hook protocol). Exits 0 with
+JSON on stdout: `{}` to leave the call alone.
 """
 
 import json
+import os
 import sys
 
 # The four review subagents that must run in the foreground (see SKILL.md).
@@ -47,36 +63,29 @@ def _bare_agent(subagent_type: str) -> str:
     return subagent_type.rsplit(":", 1)[-1] if subagent_type else ""
 
 
+def _background_tasks_disabled() -> bool:
+    return (os.environ.get("CLAUDE_CODE_DISABLE_BACKGROUND_TASKS") or "").strip().lower() in (
+        "1", "true", "yes", "on")
+
+
 def main() -> None:
     try:
         hook_input = json.load(sys.stdin)
-    except (json.JSONDecodeError, EOFError):
-        # Can't parse input -- allow by default.
-        json.dump({}, sys.stdout)
+        tool_input = dict(hook_input.get("tool_input") or {})
+    except (json.JSONDecodeError, EOFError, AttributeError, TypeError, ValueError):
+        # Plumbing gate: fail open, but never silently.
+        json.dump({"systemMessage": "PhilLit: foreground-dispatch gate could not read "
+                   "its input - the dispatch was not forced to the foreground."}, sys.stdout)
         return
 
-    tool_input_data = hook_input.get("tool_input", {})
     at_orchestrator = "agent_id" not in hook_input
-    is_background = tool_input_data.get("run_in_background") is True
-    agent = _bare_agent(tool_input_data.get("subagent_type", ""))
-
-    if at_orchestrator and is_background and agent in PHILLIT_AGENTS:
-        json.dump(
-            {
-                "hookSpecificOutput": {
-                    "hookEventName": "PreToolUse",
-                    "permissionDecision": "deny",
-                    "permissionDecisionReason": (
-                        f"PhilLit review agents must run in the foreground. Re-dispatch "
-                        f"'{agent}' with run_in_background: false. Parallelism comes from "
-                        "issuing several foreground dispatch calls in one message, not from "
-                        "backgrounding -- a backgrounded review agent is orphaned and its "
-                        "output is never read."
-                    ),
-                }
-            },
-            sys.stdout,
-        )
+    agent = _bare_agent(str(tool_input.get("subagent_type") or ""))
+    if (at_orchestrator and agent in PHILLIT_AGENTS
+            and tool_input.get("run_in_background") is not False
+            and not _background_tasks_disabled()):
+        tool_input["run_in_background"] = False
+        json.dump({"hookSpecificOutput": {"hookEventName": "PreToolUse",
+                                          "updatedInput": tool_input}}, sys.stdout)
     else:
         json.dump({}, sys.stdout)
 
