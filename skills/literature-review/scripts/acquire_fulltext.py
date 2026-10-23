@@ -48,8 +48,9 @@ SOURCES, in the ruled order, the first passing PDF wins:
    a URL and never a no-DOI identity (`no_doi`); the grammar is
    `fulltext_channel`'s. A worker copies each found record into the store
    under this identity's slug and answers; the engine waits on all its
-   requests together until `SERVICE_WAIT_MARGIN` seconds before the
-   deadline, writes `<id>.closed`, and maps a key still unanswered to
+   requests together until `SERVICE_WAIT_MARGIN` seconds plus
+   `ARRIVAL_CHECK_SECONDS` per identity sent before the deadline, writes
+   `<id>.closed`, and maps a key still unanswered to
    `deadline` (`no_outcome` when the response is complete). It then checks
    the record at THIS identity's slug for every requested key, whatever
    the response says: for `found` whatever stem it names (a differing stem
@@ -229,6 +230,7 @@ API_TIMEOUT = 30
 GAPS_DEADLINE = 420
 SINGLE_DEADLINE = 420
 SERVICE_WAIT_MARGIN = 20   # seconds of the deadline kept for validating arrivals
+ARRIVAL_CHECK_SECONDS = 1.0   # and this much more per identity sent
 INDEX_BUDGET_GAPS = 60
 INDEX_BUDGET_SINGLE = 20
 MAX_WALK_FILES = 50_000
@@ -1238,11 +1240,12 @@ def _service_result(store: Path, slug: str, identity: dict, entry: dict | None,
     return res
 
 
-def _wait_bound(deadline: Deadline) -> float:
-    """The seconds the service wait may take: up to SERVICE_WAIT_MARGIN
-    before the deadline (an endless deadline counts as SINGLE_DEADLINE)."""
+def _wait_bound(deadline: Deadline, n_sent: int) -> float:
+    """The seconds the service wait may take: it ends SERVICE_WAIT_MARGIN
+    plus ARRIVAL_CHECK_SECONDS per identity sent before the deadline (an
+    endless deadline counts as SINGLE_DEADLINE)."""
     left = SINGLE_DEADLINE if deadline.end is None else deadline.left()
-    return max(0.0, left - SERVICE_WAIT_MARGIN)
+    return max(0.0, left - (SERVICE_WAIT_MARGIN + ARRIVAL_CHECK_SECONDS * n_sent))
 
 
 def _close_requests(request_dir: Path, written: list) -> dict[str, list[str]]:
@@ -1264,11 +1267,11 @@ def service_fetch(store: Path, pending: list[tuple[str, dict, str | None]], sett
     None); returns a `service` SourceResult for every slug. DOI identities
     only are sent, in requests of at most `fc.MAX_PER_REQUEST`, and only
     when the request directory exists (else `request_dir_missing`: the
-    worker creates it, so there is no worker); all are written first, then waited on together until `SERVICE_WAIT_MARGIN`
-    before the deadline, then every written request is closed (also when
-    the wait raises), then every requested slug's store record is checked
-    (`_service_result`). One slug's crashing check is that slug's
-    `unavailable` (`error:...`) and its copy is removed."""
+    worker creates it, so there is no worker). All are written first, then
+    waited on together until `_wait_bound`, then every written request is
+    closed (also when the wait raises), then every requested slug's store
+    record is checked (`_service_result`). One slug's crashing check is
+    that slug's `unavailable` (`error:...`) and its copy is removed."""
     if settings.request_dir is None:
         return {slug: SourceResult("service", "disabled") for slug, _, _ in pending}
     out: dict[str, SourceResult] = {}
@@ -1289,11 +1292,11 @@ def service_fetch(store: Path, pending: list[tuple[str, dict, str | None]], sett
         for slug, *_ in sendable:
             out[slug] = SourceResult("service", "unavailable", ["request_dir_missing"])
         return out
-    written = []
+    written, n_sent = [], 0
     try:
         for i in range(0, len(sendable), fc.MAX_PER_REQUEST):
             chunk = sendable[i:i + fc.MAX_PER_REQUEST]
-            if _wait_bound(deadline) <= 0:
+            if _wait_bound(deadline, n_sent + len(chunk)) <= 0:
                 for slug, *_ in sendable[i:]:
                     out[slug] = SourceResult("service", "deadline")
                 break
@@ -1306,8 +1309,9 @@ def service_fetch(store: Path, pending: list[tuple[str, dict, str | None]], sett
                     out[slug] = SourceResult("service", "unavailable", [f"request_write_failed:{reason}"])
                 continue
             written.append((request_id, chunk))
+            n_sent += len(chunk)
         responses = fc.wait_for_responses(settings.request_dir, [rid for rid, _ in written],
-                                          _wait_bound(deadline), clock=_clock, sleep=_sleep)
+                                          _wait_bound(deadline, n_sent), clock=_clock, sleep=_sleep)
     finally:
         closed_notes = _close_requests(settings.request_dir, written)
     for request_id, chunk in written:

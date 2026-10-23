@@ -1097,6 +1097,18 @@ class TestGaps:
         assert all(_service_tried(e) == {"source": "service", "outcome": "not_found"}
                    for e in report["entries"])
 
+    def test_the_wait_margin_grows_with_the_identities_sent(self, http, workdir, capsys, service):
+        """The worker never answers 60 identities: the wait ends a second
+        per identity sent earlier than the fixed margin."""
+        dois = [f"10.1/w{n}" for n in range(60)]
+        (workdir / "literature-domain-1.bib").write_text(
+            "".join(bib_entry(f"k{n}", doi=d) for n, d in enumerate(dois)), encoding="utf-8")
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        assert json.loads(out)["counts"] == {"not_found": 60}
+        bound = af.GAPS_DEADLINE - af.SERVICE_WAIT_MARGIN - 60 * af.ARRIVAL_CHECK_SECONDS
+        assert af.ARRIVAL_CHECK_SECONDS == 1.0
+        assert bound <= service.clock[0] < bound + fc.POLL_SECONDS
+
     def test_duplicate_row_copies_the_first_rows_final_outcome(self, http, workdir, capsys, service):
         for i in (1, 2):
             (workdir / f"literature-domain-{i}.bib").write_text(bib_entry(f"g{i}", doi=DOI),
@@ -1284,7 +1296,8 @@ class TestGaps:
         first, second = report["entries"]
         assert (first["outcome"], first["source"]) == ("acquired", "openalex")
         assert _service_tried(second) == {"source": "service", "outcome": "deadline"}
-        assert service.clock[0] >= af.GAPS_DEADLINE - af.SERVICE_WAIT_MARGIN
+        bound = af.GAPS_DEADLINE - af.SERVICE_WAIT_MARGIN - 2 * af.ARRIVAL_CHECK_SECONDS
+        assert bound <= service.clock[0] < bound + fc.POLL_SECONDS
 
     def test_request_dir_a_file_leaves_every_open_entry_unavailable(self, http, workdir, capsys,
                                                                     tmp_path):
@@ -1680,8 +1693,8 @@ class TestService:
         [req] = _request_files(service)
         rid = req.name[:-len(fc.REQUEST_SUFFIX)]
         assert (service.request_dir / (rid + fc.CLOSED_SUFFIX)).exists()
-        assert (af.SINGLE_DEADLINE - af.SERVICE_WAIT_MARGIN <= service.clock[0]
-                < af.SINGLE_DEADLINE - af.SERVICE_WAIT_MARGIN + fc.POLL_SECONDS)
+        bound = af.SINGLE_DEADLINE - af.SERVICE_WAIT_MARGIN - af.ARRIVAL_CHECK_SECONDS
+        assert bound <= service.clock[0] < bound + fc.POLL_SECONDS
 
     @pytest.mark.parametrize("copy, reason", [("none", "sidecar_unreadable"),
                                               ("sidecar_only", "pdf_missing")])
@@ -1839,7 +1852,8 @@ class TestService:
         service.answer({DOI: {"status": "none"}})
         code, data = run_json(capsys, workdir, "--doi", DOI)
         assert _service_tried(data) == {"source": "service", "outcome": "deadline"}
-        assert service.clock[0] >= af.SINGLE_DEADLINE - af.SERVICE_WAIT_MARGIN
+        bound = af.SINGLE_DEADLINE - af.SERVICE_WAIT_MARGIN - af.ARRIVAL_CHECK_SECONDS
+        assert bound <= service.clock[0] < bound + fc.POLL_SECONDS
 
     def test_an_infinite_deadline_waits_a_bounded_time(self, http, workdir,
                                                                           service, monkeypatch):
@@ -1857,8 +1871,8 @@ class TestService:
         out = af.service_fetch(workdir / ft.STORE_REL, [(ft.slug_for(ident), ident, None)], settings,
                                af.Deadline(None), "single")
         assert out[ft.slug_for(ident)].outcome == "deadline"
-        assert (af.SINGLE_DEADLINE - af.SERVICE_WAIT_MARGIN <= service.clock[0]
-                < af.SINGLE_DEADLINE - af.SERVICE_WAIT_MARGIN + fc.POLL_SECONDS)
+        bound = af.SINGLE_DEADLINE - af.SERVICE_WAIT_MARGIN - af.ARRIVAL_CHECK_SECONDS
+        assert bound <= service.clock[0] < bound + fc.POLL_SECONDS
 
     def test_field_too_long_is_unavailable_and_never_sent(self, http, workdir, capsys, service):
         code, data = run_json(capsys, workdir, "--doi", DOI, "--title", "x" * 501,
