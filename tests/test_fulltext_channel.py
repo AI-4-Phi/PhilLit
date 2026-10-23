@@ -163,6 +163,29 @@ def test_oversize_response_is_absent_whatever_stat_says(tmp_path, monkeypatch):
     assert fc.read_response(tmp_path, "r1") is None
 
 
+def test_read_response_reads_at_most_one_past_the_cap(tmp_path, monkeypatch):
+    _write_response(tmp_path, "r1", _response("r1", True))
+    sizes, real_open = [], open
+
+    class Spy:
+        def __init__(self, f):
+            self.f = f
+
+        def __enter__(self):
+            self.f.__enter__()
+            return self
+
+        def __exit__(self, *a):
+            return self.f.__exit__(*a)
+
+        def read(self, size=-1):
+            sizes.append(size)
+            return self.f.read(size)
+    monkeypatch.setattr(fc, "open", lambda *a, **k: Spy(real_open(*a, **k)), raising=False)
+    assert fc.read_response(tmp_path, "r1") is not None
+    assert sizes == [fc.MAX_REQUEST_BYTES + 1]
+
+
 def test_response_absent_or_unreadable(tmp_path):
     assert fc.read_response(tmp_path, "r1") is None
     (tmp_path / "r1.response.json").mkdir()   # a directory: OSError on read
