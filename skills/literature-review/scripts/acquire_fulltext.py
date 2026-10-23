@@ -405,16 +405,26 @@ def _finish(result: SourceResult, checked: int, passed: int) -> SourceResult:
 # --------------------------------------------------------------------------
 
 def source_repository(identity: dict, settings: "Settings", deadline: Deadline) -> SourceResult:
+    """The record at this identity's slug in the repository. A missing,
+    empty (an unmounted mountpoint) or unreadable directory is
+    `unavailable`, never a crash and never `not_found`."""
     res = SourceResult("repository", "not_found")
     if settings.repository_dir is None:
         res.outcome = "disabled"
         return res
-    if not settings.repository_dir.is_dir():
-        res.outcome, res.detail = "unavailable", ["repository_missing"]
-        return res
     stem = ft.slug_for(identity)
-    if not (settings.repository_dir / f"{stem}.json").exists() \
-            and not (settings.repository_dir / f"{stem}.pdf").exists():
+    try:
+        if not settings.repository_dir.is_dir():
+            res.outcome, res.detail = "unavailable", ["repository_missing"]
+            return res
+        if not settings.repository_has_records():
+            res.outcome, res.detail = "unavailable", ["repository_empty"]
+            return res
+        if not (settings.repository_dir / f"{stem}.json").exists() \
+                and not (settings.repository_dir / f"{stem}.pdf").exists():
+            return res
+    except OSError as exc:
+        res.outcome, res.detail = "unavailable", [f"repository_error:{type(exc).__name__}"]
         return res
     rec = ft.validate_record(settings.repository_dir, stem)
     if not isinstance(rec, ft.Record):
@@ -997,11 +1007,20 @@ class Settings:
     repository_dir: Path | None = None
     request_dir: Path | None = None
     _index: FolderIndex | None = None
+    _repository_has_records: bool | None = None
 
     def folder_index(self) -> FolderIndex:
         if self._index is None:
             self._index = FolderIndex(self.pdf_dir)
         return self._index
+
+    def repository_has_records(self) -> bool:
+        """Whether the repository holds any `*.json` entry, listed once per
+        run and stopping at the first. Raises OSError (never cached)."""
+        if self._repository_has_records is None:
+            with os.scandir(self.repository_dir) as it:
+                self._repository_has_records = any(e.name.endswith(".json") for e in it)
+        return self._repository_has_records
 
 
 def settings_from_env(licensed_only: bool, policy: str | None, index_budget: float) -> Settings:

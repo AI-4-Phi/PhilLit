@@ -1334,9 +1334,52 @@ class TestRepository:
     def test_absent_stem_is_not_found(self, http, workdir, capsys, tmp_path):
         repo = tmp_path / "records"
         repo.mkdir()
+        (repo / "doi-10.9_other-000000000000.json").write_text("{}", encoding="utf-8")
         write_env(f"PHILLIT_FULLTEXT_REPOSITORY_DIR={repo}\n")
         code, data = run_json(capsys, workdir, "--doi", DOI)
         assert data["tried"][0] == {"source": "repository", "outcome": "not_found"}
+
+    def test_empty_repository_is_unavailable_and_listed_once(self, http, workdir, capsys, tmp_path,
+                                                             monkeypatch):
+        """An empty directory is an unmounted repository, decided once per run."""
+        repo = tmp_path / "records"
+        repo.mkdir()
+        (repo / "notes.txt").write_text("", encoding="utf-8")
+        write_env(f"PHILLIT_FULLTEXT_REPOSITORY_DIR={repo}\n")
+        listed = []
+        real = os.scandir
+
+        def scandir(path="."):
+            listed.append(str(path))
+            return real(path)
+        monkeypatch.setattr(os, "scandir", scandir)
+        (workdir / "literature-domain-1.bib").write_text(
+            bib_entry("a", doi="10.1/a") + bib_entry("b", doi="10.1/b"), encoding="utf-8")
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        report = json.loads((workdir / af.REPORT_REL).read_text(encoding="utf-8"))
+        assert [e["tried"][0] for e in report["entries"]] == [
+            {"source": "repository", "outcome": "unavailable", "detail": ["repository_empty"]}] * 2
+        assert listed.count(str(repo)) == 1
+
+    @pytest.mark.skipif(sys.platform == "win32" or getattr(os, "geteuid", lambda: 1)() == 0,
+                        reason="chmod does not deny on Windows or to root")
+    def test_unreadable_repository_is_unavailable_not_a_crash(self, http, workdir, capsys, tmp_path):
+        parent = tmp_path / "locked"
+        repo = parent / "records"
+        write_repo_record(repo, work_pdf(), af.make_identity(DOI), source="user",
+                          source_ref="u.pdf", license="upload")
+        write_env(f"PHILLIT_FULLTEXT_REPOSITORY_DIR={repo}\n")
+        parent.chmod(0)
+        try:
+            code, data = run_json(capsys, workdir, "--doi", DOI)
+        finally:
+            parent.chmod(0o755)
+        assert code == 0
+        first = data["tried"][0]
+        assert first["source"] == "repository" and first["outcome"] == "unavailable"
+        # Python 3.10-3.13 raise from is_dir (caught); a later is_dir may say False.
+        assert first["detail"] in (["repository_error:PermissionError"], ["repository_missing"])
+        assert data["status"] == "not_found"
 
     def test_invalid_repository_record_is_not_found_with_reason(self, http, workdir, capsys, tmp_path):
         repo = tmp_path / "records"
@@ -1420,14 +1463,17 @@ class TestRepository:
 
     def test_gaps_no_doi_entries_are_tried_when_a_repository_is_set(self, http, workdir, capsys, tmp_path):
         repo = tmp_path / "records"
-        repo.mkdir()
+        write_repo_record(repo, work_pdf(doi=None), af.make_identity(None, TITLE, SURNAME, YEAR),
+                          source="user", source_ref="u.pdf", license="cc-by")
         write_env(f"PHILLIT_FULLTEXT_REPOSITORY_DIR={repo}\n")
         os.environ["PHILLIT_FULLTEXT_LICENSED_ONLY"] = "1"
         (workdir / "literature-domain-1.bib").write_text(bib_entry("nodoi"), encoding="utf-8")
         code, out = run(capsys, workdir, "--gaps", "--domains", "1")
         report = json.loads((workdir / af.REPORT_REL).read_text(encoding="utf-8"))
         assert [e["key"] for e in report["entries"]] == ["nodoi"]
-        assert report["entries"][0]["tried"][0]["source"] == "repository"
+        assert report["entries"][0]["tried"] == [{"source": "repository", "outcome": "acquired"}]
+        assert (report["entries"][0]["outcome"], report["entries"][0]["source"]) == ("acquired",
+                                                                                     "repository")
         assert report["sources"]["repository"] == "on"
 
 
