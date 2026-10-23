@@ -20,6 +20,7 @@
 **NOT priorities**:
 - ❌ Speed — Quality over fast completion
 - ❌ Context efficiency — Use full context as needed; don't optimize for token savings
+- ❌ Professional-grade legal caution — PhilLit and phillit-service (invite-only: friends and colleagues experimenting together) exist to advance philosophy's norms for using AI and to show the AI-curious what it can do for research. On copyright and licensing be scrappy: never block, narrow or gate a feature for legal exposure that only a public professional product would carry.
 
 # File Structure
 

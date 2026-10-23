@@ -125,12 +125,17 @@ evidence.
   needs a cached index (file name, first-page text), not a scan per review.
   Rejected: no `--pdf` route; an institutional proxy (logins and
   terms-of-use risk a distributable plugin should not carry).
-- **phillit-service: openly licensed copies plus user uploads.** The
-  service has no Zotero or local folder; it takes OpenAlex and Semantic
-  Scholar copies only when they carry an open (CC) licence, which OpenAlex
-  reports per location, and lets users upload their own PDFs for a review.
-  The licence filter is shared engine code; uploads are the service's own
-  work. Rejected: off in the service for now; licensed OA without uploads.
+- **phillit-service: one shared full-text repository, uploads included.**
+  The service has no Zotero or local folder. Its worker keeps every full
+  text in one repository that every review reads, so a user's upload serves
+  other users' reviews too. It admits open-access copies beyond CC
+  licences: repository-hosted copies (university repositories, SSRN,
+  academia.edu) and authors' or conference sites, even with an unclear
+  licence. The licence rule stays one shared engine function, with a mode
+  for this wider policy; the repository and the upload flow are the
+  service's own work (its PS-79 spec). Why this loose: CLAUDE.md,
+  Objectives (legal caution is scrappy by design). Rejected: CC-only
+  copies; uploads private to their owner.
 - **Storage: the PDFs and texts stay in the delivered
   `intermediate_files/fulltext/`**, so a revision (which copies the
   delivered folder) has them. A guard keeps them out of the git-tracked
