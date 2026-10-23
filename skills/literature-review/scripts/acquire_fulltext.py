@@ -1086,6 +1086,11 @@ class Attempt:
     out: dict | None
     store_notes: list[dict] = field(default_factory=list)
 
+    @property
+    def open(self) -> bool:
+        """Undecided and without a hit: the service channel is still to ask."""
+        return self.out is None and not any(r.hits for r in self.results)
+
 
 def _refused_service_copy(rec: ft.Record, settings: Settings) -> bool:
     """A stored record the service copied (`source_ref.service` true at the
@@ -1304,7 +1309,7 @@ def acquire_one(workdir: Path, identity: dict, settings: Settings, deadline: Dea
     """Run the single-work pipeline; returns {status, slug, source, tried}."""
     attempt = begin(workdir, identity, settings, deadline, pdf_path)
     service = None
-    if attempt.out is None and pdf_path is None and not any(r.hits for r in attempt.results):
+    if attempt.open and pdf_path is None:
         service = service_fetch(attempt.store, [(attempt.slug, identity, attempt.invalid)], settings,
                                 deadline, "single")[attempt.slug]
     return finish(attempt, service)
@@ -1397,24 +1402,28 @@ def run_gaps(workdir: Path, n_domains: int, settings: Settings) -> dict:
         elif deadline.expired():
             row["outcome"] = "not_attempted"
         else:
+            # A decided entry or a local hit is finished (stored) at once, so
+            # its record is on disk before the service wait and its PDF bytes
+            # are not held; only open entries wait for the service.
             try:
-                attempts.append((row, begin(workdir, ident, settings, deadline)))
+                attempt = begin(workdir, ident, settings, deadline)
+                if attempt.open:
+                    attempts.append((row, attempt))
+                else:
+                    res = finish(attempt, None)
+                    row.update(outcome=res["status"], source=res["source"], tried=res["tried"])
             except Exception as exc:
                 crashed(row, exc)
             by_slug[slug] = row
         entries.append(row)
     # One service request for every entry the local sources left open.
-    pending = [(a.slug, a.identity, a.invalid) for _, a in attempts
-               if a.out is None and not any(r.hits for r in a.results)]
+    pending = [(a.slug, a.identity, a.invalid) for _, a in attempts]
     try:
         service = service_fetch(workdir / ft.STORE_REL, pending, settings, deadline, "gaps")
     except Exception as exc:
-        open_slugs = {slug for slug, _, _ in pending}
-        for row, attempt in attempts:
-            if attempt.slug in open_slugs:
-                crashed(row, exc)
-        attempts = [(row, a) for row, a in attempts if a.slug not in open_slugs]
-        service = {}
+        for row, _ in attempts:
+            crashed(row, exc)
+        attempts, service = [], {}
     for row, attempt in attempts:
         try:
             res = finish(attempt, service.get(attempt.slug))

@@ -1162,6 +1162,31 @@ class TestGaps:
         assert (hit["outcome"], hit["source"]) == ("acquired", "repository")
         assert crashed["outcome"] == "error"
 
+    def test_local_hits_are_stored_before_the_service_wait(self, http, workdir, capsys, tmp_path,
+                                                           service, monkeypatch):
+        """The worker never answers: the repository hit is on disk when the
+        wait first sleeps, not only after it."""
+        repo = tmp_path / "records"
+        write_repo_record(repo, work_pdf(doi="10.1/w0"), af.make_identity("10.1/w0"), source="user",
+                          source_ref="u.pdf", license="upload")
+        write_env(f"PHILLIT_FULLTEXT_REQUEST_DIR={service.request_dir}\n"
+                  f"PHILLIT_FULLTEXT_REPOSITORY_DIR={repo}\n")
+        hit_slug = ft.slug_for(af.make_identity("10.1/w0"))
+        seen = []
+
+        def sleep(seconds):
+            if not seen:
+                seen.append(ft.validate_record(workdir / ft.STORE_REL, hit_slug))
+            service.sleep(seconds)
+        monkeypatch.setattr(af, "_sleep", sleep)
+        (workdir / "literature-domain-1.bib").write_text(
+            bib_entry("k0", doi="10.1/w0") + bib_entry("k1", doi="10.1/w1"), encoding="utf-8")
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        assert isinstance(seen[0], ft.Record)
+        report = json.loads((workdir / af.REPORT_REL).read_text(encoding="utf-8"))
+        assert [e["outcome"] for e in report["entries"]] == ["acquired", "not_found"]
+        assert _service_tried(report["entries"][1]) == {"source": "service", "outcome": "deadline"}
+
     def test_one_slugs_check_crash_is_isolated(self, http, workdir, capsys, service, monkeypatch):
         """A removal that raises inside one slug's check is that slug's
         `unavailable`; every request is still closed and the pass is done."""
