@@ -57,6 +57,7 @@ def test_identity_payload_refuses_a_long_field():
 
 def test_write_request_is_atomic_ascii_and_capped(tmp_path):
     d = tmp_path / "nested" / "req"
+    d.mkdir(parents=True)
     payload = fc.identity_payload({**IDENT, "title": "Café 中文"})
     path = fc.write_request(d, "gaps-1", "gaps", [payload])
     assert path == d / ("gaps-1" + fc.REQUEST_SUFFIX)
@@ -74,6 +75,19 @@ def test_write_request_is_atomic_ascii_and_capped(tmp_path):
     assert not (d / "A.request.json").exists()
 
 
+def test_write_request_never_creates_the_directory(tmp_path):
+    """The worker creates the request directory; a missing one is no worker."""
+    with pytest.raises(FileNotFoundError):
+        fc.write_request(tmp_path / "missing", "gaps-1", "gaps", [_payload()])
+    assert not (tmp_path / "missing").exists()
+
+
+def test_write_request_refuses_an_unknown_mode(tmp_path):
+    with pytest.raises(ValueError, match="bad_mode"):
+        fc.write_request(tmp_path, "bulk-1", "bulk", [_payload()])
+    assert list(tmp_path.iterdir()) == []
+
+
 def test_write_request_refuses_an_oversize_file(tmp_path, monkeypatch):
     monkeypatch.setattr(fc, "MAX_REQUEST_BYTES", 100)
     with pytest.raises(ValueError):
@@ -82,12 +96,14 @@ def test_write_request_refuses_an_oversize_file(tmp_path, monkeypatch):
 
 
 def test_read_response_normalizes(tmp_path):
-    _write_response(tmp_path, "r1", _response("r1", 1, {
+    _write_response(tmp_path, "r1", _response("r1", True, {
         "a": {"status": "found", "stem": "doi-a-123456789abc", "detail": None},
         "b": {"status": "weird", "stem": "s", "detail": "d"},
         "c": {"status": "none", "stem": 5, "detail": 7},
         "d": "nope",
         "e": {"status": "unlicensed", "detail": "no_licence"},
+        "f": {"status": []},
+        "g": {"status": {}},
     }))
     got = fc.read_response(tmp_path, "r1")
     bad = {"status": "failed", "stem": None, "detail": "bad_outcome"}
@@ -97,6 +113,8 @@ def test_read_response_normalizes(tmp_path):
         "c": {"status": "none", "stem": None, "detail": None},
         "d": bad,
         "e": {"status": "unlicensed", "stem": None, "detail": "no_licence"},
+        "f": bad,
+        "g": bad,
     }}
 
 
@@ -111,9 +129,23 @@ def test_read_response_outcomes_not_a_dict(tmp_path):
     json.dumps({"schema": 2, "request_id": "r1", "complete": True, "outcomes": {}}),
     json.dumps({"request_id": "r1", "complete": True, "outcomes": {}}),
     json.dumps({"schema": 1, "request_id": "other", "complete": True, "outcomes": {}}),
+    json.dumps({"schema": True, "request_id": "r1", "complete": True, "outcomes": {}}),
+    json.dumps({"schema": 1.0, "request_id": "r1", "complete": True, "outcomes": {}}),
 ])
 def test_response_with_wrong_id_or_shape_is_absent(tmp_path, text):
     (tmp_path / "r1.response.json").write_text(text, encoding="utf-8")
+    assert fc.read_response(tmp_path, "r1") is None
+
+
+@pytest.mark.parametrize("value", ["false", "true", 1, [1], None])
+def test_complete_is_only_the_literal_true(tmp_path, value):
+    _write_response(tmp_path, "r1", _response("r1", value))
+    assert fc.read_response(tmp_path, "r1") == {"complete": False, "outcomes": {}}
+
+
+def test_oversize_response_is_absent(tmp_path, monkeypatch):
+    _write_response(tmp_path, "r1", _response("r1", True, {"k": {"status": "none"}}))
+    monkeypatch.setattr(fc, "MAX_REQUEST_BYTES", 20)
     assert fc.read_response(tmp_path, "r1") is None
 
 
@@ -183,6 +215,49 @@ def test_wait_without_any_response(tmp_path):
     assert sum(t.sleeps) <= 3
 
 
+def test_wait_for_responses_polls_every_id_each_round(tmp_path, monkeypatch):
+    """The second request completes on the first tick and the first never:
+    the wait runs to its bound, reading both ids every round, and keeps the
+    second's complete response and the first's partial one."""
+    partial = _response("r1", False, {"a": {"status": "none"}})
+    _write_response(tmp_path, "r1", partial)
+    reads = []
+    real = fc.read_response
+
+    def spy(request_dir, request_id):
+        reads.append(request_id)
+        return real(request_dir, request_id)
+
+    def on_sleep(n):
+        if n == 1:
+            _write_response(tmp_path, "r2", _response(
+                "r2", True, {"b": {"status": "found", "stem": "s"}}))
+
+    t = FakeTime(on_sleep)
+    monkeypatch.setattr(fc, "read_response", spy)
+    got = fc.wait_for_responses(tmp_path, ["r1", "r2"], 5, clock=t.clock, sleep=t.sleep)
+    assert got == {"r1": {"complete": False, "outcomes": {"a": {"status": "none", "stem": None,
+                                                               "detail": None}}},
+                   "r2": {"complete": True, "outcomes": {"b": {"status": "found", "stem": "s",
+                                                               "detail": None}}}}
+    assert t.sleeps == [2.0, 2.0, 1.0]
+    assert reads == ["r1", "r2"] * 4
+
+
+def test_wait_for_responses_returns_once_all_are_complete(tmp_path):
+    for rid in ("r1", "r2"):
+        _write_response(tmp_path, rid, _response(rid, True))
+    t = FakeTime()
+    got = fc.wait_for_responses(tmp_path, ["r1", "r2"], 60, clock=t.clock, sleep=t.sleep)
+    assert all(r["complete"] for r in got.values()) and t.sleeps == []
+
+
+def test_wait_for_responses_without_ids(tmp_path):
+    t = FakeTime()
+    assert fc.wait_for_responses(tmp_path, [], 60, clock=t.clock, sleep=t.sleep) == {}
+    assert t.sleeps == []
+
+
 def test_write_closed(tmp_path):
     fc.write_closed(tmp_path, "gaps-1")
     assert (tmp_path / "gaps-1.closed").is_file()
@@ -206,6 +281,9 @@ def test_write_closed(tmp_path):
     ({"status": "failed", "stem": None, "detail": "blocked_host"}, ("not_found", ["blocked_host"])),
     ({"status": "failed", "stem": None, "detail": "removed"}, ("not_found", ["removed"])),
     ({"status": "failed", "stem": None, "detail": "bad_outcome"}, ("unavailable", ["bad_outcome"])),
+    ({"status": "failed", "stem": None, "detail": "bad_request"}, ("unavailable", ["bad_request"])),
+    ({"status": "failed", "stem": None, "detail": "budget"}, ("unavailable", ["budget"])),
+    ({"status": "failed", "stem": None, "detail": "aborted"}, ("unavailable", ["aborted"])),
     ({"status": "failed", "stem": None, "detail": None}, ("unavailable", ["failed"])),
 ])
 def test_source_outcome(entry, expected):

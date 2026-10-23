@@ -1325,10 +1325,12 @@ class FakeWorker:
 
 @pytest.fixture
 def service(http, workdir, monkeypatch, tmp_path):
-    """REQUEST_DIR set in `.env`, a fake clock and a FakeWorker wired in."""
+    """REQUEST_DIR set in `.env` (created, as the worker does), a fake clock
+    and a FakeWorker wired in."""
     now = [0.0]
     monkeypatch.setattr(af, "_clock", lambda: now[0])
     request_dir = tmp_path / "requests"
+    request_dir.mkdir()
     worker = FakeWorker(request_dir, workdir / ft.STORE_REL, now)
     monkeypatch.setattr(af, "_sleep", worker.sleep)
     write_env(f"PHILLIT_FULLTEXT_REQUEST_DIR={request_dir}\n")
