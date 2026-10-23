@@ -21,6 +21,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 import acquire_fulltext as af  # noqa: E402
 import fulltext as ft  # noqa: E402
+import fulltext_channel as fc  # noqa: E402
 from pdf_fixtures import make_pdf  # noqa: E402
 
 FILLER = "This sentence is ordinary body text that pads the page to a realistic length."
@@ -1141,8 +1142,6 @@ class TestRepository:
 # The service source
 # ---------------------------------------------------------------------------
 
-import fulltext_channel as fc  # noqa: E402
-
 SERVICE_REF = {"url": "https://oa.example/a.pdf", "kind": "oa_repository", "service": True}
 
 
@@ -1276,7 +1275,8 @@ class TestService:
         [req] = _request_files(service)
         rid = req.name[:-len(fc.REQUEST_SUFFIX)]
         assert (service.request_dir / (rid + fc.CLOSED_SUFFIX)).exists()
-        assert service.clock[0] < af.SINGLE_DEADLINE - af.SERVICE_WAIT_MARGIN + fc.POLL_SECONDS
+        assert (af.SINGLE_DEADLINE - af.SERVICE_WAIT_MARGIN <= service.clock[0]
+                < af.SINGLE_DEADLINE - af.SERVICE_WAIT_MARGIN + fc.POLL_SECONDS)
 
     @pytest.mark.parametrize("copy, reason", [("none", "sidecar_unreadable"),
                                               ("sidecar_only", "pdf_missing")])
