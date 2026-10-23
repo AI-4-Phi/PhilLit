@@ -130,8 +130,9 @@ evidence.
   text in one repository that every review reads, so a user's upload serves
   other users' reviews too. It admits open-access copies beyond CC
   licences: repository-hosted copies (university repositories, SSRN,
-  academia.edu) and authors' or conference sites, even with an unclear
-  licence. The licence rule stays one shared engine function, with a mode
+  academia.edu), authors' or conference sites, and free-to-read PDFs on a
+  publisher's own site, even with an unclear or no licence (Johannes,
+  2026-10-23). The licence rule stays one shared engine function, with a mode
   for this wider policy; the repository and the upload flow are the
   service's own work (its PS-79 spec). Why this loose: CLAUDE.md,
   Objectives (legal caution is scrappy by design). Rejected: CC-only
