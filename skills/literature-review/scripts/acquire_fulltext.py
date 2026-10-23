@@ -61,8 +61,9 @@ SOURCES, in the ruled order, the first passing PDF wins:
    is removed (nothing downstream reads licences), and a passing one is
    stored through the normal path with its own source, ref and licence. A
    copy that completes after that check is licence-checked on the next run
-   (a stored service copy the policy refuses is removed, `unlicensed_removed`),
-   not this one; the worker applies the same policy before fetching.
+   (a stored service copy the policy refuses is removed:
+   `unlicensed_removed`), not this one; the worker applies the same policy
+   before fetching.
 OpenAlex and Semantic Scholar need a DOI. Several passing PDFs within the
 winning source: the first is kept and the rest are reported
 (`multiple_candidates`); every candidate of that source is checked, up to
@@ -82,17 +83,18 @@ case-insensitively after stripping (S2 reports `CCBY`).
 other non-empty value falls to the `cc`-only rule (fails closed).
 `PHILLIT_FULLTEXT_LICENSED_ONLY` (1/true/yes/on) admits a licence that
 starts with `cc` only, and also disables Zotero and the folder (`POLICY`
-alone leaves both on). With neither set there is no filter. Both are read from the PROCESS environment BEFORE
-`.env` is loaded and `.env` is ignored for them in both directions: the
-hosted service sets them for its own process, so a workspace `.env` cannot
-switch the filter off. They are a policy default, not a security boundary: a
-Bash call can still unset the variables for one run.
-Every sidecar records `source`, `source_ref` and `license`, so a run can be
-audited afterwards. `--pdf` stays available under the policy (the service
-builds uploads on it) and never consults the service channel. The service
-sets a third variable, `PHILLIT_FULLTEXT_REQUEST_DIR`, which turns the
-service channel on (source 5); a location, not a policy, it is read after
-`.env` loads like `PHILLIT_PDF_DIR`. The worker creates that directory
+alone leaves both on). With neither set there is no filter. Both are read
+from the PROCESS environment BEFORE `.env` is loaded and `.env` is ignored
+for them in both directions: the hosted service sets them for its own
+process, so a workspace `.env` cannot switch the filter off. They are a
+policy default, not a security boundary: a Bash call can still unset the
+variables for one run. Every sidecar records `source`, `source_ref` and
+`license`, so a run can be audited afterwards. `--pdf` stays available
+under the policy (the service builds uploads on it) and never consults the
+service channel. The service sets a third variable,
+`PHILLIT_FULLTEXT_REQUEST_DIR`, which turns the service channel on (source
+5); a location, not a policy, it is read after `.env` loads like
+`PHILLIT_PDF_DIR`. The worker creates that directory
 (`intermediate_files/fulltext_requests/`) before the review starts; the
 engine never does, and a missing directory means no worker
 (`request_dir_missing`).
