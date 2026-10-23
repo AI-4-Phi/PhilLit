@@ -30,9 +30,10 @@ why SKILL.md's notification rules stay load-bearing.
 No-op when `CLAUDE_CODE_DISABLE_BACKGROUND_TASKS` is set (phillit-service's
 worker sets it), read with the CLI's own truthy set (1/true/yes/on, its
 `Ne()` in 2.1.309): the tool then lists no such flag and every dispatch is
-already inline. 2.1.309 tolerates the injected key on a flagless tool, but
-an older CLI might reject it. Untested residual: a flagless CLI without
-that variable (2.1.267 measured no flag on 2026-09-10) gets the key too.
+already inline. The no-op is caution, not need: measured headless on
+2026-10-23, 2.1.233, 2.1.267, 2.1.307 and 2.1.309 all list the flag and
+honour the rewrite, and 2.1.233 and 2.1.309 accept the injected key on a
+tool that lists no flag. Untested: a CLI older than 2.1.233.
 
 Scope: the four review agents, named bare (as phillit-service vendors
 them) or as `phillit:<name>`, on the Agent or Task tool at the orchestrator
@@ -94,7 +95,7 @@ def main() -> None:
                                       "updatedInput": tool_input}}
         if flag is True:
             out["systemMessage"] = (f"PhilLit: '{agent}' was dispatched with run_in_background: "
-                                    "true; it runs in the foreground instead.")
+                                    "true; the dispatch gate set it to false.")
         json.dump(out, sys.stdout)
     else:
         json.dump({}, sys.stdout)

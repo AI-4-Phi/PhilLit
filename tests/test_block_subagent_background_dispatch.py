@@ -101,6 +101,8 @@ def test_overriding_an_explicit_true_says_so():
     out = _run(_dispatch("synthesis-writer", True))
     assert _rewritten(out)["run_in_background"] is False
     assert "synthesis-writer" in out["systemMessage"]
+    # Not "runs in the foreground": an interactive session ignores the flag.
+    assert "foreground" not in out["systemMessage"]
     assert "systemMessage" not in _run(_dispatch("synthesis-writer"))
 
 

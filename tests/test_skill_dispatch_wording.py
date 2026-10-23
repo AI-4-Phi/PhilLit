@@ -5,7 +5,7 @@ History, because the wording has flipped twice with the CLI:
   `Task`) and defaulted it to background from v2.1.198, so omitting it
   silently orphaned review agents. The fix then was "pass
   run_in_background: false explicitly".
-- Claude Code 2.1.267 (measured 2026-09-10) exposes NO such parameter on
+- A Claude Code 2.1.267 session (measured 2026-09-10) exposed NO such parameter on
   `Agent`: every dispatch returns "Async agent launched" immediately and
   results arrive as `<task-notification>` events, several per agent. An
   orchestrator told to expect blocking calls read the immediate return as
