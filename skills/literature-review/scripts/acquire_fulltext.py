@@ -43,13 +43,17 @@ a key, the source reports `disabled` and makes no call and no file read.
 Paywalled copies come only from the user's own copies (Zotero, the folder,
 `--pdf`) or open access, never a proxy or a shadow library.
 
-SERVICE POLICY. `PHILLIT_FULLTEXT_LICENSED_ONLY` (1/true/yes/on) disables
-Zotero and the folder and accepts OA locations only when their licence
-starts with `cc` (case-insensitive: S2 reports `CCBY`). It is read from the
-PROCESS environment BEFORE `.env` is loaded and `.env` is ignored for it in
-both directions: the hosted service sets it for its own process, so a
-workspace `.env` cannot switch the filter off. It is a policy default, not
-a security boundary: a Bash call can still unset the variable for one run.
+SERVICE POLICY. One licence rule, three settings (`_licensed`), compared
+case-insensitively after stripping (S2 reports `CCBY`).
+`PHILLIT_FULLTEXT_POLICY=open` admits a licence that starts with `cc` or
+`oa:`, or equals `upload`. Otherwise `PHILLIT_FULLTEXT_LICENSED_ONLY`
+(1/true/yes/on) admits a licence that starts with `cc` only, and also
+disables Zotero and the folder (`POLICY` alone leaves both on). With neither
+set there is no filter. Both are read from the PROCESS environment BEFORE
+`.env` is loaded and `.env` is ignored for them in both directions: the
+hosted service sets them for its own process, so a workspace `.env` cannot
+switch the filter off. They are a policy default, not a security boundary: a
+Bash call can still unset the variables for one run.
 Every sidecar records `source`, `source_ref` and `license`, so a run can be
 audited afterwards. `--pdf` stays available under the policy (the service
 builds uploads on it).
@@ -143,6 +147,7 @@ sys.path.remove(_research)
 # --------------------------------------------------------------------------
 
 LICENSED_ONLY_ENV = "PHILLIT_FULLTEXT_LICENSED_ONLY"
+POLICY_ENV = "PHILLIT_FULLTEXT_POLICY"
 ZOTERO_ENV = "PHILLIT_ZOTERO"
 PDF_DIR_ENV = "PHILLIT_PDF_DIR"
 
@@ -730,8 +735,24 @@ def source_folder(identity: dict, settings: "Settings", deadline: Deadline) -> S
 # Open access: OpenAlex, Semantic Scholar
 # --------------------------------------------------------------------------
 
-def _licensed(lic) -> bool:
-    return isinstance(lic, str) and lic.strip().lower().startswith("cc")
+def policy_from_env(licensed_only: bool) -> str | None:
+    """The licence policy: "open", "cc" or None (no filter), from os.environ now."""
+    if os.environ.get(POLICY_ENV, "").strip().lower() == "open":
+        return "open"
+    return "cc" if licensed_only else None
+
+
+def _licensed(lic, policy: str | None) -> bool:
+    """The one licence rule. No policy admits everything; "cc" admits cc*;
+    "open" also admits oa:* and upload."""
+    if policy is None:
+        return True
+    if not isinstance(lic, str):
+        return False
+    lic = lic.strip().lower()
+    if lic.startswith("cc"):
+        return True
+    return policy == "open" and (lic.startswith("oa:") or lic == "upload")
 
 
 def _api_get(url, *, headers, params, limiter, deadline: Deadline, openalex: bool):
@@ -812,11 +833,11 @@ def _source_oa(name: str, locate, identity: dict, settings: "Settings", deadline
             return res
         res.outcome, res.detail = ("deadline", []) if why == "deadline" else ("unavailable", [why])
         return res
-    if settings.licensed_only:
-        unlicensed = [u for u, lic in locs if not _licensed(lic)]
-        locs = [(u, lic) for u, lic in locs if _licensed(lic)]
+    if settings.policy is not None:
+        unlicensed = [u for u, lic in locs if not _licensed(lic, settings.policy)]
+        locs = [(u, lic) for u, lic in locs if _licensed(lic, settings.policy)]
         if unlicensed and not locs:
-            res.outcome, res.detail = "unlicensed", [f"{len(unlicensed)} location(s) without a cc licence"]
+            res.outcome, res.detail = "unlicensed", [f"{len(unlicensed)} location(s) not admitted by policy"]
             return res
     checked = passed = 0
     for url, lic in locs:
@@ -857,6 +878,7 @@ _SOURCES = {"zotero": source_zotero, "folder": source_folder,
 @dataclass
 class Settings:
     licensed_only: bool
+    policy: str | None
     zotero_on: bool
     pdf_dir: Path | None
     index_budget: float
@@ -868,10 +890,10 @@ class Settings:
         return self._index
 
 
-def settings_from_env(licensed_only: bool, index_budget: float) -> Settings:
+def settings_from_env(licensed_only: bool, policy: str | None, index_budget: float) -> Settings:
     raw = os.environ.get(PDF_DIR_ENV, "").strip().strip("\"'").strip()
     pdf_dir = Path(os.path.expanduser(raw)).resolve() if raw else None
-    return Settings(licensed_only=licensed_only, zotero_on=_on(os.environ.get(ZOTERO_ENV)),
+    return Settings(licensed_only=licensed_only, policy=policy, zotero_on=_on(os.environ.get(ZOTERO_ENV)),
                     pdf_dir=pdf_dir, index_budget=index_budget)
 
 
@@ -1099,6 +1121,7 @@ def run_gaps(workdir: Path, n_domains: int, settings: Settings) -> dict:
               "generated_at": _now_iso(), "deadline_seconds": GAPS_DEADLINE,
               "elapsed_seconds": round(_clock() - started, 1),
               "licensed_only": settings.licensed_only,
+              "policy": settings.policy,
               "sources": {"zotero": "on" if settings.zotero_on and not settings.licensed_only else "off",
                           "folder": "on" if settings.pdf_dir is not None and not settings.licensed_only else "off"},
               "domains": domains, "candidates": len(entries), "counts": counts, "errors": errors, "warnings": warnings,
@@ -1132,6 +1155,7 @@ def main(argv=None) -> int:
     # The service policy is read from the PROCESS environment BEFORE .env is
     # loaded (load_dotenv(override=True) would replace it) and never re-read.
     licensed_only = _on(os.environ.get(LICENSED_ONLY_ENV))
+    policy = policy_from_env(licensed_only)
     load_dotenv(find_dotenv(usecwd=True), override=True)
     ap = _parser()
     args = ap.parse_args(argv)
@@ -1154,7 +1178,7 @@ def main(argv=None) -> int:
             ap.error("give --doi, or all of --title, --author and --year")
     try:
         if args.gaps:
-            settings = settings_from_env(licensed_only, INDEX_BUDGET_GAPS)
+            settings = settings_from_env(licensed_only, policy, INDEX_BUDGET_GAPS)
             report = run_gaps(workdir, args.domains, settings)
             # One line, as the barrier prints its summary (escaped ASCII).
             print(json.dumps({"status": report["status"], "candidates": report["candidates"],
@@ -1162,7 +1186,7 @@ def main(argv=None) -> int:
                               "warnings": report["warnings"],
                               "report": REPORT_REL}))
             return 0
-        settings = settings_from_env(licensed_only, INDEX_BUDGET_SINGLE)
+        settings = settings_from_env(licensed_only, policy, INDEX_BUDGET_SINGLE)
         identity = make_identity(args.doi, args.title, args.author, args.year)
         result = acquire_one(workdir, identity, settings, Deadline(None), pdf_path=args.pdf)
         print(output.dumps(result))

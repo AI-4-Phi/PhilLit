@@ -309,6 +309,47 @@ class TestConsent:
         code, data = run_json(capsys, workdir, "--doi", DOI, "--pdf", p)
         assert data["status"] == "acquired" and data["source"] == "user"
 
+    @pytest.mark.parametrize("lic,policy,ok", [
+        ("cc-by", None, True), (None, None, True), ("publisher-specific", None, True),
+        ("cc-by", "cc", True), ("CCBY", "cc", True), ("oa:author", "cc", False), (None, "cc", False),
+        ("cc-by-nc", "open", True), ("oa:publisher_free", "open", True), ("OA:cc", "open", True),
+        ("upload", "open", True), ("Upload ", "open", True), (None, "open", False),
+        ("publisher-specific", "open", False), ("", "open", False), (3, "open", False),
+    ])
+    def test_licence_rule(self, lic, policy, ok):
+        assert af._licensed(lic, policy) is ok
+
+    def test_policy_open_from_process_env_admits_oa_locations(self, http, workdir, capsys):
+        os.environ["PHILLIT_FULLTEXT_LICENSED_ONLY"] = "1"
+        os.environ["PHILLIT_FULLTEXT_POLICY"] = "open"
+        write_env("PHILLIT_FULLTEXT_POLICY=\n")   # .env cannot switch it off
+        http.add(OA_URL, FakeResponse(payload=oa_payload([("https://pub.example/a.pdf", "oa:publisher_free")])))
+        http.add("https://pub.example/a.pdf", FakeResponse(body=work_pdf()))
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert data["status"] == "acquired"
+        assert {t["source"]: t["outcome"] for t in data["tried"]}["zotero"] == "disabled"
+
+    def test_policy_open_in_env_file_is_ignored(self, http, workdir, capsys):
+        os.environ["PHILLIT_FULLTEXT_LICENSED_ONLY"] = "1"
+        write_env("PHILLIT_FULLTEXT_POLICY=open\n")
+        http.add(OA_URL, FakeResponse(payload=oa_payload([("https://pub.example/a.pdf", "oa:author")])))
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert {t["source"]: t["outcome"] for t in data["tried"]}["openalex"] == "unlicensed"
+
+    def test_policy_open_alone_keeps_zotero_and_folder(self, http, workdir, capsys, tmp_path):
+        os.environ["PHILLIT_FULLTEXT_POLICY"] = "open"
+        write_env("PHILLIT_ZOTERO=on\n")
+        setup_zotero(http, tmp_path, [work_pdf()])
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert data["source"] == "zotero"
+
+    def test_gaps_report_names_the_policy(self, http, workdir, capsys):
+        os.environ["PHILLIT_FULLTEXT_LICENSED_ONLY"] = "1"
+        (workdir / "literature-domain-1.bib").write_text(bib_entry("g", doi=DOI), encoding="utf-8")
+        run(capsys, workdir, "--gaps", "--domains", "1")
+        report = json.loads((workdir / af.REPORT_REL).read_text(encoding="utf-8"))
+        assert report["policy"] == "cc" and report["licensed_only"] is True
+
 
 # ---------------------------------------------------------------------------
 # Source order
