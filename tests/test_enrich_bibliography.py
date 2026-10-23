@@ -1845,6 +1845,34 @@ def test_typography_fold_does_not_hide_a_changed_word():
     assert (outcome, source) == ("mismatch", None)
 
 
+@pytest.mark.parametrize("bib, fetched", [
+    ("it's", "it\u2019s"), ("it's", "it\u2018s"), ("it's", "it\u201as"),
+    ("it's", "it\u201bs"), ("f'", "f\u2032"), ("it's", "it\u02bcs"),
+    ('a "b" c', "a \u201cb\u201d c"), ('a "b" c', "a \u201eb\u201f c"),
+    ('a "b" c', "a \u2033b\u2033 c"), ("a ``b'' c", 'a "b" c'), ("a `b' c", "a 'b' c"),
+    ("a-b", "a\u2010b"), ("a-b", "a\u2011b"), ("a-b", "a\u2012b"),
+    ("a--b", "a\u2013b"), ("a---b", "a\u2014b"), ("a-b", "a\u2015b"),
+    ("a -- b", "a\u2014b"), ("a - b", "a\u2e3ab"), ("a-b", "a\u2e3bb"),
+    ("a\u00a0\u2014\u2009b", "a - b"), ("wait...", "wait\u2026"),
+])
+def test_typography_fold_table(bib, fetched):
+    from stamp_evidence import abstract_texts_agree
+
+    assert abstract_texts_agree(fetched, bib)
+
+
+@pytest.mark.parametrize("bib, fetched", [
+    ("1-2", "1\u22122"),                 # a minus sign is not a dash
+    ('a "b" c', "a \u00abb\u00bb c"),   # guillemets stay distinct
+    ("it's", 'it"s'),                    # quote kinds stay distinct
+    ("re-sign", "resign"),               # a dash is folded, never dropped
+])
+def test_typography_fold_keeps_distinctions(bib, fetched):
+    from stamp_evidence import abstract_texts_agree
+
+    assert not abstract_texts_agree(fetched, bib)
+
+
 def test_abstract_hash_keeps_its_strict_form():
     """The fold lives in the comparison only: abstract_hash is the ledger's
     abstract_sha256, and folding it would orphan every existing ledger."""
@@ -1855,7 +1883,7 @@ def test_abstract_hash_keeps_its_strict_form():
     assert abstract_hash(CURLY) == hashlib.sha256(CURLY.encode("utf-8")).hexdigest()
 
 
-def test_prefilled_straight_quotes_attest_and_corroborate_end_to_end(tmp_path, monkeypatch):
+def test_prefilled_straight_quotes_attest_then_pass_candidacy_and_corroboration(tmp_path, monkeypatch):
     """The reported entry's whole chain: the pre-filled check attests the bib's
     OWN text (ledger hash of the straight-quoted text), the barrier's
     candidacy accepts it, and the live probe corroborates it."""

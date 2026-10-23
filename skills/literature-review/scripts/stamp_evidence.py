@@ -90,26 +90,32 @@ def abstract_hash(text: str) -> str:
     ).hexdigest()
 
 
+# The minus sign (U+2212) is not a dash: it stays distinct, as do
+# guillemets, a language's quotation style rather than a copy artifact.
 _QUOTE_FOLD = str.maketrans(
-    {c: "'" for c in "‘’‚‛′"}
-    | {c: '"' for c in "“”„‟″"}
-    | {c: "-" for c in "‐‑‒–—―−"})
+    {c: "'" for c in "\u2018\u2019\u201a\u201b\u2032\u02bc"}
+    | {c: '"' for c in "\u201c\u201d\u201e\u201f\u2033"}
+    | {c: "-" for c in "\u2010\u2011\u2012\u2013\u2014\u2015\u2e3a\u2e3b"}
+    | {"\u2026": "..."})
 
 
 def _typography_fold(text: str) -> str:
     """normalize_abstract_for_hash, then the typography a researcher's copy
     changes without changing the text: curly quotes straightened, LaTeX
-    ``quotes'', Unicode dashes and LaTeX --/--- dashes, and the spaces
-    around a dash (" -- " for an em dash).
+    ``quotes'', Unicode dashes and LaTeX --/--- dashes, the spaces around a
+    dash (" -- " for an em dash), and the ellipsis character.
 
     Measured 2026-10-23 on 1,799 local bib abstracts against the API JSON
     they were copied from (research time, not live): 505 differed after
     the hash normalization, and this fold makes 123 of them equal. Folding
     accents and ligatures (NFKC) too would add 2, so it stays out; most of
     the remaining 382 are real edits (another text, a dropped "Abstract"
-    prefix, a changed word)."""
+    prefix, a changed word). The minus sign's exclusion and the ellipsis,
+    U+2E3A/B and U+02BC folds change none of the 123."""
     s = normalize_abstract_for_hash(text)
     s = s.replace("``", '"').replace("''", '"').replace("`", "'")
+    # One optional ASCII space suffices: the normalization above already
+    # made every whitespace run, NBSP and thin space included, one " ".
     return re.sub(r" ?-+ ?", "-", s.translate(_QUOTE_FOLD))
 
 
@@ -121,7 +127,8 @@ def abstract_texts_agree(fetched: str, existing: str) -> bool:
     form, because a changed hash would orphan every existing ledger, and a
     hash cannot be folded after the fact. So the heal, which matches a
     fetch against the ledger hash and writes the fetched text, stays
-    byte-exact."""
+    hash-exact. After a fold match the ledger hash is the BIB text's, not
+    the source's."""
     return _typography_fold(fetched) == _typography_fold(existing)
 
 

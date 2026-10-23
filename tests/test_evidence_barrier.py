@@ -707,6 +707,26 @@ def test_heal_abstract_refuses_on_hash_mismatch(monkeypatch):
     assert evidence_barrier._heal_abstract(fields, ledger_entry) is None
 
 
+def test_heal_abstract_stays_hash_exact_after_a_typography_fold_attestation(monkeypatch):
+    """The accepted residual: the ledger holds the hash of the bib's
+    straight-quoted text, the source serves curly quotes, and the heal
+    would WRITE the source's text, which could then never pass candidacy.
+    So the heal refuses rather than folding."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    import stamp_evidence as se
+    straight = 'The "capacitarian" view -- a claim.' + _PROSE
+    curly = "The \u201ccapacitarian\u201d view\u2014a claim." + _PROSE
+    ledger_entry = {"abstract_source": "openalex",
+                    "abstract_sha256": se.abstract_hash(straight)}
+    fields = {"title": "T", "doi": "10.1/x", "abstract": "The mutated text."}
+    monkeypatch.setattr(
+        evidence_barrier.eb, "resolve_abstract_for_entry",
+        lambda *a, **k: (curly, "openalex"))
+    assert se.abstract_texts_agree(curly, straight)
+    assert evidence_barrier._heal_abstract(fields, ledger_entry) is None
+
+
 def test_heal_abstract_never_raises(monkeypatch):
     sys.path.insert(0, str(SCRIPTS_DIR))
     import evidence_barrier
