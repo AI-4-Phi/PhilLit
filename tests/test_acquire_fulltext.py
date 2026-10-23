@@ -356,6 +356,16 @@ class TestConsent:
         code, data = run_json(capsys, workdir, "--doi", DOI)
         assert {t["source"]: t["outcome"] for t in data["tried"]}["openalex"] == "unlicensed"
 
+    @pytest.mark.parametrize("value", ["opean", "OPEN-ish", "cc"])
+    def test_an_unrecognised_policy_value_fails_closed(self, http, workdir, capsys, value):
+        """Only `open` widens the rule; any other value admits cc only."""
+        os.environ["PHILLIT_FULLTEXT_POLICY"] = value
+        http.add(OA_URL, FakeResponse(payload=oa_payload([("https://pub.example/a.pdf", "oa:author")])))
+        http.add("https://pub.example/a.pdf", FakeResponse(body=work_pdf()))
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert {t["source"]: t["outcome"] for t in data["tried"]}["openalex"] == "unlicensed"
+        assert data["status"] == "not_found"
+
     def test_policy_open_alone_keeps_zotero_and_folder(self, http, workdir, capsys, tmp_path):
         os.environ["PHILLIT_FULLTEXT_POLICY"] = "open"
         write_env("PHILLIT_ZOTERO=on\n")
@@ -1276,6 +1286,35 @@ class TestGaps:
         assert _service_tried(second) == {"source": "service", "outcome": "deadline"}
         assert service.clock[0] >= af.GAPS_DEADLINE - af.SERVICE_WAIT_MARGIN
 
+    def test_request_dir_a_file_leaves_every_open_entry_unavailable(self, http, workdir, capsys,
+                                                                    tmp_path):
+        blocker = tmp_path / "a-file"
+        blocker.write_text("", encoding="utf-8")
+        write_env(f"PHILLIT_FULLTEXT_REQUEST_DIR={blocker}\n")
+        (workdir / "literature-domain-1.bib").write_text(
+            bib_entry("k0", doi="10.1/w0") + bib_entry("k1", doi="10.1/w1"), encoding="utf-8")
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        assert json.loads(out)["status"] == "done"
+        report = json.loads((workdir / af.REPORT_REL).read_text(encoding="utf-8"))
+        assert all(_service_tried(e) == {"source": "service", "outcome": "unavailable",
+                                         "detail": ["request_dir_missing"]}
+                   for e in report["entries"])
+        assert [e["outcome"] for e in report["entries"]] == ["not_found", "not_found"]
+
+    def test_duplicate_of_a_service_crashed_entry_names_the_real_reason(self, http, workdir, capsys,
+                                                                      service, monkeypatch):
+        for i in (1, 2):
+            (workdir / f"literature-domain-{i}.bib").write_text(bib_entry(f"g{i}", doi=DOI),
+                                                                encoding="utf-8")
+
+        def boom(*a, **k):
+            raise RuntimeError("kaput")
+        monkeypatch.setattr(af, "service_fetch", boom)
+        code, out = run(capsys, workdir, "--gaps", "--domains", "2")
+        assert json.loads(out)["errors"] == [
+            {"entry": "1/g1", "reason": "error:RuntimeError: kaput"},
+            {"entry": "2/g2", "reason": "error:RuntimeError: kaput"}]
+
     def test_oversize_request_is_unavailable_and_never_written(self, http, workdir, capsys, service,
                                                                monkeypatch):
         monkeypatch.setattr(fc, "MAX_REQUEST_BYTES", 100)
@@ -1406,7 +1445,7 @@ class TestRepository:
         first = data["tried"][0]
         assert first["source"] == "repository" and first["outcome"] == "rejected"
         assert first["detail"][0].startswith("identity_failed:")
-        assert data["status"] != "acquired" or data["source"] != "repository"
+        assert data["status"] == "rejected" and data["source"] is None
 
     def test_repository_licence_backstop(self, http, workdir, capsys, tmp_path):
         repo = tmp_path / "records"
@@ -1830,10 +1869,22 @@ class TestService:
         write_env(f"PHILLIT_FULLTEXT_REQUEST_DIR={blocker}\n")
         code, data = run_json(capsys, workdir, "--doi", DOI)
         assert code == 0
-        tried = _service_tried(data)
-        assert tried["outcome"] == "unavailable" and len(tried["detail"]) == 1
-        assert tried["detail"][0].startswith("request_write_failed:")
+        assert _service_tried(data) == {"source": "service", "outcome": "unavailable",
+                                        "detail": ["request_dir_missing"]}
         assert data["status"] == "not_found"
+
+    def test_missing_request_dir_means_no_worker(self, http, workdir, capsys, tmp_path, monkeypatch):
+        """The engine never creates the directory: nothing is written and
+        nothing is waited on."""
+        def no_sleep(seconds):
+            raise AssertionError("waited")
+        monkeypatch.setattr(af, "_sleep", no_sleep)
+        missing = tmp_path / "requests"
+        write_env(f"PHILLIT_FULLTEXT_REQUEST_DIR={missing}\n")
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert _service_tried(data) == {"source": "service", "outcome": "unavailable",
+                                        "detail": ["request_dir_missing"]}
+        assert not missing.exists()
 
     def test_local_sources_before_the_service(self, http, workdir, capsys, tmp_path, service):
         setup_zotero(http, tmp_path, [work_pdf()])

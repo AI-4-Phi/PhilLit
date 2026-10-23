@@ -78,10 +78,11 @@ Paywalled copies come only from the user's own copies (Zotero, the folder,
 SERVICE POLICY. One licence rule, three settings (`_licensed`), compared
 case-insensitively after stripping (S2 reports `CCBY`).
 `PHILLIT_FULLTEXT_POLICY=open` admits a licence that starts with `cc` or
-`oa:`, or equals `upload`. Otherwise `PHILLIT_FULLTEXT_LICENSED_ONLY`
-(1/true/yes/on) admits a licence that starts with `cc` only, and also
-disables Zotero and the folder (`POLICY` alone leaves both on). With neither
-set there is no filter. Both are read from the PROCESS environment BEFORE
+`oa:`, or equals `upload`; `open` is the only value recognised, and any
+other non-empty value falls to the `cc`-only rule (fails closed).
+`PHILLIT_FULLTEXT_LICENSED_ONLY` (1/true/yes/on) admits a licence that
+starts with `cc` only, and also disables Zotero and the folder (`POLICY`
+alone leaves both on). With neither set there is no filter. Both are read from the PROCESS environment BEFORE
 `.env` is loaded and `.env` is ignored for them in both directions: the
 hosted service sets them for its own process, so a workspace `.env` cannot
 switch the filter off. They are a policy default, not a security boundary: a
@@ -91,7 +92,10 @@ audited afterwards. `--pdf` stays available under the policy (the service
 builds uploads on it) and never consults the service channel. The service
 sets a third variable, `PHILLIT_FULLTEXT_REQUEST_DIR`, which turns the
 service channel on (source 5); a location, not a policy, it is read after
-`.env` loads like `PHILLIT_PDF_DIR`.
+`.env` loads like `PHILLIT_PDF_DIR`. The worker creates that directory
+(`intermediate_files/fulltext_requests/`) before the review starts; the
+engine never does, and a missing directory means no worker
+(`request_dir_missing`).
 
 DOWNLOADS. http(s) only, re-checked on every redirect hop (at most 5,
 followed by hand); 30 s per download; a 60 MB cap enforced while streaming;
@@ -101,39 +105,41 @@ reaches a PDF host). Local files (Zotero, folder, `--pdf`): a 200 MB cap.
 OUTCOMES. Single-work mode prints one JSON object `{status, slug, source,
 tried}`, within a 420 s deadline (`SINGLE_DEADLINE`, the Bash ceiling is
 600 s); `status` is `acquired`, `exists` (a valid record for this identity
-is already stored), `not_found` (no PDF was obtained), `rejected` (a PDF was
-obtained and none passed extraction and the identity check) or `refused`
-(`slug_collision`: a sidecar under the stem names another identity, and
-nothing is overwritten; `path_too_long`: the store path would exceed the
-Windows limit). `tried` lists `{source, outcome[, detail]}` in order;
-source outcomes are `disabled`, `unavailable`, `not_found`, `rejected`,
-`acquired`, plus `no_doi` for the OA sources and the service, `unlicensed`
-for the OA sources, the repository and the service, and `deadline` for a
-source the deadline cut. Service details: `stem_mismatch` (added to the
-outcome of checking the record at this slug), `copied_after_response:
-<outcome>` (a copy found at this slug although the answer was not
-`found`), `copy_invalid:<reason>` (the copy fails `validate_record`; it is
-left for the barrier to withhold), `removed_copy` (a valid copy that could
-not be read), `error:<exception>` (this slug's check crashed; its copy is
-removed, `remove_failed:<error>` when that fails), `field_too_long`,
-`request_write_failed:<error>`, `closed_write_failed:<error>`, and the
-worker's own detail token. An invalid stored record is reported as
-`{source: "store", outcome: "invalid_replaced:<reason>"}` when a new PDF
-replaced it (`invalid_kept:<reason>` when none was found); a stored service
-copy the policy refuses as `{source: "store", outcome:
-"unlicensed_removed"}`. Exit 0 for every status; 1 for a crash, with one
-JSON object `{"error": ...}`; 2 for a usage error.
+is already stored), `not_found` (no PDF was obtained), `rejected` (a PDF
+was obtained and none passed extraction and the identity check) or
+`refused` (`slug_collision`: a sidecar under the stem names another
+identity, and nothing is overwritten; `path_too_long`: the store path
+would exceed the Windows limit). `tried` lists
+`{source, outcome[, detail]}` in order; source outcomes are `disabled`,
+`unavailable`, `not_found`, `rejected`, `acquired`, plus `no_doi` for the
+OA sources and the service, `unlicensed` for the OA sources, the
+repository and the service, and `deadline` for a source the deadline cut.
+Service details: `stem_mismatch` (added to the outcome of checking the
+record at this slug), `copied_after_response:<outcome>` (a copy found at
+this slug although the answer was not `found`), `copy_invalid:<reason>`
+(the copy fails `validate_record`; it is left for the barrier to
+withhold), `removed_copy` (a valid copy that could not be read),
+`error:<exception>` (this slug's check crashed; its copy is removed,
+`remove_failed:<error>` when that fails), `field_too_long`,
+`request_dir_missing`, `request_write_failed:<error>`,
+`closed_write_failed:<error>`, and the worker's own detail token. An
+invalid stored record is reported as `{source: "store", outcome:
+"invalid_replaced:<reason>"}` when a new PDF replaced it
+(`invalid_kept:<reason>` when none was found); a stored service copy the
+policy refuses as `{source: "store", outcome: "unlicensed_removed"}`. Exit
+0 for every status; 1 for a crash, with one JSON object `{"error": ...}`;
+2 for a usage error.
 
 `--gaps` tries every domain-bib entry with no `abstract` and either a DOI,
 or (the repository, Zotero or the folder enabled) a title, author and
 year, within a 420 s pass deadline (the Bash ceiling is 600 s): store and
 repository (and Zotero and the folder where enabled; OpenAlex and Semantic
-Scholar while the service channel is off) per entry, then one service
-request for the entries still open, then a wait bounded by the pass
-deadline. Entries not reached are `not_attempted`; an entry whose
-work an earlier entry already tried is `same_work_as` that entry and
-takes its final outcome. It writes the run report and prints a one-line
-JSON summary with counts per outcome.
+Scholar while the service channel is off) per entry, each entry decided or
+found there stored at once, then one service request for the entries still
+open, then a wait bounded by the pass deadline. Entries not reached are
+`not_attempted`; an entry whose work an earlier entry already tried is
+`same_work_as` that entry and takes its final outcome. It writes the run
+report and prints a one-line JSON summary with counts per outcome.
 
 IDENTITY FORMS (the barrier's binding contract). `--gaps` stores the
 entry's RAW title, `bib_identity.first_author_surname(author, editor)` and
@@ -854,9 +860,14 @@ def source_folder(identity: dict, settings: "Settings", deadline: Deadline) -> S
 # --------------------------------------------------------------------------
 
 def policy_from_env(licensed_only: bool) -> str | None:
-    """The licence policy: "open", "cc" or None (no filter), from os.environ now."""
-    if os.environ.get(POLICY_ENV, "").strip().lower() == "open":
+    """The licence policy: "open", "cc" or None (no filter), from os.environ
+    now. It fails closed: a POLICY value other than `open` is "cc", so a
+    misspelt value never removes the filter."""
+    raw = os.environ.get(POLICY_ENV, "").strip().lower()
+    if raw == "open":
         return "open"
+    if raw:
+        return "cc"
     return "cc" if licensed_only else None
 
 
@@ -1245,8 +1256,9 @@ def service_fetch(store: Path, pending: list[tuple[str, dict, str | None]], sett
     """Ask the service channel for `pending` [(slug, identity, invalid)]
     (`invalid`: the reason `begin` found the stored record invalid, or
     None); returns a `service` SourceResult for every slug. DOI identities
-    only are sent, in requests of at most `fc.MAX_PER_REQUEST`; all are
-    written first, then waited on together until `SERVICE_WAIT_MARGIN`
+    only are sent, in requests of at most `fc.MAX_PER_REQUEST`, and only
+    when the request directory exists (else `request_dir_missing`: the
+    worker creates it, so there is no worker); all are written first, then waited on together until `SERVICE_WAIT_MARGIN`
     before the deadline, then every written request is closed (also when
     the wait raises), then every requested slug's store record is checked
     (`_service_result`). One slug's crashing check is that slug's
@@ -1263,6 +1275,14 @@ def service_fetch(store: Path, pending: list[tuple[str, dict, str | None]], sett
             sendable.append((slug, identity, invalid, fc.identity_payload(identity)))
         except ValueError as exc:
             out[slug] = SourceResult("service", "unavailable", [str(exc)])
+    try:
+        has_worker = settings.request_dir.is_dir()
+    except OSError:
+        has_worker = False
+    if not has_worker:   # the worker creates the directory; the engine never does
+        for slug, *_ in sendable:
+            out[slug] = SourceResult("service", "unavailable", ["request_dir_missing"])
+        return out
     written = []
     try:
         for i in range(0, len(sendable), fc.MAX_PER_REQUEST):
