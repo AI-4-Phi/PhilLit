@@ -26,45 +26,47 @@ FILES, all in the request directory, named `<request_id>` plus a suffix:
 - `<id>.closed` (engine writes, empty): the engine has stopped waiting.
 
 WRITE ORDER the worker follows: copy a found work's record into the review's
-store FIRST, then rewrite the response naming its `stem`; set `complete` true
-only in the rewrite that carries the last outcome. A record is copied as the
-PDF, then the `.txt`, then the `.json` sidecar last, each through a temp file
-and a rename, so a sidecar never names a PDF that is not yet in place. A
-response may therefore be read at any moment and never names a stem that is
-not yet in the store. A copied record's `source_ref` carries `"service":
-true` at its top level: the engine relies on that marker to re-check the
-licence of a stored copy a later acquisition run finds (`exists`), and a
-record without it is never re-checked.
+store FIRST, then rewrite the response naming its `stem`; set `complete`
+true only in the rewrite that carries the last outcome. A record is copied
+as the PDF, then the `.txt`, then the `.json` sidecar last, each through a
+temp file and a rename, so a sidecar never names a PDF that is not yet in
+place. A response may therefore be read at any moment and never names a stem
+that is not yet in the store. A copied record's sidecar `identity` is the
+request's four identity fields, since the engine keeps a passing copy as
+written. Its `source_ref` carries `"service": true` at its top level: the
+engine relies on that marker to re-check the licence of a stored copy a
+later acquisition run finds (`exists`), and a record without it is never
+re-checked.
 
 GRAMMAR: `request_id` matches `REQUEST_ID_RE` (`<mode>-<16 hex>` from
 `new_request_id`); at most `MAX_PER_REQUEST` identities per request, each
 string field at most `MAX_FIELD_CHARS`, the request file (and a response
-file the engine reads) at most `MAX_REQUEST_BYTES`. The caps are enforced
-on write (`identity_payload`, `write_request`); the reader caps only the
+file the engine reads) at most `MAX_REQUEST_BYTES`. The caps are enforced on
+write (`identity_payload`, `write_request`); the reader caps only the
 response file's size and normalises the rest rather than enforcing field
-lengths. `schema` is the integer
-1; `complete` is true only as the JSON literal `true`. `status` is one of
-`STATUSES`: `found` (stem names the stored record), `none` (no open copy;
-detail `no_doi` when the work has no DOI), `unlicensed` (a copy exists, its
-licence refuses reuse), `failed`. `detail` is a short token or null; for
-`failed` it is `identity_rejected`, `timeout`, `too_large`, `not_pdf`,
-`blocked_host` or `removed`; anything else (`bad_request`, `budget`,
-`aborted`, ...) reads as unavailable.
+lengths. `schema` is the integer 1; `complete` is true only as the JSON
+literal `true`. `status` is one of `STATUSES`: `found` (stem names the
+stored record), `none` (no open copy; detail `no_doi` when the work has no
+DOI), `unlicensed` (a copy exists, its licence refuses reuse), `failed`.
+`detail` is a short token or null; for `failed` it is `identity_rejected`,
+`timeout`, `too_large`, `not_pdf`, `blocked_host` or `removed`; anything
+else (`bad_request`, `budget`, `aborted`, ...) reads as unavailable.
 
 DEADLINE: the engine waits a bounded time over all requests of a call at
 once (`wait_for_responses`, every id read each round). A key absent from
 `outcomes` when it stops is reported as `deadline` while the response is
 incomplete, and as `unavailable` (`no_outcome`) once it is complete; the
 engine writes `<id>.closed` so the worker can drop the remaining work. The
-engine then checks the store at every requested slug, whatever the
-response says, so a copy that arrived without its answer still meets the
-licence and identity checks. A copy that lands after that check is bound
-by the barrier without a licence re-check (the barrier checks identity
-and the hash only). The worker stops copying at `.closed` and applies the
-same policy before it fetches, so the window is a copy already in flight
-at `.closed` with a worker licence bug, accepted under the project's
-scrappy legal posture. A later acquisition run that finds such a copy
-(`exists`) re-checks it against the policy then.
+engine then checks the store at every requested slug, whatever the response
+says, so a copy that arrived without its answer still meets the licence and
+identity checks; a slug it reaches only after its own deadline has its copy
+removed unchecked. A copy that lands after that check is bound by the
+barrier without a licence re-check (the barrier checks identity and the hash
+only). The worker stops copying at `.closed` and applies the same policy
+before it fetches, so the window is a copy already in flight at `.closed`
+with a worker licence bug, accepted under the project's scrappy legal
+posture. A later acquisition run that finds such a copy (`exists`) re-checks
+it against the policy then.
 
 A reader never trusts a response: an unreadable or oversize file, a wrong
 schema or a foreign `request_id` is no response, and every outcome is
