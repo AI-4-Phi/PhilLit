@@ -13,11 +13,12 @@ WHAT IT WRITES. Only `<slug>.pdf` and then its `<slug>.json` acquisition
 sidecar in `[workdir]/intermediate_files/fulltext/` (both atomic), and in
 `--gaps` mode the run report `intermediate_files/json/fulltext_acquisition.json`;
 with the service channel on, also its request and `.closed` files, and it
-removes a service copy that the licence backstop or the identity check
-refuses. Never a `.txt` (the evidence barrier renders texts; a service
-copy's `.txt` is left for it) and never a bib. A PDF here licenses nothing
-by itself: the barrier re-extracts it, checks its hash against the sidecar
-and re-runs the identity check against the ENTRY before it stamps FULLTEXT.
+removes a service copy that the licence backstop, the read or the identity
+check refuses, or that the deadline left unchecked. Never a `.txt` (the
+evidence barrier renders texts; a service copy's `.txt` is left for it)
+and never a bib. A PDF here licenses nothing by itself: the barrier
+re-extracts it, checks its hash against the sidecar and re-runs the
+identity check against the ENTRY before it stamps FULLTEXT.
 "Is this PDF this work" is `fulltext.identity_ok`, run here on every
 candidate from every source, `--pdf` included; slugs, record validity and
 the store paths are `fulltext.py`'s too.
@@ -50,18 +51,20 @@ SOURCES, in the ruled order, the first passing PDF wins:
    under this identity's slug and answers; the engine waits on all its
    requests together until `SERVICE_WAIT_MARGIN` seconds plus
    `ARRIVAL_CHECK_SECONDS` per identity sent before the deadline, writes
-   `<id>.closed`, and maps a key still unanswered to
-   `deadline` (`no_outcome` when the response is complete). It then checks
-   the record at THIS identity's slug for every requested key, whatever
-   the response says: for `found` whatever stem it names (a differing stem
-   is the detail `stem_mismatch`, never a gate), and for any other answer,
-   or none, whenever a file is there (a passing copy is a hit noted
-   `copied_after_response:<outcome>`). Each copy is
-   validated as a download is: `validate_record`, the licence backstop
-   (`_licensed`), the read, then `check_pdf` against THIS run's identity; a
-   copy refused by the backstop, unreadable or failing the identity check
-   is removed (nothing downstream reads licences), and a passing one is
-   stored through the normal path with its own source, ref and licence. A
+   `<id>.closed`, and maps a key still unanswered to `deadline`
+   (`no_outcome` when the response is complete). It then checks the record
+   at THIS identity's slug for every requested key, whatever the response
+   says: for `found` whatever stem it names (a differing stem is the
+   detail `stem_mismatch`, never a gate), and for any other answer, or
+   none, whenever a file is there (a passing copy is a hit noted
+   `copied_after_response:<outcome>`). Each copy is validated as a
+   download is: `validate_record`, the licence backstop (`_licensed`), the
+   read, then `check_pdf` against THIS run's identity; a copy refused by
+   the backstop, unreadable or failing the identity check is removed
+   (nothing downstream reads licences), and a passing one stays as the
+   worker wrote it, with its own source, ref and licence (it is not
+   rewritten and its bytes are not held). A slug the deadline reaches
+   before its check is `deadline`, and its copy is removed unchecked. A
    copy that completes after that check is licence-checked on the next run
    (a stored service copy the policy refuses is removed:
    `unlicensed_removed`), not this one; the worker applies the same policy
@@ -356,10 +359,14 @@ def download_pdf(url: str, deadline: Deadline) -> tuple[bytes | None, str]:
 
 @dataclass
 class Hit:
+    """A passing candidate. `stored`: a validated service copy, already the
+    store's record at the slug; it holds no bytes (`data` is empty) and
+    `finish` leaves it as written."""
     data: bytes
     source: str
     source_ref: object
     license: str | None
+    stored: bool = False
 
 
 @dataclass
@@ -459,7 +466,8 @@ def _check_stored_record(rec: ft.Record, identity: dict, settings: "Settings", *
     the licence backstop, the read, then `check_pdf` against THIS run's
     identity. Returns (hit, "acquired", []) or (None, outcome, detail). With
     `remove_on_refusal` (a service copy) a refused or unreadable record is
-    removed, so no record is left for the barrier to bind."""
+    removed, so no record is left for the barrier to bind, and a passing
+    one is a `stored` hit that keeps no bytes."""
     def refuse(outcome: str, detail: list[str]):
         if remove_on_refusal:
             _remove_copy(rec.json_path.parent, rec.stem)
@@ -472,6 +480,9 @@ def _check_stored_record(rec: ft.Record, identity: dict, settings: "Settings", *
     ok, why = check_pdf(data, identity)
     if not ok:
         return refuse("rejected", [why])
+    if remove_on_refusal:
+        del data
+        return Hit(b"", rec.source, rec.source_ref, rec.license, stored=True), "acquired", []
     return Hit(data, rec.source, rec.source_ref, rec.license), "acquired", []
 
 
@@ -1373,7 +1384,11 @@ def finish(attempt: Attempt, service: SourceResult | None) -> dict:
     tried = list(attempt.store_notes) + [r.tried() for r in results]
     out = {"status": None, "slug": attempt.slug, "source": None, "tried": tried}
     if winner is not None:
-        write_record(attempt.store, attempt.slug, attempt.identity, winner.hits[0])
+        # A stored service copy is the validated record (hash matched,
+        # licence and identity checked, this run's identity written by the
+        # worker); every other hit is written here.
+        if not winner.hits[0].stored:
+            write_record(attempt.store, attempt.slug, attempt.identity, winner.hits[0])
         if attempt.invalid:
             tried.insert(0, {"source": "store", "outcome": f"invalid_replaced:{attempt.invalid}"})
         out.update(status="acquired", source=winner.hits[0].source)

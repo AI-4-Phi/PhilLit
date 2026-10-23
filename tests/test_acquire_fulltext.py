@@ -1711,6 +1711,41 @@ class TestService:
         assert rec.identity == {"doi": DOI, "title": TITLE, "surname": SURNAME, "year": YEAR}
         assert (rec.source, rec.source_ref, rec.license) == ("openalex", SERVICE_REF, "oa:oa_repository")
 
+    def test_a_validated_service_copy_is_kept_as_written_and_never_held(self, http, workdir, capsys,
+                                                                       service):
+        """The record the worker wrote is the one checked: it is not
+        rewritten (its `acquired_at` stands) and its bytes are not held."""
+        pdf = work_pdf()
+        service.answer({DOI: {"status": "found", "pdf": pdf}})
+        code, data = run_json(capsys, workdir, *_full_args())
+        assert data["status"] == "acquired" and data["source"] == "openalex"
+        store = workdir / ft.STORE_REL
+        rec = ft.validate_record(store, data["slug"])
+        assert isinstance(rec, ft.Record)
+        assert rec.acquired_at == "2026-10-22T00:00:00+00:00"   # the worker's value
+        assert (store / f"{data['slug']}.pdf").read_bytes() == pdf
+        ident = af.make_identity(DOI, "Another Copy", SURNAME, YEAR)
+        slug = ft.slug_for(ident)
+        for p in store.iterdir():
+            p.unlink()
+        settings = af.settings_from_env(False, None, 1)
+        settings.request_dir = service.request_dir
+        service.answered.clear()
+        res = af.service_fetch(store, [(slug, ident, None)], settings, af.Deadline(None), "single")[slug]
+        [hit] = res.hits
+        assert hit.stored is True and hit.data == b""
+
+    def test_a_service_copy_replaces_an_invalid_record(self, http, workdir, capsys, service):
+        store = workdir / ft.STORE_REL
+        store.mkdir(parents=True)
+        slug = ft.slug_for(af.make_identity(DOI))
+        (store / f"{slug}.pdf").write_bytes(b"%PDF-orphan")
+        service.answer({DOI: {"status": "found", "pdf": work_pdf()}})
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert data["status"] == "acquired"
+        assert data["tried"][0] == {"source": "store", "outcome": "invalid_replaced:sidecar_unreadable"}
+        assert ft.validate_record(store, slug).acquired_at == "2026-10-22T00:00:00+00:00"
+
     def test_service_never_sends_a_url_or_a_no_doi_identity(self, http, workdir, capsys, service):
         service.answer({DOI: {"status": "found", "pdf": work_pdf()}})
         code, data = run_json(capsys, workdir, "--title", TITLE, "--author", SURNAME, "--year", YEAR)
