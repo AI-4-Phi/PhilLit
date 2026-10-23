@@ -9,6 +9,9 @@ Nothing else in the engine spells a file name or a field of these files.
 THE REQUEST DIRECTORY is the review's `intermediate_files/fulltext_requests/`,
 created by the worker before the review starts. The engine never creates
 it: a missing directory means no worker, and the engine writes nothing.
+The engine never cleans it either: the files are small and stay with the
+review's intermediate files, and a killed run leaves a request without
+`.closed`, which the worker's own clock ends.
 
 FILES, all in the request directory, named `<request_id>` plus a suffix:
 - `<id>.request.json` (engine writes, once): `{"schema": 1, "request_id",
@@ -19,7 +22,7 @@ FILES, all in the request directory, named `<request_id>` plus a suffix:
 - `<id>.response.json` (worker writes, rewritten atomically after EACH
   outcome): `{"schema": 1, "request_id", "complete": bool, "outcomes":
   {key: {"status", "stem", "detail"}}}`. A key absent from `outcomes` has no
-  answer yet.
+  answer yet, or, once `complete`, none at all.
 - `<id>.closed` (engine writes, empty): the engine has stopped waiting.
 
 WRITE ORDER the worker follows: copy a found work's record into the review's
@@ -28,12 +31,18 @@ only in the rewrite that carries the last outcome. A record is copied as the
 PDF, then the `.txt`, then the `.json` sidecar last, each through a temp file
 and a rename, so a sidecar never names a PDF that is not yet in place. A
 response may therefore be read at any moment and never names a stem that is
-not yet in the store.
+not yet in the store. A copied record's `source_ref` carries `"service":
+true` at its top level: the engine relies on that marker to re-check the
+licence of a stored copy a later acquisition run finds (`exists`), and a
+record without it is never re-checked.
 
 GRAMMAR: `request_id` matches `REQUEST_ID_RE` (`<mode>-<16 hex>` from
 `new_request_id`); at most `MAX_PER_REQUEST` identities per request, each
 string field at most `MAX_FIELD_CHARS`, the request file (and a response
-file the engine reads) at most `MAX_REQUEST_BYTES`. `schema` is the integer
+file the engine reads) at most `MAX_REQUEST_BYTES`. The caps are enforced
+on write (`identity_payload`, `write_request`); the reader caps only the
+response file's size and normalises the rest rather than enforcing field
+lengths. `schema` is the integer
 1; `complete` is true only as the JSON literal `true`. `status` is one of
 `STATUSES`: `found` (stem names the stored record), `none` (no open copy;
 detail `no_doi` when the work has no DOI), `unlicensed` (a copy exists, its
@@ -49,9 +58,13 @@ incomplete, and as `unavailable` (`no_outcome`) once it is complete; the
 engine writes `<id>.closed` so the worker can drop the remaining work. The
 engine then checks the store at every requested slug, whatever the
 response says, so a copy that arrived without its answer still meets the
-licence and identity checks. A copy that lands after that check is
-licence-checked on the engine's next run over the store; the worker
-applies the same policy before it fetches.
+licence and identity checks. A copy that lands after that check is bound
+by the barrier without a licence re-check (the barrier checks identity
+and the hash only). The worker stops copying at `.closed` and applies the
+same policy before it fetches, so the window is a copy already in flight
+at `.closed` with a worker licence bug, accepted under the project's
+scrappy legal posture. A later acquisition run that finds such a copy
+(`exists`) re-checks it against the policy then.
 
 A reader never trusts a response: an unreadable or oversize file, a wrong
 schema or a foreign `request_id` is no response, and every outcome is

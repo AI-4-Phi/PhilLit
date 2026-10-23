@@ -65,10 +65,14 @@ SOURCES, in the ruled order, the first passing PDF wins:
    worker wrote it, with its own source, ref and licence (it is not
    rewritten and its bytes are not held). A slug the deadline reaches
    before its check is `deadline`, and its copy is removed unchecked. A
-   copy that completes after that check is licence-checked on the next run
-   (a stored service copy the policy refuses is removed:
-   `unlicensed_removed`), not this one; the worker applies the same policy
-   before fetching.
+   copy that lands after the arrival check is bound by the barrier without
+   a licence re-check (the barrier checks identity and the hash only). The
+   worker stops copying at `.closed` and applies the same policy before it
+   fetches, so the window is a copy already in flight at `.closed` with a
+   worker licence bug, accepted under the project's scrappy legal posture.
+   A service-copied record found on a later acquisition run (`exists`) is
+   re-checked against the policy then (a refused one is removed:
+   `unlicensed_removed`).
 OpenAlex and Semantic Scholar need a DOI. Several passing PDFs within the
 winning source: the first is kept and the rest are reported
 (`multiple_candidates`); every candidate of that source is checked, up to
@@ -118,11 +122,11 @@ was obtained and none passed extraction and the identity check) or
 identity, and nothing is overwritten; `path_too_long`: the store path
 would exceed the Windows limit; `unlicensed_remove_failed:<error>`: a
 stored service copy the policy refuses could not be removed, and no
-source runs). `tried` lists
-`{source, outcome[, detail]}` in order; source outcomes are `disabled`,
-`unavailable`, `not_found`, `rejected`, `acquired`, plus `no_doi` for the
-OA sources and the service, `unlicensed` for the OA sources, the
-repository and the service, and `deadline` for a source the deadline cut.
+source runs). `tried` lists `{source, outcome[, detail]}` in order;
+source outcomes are `disabled`, `unavailable`, `not_found`, `rejected`,
+`acquired`, plus `no_doi` for the OA sources and the service,
+`unlicensed` for the OA sources, the repository and the service, and
+`deadline` for a source the deadline cut.
 Service details: `no_outcome` (a complete response without this key),
 `stem_mismatch` (added to the outcome of checking the record at this
 slug), `copied_after_response:<outcome>` (a copy found at this slug
@@ -132,8 +136,7 @@ withhold), `removed_copy` (a valid copy that could not be read),
 `error:<exception>` (this slug's check crashed; its copy is removed,
 `remove_failed:<error>` when that fails), `unchecked_copy_removed` (the
 deadline passed before this slug's check, and its copy was removed),
-`field_too_long`,
-`request_dir_missing`, `request_write_failed:<error>`,
+`field_too_long`, `request_dir_missing`, `request_write_failed:<error>`,
 `closed_write_failed:<error>`, and the worker's own detail token. An
 invalid stored record is reported as `{source: "store", outcome:
 "invalid_replaced:<reason>"}` when a new PDF replaced it

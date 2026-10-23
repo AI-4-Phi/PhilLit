@@ -1487,21 +1487,20 @@ class TestRepository:
     @pytest.mark.skipif(sys.platform == "win32" or getattr(os, "geteuid", lambda: 1)() == 0,
                         reason="chmod does not deny on Windows or to root")
     def test_unreadable_repository_is_unavailable_not_a_crash(self, http, workdir, capsys, tmp_path):
-        parent = tmp_path / "locked"
-        repo = parent / "records"
+        """The directory itself is unreadable: `is_dir` passes and the
+        listing raises."""
+        repo = tmp_path / "records"
         write_repo_record(repo, work_pdf(), af.make_identity(DOI), source="user",
                           source_ref="u.pdf", license="upload")
         write_env(f"PHILLIT_FULLTEXT_REPOSITORY_DIR={repo}\n")
-        parent.chmod(0)
+        repo.chmod(0)
         try:
             code, data = run_json(capsys, workdir, "--doi", DOI)
         finally:
-            parent.chmod(0o755)
+            repo.chmod(0o755)
         assert code == 0
-        first = data["tried"][0]
-        assert first["source"] == "repository" and first["outcome"] == "unavailable"
-        # Python 3.10-3.13 raise from is_dir (caught); a later is_dir may say False.
-        assert first["detail"] in (["repository_error:PermissionError"], ["repository_missing"])
+        assert data["tried"][0] == {"source": "repository", "outcome": "unavailable",
+                                    "detail": ["repository_error:PermissionError"]}
         assert data["status"] == "not_found"
 
     def test_invalid_repository_record_is_not_found_with_reason(self, http, workdir, capsys, tmp_path):
