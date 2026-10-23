@@ -18,7 +18,7 @@ and the call costs no extra turn. Measured on 2.1.307 and 2.1.309: the
 rewritten call returns the agent's result inline, and two rewritten calls
 in one message still run in parallel. A foreground agent stays foreground
 unless `CLAUDE_AUTO_BACKGROUND_TASKS` is set, which moves it to the
-background after 120 s (read off the 2.1.309 binary).
+background after 120 s (read off the 2.1.309 binary), headless too.
 
 All of that holds for headless (`-p`) runs. An INTERACTIVE 2.1.309 session
 runs every agent in the background whatever the flag says: there the rewrite
@@ -28,13 +28,17 @@ interactive session stays open for the completion notifications, but it is
 why SKILL.md's notification rules stay load-bearing.
 
 No-op when `CLAUDE_CODE_DISABLE_BACKGROUND_TASKS` is set (phillit-service's
-worker sets it): the tool then lists no such flag and every dispatch is
+worker sets it), read with the CLI's own truthy set (1/true/yes/on, its
+`Ne()` in 2.1.309): the tool then lists no such flag and every dispatch is
 already inline. 2.1.309 tolerates the injected key on a flagless tool, but
 an older CLI might reject it. Untested residual: a flagless CLI without
 that variable (2.1.267 measured no flag on 2026-09-10) gets the key too.
 
-Scope: the four review agents (any plugin namespace) at the orchestrator
-(`agent_id` absent; subagents cannot dispatch). Disabling background tasks
+Scope: the four review agents, named bare (as phillit-service vendors
+them) or as `phillit:<name>`, on the Agent or Task tool at the orchestrator
+(`agent_id` absent; subagents cannot dispatch). Another plugin's agent of
+the same name is left alone. Overriding an explicit `true` says so in a
+systemMessage, since the old deny surfaced that conflict. Disabling background tasks
 workspace-wide is NOT the plugin's fix: with it, a Bash command is never
 moved to the background, so a barrier that outlasts the 10-minute Bash
 ceiling would be killed.
@@ -58,9 +62,10 @@ PHILLIT_AGENTS = frozenset(
 )
 
 
-def _bare_agent(subagent_type: str) -> str:
-    """Strip any plugin namespace, e.g. 'phillit:synthesis-writer' -> 'synthesis-writer'."""
-    return subagent_type.rsplit(":", 1)[-1] if subagent_type else ""
+def _review_agent(subagent_type: str) -> str:
+    """The review agent a dispatch names, bare or as 'phillit:<name>', else ''."""
+    namespace, _, name = subagent_type.rpartition(":")
+    return name if namespace in ("", "phillit") and name in PHILLIT_AGENTS else ""
 
 
 def _background_tasks_disabled() -> bool:
@@ -79,13 +84,17 @@ def main() -> None:
         return
 
     at_orchestrator = "agent_id" not in hook_input
-    agent = _bare_agent(str(tool_input.get("subagent_type") or ""))
-    if (at_orchestrator and agent in PHILLIT_AGENTS
-            and tool_input.get("run_in_background") is not False
-            and not _background_tasks_disabled()):
+    agent = _review_agent(str(tool_input.get("subagent_type") or ""))
+    flag = tool_input.get("run_in_background")
+    if (at_orchestrator and agent and hook_input.get("tool_name") in ("Agent", "Task")
+            and flag is not False and not _background_tasks_disabled()):
         tool_input["run_in_background"] = False
-        json.dump({"hookSpecificOutput": {"hookEventName": "PreToolUse",
-                                          "updatedInput": tool_input}}, sys.stdout)
+        out = {"hookSpecificOutput": {"hookEventName": "PreToolUse",
+                                      "updatedInput": tool_input}}
+        if flag is True:
+            out["systemMessage"] = (f"PhilLit: '{agent}' was dispatched with run_in_background: "
+                                    "true; it runs in the foreground instead.")
+        json.dump(out, sys.stdout)
     else:
         json.dump({}, sys.stdout)
 

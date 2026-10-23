@@ -1880,6 +1880,9 @@ def test_typography_fold_table(bib, fetched):
     ('"Fake news" is old.', 'Abstract "Fake news" is old.'),
     ("Abstract This paper argues.", "This paper argues."),   # either side
     ("Abstract: This paper argues.", "ABSTRACT This paper argues."),
+    ("This paper argues.", "Abstract \u2014 This paper argues."),
+    ("This paper argues.", "Abstract--This paper argues."),
+    ("'Title' is a paper.", "Abstract 'Title' is a paper."),
 ])
 def test_a_leading_abstract_label_is_ignored(bib, fetched):
     from stamp_evidence import abstract_texts_agree
@@ -1892,11 +1895,24 @@ def test_a_leading_abstract_label_is_ignored(bib, fetched):
     ("This paper argues.", "Abstracts This paper argues."),
     ("This paper argues.", "In the abstract This paper argues."),
     ("This paper argues.", "Abstract Abstract This paper argues."),   # one label only
+    ("type theories are old.", "Abstract-type theories are old."),     # a compound
+    ("He wrote no.", "He wrote Abstract: no."),                         # anchored
+    ("this paper argues.", "Abstract this paper argues."),   # kept: missed, never wrong
 ])
 def test_abstract_label_strip_keeps_real_words(bib, fetched):
     from stamp_evidence import abstract_texts_agree
 
     assert not abstract_texts_agree(fetched, bib)
+
+
+def test_abstract_label_strip_accepted_residual_and_strict_hash():
+    from stamp_evidence import abstract_hash, abstract_texts_agree
+
+    # Accepted: a capitalized real word after "Abstract" reads as a label.
+    assert abstract_texts_agree("Abstract Expressionism is a movement.",
+                                "Expressionism is a movement.")
+    # The strip lives in the comparison only, never in the ledger hash.
+    assert abstract_hash("Abstract: This paper argues.") != abstract_hash("This paper argues.")
 
 
 @pytest.mark.parametrize("bib, fetched", [

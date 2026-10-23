@@ -42,6 +42,13 @@ def test_flag_is_conditional_on_the_tool_listing_it():
     assert "Never add a parameter the tool does not list" in TEXT
 
 
+def test_completion_model_is_not_read_off_the_parameter_list():
+    # Interactive 2.1.309 lists the flag yet backgrounds every agent, so the
+    # orchestrator must not infer "inline" from the flag being listed.
+    assert "depends on the harness, not on the parameter list" in TEXT
+    assert "even when you passed `run_in_background: false`" in TEXT
+
+
 def test_no_blocking_claim():
     # The old text asserted every call "block[s] until every agent finishes";
     # on current CLIs that is false and misleads the orchestrator.

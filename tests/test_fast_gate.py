@@ -165,6 +165,29 @@ def test_ledger_needle_reaches_the_real_gate_end_to_end(tmp_path):
     assert allowed.stdout.strip() == "{}"
 
 
+def test_dispatch_needle_wakes_the_real_gate_for_an_omitted_flag(tmp_path):
+    # The call the dispatch gate exists for carries NO run_in_background, so
+    # the old needle never woke it; subagent_type is in every dispatch.
+    root = _plugin_root(tmp_path)
+    (root / "hooks" / "block_subagent_background_dispatch.py").write_text(
+        (REPO / "hooks" / "block_subagent_background_dispatch.py").read_text(encoding="utf-8"),
+        encoding="utf-8")
+    fakebin = tmp_path / "fakebin"
+    fakebin.mkdir()
+    (fakebin / "uv").write_text(
+        "#!/usr/bin/env bash\nshift 5\nexec python3 \"$@\"\n", encoding="utf-8")
+    (fakebin / "uv").chmod(0o755)
+    proj = tmp_path / "workspace"
+    (proj / ".phillit").mkdir(parents=True)
+    env = {"CLAUDE_PROJECT_DIR": str(proj), "PHILLIT_UV": str(fakebin / "uv"),
+           "HOME": str(tmp_path), "CLAUDE_CODE_DISABLE_BACKGROUND_TASKS": ""}
+    out = _run(root, ["subagent_type", "hooks/block_subagent_background_dispatch.py"], env,
+               stdin='{"tool_name": "Agent", "tool_input": {"subagent_type":'
+                     ' "phillit:domain-literature-researcher", "prompt": "p"}}')
+    assert out.returncode == 0, out.stderr
+    assert '"run_in_background": false' in out.stdout
+
+
 def test_propagates_uv_failure_for_fail_open_fallback(tmp_path):
     # Gate-failure policy: plumbing fails open + loud. The nonzero exit must
     # reach hooks.json so its `|| echo systemMessage` fallback fires.

@@ -3,9 +3,10 @@ that forces PhilLit review subagents into the foreground at the orchestrator.
 
 The gate REWRITES the call (updatedInput, run_in_background: false, no
 permissionDecision) when all of these hold:
-  - the call is at the orchestrator (no ``agent_id`` in the payload),
-  - ``tool_input.subagent_type`` (namespace-stripped) is one of the four
-    review agents,
+  - the call is at the orchestrator (no ``agent_id`` in the payload) on the
+    Agent or Task tool,
+  - ``tool_input.subagent_type`` names one of the four review agents, bare
+    or as ``phillit:<name>``,
   - ``tool_input.run_in_background`` is not already ``False`` (absent is the
     case that orphaned 61 dispatches on Claude Code 2.1.307), and
   - CLAUDE_CODE_DISABLE_BACKGROUND_TASKS is unset (then the tool lists no
@@ -46,11 +47,11 @@ def _run(payload, env_extra=None):
     return json.loads(result.stdout)
 
 
-def _dispatch(subagent_type, run_in_background=_ABSENT, agent_id=None):
+def _dispatch(subagent_type, run_in_background=_ABSENT, agent_id=None, tool_name="Agent"):
     tool_input = {"subagent_type": subagent_type, "description": "d", "prompt": "p"}
     if run_in_background is not _ABSENT:
         tool_input["run_in_background"] = run_in_background
-    payload = {"tool_name": "Agent", "tool_input": tool_input}
+    payload = {"tool_name": tool_name, "tool_input": tool_input}
     if agent_id is not None:
         payload["agent_id"] = agent_id
     return payload
@@ -82,6 +83,31 @@ def test_tolerates_plugin_namespace_prefix():
     assert _rewritten(_run(_dispatch("phillit:domain-literature-researcher")))
 
 
+def test_covers_the_task_spelling_of_the_dispatch_tool():
+    assert _rewritten(_run(_dispatch("synthesis-writer", tool_name="Task")))
+
+
+def test_leaves_other_tools_alone():
+    assert _run(_dispatch("synthesis-writer", tool_name="Bash")) == {}
+
+
+@pytest.mark.parametrize("name", ["other:synthesis-writer", "a:phillit:synthesis-writer",
+                                  "phillit:general-purpose"])
+def test_leaves_same_named_agents_of_other_plugins_alone(name):
+    assert _run(_dispatch(name)) == {}
+
+
+def test_overriding_an_explicit_true_says_so():
+    out = _run(_dispatch("synthesis-writer", True))
+    assert _rewritten(out)["run_in_background"] is False
+    assert "synthesis-writer" in out["systemMessage"]
+    assert "systemMessage" not in _run(_dispatch("synthesis-writer"))
+
+
+def test_a_payload_without_tool_input_passes_through():
+    assert _run({"tool_name": "Agent"}) == {}
+
+
 def test_leaves_an_explicit_foreground_dispatch_alone():
     assert _run(_dispatch("domain-literature-researcher", False)) == {}
 
@@ -95,7 +121,7 @@ def test_leaves_calls_inside_a_subagent_alone():
     assert _run(_dispatch("domain-literature-researcher", agent_id="abc123")) == {}
 
 
-@pytest.mark.parametrize("value", ["1", "true", "TRUE", " yes "])
+@pytest.mark.parametrize("value", ["1", "true", "TRUE", " yes ", "on"])
 def test_no_op_when_background_tasks_are_disabled(value):
     out = _run(_dispatch("synthesis-writer"),
                {"CLAUDE_CODE_DISABLE_BACKGROUND_TASKS": value})

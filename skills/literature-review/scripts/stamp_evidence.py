@@ -109,8 +109,8 @@ def _typography_fold(text: str) -> str:
     they were copied from (research time, not live): 505 differed after
     the hash normalization, and this fold makes 123 of them equal. Folding
     accents and ligatures (NFKC) too would add 2, so it stays out; most of
-    the remaining 382 are real edits (another text, a dropped "Abstract"
-    prefix, a changed word). The minus sign's exclusion and the ellipsis,
+    the remaining 382 are real edits (another text, a changed word) or a
+    dropped "Abstract" label, which abstract_texts_agree strips separately. The minus sign's exclusion and the ellipsis,
     U+2E3A/B and U+02BC folds change none of the 123. Reproduction:
     docs/known-issues/abstract-typography-measurement-2026-10-23/."""
     # The LaTeX pairs after the translate, so a doubled curly single quote
@@ -124,14 +124,18 @@ def _typography_fold(text: str) -> str:
 
 # A leading "Abstract" label, which a source or a researcher's copy carries
 # and the other side lacks. Only a label SHAPE: the word (Abstract, abstract
-# or ABSTRACT) followed by a colon, period or dash, or by a capitalized word,
-# glued on or after a space or a quote mark ("Abstract The paper ...",
-# "AbstractThe ...", 'Abstract "Fake news" ...'). So "Abstract objects are
-# ..." keeps its first word; "Abstract Expressionism is ..." would not, an
-# accepted false strip that only equates two texts differing in that word.
+# or ABSTRACT) followed by a colon or period, or by a capitalized word,
+# glued on or after a space, a quote mark or a dash ("Abstract The paper
+# ...", "AbstractThe ...", 'Abstract "Fake news" ...', "Abstract -- The
+# ..."). A dash needs the capital because the fold has already joined
+# "Abstract-type theories" and "Abstract - The" alike. So "Abstract objects
+# are ..." and "Abstract-type ..." keep their first word; "Abstract
+# Expressionism is ..." would not, an accepted false strip that only equates
+# two texts differing in that word. A label before a lowercase word
+# ("Abstract this paper ...") is kept: a missed match, never a wrong one.
 # Measured with the typography fold's script: the strip raises its 123
 # matching copies to 166 of the 505.
-_ABSTRACT_LABEL = re.compile(r"^(?:[Aa]bstract|ABSTRACT)(?: ?[:.-] ?| ?(?=[\"']?[A-Z]))")
+_ABSTRACT_LABEL = re.compile(r"^(?:[Aa]bstract|ABSTRACT)(?: ?[:.] ?| ?-?(?=[\"']?[A-Z]))")
 
 
 def abstract_texts_agree(fetched: str, existing: str) -> bool:
