@@ -1,9 +1,10 @@
 ---
 id: PL-25
 title: A leading Abstract label makes a correct abstract fail corroboration
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-10-23 10:15'
+updated_date: '2026-10-23 11:29'
 labels:
   - barrier
 dependencies: []

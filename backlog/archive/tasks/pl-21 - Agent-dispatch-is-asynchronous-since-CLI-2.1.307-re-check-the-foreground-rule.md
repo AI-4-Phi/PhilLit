@@ -1,9 +1,10 @@
 ---
 id: PL-21
 title: 'Agent dispatch is asynchronous since CLI 2.1.307: re-check the foreground rule'
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-10-22 10:28'
+updated_date: '2026-10-23 11:29'
 labels:
   - hooks
   - test-run
