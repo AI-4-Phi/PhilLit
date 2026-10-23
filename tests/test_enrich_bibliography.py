@@ -1837,6 +1837,13 @@ def test_latex_quotes_corroborate_against_curly_ones():
     assert (outcome, source) == ("corroborated", "s2")
 
 
+def test_curly_bib_corroborates_against_a_straightened_source():
+    outcome, source, _, _ = _corroborate(
+        _fields(abstract=CURLY), s2=(("ok", STRAIGHT),))
+
+    assert (outcome, source) == ("corroborated", "s2")
+
+
 def test_typography_fold_does_not_hide_a_changed_word():
     outcome, source, _, _ = _corroborate(
         _fields(abstract=STRAIGHT),
@@ -1854,6 +1861,7 @@ def test_typography_fold_does_not_hide_a_changed_word():
     ("a--b", "a\u2013b"), ("a---b", "a\u2014b"), ("a-b", "a\u2015b"),
     ("a -- b", "a\u2014b"), ("a - b", "a\u2e3ab"), ("a-b", "a\u2e3bb"),
     ("a\u00a0\u2014\u2009b", "a - b"), ("wait...", "wait\u2026"),
+    ('a "b" c', "a \u2018\u2018b\u2019\u2019 c"),
 ])
 def test_typography_fold_table(bib, fetched):
     from stamp_evidence import abstract_texts_agree

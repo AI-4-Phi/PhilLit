@@ -1238,7 +1238,10 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                 # corroboration could never be healed anyway: candidacy
                 # already equated the bib's abstract hash with the ledger's,
                 # so the heal's own gate (fetched hash == LEDGER hash) is the
-                # very comparison corroboration just failed. Entering the
+                # very comparison corroboration just failed (corroboration
+                # now folds typography, but a hash match implies a fold
+                # match, so a fold failure still implies a hash failure).
+                # Entering the
                 # heal path there would only spend a redundant fetch: a
                 # hash match there would itself be live corroboration, not
                 # an attestation the gate had refused sneaking through, so

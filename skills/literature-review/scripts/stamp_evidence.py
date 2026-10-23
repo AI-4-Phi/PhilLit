@@ -111,12 +111,15 @@ def _typography_fold(text: str) -> str:
     accents and ligatures (NFKC) too would add 2, so it stays out; most of
     the remaining 382 are real edits (another text, a dropped "Abstract"
     prefix, a changed word). The minus sign's exclusion and the ellipsis,
-    U+2E3A/B and U+02BC folds change none of the 123."""
-    s = normalize_abstract_for_hash(text)
+    U+2E3A/B and U+02BC folds change none of the 123. Reproduction:
+    docs/known-issues/abstract-typography-measurement-2026-10-23/."""
+    # The LaTeX pairs after the translate, so a doubled curly single quote
+    # pairs into '"' exactly as a doubled ASCII one does.
+    s = normalize_abstract_for_hash(text).translate(_QUOTE_FOLD)
     s = s.replace("``", '"').replace("''", '"').replace("`", "'")
     # One optional ASCII space suffices: the normalization above already
     # made every whitespace run, NBSP and thin space included, one " ".
-    return re.sub(r" ?-+ ?", "-", s.translate(_QUOTE_FOLD))
+    return re.sub(r" ?-+ ?", "-", s)
 
 
 def abstract_texts_agree(fetched: str, existing: str) -> bool:
