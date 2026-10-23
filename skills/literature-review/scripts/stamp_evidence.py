@@ -110,8 +110,9 @@ def _typography_fold(text: str) -> str:
     the hash normalization, and this fold makes 123 of them equal. Folding
     accents and ligatures (NFKC) too would add 2, so it stays out; most of
     the remaining 382 are real edits (another text, a changed word) or a
-    dropped "Abstract" label, which abstract_texts_agree strips separately. The minus sign's exclusion and the ellipsis,
-    U+2E3A/B and U+02BC folds change none of the 123. Reproduction:
+    dropped "Abstract" label, which abstract_texts_agree strips separately
+    (43 more). The minus sign's exclusion and the ellipsis, U+2E3A/B and
+    U+02BC folds change none of the 123. Reproduction:
     docs/known-issues/abstract-typography-measurement-2026-10-23/."""
     # The LaTeX pairs after the translate, so a doubled curly single quote
     # pairs into '"' exactly as a doubled ASCII one does.

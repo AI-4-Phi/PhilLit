@@ -1883,6 +1883,8 @@ def test_typography_fold_table(bib, fetched):
     ("This paper argues.", "Abstract \u2014 This paper argues."),
     ("This paper argues.", "Abstract--This paper argues."),
     ("'Title' is a paper.", "Abstract 'Title' is a paper."),
+    ("This paper argues.", "Abstract - This paper argues."),
+    ("This paper argues.", "Abstract.This paper argues."),
 ])
 def test_a_leading_abstract_label_is_ignored(bib, fetched):
     from stamp_evidence import abstract_texts_agree
@@ -1898,6 +1900,7 @@ def test_a_leading_abstract_label_is_ignored(bib, fetched):
     ("type theories are old.", "Abstract-type theories are old."),     # a compound
     ("He wrote no.", "He wrote Abstract: no."),                         # anchored
     ("this paper argues.", "Abstract this paper argues."),   # kept: missed, never wrong
+    ("2020 was a year.", "Abstract 2020 was a year."),       # a digit is not a capital
 ])
 def test_abstract_label_strip_keeps_real_words(bib, fetched):
     from stamp_evidence import abstract_texts_agree

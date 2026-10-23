@@ -18,7 +18,7 @@ and the call costs no extra turn. Measured on 2.1.307 and 2.1.309: the
 rewritten call returns the agent's result inline, and two rewritten calls
 in one message still run in parallel. A foreground agent stays foreground
 unless `CLAUDE_AUTO_BACKGROUND_TASKS` is set, which moves it to the
-background after 120 s (read off the 2.1.309 binary), headless too.
+background after 120 s (read off the 2.1.309 binary, not measured).
 
 All of that holds for headless (`-p`) runs. An INTERACTIVE 2.1.309 session
 runs every agent in the background whatever the flag says: there the rewrite
@@ -36,7 +36,8 @@ that variable (2.1.267 measured no flag on 2026-09-10) gets the key too.
 
 Scope: the four review agents, named bare (as phillit-service vendors
 them) or as `phillit:<name>`, on the Agent or Task tool at the orchestrator
-(`agent_id` absent; subagents cannot dispatch). Another plugin's agent of
+(`agent_id` absent or empty; a subagent's own dispatch, should a harness
+ever allow one, is left alone). Another plugin's agent of
 the same name is left alone. Overriding an explicit `true` says so in a
 systemMessage, since the old deny surfaced that conflict. Disabling background tasks
 workspace-wide is NOT the plugin's fix: with it, a Bash command is never
@@ -83,7 +84,7 @@ def main() -> None:
                    "its input - the dispatch was not forced to the foreground."}, sys.stdout)
         return
 
-    at_orchestrator = "agent_id" not in hook_input
+    at_orchestrator = not hook_input.get("agent_id")
     agent = _review_agent(str(tool_input.get("subagent_type") or ""))
     flag = tool_input.get("run_in_background")
     if (at_orchestrator and agent and hook_input.get("tool_name") in ("Agent", "Task")

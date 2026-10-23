@@ -108,6 +108,25 @@ def test_a_payload_without_tool_input_passes_through():
     assert _run({"tool_name": "Agent"}) == {}
 
 
+def test_a_payload_without_tool_name_passes_through():
+    payload = _dispatch("synthesis-writer")
+    del payload["tool_name"]
+    assert _run(payload) == {}
+
+
+@pytest.mark.parametrize("agent_id", [None, ""])
+def test_an_empty_agent_id_counts_as_the_orchestrator(agent_id):
+    payload = _dispatch("synthesis-writer")
+    payload["agent_id"] = agent_id
+    assert _rewritten(_run(payload))
+
+
+@pytest.mark.parametrize("flag", ["false", "true", 0, None])
+def test_a_non_boolean_flag_becomes_boolean_false(flag):
+    # A JS-side truthiness read of "false" would background the agent.
+    assert _rewritten(_run(_dispatch("synthesis-writer", flag)))["run_in_background"] is False
+
+
 def test_leaves_an_explicit_foreground_dispatch_alone():
     assert _run(_dispatch("domain-literature-researcher", False)) == {}
 

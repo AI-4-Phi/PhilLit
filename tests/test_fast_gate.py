@@ -181,7 +181,15 @@ def test_dispatch_needle_wakes_the_real_gate_for_an_omitted_flag(tmp_path):
     (proj / ".phillit").mkdir(parents=True)
     env = {"CLAUDE_PROJECT_DIR": str(proj), "PHILLIT_UV": str(fakebin / "uv"),
            "HOME": str(tmp_path), "CLAUDE_CODE_DISABLE_BACKGROUND_TASKS": ""}
-    out = _run(root, ["subagent_type", "hooks/block_subagent_background_dispatch.py"], env,
+    # The needle as hooks.json wires it, so the two cannot drift apart.
+    import json, re
+    hooks = json.loads((REPO / "hooks" / "hooks.json").read_text(encoding="utf-8"))
+    needles = {re.search(r'fast_gate\.sh" (\S+) hooks/block_subagent_background_dispatch\.py',
+                         h["command"]).group(1)
+               for entry in hooks["hooks"]["PreToolUse"] for h in entry["hooks"]
+               if "block_subagent_background_dispatch.py" in h["command"]}
+    assert len(needles) == 1
+    out = _run(root, [needles.pop(), "hooks/block_subagent_background_dispatch.py"], env,
                stdin='{"tool_name": "Agent", "tool_input": {"subagent_type":'
                      ' "phillit:domain-literature-researcher", "prompt": "p"}}')
     assert out.returncode == 0, out.stderr
