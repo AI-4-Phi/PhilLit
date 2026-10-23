@@ -10,6 +10,8 @@
 
 # Objectives
 
+**Main objective, above every other concern:** build the best tooling to advance the norms in philosophy around using AI, and to show the AI-curious what AI can do for philosophy research. PhilLit and phillit-service are not a public professional product: practically nobody uses the service, and any users will be friends and acquaintances experimenting together.
+
 **Priority order for literature reviews** (and agent development):
 
 1. **Accurate** — Only cite verified papers; never fabricate references
@@ -20,7 +22,7 @@
 **NOT priorities**:
 - ❌ Speed — Quality over fast completion
 - ❌ Context efficiency — Use full context as needed; don't optimize for token savings
-- ❌ Professional-grade legal caution — PhilLit and phillit-service (invite-only: friends and colleagues experimenting together) exist to advance philosophy's norms for using AI and to show the AI-curious what it can do for research. On copyright and licensing be scrappy: never block, narrow or gate a feature for legal exposure that only a public professional product would carry.
+- ❌ Professional-grade legal caution — exacting legal standards fit a real professional product, not this project (see the main objective). On copyright and licensing be very scrappy: never block, narrow or gate a feature for legal exposure only a public professional product would carry. For example, one user's uploaded PDF serves other users' reviews.
 
 # File Structure
 
