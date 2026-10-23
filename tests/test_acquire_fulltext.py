@@ -1254,6 +1254,59 @@ class TestGaps:
         for r in requests:
             assert (service.request_dir / (r.name[:-len(fc.REQUEST_SUFFIX)] + fc.CLOSED_SUFFIX)).exists()
 
+    def _expire_after_the_wait(self, service, monkeypatch):
+        real = fc.wait_for_responses
+
+        def wait(*a, **k):
+            got = real(*a, **k)
+            service.clock[0] = 10 * af.GAPS_DEADLINE   # the arrival check starts too late
+            return got
+        monkeypatch.setattr(fc, "wait_for_responses", wait)
+
+    def test_a_copy_the_deadline_left_unchecked_is_removed(self, http, workdir, capsys, service,
+                                                          monkeypatch):
+        """Past the deadline no slug is checked: a copy at the slug is
+        removed, an empty slug is plain `deadline`, and a record known
+        invalid before the sources is left alone."""
+        self._expire_after_the_wait(service, monkeypatch)
+        dois = ["10.1/w0", "10.1/w1", "10.1/w2"]
+        store = workdir / ft.STORE_REL
+        store.mkdir(parents=True)
+        orphan = ft.slug_for(af.make_identity(dois[2]))
+        (store / f"{orphan}.pdf").write_bytes(work_pdf(doi=dois[2]))
+        service.answer({dois[0]: {"status": "found", "pdf": work_pdf(doi=dois[0])},
+                        dois[1]: {"status": "none"}, dois[2]: {"status": "none"}})
+        (workdir / "literature-domain-1.bib").write_text(
+            "".join(bib_entry(f"k{n}", doi=d) for n, d in enumerate(dois)), encoding="utf-8")
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        assert json.loads(out)["status"] == "done"
+        report = json.loads((workdir / af.REPORT_REL).read_text(encoding="utf-8"))
+        copied, empty, invalid = report["entries"]
+        assert _service_tried(copied) == {"source": "service", "outcome": "deadline",
+                                          "detail": ["unchecked_copy_removed"]}
+        assert _service_tried(empty) == {"source": "service", "outcome": "deadline"}
+        assert _service_tried(invalid) == {"source": "service", "outcome": "deadline"}
+        assert invalid["tried"][0] == {"source": "store", "outcome": "invalid_kept:sidecar_unreadable"}
+        assert [e["outcome"] for e in report["entries"]] == ["not_found"] * 3
+        assert sorted(p.name for p in store.iterdir()) == [f"{orphan}.pdf"]
+
+    def test_an_unchecked_copy_that_cannot_be_removed_is_a_detail(self, http, workdir, capsys,
+                                                                  service, monkeypatch):
+        self._expire_after_the_wait(service, monkeypatch)
+
+        def refuse(store, slug):
+            raise PermissionError("read-only")
+        monkeypatch.setattr(af, "_remove_copy", refuse)
+        service.answer({DOI: {"status": "found", "pdf": work_pdf()}})
+        (workdir / "literature-domain-1.bib").write_text(bib_entry("k", doi=DOI), encoding="utf-8")
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        assert code == 0 and json.loads(out)["status"] == "done"
+        report = json.loads((workdir / af.REPORT_REL).read_text(encoding="utf-8"))
+        assert _service_tried(report["entries"][0]) == {
+            "source": "service", "outcome": "deadline",
+            "detail": ["unchecked_copy_removed", "remove_failed:PermissionError"]}
+        assert report["entries"][0]["outcome"] == "not_found"
+
     def test_requests_are_waited_on_together(self, http, workdir, capsys, service, monkeypatch):
         """Two requests, the worker answers only the second: its keys get
         their outcomes, the first's keys `deadline`, and both requests were

@@ -125,7 +125,9 @@ although the answer was not `found`), `copy_invalid:<reason>`
 (the copy fails `validate_record`; it is left for the barrier to
 withhold), `removed_copy` (a valid copy that could not be read),
 `error:<exception>` (this slug's check crashed; its copy is removed,
-`remove_failed:<error>` when that fails), `field_too_long`,
+`remove_failed:<error>` when that fails), `unchecked_copy_removed` (the
+deadline passed before this slug's check, and its copy was removed),
+`field_too_long`,
 `request_dir_missing`, `request_write_failed:<error>`,
 `closed_write_failed:<error>`, and the worker's own detail token. An
 invalid stored record is reported as `{source: "store", outcome:
@@ -1240,6 +1242,28 @@ def _service_result(store: Path, slug: str, identity: dict, entry: dict | None,
     return res
 
 
+def _unchecked_result(store: Path, slug: str, entry: dict | None, invalid: str | None,
+                      complete: bool) -> SourceResult:
+    """A slug the deadline reached before its arrival check: `deadline`. A
+    copy the engine could not check must not reach the barrier, so a
+    sidecar or PDF at the slug is removed (`unchecked_copy_removed`,
+    `remove_failed:<error>` when that fails); the repository still holds
+    the work for the next review. A record `begin` knew as invalid is left
+    alone under `_service_result`'s rule."""
+    res = SourceResult("service", "deadline")
+    outcome, _ = fc.source_outcome(entry, complete=complete)
+    if outcome != "acquired" and invalid is not None:
+        return res
+    if not ((store / f"{slug}.json").exists() or (store / f"{slug}.pdf").exists()):
+        return res
+    res.detail.append("unchecked_copy_removed")
+    try:
+        _remove_copy(store, slug)
+    except OSError as exc:
+        res.detail.append(f"remove_failed:{type(exc).__name__}")
+    return res
+
+
 def _wait_bound(deadline: Deadline, n_sent: int) -> float:
     """The seconds the service wait may take: it ends SERVICE_WAIT_MARGIN
     plus ARRIVAL_CHECK_SECONDS per identity sent before the deadline (an
@@ -1270,8 +1294,10 @@ def service_fetch(store: Path, pending: list[tuple[str, dict, str | None]], sett
     worker creates it, so there is no worker). All are written first, then
     waited on together until `_wait_bound`, then every written request is
     closed (also when the wait raises), then every requested slug's store
-    record is checked (`_service_result`). One slug's crashing check is
-    that slug's `unavailable` (`error:...`) and its copy is removed."""
+    record is checked (`_service_result`), or, once the deadline has
+    passed, its copy removed unchecked (`_unchecked_result`). One slug's
+    crashing check is that slug's `unavailable` (`error:...`) and its copy
+    is removed."""
     if settings.request_dir is None:
         return {slug: SourceResult("service", "disabled") for slug, _, _ in pending}
     out: dict[str, SourceResult] = {}
@@ -1318,9 +1344,13 @@ def service_fetch(store: Path, pending: list[tuple[str, dict, str | None]], sett
         outcomes = responses[request_id]["outcomes"]
         complete = responses[request_id]["complete"]
         for slug, identity, invalid, payload in chunk:
+            entry = outcomes.get(payload["key"])
             try:
-                res = _service_result(store, slug, identity, outcomes.get(payload["key"]),
-                                      settings, invalid, complete)
+                if deadline.expired():
+                    res = _unchecked_result(store, slug, entry, invalid, complete)
+                else:
+                    res = _service_result(store, slug, identity, entry, settings, invalid,
+                                          complete)
             except Exception as exc:   # one slug's check never sinks the others
                 res = SourceResult("service", "unavailable", [f"error:{type(exc).__name__}: {exc}"])
                 try:
