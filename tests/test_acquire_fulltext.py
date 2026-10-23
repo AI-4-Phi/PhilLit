@@ -1861,6 +1861,20 @@ class TestService:
         assert data["status"] == "not_found"
         assert list((workdir / ft.STORE_REL).iterdir()) == []
 
+    def test_a_copy_replaced_between_the_sidecar_and_the_check_is_removed(self, http, workdir, capsys,
+                                                                          service, monkeypatch):
+        """The bytes read are not the bytes the sidecar hashed (another
+        valid PDF of this work): the copy is `unavailable` and removed."""
+        service.answer({DOI: {"status": "found", "pdf": work_pdf()}})
+        swapped = work_pdf(marker="a different file")
+        assert hashlib.sha256(swapped).hexdigest() != hashlib.sha256(work_pdf()).hexdigest()
+        monkeypatch.setattr(af, "_read_local", lambda path: (swapped, "ok"))
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert _service_tried(data) == {"source": "service", "outcome": "unavailable",
+                                        "detail": ["pdf_changed_during_check"]}
+        assert data["status"] == "not_found"
+        assert list((workdir / ft.STORE_REL).iterdir()) == []
+
     def test_copy_of_another_work_is_rejected_and_removed(self, http, workdir, capsys, service):
         service.answer({DOI: {"status": "found", "pdf": other_pdf()}})
         code, data = run_json(capsys, workdir, "--doi", DOI)
@@ -1939,6 +1953,57 @@ class TestService:
         assert _service_tried(data) == {"source": "service", "outcome": "deadline",
                                         "detail": ["copy_invalid:sidecar_unreadable"]}
         assert (workdir / ft.STORE_REL / f"{data['slug']}.pdf").exists()
+
+    def test_an_invalid_record_the_deadline_removed_is_reported_removed(self, http, workdir, capsys,
+                                                                       service, monkeypatch):
+        """The worker overwrote the invalid record, and the deadline passed
+        before its check removed the copy: nothing is left at the slug, so
+        the note is `invalid_removed`, not `invalid_kept`."""
+        real = fc.wait_for_responses
+
+        def wait(*a, **k):
+            got = real(*a, **k)
+            service.clock[0] = 10 * af.SINGLE_DEADLINE   # the arrival check starts too late
+            return got
+        monkeypatch.setattr(fc, "wait_for_responses", wait)
+        store = workdir / ft.STORE_REL
+        store.mkdir(parents=True)
+        slug = ft.slug_for(af.make_identity(DOI))
+        (store / f"{slug}.pdf").write_bytes(b"%PDF-orphan")
+        service.answer({DOI: {"status": "found", "pdf": work_pdf()}})
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert data["tried"][0] == {"source": "store", "outcome": "invalid_removed:sidecar_unreadable"}
+        assert _service_tried(data) == {"source": "service", "outcome": "deadline",
+                                        "detail": ["unchecked_copy_removed"]}
+        assert data["status"] == "not_found"
+        assert list(store.iterdir()) == []
+
+    def test_the_deadline_is_checked_per_slug_not_once_before_the_loop(self, http, workdir, capsys,
+                                                                     service, monkeypatch):
+        """The deadline passes after the first slug's check: that slug is
+        `acquired`, the second one `deadline` with its copy removed."""
+        real = af.check_pdf
+
+        def check(data, identity):
+            got = real(data, identity)
+            service.clock[0] = 10 * af.GAPS_DEADLINE
+            return got
+        monkeypatch.setattr(af, "check_pdf", check)
+        dois = ["10.1/w0", "10.1/w1"]
+        service.answer({d: {"status": "found", "pdf": work_pdf(doi=d)} for d in dois})
+        (workdir / "literature-domain-1.bib").write_text(
+            "".join(bib_entry(f"k{n}", doi=d) for n, d in enumerate(dois)), encoding="utf-8")
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        assert json.loads(out)["status"] == "done"
+        report = json.loads((workdir / af.REPORT_REL).read_text(encoding="utf-8"))
+        first, second = report["entries"]
+        assert (first["outcome"], first["source"]) == ("acquired", "openalex")
+        assert _service_tried(first) == {"source": "service", "outcome": "acquired"}
+        assert _service_tried(second) == {"source": "service", "outcome": "deadline",
+                                          "detail": ["unchecked_copy_removed"]}
+        assert second["outcome"] == "not_found"
+        assert {p.stem for p in (workdir / ft.STORE_REL).iterdir()} == {
+            ft.slug_for(af.make_identity(dois[0]))}
 
     def test_a_record_known_invalid_before_the_sources_is_never_touched(self, http, workdir, capsys,
                                                                         service):

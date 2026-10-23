@@ -163,6 +163,17 @@ def test_oversize_response_is_absent_whatever_stat_says(tmp_path, monkeypatch):
     assert fc.read_response(tmp_path, "r1") is None
 
 
+def test_crlf_response_over_the_byte_cap_is_absent(tmp_path, monkeypatch):
+    """Newlines are counted as stored: a CRLF file over the cap is oversize
+    although its LF-translated text would fit."""
+    lf = json.dumps(_response("r1", True, {"k": {"status": "none"}}), indent=1)
+    crlf = lf.replace("\n", "\r\n")
+    assert len(crlf) - len(lf) >= 2
+    monkeypatch.setattr(fc, "MAX_REQUEST_BYTES", len(lf) + 1)
+    (tmp_path / "r1.response.json").write_bytes(crlf.encode("utf-8"))
+    assert fc.read_response(tmp_path, "r1") is None
+
+
 def test_read_response_reads_at_most_one_past_the_cap(tmp_path, monkeypatch):
     _write_response(tmp_path, "r1", _response("r1", True))
     sizes, real_open = [], open

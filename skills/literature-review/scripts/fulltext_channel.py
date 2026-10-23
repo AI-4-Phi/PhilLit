@@ -65,7 +65,9 @@ barrier without a licence re-check (the barrier checks identity and the hash
 only). The worker stops copying at `.closed` and applies the same policy
 before it fetches, so the window is a copy already in flight at `.closed`
 with a worker licence bug, accepted under the project's scrappy legal
-posture. A later acquisition run that finds such a copy (`exists`) re-checks
+posture. A second window: a copy the engine could not remove, unchecked or
+refused (`remove_failed`), stays for the barrier, which binds it the same
+way. A later acquisition run that finds such a copy (`exists`) re-checks
 it against the policy then.
 
 A reader never trusts a response: an unreadable or oversize file, a wrong
@@ -172,13 +174,14 @@ def _outcome(raw) -> dict:
 def read_response(request_dir: Path, request_id: str) -> Optional[dict]:
     """The normalized response, `{"complete": bool, "outcomes": {key:
     {"status", "stem", "detail"}}}`, or None when the file is absent,
-    unreadable, larger than MAX_REQUEST_BYTES, not a JSON object, of another
-    schema (the int 1, never `true`) or for another id. `complete` is true
-    only for the JSON literal `true`. The read itself stops one character
-    past the cap, so a file that grows while it is read is never held."""
+    unreadable, of more than MAX_REQUEST_BYTES bytes, not a JSON object, of
+    another schema (the int 1, never `true`) or for another id. `complete` is
+    true only for the JSON literal `true`. The read itself stops one character
+    past the cap, so a file that grows while it is read is never held; it
+    keeps newlines as stored (`newline=""`), so CRLF counts as two bytes."""
     path = Path(request_dir) / (request_id + RESPONSE_SUFFIX)
     try:
-        with open(path, "r", encoding="utf-8") as f:
+        with open(path, "r", encoding="utf-8", newline="") as f:
             text = f.read(MAX_REQUEST_BYTES + 1)
         if len(text) > MAX_REQUEST_BYTES or len(text.encode("utf-8")) > MAX_REQUEST_BYTES:
             return None

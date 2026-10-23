@@ -70,6 +70,9 @@ SOURCES, in the ruled order, the first passing PDF wins:
    worker stops copying at `.closed` and applies the same policy before it
    fetches, so the window is a copy already in flight at `.closed` with a
    worker licence bug, accepted under the project's scrappy legal posture.
+   A second window: a copy the engine could not remove, unchecked or refused
+   (`remove_failed`), stays for the barrier, which binds it without a
+   licence re-check.
    A service-copied record found on a later acquisition run (`exists`) is
    re-checked against the policy then (a refused one is removed:
    `unlicensed_removed`).
@@ -134,13 +137,17 @@ although the answer was not `found`), `copy_invalid:<reason>`
 (the copy fails `validate_record`; it is left for the barrier to
 withhold), `removed_copy` (a valid copy that could not be read),
 `error:<exception>` (this slug's check crashed; its copy is removed,
-`remove_failed:<error>` when that fails), `unchecked_copy_removed` (the
+`remove_failed:<error>` when that fails), `pdf_changed_during_check` (the
+bytes read do not hash to the sidecar's `pdf_sha256`; the copy is removed),
+`unchecked_copy_removed` (the
 deadline passed before this slug's check, and its copy was removed),
 `field_too_long`, `request_dir_missing`, `request_write_failed:<error>`,
 `closed_write_failed:<error>`, and the worker's own detail token. An
 invalid stored record is reported as `{source: "store", outcome:
 "invalid_replaced:<reason>"}` when a new PDF replaced it
-(`invalid_kept:<reason>` when none was found); a stored service copy the
+(`invalid_kept:<reason>` when none was found and a file is still at the
+slug, `invalid_removed:<reason>` when none is left: a service copy that
+overwrote it was removed); a stored service copy the
 policy refuses as `{source: "store", outcome: "unlicensed_removed"}`. Exit
 0 for every status; 1 for a crash, with one JSON object `{"error": ...}`;
 2 for a usage error.
@@ -468,8 +475,9 @@ def source_repository(identity: dict, settings: "Settings", deadline: Deadline) 
 def _check_stored_record(rec: ft.Record, identity: dict, settings: "Settings", *,
                          remove_on_refusal: bool) -> tuple[Hit | None, str, list[str]]:
     """The validation tail every stored record meets, after `validate_record`:
-    the licence backstop, the read, then `check_pdf` against THIS run's
-    identity. Returns (hit, "acquired", []) or (None, outcome, detail). With
+    the licence backstop, the read, the hash of the bytes read against the
+    sidecar's (a mismatch is `unavailable`, `pdf_changed_during_check`), then
+    `check_pdf` against THIS run's identity. Returns (hit, "acquired", []) or (None, outcome, detail). With
     `remove_on_refusal` (a service copy) a refused or unreadable record is
     removed, so no record is left for the barrier to bind, and a passing
     one is a `stored` hit that keeps no bytes."""
@@ -482,6 +490,8 @@ def _check_stored_record(rec: ft.Record, identity: dict, settings: "Settings", *
     data, why = _read_local(str(rec.pdf_path))
     if data is None:
         return refuse("unavailable", [why, "removed_copy"] if remove_on_refusal else [why])
+    if hashlib.sha256(data).hexdigest() != rec.pdf_sha256:
+        return refuse("unavailable", ["pdf_changed_during_check"])
     ok, why = check_pdf(data, identity)
     if not ok:
         return refuse("rejected", [why])
@@ -1402,7 +1412,10 @@ def finish(attempt: Attempt, service: SourceResult | None) -> dict:
         out.update(status="acquired", source=winner.hits[0].source)
         return out
     if attempt.invalid:
-        tried.insert(0, {"source": "store", "outcome": f"invalid_kept:{attempt.invalid}"})
+        left = any((attempt.store / f"{attempt.slug}{suffix}").exists()
+                   for suffix in (".json", ".pdf"))
+        note = "invalid_kept" if left else "invalid_removed"
+        tried.insert(0, {"source": "store", "outcome": f"{note}:{attempt.invalid}"})
     out["status"] = "rejected" if any(r.outcome == "rejected" for r in results) else "not_found"
     return out
 
