@@ -73,6 +73,12 @@ prototype is `sources.py` in the measurement directory.
    it (loses the 31 clean works only Brave reaches); automatic acceptance with
    an extra screen (the mechanical bar alone still accepts 18% wrong
    documents).
+   Where the links appear: during the run, where it asks for PDFs (anchors in
+   Phase 1, one batched gap question after the Phase 3 gap pass), and in the
+   final summary otherwise. Full Autopilot asks the anchor question too, its
+   one question, unless the request says to ask nothing; its gap links go into
+   the final summary as help for later reviews. Rejected: links only in the
+   final summary or a file (too late for the review that lists them).
 3. **PhilPapers is not asked for access now.** Revisit if reviews keep
    missing philosophy papers that only PhilArchive holds.
 
