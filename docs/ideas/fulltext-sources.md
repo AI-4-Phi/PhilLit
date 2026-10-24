@@ -59,17 +59,22 @@ the calls with `requests`; the service imports the module through
 `engine_api` and makes them with its own client, budgets and SSRF guard. The
 prototype is `sources.py` in the measurement directory.
 
-## Decision needed
+## Decided (2026-10-24)
 
-1. **The OpenAlex title route for no-DOI works**, and how it reaches the
-   service: (a) the channel carries no-DOI identities and the service runs
-   the title query itself (it lifts B2); or (b) the engine resolves a DOI by
-   title and sends that, with the store record still keyed to the no-DOI
-   identity.
-2. **Brave**: drop it; suggest-only (the run lists candidate URLs and the
-   user hands copies over with `--pdf`, so the mechanical bar stays binding);
-   or automatic with an extra screen.
-3. **Ask PhilPapers for harvester or API access** to PhilArchive.
+1. **The OpenAlex title route for no-DOI works, through the channel.** The
+   channel carries no-DOI identities and the service runs the title query
+   itself with the engine's pure functions, lifting its DOI-only rule (B2).
+   The metadata parse matches the 6-word cut title word-bounded. Rejected:
+   the engine resolving a DOI by title and sending that (two identities per
+   work for the barrier binding to reconcile).
+2. **Brave is suggest-only.** The run lists candidate PDF links for the
+   user, who checks them and hands a copy over (`--pdf` locally, an upload in
+   the service); nothing is stamped from a search result. Rejected: dropping
+   it (loses the 31 clean works only Brave reaches); automatic acceptance with
+   an extra screen (the mechanical bar alone still accepts 18% wrong
+   documents).
+3. **PhilPapers is not asked for access now.** Revisit if reviews keep
+   missing philosophy papers that only PhilArchive holds.
 
 Not proposed: arXiv (4 works over the OpenAlex title route, at 3 s per call
 and 3 wrong accepts) and the sources that added nothing (S2 title match,

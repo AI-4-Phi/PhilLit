@@ -1,10 +1,10 @@
 ---
 id: PL-27
 title: 'More full-text sources, with one source logic for both runtimes'
-status: Needs Johannes
+status: To Do
 assignee: []
 created_date: '2026-10-24 20:22'
-updated_date: '2026-10-24 21:10'
+updated_date: '2026-10-24 22:50'
 labels: []
 dependencies: []
 type: feature
@@ -17,9 +17,7 @@ ordinal: 1000
 <!-- SECTION:DESCRIPTION:BEGIN -->
 **Why:** EVIDENCE-FULLTEXT reaches few gap entries, and no OA source tries a work without a DOI. Requested by Johannes through phillit-service (2026-10-24).
 
-Measured on 240 works, every accepted PDF audited by hand: findings, the proposed one-owner shape (a pure engine module the service imports) and the open decisions are in docs/ideas/fulltext-sources.md. Scripts and data: docs/known-issues/fulltext-sources-measurement-2026-10-24/ (local).
+Ruled 2026-10-24 (docs/ideas/fulltext-sources.md, Decided): add the OpenAlex title route for no-DOI works, carried to the service over the channel (the service lifts B2); Brave web search becomes suggest-only; PhilPapers is not asked for access now. Findings and the one-owner shape (a pure engine module the service imports) are in the same doc; scripts and data in docs/known-issues/fulltext-sources-measurement-2026-10-24/ (local).
 
-Constraint from phillit-service: the source logic has one owner, a pure function in the engine's full-text code that the service imports; the service adds only the HTTP calls under its budgets and SSRF guard.
-
-**Decision needed:** (1) the OpenAlex title route for no-DOI works, and whether the channel carries no-DOI identities (service lifts B2) or the engine resolves a DOI by title; (2) Brave web search: drop, suggest-only, or automatic with an extra screen; (3) whether to ask PhilPapers for harvester or API access to PhilArchive.
+Next: spec and plan, then build; send phillit-service the commit and the module interface.
 <!-- SECTION:DESCRIPTION:END -->
