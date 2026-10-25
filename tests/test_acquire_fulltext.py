@@ -2596,6 +2596,7 @@ class TestSuggestions:
         monkeypatch.setenv("BRAVE_API_KEY", "brave-key")
         http.add(BRAVE, brave_ok())
         run_json(capsys, workdir, *_full_args())
+        assert brave_calls(http)
         for c in http.calls:
             if c["url"] != BRAVE:
                 assert "X-Subscription-Token" not in c["headers"]

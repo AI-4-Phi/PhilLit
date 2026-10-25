@@ -143,9 +143,12 @@ call, never retried); its budget is a `Deadline` started after the fetch
 work, so it never takes time from a fetch, and the limiter wait, the
 call's timeout and the body read are clamped to it (no call starts with
 less than `SUGGESTION_MIN_SECONDS` left after the limiter's spacing).
-Residual: the limiter's real wait can exceed its spacing when other
-processes queue on it (it caps a queue at 10 spacings, 15 s), so a
-contended wait can overrun the budget by that much.
+Residuals: the limiter's real wait can exceed its spacing when other
+processes queue on it (it caps a queue at 10 spacings, 15 s), and the
+body read checks the budget per chunk, so one stalled socket read can run
+for the timeout set when the call started (at most `API_TIMEOUT`, 30 s);
+either can overrun the budget by that much (about 420 + 60 + 15 + 30 s in
+`--gaps`, under the 600 s Bash ceiling).
 
 OUTCOMES. Single-work mode prints one JSON object `{status, slug, source,
 tried}`, within a 420 s deadline (`SINGLE_DEADLINE`, the Bash ceiling is
