@@ -22,6 +22,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 import acquire_fulltext as af  # noqa: E402
 import fulltext as ft  # noqa: E402
 import fulltext_channel as fc  # noqa: E402
+import fulltext_sources as fs  # noqa: E402
 from pdf_fixtures import make_pdf  # noqa: E402
 
 FILLER = "This sentence is ordinary body text that pads the page to a realistic length."
@@ -70,8 +71,13 @@ class FakeResponse:
         if self._chunks is not None:
             yield from self._chunks
             return
-        for i in range(0, len(self._body), chunk_size):
-            yield self._body[i:i + chunk_size]
+        # A metadata answer is read streaming (`_api_get`'s size cap): a
+        # payload is served as its JSON bytes.
+        body = self._body
+        if not body and self._payload is not None:
+            body = json.dumps(self._payload).encode("utf-8")
+        for i in range(0, len(body), chunk_size):
+            yield body[i:i + chunk_size]
 
     def close(self):
         self.closed = True
@@ -185,8 +191,8 @@ def oa_payload(urls_licences, best=None):
     return {"best_oa_location": best, "locations": locs}
 
 
-OA_URL = f"{af.OPENALEX_BASE}/works/doi:{DOI}"
-S2_URL = f"{af.S2_BASE_URL}/paper/DOI:{DOI}"
+OA_URL = f"{fs.OPENALEX_WORKS}/doi:{DOI}"
+S2_URL = f"{fs.S2_PAPER}/DOI:{DOI}"
 
 
 def write_repo_record(repo_dir, pdf_bytes, identity, *, source, source_ref, license):
@@ -428,12 +434,16 @@ class TestSourceOrder:
         # File name only: the sidecar travels with the delivered review.
         assert rec.source_ref == "folder:Gardner 2019 Justified Harm.pdf"
 
-    def test_openalex_before_s2(self, http, workdir, capsys, tmp_path):
+    def test_openalex_cc_copy_ranks_before_an_s2_author_copy(self, http, workdir, capsys, tmp_path):
+        """Both APIs are asked; the better-ranked location is tried first and
+        the other is never downloaded."""
         self._all_sources(http, tmp_path)
         write_env("")
         code, data = run_json(capsys, workdir, "--doi", DOI)
         assert data["source"] == "openalex"
-        assert S2_URL not in http.urls()
+        assert [(t["source"], t["outcome"]) for t in data["tried"][-2:]] == [
+            ("openalex", "acquired"), ("s2", "not_found")]
+        assert S2_URL in http.urls() and "https://s2.example/p.pdf" not in http.urls()
 
     def test_s2_when_openalex_has_nothing(self, http, workdir, capsys, tmp_path):
         self._all_sources(http, tmp_path)
@@ -470,8 +480,287 @@ class TestSourceOrder:
 
     def test_oa_sources_need_a_doi(self, http, workdir, capsys):
         code, data = run_json(capsys, workdir, "--title", TITLE, "--author", SURNAME, "--year", YEAR)
-        outcomes = {t["source"]: t["outcome"] for t in data["tried"]}
-        assert outcomes["openalex"] == "no_doi" and outcomes["s2"] == "no_doi"
+        rows = {t["source"]: t for t in data["tried"]}
+        assert rows["openalex"] == {"source": "openalex", "outcome": "no_doi", "detail": ["no_key"]}
+        assert rows["s2"] == {"source": "s2", "outcome": "no_doi"}
+        assert http.calls == []
+
+    def test_a_doi_the_builders_refuse_is_no_doi(self, http, workdir, capsys):
+        """`_doi_ok` admits `10.abc/x`; the request builders do not, so the
+        work has no DOI for the open-access step (and no request is sent)."""
+        code, data = run_json(capsys, workdir, "--doi", "10.abc/x")
+        rows = {t["source"]: t["outcome"] for t in data["tried"]}
+        assert rows["openalex"] == "no_doi" and rows["s2"] == "no_doi"
+        assert http.calls == []
+
+    def test_s2_publisher_copy_beats_openalex_author_copy(self, http, workdir, capsys):
+        """Rule 15: a publisher copy before a self-archived one, whichever
+        API reported it."""
+        http.add(OA_URL, FakeResponse(payload=oa_payload([("https://author.example/a.pdf", "cc-by")])))
+        http.add("https://author.example/a.pdf", FakeResponse(body=work_pdf(marker="author copy")))
+        http.add(S2_URL, FakeResponse(payload={"openAccessPdf": {
+            "url": "https://pub.example/p.pdf", "status": "GOLD", "license": "CC-BY"}}))
+        http.add("https://pub.example/p.pdf", FakeResponse(body=work_pdf(marker="publisher copy")))
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert data["status"] == "acquired" and data["source"] == "s2"
+        rows = {t["source"]: t["outcome"] for t in data["tried"]}
+        assert rows["openalex"] == "not_found" and rows["s2"] == "acquired"
+        assert "https://author.example/a.pdf" not in http.urls()
+        rec = ft.validate_record(workdir / ft.STORE_REL, data["slug"])
+        assert (rec.source, rec.source_ref, rec.license) == ("s2", "https://pub.example/p.pdf", "CC-BY")
+
+    def test_higher_ranked_failing_pdf_falls_through(self, http, workdir, capsys):
+        http.add(OA_URL, FakeResponse(payload=oa_payload([("https://author.example/a.pdf", "cc-by")])))
+        http.add("https://author.example/a.pdf", FakeResponse(body=work_pdf()))
+        http.add(S2_URL, FakeResponse(payload={"openAccessPdf": {
+            "url": "https://pub.example/p.pdf", "status": "GOLD", "license": "CC-BY"}}))
+        http.add("https://pub.example/p.pdf", FakeResponse(body=other_pdf()))
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert data["status"] == "acquired" and data["source"] == "openalex"
+        rows = {t["source"]: t for t in data["tried"]}
+        assert rows["openalex"]["outcome"] == "acquired"
+        assert rows["s2"]["outcome"] == "rejected"
+        assert rows["s2"]["detail"][0].startswith("https://pub.example/p.pdf:identity_failed:")
+        urls = http.urls()
+        assert urls.index("https://pub.example/p.pdf") < urls.index("https://author.example/a.pdf")
+        rec = ft.validate_record(workdir / ft.STORE_REL, data["slug"])
+        assert rec.source_ref == "https://author.example/a.pdf"
+
+    def test_shared_url_feeds_both_rows(self, http, workdir, capsys):
+        shared = "https://shared.example/x.pdf"
+        http.add(OA_URL, FakeResponse(payload=oa_payload([(shared, "cc-by")])))
+        http.add(S2_URL, FakeResponse(payload={"openAccessPdf": {"url": shared, "license": "CC-BY"}}))
+        http.add(shared, FakeResponse(body=other_pdf()))
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert data["status"] == "rejected"
+        rows = {t["source"]: t for t in data["tried"]}
+        assert rows["openalex"]["outcome"] == "rejected" and rows["s2"]["outcome"] == "rejected"
+        assert rows["openalex"]["detail"] == rows["s2"]["detail"]
+        assert http.urls().count(shared) == 1
+        assert not (workdir / ft.STORE_REL).exists()
+
+    def test_shared_url_passing_is_checked_once_and_attributed(self, http, workdir, capsys):
+        """The retained (best-ranked) copy names the source and the licence;
+        both APIs' rows are `acquired`, and only one carries the hit."""
+        shared = "https://shared.example/x.pdf"
+        http.add(OA_URL, FakeResponse(payload=oa_payload([(shared, None)])))
+        http.add(S2_URL, FakeResponse(payload={"openAccessPdf": {
+            "url": shared, "status": "GOLD", "license": "CC-BY"}}))
+        http.add(shared, FakeResponse(body=work_pdf()))
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert data["status"] == "acquired" and data["source"] == "s2"
+        rows = {t["source"]: t["outcome"] for t in data["tried"]}
+        assert rows["openalex"] == "acquired" and rows["s2"] == "acquired"
+        assert http.urls().count(shared) == 1
+        rec = ft.validate_record(workdir / ft.STORE_REL, data["slug"])
+        assert (rec.source, rec.source_ref, rec.license) == ("s2", shared, "CC-BY")
+        assert len(list((workdir / ft.STORE_REL).glob("*.json"))) == 1
+
+    def test_shared_url_step_returns_one_hit(self, http, workdir):
+        shared = "https://shared.example/x.pdf"
+        http.add(OA_URL, FakeResponse(payload=oa_payload([(shared, "cc-by")])))
+        http.add(S2_URL, FakeResponse(payload={"openAccessPdf": {"url": shared}}))
+        http.add(shared, FakeResponse(body=work_pdf()))
+        settings = af.Settings(licensed_only=False, policy=None, zotero_on=False, pdf_dir=None,
+                               index_budget=0)
+        results = af.source_open_access(af.make_identity(DOI), settings, af.Deadline(None))
+        assert [(r.source, r.outcome) for r in results] == [("openalex", "acquired"), ("s2", "acquired")]
+        assert [len(r.hits) for r in results] == [1, 0]
+
+    def test_policy_filters_before_order(self, http, workdir, capsys, monkeypatch):
+        """A location the policy refuses never enters the order, however well
+        it ranks; an API left with none is `unlicensed`."""
+        monkeypatch.setenv("PHILLIT_FULLTEXT_POLICY", "open")
+        http.add(OA_URL, FakeResponse(payload=oa_payload(
+            [], best={"pdf_url": "https://pub.example/a.pdf", "license": "publisher-specific-oa",
+                      "source": {"type": "journal"}})))
+        http.add("https://pub.example/a.pdf", FakeResponse(body=work_pdf()))
+        http.add(S2_URL, FakeResponse(payload={"openAccessPdf": {
+            "url": "https://repo.example/p.pdf", "status": "GREEN", "license": "cc-by"}}))
+        http.add("https://repo.example/p.pdf", FakeResponse(body=work_pdf()))
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert data["status"] == "acquired" and data["source"] == "s2"
+        rows = {t["source"]: t for t in data["tried"]}
+        assert rows["openalex"] == {"source": "openalex", "outcome": "unlicensed",
+                                    "detail": ["1 location(s) not admitted by policy"]}
+        assert rows["s2"]["outcome"] == "acquired"
+        assert "https://pub.example/a.pdf" not in http.urls()
+
+    def test_api_answer_over_cap_is_unavailable(self, http, workdir, capsys, monkeypatch):
+        monkeypatch.setattr(af, "MAX_API_BYTES", 100)
+        http.add(OA_URL, FakeResponse(chunks=[b'{"locations": [', b" " * 200, b"]}"]))
+        http.add(S2_URL, FakeResponse(headers={"Content-Length": "5000"}, body=b"{}"))
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        rows = {t["source"]: t for t in data["tried"]}
+        assert rows["openalex"] == {"source": "openalex", "outcome": "unavailable", "detail": ["too_large"]}
+        assert rows["s2"] == {"source": "s2", "outcome": "unavailable", "detail": ["too_large"]}
+        assert http.urls().count(OA_URL) == 1   # an oversize answer is not retried
+
+    def test_an_api_answer_too_deep_to_decode_is_bad_json(self, http, workdir, capsys):
+        http.add(OA_URL, FakeResponse(body=b"[" * 100_000))
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        rows = {t["source"]: t for t in data["tried"]}
+        assert rows["openalex"] == {"source": "openalex", "outcome": "unavailable", "detail": ["bad_json"]}
+
+    def test_every_metadata_response_is_closed(self, http, workdir, capsys):
+        answers = [FakeResponse(payload=oa_payload([])), FakeResponse(404)]
+        http.add(OA_URL, answers[0])
+        http.add(S2_URL, answers[1])
+        run_json(capsys, workdir, "--doi", DOI)
+        assert all(r.closed for r in answers)
+
+
+# ---------------------------------------------------------------------------
+# The OpenAlex title route (no DOI)
+# ---------------------------------------------------------------------------
+
+WORKS_URL = fs.OPENALEX_WORKS
+KEY_ENV = "OPENALEX_API_KEY=abcdef123\n"
+
+
+def title_record(title=TITLE, first_author="John Gardner", pdfs=(), wid="https://openalex.org/W1",
+                 doi=None):
+    """One OpenAlex search record; `pdfs` are (url, licence) locations."""
+    return {"id": wid, "doi": doi, "display_name": title, "type": "article",
+            "authorships": [{"author_position": "first", "author": {"display_name": first_author}}],
+            "best_oa_location": None,
+            "locations": [{"pdf_url": u, "license": lic, "is_oa": True} for u, lic in pdfs]}
+
+
+def _no_doi_args(title=TITLE, author=SURNAME):
+    return ("--title", title, "--author", author, "--year", YEAR)
+
+
+class TestTitleRoute:
+    def test_title_route_needs_openalex_key(self, http, workdir, capsys):
+        http.add(WORKS_URL, FakeResponse(payload={"results": [title_record(
+            pdfs=[("https://oa.example/a.pdf", "cc-by")])]}))
+        code, data = run_json(capsys, workdir, *_no_doi_args())
+        rows = {t["source"]: t for t in data["tried"]}
+        assert rows["openalex"] == {"source": "openalex", "outcome": "no_doi", "detail": ["no_key"]}
+        assert rows["s2"] == {"source": "s2", "outcome": "no_doi"}
+        assert WORKS_URL not in http.urls() and http.calls == []
+
+    def test_an_unusable_key_does_not_open_the_title_route(self, http, workdir, monkeypatch):
+        monkeypatch.setenv("OPENALEX_API_KEY", "bad key\u00e9")
+        assert af._title_route_on() is False
+        monkeypatch.setenv("OPENALEX_API_KEY", "abcdef123")
+        assert af._title_route_on() is True
+
+    def test_title_route_finds_and_records_match(self, http, workdir, capsys):
+        write_env(KEY_ENV + "OPENALEX_EMAIL=me@example.org\n")
+        url = "https://oa.example/a.pdf"
+        http.add(WORKS_URL, FakeResponse(payload={"results": [title_record(pdfs=[(url, "cc-by")])]}))
+        http.add(url, FakeResponse(body=work_pdf(doi=None)))
+        code, data = run_json(capsys, workdir, *_no_doi_args())
+        assert data["status"] == "acquired" and data["source"] == "openalex"
+        rows = {t["source"]: t for t in data["tried"]}
+        assert rows["openalex"]["outcome"] == "acquired"
+        assert rows["s2"] == {"source": "s2", "outcome": "no_doi"}
+        [call] = [c for c in http.calls if c["url"] == WORKS_URL]
+        assert call["headers"].get("Authorization") == "Bearer abcdef123"
+        assert call["params"]["filter"] == "title.search:Justified Harm and the Ethics of Defensive Action"
+        assert call["params"]["per-page"] == "10" and call["params"]["mailto"] == "me@example.org"
+        assert "abcdef123" not in json.dumps(call["params"])
+        rec = ft.validate_record(workdir / ft.STORE_REL, data["slug"])
+        assert rec.source == "openalex" and rec.license == "cc-by"
+        assert rec.source_ref == {"url": url, "matched": {
+            "openalex_id": "https://openalex.org/W1", "title": TITLE, "doi": None}}
+
+    def test_title_route_skips_a_record_of_another_work(self, http, workdir, capsys):
+        write_env(KEY_ENV)
+        http.add(WORKS_URL, FakeResponse(payload={"results": [title_record(
+            first_author="Jane Other", pdfs=[("https://oa.example/a.pdf", "cc-by")])]}))
+        http.add("https://oa.example/a.pdf", FakeResponse(body=work_pdf(doi=None)))
+        code, data = run_json(capsys, workdir, *_no_doi_args())
+        assert data["status"] == "not_found"
+        assert {t["source"]: t["outcome"] for t in data["tried"]}["openalex"] == "not_found"
+        assert "https://oa.example/a.pdf" not in http.urls()
+
+    def test_title_route_short_title(self, http, workdir, capsys):
+        write_env(KEY_ENV)
+        code, data = run_json(capsys, workdir, *_no_doi_args(title="Introduction"))
+        rows = {t["source"]: t for t in data["tried"]}
+        assert rows["openalex"] == {"source": "openalex", "outcome": "no_doi", "detail": ["short_title"]}
+        assert http.calls == []
+
+    def test_title_route_keeps_raw_identity(self, http, workdir, capsys):
+        write_env(KEY_ENV)
+        raw_title, raw_surname = "{AI} and M{\\\"u}ller's Problem", "M{\\\"u}ller"
+        url = "https://oa.example/m.pdf"
+        http.add(WORKS_URL, FakeResponse(payload={"results": [title_record(
+            title="AI and M\u00fcller's Problem", first_author="Hans M\u00fcller",
+            pdfs=[(url, "cc-by")])]}))
+        # The fixture's font extracts `'` as a curly quote, which the fold
+        # drops ("mullers"); the page prints the folded form instead.
+        http.add(url, FakeResponse(body=work_pdf(title="AI and Muller s Problem", author="Hans Muller",
+                                                 doi=None)))
+        code, data = run_json(capsys, workdir, *_no_doi_args(title=raw_title, author=raw_surname))
+        assert data["status"] == "acquired"
+        identity = {"doi": None, "title": raw_title, "surname": raw_surname, "year": YEAR}
+        assert data["slug"] == ft.slug_for(identity)
+        rec = ft.validate_record(workdir / ft.STORE_REL, data["slug"])
+        assert rec.identity == identity
+        [call] = [c for c in http.calls if c["url"] == WORKS_URL]
+        assert call["params"]["filter"] == "title.search:AI and M\u00fcller's Problem"
+
+    def test_title_route_record_round_trips(self, http, workdir, capsys, tmp_path):
+        """A dict `source_ref` is a valid record: the store answers `exists`
+        for it, and a repository holding it serves it."""
+        write_env(KEY_ENV)
+        url = "https://oa.example/a.pdf"
+        http.add(WORKS_URL, FakeResponse(payload={"results": [title_record(pdfs=[(url, "cc-by")])]}))
+        http.add(url, FakeResponse(body=work_pdf(doi=None)))
+        code, first = run_json(capsys, workdir, *_no_doi_args())
+        assert first["status"] == "acquired"
+        code, again = run_json(capsys, workdir, *_no_doi_args())
+        assert again["status"] == "exists"
+        assert again["tried"] == [{"source": "store", "outcome": "exists"}]
+        store = workdir / ft.STORE_REL
+        repo = tmp_path / "records"
+        repo.mkdir()
+        for suffix in (".pdf", ".json"):
+            name = first["slug"] + suffix
+            (repo / name).write_bytes((store / name).read_bytes())
+        other = tmp_path / "wd2"
+        other.mkdir()
+        write_env(f"PHILLIT_FULLTEXT_REPOSITORY_DIR={repo}\n")
+        n_calls = len(http.calls)
+        code, served = run_json(capsys, other, *_no_doi_args())
+        assert served["status"] == "acquired" and served["source"] == "repository"
+        assert len(http.calls) == n_calls
+        rec = ft.validate_record(other / ft.STORE_REL, served["slug"])
+        assert rec.source_ref["source"] == "openalex"
+        assert rec.source_ref["source_ref"]["url"] == url
+
+    def test_matched_record_with_wrong_pdf_stores_nothing(self, http, workdir, capsys):
+        write_env(KEY_ENV)
+        bad = "https://oa.example/bad.pdf"
+        http.add(WORKS_URL, FakeResponse(payload={"results": [title_record(pdfs=[(bad, "cc-by")])]}))
+        http.add(bad, FakeResponse(body=other_pdf()))
+        code, data = run_json(capsys, workdir, *_no_doi_args())
+        assert data["status"] == "rejected"
+        assert {t["source"]: t["outcome"] for t in data["tried"]}["openalex"] == "rejected"
+        store = workdir / ft.STORE_REL
+        assert not (store / f"{data['slug']}.pdf").exists()
+        assert not (store / f"{data['slug']}.json").exists()
+
+        good = "https://oa.example/good.pdf"
+        http.add(WORKS_URL, FakeResponse(payload={"results": [title_record(
+            pdfs=[(bad, "cc-by"), (good, "cc-by")])]}))
+        http.add(good, FakeResponse(body=work_pdf(doi=None)))
+        code, data = run_json(capsys, workdir, *_no_doi_args())
+        assert data["status"] == "acquired"
+        assert ft.validate_record(store, data["slug"]).source_ref["url"] == good
+
+    def test_title_route_does_not_run_with_the_service_channel_on(self, http, workdir):
+        settings = af.Settings(licensed_only=False, policy=None, zotero_on=False, pdf_dir=None,
+                               index_budget=0, request_dir=workdir / "requests")
+        results = af.source_open_access(af.make_identity(None, TITLE, SURNAME, YEAR), settings,
+                                        af.Deadline(None))
+        assert [r.tried() for r in results] == [
+            {"source": "openalex", "outcome": "disabled", "detail": ["service"]},
+            {"source": "s2", "outcome": "disabled", "detail": ["service"]}]
         assert http.calls == []
 
 
@@ -986,10 +1275,10 @@ class TestGaps:
         (workdir / "literature-domain-1.bib").write_text(
             "".join(bib_entry(f"k{n}", doi=f"10.1/w{n}") for n in range(4)), encoding="utf-8")
 
-        def slow_openalex(identity, settings, deadline):
+        def slow_folder(identity, settings, deadline):
             now[0] += 200
-            return af.SourceResult("openalex", "not_found")
-        monkeypatch.setitem(af._SOURCES, "openalex", slow_openalex)
+            return af.SourceResult("folder", "not_found")
+        monkeypatch.setitem(af._SOURCES, "folder", slow_folder)
         code, out = run(capsys, workdir, "--gaps", "--domains", "1")
         assert code == 0
         assert len(out.strip().splitlines()) == 1
@@ -999,8 +1288,10 @@ class TestGaps:
         outcomes = [(e["key"], e["outcome"]) for e in report["entries"]]
         assert outcomes == [("k0", "not_found"), ("k1", "not_found"), ("k2", "not_found"),
                             ("k3", "not_attempted")]
-        # The source the deadline cut inside an entry is reported as such.
+        # The step the deadline cut inside an entry is reported as such, one
+        # row per open-access API.
         k2 = report["entries"][2]["tried"]
+        assert {"source": "openalex", "outcome": "deadline"} in k2
         assert {"source": "s2", "outcome": "deadline"} in k2
 
     def test_entry_crash_named_in_summary_and_report(self, http, workdir, capsys, monkeypatch):

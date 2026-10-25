@@ -41,10 +41,20 @@ SOURCES, in the ruled order, the first passing PDF wins:
    pages 1-3 and the folded heads of pages 1-5 per file, refreshed
    incrementally within a time budget. The index is a superset filter; the
    identity check runs on each candidate file.
-3. OpenAlex (`best_oa_location`, then the other locations with a `pdf_url`).
-4. Semantic Scholar (`openAccessPdf`).
-5. The service channel (`PHILLIT_FULLTEXT_REQUEST_DIR`; it replaces 3 and 4,
-   which then report `disabled` with detail `service`). One request file per
+3. Open access, one step: OpenAlex, then Semantic Scholar, are asked (the
+   requests and parsing are `fulltext_sources`'), the locations the policy
+   refuses are dropped (`_licensed` on the raw licence value), and the rest
+   are tried in rule-15 order (`fulltext_sources.order`: a publisher copy
+   before a self-archived one), stopping at the first that passes. Each API
+   keeps its own `tried` row (`openalex`, `s2`), computed from its own
+   lookup and locations; a URL both report feeds both rows, and the winning
+   location's API is the hit's `source`. A work without a DOI gets the
+   OpenAlex title route (title and first-author surname, the matched
+   record's locations; its `source_ref` is `{url, matched}`), only with a
+   usable `OPENALEX_API_KEY` (a title search costs credits an unkeyed run
+   shares with the researchers' searches); Semantic Scholar needs a DOI.
+4. The service channel (`PHILLIT_FULLTEXT_REQUEST_DIR`; it replaces 3,
+   whose rows then report `disabled` with detail `service`). One request file per
    batch of at most `fulltext_channel.MAX_PER_REQUEST` DOI identities, never
    a URL and never a no-DOI identity (`no_doi`); the grammar is
    `fulltext_channel`'s. A worker copies each found record into the store
@@ -76,8 +86,8 @@ SOURCES, in the ruled order, the first passing PDF wins:
    A service-copied record found on a later acquisition run (`exists`) is
    re-checked against the policy then (a refused one is removed:
    `unlicensed_removed`).
-OpenAlex and Semantic Scholar need a DOI. Several passing PDFs within the
-winning source: the first is kept and the rest are reported
+Several passing PDFs within the winning local source (Zotero, the
+folder): the first is kept and the rest are reported
 (`multiple_candidates`); every candidate of that source is checked, up to
 the folder's 20-candidate limit.
 
@@ -105,7 +115,7 @@ variables for one run. Every sidecar records `source`, `source_ref` and
 under the policy (the service builds uploads on it) and never consults the
 service channel. The service sets a third variable,
 `PHILLIT_FULLTEXT_REQUEST_DIR`, which turns the service channel on (source
-5); a location, not a policy, it is read after `.env` loads like
+4); a location, not a policy, it is read after `.env` loads like
 `PHILLIT_PDF_DIR`. The worker creates that directory
 (`intermediate_files/fulltext_requests/`) before the review starts; the
 engine never does, and a missing directory means no worker
@@ -115,6 +125,8 @@ DOWNLOADS. http(s) only, re-checked on every redirect hop (at most 5,
 followed by hand); 30 s per download; a 60 MB cap enforced while streaming;
 the body must start `%PDF-`; only the User-Agent is sent (no API key ever
 reaches a PDF host). Local files (Zotero, folder, `--pdf`): a 200 MB cap.
+A metadata answer (OpenAlex, Semantic Scholar) is read streaming within
+`MAX_API_BYTES` (5 MB); a larger one is `unavailable`, detail `too_large`.
 
 OUTCOMES. Single-work mode prints one JSON object `{status, slug, source,
 tried}`, within a 420 s deadline (`SINGLE_DEADLINE`, the Bash ceiling is
@@ -127,9 +139,11 @@ would exceed the Windows limit; `unlicensed_remove_failed:<error>`: a
 stored service copy the policy refuses could not be removed, and no
 source runs). `tried` lists `{source, outcome[, detail]}` in order;
 source outcomes are `disabled`, `unavailable`, `not_found`, `rejected`,
-`acquired`, plus `no_doi` for the OA sources and the service,
-`unlicensed` for the OA sources, the repository and the service, and
-`deadline` for a source the deadline cut.
+`acquired`, plus `no_doi` for the OA sources and the service (OpenAlex's
+detail: `no_key` without an OpenAlex key, `short_title` when the title's
+cut phrase has fewer than 2 words, `no_surname`), `unlicensed` for the OA
+sources, the repository and the service, and `deadline` for a source the
+deadline cut.
 Service details: `no_outcome` (a complete response without this key),
 `stem_mismatch` (added to the outcome of checking the record at this
 slug), `copied_after_response:<outcome>` (a copy found at this slug
@@ -201,6 +215,7 @@ _here = str(Path(__file__).resolve().parent)
 sys.path.insert(0, _here)
 import fulltext as ft  # noqa: E402
 import fulltext_channel as fc  # noqa: E402
+import fulltext_sources as fs  # noqa: E402
 from stamp_evidence import entry_header, parse_entry_fields, split_entries  # noqa: E402
 from venue_vetting import _ON_TOKENS  # noqa: E402 - the shared on-token set
 
@@ -210,13 +225,13 @@ sys.path.insert(0, _research)
 from rate_limiter import (  # noqa: E402
     ExponentialBackoff,
     get_limiter,
+    openalex_api_key,
     openalex_budget_exhausted,
     openalex_headers,
     openalex_params,
     parse_retry_after,
     user_agent,
 )
-from s2_formatters import S2_BASE_URL  # noqa: E402
 import output  # noqa: E402
 
 sys.path.remove(_research)
@@ -236,13 +251,13 @@ PDF_DIR_ENV = "PHILLIT_PDF_DIR"
 ZOTERO_BASE = "http://localhost:23119/api/users/0"
 ZOTERO_TIMEOUT = 10
 ZOTERO_SEARCH_LIMIT = 100
-OPENALEX_BASE = "https://api.openalex.org"
 
 DOWNLOAD_TIMEOUT = 30
 MAX_DOWNLOAD_BYTES = 60 * 1024 * 1024
 MAX_REDIRECTS = 5
 LOCAL_MAX_BYTES = ft.MAX_PDF_BYTES   # 200 MB
 API_TIMEOUT = 30
+MAX_API_BYTES = 5 * 1024 * 1024   # a metadata answer, read streaming
 
 GAPS_DEADLINE = 420
 SINGLE_DEADLINE = 420
@@ -918,124 +933,193 @@ def _licensed(lic, policy: str | None) -> bool:
     return policy == "open" and (lic.startswith("oa:") or lic == "upload")
 
 
+def _read_capped(resp, cap: int) -> tuple[bytes | None, str]:
+    """A streamed body of at most `cap` bytes, or (None, "too_large"): a
+    declared Content-Length over the cap is refused before reading."""
+    declared = resp.headers.get("Content-Length")
+    if declared and str(declared).isdigit() and int(declared) > cap:
+        return None, "too_large"
+    chunks, total = [], 0
+    for chunk in resp.iter_content(chunk_size=65536):
+        if not chunk:
+            continue
+        total += len(chunk)
+        if total > cap:
+            return None, "too_large"
+        chunks.append(chunk)
+    return b"".join(chunks), "ok"
+
+
 def _api_get(url, *, headers, params, limiter, deadline: Deadline, openalex: bool):
-    """(json | None, reason): a metadata call with a short retry on 429/5xx."""
+    """(json | None, reason): a metadata call with a short retry on 429/5xx.
+    The answer is read streaming within MAX_API_BYTES (`too_large` past it,
+    never retried), then decoded: the caller contract of `fulltext_sources`'
+    parse functions, which take decoded JSON."""
     backoff = ExponentialBackoff(max_attempts=3, max_delay=10.0)
     for attempt in range(backoff.max_attempts):
         if deadline.expired():
             return None, "deadline"
         limiter.wait()
+        r = None
         try:
-            r = _http_get(url, headers=headers, params=params, timeout=deadline.clamp(API_TIMEOUT) or 0.1)
+            r = _http_get(url, headers=headers, params=params, timeout=deadline.clamp(API_TIMEOUT) or 0.1,
+                          stream=True)
+            if r.status_code == 200:
+                body, why = _read_capped(r, MAX_API_BYTES)
+                if body is None:
+                    return None, why
+                try:
+                    return json.loads(body), "ok"
+                except (ValueError, RecursionError):
+                    return None, "bad_json"
+            if r.status_code == 404:
+                return None, "not_found"
+            if r.status_code == 429 and openalex and openalex_budget_exhausted(r):
+                return None, "budget_exhausted"
+            if (r.status_code == 429 or r.status_code >= 500) and backoff.wait(
+                    attempt, retry_after=parse_retry_after(r.headers.get("Retry-After"))):
+                continue
+            return None, f"http_{r.status_code}"
         except requests.RequestException as exc:
             if attempt < backoff.max_attempts - 1 and backoff.wait(attempt):
                 continue
             return None, f"network:{type(exc).__name__}"
-        if r.status_code == 200:
-            try:
-                return r.json(), "ok"
-            except ValueError:
-                return None, "bad_json"
-        if r.status_code == 404:
-            return None, "not_found"
-        if r.status_code == 429 and openalex and openalex_budget_exhausted(r):
-            return None, "budget_exhausted"
-        if (r.status_code == 429 or r.status_code >= 500) and backoff.wait(
-                attempt, retry_after=parse_retry_after(r.headers.get("Retry-After"))):
-            continue
-        return None, f"http_{r.status_code}"
+        finally:
+            if r is not None:
+                try:
+                    r.close()
+                except Exception:
+                    pass
     return None, "retries_exhausted"
 
 
-def openalex_locations(doi: str, deadline: Deadline) -> tuple[list | None, str]:
-    """[(pdf_url, licence)], best_oa_location first, without repeats."""
-    data, why = _api_get(f"{OPENALEX_BASE}/works/doi:{quote(doi, safe='/')}",
-                         headers={**openalex_headers(), "User-Agent": user_agent()},
-                         params=openalex_params(os.environ.get("OPENALEX_EMAIL", "")),
-                         limiter=get_limiter("openalex"), deadline=deadline, openalex=True)
-    if data is None:
-        return None, why
-    locs = [data.get("best_oa_location")] + list(data.get("locations") or [])
-    out, seen = [], set()
-    for loc in locs:
-        if not isinstance(loc, dict):
-            continue
-        url = loc.get("pdf_url")
-        if isinstance(url, str) and url and url not in seen:
-            seen.add(url)
-            out.append((url, loc.get("license")))
-    return out, "ok"
+def _title_route_on() -> bool:
+    """Whether the OpenAlex title route may run: a usable OPENALEX_API_KEY,
+    read now (after `.env` loads). A title search costs credits an unkeyed
+    run shares with the researchers' own searches, as `venue_vetting`
+    decides; a key with unprintable characters reads as unset
+    (`openalex_api_key`), so it never runs unkeyed."""
+    return bool(openalex_api_key())
 
 
-def s2_locations(doi: str, deadline: Deadline) -> tuple[list | None, str]:
+def _send(req: fs.Request, deadline: Deadline):
+    """Send a `fulltext_sources` request with its API's credentials: the
+    OpenAlex key as a header plus the polite-pool mailto, or S2's
+    `x-api-key` when set. (json | None, reason)."""
+    if req.api == "openalex":
+        return _api_get(req.url, headers={**openalex_headers(), "User-Agent": user_agent()},
+                        params={**req.params, **openalex_params(os.environ.get("OPENALEX_EMAIL", ""))},
+                        limiter=get_limiter("openalex"), deadline=deadline, openalex=True)
     key = os.environ.get("S2_API_KEY", "").strip()
     headers = {"User-Agent": user_agent()}
     if key:
         headers["x-api-key"] = key
-    data, why = _api_get(f"{S2_BASE_URL}/paper/DOI:{quote(doi, safe='/')}",
-                         headers=headers, params={"fields": "openAccessPdf"},
-                         limiter=get_limiter("semantic_scholar", authenticated=bool(key)),
-                         deadline=deadline, openalex=False)
-    if data is None:
-        return None, why
-    oa = data.get("openAccessPdf")
-    if isinstance(oa, dict) and isinstance(oa.get("url"), str) and oa["url"]:
-        return [(oa["url"], oa.get("license"))], "ok"
-    return [], "ok"
+    return _api_get(req.url, headers=headers, params=dict(req.params),
+                    limiter=get_limiter("semantic_scholar", authenticated=bool(key)),
+                    deadline=deadline, openalex=False)
 
 
-def _source_oa(name: str, locate, identity: dict, settings: "Settings", deadline: Deadline) -> SourceResult:
-    res = SourceResult(name, "not_found")
+def openalex_locations(identity: dict, deadline: Deadline) -> tuple[list | None, str, list[str]]:
+    """(locations | None, reason, detail) from OpenAlex: the DOI route, or
+    for a work without a DOI the title route (only with a key). None with
+    `no_doi` when neither can run (detail `no_key`, `short_title` or
+    `no_surname`)."""
+    req = fs.openalex_doi_request(identity)
+    parse = fs.openalex_doi_parse
+    if req is None:
+        if not _title_route_on():
+            return None, "no_doi", ["no_key"]
+        req = fs.openalex_title_request(identity)
+        parse = fs.openalex_title_parse
+        if req is None:
+            return None, "no_doi", ["no_surname" if fs._phrase(identity) else "short_title"]
+    data, why = _send(req, deadline)
+    return (None, why, []) if data is None else (parse(identity, data), "ok", [])
+
+
+def s2_locations(identity: dict, deadline: Deadline) -> tuple[list | None, str, list[str]]:
+    req = fs.s2_doi_request(identity)
+    if req is None:
+        return None, "no_doi", []
+    data, why = _send(req, deadline)
+    return (None, why, []) if data is None else (fs.s2_parse(identity, data), "ok", [])
+
+
+OA_APIS = ("openalex", "s2")
+
+
+def source_open_access(identity: dict, settings: "Settings", deadline: Deadline) -> list[SourceResult]:
+    """The open-access step: ask OpenAlex, then S2, drop the locations the
+    policy refuses (`_licensed` on the raw value), put the rest in rule-15
+    order (`fs.order`: a publisher copy before a self-archived one) and try
+    them until one passes `check_pdf`. One row per API, from its own lookup
+    and its own locations: `acquired` (its location passed), else
+    `rejected` (one was downloaded and failed), else `unlicensed` (it had
+    locations, all refused), else `not_found`; or its lookup's `no_doi`,
+    `unavailable` or `deadline`. A URL both APIs report is each API's
+    location: its outcome feeds both rows. Only the winning location's API
+    row carries the hit, and that API is the hit's `source`."""
     if settings.request_dir is not None:
-        res.outcome, res.detail = "disabled", ["service"]
-        return res
-    doi = normalize_doi(identity.get("doi") or "")
-    if not doi:
-        res.outcome = "no_doi"
-        return res
-    locs, why = locate(doi, deadline)
-    if locs is None:
-        if why == "not_found":
-            return res
-        res.outcome, res.detail = ("deadline", []) if why == "deadline" else ("unavailable", [why])
-        return res
-    if settings.policy is not None:
-        unlicensed = [u for u, lic in locs if not _licensed(lic, settings.policy)]
-        locs = [(u, lic) for u, lic in locs if _licensed(lic, settings.policy)]
-        if unlicensed and not locs:
-            res.outcome, res.detail = "unlicensed", [f"{len(unlicensed)} location(s) not admitted by policy"]
-            return res
-    checked = passed = 0
-    for url, lic in locs:
-        if deadline.expired():
-            res.detail.append("deadline")
-            break
-        data, why = download_pdf(url, deadline)
-        if data is None:
-            res.detail.append(f"{url}:{why}")
+        return [SourceResult(api, "disabled", ["service"]) for api in OA_APIS]
+    rows = {api: SourceResult(api, "not_found") for api in OA_APIS}
+    admitted, apis_by_url, mine = [], {}, {api: [] for api in OA_APIS}
+    for api, locate in (("openalex", openalex_locations), ("s2", s2_locations)):
+        res = rows[api]
+        locs, why, detail = locate(identity, deadline)
+        if locs is None:
+            if why != "not_found":
+                res.outcome, res.detail = {"no_doi": ("no_doi", detail), "deadline": ("deadline", [])}.get(
+                    why, ("unavailable", [why]))
             continue
-        checked += 1
-        ok, why = check_pdf(data, identity)
-        if ok:
-            passed += 1
-            res.hits.append(Hit(data, name, url, lic if isinstance(lic, str) else None))
-            break   # OA locations are tried until the first passes
-        res.detail.append(f"{url}:{why}")
-    return _finish(res, checked, passed)
+        admit = [loc for loc in locs if _licensed(loc.license, settings.policy)]
+        if locs and not admit:
+            res.outcome, res.detail = "unlicensed", [f"{len(locs)} location(s) not admitted by policy"]
+        for loc in admit:
+            apis_by_url.setdefault(loc.url, set()).add(api)
+            if loc.url not in mine[api]:
+                mine[api].append(loc.url)
+        admitted += admit
+    tried: set[str] = set()
+    checked: set[str] = set()   # URLs downloaded and checked (failed or passed)
+    winner = None
+    for loc in fs.order(admitted):
+        if deadline.expired():
+            for api in OA_APIS:
+                if any(u not in tried for u in mine[api]):
+                    rows[api].detail.append("deadline")
+            break
+        tried.add(loc.url)
+        data, why = download_pdf(loc.url, deadline)
+        if data is not None:
+            checked.add(loc.url)
+            ok, why = check_pdf(data, identity)
+            if ok:
+                winner = (loc, data)
+                break
+        for api in apis_by_url[loc.url]:
+            rows[api].detail.append(f"{loc.url}:{why}")
+    for api in OA_APIS:
+        res = rows[api]
+        if res.outcome != "not_found" or not mine[api]:
+            continue
+        if winner is not None and api in apis_by_url[winner[0].url]:
+            res.outcome = "acquired"
+        elif any(u in checked for u in mine[api]):
+            res.outcome = "rejected"
+    if winner is not None:
+        loc, data = winner
+        ref = loc.url if loc.matched is None else {"url": loc.url, "matched": loc.matched}
+        rows[loc.source].hits.append(Hit(data, loc.source, ref, loc.license))
+    return [rows[api] for api in OA_APIS]
 
 
-def source_openalex(identity, settings, deadline):
-    return _source_oa("openalex", openalex_locations, identity, settings, deadline)
-
-
-def source_s2(identity, settings, deadline):
-    return _source_oa("s2", s2_locations, identity, settings, deadline)
-
-
-SOURCE_ORDER = ("repository", "zotero", "folder", "openalex", "s2", "service")
+SOURCE_ORDER = ("repository", "zotero", "folder", "open_access", "service")
 LOCAL_SOURCES = SOURCE_ORDER[:-1]   # the ones _SOURCES maps, tried per work
+# Each returns one SourceResult, or a list of them (the open-access step:
+# one row per API); `open_access` is an internal name, never a `tried` row.
 _SOURCES = {"repository": source_repository, "zotero": source_zotero, "folder": source_folder,
-            "openalex": source_openalex, "s2": source_s2}
+            "open_access": source_open_access}
+_STEP_ROWS = {"open_access": OA_APIS}
 
 
 # --------------------------------------------------------------------------
@@ -1218,11 +1302,12 @@ def begin(workdir: Path, identity: dict, settings: Settings, deadline: Deadline,
         return attempt
     for name in LOCAL_SOURCES:
         if deadline.expired():
-            attempt.results.append(SourceResult(name, "deadline"))
+            attempt.results.extend(SourceResult(row, "deadline") for row in _STEP_ROWS.get(name, (name,)))
             continue
         res = _SOURCES[name](identity, settings, deadline)
-        attempt.results.append(res)
-        if res.hits:
+        rows = res if isinstance(res, list) else [res]
+        attempt.results.extend(rows)
+        if any(r.hits for r in rows):
             break
     return attempt
 
