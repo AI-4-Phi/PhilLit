@@ -258,6 +258,15 @@ def test_title_parse_records_matched():
     assert loc.matched == {"openalex_id": None, "title": GEIGER_TITLE, "doi": None}
 
 
+def test_title_parse_gives_each_location_its_own_matched():
+    rec = work(GEIGER_TITLE, [first("Atticus Geiger")],
+               [oa_loc("https://x.org/a.pdf"), oa_loc("https://x.org/b.pdf")])
+    a, b = fs.openalex_title_parse(GEIGER, {"results": [rec]})
+    assert a.matched == b.matched and a.matched is not b.matched
+    a.matched["title"] = "mutated"
+    assert b.matched["title"] == GEIGER_TITLE
+
+
 def test_title_parse_same_author_extension_residual():
     """The PL-28 residual, asserted so a later fix shows up here: a DIFFERENT
     work by the same first author whose title extends the identity's phrase
@@ -588,10 +597,19 @@ def test_brave_parse_needs_a_two_word_phrase():
 
 # ---------------------------------------------------------------------- purity
 
+def test_normalize_doi_is_bib_identitys():
+    sys.path.insert(0, str(HOOKS))
+    try:
+        import bib_identity
+    finally:
+        sys.path.remove(str(HOOKS))
+    assert fs.normalize_doi is bib_identity.normalize_doi
+
+
 def test_import_is_pure(tmp_path):
     source = (SCRIPTS / "fulltext_sources.py").read_text(encoding="utf-8")
     for needle in ("os.environ", "os.getenv", "open(", "import requests",
-                   "urllib.request", "socket"):
+                   "urllib.request", "socket", "resolve(", "sys.path", "__file__"):
         assert needle not in source, needle
     env = {k: v for k, v in os.environ.items()
            if not k.startswith("PHILLIT_") and "KEY" not in k.upper()

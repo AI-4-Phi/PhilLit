@@ -7,6 +7,9 @@ import; every function maps its arguments to a value.
 A parse function takes DECODED JSON and never raises on its content: a
 payload of the wrong shape gives `[]`, and a malformed record, location or
 author is skipped while its siblings are kept.
+The dataclasses are frozen shallowly: a nested dict (`Request.params`,
+`Location.matched`) is the caller's not to mutate. Each location gets its
+own copy of `matched`.
 Residual, accepted under PL-28: a different work by the same first author
 whose title extends the identity's phrase ("Causal Abstraction and Its
 Critics") still passes the title-route match (measured 0 of 50).
@@ -14,22 +17,14 @@ Critics") still passes the title-route match (measured 0 of 50).
 from __future__ import annotations
 
 import re
-import sys
 import unicodedata
 from dataclasses import dataclass
-from pathlib import Path
 from urllib.parse import quote, urlsplit
 
-from fulltext import fold, title_phrase_cut
+# `normalize_doi` is bib_identity's, bound through fulltext (an alias).
+from fulltext import fold, normalize_doi, title_phrase_cut
 from generate_bibliography import clean_bibtex_str
 from web_evidence import excluded_host
-
-# As fulltext.py does: the insert is removed by value, not pop(0).
-_hook_dir = str(Path(__file__).resolve().parent.parent.parent.parent / "hooks")
-sys.path.insert(0, _hook_dir)
-from bib_identity import normalize_doi  # noqa: E402
-
-sys.path.remove(_hook_dir)
 
 OPENALEX_WORKS = "https://api.openalex.org/works"
 S2_PAPER = "https://api.semanticscholar.org/graph/v1/paper"
@@ -249,7 +244,8 @@ def _openalex_locations(work: dict, matched: dict | None = None) -> list[Locatio
         out.append(Location(
             url=url, license=_clean_license(loc.get("license")),
             kind=openalex_kind(loc), source="openalex",
-            at_publisher=_openalex_source_type(loc) == "journal", matched=matched))
+            at_publisher=_openalex_source_type(loc) == "journal",
+            matched=None if matched is None else dict(matched)))
     return out
 
 
