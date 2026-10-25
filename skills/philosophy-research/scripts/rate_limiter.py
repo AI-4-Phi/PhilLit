@@ -415,7 +415,7 @@ def openalex_key_unusable() -> bool:
 _BUDGET_MARKERS = ("insufficient budget", "daily limit", "rate limit exceeded")
 
 
-def openalex_budget_exhausted(response) -> bool:
+def openalex_budget_exhausted(response, text: str | None = None) -> bool:
     """True when a 429 means "your daily budget is gone", not "slow down".
 
     The two are not distinguishable by status code, and treating them alike is
@@ -425,7 +425,8 @@ def openalex_budget_exhausted(response) -> bool:
     should stop retrying and say what happened instead.
 
     Never raises: any unexpected response shape reads as "not exhausted", so
-    the caller falls back to ordinary backoff.
+    the caller falls back to ordinary backoff. `text`: the body, read by a
+    caller that streams (and caps) it; without it, `response.text` is read.
     """
     try:
         if getattr(response, "status_code", None) != 429:
@@ -434,7 +435,7 @@ def openalex_budget_exhausted(response) -> bool:
         retry_after = parse_retry_after(response.headers.get("Retry-After"))
         if retry_after is not None and retry_after > 300:
             return True
-        body = (response.text or "").lower()
+        body = ((response.text if text is None else text) or "").lower()
         return any(marker in body for marker in _BUDGET_MARKERS)
     except Exception:
         return False

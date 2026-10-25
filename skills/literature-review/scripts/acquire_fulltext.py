@@ -125,24 +125,22 @@ engine never does, and a missing directory means no worker
 (`request_dir_missing`).
 
 DOWNLOADS. http(s) only, re-checked on every redirect hop (at most 5,
-followed by hand); a 30 s deadline per download, checked per received
-chunk; a 60 MB cap enforced while streaming; the body must start `%PDF-`;
-only the User-Agent is sent (no API key ever reaches a PDF host). Local
-files (Zotero, folder, `--pdf`): a 200 MB cap. A metadata answer
-(OpenAlex, Semantic Scholar, Brave) is read streaming within
-`MAX_API_BYTES` (5 MB); a larger one is `unavailable`, detail `too_large`
-(for Brave, the failed call `too_large`). Its deadline is also checked per
-received chunk: an OpenAlex or Semantic Scholar chunk received after the
-fetch deadline makes that API's row `deadline` (for Brave, the failed
-call `timeout`). A malformed `Content-Length` (not 1-20 ASCII digits) is
+followed by hand); a 30 s deadline per download; a 60 MB cap enforced
+while streaming; the body must start `%PDF-`; only the User-Agent is sent
+(no API key ever reaches a PDF host). Local files (Zotero, folder,
+`--pdf`): a 200 MB cap. A metadata answer (OpenAlex, Semantic Scholar,
+Brave) is read streaming within `MAX_API_BYTES` (5 MB); a larger one is
+`unavailable`, detail `too_large` (for Brave, the failed call
+`too_large`). Every body is read per receive (`_read_capped`) with its
+deadline checked whenever bytes arrive: bytes received after the end
+make a download `timeout`, an OpenAlex or Semantic Scholar row
+`deadline` (for Brave, the failed call `timeout`). Each socket operation
+waits at most the request's timeout, the time left when it started
+(at most 30 s), so a request ends within its deadline plus that timeout,
+however slowly its body trickles in. Only gzip and deflate are asked for
+and decoded, within the same caps (`bad_encoding` for any other or a
+corrupt stream). A malformed `Content-Length` (not 1-20 ASCII digits) is
 ignored, and the streaming cap still applies.
-Residual (PL-29): a received chunk is up to 64 KiB (`iter_content`
-returns one only when that much has arrived, the body ends or the
-connection fails), and every arriving byte resets the socket timeout. A
-body that trickles in with gaps shorter than that timeout is bounded only
-by the per-read timeout, not by the deadline, so neither a download, a
-metadata call, a Brave call nor a pass is guaranteed to end within its
-deadline or below the 600 s Bash ceiling.
 
 SUGGESTIONS. A work the sources and the service left `not_found` or
 `rejected` (or, in `--gaps`, `not_attempted`) gets one Brave web search when
@@ -156,14 +154,14 @@ call, never retried); its budget is a `Deadline` started after the fetch
 work, so it never takes time from a fetch; the limiter wait and the
 call's timeout are clamped to it, and the body read checks it per
 received chunk (no call starts with less than `SUGGESTION_MIN_SECONDS`
-left after the limiter's spacing). Residuals: the limiter's real wait can
+left after the limiter's spacing). Residual: the limiter's real wait can
 exceed its spacing when other processes queue on it (it caps a queue at
-10 spacings, 15 s); a call's timeout (the time left when it starts, at
-most `API_TIMEOUT`, 30 s) bounds each socket operation, not the call; and
-a trickling body is not bounded by the budget (see DOWNLOADS, PL-29).
-Timing of `--gaps`: about 420 s of fetch work, then about 60 s of
-suggestions; both can overrun as these residuals say, so a pass is not
-guaranteed to finish below the 600 s Bash ceiling.
+10 spacings, 15 s).
+Timing of `--gaps`: about 420 s of fetch work, then at most 60 s of
+suggestions, which stop starting reads `GAPS_SUGGESTION_END` (530 s) into
+the pass. Every network read ends within its deadline plus one socket
+timeout (see DOWNLOADS), so the network work ends below the 600 s Bash
+ceiling; local work (PDF text extraction) is not timed.
 
 OUTCOMES. Single-work mode prints one JSON object `{status, slug, source,
 tried}`, within a 420 s deadline (`SINGLE_DEADLINE`, the Bash ceiling is
@@ -182,7 +180,8 @@ source runs). `tried` lists `{source, outcome[, detail]}` in order;
 source outcomes are `disabled`, `unavailable`, `not_found`, `rejected`,
 `acquired`, plus `no_doi` for the OA sources and the service (OpenAlex's
 detail: `no_key` without an OpenAlex key, `short_title` when the title's
-cut phrase has fewer than 2 words, `no_surname`), `unlicensed` for the OA
+cut phrase has fewer than 2 words (a missing title included),
+`no_surname`), `unlicensed` for the OA
 sources, the repository and the service, and `deadline` for a source the
 deadline cut.
 Service details: `no_outcome` (a complete response without this key),
@@ -222,8 +221,8 @@ Then, with a Brave key, every `not_found`, `rejected` or `not_attempted`
 entry gets `suggestions` (see SUGGESTIONS), once per work: a `same_work_as`
 row never does, so only the first row carries them. They have their own
 budget after the fetch work: at most `MAX_SUGGESTION_QUERIES` (40) HTTP
-attempts within `SUGGESTION_SECONDS` (60), so the pass takes about
-420 + 60 s (not a guaranteed bound: see SUGGESTIONS). An entry the cap or
+attempts within `SUGGESTION_SECONDS` (60), ending by
+`GAPS_SUGGESTION_END` (see SUGGESTIONS). An entry the cap or
 the time does not reach, or whose call failed, carries no `suggestions`
 field; both are counted in one `warnings` line, `suggestions: N not asked
 (cap or time), M failed`, when either is non-zero. It writes the run
@@ -260,12 +259,14 @@ import re
 import sys
 import time
 import urllib.request
+import zlib
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import quote, unquote, urljoin, urlparse
 
 import requests
+import urllib3
 from dotenv import find_dotenv, load_dotenv
 
 # Each insert is removed by value, not pop(0): an imported module may insert
@@ -323,6 +324,13 @@ MAX_REDIRECTS = 5
 LOCAL_MAX_BYTES = ft.MAX_PDF_BYTES   # 200 MB
 API_TIMEOUT = 30
 MAX_API_BYTES = 5 * 1024 * 1024   # a metadata answer, read streaming
+# The Content-Encodings `_read_capped` decodes, as zlib wbits (None: as
+# sent). `_http_get` asks for exactly these, so an installed brotli or
+# zstd never adds one it cannot read.
+_ENCODINGS = {"": None, "identity": None, "gzip": 16 + zlib.MAX_WBITS, "x-gzip": 16 + zlib.MAX_WBITS,
+              "deflate": zlib.MAX_WBITS}
+ACCEPT_ENCODING = "gzip, deflate"
+BUDGET_BODY_BYTES = 64 * 1024   # an OpenAlex 429 body, read for its budget marker
 
 GAPS_DEADLINE = 420
 SINGLE_DEADLINE = 420
@@ -330,6 +338,9 @@ SERVICE_WAIT_MARGIN = 20   # seconds of the deadline kept for validating arrival
 ARRIVAL_CHECK_SECONDS = 1.0   # and this much more per identity sent
 MAX_SUGGESTION_QUERIES = 40   # Brave calls per gap pass, after the fetch deadline
 SUGGESTION_SECONDS = 60        # their own budget in a gap pass (about 420 + 60 s in all; see SUGGESTIONS)
+# and never past this many seconds into the pass: a read ends within
+# API_TIMEOUT more, so the pass stays below the 600 s Bash ceiling.
+GAPS_SUGGESTION_END = 530
 SINGLE_SUGGESTION_SECONDS = 20  # and in single-work mode (one call)
 SUGGESTION_MIN_SECONDS = 1.0   # no call starts with less than this left
 SUGGEST_STATUSES = ("not_found", "rejected", "not_attempted")   # the outcomes that get links
@@ -384,10 +395,12 @@ def _doi_ok(doi: str) -> bool:
 # --------------------------------------------------------------------------
 
 def _http_get(url, *, headers=None, params=None, timeout=30.0, stream=False, trust_env=True):
-    """One GET, never following redirects."""
+    """One GET, never following redirects, asking only for the encodings
+    `_read_capped` decodes."""
     session = requests.Session()
     session.trust_env = trust_env
-    return session.get(url, headers=headers or {}, params=params, timeout=timeout,
+    return session.get(url, headers={"Accept-Encoding": ACCEPT_ENCODING, **(headers or {})},
+                       params=params, timeout=timeout,
                        stream=stream, allow_redirects=False)
 
 
@@ -418,27 +431,7 @@ def download_pdf(url: str, deadline: Deadline) -> tuple[bytes | None, str]:
             break
         if resp.status_code != 200:
             return None, f"http_{resp.status_code}"
-        declared = _declared_length(resp)
-        if declared is not None and declared > MAX_DOWNLOAD_BYTES:
-            return None, "too_large"
-        chunks, total, head_ok = [], 0, False
-        for chunk in resp.iter_content(chunk_size=65536):
-            if not chunk:
-                continue
-            total += len(chunk)
-            if total > MAX_DOWNLOAD_BYTES:
-                return None, "too_large"
-            chunks.append(chunk)
-            if not head_ok and total >= 5:
-                if not b"".join(chunks)[:5] == b"%PDF-":
-                    return None, "not_pdf"
-                head_ok = True
-            if dl.expired():
-                return None, "timeout"
-        body = b"".join(chunks)
-        if not body.startswith(b"%PDF-"):
-            return None, "not_pdf"
-        return body, "ok"
+        return _read_capped(resp, MAX_DOWNLOAD_BYTES, dl, head=b"%PDF-")
     except requests.RequestException as exc:
         # The class name only: a requests message embeds the URL.
         return None, f"network:{type(exc).__name__}"
@@ -1020,27 +1013,83 @@ def _declared_length(resp) -> int | None:
         return None
 
 
-def _read_capped(resp, cap: int, deadline: Deadline | None = None) -> tuple[bytes | None, str]:
-    """A streamed body of at most `cap` bytes, or (None, "too_large"): a
-    declared Content-Length over the cap is refused before reading. With a
-    `deadline`, (None, "timeout") for a chunk received after its end,
-    checked per received chunk (up to 64 KiB): a request timeout bounds
-    each socket read, not the whole body, and a body trickling in faster
-    than that timeout is not bounded by the deadline (PL-29)."""
+def _decode_body(raw: bytes, wbits: int, cap: int) -> tuple[bytes | None, str]:
+    """`raw` decoded within `cap` bytes: (None, "too_large") past it,
+    (None, "bad_encoding") for a corrupt or truncated stream. `deflate`
+    is zlib-wrapped by the standard and raw in practice: both are read."""
+    for bits in (wbits, -zlib.MAX_WBITS) if wbits == zlib.MAX_WBITS else (wbits,):
+        d = zlib.decompressobj(bits)
+        try:
+            out = d.decompress(raw, cap + 1)
+        except zlib.error:
+            continue
+        if len(out) > cap or d.unconsumed_tail:
+            return None, "too_large"
+        if not d.eof:
+            return None, "bad_encoding"
+        return out, "ok"
+    return None, "bad_encoding"
+
+
+def _read_capped(resp, cap: int, deadline: Deadline | None = None,
+                 head: bytes = b"") -> tuple[bytes | None, str]:
+    """A streamed body of at most `cap` bytes, decoded, or (None, reason):
+    `too_large` (a declared Content-Length over the cap is refused before
+    reading; the cap applies to the bytes received and again to the
+    decoded body), `bad_encoding` (a Content-Encoding outside
+    `_ENCODINGS`, or a stream that does not decode), `not_pdf` (`head`
+    given and the body does not start with it; checked as soon as enough
+    plain bytes are in, else after decoding) and, with a `deadline`,
+    `timeout` for bytes received after its end.
+
+    The body is read with `raw.read1`, which returns per receive, so the
+    deadline is checked whenever bytes arrive and a read ends within the
+    deadline plus one socket timeout (the request's `timeout`). Not
+    `iter_content`: it returns only once 64 KiB are in, so a body trickling
+    in below the socket timeout was bounded by nothing; and not urllib3's
+    decoding `read1`, which keeps reading while a compressed stream yields
+    no output. Hence the raw bytes, decoded here. A urllib3 error is raised
+    as the requests exception `iter_content` would raise, so callers keep
+    one exception family."""
     declared = _declared_length(resp)
     if declared is not None and declared > cap:
         return None, "too_large"
-    chunks, total = [], 0
-    for chunk in resp.iter_content(chunk_size=65536):
+    encoding = str(resp.headers.get("Content-Encoding") or "").strip().lower()
+    if encoding not in _ENCODINGS:
+        return None, "bad_encoding"
+    wbits = _ENCODINGS[encoding]
+    chunks, total, head_ok = [], 0, not head
+    while True:
+        try:
+            chunk = resp.raw.read1(65536, decode_content=False)
+        except urllib3.exceptions.ProtocolError as exc:
+            raise requests.exceptions.ChunkedEncodingError(exc) from exc
+        except urllib3.exceptions.ReadTimeoutError as exc:
+            raise requests.exceptions.ConnectionError(exc) from exc
+        except urllib3.exceptions.SSLError as exc:
+            raise requests.exceptions.SSLError(exc) from exc
+        except urllib3.exceptions.HTTPError as exc:
+            raise requests.exceptions.ConnectionError(exc) from exc
+        if not chunk:
+            break
         if deadline is not None and deadline.left() < 0:   # arrived after the end
             return None, "timeout"
-        if not chunk:
-            continue
         total += len(chunk)
         if total > cap:
             return None, "too_large"
         chunks.append(chunk)
-    return b"".join(chunks), "ok"
+        if not head_ok and wbits is None and total >= len(head):
+            if not b"".join(chunks).startswith(head):
+                return None, "not_pdf"
+            head_ok = True
+    body = b"".join(chunks)
+    if wbits is not None:
+        body, why = _decode_body(body, wbits, cap)
+        if body is None:
+            return None, why
+    if not body.startswith(head):
+        return None, "not_pdf"
+    return body, "ok"
 
 
 def _api_get(url, *, headers, params, limiter, deadline: Deadline, openalex: bool):
@@ -1068,8 +1117,12 @@ def _api_get(url, *, headers, params, limiter, deadline: Deadline, openalex: boo
                     return None, "bad_json"
             if r.status_code == 404:
                 return None, "not_found"
-            if r.status_code == 429 and openalex and openalex_budget_exhausted(r):
-                return None, "budget_exhausted"
+            if r.status_code == 429 and openalex:
+                # The budget marker is in a short body: read a capped one
+                # (an oversize body reads as none, leaving Retry-After).
+                text, _ = _read_capped(r, BUDGET_BODY_BYTES, deadline)
+                if openalex_budget_exhausted(r, text=(text or b"").decode("utf-8", "replace")):
+                    return None, "budget_exhausted"
             if (r.status_code == 429 or r.status_code >= 500) and backoff.wait(
                     attempt, retry_after=parse_retry_after(r.headers.get("Retry-After"))):
                 continue
@@ -1186,7 +1239,7 @@ def openalex_locations(identity: dict, deadline: Deadline) -> tuple[list | None,
         req = fs.openalex_title_request(identity)
         parse = fs.openalex_title_parse
         if req is None:
-            return None, "no_doi", ["no_surname" if fs._phrase(identity) else "short_title"]
+            return None, "no_doi", ["no_surname" if fs.key_phrase(identity) else "short_title"]
     data, why = _send(req, deadline)
     return (None, why, []) if data is None else (parse(identity, data), "ok", [])
 
@@ -1766,39 +1819,44 @@ def _folder_warnings(settings: Settings) -> list[str]:
     return out
 
 
-def _suggest_gaps(entries: list[dict]) -> list[str]:
+def _suggest_gaps(entries: list[dict], seconds: float) -> list[str]:
     """The suggestion post-pass, after the fetch work: every row left
     `not_found`, `rejected` or `not_attempted` gets a Brave search, once per
     work (a `same_work_as` row, or a later row of a slug already asked, is
     skipped, so only the first row carries the links), within its own
-    budget: at most MAX_SUGGESTION_QUERIES HTTP attempts in
-    SUGGESTION_SECONDS. A row the module declines (`fs.brave_request` None)
-    is neither asked nor counted. Rows the cap or the time does not reach,
-    and failed calls, carry no `suggestions` field; the warning line counts
-    them (none when both are 0)."""
-    budget = Deadline(SUGGESTION_SECONDS)
+    budget: at most MAX_SUGGESTION_QUERIES HTTP attempts in `seconds`
+    (SUGGESTION_SECONDS, less when the fetch work ran long). A row the
+    module declines (`fs.brave_request` None) is neither asked nor counted.
+    Rows the cap or the time does not reach, and failed calls, carry no
+    `suggestions` field; the warning line counts them (none when both are
+    0). A row whose handling crashes counts as failed, so one bad row
+    neither sinks the counts nor stops the rows after it."""
+    budget = Deadline(max(0.0, seconds))
     asked, calls, not_asked, failed = set(), 0, 0, 0
     for row in entries:
-        if (row.get("outcome") not in SUGGEST_STATUSES or row.get("slug") is None
-                or row["slug"] in asked
-                or any(str(t.get("outcome", "")).startswith("same_work_as:") for t in row["tried"])):
-            continue
-        identity = {k: row.get(k) for k in ("doi", "title", "surname", "year")}
-        if fs.brave_request(identity) is None:
-            continue
-        asked.add(row["slug"])
-        if calls >= MAX_SUGGESTION_QUERIES:
-            not_asked += 1
-            continue
-        found, why = suggest(identity, budget)
-        if found is None and why in (None, "deadline"):   # `suggest` skipped it for time
-            not_asked += 1
-            continue
-        calls += 1
-        if found is None:
+        try:
+            if (row.get("outcome") not in SUGGEST_STATUSES or row.get("slug") is None
+                    or row["slug"] in asked
+                    or any(str(t.get("outcome", "")).startswith("same_work_as:") for t in row["tried"])):
+                continue
+            identity = {k: row.get(k) for k in ("doi", "title", "surname", "year")}
+            if fs.brave_request(identity) is None:
+                continue
+            asked.add(row["slug"])
+            if calls >= MAX_SUGGESTION_QUERIES:
+                not_asked += 1
+                continue
+            found, why = suggest(identity, budget)
+            if found is None and why in (None, "deadline"):   # `suggest` skipped it for time
+                not_asked += 1
+                continue
+            calls += 1
+            if found is None:
+                failed += 1
+            else:
+                row["suggestions"] = found
+        except Exception:
             failed += 1
-        else:
-            row["suggestions"] = found
     if not (not_asked or failed):
         return []
     return [f"suggestions: {not_asked} not asked (cap or time), {failed} failed"]
@@ -1864,10 +1922,13 @@ def run_gaps(workdir: Path, n_domains: int, settings: Settings) -> dict:
             crashed(row, exc)
     for row, first in duplicates:
         row.update(outcome=first["outcome"], source=first["source"])
+    suggestions_started = _clock()
     try:   # a suggestion never sinks the pass
-        suggestion_warnings = _suggest_gaps(entries) if _brave_on() else []
+        seconds = min(SUGGESTION_SECONDS, GAPS_SUGGESTION_END - (suggestions_started - started))
+        suggestion_warnings = _suggest_gaps(entries, seconds) if _brave_on() else []
     except Exception as exc:
         suggestion_warnings = [f"suggestions: error:{type(exc).__name__}"]
+    suggestion_seconds = round(_clock() - suggestions_started, 1)
     counts: dict[str, int] = {}
     for e in entries:
         counts[e["outcome"]] = counts.get(e["outcome"], 0) + 1
@@ -1885,6 +1946,7 @@ def run_gaps(workdir: Path, n_domains: int, settings: Settings) -> dict:
     report = {"schema": 1, "status": "done_with_errors" if errors else "done",
               "generated_at": _now_iso(), "deadline_seconds": GAPS_DEADLINE,
               "elapsed_seconds": round(_clock() - started, 1),
+              "suggestion_seconds": suggestion_seconds,
               "licensed_only": settings.licensed_only,
               "policy": settings.policy,
               "sources": {"zotero": "on" if settings.zotero_on and not settings.licensed_only else "off",

@@ -95,7 +95,7 @@ def main_title(identity) -> str:
     return head.strip() if len(fold(head).split()) >= 2 else title
 
 
-def _phrase(identity) -> str:
+def key_phrase(identity) -> str:
     """The identity's cut phrase, or "" when it has fewer than 2 words (too
     weak a key: an empty phrase is a prefix of every title)."""
     phrase = title_phrase_cut(_decoded(identity, "title"))
@@ -118,7 +118,7 @@ def openalex_doi_request(identity) -> Request | None:
 
 
 def openalex_title_request(identity) -> Request | None:
-    if not _phrase(identity) or not fold(_decoded(identity, "surname")):
+    if not key_phrase(identity) or not fold(_decoded(identity, "surname")):
         return None
     words = _NOT_SEARCH_CHAR.sub(" ", main_title(identity)).split()[:TITLE_SEARCH_WORDS]
     return Request(OPENALEX_WORKS, {
@@ -290,7 +290,7 @@ def openalex_title_parse(identity, payload) -> list[Location]:
     identity (title route); each carries the matched record in `matched`."""
     if not isinstance(payload, dict) or not isinstance(payload.get("results"), list):
         return []
-    phrase = _phrase(identity)
+    phrase = key_phrase(identity)
     surname = fold(_decoded(identity, "surname"))
     if not phrase or not surname:
         return []
@@ -343,7 +343,7 @@ def brave_parse(identity, payload) -> list[Suggestion]:
     then cut to `SUGGESTION_TITLE_MAX`."""
     web = payload.get("web") if isinstance(payload, dict) else None
     results = web.get("results") if isinstance(web, dict) else None
-    phrase = _phrase(identity)
+    phrase = key_phrase(identity)
     if not isinstance(results, list) or not phrase:
         return []
     out, seen = [], set()

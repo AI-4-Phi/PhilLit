@@ -67,7 +67,7 @@ class FakeResponse:
             raise ValueError("no json")
         return self._payload
 
-    def iter_content(self, chunk_size=65536):
+    def _receives(self, chunk_size=65536):
         if self._chunks is not None:
             yield from self._chunks
             return
@@ -79,8 +79,30 @@ class FakeResponse:
         for i in range(0, len(body), chunk_size):
             yield body[i:i + chunk_size]
 
+    @property
+    def raw(self):
+        """urllib3's response as `_read_capped` reads it: `read1` returns
+        one receive, b"" only at the end. Restarts after `close`, so a
+        response routed to several calls serves each one whole."""
+        if getattr(self, "_raw", None) is None:
+            self._raw = FakeRaw(self._receives())
+        return self._raw
+
     def close(self):
         self.closed = True
+        self._raw = None
+
+
+class FakeRaw:
+    def __init__(self, receives):
+        self._receives = receives
+
+    def read1(self, amt=65536, decode_content=None):
+        assert decode_content is False   # the raw bytes: `_read_capped` decodes
+        for chunk in self._receives:
+            if chunk:
+                return chunk
+        return b""
 
 
 class FakeHTTP:
@@ -602,8 +624,8 @@ class TestSourceOrder:
         """The per-chunk deadline check in the metadata read, on the fake
         clock: the first chunk received after the fetch deadline ends the
         read, the API's row is `deadline` (not retried), and the other API
-        is still reported. Not a real-socket bound: a body trickling in
-        within one 64 KiB `iter_content` chunk is not cut (PL-29)."""
+        is still reported. The real-socket bound is in
+        test_acquire_fulltext_reads.py."""
         now = [0.0]
         monkeypatch.setattr(af, "_clock", lambda: now[0])
         body = b'{"locations": [' + b" " * 1000 + b"]}"
@@ -662,6 +684,75 @@ class TestSourceOrder:
         http.add(S2_URL, answers[1])
         run_json(capsys, workdir, "--doi", DOI)
         assert all(r.closed for r in answers)
+
+    def test_deadline_mid_try_stops_the_loop_and_marks_untried_apis(self, http, monkeypatch):
+        """One location downloaded and failed, the deadline passes, another
+        API's location is untried: the loop stops, only the API with an
+        untried URL says `deadline`, and the outcomes follow the rows."""
+        now = [0.0]
+        monkeypatch.setattr(af, "_clock", lambda: now[0])
+        author, pub = "https://author.example/a.pdf", "https://pub.example/p.pdf"
+        http.add(OA_URL, FakeResponse(payload=oa_payload([(author, "cc-by")])))
+        http.add(S2_URL, FakeResponse(payload={"openAccessPdf": {
+            "url": pub, "status": "GOLD", "license": "CC-BY"}}))
+
+        http.add(pub, FakeResponse(body=other_pdf()))
+        real_check = af.check_pdf
+
+        def slow_check(data, identity):
+            now[0] += 200
+            return real_check(data, identity)
+        monkeypatch.setattr(af, "check_pdf", slow_check)
+        http.add(author, FakeResponse(body=work_pdf()))
+        settings = af.Settings(licensed_only=False, policy=None, zotero_on=False, pdf_dir=None,
+                               index_budget=0)
+        rows = af.source_open_access(af.make_identity(DOI), settings, af.Deadline(100))
+        by_api = {r.source: r for r in rows}
+        assert author not in http.urls()
+        assert (by_api["openalex"].outcome, by_api["openalex"].detail) == ("not_found", ["deadline"])
+        assert by_api["s2"].outcome == "rejected"
+        assert len(by_api["s2"].detail) == 1 and by_api["s2"].detail[0].startswith(f"{pub}:identity_failed:")
+        assert all(r.hits == [] for r in rows)
+
+    @pytest.mark.parametrize("status, openalex", [(429, True), (429, False), (503, False)])
+    def test_api_get_closes_a_retried_response_before_the_retry(self, http, status, openalex):
+        first = FakeResponse(status)
+        closed_at_retry = []
+
+        def route(url, params):
+            if len(http.calls) == 1:
+                return first
+            closed_at_retry.append(first.closed)
+            return FakeResponse(payload={"ok": 1})
+        http.add(OA_URL, route)
+        assert af._api_get(OA_URL, headers={}, params={}, limiter=NoLimiter(),
+                           deadline=af.Deadline(100), openalex=openalex) == ({"ok": 1}, "ok")
+        assert closed_at_retry == [True] and len(http.calls) == 2
+
+    @pytest.mark.parametrize("s2_answer, detail", [
+        (FakeResponse(500), "http_500"), (FakeResponse(body=b"not json"), "bad_json")])
+    def test_an_unavailable_s2_row_beside_an_openalex_win(self, http, workdir, capsys, s2_answer, detail):
+        http.add(OA_URL, FakeResponse(payload=oa_payload([("https://oa.example/a.pdf", "cc-by")])))
+        http.add("https://oa.example/a.pdf", FakeResponse(body=work_pdf()))
+        http.add(S2_URL, s2_answer)
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert data["status"] == "acquired" and data["source"] == "openalex"
+        rows = {t["source"]: t for t in data["tried"]}
+        assert rows["openalex"]["outcome"] == "acquired"
+        assert rows["s2"] == {"source": "s2", "outcome": "unavailable", "detail": [detail]}
+
+    def test_an_openalex_429_with_the_budget_marker_in_a_short_body_is_exhausted(self, http):
+        http.add(OA_URL, FakeResponse(429, body=b'{"error": "Insufficient budget for this request"}'))
+        assert af._api_get(OA_URL, headers={}, params={}, limiter=NoLimiter(),
+                           deadline=af.Deadline(100), openalex=True) == (None, "budget_exhausted")
+        assert http.urls().count(OA_URL) == 1
+
+    def test_an_openalex_429_body_over_the_cap_is_not_read_for_the_marker(self, http, monkeypatch):
+        monkeypatch.setattr(af, "BUDGET_BODY_BYTES", 20)
+        http.add(OA_URL, FakeResponse(429, body=b"insufficient budget " + b"x" * 100))
+        assert af._api_get(OA_URL, headers={}, params={}, limiter=NoLimiter(),
+                           deadline=af.Deadline(100), openalex=True) == (None, "http_429")
+        assert http.urls().count(OA_URL) == 3
 
 
 # ---------------------------------------------------------------------------
@@ -1800,6 +1891,34 @@ class TestGaps:
                    for e in report["entries"])
         assert _request_files(service) == []
 
+    def test_uneven_split_sends_the_fitting_half_and_fails_the_other(self, http, workdir, capsys,
+                                                                     service, monkeypatch):
+        """Two identities too large together; one fits alone, the other
+        (a title of 400 non-ASCII characters, six bytes each once escaped)
+        never does."""
+        short, long_ = "10.1/short", "10.1/long"
+        probe = workdir / "probe"
+        probe.mkdir()
+        payload = fc.identity_payload(af.make_identity(short, TITLE, SURNAME, YEAR))
+        cap = fc.write_request(probe, fc.new_request_id("gaps"), "gaps", [payload]).stat().st_size
+        monkeypatch.setattr(fc, "MAX_REQUEST_BYTES", cap + 50)
+        service.answer({d: {"status": "found", "pdf": work_pdf(doi=d)} for d in (short, long_)})
+        (workdir / "literature-domain-1.bib").write_text(
+            bib_entry("kshort", doi=short) + bib_entry("klong", doi=long_, title="\u00e9" * 400),
+            encoding="utf-8")
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        assert json.loads(out)["counts"] == {"acquired": 1, "not_found": 1}
+        rows = {e["key"]: e for e in gap_report(workdir)["entries"]}
+        assert rows["kshort"]["outcome"] == "acquired"
+        assert _service_tried(rows["kshort"]) == {"source": "service", "outcome": "acquired"}
+        assert _service_tried(rows["klong"]) == {
+            "source": "service", "outcome": "unavailable",
+            "detail": ["request_write_failed:request_too_large"]}
+        [req] = _request_files(service)
+        sent = json.loads(req.read_text(encoding="utf-8"))["identities"]
+        assert [i["doi"] for i in sent] == [short]
+        assert req.with_name(req.name[:-len(fc.REQUEST_SUFFIX)] + fc.CLOSED_SUFFIX).exists()
+
 
 # ---------------------------------------------------------------------------
 # The repository source
@@ -1934,6 +2053,17 @@ class TestGapEntry:
             bib_entry("latex", title=self.LTITLE, author=self.LAUTHOR, year="2020"), encoding="utf-8")
         err = self._usage_error(workdir, capsys, "--pdf", self._pdf(tmp_path), "--gap-entry", "1/latex")
         assert "changed" in err and self._store_files(workdir) == before
+
+    def test_gap_entry_removed_from_its_bib_after_the_pass(self, http, workdir, capsys, monkeypatch,
+                                                          tmp_path):
+        self._gap_pass(workdir, capsys, monkeypatch)
+        before = self._store_files(workdir)
+        (workdir / "literature-domain-1.bib").write_text(
+            bib_entry("other", title="Something Else", author="Doe, Jane"), encoding="utf-8")
+        assert any(e["key"] == "latex" for e in gap_report(workdir)["entries"])
+        err = self._usage_error(workdir, capsys, "--pdf", self._pdf(tmp_path), "--gap-entry", "1/latex")
+        assert "literature-domain-1.bib has 0 entries with key latex, not one" in err
+        assert self._store_files(workdir) == before
 
     def test_gap_entry_refuses_same_work_as_row(self, http, workdir, capsys, monkeypatch, tmp_path):
         (workdir / "literature-domain-2.bib").write_text(
@@ -2792,6 +2922,18 @@ class TestSuggestions:
         [call] = brave_calls(http)
         assert call["params"]["q"].endswith("filetype:pdf")
 
+    def test_brave_is_asked_under_the_licensed_only_policy(self, http, workdir, capsys, monkeypatch):
+        monkeypatch.setenv("PHILLIT_FULLTEXT_LICENSED_ONLY", "1")
+        monkeypatch.setenv("BRAVE_API_KEY", "brave-key")
+        http.add(BRAVE, brave_ok())
+        code, data = run_json(capsys, workdir, *_full_args())
+        assert data["status"] == "not_found" and len(data["suggestions"]) == 2
+        write_gap_bib(workdir, 2)
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        assert json.loads(out)["suggested"] == 2
+        assert gap_report(workdir)["licensed_only"] is True
+        assert len(brave_calls(http)) == 3
+
     def test_no_brave_call_when_acquired_or_exists(self, http, workdir, capsys, monkeypatch):
         monkeypatch.setenv("BRAVE_API_KEY", "brave-key")
         http.add(BRAVE, brave_ok())
@@ -2933,7 +3075,7 @@ class TestSuggestions:
         write_gap_bib(workdir, 4)
 
         def slow_folder(identity, settings, deadline):
-            now[0] += 200
+            now[0] += 150   # three entries end the fetch work at 450 s
             return af.SourceResult("folder", "not_found")
         monkeypatch.setitem(af._SOURCES, "folder", slow_folder)
         code, out = run(capsys, workdir, "--gaps", "--domains", "1")
@@ -2941,6 +3083,55 @@ class TestSuggestions:
         assert [e["outcome"] for e in entries] == ["not_found"] * 3 + ["not_attempted"]
         assert all(len(e["suggestions"]) == 2 for e in entries)
         assert json.loads(out)["suggested"] == 4
+
+    def test_gaps_suggestion_budget_is_what_is_left_before_the_end_mark(self, http, workdir, capsys,
+                                                                       monkeypatch):
+        monkeypatch.setenv("BRAVE_API_KEY", "brave-key")
+        now = [0.0]
+        monkeypatch.setattr(af, "_clock", lambda: now[0])
+
+        def answer(url, params):
+            now[0] += 2
+            return brave_ok()
+        http.add(BRAVE, answer)
+        left = []
+        real = af.suggest
+
+        def spy(identity, deadline):
+            left.append(deadline.left())
+            return real(identity, deadline)
+        monkeypatch.setattr(af, "suggest", spy)
+        write_gap_bib(workdir, 4)
+
+        def slow_folder(identity, settings, deadline):
+            now[0] += 500
+            return af.SourceResult("folder", "not_found")
+        monkeypatch.setitem(af._SOURCES, "folder", slow_folder)
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        assert left[0] == pytest.approx(af.GAPS_SUGGESTION_END - 500, abs=0.01) == pytest.approx(30, abs=0.01)
+        report = gap_report(workdir)
+        assert len(brave_calls(http)) == 4
+        assert report["suggestion_seconds"] == 8.0
+        assert report["elapsed_seconds"] == 508.0
+
+    def test_gaps_no_brave_call_once_the_fetch_work_passes_the_end_mark(self, http, workdir, capsys,
+                                                                       monkeypatch):
+        monkeypatch.setenv("BRAVE_API_KEY", "brave-key")
+        http.add(BRAVE, brave_ok())
+        now = [0.0]
+        monkeypatch.setattr(af, "_clock", lambda: now[0])
+        write_gap_bib(workdir, 3)
+
+        def slow_folder(identity, settings, deadline):
+            now[0] += af.GAPS_SUGGESTION_END + 1
+            return af.SourceResult("folder", "not_found")
+        monkeypatch.setitem(af._SOURCES, "folder", slow_folder)
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        summary = json.loads(out)
+        assert brave_calls(http) == []
+        assert summary["suggested"] == 0
+        assert summary["warnings"] == ["suggestions: 3 not asked (cap or time), 0 failed"]
+        assert gap_report(workdir)["suggestion_seconds"] == 0.0
 
     def test_two_not_attempted_rows_of_one_work_ask_once(self, http, workdir, capsys, monkeypatch):
         monkeypatch.setenv("BRAVE_API_KEY", "brave-key")
@@ -3094,12 +3285,33 @@ class TestSuggestions:
         assert all("suggestions" not in e for e in gap_report(workdir)["entries"])
         assert len(brave_calls(http)) == 2   # one attempt per entry, no retry
 
+    def test_a_crashing_row_counts_as_failed_and_the_rest_are_asked(self, http, workdir, capsys,
+                                                                    monkeypatch):
+        monkeypatch.setenv("BRAVE_API_KEY", "brave-key")
+        http.add(BRAVE, brave_ok())
+        real = af.fs.brave_request
+
+        def boom_on_first(identity):
+            if identity["doi"] == "10.1/w0":
+                raise RuntimeError("kaput")
+            return real(identity)
+        monkeypatch.setattr(af.fs, "brave_request", boom_on_first)
+        write_gap_bib(workdir, 2)
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        assert code == 0
+        summary = json.loads(out)
+        assert summary["counts"] == {"not_found": 2}
+        assert summary["warnings"] == ["suggestions: 0 not asked (cap or time), 1 failed"]
+        assert summary["suggested"] == 1
+        entries = gap_report(workdir)["entries"]
+        assert "suggestions" not in entries[0] and len(entries[1]["suggestions"]) == 2
+
     def test_a_crashing_post_pass_is_a_warning(self, http, workdir, capsys, monkeypatch):
         monkeypatch.setenv("BRAVE_API_KEY", "brave-key")
 
-        def boom(identity):
+        def boom(entries, seconds):
             raise RuntimeError("kaput")
-        monkeypatch.setattr(af.fs, "brave_request", boom)
+        monkeypatch.setattr(af, "_suggest_gaps", boom)
         write_gap_bib(workdir, 1)
         code, out = run(capsys, workdir, "--gaps", "--domains", "1")
         assert code == 0
