@@ -12,7 +12,10 @@ The dataclasses are frozen shallowly: a nested dict (`Request.params`,
 own copy of `matched`.
 Residual, accepted: a different work by the same first author
 whose title extends the identity's phrase ("Causal Abstraction and Its
-Critics") still passes the title-route match (measured 0 of 50).
+Critics") still passes the title-route match (measured 0 of 50). `order`
+tries it last: after every matched record whose year agrees and whose
+title is the identity's own, refusing it would lose right hits (a
+stricter match lost 6 of 50).
 """
 from __future__ import annotations
 
@@ -36,7 +39,8 @@ _S2_PUBLISHER_STATUSES = ("GOLD", "HYBRID", "BRONZE")
 _RANK = {"publisher_free": 2, "oa_repository": 3, "author": 4}
 
 TITLE_SEARCH_WORDS = 8
-TITLE_SELECT = "display_name,type,authorships,locations,best_oa_location,doi,id"
+TITLE_SELECT = "display_name,type,authorships,locations,best_oa_location,doi,id,publication_year"
+YEAR_SLACK = 1   # a matched record's year agrees within this (online-first, reprint dates)
 SKIPPED_WORK_TYPES = ("erratum", "paratext", "retraction")
 
 MAX_SUGGESTIONS = 3
@@ -60,7 +64,7 @@ class Location:
     kind: str                     # "cc" | "oa_repository" | "author" | "publisher_free"
     source: str                   # "openalex" | "s2"
     at_publisher: bool
-    matched: dict | None = None   # title route: {"openalex_id", "title", "doi"} of the matched record
+    matched: dict | None = None   # title route: the matched record, see `openalex_title_parse`
 
     def __post_init__(self) -> None:
         if self.kind not in KINDS:
@@ -194,10 +198,22 @@ def _rank(loc: Location) -> int:
     return _RANK.get(loc.kind, 5)
 
 
+def _preference(loc: Location) -> tuple[int, int]:
+    """A title-route location's place before its rule-15 rank: a matched
+    record whose year agrees, then one whose year is unknown, then one
+    whose year differs; within each, the identity's own title first. A
+    location without `matched` (the DOI route) is (0, 0)."""
+    m = loc.matched if isinstance(loc.matched, dict) else {}
+    agrees = m.get("year_agrees", True)
+    return (0 if agrees is True else 1 if agrees is None else 2,
+            0 if m.get("exact_title", True) else 1)
+
+
 def order(locs: list[Location]) -> list[Location]:
-    """Rule 15 order, stable; a URL seen twice keeps its best-ranked copy."""
+    """Rule 15 order after the title-route preference (`_preference`),
+    stable; a URL seen twice keeps its best-placed copy."""
     out, seen = [], set()
-    for loc in sorted(locs, key=_rank):
+    for loc in sorted(locs, key=lambda loc: (_preference(loc), _rank(loc))):
         if loc.url not in seen:
             seen.add(loc.url)
             out.append(loc)
@@ -285,15 +301,33 @@ def _matches(phrase: str, surname: str, record: dict) -> bool:
                for n in _first_author_names(record.get("authorships")))
 
 
+def _year(value) -> int | None:
+    """The leading 4-digit year of a bib year ("1984a", "1984--1985") or an
+    OpenAlex `publication_year`; None for anything else."""
+    if isinstance(value, bool):
+        return None
+    if isinstance(value, int):
+        return value if 1000 <= value <= 9999 else None
+    m = re.match(r"\s*(\d{4})(?!\d)", value) if isinstance(value, str) else None
+    return int(m.group(1)) if m else None
+
+
 def openalex_title_parse(identity, payload) -> list[Location]:
     """The locations of every record in `{"results": [...]}` that matches the
-    identity (title route); each carries the matched record in `matched`."""
+    identity (title route). Each carries the matched record in `matched`:
+    `openalex_id`, `title`, `doi`, `year` (its `publication_year` or None),
+    `year_agrees` (within YEAR_SLACK of the identity's year; None when
+    either year is unknown) and `exact_title` (its title, folded, is the
+    identity's whole or main title rather than an extension of it), which
+    `order` uses and an operator can read in the sidecar."""
     if not isinstance(payload, dict) or not isinstance(payload.get("results"), list):
         return []
     phrase = key_phrase(identity)
     surname = match_fold(_decoded(identity, "surname"))
     if not phrase or not surname:
         return []
+    own_titles = {match_fold(_decoded(identity, "title")), match_fold(main_title(identity))}
+    id_year = _year(identity.get("year") if isinstance(identity, dict) else None)
     out = []
     for record in payload["results"]:
         if not isinstance(record, dict):
@@ -303,9 +337,14 @@ def openalex_title_parse(identity, payload) -> list[Location]:
             continue
         if not _matches(phrase, surname, record):
             continue
+        year = _year(record.get("publication_year"))
         matched = {"openalex_id": _str_or_none(record.get("id")),
                    "title": record["display_name"],
-                   "doi": _str_or_none(record.get("doi"))}
+                   "doi": _str_or_none(record.get("doi")),
+                   "year": year,
+                   "year_agrees": None if year is None or id_year is None
+                   else abs(year - id_year) <= YEAR_SLACK,
+                   "exact_title": match_fold(record["display_name"]) in own_titles}
         out += _openalex_locations(record, matched)
     return out
 

@@ -839,7 +839,8 @@ class TestTitleRoute:
         rec = ft.validate_record(workdir / ft.STORE_REL, data["slug"])
         assert rec.source == "openalex" and rec.license == "cc-by"
         assert rec.source_ref == {"url": url, "matched": {
-            "openalex_id": "https://openalex.org/W1", "title": TITLE, "doi": None}}
+            "openalex_id": "https://openalex.org/W1", "title": TITLE, "doi": None,
+            "year": None, "year_agrees": None, "exact_title": True}}
 
     def test_title_route_skips_a_record_of_another_work(self, http, workdir, capsys):
         write_env(KEY_ENV)

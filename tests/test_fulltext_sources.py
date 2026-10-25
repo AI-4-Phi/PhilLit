@@ -81,7 +81,8 @@ def test_title_request_strips_filter_syntax():
     assert r.params["filter"] == "title.search:Rawls Justice Fairness"
     assert r.params["per-page"] == "10"
     assert set(r.params["select"].split(",")) == {
-        "display_name", "type", "authorships", "locations", "best_oa_location", "doi", "id"}
+        "display_name", "type", "authorships", "locations", "best_oa_location", "doi", "id",
+        "publication_year"}
     r = fs.openalex_title_request(ident(
         None, "Don't Look-Up, (the) Moral Status of Non-Human Beings in Twenty Words", "Rawls"))
     assert r.params["filter"] == "title.search:Don't Look-Up the Moral Status of Non-Human Beings"
@@ -251,11 +252,14 @@ def test_title_parse_records_matched():
     (loc,) = fs.openalex_title_parse(GEIGER, {"results": [rec]})
     assert loc.matched == {"openalex_id": "https://openalex.org/W4385",
                            "title": GEIGER_TITLE,
-                           "doi": "https://doi.org/10.48550/arxiv.2301.04709"}
+                           "doi": "https://doi.org/10.48550/arxiv.2301.04709",
+                           "year": None, "year_agrees": None, "exact_title": True}
     rec = work(GEIGER_TITLE, [first("Atticus Geiger")], [oa_loc("https://x.org/a.pdf")],
                wid=5, doi=["x"])
+    rec["publication_year"] = ["2023"]   # malformed: no year
     (loc,) = fs.openalex_title_parse(GEIGER, {"results": [rec]})
-    assert loc.matched == {"openalex_id": None, "title": GEIGER_TITLE, "doi": None}
+    assert loc.matched == {"openalex_id": None, "title": GEIGER_TITLE, "doi": None,
+                           "year": None, "year_agrees": None, "exact_title": True}
 
 
 def test_title_parse_gives_each_location_its_own_matched():
@@ -663,3 +667,53 @@ def test_brave_parse_matches_either_apostrophe():
 
 def test_key_phrase_drops_apostrophes_as_identity_ok_does():
     assert fs.key_phrase(GOODHART) == "categorizing variants of goodharts law"
+
+
+# ------------------------------------------------------- title-route order
+
+def _dated(title, year, url):
+    rec = work(title, [first("Atticus Geiger")], [oa_loc(url)])
+    rec["publication_year"] = year
+    return rec
+
+
+def test_title_parse_records_year_and_exact_title():
+    recs = [_dated("Causal Abstraction", 2023, "https://x.org/main.pdf"),
+            _dated("Causal Abstraction and Its Critics", 2019, "https://x.org/ext.pdf"),
+            _dated(True, 2023, "https://x.org/bad.pdf")]
+    locs = fs.openalex_title_parse(GEIGER, {"results": recs})
+    by_url = {l.url: l.matched for l in locs}
+    main = by_url["https://x.org/main.pdf"]
+    assert (main["year"], main["year_agrees"], main["exact_title"]) == (2023, True, True)
+    assert (by_url["https://x.org/ext.pdf"]["year_agrees"], by_url["https://x.org/ext.pdf"]["exact_title"]) == \
+        (False, False)
+    assert "https://x.org/bad.pdf" not in by_url   # a non-string title is no match
+
+
+@pytest.mark.parametrize("bib_year, rec_year, agrees", [
+    ("2023", 2024, True), ("2023", 2022, True), ("2023", 2025, False), ("2023a", 2023, True),
+    ("2022--2023", 2022, True), ("", 2023, None), ("forthcoming", 2023, None), ("2023", None, None)])
+def test_year_agreement_allows_one_year(bib_year, rec_year, agrees):
+    i = ident(None, GEIGER_TITLE, "Geiger", bib_year)
+    (loc,) = fs.openalex_title_parse(i, {"results": [_dated(GEIGER_TITLE, rec_year, "https://x.org/a.pdf")]})
+    assert loc.matched["year_agrees"] is agrees
+
+
+def test_order_tries_year_agreeing_exact_matches_before_rule_15():
+    """A year-mismatched extension at the publisher still comes after a
+    year-agreeing author copy of the identity's own title."""
+    ext = _dated("Causal Abstraction and Its Critics", 2019, "https://pub.org/ext.pdf")
+    ext["locations"][0]["source"] = {"type": "journal"}
+    ext["locations"][0]["license"] = "cc-by"
+    own = _dated(GEIGER_TITLE, 2023, "https://author.org/own.pdf")
+    own["locations"][0]["source"] = {"type": "repository"}
+    unknown = _dated(GEIGER_TITLE, None, "https://repo.org/unknown.pdf")
+    locs = fs.openalex_title_parse(GEIGER, {"results": [ext, unknown, own]})
+    assert [l.url for l in fs.order(locs)] == [
+        "https://author.org/own.pdf", "https://repo.org/unknown.pdf", "https://pub.org/ext.pdf"]
+
+
+def test_order_without_matched_is_rule_15_alone():
+    a = fs.Location("https://a.org/a.pdf", None, "author", "openalex", False)
+    p = fs.Location("https://p.org/p.pdf", "cc-by", "cc", "s2", True)
+    assert fs.order([a, p]) == [p, a]
