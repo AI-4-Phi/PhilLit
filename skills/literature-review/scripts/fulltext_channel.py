@@ -19,6 +19,10 @@ FILES, all in the request directory, named `<request_id>` plus a suffix:
   `mode` is `gaps` or `single`; `key` is `fulltext.canonical_identity`; the
   other four fields are the identity as stored (`null` kept). The file is
   ASCII (`ensure_ascii`).
+  A request may carry no-DOI identities (`doi` null, title, surname and
+  year as stored); a worker without the title route answers such a key
+  `none` with detail `no_doi`. The engine splits a batch whose file would
+  exceed `MAX_REQUEST_BYTES` in half, down to one identity.
 - `<id>.response.json` (worker writes, rewritten atomically after EACH
   outcome): `{"schema": 1, "request_id", "complete": bool, "outcomes":
   {key: {"status", "stem", "detail"}}}`. A key absent from `outcomes` has no

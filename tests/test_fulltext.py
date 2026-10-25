@@ -140,9 +140,19 @@ class TestIdentityDoi:
         assert ft.identity_ok(pages, DOI_WORK) == (False, "no_match")
 
     def test_title_fallback_phrase_and_surname(self):
-        pages = [page("Justified harm and the ethics of", "defensive action in war, and more"),
-                 page("John Gardner", *body())]
+        pages = [page("Justified harm and the ethics of", "defensive action in war, and more",
+                      "John Gardner", *body())]
         assert ft.identity_ok(pages, DOI_WORK) == (True, "title")
+
+    def test_title_fallback_needs_the_surname_on_the_phrases_page(self):
+        pages = [page(TITLE, *body()), page("John Gardner", *body())]
+        assert ft.identity_ok(pages, DOI_WORK) == (False, "no_match")
+
+    def test_title_fallback_phrase_must_start_near_the_top_of_a_page(self):
+        """A CV or a citing paper names the work deep in a page."""
+        cv = [page("John Gardner", "Curriculum Vitae", *[FILLER] * 12, f"{TITLE}. Journal, 2019.")]
+        assert ft.fold(cv[0]).find(ft.title_phrase(TITLE)) >= 600
+        assert ft.identity_ok(cv, DOI_WORK) == (False, "no_match")
 
     def test_title_fallback_needs_the_surname(self):
         pages = [page(TITLE, *body())]
@@ -237,6 +247,110 @@ class TestIdentityRuleA:
 
     def test_empty_title_rejects(self):
         assert ft.identity_ok([page("Williams")], dict(NODOI, title="")) == (False, "empty_identity")
+
+    def test_a_one_word_phrase_is_short_title(self):
+        """"Data" plus the surname at a page top matched unrelated PDFs."""
+        data = dict(NODOI, title="Data", surname="Floridi")
+        assert ft.identity_ok([page("Data", "Luciano Floridi", *body())], data) == (False, "short_title")
+        assert ft.identity_ok([page("Data: A Study", "Floridi")], dict(data, title="Data: A Study")) == \
+            (True, "title_head")   # "data a study": the cut needs 2 words, so the whole title is used
+
+
+class TestIdentityMatching:
+    """The shapes the 2026-10-24 run rejected fail-closed (PL-28)."""
+
+    WIRE = {"doi": None, "title": "Categorizing Wireheading in Partially Embedded Agents",
+            "surname": "Majha", "year": "2019"}
+
+    def test_a_digit_glued_to_the_surname_is_ignored(self):
+        pages = [page("Categorizing Wireheading in Partially Embedded Agents", "Arushi Majha1, Sayan Sarkar2")]
+        assert ft.identity_ok(pages, self.WIRE) == (True, "title_head")
+
+    def test_a_longer_name_is_not_the_surname(self):
+        pages = [page("Categorizing Wireheading in Partially Embedded Agents", "Arushi Majhal")]
+        assert ft.identity_ok(pages, self.WIRE) == (False, "no_match")
+
+    def test_a_glued_year_is_not_a_surname(self):
+        """A citing page names the work near its top and cites "Majha2019":
+        only 1-2 digits are an affiliation mark."""
+        pages = [page("Categorizing Wireheading in Partially Embedded Agents", "as shown by Majha2019")]
+        assert ft.identity_ok(pages, self.WIRE) == (False, "no_match")
+
+    def test_lost_spaces_match_a_long_phrase(self):
+        robust = {"doi": None, "title": "Robust Optimization for Mitigating Reward Hacking", "surname": "Liu"}
+        pages = [page("RobustOptimization forMitigatingReward Hacking", "Yi Liu")]
+        assert ft.identity_ok(pages, robust) == (True, "title_head")
+
+    def test_lost_spaces_need_a_phrase_of_20_letters(self):
+        short = {"doi": None, "title": "Moral Luck Today", "surname": "Williams"}   # 14 letters
+        assert ft.identity_ok([page("MoralLuckToday", "Williams")], short) == (False, "no_match")
+
+    def test_lost_spaces_keep_the_head_window(self):
+        robust = {"doi": None, "title": "Robust Optimization for Mitigating Reward Hacking", "surname": "Liu"}
+        pages = [page("Yi Liu", *[FILLER] * 12, "RobustOptimization forMitigatingReward Hacking")]
+        assert ft.identity_ok(pages, robust) == (False, "no_match")
+
+    def test_lost_spaces_count_the_head_window_in_the_spaced_page(self):
+        """Squashing must not pull a late title into the window: here the
+        phrase starts at offset 607 of the page, 405 once squashed."""
+        robust = {"doi": None, "title": "Robust Optimization for Mitigating Reward Hacking", "surname": "Liu"}
+        pages = [page("Liu " + "to " * 201 + "Robust Optimization for Mitigating Reward Hacking")]
+        assert ft.fold(pages[0]).find("robust optimization") == 607
+        assert ft.identity_ok(pages, robust) == (False, "no_match")
+
+    @pytest.mark.parametrize("title, wrong_head", [
+        ("O\u2019Neill: A Reply to My Critics on Markets", "o neill rejects"),
+        ("It\u2019s: A Study of Moral Luck", "it seems that")])
+    def test_reading_an_apostrophe_as_a_space_never_cuts_the_phrase(self, title, wrong_head):
+        """The subtitle cut is decided on the dropped form: a one-word head
+        such as "O'Neill" is no phrase of its own."""
+        work = {"doi": None, "title": title, "surname": "O'Neill"}
+        assert ft.identity_ok([page(wrong_head + " the market", "John O Neill")], work) == \
+            (False, "no_match")
+        assert ft._forms(title, ft.title_phrase_cut)[0].count(" ") >= 2
+
+    def test_reading_an_apostrophe_as_a_space_keeps_six_words(self):
+        assert ft._forms("O'Neill's and Kant's Views of Moral Luck", ft.title_phrase) == [
+            "oneills and kants views of moral", "o neill s and kant s views of moral"]
+
+    def test_a_subdivided_doi_prefix_is_a_doi(self):
+        work = {"doi": "10.1000.10/abc", "title": "A Study of Moral Luck Today", "surname": "Williams"}
+        assert ft.identity_ok([page("doi: 10.1000.10/abc", *body())], work) == (True, "doi")
+
+    @pytest.mark.parametrize("placeholder", ["none", "forthcoming", "10.1234", "n/a"])
+    def test_a_doi_placeholder_is_no_doi(self, placeholder):
+        """Else "none" on any page would be a DOI match."""
+        work = {"doi": placeholder, "title": "A Study of Moral Luck Today", "surname": "Williams"}
+        assert ft.identity_ok([page("Other paper", "none of this", "forthcoming 10.1234 n/a")], work) == \
+            (False, "no_match")
+
+    def test_an_apostrophe_printed_as_a_space_still_matches(self):
+        work = {"doi": None, "title": "Categorizing Variants of Goodhart\u2019s Law", "surname": "O'Neill"}
+        pages = [page("Categorizing Variants of Goodhart s Law", "John O Neill")]
+        assert ft.identity_ok(pages, work) == (True, "title_head")
+
+    @pytest.mark.parametrize("bib, pdf", [("Goodhart's Law", "Goodhart\u2019s Law"),
+                                          ("Goodhart\u2019s Law", "Goodhart's Law"),
+                                          ("Goodhart's Law", "Goodhart's Law")])
+    def test_straight_and_curly_apostrophes_match(self, bib, pdf):
+        work = {"doi": None, "title": f"Categorizing Variants of {bib}", "surname": "Manheim"}
+        pages = [page(f"Categorizing Variants of {pdf}", "David Manheim")]
+        assert ft.identity_ok(pages, work) == (True, "title_head")
+
+    def test_an_apostrophe_in_the_surname_matches_either_form(self):
+        work = {"doi": None, "title": "Socialism, Associations and the Market", "surname": "O'Neill"}
+        pages = [page("Socialism, associations and the market", "John O\u2019Neill")]
+        assert ft.identity_ok(pages, work) == (True, "title_head")
+
+    def test_identity_keys_keep_the_plain_fold(self):
+        """Stored file names depend on `fold`; only matching drops apostrophes."""
+        ident = {"doi": None, "title": "Categorizing Variants of Goodhart\u2019s Law", "surname": "O'Neill",
+                 "year": "2018"}
+        assert ft.fold("Goodhart's Law") == "goodhart s law"
+        assert ft.match_fold("Goodhart's Law") == "goodharts law"
+        # The values the code before PL-28 gives (fulltext.py at 7c2144d).
+        assert ft.canonical_identity(ident) == "t:categorizing variants of goodharts law|o neill|2018"
+        assert ft.slug_for(ident) == "t-o_neill-2018-categorizing-variants-f501e559b4d2"
 
 
 # ---------------------------------------------------------------------------

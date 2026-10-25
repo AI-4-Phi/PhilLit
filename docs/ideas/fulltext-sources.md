@@ -48,13 +48,12 @@ delivered reviews. Every candidate PDF was downloaded and passed through
   set A. A partial passes the identity bar, so FULLTEXT would be stamped on a
   fragment.
 
-## Proposed shape
+## Shape
 
-One owner for source logic: a stdlib-only engine module beside `fulltext.py`
-(working name `fulltext_sources.py`) with, per source, a pure
+One owner for source logic: a stdlib-only engine module beside `fulltext.py`,
+`fulltext_sources.py`, with, per source, a pure
 `request(identity) -> Request | None` and `parse(identity, payload) ->
-[Location]`, plus the licence-kind classification and the rule-15 order that
-today live in phillit-service's `locations.py`. `acquire_fulltext.py` makes
+[Location]`, plus the licence-kind classification and the rule-15 order. `acquire_fulltext.py` makes
 the calls with `requests`; the service imports the module through
 `engine_api` and makes them with its own client, budgets and SSRF guard. The
 prototype is `sources.py` in the measurement directory.

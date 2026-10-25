@@ -5,6 +5,7 @@ Usage:
   acquire_fulltext.py <workdir> --doi D [--title T --author A --year Y]
   acquire_fulltext.py <workdir> --title T --author A --year Y
   acquire_fulltext.py <workdir> (--doi D | --title T --author A --year Y) --pdf PATH
+  acquire_fulltext.py <workdir> --pdf PATH --gap-entry DOMAIN/KEY
   acquire_fulltext.py <workdir> --gaps --domains N
 
 Rulings: `docs/ideas/fulltext-evidence-tier.md` ("Decided").
@@ -41,12 +42,24 @@ SOURCES, in the ruled order, the first passing PDF wins:
    pages 1-3 and the folded heads of pages 1-5 per file, refreshed
    incrementally within a time budget. The index is a superset filter; the
    identity check runs on each candidate file.
-3. OpenAlex (`best_oa_location`, then the other locations with a `pdf_url`).
-4. Semantic Scholar (`openAccessPdf`).
-5. The service channel (`PHILLIT_FULLTEXT_REQUEST_DIR`; it replaces 3 and 4,
-   which then report `disabled` with detail `service`). One request file per
-   batch of at most `fulltext_channel.MAX_PER_REQUEST` DOI identities, never
-   a URL and never a no-DOI identity (`no_doi`); the grammar is
+3. Open access, one step: OpenAlex, then Semantic Scholar, are asked (the
+   requests and parsing are `fulltext_sources`'), the locations the policy
+   refuses are dropped (`_licensed` on the raw licence value), and the rest
+   are tried in rule-15 order (`fulltext_sources.order`: a publisher copy
+   before a self-archived one), stopping at the first that passes. Each API
+   keeps its own `tried` row (`openalex`, `s2`), computed from its own
+   lookup and locations; a URL both report feeds both rows, and the winning
+   location's API is the hit's `source`. A work without a DOI gets the
+   OpenAlex title route (title and first-author surname, the matched
+   record's locations; its `source_ref` is `{url, matched}`), only with a
+   usable `OPENALEX_API_KEY` (a title search costs credits an unkeyed run
+   shares with the researchers' searches); Semantic Scholar needs a DOI.
+4. The service channel (`PHILLIT_FULLTEXT_REQUEST_DIR`; it replaces 3,
+   whose rows then report `disabled` with detail `service`). One request file per
+   batch of at most `fulltext_channel.MAX_PER_REQUEST` identities, never
+   a URL; a no-DOI identity is sent too (a worker without the title route
+   answers `none`, detail `no_doi`), and a request too large is written as
+   two halves, down to one identity (`request_too_large` for that one); the grammar is
    `fulltext_channel`'s. A worker copies each found record into the store
    under this identity's slug and answers; the engine waits on all its
    requests together until `SERVICE_WAIT_MARGIN` seconds plus
@@ -76,8 +89,8 @@ SOURCES, in the ruled order, the first passing PDF wins:
    A service-copied record found on a later acquisition run (`exists`) is
    re-checked against the policy then (a refused one is removed:
    `unlicensed_removed`).
-OpenAlex and Semantic Scholar need a DOI. Several passing PDFs within the
-winning source: the first is kept and the rest are reported
+Several passing PDFs within the winning local source (Zotero, the
+folder): the first is kept and the rest are reported
 (`multiple_candidates`); every candidate of that source is checked, up to
 the folder's 20-candidate limit.
 
@@ -105,31 +118,80 @@ variables for one run. Every sidecar records `source`, `source_ref` and
 under the policy (the service builds uploads on it) and never consults the
 service channel. The service sets a third variable,
 `PHILLIT_FULLTEXT_REQUEST_DIR`, which turns the service channel on (source
-5); a location, not a policy, it is read after `.env` loads like
+4); a location, not a policy, it is read after `.env` loads like
 `PHILLIT_PDF_DIR`. The worker creates that directory
 (`intermediate_files/fulltext_requests/`) before the review starts; the
 engine never does, and a missing directory means no worker
 (`request_dir_missing`).
 
 DOWNLOADS. http(s) only, re-checked on every redirect hop (at most 5,
-followed by hand); 30 s per download; a 60 MB cap enforced while streaming;
-the body must start `%PDF-`; only the User-Agent is sent (no API key ever
-reaches a PDF host). Local files (Zotero, folder, `--pdf`): a 200 MB cap.
+followed by hand); a 30 s deadline per download; a 60 MB cap enforced
+while streaming; the body must start `%PDF-`; only the User-Agent is sent
+(no API key ever reaches a PDF host). Local files (Zotero, folder,
+`--pdf`): a 200 MB cap. A metadata answer (OpenAlex, Semantic Scholar,
+Brave) is read streaming within `MAX_API_BYTES` (5 MB); a larger one is
+`unavailable`, detail `too_large` (for Brave, the failed call
+`too_large`). Every body is read per receive (`_read_capped`) with its
+deadline checked whenever bytes arrive: bytes received after the end
+make a download `timeout`, an OpenAlex or Semantic Scholar row
+`deadline` (for Brave, the failed call `timeout`). Each socket operation
+waits at most the request's timeout, the time left when it started
+(at most 30 s), so a body read ends within its deadline plus that
+timeout, however slowly the body trickles in. What the deadline does not
+reach (a status line, headers or chunk framing that trickle in, DNS, a
+proxy, the local Zotero calls, PDF text extraction) is bounded by the
+watchdog (HARD LIMIT). Only gzip and deflate are asked for
+and decoded, within the same caps (`bad_encoding` for any other or a
+corrupt stream). A malformed `Content-Length` (not 1-20 ASCII digits) is
+ignored, and the streaming cap still applies.
+
+SUGGESTIONS. A work the sources and the service left `not_found` or
+`rejected` (or, in `--gaps`, `not_attempted`) gets one Brave web search when
+`BRAVE_API_KEY` is set, under every policy (`suggest`; the query and the
+filtering are `fulltext_sources.brave_request`/`brave_parse`, which may
+decline an identity without a 2-word main title or a surname: not asked).
+Its up to 3 links are for the user to check and hand over (`--pdf`):
+nothing is ever downloaded or stored from a suggestion, and the Brave key
+goes to Brave only. Each call is one HTTP attempt (a 429 or 5xx is a failed
+call, never retried); its budget is a `Deadline` started after the fetch
+work, so it never takes time from a fetch; the limiter wait and the
+call's timeout are clamped to it, and the body read checks it per
+received chunk (no call starts with less than `SUGGESTION_MIN_SECONDS`
+left after the limiter's spacing). Residual: the limiter's real wait can
+exceed its spacing when other processes queue on it (it caps a queue at
+10 spacings, 15 s).
+Timing of `--gaps`: about 420 s of fetch work, then at most 60 s of
+suggestions, which stop starting reads `GAPS_SUGGESTION_END` (530 s) into
+the pass; a body read ends within one socket timeout of its deadline
+(see DOWNLOADS).
+
+HARD LIMIT. Whatever blocks, the process ends `HARD_LIMIT_SECONDS` (570 s)
+after `main()` starts (interpreter and `uv` launch come before, a few
+seconds with a built venv), below the 600 s Bash ceiling: it prints one line
+`{"error": "hard_limit: ..."}` and exits 1 (`_Watchdog`). PDFs already
+stored are kept; a `--gaps` run writes no report.
 
 OUTCOMES. Single-work mode prints one JSON object `{status, slug, source,
 tried}`, within a 420 s deadline (`SINGLE_DEADLINE`, the Bash ceiling is
-600 s); `status` is `acquired`, `exists` (a valid record for this identity
-is already stored), `not_found` (no PDF was obtained), `rejected` (a PDF
-was obtained and none passed extraction and the identity check) or
+600 s), plus, for a `not_found` or `rejected` work when Brave is asked
+(never with `--pdf`), `suggestions: [{url, host, title}]` (empty when Brave
+found none) or `suggestions_error: <reason>` for a failed call, within
+another `SINGLE_SUGGESTION_SECONDS` (20 s); `status` is `acquired`,
+`exists` (a valid record for this identity is already stored),
+`not_found` (no PDF was obtained), `rejected` (a PDF was obtained and
+none passed extraction and the identity check) or
 `refused` (`slug_collision`: a sidecar under the stem names another
 identity, and nothing is overwritten; `path_too_long`: the store path
 would exceed the Windows limit; `unlicensed_remove_failed:<error>`: a
 stored service copy the policy refuses could not be removed, and no
 source runs). `tried` lists `{source, outcome[, detail]}` in order;
 source outcomes are `disabled`, `unavailable`, `not_found`, `rejected`,
-`acquired`, plus `no_doi` for the OA sources and the service,
-`unlicensed` for the OA sources, the repository and the service, and
-`deadline` for a source the deadline cut.
+`acquired`, plus `no_doi` for the OA sources and the service (OpenAlex's
+detail: `no_key` without an OpenAlex key, `short_title` when the title's
+cut phrase has fewer than 2 words (a missing title included),
+`no_surname`), `unlicensed` for the OA
+sources, the repository and the service, and `deadline` for a source the
+deadline cut.
 Service details: `no_outcome` (a complete response without this key),
 `stem_mismatch` (added to the outcome of checking the record at this
 slug), `copied_after_response:<outcome>` (a copy found at this slug
@@ -149,19 +211,43 @@ invalid stored record is reported as `{source: "store", outcome:
 slug, `invalid_removed:<reason>` when none is left: a service copy that
 overwrote it was removed); a stored service copy the
 policy refuses as `{source: "store", outcome: "unlicensed_removed"}`. Exit
-0 for every status; 1 for a crash, with one JSON object `{"error": ...}`;
-2 for a usage error.
+0 for every status; 1 for a crash or the hard limit, with one JSON object
+`{"error": ...}`; 2 for a usage error.
 
 `--gaps` tries every domain-bib entry with no `abstract` and either a DOI,
-or (the repository, Zotero or the folder enabled) a title, author and
-year, within a 420 s pass deadline (the Bash ceiling is 600 s): store and
-repository (and Zotero and the folder where enabled; OpenAlex and Semantic
-Scholar while the service channel is off) per entry, each entry decided or
+or (the repository, Zotero, the folder, the service channel, an OpenAlex
+key or a Brave key enabled) a title, author and year, within a 420 s pass
+deadline (the Bash ceiling is 600 s): store and repository (and Zotero and
+the folder where enabled; OpenAlex and Semantic Scholar while the service
+channel is off) per entry, each entry decided or
 found there stored at once, then one service request for the entries still
 open, then a wait bounded by the pass deadline. Entries not reached are
 `not_attempted`; an entry whose work an earlier entry already tried is
-`same_work_as` that entry and takes its final outcome. It writes the run
-report and prints a one-line JSON summary with counts per outcome.
+`same_work_as` that entry and takes its final outcome. Each report entry
+carries the stored identity (`doi`, `title`, `surname`, `year`, raw).
+Then, with a Brave key, every `not_found`, `rejected` or `not_attempted`
+entry gets `suggestions` (see SUGGESTIONS), once per work: a `same_work_as`
+row never does, so only the first row carries them. They have their own
+budget after the fetch work: at most `MAX_SUGGESTION_QUERIES` (40) HTTP
+attempts within `SUGGESTION_SECONDS` (60), ending by
+`GAPS_SUGGESTION_END` (see SUGGESTIONS). An entry the cap or
+the time does not reach, or whose call failed, carries no `suggestions`
+field; both are counted in one `warnings` line, `suggestions: N not asked
+(cap or time), M failed`, when either is non-zero. It writes the run
+report and prints a one-line JSON summary with counts per outcome and
+`suggested`, the number of entries with a non-empty `suggestions` list.
+
+`--gap-entry DOMAIN/KEY` (with `--pdf`; no `--doi/--title/--author/--year`,
+`--gaps` or `--domains`) hands a PDF over for a gap entry under exactly that
+entry's identity: it is read from the run report's row (retyping raw bib
+values breaks LaTeX: `M{\\"u}ller` loses its backslash in double quotes, `$`
+expands), and the entry is re-read from the current domain bib, whose
+identity (`entry_identity_for_gaps`, the one builder `--gaps` uses, blind to
+which sources are on now) must equal the report's. Exit 2 naming the cause
+(`GapEntryError`) for a missing report, no row or several, a missing bib
+entry, a changed identity, or a `same_work_as` row (recognised by its
+`tried`; it shares the first row's slug, which does not prove the barrier
+binds its own raw values: hand the PDF over for the first row).
 
 IDENTITY FORMS (the barrier's binding contract). `--gaps` stores the
 entry's RAW title, `bib_identity.first_author_surname(author, editor)` and
@@ -179,14 +265,17 @@ import json
 import os
 import re
 import sys
+import threading
 import time
 import urllib.request
+import zlib
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import quote, unquote, urljoin, urlparse
 
 import requests
+import urllib3
 from dotenv import find_dotenv, load_dotenv
 
 # Each insert is removed by value, not pop(0): an imported module may insert
@@ -201,6 +290,7 @@ _here = str(Path(__file__).resolve().parent)
 sys.path.insert(0, _here)
 import fulltext as ft  # noqa: E402
 import fulltext_channel as fc  # noqa: E402
+import fulltext_sources as fs  # noqa: E402
 from stamp_evidence import entry_header, parse_entry_fields, split_entries  # noqa: E402
 from venue_vetting import _ON_TOKENS  # noqa: E402 - the shared on-token set
 
@@ -210,13 +300,13 @@ sys.path.insert(0, _research)
 from rate_limiter import (  # noqa: E402
     ExponentialBackoff,
     get_limiter,
+    openalex_api_key,
     openalex_budget_exhausted,
     openalex_headers,
     openalex_params,
     parse_retry_after,
     user_agent,
 )
-from s2_formatters import S2_BASE_URL  # noqa: E402
 import output  # noqa: E402
 
 sys.path.remove(_research)
@@ -236,18 +326,35 @@ PDF_DIR_ENV = "PHILLIT_PDF_DIR"
 ZOTERO_BASE = "http://localhost:23119/api/users/0"
 ZOTERO_TIMEOUT = 10
 ZOTERO_SEARCH_LIMIT = 100
-OPENALEX_BASE = "https://api.openalex.org"
 
 DOWNLOAD_TIMEOUT = 30
 MAX_DOWNLOAD_BYTES = 60 * 1024 * 1024
 MAX_REDIRECTS = 5
 LOCAL_MAX_BYTES = ft.MAX_PDF_BYTES   # 200 MB
 API_TIMEOUT = 30
+MAX_API_BYTES = 5 * 1024 * 1024   # a metadata answer, read streaming
+# The Content-Encodings `_read_capped` decodes, as zlib wbits (None: as
+# sent). `_http_get` asks for exactly these, so an installed brotli or
+# zstd never adds one it cannot read.
+_ENCODINGS = {"": None, "identity": None, "gzip": 16 + zlib.MAX_WBITS, "x-gzip": 16 + zlib.MAX_WBITS,
+              "deflate": zlib.MAX_WBITS}
+ACCEPT_ENCODING = "gzip, deflate"
+DECODE_FEED_BYTES = 65536   # compressed input per zlib call
+BUDGET_BODY_BYTES = 64 * 1024   # an OpenAlex 429 body, read for its budget marker
 
 GAPS_DEADLINE = 420
 SINGLE_DEADLINE = 420
 SERVICE_WAIT_MARGIN = 20   # seconds of the deadline kept for validating arrivals
 ARRIVAL_CHECK_SECONDS = 1.0   # and this much more per identity sent
+MAX_SUGGESTION_QUERIES = 40   # Brave calls per gap pass, after the fetch deadline
+SUGGESTION_SECONDS = 60        # their own budget in a gap pass (see SUGGESTIONS)
+# and no call starts reading past this many seconds into the pass, so the
+# pass normally ends well before HARD_LIMIT_SECONDS.
+GAPS_SUGGESTION_END = 530
+SINGLE_SUGGESTION_SECONDS = 20  # and in single-work mode (one call)
+SUGGESTION_MIN_SECONDS = 1.0   # no call starts with less than this left
+HARD_LIMIT_SECONDS = 570   # the process ends by this, whatever blocks (the Bash ceiling is 600 s)
+SUGGEST_STATUSES = ("not_found", "rejected", "not_attempted")   # the outcomes that get links
 INDEX_BUDGET_GAPS = 60
 INDEX_BUDGET_SINGLE = 20
 MAX_WALK_FILES = 50_000
@@ -286,12 +393,57 @@ class Deadline:
         return max(0.0, min(seconds, self.left()))
 
 
+class _Watchdog:
+    """The backstop under every deadline: HARD_LIMIT_SECONDS after it
+    starts, it prints one JSON line `{"error": "hard_limit: ..."}` and ends
+    the process with exit 1, whatever the main thread is blocked in (a
+    slow status line or chunk framing, DNS, a proxy, Zotero, PDF text
+    extraction). Records already stored stay: each is written atomically
+    as its entry finishes, and the barrier withholds an invalid one. The
+    main thread calls `finish` before it prints its own result, so exactly
+    one of the two lines is printed."""
+
+    def __init__(self, seconds: float):
+        self._seconds = seconds
+        self._lock = threading.Lock()
+        self._done = False
+        self._timer = threading.Timer(seconds, self._fire)
+        self._timer.daemon = True
+
+    def start(self) -> "_Watchdog":
+        self._timer.start()
+        return self
+
+    def _fire(self) -> None:
+        with self._lock:   # held until the process ends: `finish` never returns
+            if self._done:
+                return
+            self._done = True
+            try:
+                sys.stdout.write(json.dumps({"error": f"hard_limit: stopped after {self._seconds:g} s; "
+                                                      "PDFs stored before then are kept"}) + "\n")
+                sys.stdout.flush()
+            finally:   # a broken stdout must not let the main thread go on
+                _exit(1)
+
+    def finish(self) -> None:
+        with self._lock:
+            self._done = True
+            self._timer.cancel()
+
+
+_exit = os._exit   # tests monkeypatch this
+
+
 def _on(value: str | None) -> bool:
     return (value or "").strip().lower() in _ON_TOKENS
 
 
 def _doi_ok(doi: str) -> bool:
-    return doi.startswith("10.") and "/" in doi
+    """A normalized DOI of the one shape every source accepts
+    (`ft.DOI_SHAPE`); any other is treated as no DOI, so its PDF meets the
+    no-DOI rule rather than the DOI rule's weaker title fallback."""
+    return bool(ft.DOI_SHAPE.fullmatch(doi))
 
 
 # --------------------------------------------------------------------------
@@ -299,10 +451,12 @@ def _doi_ok(doi: str) -> bool:
 # --------------------------------------------------------------------------
 
 def _http_get(url, *, headers=None, params=None, timeout=30.0, stream=False, trust_env=True):
-    """One GET, never following redirects."""
+    """One GET, never following redirects, asking only for the encodings
+    `_read_capped` decodes."""
     session = requests.Session()
     session.trust_env = trust_env
-    return session.get(url, headers=headers or {}, params=params, timeout=timeout,
+    return session.get(url, headers={"Accept-Encoding": ACCEPT_ENCODING, **(headers or {})},
+                       params=params, timeout=timeout,
                        stream=stream, allow_redirects=False)
 
 
@@ -319,7 +473,7 @@ def download_pdf(url: str, deadline: Deadline) -> tuple[bytes | None, str]:
                 return None, "bad_scheme"
             if dl.expired():
                 return None, "timeout"
-            resp = _http_get(url, headers=headers, timeout=dl.clamp(DOWNLOAD_TIMEOUT), stream=True)
+            resp = _http_get(url, headers=headers, timeout=dl.clamp(DOWNLOAD_TIMEOUT) or 0.1, stream=True)
             if resp.status_code in (301, 302, 303, 307, 308):
                 loc = resp.headers.get("Location")
                 resp.close()
@@ -333,27 +487,7 @@ def download_pdf(url: str, deadline: Deadline) -> tuple[bytes | None, str]:
             break
         if resp.status_code != 200:
             return None, f"http_{resp.status_code}"
-        declared = resp.headers.get("Content-Length")
-        if declared and str(declared).isdigit() and int(declared) > MAX_DOWNLOAD_BYTES:
-            return None, "too_large"
-        chunks, total, head_ok = [], 0, False
-        for chunk in resp.iter_content(chunk_size=65536):
-            if not chunk:
-                continue
-            total += len(chunk)
-            if total > MAX_DOWNLOAD_BYTES:
-                return None, "too_large"
-            chunks.append(chunk)
-            if not head_ok and total >= 5:
-                if not b"".join(chunks)[:5] == b"%PDF-":
-                    return None, "not_pdf"
-                head_ok = True
-            if dl.expired():
-                return None, "timeout"
-        body = b"".join(chunks)
-        if not body.startswith(b"%PDF-"):
-            return None, "not_pdf"
-        return body, "ok"
+        return _read_capped(resp, MAX_DOWNLOAD_BYTES, dl, head=b"%PDF-")
     except requests.RequestException as exc:
         # The class name only: a requests message embeds the URL.
         return None, f"network:{type(exc).__name__}"
@@ -581,7 +715,7 @@ def _item_surname(data: dict) -> str:
 
 
 def _surname_eq(a: str, b: str) -> bool:
-    fa, fb = ft.fold(a), ft.fold(b)
+    fa, fb = ft.match_fold(a), ft.match_fold(b)
     if not fa or not fb:
         return False
     return fa == fb or fa.split()[-1] == fb.split()[-1]
@@ -600,10 +734,10 @@ def zotero_item_matches(item: dict, identity: dict) -> bool:
     title = ft.clean_bibtex_str(identity.get("title") or "")
     surname = ft.clean_bibtex_str(identity.get("surname") or "")
     year = same_work_year(identity.get("year"))
-    phrase = ft.title_phrase_cut(title)
+    phrase = ft.title_phrase_cut(ft.drop_apostrophes(title))
     if not (phrase and surname and year):
         return False
-    return (ft.fold(data.get("title") or "").startswith(phrase)
+    return (ft.match_fold(data.get("title") or "").startswith(phrase)
             and _surname_eq(_item_surname(data), surname)
             and _item_year(item) == year)
 
@@ -835,12 +969,16 @@ class FolderIndex:
         """DOI matches, then file-name surname matches, then page-head title
         matches; each group by path; no repeats."""
         doi = normalize_doi(identity.get("doi") or "")
-        surname = ft.fold(ft.clean_bibtex_str(identity.get("surname") or ""))
+        raw_surname = ft.clean_bibtex_str(identity.get("surname") or "")
+        surnames = {s for s in (ft.fold(raw_surname), ft.match_fold(raw_surname)) if s}
         title = ft.clean_bibtex_str(identity.get("title") or "")
-        phrases = {p for p in (ft.title_phrase(title), ft.title_phrase_cut(title)) if p}
+        # Heads are cached `fold`ed (INDEX_SCHEMA), where a page's straight
+        # apostrophe is a space and a curly one is gone: look for both forms.
+        phrases = {p for t in ft.apostrophe_forms(title)
+                   for p in (ft.title_phrase(t), ft.title_phrase_cut(t)) if p}
         by_doi = sorted(r for r, e in self.entries.items() if doi and doi in (e.get("dois") or []))
         by_name = [r for r in self.files
-                   if surname and f" {surname} " in f" {_name_words(Path(r).name)} "]
+                   if any(f" {s} " in f" {_name_words(Path(r).name)} " for s in surnames)]
         by_head = sorted(r for r, e in self.entries.items()
                          if any(p in h for h in (e.get("heads") or []) for p in phrases))
         out, seen, present = [], set(), set(self.files)
@@ -918,124 +1056,364 @@ def _licensed(lic, policy: str | None) -> bool:
     return policy == "open" and (lic.startswith("oa:") or lic == "upload")
 
 
+def _declared_length(resp) -> int | None:
+    """The response's Content-Length as an int, or None when it is missing
+    or malformed (not 1-20 ASCII digits): a malformed header is ignored and
+    the streaming cap still applies. `isdigit` alone admits `²`, which
+    `int` refuses."""
+    declared = resp.headers.get("Content-Length")
+    if not isinstance(declared, str):
+        return None
+    declared = declared.strip()
+    if not (declared.isascii() and declared.isdecimal() and len(declared) <= 20):
+        return None
+    try:
+        return int(declared)
+    except ValueError:
+        return None
+
+
+def _decode_body(raw: bytes, wbits: int, cap: int) -> tuple[bytes | None, str]:
+    """`raw` decoded within `cap` bytes: (None, "too_large") past it,
+    (None, "bad_encoding") for a corrupt or truncated stream. gzip may hold
+    several members: all are decoded, and a corrupt one fails the body (a
+    truncated PDF must not pass as whole); bytes after a member that do not
+    start another (padding) are ignored, as urllib3 ignores them. `deflate`
+    is zlib-wrapped by the standard and raw in practice: both are read.
+    Input is fed in DECODE_FEED_BYTES slices, so many tiny members cost
+    linear time (zlib copies a member's unused input)."""
+    gzip_bits = 16 + zlib.MAX_WBITS
+    view = memoryview(raw)
+    for bits in (wbits, -zlib.MAX_WBITS) if wbits == zlib.MAX_WBITS else (wbits,):
+        parts, size, pos, members = [], 0, 0, 0
+        try:
+            while not (members and (bits != gzip_bits or view[pos:pos + 2] != b"\x1f\x8b")):
+                d = zlib.decompressobj(bits)
+                while not d.eof:
+                    if pos >= len(view):   # the stream ends early
+                        return None, "bad_encoding"
+                    piece = view[pos:pos + DECODE_FEED_BYTES]
+                    out = d.decompress(piece, cap + 1 - size)
+                    size += len(out)
+                    if size > cap or d.unconsumed_tail:
+                        return None, "too_large"
+                    parts.append(out)
+                    pos += len(piece) - len(d.unused_data)
+                members += 1
+        except zlib.error:
+            continue
+        return b"".join(parts), "ok"
+    return None, "bad_encoding"
+
+
+def _read_capped(resp, cap: int, deadline: Deadline | None = None,
+                 head: bytes = b"") -> tuple[bytes | None, str]:
+    """A streamed body of at most `cap` bytes, decoded, or (None, reason):
+    `too_large` (a declared Content-Length over the cap is refused before
+    reading; the cap applies to the bytes received and again to the
+    decoded body), `bad_encoding` (a Content-Encoding outside
+    `_ENCODINGS`, or a stream that does not decode), `not_pdf` (`head`
+    given and the body does not start with it; checked as soon as enough
+    plain bytes are in, else after decoding) and, with a `deadline`,
+    `timeout` for bytes received after its end.
+
+    The body is read with `raw.read1`, which returns per receive, so the
+    deadline is checked whenever bytes arrive and a read ends within the
+    deadline plus one socket timeout (the request's `timeout`). Not
+    `iter_content`: it returns only once 64 KiB are in, so a body trickling
+    in below the socket timeout was bounded by nothing; and not urllib3's
+    decoding `read1`, which keeps reading while a compressed stream yields
+    no output. Hence the raw bytes, decoded here. A urllib3 error is raised
+    as the requests exception `iter_content` would raise, so callers keep
+    one exception family."""
+    declared = _declared_length(resp)
+    if declared is not None and declared > cap:
+        return None, "too_large"
+    encoding = str(resp.headers.get("Content-Encoding") or "").strip().lower()
+    if encoding not in _ENCODINGS:
+        return None, "bad_encoding"
+    wbits = _ENCODINGS[encoding]
+    chunks, total, head_ok = [], 0, not head
+    while True:
+        try:
+            chunk = resp.raw.read1(65536, decode_content=False)
+        except urllib3.exceptions.ProtocolError as exc:
+            raise requests.exceptions.ChunkedEncodingError(exc) from exc
+        except urllib3.exceptions.ReadTimeoutError as exc:
+            if deadline is not None and deadline.expired():   # the socket timeout is the deadline's
+                return None, "timeout"
+            raise requests.exceptions.ConnectionError(exc) from exc
+        except urllib3.exceptions.SSLError as exc:
+            raise requests.exceptions.SSLError(exc) from exc
+        except urllib3.exceptions.HTTPError as exc:
+            raise requests.exceptions.ConnectionError(exc) from exc
+        if not chunk:
+            break
+        if deadline is not None and deadline.left() < 0:   # arrived after the end
+            return None, "timeout"
+        total += len(chunk)
+        if total > cap:
+            return None, "too_large"
+        chunks.append(chunk)
+        if not head_ok and wbits is None and total >= len(head):
+            if not b"".join(chunks).startswith(head):
+                return None, "not_pdf"
+            head_ok = True
+    body = b"".join(chunks)
+    if wbits is not None:
+        body, why = _decode_body(body, wbits, cap)
+        if body is None:
+            return None, why
+    if not body.startswith(head):
+        return None, "not_pdf"
+    return body, "ok"
+
+
 def _api_get(url, *, headers, params, limiter, deadline: Deadline, openalex: bool):
-    """(json | None, reason): a metadata call with a short retry on 429/5xx."""
+    """(json | None, reason): a metadata call with a short retry on 429/5xx.
+    The answer is read streaming within MAX_API_BYTES (`too_large` past it,
+    never retried) with `deadline` checked per received chunk (a chunk
+    received after its end gives `deadline`, never retried), then decoded: the caller contract of
+    `fulltext_sources`' parse functions, which take decoded JSON."""
     backoff = ExponentialBackoff(max_attempts=3, max_delay=10.0)
     for attempt in range(backoff.max_attempts):
         if deadline.expired():
             return None, "deadline"
         limiter.wait()
+        if deadline.expired():   # the limiter's wait used it up
+            return None, "deadline"
+        r = None
         try:
-            r = _http_get(url, headers=headers, params=params, timeout=deadline.clamp(API_TIMEOUT) or 0.1)
+            r = _http_get(url, headers=headers, params=params, timeout=deadline.clamp(API_TIMEOUT) or 0.1,
+                          stream=True)
+            if r.status_code == 200:
+                body, why = _read_capped(r, MAX_API_BYTES, deadline)
+                if body is None:
+                    return None, "deadline" if why == "timeout" else why
+                try:
+                    return json.loads(body), "ok"
+                except (ValueError, RecursionError):
+                    return None, "bad_json"
+            if r.status_code == 404:
+                return None, "not_found"
+            if r.status_code == 429 and openalex:
+                # The budget marker is in a short body: read a capped one
+                # (an oversize body reads as none, leaving Retry-After).
+                text, why = _read_capped(r, BUDGET_BODY_BYTES, deadline)
+                if why == "timeout":
+                    return None, "deadline"
+                if openalex_budget_exhausted(r, text=(text or b"").decode("utf-8", "replace")):
+                    return None, "budget_exhausted"
+            if r.status_code == 429 or r.status_code >= 500:
+                if deadline.expired():
+                    return None, "deadline"
+                if backoff.wait(attempt, retry_after=parse_retry_after(r.headers.get("Retry-After"))):
+                    continue
+            return None, f"http_{r.status_code}"
         except requests.RequestException as exc:
+            if deadline.expired():
+                return None, "deadline"
             if attempt < backoff.max_attempts - 1 and backoff.wait(attempt):
                 continue
             return None, f"network:{type(exc).__name__}"
-        if r.status_code == 200:
-            try:
-                return r.json(), "ok"
-            except ValueError:
-                return None, "bad_json"
-        if r.status_code == 404:
-            return None, "not_found"
-        if r.status_code == 429 and openalex and openalex_budget_exhausted(r):
-            return None, "budget_exhausted"
-        if (r.status_code == 429 or r.status_code >= 500) and backoff.wait(
-                attempt, retry_after=parse_retry_after(r.headers.get("Retry-After"))):
-            continue
-        return None, f"http_{r.status_code}"
+        finally:
+            if r is not None:
+                try:
+                    r.close()
+                except Exception:
+                    pass
     return None, "retries_exhausted"
 
 
-def openalex_locations(doi: str, deadline: Deadline) -> tuple[list | None, str]:
-    """[(pdf_url, licence)], best_oa_location first, without repeats."""
-    data, why = _api_get(f"{OPENALEX_BASE}/works/doi:{quote(doi, safe='/')}",
-                         headers={**openalex_headers(), "User-Agent": user_agent()},
-                         params=openalex_params(os.environ.get("OPENALEX_EMAIL", "")),
-                         limiter=get_limiter("openalex"), deadline=deadline, openalex=True)
-    if data is None:
-        return None, why
-    locs = [data.get("best_oa_location")] + list(data.get("locations") or [])
-    out, seen = [], set()
-    for loc in locs:
-        if not isinstance(loc, dict):
-            continue
-        url = loc.get("pdf_url")
-        if isinstance(url, str) and url and url not in seen:
-            seen.add(url)
-            out.append((url, loc.get("license")))
-    return out, "ok"
+def _brave_on() -> bool:
+    """Whether a Brave Search key is set, read now (after `.env` loads):
+    non-empty once stripped."""
+    return bool(os.environ.get("BRAVE_API_KEY", "").strip())
 
 
-def s2_locations(doi: str, deadline: Deadline) -> tuple[list | None, str]:
+def suggest(identity: dict, deadline: Deadline) -> tuple[list[dict] | None, str | None]:
+    """Candidate PDF links from one Brave web search, for the user to check
+    and hand over; nothing is downloaded from them. (None, None): not asked
+    (no BRAVE_API_KEY, read now, or `fs.brave_request` declines the
+    identity), and no HTTP call. (None, "deadline"): skipped, too little of
+    `deadline` left for the limiter's spacing plus SUGGESTION_MIN_SECONDS,
+    and no HTTP call. ([{url, host, title}], None): Brave answered (the list
+    may be empty). (None, reason): the one HTTP attempt failed (`http_<n>`,
+    `network:<error>`, `timeout`, `too_large`, `bad_encoding`, `bad_json`,
+    `error:<error>`); a 429 or 5xx is never retried. The limiter wait and
+    the call's timeout are both clamped to `deadline`; the body read checks
+    it whenever bytes arrive."""
+    key = os.environ.get("BRAVE_API_KEY", "").strip()
+    req = fs.brave_request(identity) if key else None
+    if req is None:
+        return None, None
+    r = None
+    try:
+        limiter = get_limiter("brave")
+        # The limiter sleeps by itself and says nothing in advance: wait
+        # only when its spacing still leaves a call's minimum.
+        if deadline.left() < getattr(limiter, "min_interval", 0.0) + SUGGESTION_MIN_SECONDS:
+            return None, "deadline"
+        limiter.wait()
+        if deadline.left() < SUGGESTION_MIN_SECONDS:
+            return None, "deadline"
+        headers = {"X-Subscription-Token": key, "Accept": "application/json",
+                   "User-Agent": user_agent()}
+        r = _http_get(req.url, headers=headers, params=dict(req.params),
+                      timeout=deadline.clamp(API_TIMEOUT) or 0.1, stream=True)
+        if r.status_code != 200:
+            return None, f"http_{r.status_code}"
+        body, why = _read_capped(r, MAX_API_BYTES, deadline)
+        if body is None:
+            return None, why
+        try:
+            payload = json.loads(body)
+        except (ValueError, RecursionError):
+            return None, "bad_json"
+        return [{"url": s.url, "host": s.host, "title": s.title}
+                for s in fs.brave_parse(identity, payload)], None
+    except requests.RequestException as exc:
+        if deadline.expired():
+            return None, "timeout"
+        # The class name only: a requests message embeds the URL.
+        return None, f"network:{type(exc).__name__}"
+    except Exception as exc:   # a suggestion never sinks the run
+        return None, f"error:{type(exc).__name__}"
+    finally:
+        if r is not None:
+            try:
+                r.close()
+            except Exception:
+                pass
+
+
+def _title_route_on() -> bool:
+    """Whether the OpenAlex title route may run: a usable OPENALEX_API_KEY,
+    read now (after `.env` loads). A title search costs credits an unkeyed
+    run shares with the researchers' own searches, as `venue_vetting`
+    decides; a key with unprintable characters reads as unset
+    (`openalex_api_key`), so it never runs unkeyed."""
+    return bool(openalex_api_key())
+
+
+def _send(req: fs.Request, deadline: Deadline):
+    """Send a `fulltext_sources` request with its API's credentials: the
+    OpenAlex key as a header plus the polite-pool mailto, or S2's
+    `x-api-key` when set. (json | None, reason)."""
+    if req.api == "openalex":
+        return _api_get(req.url, headers={**openalex_headers(), "User-Agent": user_agent()},
+                        params={**req.params, **openalex_params(os.environ.get("OPENALEX_EMAIL", ""))},
+                        limiter=get_limiter("openalex"), deadline=deadline, openalex=True)
     key = os.environ.get("S2_API_KEY", "").strip()
     headers = {"User-Agent": user_agent()}
     if key:
         headers["x-api-key"] = key
-    data, why = _api_get(f"{S2_BASE_URL}/paper/DOI:{quote(doi, safe='/')}",
-                         headers=headers, params={"fields": "openAccessPdf"},
-                         limiter=get_limiter("semantic_scholar", authenticated=bool(key)),
-                         deadline=deadline, openalex=False)
-    if data is None:
-        return None, why
-    oa = data.get("openAccessPdf")
-    if isinstance(oa, dict) and isinstance(oa.get("url"), str) and oa["url"]:
-        return [(oa["url"], oa.get("license"))], "ok"
-    return [], "ok"
+    return _api_get(req.url, headers=headers, params=dict(req.params),
+                    limiter=get_limiter("semantic_scholar", authenticated=bool(key)),
+                    deadline=deadline, openalex=False)
 
 
-def _source_oa(name: str, locate, identity: dict, settings: "Settings", deadline: Deadline) -> SourceResult:
-    res = SourceResult(name, "not_found")
+def openalex_locations(identity: dict, deadline: Deadline) -> tuple[list | None, str, list[str]]:
+    """(locations | None, reason, detail) from OpenAlex: the DOI route, or
+    for a work without a DOI the title route (only with a key). None with
+    `no_doi` when neither can run (detail `no_key`, `short_title` or
+    `no_surname`)."""
+    req = fs.openalex_doi_request(identity)
+    parse = fs.openalex_doi_parse
+    if req is None:
+        if not _title_route_on():
+            return None, "no_doi", ["no_key"]
+        req = fs.openalex_title_request(identity)
+        parse = fs.openalex_title_parse
+        if req is None:
+            return None, "no_doi", ["no_surname" if fs.key_phrase(identity) else "short_title"]
+    data, why = _send(req, deadline)
+    return (None, why, []) if data is None else (parse(identity, data), "ok", [])
+
+
+def s2_locations(identity: dict, deadline: Deadline) -> tuple[list | None, str, list[str]]:
+    req = fs.s2_doi_request(identity)
+    if req is None:
+        return None, "no_doi", []
+    data, why = _send(req, deadline)
+    return (None, why, []) if data is None else (fs.s2_parse(identity, data), "ok", [])
+
+
+OA_APIS = ("openalex", "s2")
+
+
+def source_open_access(identity: dict, settings: "Settings", deadline: Deadline) -> list[SourceResult]:
+    """The open-access step: ask OpenAlex, then S2, drop the locations the
+    policy refuses (`_licensed` on the raw value), put the rest in rule-15
+    order (`fs.order`: a publisher copy before a self-archived one) and try
+    them until one passes `check_pdf`. One row per API, from its own lookup
+    and its own locations: `acquired` (its location passed), else
+    `rejected` (one was downloaded and failed), else `unlicensed` (it had
+    locations, all refused), else `not_found`; or its lookup's `no_doi`,
+    `unavailable` or `deadline`. A URL both APIs report is each API's
+    location: its outcome feeds both rows. Only the winning location's API
+    row carries the hit, and that API is the hit's `source`."""
     if settings.request_dir is not None:
-        res.outcome, res.detail = "disabled", ["service"]
-        return res
-    doi = normalize_doi(identity.get("doi") or "")
-    if not doi:
-        res.outcome = "no_doi"
-        return res
-    locs, why = locate(doi, deadline)
-    if locs is None:
-        if why == "not_found":
-            return res
-        res.outcome, res.detail = ("deadline", []) if why == "deadline" else ("unavailable", [why])
-        return res
-    if settings.policy is not None:
-        unlicensed = [u for u, lic in locs if not _licensed(lic, settings.policy)]
-        locs = [(u, lic) for u, lic in locs if _licensed(lic, settings.policy)]
-        if unlicensed and not locs:
-            res.outcome, res.detail = "unlicensed", [f"{len(unlicensed)} location(s) not admitted by policy"]
-            return res
-    checked = passed = 0
-    for url, lic in locs:
-        if deadline.expired():
-            res.detail.append("deadline")
-            break
-        data, why = download_pdf(url, deadline)
-        if data is None:
-            res.detail.append(f"{url}:{why}")
+        return [SourceResult(api, "disabled", ["service"]) for api in OA_APIS]
+    rows = {api: SourceResult(api, "not_found") for api in OA_APIS}
+    admitted, apis_by_url, mine = [], {}, {api: [] for api in OA_APIS}
+    for api, locate in (("openalex", openalex_locations), ("s2", s2_locations)):
+        res = rows[api]
+        locs, why, detail = locate(identity, deadline)
+        if locs is None:
+            if why != "not_found":
+                res.outcome, res.detail = {"no_doi": ("no_doi", detail), "deadline": ("deadline", [])}.get(
+                    why, ("unavailable", [why]))
             continue
-        checked += 1
-        ok, why = check_pdf(data, identity)
-        if ok:
-            passed += 1
-            res.hits.append(Hit(data, name, url, lic if isinstance(lic, str) else None))
-            break   # OA locations are tried until the first passes
-        res.detail.append(f"{url}:{why}")
-    return _finish(res, checked, passed)
+        admit = [loc for loc in locs if _licensed(loc.license, settings.policy)]
+        if locs and not admit:
+            res.outcome, res.detail = "unlicensed", [f"{len(locs)} location(s) not admitted by policy"]
+        for loc in admit:
+            apis_by_url.setdefault(loc.url, set()).add(api)
+            if loc.url not in mine[api]:
+                mine[api].append(loc.url)
+        admitted += admit
+    tried: set[str] = set()
+    checked: set[str] = set()   # URLs downloaded and checked (failed or passed)
+    winner = None
+    for loc in fs.order(admitted):
+        if deadline.expired():
+            for api in OA_APIS:
+                if any(u not in tried for u in mine[api]):
+                    rows[api].detail.append("deadline")
+            break
+        tried.add(loc.url)
+        data, why = download_pdf(loc.url, deadline)
+        if data is not None:
+            checked.add(loc.url)
+            ok, why = check_pdf(data, identity)
+            if ok:
+                winner = (loc, data)
+                break
+        for api in apis_by_url[loc.url]:
+            rows[api].detail.append(f"{loc.url}:{why}")
+    for api in OA_APIS:
+        res = rows[api]
+        if res.outcome != "not_found" or not mine[api]:
+            continue
+        if winner is not None and api in apis_by_url[winner[0].url]:
+            res.outcome = "acquired"
+        elif any(u in checked for u in mine[api]):
+            res.outcome = "rejected"
+    if winner is not None:
+        loc, data = winner
+        ref = loc.url if loc.matched is None else {"url": loc.url, "matched": loc.matched}
+        rows[loc.source].hits.append(Hit(data, loc.source, ref, loc.license))
+    return [rows[api] for api in OA_APIS]
 
 
-def source_openalex(identity, settings, deadline):
-    return _source_oa("openalex", openalex_locations, identity, settings, deadline)
-
-
-def source_s2(identity, settings, deadline):
-    return _source_oa("s2", s2_locations, identity, settings, deadline)
-
-
-SOURCE_ORDER = ("repository", "zotero", "folder", "openalex", "s2", "service")
+SOURCE_ORDER = ("repository", "zotero", "folder", "open_access", "service")
 LOCAL_SOURCES = SOURCE_ORDER[:-1]   # the ones _SOURCES maps, tried per work
+# Each returns one SourceResult, or a list of them (the open-access step:
+# one row per API); `open_access` is an internal name, never a `tried` row.
 _SOURCES = {"repository": source_repository, "zotero": source_zotero, "folder": source_folder,
-            "openalex": source_openalex, "s2": source_s2}
+            "open_access": source_open_access}
+_STEP_ROWS = {"open_access": OA_APIS}
 
 
 # --------------------------------------------------------------------------
@@ -1218,11 +1596,12 @@ def begin(workdir: Path, identity: dict, settings: Settings, deadline: Deadline,
         return attempt
     for name in LOCAL_SOURCES:
         if deadline.expired():
-            attempt.results.append(SourceResult(name, "deadline"))
+            attempt.results.extend(SourceResult(row, "deadline") for row in _STEP_ROWS.get(name, (name,)))
             continue
         res = _SOURCES[name](identity, settings, deadline)
-        attempt.results.append(res)
-        if res.hits:
+        rows = res if isinstance(res, list) else [res]
+        attempt.results.extend(rows)
+        if any(r.hits for r in rows):
             break
     return attempt
 
@@ -1313,12 +1692,35 @@ def _close_requests(request_dir: Path, written: list) -> dict[str, list[str]]:
     return notes
 
 
+def _write_split(request_dir: Path, mode: str, chunk: list, out: dict) -> list[tuple[str, list]]:
+    """Write `chunk` as one request, or, when the file would exceed
+    `fc.MAX_REQUEST_BYTES`, as two halves, recursing down to one identity.
+    Returns [(request_id, part)] for each request written; a part whose
+    write fails is `unavailable` in `out` (`request_write_failed:<reason>`,
+    so a single identity still too large is `request_too_large`)."""
+    request_id = fc.new_request_id(mode)
+    try:
+        fc.write_request(request_dir, request_id, mode, [c[3] for c in chunk])
+    except (OSError, ValueError) as exc:
+        reason = (str(exc) if isinstance(exc, ValueError) else "") or type(exc).__name__
+        if reason == "request_too_large" and len(chunk) > 1:
+            half = len(chunk) // 2
+            return (_write_split(request_dir, mode, chunk[:half], out)
+                    + _write_split(request_dir, mode, chunk[half:], out))
+        for slug, *_ in chunk:
+            out[slug] = SourceResult("service", "unavailable", [f"request_write_failed:{reason}"])
+        return []
+    return [(request_id, chunk)]
+
+
 def service_fetch(store: Path, pending: list[tuple[str, dict, str | None]], settings: Settings,
                   deadline: Deadline, mode: str) -> dict[str, SourceResult]:
     """Ask the service channel for `pending` [(slug, identity, invalid)]
     (`invalid`: the reason `begin` found the stored record invalid, or
-    None); returns a `service` SourceResult for every slug. DOI identities
-    only are sent, in requests of at most `fc.MAX_PER_REQUEST`, and only
+    None); returns a `service` SourceResult for every slug. Every identity
+    `fc.identity_payload` accepts is sent (a no-DOI one too; a worker
+    without the title route answers it `none/no_doi`), in requests of at
+    most `fc.MAX_PER_REQUEST` that split in half while too large, and only
     when the request directory exists (else `request_dir_missing`: the
     worker creates it, so there is no worker). All are written first, then
     waited on together until `_wait_bound`, then every written request is
@@ -1332,9 +1734,6 @@ def service_fetch(store: Path, pending: list[tuple[str, dict, str | None]], sett
     out: dict[str, SourceResult] = {}
     sendable = []
     for slug, identity, invalid in pending:
-        if not normalize_doi(identity.get("doi") or ""):
-            out[slug] = SourceResult("service", "no_doi")
-            continue
         try:
             sendable.append((slug, identity, invalid, fc.identity_payload(identity)))
         except ValueError as exc:
@@ -1355,16 +1754,9 @@ def service_fetch(store: Path, pending: list[tuple[str, dict, str | None]], sett
                 for slug, *_ in sendable[i:]:
                     out[slug] = SourceResult("service", "deadline")
                 break
-            request_id = fc.new_request_id(mode)
-            try:
-                fc.write_request(settings.request_dir, request_id, mode, [c[3] for c in chunk])
-            except (OSError, ValueError) as exc:
-                reason = (str(exc) if isinstance(exc, ValueError) else "") or type(exc).__name__
-                for slug, *_ in chunk:
-                    out[slug] = SourceResult("service", "unavailable", [f"request_write_failed:{reason}"])
-                continue
-            written.append((request_id, chunk))
-            n_sent += len(chunk)
+            for request_id, part in _write_split(settings.request_dir, mode, chunk, out):
+                written.append((request_id, part))
+                n_sent += len(part)
         responses = fc.wait_for_responses(settings.request_dir, [rid for rid, _ in written],
                                           _wait_bound(deadline, n_sent), clock=_clock, sleep=_sleep)
     finally:
@@ -1422,18 +1814,47 @@ def finish(attempt: Attempt, service: SourceResult | None) -> dict:
 
 def acquire_one(workdir: Path, identity: dict, settings: Settings, deadline: Deadline,
                 pdf_path: str | None = None) -> dict:
-    """Run the single-work pipeline; returns {status, slug, source, tried}."""
+    """Run the single-work pipeline; returns {status, slug, source, tried},
+    plus `suggestions` or `suggestions_error` when the sources left the work
+    `not_found` or `rejected` and Brave was asked (never for `--pdf`: a
+    hand-over ends the suggestion loop). The suggestion budget starts after
+    the fetch work, so it never takes time from a fetch."""
     attempt = begin(workdir, identity, settings, deadline, pdf_path)
     service = None
     if attempt.open and pdf_path is None:
         service = service_fetch(attempt.store, [(attempt.slug, identity, attempt.invalid)], settings,
                                 deadline, "single")[attempt.slug]
-    return finish(attempt, service)
+    out = finish(attempt, service)
+    if pdf_path is None and out["status"] in SUGGEST_STATUSES:
+        found, why = suggest(identity, Deadline(SINGLE_SUGGESTION_SECONDS))
+        if found is not None:
+            out["suggestions"] = found
+        elif why is not None:
+            out["suggestions_error"] = why
+    return out
 
 
 # --------------------------------------------------------------------------
 # --gaps
 # --------------------------------------------------------------------------
+
+def entry_identity_for_gaps(fields: dict) -> dict | None:
+    """The stored identity of one bib entry's parsed fields, as `--gaps` and
+    `--gap-entry` build it: the normalised DOI when it is usable, the RAW
+    title, `first_author_surname(author, editor)` and the raw year (the
+    barrier binds no-DOI records on raw values). None when the entry has no
+    usable DOI and no complete title/author/year. Which sources are enabled
+    is not its concern: admission is `gap_candidates`' decision, so a handover
+    reconstructs the identity the same way whatever the settings now are."""
+    doi = normalize_doi(fields.get("doi") or "")
+    doi = doi if _doi_ok(doi) else ""
+    title = fields.get("title") or ""
+    surname = first_author_surname(fields.get("author") or "", fields.get("editor") or "")
+    year = fields.get("year") or ""
+    if doi or (title.strip() and surname.strip() and year.strip()):
+        return make_identity(doi, title, surname, year)
+    return None
+
 
 def gap_candidates(workdir: Path, n_domains: int, title_route: bool):
     """([(domain, key, stored identity)], {domain: "present"|"missing"|"unreadable"})."""
@@ -1458,13 +1879,9 @@ def gap_candidates(workdir: Path, n_domains: int, title_route: bool):
             fields = parse_entry_fields(chunk)
             if (fields.get("abstract") or "").strip():
                 continue
-            doi = normalize_doi(fields.get("doi") or "")
-            doi = doi if _doi_ok(doi) else ""
-            title = fields.get("title") or ""
-            surname = first_author_surname(fields.get("author") or "", fields.get("editor") or "")
-            year = fields.get("year") or ""
-            if doi or (title_route and title.strip() and surname.strip() and year.strip()):
-                out.append((i, header[1], make_identity(doi, title, surname, year)))
+            ident = entry_identity_for_gaps(fields)
+            if ident and (ident["doi"] or title_route):
+                out.append((i, header[1], ident))
     return out, domains
 
 
@@ -1489,11 +1906,55 @@ def _folder_warnings(settings: Settings) -> list[str]:
     return out
 
 
+def _suggest_gaps(entries: list[dict], seconds: float) -> list[str]:
+    """The suggestion post-pass, after the fetch work: every row left
+    `not_found`, `rejected` or `not_attempted` gets a Brave search, once per
+    work (a `same_work_as` row, or a later row of a slug already asked, is
+    skipped, so only the first row carries the links), within its own
+    budget: at most MAX_SUGGESTION_QUERIES HTTP attempts in `seconds`
+    (SUGGESTION_SECONDS, less when the fetch work ran long). A row the
+    module declines (`fs.brave_request` None) is neither asked nor counted.
+    Rows the cap or the time does not reach, and failed calls, carry no
+    `suggestions` field; the warning line counts them (none when both are
+    0). A row whose handling crashes counts as failed, so one bad row
+    neither sinks the counts nor stops the rows after it."""
+    budget = Deadline(max(0.0, seconds))
+    asked, calls, not_asked, failed = set(), 0, 0, 0
+    for row in entries:
+        try:
+            if (row.get("outcome") not in SUGGEST_STATUSES or row.get("slug") is None
+                    or row["slug"] in asked
+                    or any(str(t.get("outcome", "")).startswith("same_work_as:") for t in row["tried"])):
+                continue
+            identity = {k: row.get(k) for k in ("doi", "title", "surname", "year")}
+            if fs.brave_request(identity) is None:
+                continue
+            asked.add(row["slug"])
+            if calls >= MAX_SUGGESTION_QUERIES:
+                not_asked += 1
+                continue
+            found, why = suggest(identity, budget)
+            if found is None and why in (None, "deadline"):   # `suggest` skipped it for time
+                not_asked += 1
+                continue
+            calls += 1
+            if found is None:
+                failed += 1
+            else:
+                row["suggestions"] = found
+        except Exception:
+            failed += 1
+    if not (not_asked or failed):
+        return []
+    return [f"suggestions: {not_asked} not asked (cap or time), {failed} failed"]
+
+
 def run_gaps(workdir: Path, n_domains: int, settings: Settings) -> dict:
     started = _clock()
     deadline = Deadline(GAPS_DEADLINE)
-    title_route = settings.repository_dir is not None or (
-        not settings.licensed_only and (settings.zotero_on or settings.pdf_dir is not None))
+    title_route = (settings.repository_dir is not None
+                   or (not settings.licensed_only and (settings.zotero_on or settings.pdf_dir is not None))
+                   or _title_route_on() or settings.request_dir is not None or _brave_on())
     cands, domains = gap_candidates(workdir, n_domains, title_route)
 
     def crashed(row, exc):   # one entry's crash never sinks the pass
@@ -1502,7 +1963,7 @@ def run_gaps(workdir: Path, n_domains: int, settings: Settings) -> dict:
 
     entries, by_slug, attempts, duplicates = [], {}, [], []
     for domain, key, ident in cands:
-        row = {"domain": domain, "key": key}
+        row = {"domain": domain, "key": key, **ident}   # the raw stored identity
         try:
             slug = ft.slug_for(ident)
         except ValueError:
@@ -1548,6 +2009,13 @@ def run_gaps(workdir: Path, n_domains: int, settings: Settings) -> dict:
             crashed(row, exc)
     for row, first in duplicates:
         row.update(outcome=first["outcome"], source=first["source"])
+    suggestions_started = _clock()
+    try:   # a suggestion never sinks the pass
+        seconds = min(SUGGESTION_SECONDS, GAPS_SUGGESTION_END - (suggestions_started - started))
+        suggestion_warnings = _suggest_gaps(entries, seconds) if _brave_on() else []
+    except Exception as exc:
+        suggestion_warnings = [f"suggestions: error:{type(exc).__name__}"]
+    suggestion_seconds = round(_clock() - suggestions_started, 1)
     counts: dict[str, int] = {}
     for e in entries:
         counts[e["outcome"]] = counts.get(e["outcome"], 0) + 1
@@ -1561,22 +2029,86 @@ def run_gaps(workdir: Path, n_domains: int, settings: Settings) -> dict:
         src = by_slug.get(e["slug"], e)
         errors.append({"entry": f"{e['domain']}/{e['key']}",
                        "reason": src["tried"][0]["outcome"] if src["tried"] else "error"})
-    warnings = _folder_warnings(settings)
+    warnings = _folder_warnings(settings) + suggestion_warnings
     report = {"schema": 1, "status": "done_with_errors" if errors else "done",
               "generated_at": _now_iso(), "deadline_seconds": GAPS_DEADLINE,
               "elapsed_seconds": round(_clock() - started, 1),
+              "suggestion_seconds": suggestion_seconds,
               "licensed_only": settings.licensed_only,
               "policy": settings.policy,
               "sources": {"zotero": "on" if settings.zotero_on and not settings.licensed_only else "off",
                           "folder": "on" if settings.pdf_dir is not None and not settings.licensed_only else "off",
                           "repository": "on" if settings.repository_dir is not None else "off",
                           "service": "on" if settings.request_dir is not None else "off"},
-              "domains": domains, "candidates": len(entries), "counts": counts, "errors": errors, "warnings": warnings,
-              "entries": entries}
+              "domains": domains, "candidates": len(entries), "counts": counts,
+              "suggested": sum(1 for e in entries if e.get("suggestions")),
+              "errors": errors, "warnings": warnings, "entries": entries}
     path = workdir / REPORT_REL
     path.parent.mkdir(parents=True, exist_ok=True)
     ft.write_text_atomic(path, json.dumps(report, indent=2, ensure_ascii=False) + "\n")
     return report
+
+
+class GapEntryError(Exception):
+    """`--gap-entry` cannot name one entry's identity; the message says why."""
+
+
+def identity_from_report(workdir: Path, spec: str) -> dict:
+    """The identity of the gap entry `spec` (`DOMAIN/KEY`), from the run
+    report, proven against the entry's current bib text. Raises
+    `GapEntryError`. Retyping raw bib values on a command line breaks LaTeX,
+    so the report's raw values are the identity, and the bib is re-read only
+    to prove they still describe the entry (a bib edited after the pass is
+    refused). A `same_work_as` row is refused: it shares the first row's slug,
+    which does not prove the barrier binds THIS row's raw values."""
+    domain, sep, key = spec.partition("/")
+    domain = domain.strip()
+    # ASCII digits only, and short: `isdigit` admits `²`, which `int` refuses,
+    # and `int` refuses a string of more than 4,300 digits.
+    if (not sep or not key or not (domain.isascii() and domain.isdecimal())
+            or len(domain) > 6):
+        raise GapEntryError(f"--gap-entry wants DOMAIN/KEY (e.g. 1/gardner2019), got: {spec}")
+    rerun = "run the gap pass again (--gaps --domains N)"
+    try:
+        report = json.loads(ft.read_text(workdir / REPORT_REL))
+        entries = report["entries"]
+    except FileNotFoundError:
+        raise GapEntryError(f"no gap-pass report at {REPORT_REL}: {rerun}") from None
+    except (OSError, ValueError, KeyError, TypeError, RecursionError) as exc:
+        raise GapEntryError(f"the gap-pass report is unreadable ({type(exc).__name__}): {rerun}") from None
+    if not (isinstance(entries, list)
+            and all(isinstance(e, dict) and isinstance(e.get("tried"), list) for e in entries)):
+        raise GapEntryError(f"the gap-pass report is malformed (entries): {rerun}")
+    domain = str(int(domain))
+    rows = [e for e in entries if str(e.get("domain")) == domain and e.get("key") == key]
+    if not rows:
+        raise GapEntryError(f"the gap-pass report has no entry {domain}/{key}: {rerun} if the entry is new")
+    if len(rows) > 1:
+        raise GapEntryError(f"the gap-pass report has {len(rows)} rows for {domain}/{key}: "
+                            f"{rerun} after making the keys unique")
+    row = rows[0]
+    marker = next((str(t.get("outcome")) for t in row["tried"] if isinstance(t, dict)
+                   and str(t.get("outcome") or "").startswith("same_work_as:")), None)
+    if marker is not None:
+        raise GapEntryError(f"{domain}/{key} is the same work as an earlier entry "
+                            f"({marker}): hand the PDF over for that entry")
+    if not row.get("slug"):
+        raise GapEntryError(f"{domain}/{key} has no usable identity (outcome {row.get('outcome')}): "
+                            "nothing to store it under")
+    reported = {f: row.get(f) for f in ("doi", "title", "surname", "year")}
+    bib = workdir / f"literature-domain-{domain}.bib"
+    try:
+        text = ft.read_text(bib)
+    except (OSError, ValueError) as exc:
+        raise GapEntryError(f"cannot read {bib.name} ({type(exc).__name__}): {rerun}") from None
+    chunks = [c for c in split_entries(text)
+              if not is_verbatim_block(c) and (entry_header(c) or (None, None))[1] == key]
+    if len(chunks) != 1:
+        raise GapEntryError(f"{bib.name} has {len(chunks)} entries with key {key}, not one: {rerun}")
+    current = entry_identity_for_gaps(parse_entry_fields(chunks[0]))
+    if current != reported:
+        raise GapEntryError(f"{domain}/{key} changed in {bib.name} since the gap pass: {rerun}")
+    return reported
 
 
 # --------------------------------------------------------------------------
@@ -1592,6 +2124,9 @@ def _parser() -> argparse.ArgumentParser:
                                      "particles included (e.g. 'van Fraassen')")
     ap.add_argument("--year", help="The publication year")
     ap.add_argument("--pdf", help="A PDF the user handed over (replaces the source search)")
+    ap.add_argument("--gap-entry", metavar="DOMAIN/KEY",
+                    help="With --pdf: store the PDF under the identity the gap-pass report holds "
+                         "for that entry (instead of --doi/--title/--author/--year)")
     ap.add_argument("--gaps", action="store_true",
                     help="Try every domain-bib entry without an abstract")
     ap.add_argument("--domains", type=int, help="Number of domain bibs (with --gaps)")
@@ -1609,7 +2144,20 @@ def main(argv=None) -> int:
     workdir = Path(args.workdir)
     if not workdir.is_dir():
         ap.error(f"workdir not found: {args.workdir}")
-    if args.gaps:
+    gap_identity = None
+    if args.gap_entry is not None:
+        if args.gaps or args.domains is not None:
+            ap.error("--gap-entry cannot go with --gaps or --domains")
+        if args.doi or args.title or args.author or args.year:
+            ap.error("--gap-entry takes its identity from the gap-pass report, "
+                     "not --doi/--title/--author/--year")
+        if not args.pdf:
+            ap.error("--gap-entry needs --pdf PATH")
+        try:
+            gap_identity = identity_from_report(workdir, args.gap_entry)
+        except GapEntryError as exc:
+            ap.error(str(exc))
+    elif args.gaps:
         if args.doi or args.title or args.author or args.year or args.pdf:
             ap.error("--gaps takes no work identity and no --pdf")
         if not args.domains or args.domains < 1:
@@ -1623,25 +2171,32 @@ def main(argv=None) -> int:
         triple = [args.title, args.author, args.year]
         if not doi and not all(v and v.strip() for v in triple):
             ap.error("give --doi, or all of --title, --author and --year")
+    watchdog = _Watchdog(HARD_LIMIT_SECONDS).start()
     try:
         if args.gaps:
             settings = settings_from_env(licensed_only, policy, INDEX_BUDGET_GAPS)
             report = run_gaps(workdir, args.domains, settings)
+            watchdog.finish()
             # One line, as the barrier prints its summary (escaped ASCII).
             print(json.dumps({"status": report["status"], "candidates": report["candidates"],
-                              "counts": report["counts"], "errors": report["errors"],
+                              "counts": report["counts"], "suggested": report["suggested"],
+                              "errors": report["errors"],
                               "warnings": report["warnings"],
                               "report": REPORT_REL}))
             return 0
         settings = settings_from_env(licensed_only, policy, INDEX_BUDGET_SINGLE)
-        identity = make_identity(args.doi, args.title, args.author, args.year)
+        identity = gap_identity or make_identity(args.doi, args.title, args.author, args.year)
         result = acquire_one(workdir, identity, settings, Deadline(SINGLE_DEADLINE),
                              pdf_path=args.pdf)
+        watchdog.finish()
         print(output.dumps(result))
         return 0
     except Exception as exc:
+        watchdog.finish()
         print(json.dumps({"error": f"{type(exc).__name__}: {exc}"}))
         return 1
+    finally:
+        watchdog.finish()
 
 
 if __name__ == "__main__":

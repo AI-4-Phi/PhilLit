@@ -114,6 +114,17 @@ evidence.
   documents); the same with the surname limited to pages 1-2 (68%, 3
   wrong); the title-page rule plus the year for titles of 3 words or fewer
   (65%, 0 wrong; books lose most, since a reprint's year differs).
+- **Identity bar, revised (PL-28):** the DOI work's title fallback also
+  needs the phrase within the first 600 characters of a page, with the
+  surname on that page (it let CVs and citing papers through); a no-DOI
+  phrase needs 2 words ("Data" matched unrelated PDFs); matching drops
+  apostrophes, ignores digits glued to the surname and, for phrases of 20+
+  letters, tolerates lost spaces. Measured with pypdf on 150 Zotero PDFs
+  n x n, 407 hand-audited search finds and 11 arXiv PDFs the old rule
+  rejected (`fulltext-identity-hardening-2026-10-25/`): DOI 137/150 and
+  no-DOI 132/150 right (were 138 and 126), 0 wrong accepts (was 1), arXiv
+  10/11 (was 0). Rejected: word-bounded phrases and a minimum page count
+  (each lost more right PDFs than wrong ones it removed).
 - **Paywalled copies: the user's own copies only, never a proxy or shadow
   library.** Routes: Zotero, a local PDF folder, open access, and a file
   the user hands over (`--pdf PATH`; Human-in-the-Loop asks for a named

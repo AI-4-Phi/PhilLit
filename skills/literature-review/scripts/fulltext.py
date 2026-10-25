@@ -6,26 +6,43 @@ quotation gate (`check_quotes.py`) all call in here; none re-implements a
 rule. Rulings: `docs/ideas/fulltext-evidence-tier.md`.
 
 IDENTITY (`identity_ok`) reproduces the measured rules EXACTLY; the numbers
-below hold only while the rules do. Measurement scripts and results:
-`docs/known-issues/fulltext-identity-measurement-2026-10-21/` (local only),
-run with pypdf 6.16.1 (the locked extractor) behind a pdftotext-compatible
-wrapper:
-- DOI work (`idbar_nxn_fullguard.py`): the DOI string in pages 1-3; else
-  the full title's first 6 folded words as a phrase plus the folded
-  first-author surname, both in pages 1-3, and every DOI on page 1 (lowered,
-  trailing `.,;)` stripped) equal to the work's. 135/148 right, 1 wrong
-  accept in 148x147 pairs (a paper citing the target). Comparing only the
-  first 12 DOI characters gave 136/148 but lets a citing paper from the
-  same journal through.
-- No-DOI work, rule A (`idbar_nodoi.py` + `idbar_nodoi_ruleA.py`): the
-  phrase is the first 6 folded words of the title cut at its first `:`, `?`
-  or `.` when that part folds to at least 2 words; it must START within the
-  first 600 folded characters of one of pages 1-5, with the surname on that
-  same page. 127/178 right, 1 wrong in 178x177 pairs.
+below hold only while the rules do. Measured with the shipped extractor
+(pypdf) by `docs/known-issues/fulltext-identity-hardening-2026-10-25/`
+(local only; `bar_variants.py` is the rule with flags, its variant
+`dig+apos+nosp=20+minw_nodoi=2+head=600+headmap+aposboth` is this one) on 150 Zotero PDFs
+(each against every other item), 407 PDFs a source probe found by
+searching (hand-audited) and 11 correct arXiv PDFs the old rule rejected.
+Text is matched through `match_fold`: apostrophes deleted, then `fold`. A
+DOI not of `DOI_SHAPE` (`none`, `forthcoming`) counts as no DOI.
+- DOI work: the DOI string in pages 1-3; else, with every DOI on page 1
+  (lowered, trailing `.,;)` stripped) equal to the work's, the full title's
+  first 6 folded words as a phrase STARTING within the first 600 folded
+  characters of one of pages 1-3, with the surname on that page. 137/150
+  right, 0 wrong accepts in 150x149 pairs. Anywhere in pages 1-3 (the old
+  rule) gave 138/150 with 1 wrong, and let CVs and citing papers through.
+- No-DOI work, rule A: the phrase is the first 6 folded words of the title
+  cut at its first `:`, `?` or `.` when that part folds to at least 2
+  words; it needs at least 2 words (`short_title`: "Data" matched unrelated
+  PDFs); it must START within the first 600 folded characters of one of
+  pages 1-5, with the surname on that same page. 132/150 right, 0 wrong.
+- Both: apostrophes in the title and surname are dropped, and also read
+  as spaces (an extractor that prints "O Neill"). When no phrase starts
+  near a page top, a phrase of at least 20 characters besides spaces is
+  also found with all spaces removed from it and from the page (pypdf
+  loses or adds spaces on some PDFs), still starting before offset 600 of
+  the page. The surname test ignores 1-2 digits glued to a word's
+  end (affiliation marks: `majha1`; never a year: `smith2020`).
+  Together: 10 of the 11 arXiv PDFs pass, and no wrong accept was added
+  on any set.
 - `fold` is the measurement's fold (NFKD, ASCII, lowercase, non-alphanumerics
   to spaces, collapsed), NOT `bib_identity.title_key`; phrase containment is
-  a plain substring test, as measured. Empty title, surname or DOI rejects
-  (an empty string is "in" every text; the measured items never had one).
+  a plain substring test, as measured (word-bounding lost right PDFs to
+  footnote marks). It also builds `canonical_identity` and `slug_for`, so it
+  never changes for matching: `match_fold` does. Unless the DOI matched,
+  an empty title or surname rejects (an empty string is "in" every text).
+- Residual, accepted: a partial copy (front matter, a publisher preview,
+  one chapter) of the right work passes; no tested rule (page count, word
+  bounds, position) removed one without losing right PDFs.
 
 PAGES (`confirm_pages`, `pagenum.py`): numbers (1-4 digits, not part of a
 longer number or a decimal) in the first 3 and last 3 non-empty lines of
@@ -133,6 +150,10 @@ MIN_ELLIPSIS_PART_WORDS = 3
 MARKER_RE = re.compile(r"^\[\[(page|sheet) ([0-9]+)\]\]$", re.M)
 SLUG_RE = re.compile(r"^(?:doi-[a-z0-9._-]+|t-[a-z0-9_-]+)-[0-9a-f]{12}$")
 DOI_RE = re.compile(r"10\.\d{4,9}/[^\s\"<>]+", re.I)   # as measured
+# The one shape a normalized DOI must have to count as a DOI: the request
+# builders (`fulltext_sources`), acquisition (`_doi_ok`) and `identity_ok`
+# all treat any other value (`none`, `forthcoming`, `10.1234`) as no DOI.
+DOI_SHAPE = re.compile(r"10\.\d+(?:\.\d+)*/\S+")   # a prefix may be subdivided: 10.1000.10/abc
 _NUM_RE = re.compile(r"(?<![\d.])(\d{1,4})(?![\d.])")   # as measured
 _ARTICLE_NO_RE = re.compile(r"^[A-Za-z]*[0-9]+$")
 
@@ -189,6 +210,33 @@ def fold(text: str) -> str:
     return " ".join(re.sub(r"[^a-z0-9 ]", " ", t).split())
 
 
+# Straight, curly and modifier apostrophes and primes: `fold` makes a
+# straight one a space and drops a curly one, so "Goodhart's" and
+# "Goodhart’s" fold apart. `match_fold` deletes them all first.
+_APOSTROPHES = re.compile(r"['\u2018\u2019\u02bc\u02b9\u2032`\u00b4]")
+_GLUED_DIGITS = re.compile(r"(?<=[a-z])\d{1,2}\b")   # affiliation marks: 1-2 digits, never a year
+SQUASH_MIN_CHARS = 20
+
+
+def drop_apostrophes(text: str) -> str:
+    return _APOSTROPHES.sub("", text or "")
+
+
+def apostrophe_forms(text: str) -> set[str]:
+    """`text` as `fold` would read it off a page with curly apostrophes
+    (dropped) and with straight ones (a space): for text already folded
+    with `fold`, such as a cached page head."""
+    return {drop_apostrophes(text), _APOSTROPHES.sub("'", text or "")}
+
+
+def match_fold(text: str) -> str:
+    """`fold` for MATCHING text against text, apostrophes deleted first. Never
+    for identity keys: `canonical_identity` and `slug_for` use `fold`, and
+    stored file names depend on it. A phrase to match is built from
+    `drop_apostrophes(title)`, as `identity_ok` builds it."""
+    return fold(drop_apostrophes(text))
+
+
 def title_phrase(title: str) -> str:
     """DOI-rule phrase: the full title's first 6 folded words."""
     return " ".join(fold(title).split()[:6])
@@ -202,18 +250,80 @@ def title_phrase_cut(title: str) -> str:
     return " ".join(fold(base).split()[:6])
 
 
+def _squash_start(page: str, squashed: str) -> int:
+    """Where `squashed` (a phrase without spaces) starts in `page` with its
+    spaces removed, as an offset in `page` itself; -1 when absent."""
+    k = page.replace(" ", "").find(squashed)
+    if k < 0:
+        return -1
+    seen = -1
+    for i, c in enumerate(page):
+        if c != " ":
+            seen += 1
+            if seen == k:
+                return i
+    return -1
+
+
+def _head_match(pages: list[str], phrases: list[str], surnames: list[str]) -> bool:
+    """One of the phrases starting within the first 600 folded characters
+    of one of `pages`, with one of the surnames (glued digits ignored) on
+    that page; else, for the first phrase when it has SQUASH_MIN_CHARS
+    characters besides spaces, the same with every space removed from
+    phrase and page, the match still starting before offset 600 of the
+    page."""
+    folded = [match_fold(p) for p in pages]
+
+    def surname_on(pg: str) -> bool:
+        bare = f" {_GLUED_DIGITS.sub('', pg)} "
+        return any(f" {s} " in bare for s in surnames)
+
+    for pg in folded:
+        if any(0 <= pg.find(ph) < 600 for ph in phrases) and surname_on(pg):
+            return True
+    squashed = phrases[0].replace(" ", "")
+    if len(squashed) < SQUASH_MIN_CHARS:
+        return False
+    return any(0 <= _squash_start(pg, squashed) < 600 and surname_on(pg) for pg in folded)
+
+
+def _forms(text: str, phrase) -> list[str]:
+    """`phrase` of `text` with its apostrophes dropped, then the SAME words
+    with each apostrophe read as a space (an extractor that prints "O
+    Neill"), without repeats; [] when the phrase is empty. The cut at a
+    subtitle and the 6-word slice are decided on the dropped form only:
+    reading "O'Neill: A Reply" with a space first would make its head two
+    words and cut the phrase to "o neill"."""
+    dropped = phrase(drop_apostrophes(text))
+    if not dropped:
+        return []
+    spaced_words = fold(_APOSTROPHES.sub(" ", text or "")).split()
+    spaced, i = [], 0
+    for word in dropped.split():   # each dropped word is one or more spaced words
+        part = ""
+        while i < len(spaced_words) and len(part) < len(word):
+            part += spaced_words[i]
+            spaced.append(spaced_words[i])
+            i += 1
+        if part != word:
+            return [dropped]
+    return list(dict.fromkeys([dropped, " ".join(spaced)]))
+
+
 def identity_ok(pages: list[str], identity: Mapping) -> tuple[bool, str]:
     """Is this PDF (raw `extract_pages` output) the work? (ok, reason).
 
     Accept reasons: "doi", "title" (DOI work, title fallback), "title_head"
-    (no-DOI rule A). Reject reasons: "empty_identity", "other_doi_page1",
-    "no_match"."""
+    (no-DOI rule A). Reject reasons: "empty_identity", "short_title" (a
+    no-DOI phrase under 2 words), "other_doi_page1", "no_match"."""
     doi = normalize_doi(identity.get("doi") or "")
+    if not DOI_SHAPE.fullmatch(doi):   # a placeholder would "match" any page
+        doi = ""
     # Raw bib values carry LaTeX (M{\"u}ller), which the fold would split
     # into "m u ller"; decode first, as the References do. Idempotent on
     # plain text, so a caller may pass decoded or raw values.
-    phrase_src = clean_bibtex_str(identity.get("title") or "")
-    surname = fold(clean_bibtex_str(identity.get("surname") or ""))
+    title = clean_bibtex_str(identity.get("title") or "")
+    surnames = _forms(clean_bibtex_str(identity.get("surname") or ""), fold)
     if doi:
         raw3 = "\f".join(pages[:3]).lower()
         # A whole DOI, not the start of a longer one (10.1/abc in 10.1/abcd);
@@ -223,22 +333,16 @@ def identity_ok(pages: list[str], identity: Mapping) -> tuple[bool, str]:
         p1 = pages[0] if pages else ""
         if any(x.lower().rstrip(".,;)") != doi for x in DOI_RE.findall(p1)):
             return False, "other_doi_page1"
-        phrase = title_phrase(phrase_src)
-        if not phrase or not surname:
+        phrases = _forms(title, title_phrase)
+        if not phrases or not surnames:
             return False, "empty_identity"
-        folded = fold("\f".join(pages[:3]))
-        if phrase in folded and f" {surname} " in f" {folded} ":
-            return True, "title"
-        return False, "no_match"
-    phrase = title_phrase_cut(phrase_src)
-    if not phrase or not surname:
+        return (True, "title") if _head_match(pages[:3], phrases, surnames) else (False, "no_match")
+    phrases = _forms(title, title_phrase_cut)
+    if not phrases or not surnames:
         return False, "empty_identity"
-    for page in pages[:5]:
-        pg = fold(page)
-        k = pg.find(phrase)
-        if 0 <= k < 600 and f" {surname} " in f" {pg} ":
-            return True, "title_head"
-    return False, "no_match"
+    if len(phrases[0].split()) < 2:
+        return False, "short_title"
+    return (True, "title_head") if _head_match(pages[:5], phrases, surnames) else (False, "no_match")
 
 
 # --------------------------------------------------------------------------
