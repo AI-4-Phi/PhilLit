@@ -658,6 +658,31 @@ class TestSourceOrder:
         assert af._api_get(OA_URL, headers={}, params={}, limiter=NoLimiter(),
                            deadline=af.Deadline(10), openalex=True) == (None, "deadline")
 
+    def test_api_get_starts_no_request_when_the_limiter_used_up_the_deadline(self, http, monkeypatch):
+        now = [0.0]
+        monkeypatch.setattr(af, "_clock", lambda: now[0])
+
+        class SlowLimiter:
+            def wait(self):
+                now[0] += 20
+        http.add(OA_URL, FakeResponse(payload={"ok": 1}))
+        assert af._api_get(OA_URL, headers={}, params={}, limiter=SlowLimiter(),
+                           deadline=af.Deadline(10), openalex=True) == (None, "deadline")
+        assert http.calls == []
+
+    def test_api_get_maps_a_late_429_body_to_deadline(self, http, monkeypatch):
+        now = [0.0]
+        monkeypatch.setattr(af, "_clock", lambda: now[0])
+
+        def late():
+            yield b"{"
+            now[0] += 50
+            yield b"}"
+        http.add(OA_URL, FakeResponse(429, chunks=late()))
+        assert af._api_get(OA_URL, headers={}, params={}, limiter=NoLimiter(),
+                           deadline=af.Deadline(10), openalex=True) == (None, "deadline")
+        assert http.urls().count(OA_URL) == 1
+
     @pytest.mark.parametrize("declared", ["\u00b2", "1" * 40, "12a", "-5", " "])
     def test_a_malformed_content_length_is_ignored(self, declared):
         resp = FakeResponse(body=b'{"ok": 1}', headers={"Content-Length": declared})

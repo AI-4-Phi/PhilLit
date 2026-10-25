@@ -8,7 +8,9 @@ duration.
 """
 
 import gzip
+import json
 import socket
+import subprocess
 import sys
 import threading
 import time
@@ -151,6 +153,24 @@ class TestDecoding:
         (body, why), _ = timed_read(get(srv.url))
         assert (body, why) == (self.BODY, "ok")
 
+    def test_every_gzip_member_is_decoded(self, serve):
+        data = gzip.compress(self.BODY[:500]) + gzip.compress(self.BODY[500:])
+        srv = serve([data], headers=[b"Content-Encoding: gzip"])
+        (body, why), _ = timed_read(get(srv.url))
+        assert (body, why) == (self.BODY, "ok")
+
+    def test_bytes_after_a_gzip_member_that_do_not_decode_end_the_body(self, serve):
+        """As urllib3 decodes: trailing padding after a complete member."""
+        srv = serve([gzip.compress(self.BODY) + b"\0" * 16], headers=[b"Content-Encoding: gzip"])
+        (body, why), _ = timed_read(get(srv.url))
+        assert (body, why) == (self.BODY, "ok")
+
+    def test_the_cap_counts_every_gzip_member(self, serve):
+        data = gzip.compress(b"a" * 600) + gzip.compress(b"b" * 600)
+        srv = serve([data], headers=[b"Content-Encoding: gzip"])
+        (body, why), _ = timed_read(get(srv.url), cap=1000)
+        assert (body, why) == (None, "too_large")
+
     def test_a_chunked_body_is_read_whole(self, serve):
         srv = serve([self.BODY[:7], self.BODY[7:]], chunked=True)
         (body, why), _ = timed_read(get(srv.url))
@@ -202,3 +222,60 @@ class TestRefusals:
     def test_a_download_cut_short_is_a_network_reason(self, serve):
         srv = serve([b"%PDF-1.4\n"], length=1000)
         assert af.download_pdf(srv.url, af.Deadline(10)) == (None, "network:ChunkedEncodingError")
+
+
+class TestWatchdog:
+    """The backstop for what no deadline reaches (a slow status line, DNS,
+    a proxy): it prints one JSON error line and ends the process."""
+
+    def test_it_prints_one_error_line_and_exits_1(self, monkeypatch, capsys):
+        fired = threading.Event()
+        codes = []
+        monkeypatch.setattr(af, "_exit", lambda code: (codes.append(code), fired.set()))
+        af._Watchdog(0.05).start()
+        assert fired.wait(5)
+        assert codes == [1]
+        out = capsys.readouterr().out.splitlines()
+        assert len(out) == 1 and json.loads(out[0])["error"].startswith("hard_limit: stopped after 0.05 s")
+
+    def test_finish_before_the_limit_stops_it(self, monkeypatch, capsys):
+        codes = []
+        monkeypatch.setattr(af, "_exit", codes.append)
+        dog = af._Watchdog(0.1).start()
+        dog.finish()
+        time.sleep(0.3)
+        assert codes == [] and capsys.readouterr().out == ""
+
+    def test_a_blocked_download_ends_with_the_error_line(self, tmp_path):
+        """End to end, in a real process: a status line that never ends
+        holds `_http_get` past every deadline; the watchdog ends the run."""
+        srv_sock = socket.socket()
+        srv_sock.bind(("127.0.0.1", 0))
+        srv_sock.listen(1)
+        url = f"http://127.0.0.1:{srv_sock.getsockname()[1]}/w.pdf"
+        stop = threading.Event()
+
+        def trickle_status():
+            conn, _ = srv_sock.accept()
+            conn.recv(65536)
+            while not stop.is_set():
+                try:
+                    conn.sendall(b"H")
+                except OSError:
+                    break
+                stop.wait(0.05)
+            conn.close()
+        threading.Thread(target=trickle_status, daemon=True).start()
+        script = (
+            "import sys; sys.path.insert(0, sys.argv[1]); import acquire_fulltext as af\n"
+            "af._Watchdog(1.0).start()\n"
+            "af.download_pdf(sys.argv[2], af.Deadline(0.2))\n")
+        scripts = Path(af.__file__).resolve().parent
+        t0 = time.monotonic()
+        proc = subprocess.run([sys.executable, "-c", script, str(scripts), url], capture_output=True,
+                              text=True, timeout=60)
+        stop.set()
+        srv_sock.close()
+        assert proc.returncode == 1
+        assert proc.stdout.splitlines()[-1].startswith('{"error": "hard_limit: stopped after 1 s')
+        assert time.monotonic() - t0 < 30

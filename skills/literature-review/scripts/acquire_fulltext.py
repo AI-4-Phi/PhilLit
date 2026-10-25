@@ -136,8 +136,11 @@ deadline checked whenever bytes arrive: bytes received after the end
 make a download `timeout`, an OpenAlex or Semantic Scholar row
 `deadline` (for Brave, the failed call `timeout`). Each socket operation
 waits at most the request's timeout, the time left when it started
-(at most 30 s), so a request ends within its deadline plus that timeout,
-however slowly its body trickles in. Only gzip and deflate are asked for
+(at most 30 s), so a body read ends within its deadline plus that
+timeout, however slowly the body trickles in. What the deadline does not
+reach (a status line, headers or chunk framing that trickle in, DNS, a
+proxy, the local Zotero calls, PDF text extraction) is bounded by the
+watchdog (HARD LIMIT). Only gzip and deflate are asked for
 and decoded, within the same caps (`bad_encoding` for any other or a
 corrupt stream). A malformed `Content-Length` (not 1-20 ASCII digits) is
 ignored, and the streaming cap still applies.
@@ -159,9 +162,13 @@ exceed its spacing when other processes queue on it (it caps a queue at
 10 spacings, 15 s).
 Timing of `--gaps`: about 420 s of fetch work, then at most 60 s of
 suggestions, which stop starting reads `GAPS_SUGGESTION_END` (530 s) into
-the pass. Every network read ends within its deadline plus one socket
-timeout (see DOWNLOADS), so the network work ends below the 600 s Bash
-ceiling; local work (PDF text extraction) is not timed.
+the pass; a body read ends within one socket timeout of its deadline
+(see DOWNLOADS).
+
+HARD LIMIT. Whatever blocks, the process ends `HARD_LIMIT_SECONDS` (570 s)
+after it starts, below the 600 s Bash ceiling: it prints one line
+`{"error": "hard_limit: ..."}` and exits 1 (`_Watchdog`). PDFs already
+stored are kept; a `--gaps` run writes no report.
 
 OUTCOMES. Single-work mode prints one JSON object `{status, slug, source,
 tried}`, within a 420 s deadline (`SINGLE_DEADLINE`, the Bash ceiling is
@@ -203,8 +210,8 @@ invalid stored record is reported as `{source: "store", outcome:
 slug, `invalid_removed:<reason>` when none is left: a service copy that
 overwrote it was removed); a stored service copy the
 policy refuses as `{source: "store", outcome: "unlicensed_removed"}`. Exit
-0 for every status; 1 for a crash, with one JSON object `{"error": ...}`;
-2 for a usage error.
+0 for every status; 1 for a crash or the hard limit, with one JSON object
+`{"error": ...}`; 2 for a usage error.
 
 `--gaps` tries every domain-bib entry with no `abstract` and either a DOI,
 or (the repository, Zotero, the folder, the service channel, an OpenAlex
@@ -257,6 +264,7 @@ import json
 import os
 import re
 import sys
+import threading
 import time
 import urllib.request
 import zlib
@@ -338,11 +346,12 @@ SERVICE_WAIT_MARGIN = 20   # seconds of the deadline kept for validating arrival
 ARRIVAL_CHECK_SECONDS = 1.0   # and this much more per identity sent
 MAX_SUGGESTION_QUERIES = 40   # Brave calls per gap pass, after the fetch deadline
 SUGGESTION_SECONDS = 60        # their own budget in a gap pass (about 420 + 60 s in all; see SUGGESTIONS)
-# and never past this many seconds into the pass: a read ends within
-# API_TIMEOUT more, so the pass stays below the 600 s Bash ceiling.
+# and no call starts reading past this many seconds into the pass, so the
+# pass normally ends well before HARD_LIMIT_SECONDS.
 GAPS_SUGGESTION_END = 530
 SINGLE_SUGGESTION_SECONDS = 20  # and in single-work mode (one call)
 SUGGESTION_MIN_SECONDS = 1.0   # no call starts with less than this left
+HARD_LIMIT_SECONDS = 570   # the process ends by this, whatever blocks (the Bash ceiling is 600 s)
 SUGGEST_STATUSES = ("not_found", "rejected", "not_attempted")   # the outcomes that get links
 INDEX_BUDGET_GAPS = 60
 INDEX_BUDGET_SINGLE = 20
@@ -380,6 +389,46 @@ class Deadline:
 
     def clamp(self, seconds: float) -> float:
         return max(0.0, min(seconds, self.left()))
+
+
+class _Watchdog:
+    """The backstop under every deadline: HARD_LIMIT_SECONDS after it
+    starts, it prints one JSON line `{"error": "hard_limit: ..."}` and ends
+    the process with exit 1, whatever the main thread is blocked in (a
+    slow status line or chunk framing, DNS, a proxy, Zotero, PDF text
+    extraction). Records already stored stay: each is written atomically
+    as its entry finishes, and the barrier withholds an invalid one. The
+    main thread calls `finish` before it prints its own result, so exactly
+    one of the two lines is printed."""
+
+    def __init__(self, seconds: float):
+        self._seconds = seconds
+        self._lock = threading.Lock()
+        self._done = False
+        self._timer = threading.Timer(seconds, self._fire)
+        self._timer.daemon = True
+
+    def start(self) -> "_Watchdog":
+        self._timer.start()
+        return self
+
+    def _fire(self) -> None:
+        with self._lock:   # held until the process ends: `finish` never returns
+            if self._done:
+                return
+            self._done = True
+            sys.stdout.write(json.dumps({"error": f"hard_limit: stopped after {self._seconds:g} s; "
+                                                  "PDFs stored before then are kept"}) + "\n")
+            sys.stdout.flush()
+            _exit(1)
+
+    def finish(self) -> None:
+        with self._lock:
+            self._done = True
+            self._timer.cancel()
+
+
+_exit = os._exit   # tests monkeypatch this
 
 
 def _on(value: str | None) -> bool:
@@ -1015,18 +1064,31 @@ def _declared_length(resp) -> int | None:
 
 def _decode_body(raw: bytes, wbits: int, cap: int) -> tuple[bytes | None, str]:
     """`raw` decoded within `cap` bytes: (None, "too_large") past it,
-    (None, "bad_encoding") for a corrupt or truncated stream. `deflate`
-    is zlib-wrapped by the standard and raw in practice: both are read."""
+    (None, "bad_encoding") for a corrupt or truncated stream. As urllib3
+    decodes: gzip may hold several members, all decoded, and bytes after a
+    complete member that do not decode end the body; `deflate` is
+    zlib-wrapped by the standard and raw in practice: both are read."""
+    gzip_bits = 16 + zlib.MAX_WBITS
     for bits in (wbits, -zlib.MAX_WBITS) if wbits == zlib.MAX_WBITS else (wbits,):
-        d = zlib.decompressobj(bits)
+        out, rest = b"", raw
         try:
-            out = d.decompress(raw, cap + 1)
+            while True:
+                d = zlib.decompressobj(bits)
+                try:
+                    out += d.decompress(rest, cap + 1 - len(out))
+                except zlib.error:
+                    if out and bits == gzip_bits:   # trailing bytes after a member
+                        break
+                    raise
+                if len(out) > cap or d.unconsumed_tail:
+                    return None, "too_large"
+                if not d.eof:
+                    return None, "bad_encoding"
+                rest = d.unused_data
+                if not rest or bits != gzip_bits:
+                    break
         except zlib.error:
             continue
-        if len(out) > cap or d.unconsumed_tail:
-            return None, "too_large"
-        if not d.eof:
-            return None, "bad_encoding"
         return out, "ok"
     return None, "bad_encoding"
 
@@ -1103,9 +1165,11 @@ def _api_get(url, *, headers, params, limiter, deadline: Deadline, openalex: boo
         if deadline.expired():
             return None, "deadline"
         limiter.wait()
+        if deadline.expired():   # the limiter's wait used it up
+            return None, "deadline"
         r = None
         try:
-            r = _http_get(url, headers=headers, params=params, timeout=deadline.clamp(API_TIMEOUT) or 0.1,
+            r = _http_get(url, headers=headers, params=params, timeout=deadline.clamp(API_TIMEOUT),
                           stream=True)
             if r.status_code == 200:
                 body, why = _read_capped(r, MAX_API_BYTES, deadline)
@@ -1120,7 +1184,9 @@ def _api_get(url, *, headers, params, limiter, deadline: Deadline, openalex: boo
             if r.status_code == 429 and openalex:
                 # The budget marker is in a short body: read a capped one
                 # (an oversize body reads as none, leaving Retry-After).
-                text, _ = _read_capped(r, BUDGET_BODY_BYTES, deadline)
+                text, why = _read_capped(r, BUDGET_BODY_BYTES, deadline)
+                if why == "timeout":
+                    return None, "deadline"
                 if openalex_budget_exhausted(r, text=(text or b"").decode("utf-8", "replace")):
                     return None, "budget_exhausted"
             if (r.status_code == 429 or r.status_code >= 500) and backoff.wait(
@@ -2084,10 +2150,12 @@ def main(argv=None) -> int:
         triple = [args.title, args.author, args.year]
         if not doi and not all(v and v.strip() for v in triple):
             ap.error("give --doi, or all of --title, --author and --year")
+    watchdog = _Watchdog(HARD_LIMIT_SECONDS).start()
     try:
         if args.gaps:
             settings = settings_from_env(licensed_only, policy, INDEX_BUDGET_GAPS)
             report = run_gaps(workdir, args.domains, settings)
+            watchdog.finish()
             # One line, as the barrier prints its summary (escaped ASCII).
             print(json.dumps({"status": report["status"], "candidates": report["candidates"],
                               "counts": report["counts"], "suggested": report["suggested"],
@@ -2099,11 +2167,15 @@ def main(argv=None) -> int:
         identity = gap_identity or make_identity(args.doi, args.title, args.author, args.year)
         result = acquire_one(workdir, identity, settings, Deadline(SINGLE_DEADLINE),
                              pdf_path=args.pdf)
+        watchdog.finish()
         print(output.dumps(result))
         return 0
     except Exception as exc:
+        watchdog.finish()
         print(json.dumps({"error": f"{type(exc).__name__}: {exc}"}))
         return 1
+    finally:
+        watchdog.finish()
 
 
 if __name__ == "__main__":
