@@ -597,10 +597,13 @@ class TestSourceOrder:
         assert rows["s2"] == {"source": "s2", "outcome": "unavailable", "detail": ["too_large"]}
         assert http.urls().count(OA_URL) == 1   # an oversize answer is not retried
 
-    def test_a_trickling_api_answer_stops_at_the_deadline(self, http, workdir, capsys, monkeypatch):
-        """A metadata body still arriving after the fetch deadline is cut at
-        the first late chunk: the API's row is `deadline` (not retried), and
-        the other API is still reported."""
+    def test_a_chunk_received_after_the_deadline_gives_a_deadline_row(self, http, workdir, capsys,
+                                                                      monkeypatch):
+        """The per-chunk deadline check in the metadata read, on the fake
+        clock: the first chunk received after the fetch deadline ends the
+        read, the API's row is `deadline` (not retried), and the other API
+        is still reported. Not a real-socket bound: a body trickling in
+        within one 64 KiB `iter_content` chunk is not cut (PL-29)."""
         now = [0.0]
         monkeypatch.setattr(af, "_clock", lambda: now[0])
         body = b'{"locations": [' + b" " * 1000 + b"]}"
@@ -619,7 +622,9 @@ class TestSourceOrder:
         assert rows["s2"]["outcome"] == "deadline"
         assert http.urls().count(OA_URL) == 1
 
-    def test_api_get_maps_a_late_body_to_deadline(self, http, monkeypatch):
+    def test_api_get_maps_a_late_chunk_timeout_to_deadline(self, http, monkeypatch):
+        """`_read_capped`'s `timeout` for a chunk received after the
+        deadline becomes `_api_get`'s `deadline`."""
         now = [0.0]
         monkeypatch.setattr(af, "_clock", lambda: now[0])
 
@@ -3049,6 +3054,7 @@ class TestSuggestions:
         assert fs.brave_request({k: first[k] for k in ("doi", "title", "surname", "year")}) is None
         assert fs.brave_request({k: dup[k] for k in ("doi", "title", "surname", "year")}) is not None
         assert dup["slug"] == first["slug"]
+        assert dup["outcome"] in af.SUGGEST_STATUSES
         assert dup["tried"][0]["outcome"] == "same_work_as:1/short"
         assert brave_calls(http) == []
         assert "suggestions" not in first and "suggestions" not in dup

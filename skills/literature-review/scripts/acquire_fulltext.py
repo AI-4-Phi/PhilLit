@@ -125,16 +125,24 @@ engine never does, and a missing directory means no worker
 (`request_dir_missing`).
 
 DOWNLOADS. http(s) only, re-checked on every redirect hop (at most 5,
-followed by hand); 30 s per download; a 60 MB cap enforced while streaming;
-the body must start `%PDF-`; only the User-Agent is sent (no API key ever
-reaches a PDF host). Local files (Zotero, folder, `--pdf`): a 200 MB cap.
-A metadata answer (OpenAlex, Semantic Scholar, Brave) is read streaming
-within `MAX_API_BYTES` (5 MB); a larger one is `unavailable`, detail
-`too_large` (for Brave, the failed call `too_large`). It is read within
-the deadline too, checked per chunk: an OpenAlex or Semantic Scholar body
-still arriving after the fetch deadline makes that API's row `deadline`
-(for Brave, the failed call `timeout`). A malformed `Content-Length`
-(not 1-20 ASCII digits) is ignored, and the streaming cap still applies.
+followed by hand); a 30 s deadline per download, checked per received
+chunk; a 60 MB cap enforced while streaming; the body must start `%PDF-`;
+only the User-Agent is sent (no API key ever reaches a PDF host). Local
+files (Zotero, folder, `--pdf`): a 200 MB cap. A metadata answer
+(OpenAlex, Semantic Scholar, Brave) is read streaming within
+`MAX_API_BYTES` (5 MB); a larger one is `unavailable`, detail `too_large`
+(for Brave, the failed call `too_large`). Its deadline is also checked per
+received chunk: an OpenAlex or Semantic Scholar chunk received after the
+fetch deadline makes that API's row `deadline` (for Brave, the failed
+call `timeout`). A malformed `Content-Length` (not 1-20 ASCII digits) is
+ignored, and the streaming cap still applies.
+Residual (PL-29): a received chunk is up to 64 KiB (`iter_content`
+returns one only when that much has arrived, the body ends or the
+connection fails), and every arriving byte resets the socket timeout. A
+body that trickles in with gaps shorter than that timeout is bounded only
+by the per-read timeout, not by the deadline, so neither a download, a
+metadata call, a Brave call nor a pass is guaranteed to end within its
+deadline or below the 600 s Bash ceiling.
 
 SUGGESTIONS. A work the sources and the service left `not_found` or
 `rejected` (or, in `--gaps`, `not_attempted`) gets one Brave web search when
@@ -145,19 +153,17 @@ Its up to 3 links are for the user to check and hand over (`--pdf`):
 nothing is ever downloaded or stored from a suggestion, and the Brave key
 goes to Brave only. Each call is one HTTP attempt (a 429 or 5xx is a failed
 call, never retried); its budget is a `Deadline` started after the fetch
-work, so it never takes time from a fetch, and the limiter wait, the
-call's timeout and the body read are clamped to it (no call starts with
-less than `SUGGESTION_MIN_SECONDS` left after the limiter's spacing).
-Residuals: the limiter's real wait can exceed its spacing when other
-processes queue on it (it caps a queue at 10 spacings, 15 s); and a
-call's timeout, the time left when it starts (at most `API_TIMEOUT`,
-30 s), bounds each socket operation, not the call: the connect, the
-headers and the one chunk read in flight can each take up to that time
-(the body read checks the budget between chunks), so a call started with
-T seconds left can end up to 2T past the budget. Timing of `--gaps`: about
-420 s of fetch work, then at most about 60 s of suggestions; at worst,
-with a contended limiter wait (15 s) and that overrun (2 x 30 s), about
-555 s, still under the 600 s Bash ceiling.
+work, so it never takes time from a fetch; the limiter wait and the
+call's timeout are clamped to it, and the body read checks it per
+received chunk (no call starts with less than `SUGGESTION_MIN_SECONDS`
+left after the limiter's spacing). Residuals: the limiter's real wait can
+exceed its spacing when other processes queue on it (it caps a queue at
+10 spacings, 15 s); a call's timeout (the time left when it starts, at
+most `API_TIMEOUT`, 30 s) bounds each socket operation, not the call; and
+a trickling body is not bounded by the budget (see DOWNLOADS, PL-29).
+Timing of `--gaps`: about 420 s of fetch work, then about 60 s of
+suggestions; both can overrun as these residuals say, so a pass is not
+guaranteed to finish below the 600 s Bash ceiling.
 
 OUTCOMES. Single-work mode prints one JSON object `{status, slug, source,
 tried}`, within a 420 s deadline (`SINGLE_DEADLINE`, the Bash ceiling is
@@ -203,9 +209,10 @@ policy refuses as `{source: "store", outcome: "unlicensed_removed"}`. Exit
 
 `--gaps` tries every domain-bib entry with no `abstract` and either a DOI,
 or (the repository, Zotero, the folder, the service channel, an OpenAlex
-key or a Brave key enabled) a title, author and year, within a 420 s pass deadline (the Bash ceiling is 600 s): store and
-repository (and Zotero and the folder where enabled; OpenAlex and Semantic
-Scholar while the service channel is off) per entry, each entry decided or
+key or a Brave key enabled) a title, author and year, within a 420 s pass
+deadline (the Bash ceiling is 600 s): store and repository (and Zotero and
+the folder where enabled; OpenAlex and Semantic Scholar while the service
+channel is off) per entry, each entry decided or
 found there stored at once, then one service request for the entries still
 open, then a wait bounded by the pass deadline. Entries not reached are
 `not_attempted`; an entry whose work an earlier entry already tried is
@@ -216,12 +223,12 @@ entry gets `suggestions` (see SUGGESTIONS), once per work: a `same_work_as`
 row never does, so only the first row carries them. They have their own
 budget after the fetch work: at most `MAX_SUGGESTION_QUERIES` (40) HTTP
 attempts within `SUGGESTION_SECONDS` (60), so the pass takes about
-420 + 60 s (at worst about 555 s: see SUGGESTIONS). An entry the cap or the time does not reach, or whose call
-failed, carries no `suggestions` field; both are counted in one `warnings`
-line, `suggestions: N not asked (cap or time), M failed`, when either is
-non-zero. It writes the run report and prints a one-line JSON summary with
-counts per outcome and `suggested`, the number of entries with a non-empty
-`suggestions` list.
+420 + 60 s (not a guaranteed bound: see SUGGESTIONS). An entry the cap or
+the time does not reach, or whose call failed, carries no `suggestions`
+field; both are counted in one `warnings` line, `suggestions: N not asked
+(cap or time), M failed`, when either is non-zero. It writes the run
+report and prints a one-line JSON summary with counts per outcome and
+`suggested`, the number of entries with a non-empty `suggestions` list.
 
 `--gap-entry DOMAIN/KEY` (with `--pdf`; no `--doi/--title/--author/--year`,
 `--gaps` or `--domains`) hands a PDF over for a gap entry under exactly that
@@ -1016,9 +1023,10 @@ def _declared_length(resp) -> int | None:
 def _read_capped(resp, cap: int, deadline: Deadline | None = None) -> tuple[bytes | None, str]:
     """A streamed body of at most `cap` bytes, or (None, "too_large"): a
     declared Content-Length over the cap is refused before reading. With a
-    `deadline`, (None, "timeout") for a chunk that arrives after its end,
-    checked per chunk: a request timeout bounds each socket read, not the
-    whole body."""
+    `deadline`, (None, "timeout") for a chunk received after its end,
+    checked per received chunk (up to 64 KiB): a request timeout bounds
+    each socket read, not the whole body, and a body trickling in faster
+    than that timeout is not bounded by the deadline (PL-29)."""
     declared = _declared_length(resp)
     if declared is not None and declared > cap:
         return None, "too_large"
@@ -1038,8 +1046,8 @@ def _read_capped(resp, cap: int, deadline: Deadline | None = None) -> tuple[byte
 def _api_get(url, *, headers, params, limiter, deadline: Deadline, openalex: bool):
     """(json | None, reason): a metadata call with a short retry on 429/5xx.
     The answer is read streaming within MAX_API_BYTES (`too_large` past it,
-    never retried) and within `deadline` (a body still arriving after its
-    end is `deadline`, never retried), then decoded: the caller contract of
+    never retried) with `deadline` checked per received chunk (a chunk
+    received after its end gives `deadline`, never retried), then decoded: the caller contract of
     `fulltext_sources`' parse functions, which take decoded JSON."""
     backoff = ExponentialBackoff(max_attempts=3, max_delay=10.0)
     for attempt in range(backoff.max_attempts):
@@ -1095,7 +1103,8 @@ def suggest(identity: dict, deadline: Deadline) -> tuple[list[dict] | None, str 
     may be empty). (None, reason): the one HTTP attempt failed (`http_<n>`,
     `network:<error>`, `timeout`, `too_large`, `bad_json`, `error:<error>`);
     a 429 or 5xx is never retried. The limiter wait and the call's timeout
-    are both clamped to `deadline`, and so is the body read."""
+    are both clamped to `deadline`; the body read checks it per received
+    chunk."""
     key = os.environ.get("BRAVE_API_KEY", "").strip()
     req = fs.brave_request(identity) if key else None
     if req is None:
