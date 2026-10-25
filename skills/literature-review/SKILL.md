@@ -156,7 +156,7 @@ This phase validates conditions for subsequent phases to function.
       - Check lit-review-plan.md for total domains expected
       - If all domains exist -> if [workdir]/intermediate_files/json/evidence_report.json
         is missing, or its `status` is neither `complete` nor `degraded`, run Phase 3
-        steps 5 and 6 (gap texts, then the evidence barrier) first; then resume at Phase 4
+        steps 5, 5a and 6 (gap texts, the suggested links, then the evidence barrier) first; then resume at Phase 4
       - If some domains missing -> Resume Phase 3 for missing domains only
 
    5. If lit-review-plan.md exists -> Resume at Phase 3
