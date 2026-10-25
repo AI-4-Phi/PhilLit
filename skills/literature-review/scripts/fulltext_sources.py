@@ -1,34 +1,15 @@
-"""The one owner of full-text source logic (PL-27): every source's request
-building and response parsing, the licence-kind classification and the
-rule-15 order. `acquire_fulltext.py` and phillit-service both import it;
-each makes the HTTP calls with its own client, adds its own credentials
-(`Request.api` names which) and enforces its own budgets.
-
-PURITY: no network, no environment, no filesystem, nothing read at import.
-Every function maps its arguments to a value; a test pins this.
-
-DECODED JSON: a parse function takes what the JSON decoder returned (the
-caller caps the size and decodes) and never raises on its content: a payload
-of the wrong top-level shape gives `[]`, and a malformed record, location or
-author is skipped while its siblings are kept. The route is explicit, never
-inferred from the payload's shape.
-
-`identity` is the stored identity dict (`acquire_fulltext.make_identity`:
-`doi`, `title`, `surname`, `year`, raw bib values). BibTeX is decoded
-(`clean_bibtex_str`) only to build queries and to match; the identity itself
-is never rewritten.
-
-Kinds, `order` and `license_string` are phillit-service's
-`fulltext/locations.py` behaviour on well-formed input, with guards added for
-malformed input; and an OA location whose `pdf_url` is not http(s) is
-skipped.
-
-Title route: a record matches when its folded `display_name` equals the
-identity's cut phrase (`fulltext.title_phrase_cut`, at least 2 words) or
-starts with it followed by a space, and the folded surname is a whole word of
-its first author's name. Residual, accepted under PL-28: a different work by
-the same first author whose title extends the phrase ("Causal Abstraction and
-Its Critics") still matches (measured 0 of 50).
+"""The one owner of full-text source logic (PL-27): request building and
+response parsing for OpenAlex, Semantic Scholar and Brave, the licence kinds
+and the rule-15 order, imported by `acquire_fulltext.py` and phillit-service,
+which each send the requests with their own client and credentials.
+Purity: no network, environment or filesystem access and nothing read at
+import; every function maps its arguments to a value.
+A parse function takes DECODED JSON and never raises on its content: a
+payload of the wrong shape gives `[]`, and a malformed record, location or
+author is skipped while its siblings are kept.
+Residual, accepted under PL-28: a different work by the same first author
+whose title extends the identity's phrase ("Causal Abstraction and Its
+Critics") still passes the title-route match (measured 0 of 50).
 """
 from __future__ import annotations
 
