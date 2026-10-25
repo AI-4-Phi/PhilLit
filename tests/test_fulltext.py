@@ -298,6 +298,28 @@ class TestIdentityMatching:
         assert ft.fold(pages[0]).find("robust optimization") == 607
         assert ft.identity_ok(pages, robust) == (False, "no_match")
 
+    @pytest.mark.parametrize("title, wrong_head", [
+        ("O\u2019Neill: A Reply to My Critics on Markets", "o neill rejects"),
+        ("It\u2019s: A Study of Moral Luck", "it seems that")])
+    def test_reading_an_apostrophe_as_a_space_never_cuts_the_phrase(self, title, wrong_head):
+        """The subtitle cut is decided on the dropped form: a one-word head
+        such as "O'Neill" is no phrase of its own."""
+        work = {"doi": None, "title": title, "surname": "O'Neill"}
+        assert ft.identity_ok([page(wrong_head + " the market", "John O Neill")], work) == \
+            (False, "no_match")
+        assert ft._forms(title, ft.title_phrase_cut)[0].count(" ") >= 2
+
+    def test_reading_an_apostrophe_as_a_space_keeps_six_words(self):
+        assert ft._forms("O'Neill's and Kant's Views of Moral Luck", ft.title_phrase) == [
+            "oneills and kants views of moral", "o neill s and kant s views of moral"]
+
+    @pytest.mark.parametrize("placeholder", ["none", "forthcoming", "10.1234", "n/a"])
+    def test_a_doi_placeholder_is_no_doi(self, placeholder):
+        """Else "none" on any page would be a DOI match."""
+        work = {"doi": placeholder, "title": "A Study of Moral Luck Today", "surname": "Williams"}
+        assert ft.identity_ok([page("Other paper", "none of this", "forthcoming 10.1234 n/a")], work) == \
+            (False, "no_match")
+
     def test_an_apostrophe_printed_as_a_space_still_matches(self):
         work = {"doi": None, "title": "Categorizing Variants of Goodhart\u2019s Law", "surname": "O'Neill"}
         pages = [page("Categorizing Variants of Goodhart s Law", "John O Neill")]

@@ -12,7 +12,8 @@ below hold only while the rules do. Measured with the shipped extractor
 `dig+apos+nosp=20+minw_nodoi=2+head=600+headmap+aposboth` is this one) on 150 Zotero PDFs
 (each against every other item), 407 PDFs a source probe found by
 searching (hand-audited) and 11 correct arXiv PDFs the old rule rejected.
-Text is matched through `match_fold`: apostrophes deleted, then `fold`.
+Text is matched through `match_fold`: apostrophes deleted, then `fold`. A
+DOI not of `DOI_SHAPE` (`none`, `forthcoming`) counts as no DOI.
 - DOI work: the DOI string in pages 1-3; else, with every DOI on page 1
   (lowered, trailing `.,;)` stripped) equal to the work's, the full title's
   first 6 folded words as a phrase STARTING within the first 600 folded
@@ -149,6 +150,10 @@ MIN_ELLIPSIS_PART_WORDS = 3
 MARKER_RE = re.compile(r"^\[\[(page|sheet) ([0-9]+)\]\]$", re.M)
 SLUG_RE = re.compile(r"^(?:doi-[a-z0-9._-]+|t-[a-z0-9_-]+)-[0-9a-f]{12}$")
 DOI_RE = re.compile(r"10\.\d{4,9}/[^\s\"<>]+", re.I)   # as measured
+# The one shape a normalized DOI must have to count as a DOI: the request
+# builders (`fulltext_sources`), acquisition (`_doi_ok`) and `identity_ok`
+# all treat any other value (`none`, `forthcoming`, `10.1234`) as no DOI.
+DOI_SHAPE = re.compile(r"10\.\d+/\S+")
 _NUM_RE = re.compile(r"(?<![\d.])(\d{1,4})(?![\d.])")   # as measured
 _ARTICLE_NO_RE = re.compile(r"^[A-Za-z]*[0-9]+$")
 
@@ -283,10 +288,26 @@ def _head_match(pages: list[str], phrases: list[str], surnames: list[str]) -> bo
 
 
 def _forms(text: str, phrase) -> list[str]:
-    """`phrase` of `text` with its apostrophes dropped, then with each read
-    as a space (an extractor that prints "O Neill"), without repeats."""
-    return list(dict.fromkeys(p for p in (phrase(drop_apostrophes(text)),
-                                          phrase(_APOSTROPHES.sub(" ", text or ""))) if p))
+    """`phrase` of `text` with its apostrophes dropped, then the SAME words
+    with each apostrophe read as a space (an extractor that prints "O
+    Neill"), without repeats; [] when the phrase is empty. The cut at a
+    subtitle and the 6-word slice are decided on the dropped form only:
+    reading "O'Neill: A Reply" with a space first would make its head two
+    words and cut the phrase to "o neill"."""
+    dropped = phrase(drop_apostrophes(text))
+    if not dropped:
+        return []
+    spaced_words = fold(_APOSTROPHES.sub(" ", text or "")).split()
+    spaced, i = [], 0
+    for word in dropped.split():   # each dropped word is one or more spaced words
+        part = ""
+        while i < len(spaced_words) and len(part) < len(word):
+            part += spaced_words[i]
+            spaced.append(spaced_words[i])
+            i += 1
+        if part != word:
+            return [dropped]
+    return list(dict.fromkeys([dropped, " ".join(spaced)]))
 
 
 def identity_ok(pages: list[str], identity: Mapping) -> tuple[bool, str]:
@@ -296,6 +317,8 @@ def identity_ok(pages: list[str], identity: Mapping) -> tuple[bool, str]:
     (no-DOI rule A). Reject reasons: "empty_identity", "short_title" (a
     no-DOI phrase under 2 words), "other_doi_page1", "no_match"."""
     doi = normalize_doi(identity.get("doi") or "")
+    if not DOI_SHAPE.fullmatch(doi):   # a placeholder would "match" any page
+        doi = ""
     # Raw bib values carry LaTeX (M{\"u}ller), which the fold would split
     # into "m u ller"; decode first, as the References do. Idempotent on
     # plain text, so a caller may pass decoded or raw values.

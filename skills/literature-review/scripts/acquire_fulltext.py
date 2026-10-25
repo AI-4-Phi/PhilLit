@@ -440,9 +440,9 @@ def _on(value: str | None) -> bool:
 
 def _doi_ok(doi: str) -> bool:
     """A normalized DOI of the one shape every source accepts
-    (`fs.DOI_SHAPE`); any other is treated as no DOI, so its PDF meets the
+    (`ft.DOI_SHAPE`); any other is treated as no DOI, so its PDF meets the
     no-DOI rule rather than the DOI rule's weaker title fallback."""
-    return bool(fs.DOI_SHAPE.fullmatch(doi))
+    return bool(ft.DOI_SHAPE.fullmatch(doi))
 
 
 # --------------------------------------------------------------------------

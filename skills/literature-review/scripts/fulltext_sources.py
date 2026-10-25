@@ -22,7 +22,7 @@ from dataclasses import dataclass
 from urllib.parse import quote, urlsplit
 
 # `normalize_doi` is bib_identity's, bound through fulltext (an alias).
-from fulltext import drop_apostrophes, fold, match_fold, normalize_doi, title_phrase_cut
+from fulltext import DOI_SHAPE, drop_apostrophes, fold, match_fold, normalize_doi, title_phrase_cut
 from generate_bibliography import clean_bibtex_str
 from web_evidence import excluded_host
 
@@ -43,7 +43,6 @@ MAX_SUGGESTIONS = 3
 SUGGESTION_TITLE_MAX = 200
 SUGGESTION_URL_MAX = 2000
 
-DOI_SHAPE = re.compile(r"10\.\d+/.+", re.S)
 _NOT_SEARCH_CHAR = re.compile(r"[^\w\s'-]|_")
 
 
