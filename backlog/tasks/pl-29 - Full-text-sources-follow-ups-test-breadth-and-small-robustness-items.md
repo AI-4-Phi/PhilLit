@@ -1,0 +1,31 @@
+---
+id: PL-29
+title: 'Full-text sources follow-ups: test breadth and small robustness items'
+status: Later
+assignee: []
+created_date: '2026-10-25 01:26'
+labels: []
+dependencies: []
+type: guard
+project: Accuracy
+ordinal: 9000
+---
+
+## Description
+
+<!-- SECTION:DESCRIPTION:BEGIN -->
+**Why:** the PL-27 reviews found small items that do not affect which PDF is stored; they wait so the feature could ship.
+
+Items:
+- The OpenAlex 429 branch reads the response body uncapped (openalex_budget_exhausted reads response.text); read a small capped prefix instead.
+- Test gaps: a deadline expiring mid-try in the merged open-access step; the response close before a 429/5xx retry; an S2 unavailable row beside an OpenAlex win; an uneven request split (one half fits, one fails); suggestions under the licensed-only policy; a gap entry removed from its bib after the pass.
+- The open-access no_doi detail short_title also covers a missing title.
+- acquire_fulltext calls the private fulltext_sources._phrase; make it public if the service needs it.
+- _SOURCES mixes single and list returns (with a side table); every source could return a list.
+- The run report's elapsed_seconds includes suggestion time while deadline_seconds stays 420.
+- A crash in the suggestion post-pass loses the not-asked/failed counts.
+- The step 5a question shows raw LaTeX (M{\"u}ller) from the report.
+- The service's arrival-check reservation now counts no-DOI identities, which shortens the service wait for DOI works until the service's title route exists.
+
+Trigger: a full-text bug report, or the next change to acquire_fulltext.py.
+<!-- SECTION:DESCRIPTION:END -->

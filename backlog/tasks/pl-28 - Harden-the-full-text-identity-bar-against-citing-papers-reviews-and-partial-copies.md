@@ -6,6 +6,7 @@ title: >-
 status: To Do
 assignee: []
 created_date: '2026-10-24 21:10'
+updated_date: '2026-10-25 01:26'
 labels: []
 dependencies: []
 type: guard
@@ -24,3 +25,11 @@ Evidence: docs/known-issues/fulltext-sources-measurement-2026-10-24/ (audit_verd
 
 Scope: word-bounded phrase; a minimum phrase length; a page-count or partial-copy check; whether the DOI-title fallback needs the title on page 1.
 <!-- SECTION:DESCRIPTION:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+From PL-27 Task 2: fulltext.fold folds a straight and a curly apostrophe differently, so a title with an apostrophe cannot match a source using the other form (identity_ok, the OpenAlex title-route match, the Brave title filter, Zotero's title check). fold also feeds canonical_identity and slug_for, so a fix moves stored slugs: plan a migration or a match-only fold.
+
+From the PL-27 final review: acquire_fulltext._doi_ok admits DOIs that fulltext_sources' DOI shape refuses (e.g. 10.abc/x). With an OpenAlex key such an entry takes the title route, but its PDF is judged by identity_ok's DOI-then-title fallback (the weaker bar above), not the no-DOI title_head rule. Rare, and limited to the matched record's own locations.
+<!-- SECTION:NOTES:END -->
