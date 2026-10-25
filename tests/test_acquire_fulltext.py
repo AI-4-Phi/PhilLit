@@ -509,7 +509,7 @@ class TestSourceOrder:
         assert http.calls == []
 
     def test_a_doi_of_another_shape_is_refused(self, http, workdir, capsys):
-        """One DOI shape (`fs.DOI_SHAPE`): `10.abc/x` is not a DOI to the CLI,
+        """One DOI shape (`ft.DOI_SHAPE`): `10.abc/x` is not a DOI to the CLI,
         and a gap entry carrying it is a work without a DOI, so its PDF meets
         the no-DOI rule, not the DOI rule's title fallback."""
         with pytest.raises(SystemExit) as exc:
