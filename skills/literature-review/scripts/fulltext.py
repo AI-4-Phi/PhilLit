@@ -9,7 +9,7 @@ IDENTITY (`identity_ok`) reproduces the measured rules EXACTLY; the numbers
 below hold only while the rules do. Measured with the shipped extractor
 (pypdf) by `docs/known-issues/fulltext-identity-hardening-2026-10-25/`
 (local only; `bar_variants.py` is the rule with flags, its variant
-`dig+apos+nosp=20+minw_nodoi=2+head=600` is this one) on 150 Zotero PDFs
+`dig+apos+nosp=20+minw_nodoi=2+head=600+headmap+aposboth` is this one) on 150 Zotero PDFs
 (each against every other item), 407 PDFs a source probe found by
 searching (hand-audited) and 11 correct arXiv PDFs the old rule rejected.
 Text is matched through `match_fold`: apostrophes deleted, then `fold`.
@@ -24,18 +24,20 @@ Text is matched through `match_fold`: apostrophes deleted, then `fold`.
   words; it needs at least 2 words (`short_title`: "Data" matched unrelated
   PDFs); it must START within the first 600 folded characters of one of
   pages 1-5, with the surname on that same page. 132/150 right, 0 wrong.
-- Both: when no phrase matched, a phrase of at least 20 letters is also
-  found with all spaces removed from it and from the page (pypdf loses or
-  adds spaces on some PDFs), starting within `SQUASH_WINDOW` (500) squashed
-  characters. The surname test ignores digits glued to a word's end
+- Both: apostrophes in the title and surname are dropped, and also read
+  as spaces (an extractor that prints "O Neill"). When no phrase starts
+  near a page top, a phrase of at least 20 characters besides spaces is
+  also found with all spaces removed from it and from the page (pypdf
+  loses or adds spaces on some PDFs), still starting before offset 600 of
+  the page. The surname test ignores digits glued to a word's end
   (affiliation marks: `majha1`). Together: 10 of the 11 arXiv PDFs pass,
   and no wrong accept was added on any set.
 - `fold` is the measurement's fold (NFKD, ASCII, lowercase, non-alphanumerics
   to spaces, collapsed), NOT `bib_identity.title_key`; phrase containment is
   a plain substring test, as measured (word-bounding lost right PDFs to
   footnote marks). It also builds `canonical_identity` and `slug_for`, so it
-  never changes for matching: `match_fold` does. Empty title, surname or DOI
-  rejects (an empty string is "in" every text).
+  never changes for matching: `match_fold` does. Unless the DOI matched,
+  an empty title or surname rejects (an empty string is "in" every text).
 - Residual, accepted: a partial copy (front matter, a publisher preview,
   one chapter) of the right work passes; no tested rule (page count, word
   bounds, position) removed one without losing right PDFs.
@@ -207,7 +209,6 @@ def fold(text: str) -> str:
 # "Goodhart’s" fold apart. `match_fold` deletes them all first.
 _APOSTROPHES = re.compile(r"['\u2018\u2019\u02bc\u02b9\u2032`\u00b4]")
 _GLUED_DIGITS = re.compile(r"(?<=[a-z])\d+\b")
-SQUASH_WINDOW = 500
 SQUASH_MIN_CHARS = 20
 
 
@@ -243,24 +244,48 @@ def title_phrase_cut(title: str) -> str:
     return " ".join(fold(base).split()[:6])
 
 
-def _head_match(pages: list[str], phrase: str, surname: str) -> bool:
-    """The phrase starting within the first 600 folded characters of one of
-    `pages`, with the surname (glued digits ignored) on that page; else,
-    for a phrase of SQUASH_MIN_CHARS letters or more, the same with every
-    space removed from phrase and page, within SQUASH_WINDOW."""
+def _squash_start(page: str, squashed: str) -> int:
+    """Where `squashed` (a phrase without spaces) starts in `page` with its
+    spaces removed, as an offset in `page` itself; -1 when absent."""
+    k = page.replace(" ", "").find(squashed)
+    if k < 0:
+        return -1
+    seen = -1
+    for i, c in enumerate(page):
+        if c != " ":
+            seen += 1
+            if seen == k:
+                return i
+    return -1
+
+
+def _head_match(pages: list[str], phrases: list[str], surnames: list[str]) -> bool:
+    """One of the phrases starting within the first 600 folded characters
+    of one of `pages`, with one of the surnames (glued digits ignored) on
+    that page; else, for the first phrase when it has SQUASH_MIN_CHARS
+    characters besides spaces, the same with every space removed from
+    phrase and page, the match still starting before offset 600 of the
+    page."""
     folded = [match_fold(p) for p in pages]
 
     def surname_on(pg: str) -> bool:
-        return f" {surname} " in f" {_GLUED_DIGITS.sub('', pg)} "
+        bare = f" {_GLUED_DIGITS.sub('', pg)} "
+        return any(f" {s} " in bare for s in surnames)
 
     for pg in folded:
-        if 0 <= pg.find(phrase) < 600 and surname_on(pg):
+        if any(0 <= pg.find(ph) < 600 for ph in phrases) and surname_on(pg):
             return True
-    squashed = phrase.replace(" ", "")
+    squashed = phrases[0].replace(" ", "")
     if len(squashed) < SQUASH_MIN_CHARS:
         return False
-    return any(0 <= pg.replace(" ", "").find(squashed) < SQUASH_WINDOW and surname_on(pg)
-               for pg in folded)
+    return any(0 <= _squash_start(pg, squashed) < 600 and surname_on(pg) for pg in folded)
+
+
+def _forms(text: str, phrase) -> list[str]:
+    """`phrase` of `text` with its apostrophes dropped, then with each read
+    as a space (an extractor that prints "O Neill"), without repeats."""
+    return list(dict.fromkeys(p for p in (phrase(drop_apostrophes(text)),
+                                          phrase(_APOSTROPHES.sub(" ", text or ""))) if p))
 
 
 def identity_ok(pages: list[str], identity: Mapping) -> tuple[bool, str]:
@@ -273,8 +298,8 @@ def identity_ok(pages: list[str], identity: Mapping) -> tuple[bool, str]:
     # Raw bib values carry LaTeX (M{\"u}ller), which the fold would split
     # into "m u ller"; decode first, as the References do. Idempotent on
     # plain text, so a caller may pass decoded or raw values.
-    phrase_src = drop_apostrophes(clean_bibtex_str(identity.get("title") or ""))
-    surname = match_fold(clean_bibtex_str(identity.get("surname") or ""))
+    title = clean_bibtex_str(identity.get("title") or "")
+    surnames = _forms(clean_bibtex_str(identity.get("surname") or ""), fold)
     if doi:
         raw3 = "\f".join(pages[:3]).lower()
         # A whole DOI, not the start of a longer one (10.1/abc in 10.1/abcd);
@@ -284,16 +309,16 @@ def identity_ok(pages: list[str], identity: Mapping) -> tuple[bool, str]:
         p1 = pages[0] if pages else ""
         if any(x.lower().rstrip(".,;)") != doi for x in DOI_RE.findall(p1)):
             return False, "other_doi_page1"
-        phrase = title_phrase(phrase_src)
-        if not phrase or not surname:
+        phrases = _forms(title, title_phrase)
+        if not phrases or not surnames:
             return False, "empty_identity"
-        return (True, "title") if _head_match(pages[:3], phrase, surname) else (False, "no_match")
-    phrase = title_phrase_cut(phrase_src)
-    if not phrase or not surname:
+        return (True, "title") if _head_match(pages[:3], phrases, surnames) else (False, "no_match")
+    phrases = _forms(title, title_phrase_cut)
+    if not phrases or not surnames:
         return False, "empty_identity"
-    if len(phrase.split()) < 2:
+    if len(phrases[0].split()) < 2:
         return False, "short_title"
-    return (True, "title_head") if _head_match(pages[:5], phrase, surname) else (False, "no_match")
+    return (True, "title_head") if _head_match(pages[:5], phrases, surnames) else (False, "no_match")
 
 
 # --------------------------------------------------------------------------

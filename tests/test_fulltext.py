@@ -284,6 +284,19 @@ class TestIdentityMatching:
         pages = [page("Yi Liu", *[FILLER] * 12, "RobustOptimization forMitigatingReward Hacking")]
         assert ft.identity_ok(pages, robust) == (False, "no_match")
 
+    def test_lost_spaces_count_the_head_window_in_the_spaced_page(self):
+        """Squashing must not pull a late title into the window: here the
+        phrase starts at offset 607 of the page, 405 once squashed."""
+        robust = {"doi": None, "title": "Robust Optimization for Mitigating Reward Hacking", "surname": "Liu"}
+        pages = [page("Liu " + "to " * 201 + "Robust Optimization for Mitigating Reward Hacking")]
+        assert ft.fold(pages[0]).find("robust optimization") == 607
+        assert ft.identity_ok(pages, robust) == (False, "no_match")
+
+    def test_an_apostrophe_printed_as_a_space_still_matches(self):
+        work = {"doi": None, "title": "Categorizing Variants of Goodhart\u2019s Law", "surname": "O'Neill"}
+        pages = [page("Categorizing Variants of Goodhart s Law", "John O Neill")]
+        assert ft.identity_ok(pages, work) == (True, "title_head")
+
     @pytest.mark.parametrize("bib, pdf", [("Goodhart's Law", "Goodhart\u2019s Law"),
                                           ("Goodhart\u2019s Law", "Goodhart's Law"),
                                           ("Goodhart's Law", "Goodhart's Law")])
