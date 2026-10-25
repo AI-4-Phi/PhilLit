@@ -30,8 +30,9 @@ Text is matched through `match_fold`: apostrophes deleted, then `fold`.
   also found with all spaces removed from it and from the page (pypdf
   loses or adds spaces on some PDFs), still starting before offset 600 of
   the page. The surname test ignores 1-2 digits glued to a word's
-  end (affiliation marks: `majha1`; never a year: `smith2020`). Together: 10 of the 11 arXiv PDFs pass,
-  and no wrong accept was added on any set.
+  end (affiliation marks: `majha1`; never a year: `smith2020`).
+  Together: 10 of the 11 arXiv PDFs pass, and no wrong accept was added
+  on any set.
 - `fold` is the measurement's fold (NFKD, ASCII, lowercase, non-alphanumerics
   to spaces, collapsed), NOT `bib_identity.title_key`; phrase containment is
   a plain substring test, as measured (word-bounding lost right PDFs to
