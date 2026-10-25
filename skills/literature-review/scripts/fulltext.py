@@ -29,8 +29,8 @@ Text is matched through `match_fold`: apostrophes deleted, then `fold`.
   near a page top, a phrase of at least 20 characters besides spaces is
   also found with all spaces removed from it and from the page (pypdf
   loses or adds spaces on some PDFs), still starting before offset 600 of
-  the page. The surname test ignores digits glued to a word's end
-  (affiliation marks: `majha1`). Together: 10 of the 11 arXiv PDFs pass,
+  the page. The surname test ignores 1-2 digits glued to a word's
+  end (affiliation marks: `majha1`; never a year: `smith2020`). Together: 10 of the 11 arXiv PDFs pass,
   and no wrong accept was added on any set.
 - `fold` is the measurement's fold (NFKD, ASCII, lowercase, non-alphanumerics
   to spaces, collapsed), NOT `bib_identity.title_key`; phrase containment is
@@ -208,7 +208,7 @@ def fold(text: str) -> str:
 # straight one a space and drops a curly one, so "Goodhart's" and
 # "Goodhart’s" fold apart. `match_fold` deletes them all first.
 _APOSTROPHES = re.compile(r"['\u2018\u2019\u02bc\u02b9\u2032`\u00b4]")
-_GLUED_DIGITS = re.compile(r"(?<=[a-z])\d+\b")
+_GLUED_DIGITS = re.compile(r"(?<=[a-z])\d{1,2}\b")   # affiliation marks: 1-2 digits, never a year
 SQUASH_MIN_CHARS = 20
 
 

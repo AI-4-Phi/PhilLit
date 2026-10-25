@@ -270,6 +270,12 @@ class TestIdentityMatching:
         pages = [page("Categorizing Wireheading in Partially Embedded Agents", "Arushi Majhal")]
         assert ft.identity_ok(pages, self.WIRE) == (False, "no_match")
 
+    def test_a_glued_year_is_not_a_surname(self):
+        """A citing page names the work near its top and cites "Majha2019":
+        only 1-2 digits are an affiliation mark."""
+        pages = [page("Categorizing Wireheading in Partially Embedded Agents", "as shown by Majha2019")]
+        assert ft.identity_ok(pages, self.WIRE) == (False, "no_match")
+
     def test_lost_spaces_match_a_long_phrase(self):
         robust = {"doi": None, "title": "Robust Optimization for Mitigating Reward Hacking", "surname": "Liu"}
         pages = [page("RobustOptimization forMitigatingReward Hacking", "Yi Liu")]
