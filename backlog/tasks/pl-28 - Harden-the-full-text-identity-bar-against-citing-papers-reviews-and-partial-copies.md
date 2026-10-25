@@ -3,10 +3,10 @@ id: PL-28
 title: >-
   Harden the full-text identity bar against citing papers, reviews and partial
   copies
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-10-24 21:10'
-updated_date: '2026-10-25 01:44'
+updated_date: '2026-10-25 12:59'
 labels: []
 dependencies: []
 type: guard
@@ -34,4 +34,6 @@ From PL-27 Task 2: fulltext.fold folds a straight and a curly apostrophe differe
 From the PL-27 final review: acquire_fulltext._doi_ok admits DOIs that fulltext_sources' DOI shape refuses (e.g. 10.abc/x). With an OpenAlex key such an entry takes the title route, but its PDF is judged by identity_ok's DOI-then-title fallback (the weaker bar above), not the no-DOI title_head rule. Rare, and limited to the matched record's own locations.
 
 From the PL-27 headless run (reward hacking, 2026-10-24): 12 correct arXiv PDFs were rejected fail-closed by identity_ok's title_head rule. Causes seen: (1) an affiliation digit glued to the surname after folding ("majha1"), so the whole-word surname test fails; (2) PDF text extraction lost spaces ("robustoptimization formitigatingreward hacking"); (3) the apostrophe fold ("goodharts" vs "goodhart s"). All lose coverage, none accepts a wrong work. (1) looks cheap: strip trailing digits from tokens before the surname test; re-measure on the Zotero set first.
+
+Disposition (2026-10-25, ruled by Johannes, built on pl-27-fulltext-sources): DOI title fallback needs the phrase near a page top; no-DOI phrase needs 2 words; matching drops apostrophes (also read as spaces), ignores glued surname digits, tolerates lost spaces for 20+ characters; candidate sites drop apostrophes; _doi_ok uses fs.DOI_SHAPE. Measured in docs/known-issues/fulltext-identity-hardening-2026-10-25/. Declined on measurement: word-bounded phrases, minimum page count. Partial copies: accepted residual, documented in fulltext.py.
 <!-- SECTION:NOTES:END -->

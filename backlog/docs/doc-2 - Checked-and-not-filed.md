@@ -114,3 +114,9 @@ that did not survive reading the file it concerns.
   allowlist would empty EVIDENCE-WEB captures and open-access full texts,
   which reach arbitrary hosts. PhilLit keeps its deny and ask rules in
   `/phillit:setup`. Do not refile.
+- An overall deadline for `fetch_web.py`'s body read. It streams with
+  `iter_content` and a per-read timeout only, so a page that trickles in can
+  hold it (`acquire_fulltext.py` reads per receive for this reason). Not filed: a
+  researcher runs it as one Bash call, which the Bash tool's own timeout
+  ends, so a stuck fetch costs that researcher one call, never the run.
+  Revisit if a researcher is seen stuck on a fetch.
