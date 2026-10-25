@@ -55,8 +55,10 @@ SOURCES, in the ruled order, the first passing PDF wins:
    shares with the researchers' searches); Semantic Scholar needs a DOI.
 4. The service channel (`PHILLIT_FULLTEXT_REQUEST_DIR`; it replaces 3,
    whose rows then report `disabled` with detail `service`). One request file per
-   batch of at most `fulltext_channel.MAX_PER_REQUEST` DOI identities, never
-   a URL and never a no-DOI identity (`no_doi`); the grammar is
+   batch of at most `fulltext_channel.MAX_PER_REQUEST` identities, never
+   a URL; a no-DOI identity is sent too (a worker without the title route
+   answers `none`, detail `no_doi`), and a request too large is written as
+   two halves, down to one identity (`request_too_large` for that one); the grammar is
    `fulltext_channel`'s. A worker copies each found record into the store
    under this identity's slug and answers; the engine waits on all its
    requests together until `SERVICE_WAIT_MARGIN` seconds plus
@@ -167,8 +169,8 @@ policy refuses as `{source: "store", outcome: "unlicensed_removed"}`. Exit
 2 for a usage error.
 
 `--gaps` tries every domain-bib entry with no `abstract` and either a DOI,
-or (the repository, Zotero or the folder enabled) a title, author and
-year, within a 420 s pass deadline (the Bash ceiling is 600 s): store and
+or (the repository, Zotero, the folder, the service channel, an OpenAlex
+key or a Brave key enabled) a title, author and year, within a 420 s pass deadline (the Bash ceiling is 600 s): store and
 repository (and Zotero and the folder where enabled; OpenAlex and Semantic
 Scholar while the service channel is off) per entry, each entry decided or
 found there stored at once, then one service request for the entries still
@@ -993,6 +995,12 @@ def _api_get(url, *, headers, params, limiter, deadline: Deadline, openalex: boo
     return None, "retries_exhausted"
 
 
+def _brave_on() -> bool:
+    """Whether a Brave Search key is set, read now (after `.env` loads):
+    non-empty once stripped."""
+    return bool(os.environ.get("BRAVE_API_KEY", "").strip())
+
+
 def _title_route_on() -> bool:
     """Whether the OpenAlex title route may run: a usable OPENALEX_API_KEY,
     read now (after `.env` loads). A title search costs credits an unkeyed
@@ -1398,12 +1406,35 @@ def _close_requests(request_dir: Path, written: list) -> dict[str, list[str]]:
     return notes
 
 
+def _write_split(request_dir: Path, mode: str, chunk: list, out: dict) -> list[tuple[str, list]]:
+    """Write `chunk` as one request, or, when the file would exceed
+    `fc.MAX_REQUEST_BYTES`, as two halves, recursing down to one identity.
+    Returns [(request_id, part)] for each request written; a part whose
+    write fails is `unavailable` in `out` (`request_write_failed:<reason>`,
+    so a single identity still too large is `request_too_large`)."""
+    request_id = fc.new_request_id(mode)
+    try:
+        fc.write_request(request_dir, request_id, mode, [c[3] for c in chunk])
+    except (OSError, ValueError) as exc:
+        reason = (str(exc) if isinstance(exc, ValueError) else "") or type(exc).__name__
+        if reason == "request_too_large" and len(chunk) > 1:
+            half = len(chunk) // 2
+            return (_write_split(request_dir, mode, chunk[:half], out)
+                    + _write_split(request_dir, mode, chunk[half:], out))
+        for slug, *_ in chunk:
+            out[slug] = SourceResult("service", "unavailable", [f"request_write_failed:{reason}"])
+        return []
+    return [(request_id, chunk)]
+
+
 def service_fetch(store: Path, pending: list[tuple[str, dict, str | None]], settings: Settings,
                   deadline: Deadline, mode: str) -> dict[str, SourceResult]:
     """Ask the service channel for `pending` [(slug, identity, invalid)]
     (`invalid`: the reason `begin` found the stored record invalid, or
-    None); returns a `service` SourceResult for every slug. DOI identities
-    only are sent, in requests of at most `fc.MAX_PER_REQUEST`, and only
+    None); returns a `service` SourceResult for every slug. Every identity
+    `fc.identity_payload` accepts is sent (a no-DOI one too; a worker
+    without the title route answers it `none/no_doi`), in requests of at
+    most `fc.MAX_PER_REQUEST` that split in half while too large, and only
     when the request directory exists (else `request_dir_missing`: the
     worker creates it, so there is no worker). All are written first, then
     waited on together until `_wait_bound`, then every written request is
@@ -1417,9 +1448,6 @@ def service_fetch(store: Path, pending: list[tuple[str, dict, str | None]], sett
     out: dict[str, SourceResult] = {}
     sendable = []
     for slug, identity, invalid in pending:
-        if not normalize_doi(identity.get("doi") or ""):
-            out[slug] = SourceResult("service", "no_doi")
-            continue
         try:
             sendable.append((slug, identity, invalid, fc.identity_payload(identity)))
         except ValueError as exc:
@@ -1440,16 +1468,9 @@ def service_fetch(store: Path, pending: list[tuple[str, dict, str | None]], sett
                 for slug, *_ in sendable[i:]:
                     out[slug] = SourceResult("service", "deadline")
                 break
-            request_id = fc.new_request_id(mode)
-            try:
-                fc.write_request(settings.request_dir, request_id, mode, [c[3] for c in chunk])
-            except (OSError, ValueError) as exc:
-                reason = (str(exc) if isinstance(exc, ValueError) else "") or type(exc).__name__
-                for slug, *_ in chunk:
-                    out[slug] = SourceResult("service", "unavailable", [f"request_write_failed:{reason}"])
-                continue
-            written.append((request_id, chunk))
-            n_sent += len(chunk)
+            for request_id, part in _write_split(settings.request_dir, mode, chunk, out):
+                written.append((request_id, part))
+                n_sent += len(part)
         responses = fc.wait_for_responses(settings.request_dir, [rid for rid, _ in written],
                                           _wait_bound(deadline, n_sent), clock=_clock, sleep=_sleep)
     finally:
@@ -1577,8 +1598,9 @@ def _folder_warnings(settings: Settings) -> list[str]:
 def run_gaps(workdir: Path, n_domains: int, settings: Settings) -> dict:
     started = _clock()
     deadline = Deadline(GAPS_DEADLINE)
-    title_route = settings.repository_dir is not None or (
-        not settings.licensed_only and (settings.zotero_on or settings.pdf_dir is not None))
+    title_route = (settings.repository_dir is not None
+                   or (not settings.licensed_only and (settings.zotero_on or settings.pdf_dir is not None))
+                   or _title_route_on() or settings.request_dir is not None or _brave_on())
     cands, domains = gap_candidates(workdir, n_domains, title_route)
 
     def crashed(row, exc):   # one entry's crash never sinks the pass

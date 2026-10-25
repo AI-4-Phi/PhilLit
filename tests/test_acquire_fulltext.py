@@ -1261,6 +1261,21 @@ class TestGaps:
         cands, _ = af.gap_candidates(workdir, 1, title_route=True)
         assert [k for _, k, _ in cands] == ["doionly", "nodoi"]
 
+    @pytest.mark.parametrize("setting", ["openalex", "brave", "service", None])
+    def test_gaps_admits_no_doi_with_title_route_or_brave_or_service(self, http, workdir, capsys,
+                                                                      monkeypatch, request, setting):
+        monkeypatch.delenv("OPENALEX_API_KEY", raising=False)
+        monkeypatch.delenv("BRAVE_API_KEY", raising=False)
+        if setting == "openalex":
+            monkeypatch.setenv("OPENALEX_API_KEY", "k" * 20)
+        elif setting == "brave":
+            monkeypatch.setenv("BRAVE_API_KEY", "b")
+        elif setting == "service":
+            request.getfixturevalue("service")   # a request dir and a fake worker
+        (workdir / "literature-domain-1.bib").write_text(bib_entry("nodoi"), encoding="utf-8")
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        assert json.loads(out)["candidates"] == (0 if setting is None else 1)
+
     def test_stored_identity_is_raw(self, http, workdir):
         (workdir / "literature-domain-1.bib").write_text(
             bib_entry("raw", title="{M}oral {L}uck in {K}ant", author="van Fraassen, Bas and Doe, J."),
@@ -1691,8 +1706,27 @@ class TestGaps:
             {"entry": "1/g1", "reason": "error:RuntimeError: kaput"},
             {"entry": "2/g2", "reason": "error:RuntimeError: kaput"}]
 
-    def test_oversize_request_is_unavailable_and_never_written(self, http, workdir, capsys, service,
-                                                               monkeypatch):
+    def test_oversize_chunk_is_split_in_half(self, http, workdir, capsys, service, monkeypatch):
+        dois = [f"10.1/w{n}" for n in range(4)]
+        # the cap is the size of a two-identity request: two fit, four do not
+        probe = workdir / "probe"
+        probe.mkdir()
+        payloads = [fc.identity_payload(af.make_identity(d, TITLE, SURNAME, YEAR)) for d in dois[:2]]
+        cap = fc.write_request(probe, fc.new_request_id("gaps"), "gaps", payloads).stat().st_size
+        monkeypatch.setattr(fc, "MAX_REQUEST_BYTES", cap)
+        service.answer({d: {"status": "found", "pdf": work_pdf(doi=d)} for d in dois})
+        (workdir / "literature-domain-1.bib").write_text(
+            "".join(bib_entry(f"k{n}", doi=d) for n, d in enumerate(dois)), encoding="utf-8")
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        assert json.loads(out)["counts"] == {"acquired": 4}
+        files = _request_files(service)
+        assert len(files) == 2
+        sizes = [len(json.loads(f.read_text(encoding="utf-8"))["identities"]) for f in files]
+        assert sizes == [2, 2]
+        assert all(f.with_name(f.name[:-len(fc.REQUEST_SUFFIX)] + fc.CLOSED_SUFFIX).exists() for f in files)
+
+    def test_single_identity_still_too_large_is_unavailable(self, http, workdir, capsys, service,
+                                                            monkeypatch):
         monkeypatch.setattr(fc, "MAX_REQUEST_BYTES", 100)
         dois = ["10.1/w0", "10.1/w1"]
         service.answer({d: {"status": "found", "pdf": work_pdf(doi=d)} for d in dois})
@@ -2057,14 +2091,42 @@ class TestService:
         assert data["tried"][0] == {"source": "store", "outcome": "invalid_replaced:sidecar_unreadable"}
         assert ft.validate_record(store, slug).acquired_at == "2026-10-22T00:00:00+00:00"
 
-    def test_service_never_sends_a_url_or_a_no_doi_identity(self, http, workdir, capsys, service):
-        service.answer({DOI: {"status": "found", "pdf": work_pdf()}})
+    def test_service_sends_no_doi_identities(self, http, workdir, capsys, service):
+        service.answer({DOI: {"status": "found", "pdf": work_pdf()},
+                        None: {"status": "none", "detail": "no_doi"}})
+        ident = af.make_identity(None, TITLE, SURNAME, YEAR)
+        withdoi = af.make_identity(DOI, TITLE, SURNAME, YEAR)
+        store = workdir / ft.STORE_REL
+        settings = af.settings_from_env(False, None, 1)
+        settings.request_dir = service.request_dir
+        res = af.service_fetch(store, [(ft.slug_for(ident), ident, None),
+                                       (ft.slug_for(withdoi), withdoi, None)],
+                               settings, af.Deadline(None), "gaps")
+        assert res[ft.slug_for(ident)].outcome == "no_doi"
+        assert res[ft.slug_for(withdoi)].outcome == "acquired"
+        [req] = _request_files(service)
+        idents = json.loads(req.read_text(encoding="utf-8"))["identities"]
+        assert [i["doi"] for i in idents] == [None, DOI]
+        assert not any("url" in json.dumps(i).lower() for i in idents)
+        assert http.calls == []
+
+    def test_service_never_sends_a_url(self, http, workdir, capsys, service):
+        service.answer({None: {"status": "none", "detail": "no_doi"}})
         code, data = run_json(capsys, workdir, "--title", TITLE, "--author", SURNAME, "--year", YEAR)
         assert _service_tried(data) == {"source": "service", "outcome": "no_doi"}
-        outcomes = {t["source"]: t for t in data["tried"]}
-        assert outcomes["openalex"] == {"source": "openalex", "outcome": "disabled", "detail": ["service"]}
-        assert data["status"] == "not_found"
-        assert _request_files(service) == [] and http.calls == []
+        [req] = _request_files(service)
+        assert "http" not in req.read_text(encoding="utf-8")
+        assert http.calls == []
+
+    def test_no_doi_request_keeps_raw_fields(self, http, workdir, capsys, service):
+        raw_title, raw_surname = "{M}oral {L}uck in {K}ant", "van Fraassen"
+        service.answer({None: {"status": "none", "detail": "no_doi"}})
+        run_json(capsys, workdir, "--title", raw_title, "--author", raw_surname, "--year", YEAR)
+        [req] = _request_files(service)
+        [ident] = json.loads(req.read_text(encoding="utf-8"))["identities"]
+        identity = af.make_identity(None, raw_title, raw_surname, YEAR)
+        assert ident == {"key": ft.canonical_identity(identity), "doi": None, "title": raw_title,
+                         "surname": raw_surname, "year": YEAR}
 
     @pytest.mark.parametrize("status, detail, outcome, details", [
         ("none", None, "not_found", []),
