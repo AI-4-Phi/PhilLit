@@ -1749,6 +1749,114 @@ class TestGaps:
 OA_REF = {"url": "https://oa.example/a.pdf", "kind": "cc", "service": True}
 
 
+class TestGapEntry:
+    """`--gap-entry DOMAIN/KEY`: a handed-over PDF is stored under the identity
+    the gap-pass report holds, never one retyped from raw bib text."""
+    LTITLE = "Justified {H}arm and the Ethics of Defensive Action"
+    LAUTHOR = "M{\\\"u}ller, Hans"
+
+    def _gap_pass(self, workdir, capsys, monkeypatch, bib=None):
+        monkeypatch.setenv("OPENALEX_API_KEY", "k" * 20)   # admits a no-DOI entry
+        (workdir / "literature-domain-1.bib").write_text(
+            bib or bib_entry("latex", title=self.LTITLE, author=self.LAUTHOR), encoding="utf-8")
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        assert code == 0
+        return json.loads(out)
+
+    def _pdf(self, tmp_path):
+        p = tmp_path / "hand.pdf"
+        p.write_bytes(work_pdf(author="Hans M\u00fcller", doi=None))
+        return p
+
+    def _usage_error(self, workdir, capsys, *argv):
+        with pytest.raises(SystemExit) as e:
+            af.main([str(workdir), *map(str, argv)])
+        assert e.value.code == 2
+        return capsys.readouterr().err
+
+    def _store_files(self, workdir):
+        d = workdir / ft.STORE_REL
+        return sorted(p.name for p in d.iterdir()) if d.exists() else []
+
+    def test_gap_entry_stores_under_the_reports_identity(self, http, workdir, capsys, monkeypatch, tmp_path):
+        self._gap_pass(workdir, capsys, monkeypatch)
+        code, data = run_json(capsys, workdir, "--pdf", self._pdf(tmp_path), "--gap-entry", "1/latex")
+        assert code == 0 and data["status"] == "acquired" and data["source"] == "user"
+        rec = ft.validate_record(workdir / ft.STORE_REL, data["slug"])
+        assert rec.identity == {"doi": None, "title": self.LTITLE, "surname": "M{\\\"u}ller", "year": YEAR}
+
+    def test_gap_entry_needs_pdf_and_excludes_identity_flags(self, http, workdir, capsys, monkeypatch, tmp_path):
+        self._gap_pass(workdir, capsys, monkeypatch)
+        pdf = self._pdf(tmp_path)
+        for extra in (["--doi", DOI], ["--title", "T"], ["--author", "A"], ["--year", "2001"]):
+            self._usage_error(workdir, capsys, "--pdf", pdf, "--gap-entry", "1/latex", *extra)
+        assert "--pdf" in self._usage_error(workdir, capsys, "--gap-entry", "1/latex")
+        self._usage_error(workdir, capsys, "--pdf", pdf, "--gap-entry", "1/latex", "--gaps", "--domains", "1")
+        self._usage_error(workdir, capsys, "--pdf", pdf, "--gap-entry", "1/latex", "--domains", "1")
+        self._usage_error(workdir, capsys, "--pdf", pdf, "--gap-entry", "nokey")
+        assert self._store_files(workdir) == []
+
+    def test_gap_entry_ignores_current_admission_settings(self, http, workdir, capsys, monkeypatch, tmp_path):
+        self._gap_pass(workdir, capsys, monkeypatch)
+        monkeypatch.delenv("OPENALEX_API_KEY")
+        assert af.gap_candidates(workdir, 1, title_route=False)[0] == []
+        code, data = run_json(capsys, workdir, "--pdf", self._pdf(tmp_path), "--gap-entry", "1/latex")
+        assert data["status"] == "acquired"
+
+    def test_gap_entry_missing_report(self, http, workdir, capsys, tmp_path):
+        err = self._usage_error(workdir, capsys, "--pdf", self._pdf(tmp_path), "--gap-entry", "1/latex")
+        assert "gap-pass report" in err and self._store_files(workdir) == []
+
+    def test_gap_entry_unknown_row(self, http, workdir, capsys, monkeypatch, tmp_path):
+        self._gap_pass(workdir, capsys, monkeypatch)
+        before = self._store_files(workdir)
+        err = self._usage_error(workdir, capsys, "--pdf", self._pdf(tmp_path), "--gap-entry", "1/nope")
+        assert "1/nope" in err and self._store_files(workdir) == before
+        self._usage_error(workdir, capsys, "--pdf", self._pdf(tmp_path), "--gap-entry", "2/latex")
+
+    def test_gap_entry_several_rows(self, http, workdir, capsys, monkeypatch, tmp_path):
+        self._gap_pass(workdir, capsys, monkeypatch)
+        before = self._store_files(workdir)
+        rp = workdir / af.REPORT_REL
+        rep = json.loads(rp.read_text(encoding="utf-8"))
+        rep["entries"].append(dict(rep["entries"][0]))
+        rp.write_text(json.dumps(rep), encoding="utf-8")
+        err = self._usage_error(workdir, capsys, "--pdf", self._pdf(tmp_path), "--gap-entry", "1/latex")
+        assert "2 rows" in err and self._store_files(workdir) == before
+
+    def test_gap_entry_bib_changed_since_the_pass(self, http, workdir, capsys, monkeypatch, tmp_path):
+        self._gap_pass(workdir, capsys, monkeypatch)
+        before = self._store_files(workdir)
+        (workdir / "literature-domain-1.bib").write_text(
+            bib_entry("latex", title=self.LTITLE, author=self.LAUTHOR, year="2020"), encoding="utf-8")
+        err = self._usage_error(workdir, capsys, "--pdf", self._pdf(tmp_path), "--gap-entry", "1/latex")
+        assert "changed" in err and self._store_files(workdir) == before
+
+    def test_gap_entry_refuses_same_work_as_row(self, http, workdir, capsys, monkeypatch, tmp_path):
+        (workdir / "literature-domain-2.bib").write_text(
+            bib_entry("twin", title=self.LTITLE, author=self.LAUTHOR), encoding="utf-8")
+        monkeypatch.setenv("OPENALEX_API_KEY", "k" * 20)
+        (workdir / "literature-domain-1.bib").write_text(
+            bib_entry("latex", title=self.LTITLE, author=self.LAUTHOR), encoding="utf-8")
+        code, out = run(capsys, workdir, "--gaps", "--domains", "2")
+        rows = gap_report(workdir)["entries"]
+        assert rows[1]["tried"][0]["outcome"] == "same_work_as:1/latex"
+        assert rows[1]["outcome"] == rows[0]["outcome"]   # run_gaps overwrote it: tried is the signal
+        before = self._store_files(workdir)
+        err = self._usage_error(workdir, capsys, "--pdf", self._pdf(tmp_path), "--gap-entry", "2/twin")
+        assert "same work" in err and self._store_files(workdir) == before
+        code, data = run_json(capsys, workdir, "--pdf", self._pdf(tmp_path), "--gap-entry", "1/latex")
+        assert data["status"] == "acquired"
+
+    def test_entry_identity_for_gaps_is_what_gap_candidates_builds(self, http, workdir):
+        (workdir / "literature-domain-1.bib").write_text(
+            bib_entry("a", title=self.LTITLE, author=self.LAUTHOR), encoding="utf-8")
+        cands, _ = af.gap_candidates(workdir, 1, title_route=True)
+        ident = af.entry_identity_for_gaps({"title": self.LTITLE, "author": self.LAUTHOR, "year": YEAR})
+        assert cands[0][2] == ident
+        assert af.entry_identity_for_gaps({"title": "T", "author": "Doe, J."}) is None
+
+
 def _full_args():
     return ("--doi", DOI, "--title", TITLE, "--author", SURNAME, "--year", YEAR)
 

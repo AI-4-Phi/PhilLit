@@ -5,6 +5,7 @@ Usage:
   acquire_fulltext.py <workdir> --doi D [--title T --author A --year Y]
   acquire_fulltext.py <workdir> --title T --author A --year Y
   acquire_fulltext.py <workdir> (--doi D | --title T --author A --year Y) --pdf PATH
+  acquire_fulltext.py <workdir> --pdf PATH --gap-entry DOMAIN/KEY
   acquire_fulltext.py <workdir> --gaps --domains N
 
 Rulings: `docs/ideas/fulltext-evidence-tier.md` ("Decided").
@@ -213,6 +214,18 @@ line, `suggestions: N not asked (cap or time), M failed`, when either is
 non-zero. It writes the run report and prints a one-line JSON summary with
 counts per outcome and `suggested`, the number of entries with a non-empty
 `suggestions` list.
+
+`--gap-entry DOMAIN/KEY` (with `--pdf`; no `--doi/--title/--author/--year`,
+`--gaps` or `--domains`) hands a PDF over for a gap entry under exactly that
+entry's identity: it is read from the run report's row (retyping raw bib
+values breaks LaTeX: `M{\\"u}ller` loses its backslash in double quotes, `$`
+expands), and the entry is re-read from the current domain bib, whose
+identity (`entry_identity_for_gaps`, the one builder `--gaps` uses, blind to
+which sources are on now) must equal the report's. Exit 2 naming the cause
+(`GapEntryError`) for a missing report, no row or several, a missing bib
+entry, a changed identity, or a `same_work_as` row (recognised by its
+`tried`; it shares the first row's slug, which does not prove the barrier
+binds its own raw values: hand the PDF over for the first row).
 
 IDENTITY FORMS (the barrier's binding contract). `--gaps` stores the
 entry's RAW title, `bib_identity.first_author_surname(author, editor)` and
@@ -1650,6 +1663,24 @@ def acquire_one(workdir: Path, identity: dict, settings: Settings, deadline: Dea
 # --gaps
 # --------------------------------------------------------------------------
 
+def entry_identity_for_gaps(fields: dict) -> dict | None:
+    """The stored identity of one bib entry's parsed fields, as `--gaps` and
+    `--gap-entry` build it: the normalised DOI when it is usable, the RAW
+    title, `first_author_surname(author, editor)` and the raw year (the
+    barrier binds no-DOI records on raw values). None when the entry has no
+    usable DOI and no complete title/author/year. Which sources are enabled
+    is not its concern: admission is `gap_candidates`' decision, so a handover
+    reconstructs the identity the same way whatever the settings now are."""
+    doi = normalize_doi(fields.get("doi") or "")
+    doi = doi if _doi_ok(doi) else ""
+    title = fields.get("title") or ""
+    surname = first_author_surname(fields.get("author") or "", fields.get("editor") or "")
+    year = fields.get("year") or ""
+    if doi or (title.strip() and surname.strip() and year.strip()):
+        return make_identity(doi, title, surname, year)
+    return None
+
+
 def gap_candidates(workdir: Path, n_domains: int, title_route: bool):
     """([(domain, key, stored identity)], {domain: "present"|"missing"|"unreadable"})."""
     out, domains = [], {}
@@ -1673,13 +1704,9 @@ def gap_candidates(workdir: Path, n_domains: int, title_route: bool):
             fields = parse_entry_fields(chunk)
             if (fields.get("abstract") or "").strip():
                 continue
-            doi = normalize_doi(fields.get("doi") or "")
-            doi = doi if _doi_ok(doi) else ""
-            title = fields.get("title") or ""
-            surname = first_author_surname(fields.get("author") or "", fields.get("editor") or "")
-            year = fields.get("year") or ""
-            if doi or (title_route and title.strip() and surname.strip() and year.strip()):
-                out.append((i, header[1], make_identity(doi, title, surname, year)))
+            ident = entry_identity_for_gaps(fields)
+            if ident and (ident["doi"] or title_route):
+                out.append((i, header[1], ident))
     return out, domains
 
 
@@ -1838,6 +1865,61 @@ def run_gaps(workdir: Path, n_domains: int, settings: Settings) -> dict:
     return report
 
 
+class GapEntryError(Exception):
+    """`--gap-entry` cannot name one entry's identity; the message says why."""
+
+
+def identity_from_report(workdir: Path, spec: str) -> dict:
+    """The identity of the gap entry `spec` (`DOMAIN/KEY`), from the run
+    report, proven against the entry's current bib text. Raises
+    `GapEntryError`. Retyping raw bib values on a command line breaks LaTeX,
+    so the report's raw values are the identity, and the bib is re-read only
+    to prove they still describe the entry (a bib edited after the pass is
+    refused). A `same_work_as` row is refused: it shares the first row's slug,
+    which does not prove the barrier binds THIS row's raw values."""
+    domain, sep, key = spec.partition("/")
+    if not sep or not domain.strip().isdigit() or not key:
+        raise GapEntryError(f"--gap-entry wants DOMAIN/KEY (e.g. 1/gardner2019), got: {spec}")
+    rerun = "run the gap pass again (--gaps --domains N)"
+    try:
+        report = json.loads(ft.read_text(workdir / REPORT_REL))
+        entries = report["entries"]
+    except FileNotFoundError:
+        raise GapEntryError(f"no gap-pass report at {REPORT_REL}: {rerun}") from None
+    except (OSError, ValueError, KeyError, TypeError) as exc:
+        raise GapEntryError(f"the gap-pass report is unreadable ({type(exc).__name__}): {rerun}") from None
+    domain = str(int(domain))
+    rows = [e for e in entries if isinstance(e, dict)
+            and str(e.get("domain")) == domain and e.get("key") == key]
+    if not rows:
+        raise GapEntryError(f"the gap-pass report has no entry {domain}/{key}: {rerun} if the entry is new")
+    if len(rows) > 1:
+        raise GapEntryError(f"the gap-pass report has {len(rows)} rows for {domain}/{key}: "
+                            f"{rerun} after making the keys unique")
+    row = rows[0]
+    if any(str(t.get("outcome") or "").startswith("same_work_as:")
+           for t in row.get("tried") or [] if isinstance(t, dict)):
+        raise GapEntryError(f"{domain}/{key} is the same work as an earlier entry "
+                            f"({row['tried'][0]['outcome']}): hand the PDF over for that entry")
+    if not row.get("slug"):
+        raise GapEntryError(f"{domain}/{key} has no usable identity (outcome {row.get('outcome')}): "
+                            "nothing to store it under")
+    reported = {f: row.get(f) for f in ("doi", "title", "surname", "year")}
+    bib = workdir / f"literature-domain-{domain}.bib"
+    try:
+        text = ft.read_text(bib)
+    except (OSError, ValueError) as exc:
+        raise GapEntryError(f"cannot read {bib.name} ({type(exc).__name__}): {rerun}") from None
+    chunks = [c for c in split_entries(text)
+              if not is_verbatim_block(c) and (entry_header(c) or (None, None))[1] == key]
+    if len(chunks) != 1:
+        raise GapEntryError(f"{bib.name} has {len(chunks)} entries with key {key}, not one: {rerun}")
+    current = entry_identity_for_gaps(parse_entry_fields(chunks[0]))
+    if current != reported:
+        raise GapEntryError(f"{domain}/{key} changed in {bib.name} since the gap pass: {rerun}")
+    return reported
+
+
 # --------------------------------------------------------------------------
 # CLI
 # --------------------------------------------------------------------------
@@ -1851,6 +1933,9 @@ def _parser() -> argparse.ArgumentParser:
                                      "particles included (e.g. 'van Fraassen')")
     ap.add_argument("--year", help="The publication year")
     ap.add_argument("--pdf", help="A PDF the user handed over (replaces the source search)")
+    ap.add_argument("--gap-entry", metavar="DOMAIN/KEY",
+                    help="With --pdf: store the PDF under the identity the gap-pass report holds "
+                         "for that entry (instead of --doi/--title/--author/--year)")
     ap.add_argument("--gaps", action="store_true",
                     help="Try every domain-bib entry without an abstract")
     ap.add_argument("--domains", type=int, help="Number of domain bibs (with --gaps)")
@@ -1868,7 +1953,20 @@ def main(argv=None) -> int:
     workdir = Path(args.workdir)
     if not workdir.is_dir():
         ap.error(f"workdir not found: {args.workdir}")
-    if args.gaps:
+    gap_identity = None
+    if args.gap_entry is not None:
+        if args.gaps or args.domains is not None:
+            ap.error("--gap-entry cannot go with --gaps or --domains")
+        if args.doi or args.title or args.author or args.year:
+            ap.error("--gap-entry takes its identity from the gap-pass report, "
+                     "not --doi/--title/--author/--year")
+        if not args.pdf:
+            ap.error("--gap-entry needs --pdf PATH")
+        try:
+            gap_identity = identity_from_report(workdir, args.gap_entry)
+        except GapEntryError as exc:
+            ap.error(str(exc))
+    elif args.gaps:
         if args.doi or args.title or args.author or args.year or args.pdf:
             ap.error("--gaps takes no work identity and no --pdf")
         if not args.domains or args.domains < 1:
@@ -1894,7 +1992,7 @@ def main(argv=None) -> int:
                               "report": REPORT_REL}))
             return 0
         settings = settings_from_env(licensed_only, policy, INDEX_BUDGET_SINGLE)
-        identity = make_identity(args.doi, args.title, args.author, args.year)
+        identity = gap_identity or make_identity(args.doi, args.title, args.author, args.year)
         result = acquire_one(workdir, identity, settings, Deadline(SINGLE_DEADLINE),
                              pdf_path=args.pdf)
         print(output.dumps(result))
