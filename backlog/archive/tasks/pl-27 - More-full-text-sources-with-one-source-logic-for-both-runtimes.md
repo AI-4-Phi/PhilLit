@@ -1,10 +1,10 @@
 ---
 id: PL-27
 title: 'More full-text sources, with one source logic for both runtimes'
-status: Needs Johannes
+status: Done
 assignee: []
 created_date: '2026-10-24 20:22'
-updated_date: '2026-10-25 01:50'
+updated_date: '2026-10-25 13:21'
 labels: []
 dependencies: []
 type: feature

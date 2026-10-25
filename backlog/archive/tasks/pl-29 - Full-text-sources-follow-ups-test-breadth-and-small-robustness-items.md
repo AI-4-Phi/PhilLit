@@ -1,10 +1,10 @@
 ---
 id: PL-29
 title: 'Full-text sources follow-ups: test breadth and small robustness items'
-status: In Progress
+status: Done
 assignee: []
 created_date: '2026-10-25 01:26'
-updated_date: '2026-10-25 12:59'
+updated_date: '2026-10-25 13:21'
 labels: []
 dependencies: []
 type: guard

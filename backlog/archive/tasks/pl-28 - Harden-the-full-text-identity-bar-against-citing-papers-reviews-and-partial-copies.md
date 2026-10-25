@@ -3,10 +3,10 @@ id: PL-28
 title: >-
   Harden the full-text identity bar against citing papers, reviews and partial
   copies
-status: In Progress
+status: Done
 assignee: []
 created_date: '2026-10-24 21:10'
-updated_date: '2026-10-25 12:59'
+updated_date: '2026-10-25 13:21'
 labels: []
 dependencies: []
 type: guard
