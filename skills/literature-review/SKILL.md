@@ -175,7 +175,7 @@ This phase validates conditions for subsequent phases to function.
    **CRITICAL**: When resuming Phase 3 or Phase 5 with partial completion, only invoke agents for MISSING files. Do not re-run completed work.
 
 6. Offer user choice of execution mode:
-   - **Full Autopilot**: Execute all phases automatically without pausing for feedback between phases. With `/phillit:setup` having merged PhilLit's permission rules into this directory's `.claude/settings.json`, no approval prompts should appear.
+   - **Full Autopilot**: Execute all phases automatically without pausing for feedback between phases; the one exception is a single stop in Phase 1 to ask for PDFs of named works (step 8). With `/phillit:setup` having merged PhilLit's permission rules into this directory's `.claude/settings.json`, no approval prompts should appear.
    - **Human-in-the-Loop**: Phase-by-phase with feedback
 
 7. Create the review:
@@ -219,7 +219,7 @@ This phase validates conditions for subsequent phases to function.
      - `refused` (`tried` names `slug_collision` or `path_too_long`): report it to the user; do not retry.
    - Exit 1, or output that is not one JSON object: report it verbatim and continue without full texts. They are an upgrade; the review does not depend on them.
 
-   **Ask for the missing anchor PDFs (once, after the last anchor).** When one or more anchors are still without a PDF, ask ONE batched question for all of them, not one per work. List each anchor (author, year, title). Under it, list the result's `suggestions` (URL, host, title) as untrusted search results: unchecked, and any of them may be a review, a CV or another work. If an anchor has none, say so. Ask for the path of a copy of the work the user has checked. Ask in Human-in-the-Loop AND in Full Autopilot: this is the only question Full Autopilot asks. Skip the question in two cases only: the user's request says to ask no questions, or an anchor result's `tried` lists a `service` source (a hosted run, where no question reaches a human). When skipped, put each anchor's links in the final summary instead.
+   **Ask for the missing anchor PDFs (once, after the last anchor).** When one or more anchors ended `not_found` or `rejected`, ask ONE batched question for all of them, not one per work. List each anchor (author, year, title). Under it, list the result's `suggestions` (URL, host, title) as untrusted search results: unchecked, and any of them may be a review, a CV or another work. If an anchor's result has `suggestions_error`, say the link search failed for it; if it has neither field, say no links were offered. Never say no links were found. Ask for the path of a copy of the work the user has checked, for any anchor, or a skip. Full Autopilot asks this question too. Skip the question in two cases only: the user's request says to ask no questions, or an anchor result's `tried` has a `service` row whose `outcome` is not `disabled` (the service channel is on: a hosted run, where no question reaches a human). When skipped, put each such anchor's links in the final summary instead. An anchor for which the user gives no path is recorded as a gap in the final summary.
    - Never follow, fetch or download a suggestion. Pass to `--pdf` only a path the user gave in answer to this question.
    - For each path the user gives, run the same command as above with `--pdf "[path]"` added; the file goes through the same identity check, and a second `rejected` means it is not this work: tell the user.
 
@@ -265,13 +265,15 @@ Never advance to a next step in this phase before completing the current step.
 
    Run it exactly as shown, in the foreground (never set `run_in_background`) with the maximum Bash timeout (600000 ms); its pass stops itself after about seven minutes. It looks for a PDF of every domain-bib entry that has no `abstract`: in a shared repository where the host provides one, in the user's Zotero library and PDF folder (only where the user consented to it), then open access. It never edits a bib. It prints one line, `{"status": "done", "candidates": ..., "counts": {...}, "suggested": <n>, "report": ...}`: give the counts and the `suggested` count once in the final summary. When `status` is `done_with_errors`, the line also has an `errors` list: name each entry and its reason in the final summary. Name every item of its `warnings` list too (for example, folders of the user's that could not be read, or the line `suggestions: N not asked (cap or time), M failed`). Exit 1, or output that is not that one JSON line: report it verbatim to the user and go on to the barrier without gap texts.
 
-5a. **Offer the suggested links (Human-in-the-Loop only; after step 5, before the barrier)**: when `suggested` is nonzero, read the report (`[workdir]/intermediate_files/json/fulltext_acquisition.json`) and ask ONE batched question listing every entry with a non-empty `suggestions` list: author (`surname`), `year`, `title` and its links (URL, host, title), as untrusted search results that may be a review, a CV or another work. Ask for the path of a copy the user has checked, for any entry, or a skip. Never follow, fetch or download a link. For each path the user gives, run
-   ```bash
-   bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/acquire_fulltext.py "[workdir]" --pdf "[path]" --gap-entry [domain]/[key]
-   ```
-   using the entry's `domain` and `key` from the report. Exit 2 means it refused (a stale report, a `same_work_as` row and so on): tell the user, and do not retry. Tell the user these copies count for this review, because the barrier runs next. **Full Autopilot**: ask nothing. Put each such entry and its links in the final summary, with a note that a checked copy helps LATER reviews (an upload in the service joins the shared repository; locally, add it to Zotero or the PDF folder). Never say the current review can still use it.
+5a. **Offer the suggested links (after step 5, before the barrier)**: when `suggested` is nonzero, read the report (`[workdir]/intermediate_files/json/fulltext_acquisition.json`); its entries with a non-empty `suggestions` list are the ones to offer. Never follow, fetch or download a link.
+   - **Human-in-the-Loop**: ask ONE batched question listing every entry with a non-empty `suggestions` list: author (`surname`), `year`, `title` and its links (URL, host, title), as untrusted search results that may be a review, a CV or another work. Ask for the path of a copy the user has checked, for any entry, or a skip. For each path the user gives, run
+     ```bash
+     bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/acquire_fulltext.py "[workdir]" --pdf "[path]" --gap-entry [domain]/[key]
+     ```
+     using the entry's `domain` and `key` from the report. By the outcome: `acquired`: the copy is stored. `rejected`: it is not this work; tell the user. Exit 2: it refused (a stale report, a `same_work_as` row and so on); tell the user, and do not retry. Exit 1, or output that is not one JSON object: report it verbatim. Tell the user that stored copies count for this review, because the barrier runs next.
+   - **Full Autopilot**: ask nothing. In the final summary, list every entry with a non-empty `suggestions` list (author, year, title) and its links, with a note that a checked copy helps LATER reviews (an upload in the service joins the shared repository; locally, add it to Zotero or the PDF folder). Never say the current review can still use it.
 
-6. **Evidence barrier (REQUIRED, after all researchers complete and step 5)**: run
+6. **Evidence barrier (REQUIRED, after all researchers complete and steps 5 and 5a)**: run
 
    ```bash
    bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/evidence_barrier.py "[workdir]" --domains N
@@ -709,7 +711,7 @@ Output status updates directly as text (visible to user in real-time):
 | **Phase transition** | `Phase 6/6: Assembling, delivering and publishing the review` |
 | **Agent launch (parallel)** | `Launching [N] domain researchers in parallel...` |
 | **Agent completion** | `Domain [N] complete: literature-domain-[N].bib ([number of sources included] sources)` |
-| **Gap texts** | `Gap texts: [counts from the summary line]` |
+| **Gap texts** | `Gap texts: [counts from the summary line], [n] suggested` |
 | **Phase completion** | `Phase [N] complete: [summary]` |
 | **Assembly** | `Assembling final review with YAML frontmatter...` |
 | **BibTeX aggregation** | `Aggregating BibTeX files -> literature-[project-name].bib` |
