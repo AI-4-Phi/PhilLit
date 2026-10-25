@@ -266,7 +266,7 @@ class TestIdentityMatching:
         pages = [page("Categorizing Wireheading in Partially Embedded Agents", "Arushi Majha1, Sayan Sarkar2")]
         assert ft.identity_ok(pages, self.WIRE) == (True, "title_head")
 
-    def test_a_digit_glued_to_the_surname_does_not_join_another_name(self):
+    def test_a_longer_name_is_not_the_surname(self):
         pages = [page("Categorizing Wireheading in Partially Embedded Agents", "Arushi Majhal")]
         assert ft.identity_ok(pages, self.WIRE) == (False, "no_match")
 
@@ -312,6 +312,10 @@ class TestIdentityMatching:
     def test_reading_an_apostrophe_as_a_space_keeps_six_words(self):
         assert ft._forms("O'Neill's and Kant's Views of Moral Luck", ft.title_phrase) == [
             "oneills and kants views of moral", "o neill s and kant s views of moral"]
+
+    def test_a_subdivided_doi_prefix_is_a_doi(self):
+        work = {"doi": "10.1000.10/abc", "title": "A Study of Moral Luck Today", "surname": "Williams"}
+        assert ft.identity_ok([page("doi: 10.1000.10/abc", *body())], work) == (True, "doi")
 
     @pytest.mark.parametrize("placeholder", ["none", "forthcoming", "10.1234", "n/a"])
     def test_a_doi_placeholder_is_no_doi(self, placeholder):

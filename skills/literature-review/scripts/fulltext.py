@@ -153,7 +153,7 @@ DOI_RE = re.compile(r"10\.\d{4,9}/[^\s\"<>]+", re.I)   # as measured
 # The one shape a normalized DOI must have to count as a DOI: the request
 # builders (`fulltext_sources`), acquisition (`_doi_ok`) and `identity_ok`
 # all treat any other value (`none`, `forthcoming`, `10.1234`) as no DOI.
-DOI_SHAPE = re.compile(r"10\.\d+/\S+")
+DOI_SHAPE = re.compile(r"10\.\d+(?:\.\d+)*/\S+")   # a prefix may be subdivided: 10.1000.10/abc
 _NUM_RE = re.compile(r"(?<![\d.])(\d{1,4})(?![\d.])")   # as measured
 _ARTICLE_NO_RE = re.compile(r"^[A-Za-z]*[0-9]+$")
 

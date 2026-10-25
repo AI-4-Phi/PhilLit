@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "requests>=2.28.0",
+    "urllib3>=2.2.0",   # HTTPResponse.read1, which acquire_fulltext reads bodies with
     "beautifulsoup4>=4.11.0",
     "lxml>=4.9.0",
     "arxiv>=1.4.0",

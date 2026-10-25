@@ -166,7 +166,8 @@ the pass; a body read ends within one socket timeout of its deadline
 (see DOWNLOADS).
 
 HARD LIMIT. Whatever blocks, the process ends `HARD_LIMIT_SECONDS` (570 s)
-after it starts, below the 600 s Bash ceiling: it prints one line
+after `main()` starts (interpreter and `uv` launch come before, a few
+seconds with a built venv), below the 600 s Bash ceiling: it prints one line
 `{"error": "hard_limit: ..."}` and exits 1 (`_Watchdog`). PDFs already
 stored are kept; a `--gaps` run writes no report.
 
@@ -346,7 +347,7 @@ SINGLE_DEADLINE = 420
 SERVICE_WAIT_MARGIN = 20   # seconds of the deadline kept for validating arrivals
 ARRIVAL_CHECK_SECONDS = 1.0   # and this much more per identity sent
 MAX_SUGGESTION_QUERIES = 40   # Brave calls per gap pass, after the fetch deadline
-SUGGESTION_SECONDS = 60        # their own budget in a gap pass (about 420 + 60 s in all; see SUGGESTIONS)
+SUGGESTION_SECONDS = 60        # their own budget in a gap pass (see SUGGESTIONS)
 # and no call starts reading past this many seconds into the pass, so the
 # pass normally ends well before HARD_LIMIT_SECONDS.
 GAPS_SUGGESTION_END = 530
@@ -1238,10 +1239,10 @@ def suggest(identity: dict, deadline: Deadline) -> tuple[list[dict] | None, str 
     `deadline` left for the limiter's spacing plus SUGGESTION_MIN_SECONDS,
     and no HTTP call. ([{url, host, title}], None): Brave answered (the list
     may be empty). (None, reason): the one HTTP attempt failed (`http_<n>`,
-    `network:<error>`, `timeout`, `too_large`, `bad_json`, `error:<error>`);
-    a 429 or 5xx is never retried. The limiter wait and the call's timeout
-    are both clamped to `deadline`; the body read checks it per received
-    chunk."""
+    `network:<error>`, `timeout`, `too_large`, `bad_encoding`, `bad_json`,
+    `error:<error>`); a 429 or 5xx is never retried. The limiter wait and
+    the call's timeout are both clamped to `deadline`; the body read checks
+    it whenever bytes arrive."""
     key = os.environ.get("BRAVE_API_KEY", "").strip()
     req = fs.brave_request(identity) if key else None
     if req is None:
