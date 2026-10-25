@@ -4,7 +4,7 @@ title: 'Full-text sources follow-ups: test breadth and small robustness items'
 status: Later
 assignee: []
 created_date: '2026-10-25 01:26'
-updated_date: '2026-10-25 01:38'
+updated_date: '2026-10-25 01:44'
 labels: []
 dependencies: []
 type: guard
@@ -35,4 +35,6 @@ Trigger: a full-text bug report, or the next change to acquire_fulltext.py.
 
 <!-- SECTION:NOTES:BEGIN -->
 From the PL-27 final fix wave: the --gaps worst case can approach the 600 s Bash ceiling (a fetch-pass download or API call can end about 60 s past 420, then up to about 60 s or more of Brave suggestions). Rare (needs stalled reads) and partly older than PL-27. Fix: bound the suggestion budget by total elapsed time, e.g. min(SUGGESTION_SECONDS, 520 - elapsed). This item is a Delivery risk for headless runs; bring it forward if a gap pass is ever seen near 600 s.
+
+From the PL-27 final re-review (measured on a real socket): _read_capped, download_pdf and suggest read with iter_content(65536), which returns only on 64 KiB, end of body or error; each arriving byte resets the socket timeout, so a trickling body is not bounded by the deadline (10.2 s past a 2 s deadline in the measurement; script under the session scratchpad trickle/t3.py, lost with it). Fix direction: read with r.raw.read1(65536), which returns per receive; test with a real local socket. Predates PL-27 for download_pdf.
 <!-- SECTION:NOTES:END -->
