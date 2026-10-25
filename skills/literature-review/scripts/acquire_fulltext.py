@@ -338,6 +338,7 @@ MAX_API_BYTES = 5 * 1024 * 1024   # a metadata answer, read streaming
 _ENCODINGS = {"": None, "identity": None, "gzip": 16 + zlib.MAX_WBITS, "x-gzip": 16 + zlib.MAX_WBITS,
               "deflate": zlib.MAX_WBITS}
 ACCEPT_ENCODING = "gzip, deflate"
+DECODE_FEED_BYTES = 65536   # compressed input per zlib call
 BUDGET_BODY_BYTES = 64 * 1024   # an OpenAlex 429 body, read for its budget marker
 
 GAPS_DEADLINE = 420
@@ -417,10 +418,12 @@ class _Watchdog:
             if self._done:
                 return
             self._done = True
-            sys.stdout.write(json.dumps({"error": f"hard_limit: stopped after {self._seconds:g} s; "
-                                                  "PDFs stored before then are kept"}) + "\n")
-            sys.stdout.flush()
-            _exit(1)
+            try:
+                sys.stdout.write(json.dumps({"error": f"hard_limit: stopped after {self._seconds:g} s; "
+                                                      "PDFs stored before then are kept"}) + "\n")
+                sys.stdout.flush()
+            finally:   # a broken stdout must not let the main thread go on
+                _exit(1)
 
     def finish(self) -> None:
         with self._lock:
@@ -466,7 +469,7 @@ def download_pdf(url: str, deadline: Deadline) -> tuple[bytes | None, str]:
                 return None, "bad_scheme"
             if dl.expired():
                 return None, "timeout"
-            resp = _http_get(url, headers=headers, timeout=dl.clamp(DOWNLOAD_TIMEOUT), stream=True)
+            resp = _http_get(url, headers=headers, timeout=dl.clamp(DOWNLOAD_TIMEOUT) or 0.1, stream=True)
             if resp.status_code in (301, 302, 303, 307, 308):
                 loc = resp.headers.get("Location")
                 resp.close()
@@ -1064,32 +1067,34 @@ def _declared_length(resp) -> int | None:
 
 def _decode_body(raw: bytes, wbits: int, cap: int) -> tuple[bytes | None, str]:
     """`raw` decoded within `cap` bytes: (None, "too_large") past it,
-    (None, "bad_encoding") for a corrupt or truncated stream. As urllib3
-    decodes: gzip may hold several members, all decoded, and bytes after a
-    complete member that do not decode end the body; `deflate` is
-    zlib-wrapped by the standard and raw in practice: both are read."""
+    (None, "bad_encoding") for a corrupt or truncated stream. gzip may hold
+    several members: all are decoded, and a corrupt one fails the body (a
+    truncated PDF must not pass as whole); bytes after a member that do not
+    start another (padding) are ignored, as urllib3 ignores them. `deflate`
+    is zlib-wrapped by the standard and raw in practice: both are read.
+    Input is fed in DECODE_FEED_BYTES slices, so many tiny members cost
+    linear time (zlib copies a member's unused input)."""
     gzip_bits = 16 + zlib.MAX_WBITS
+    view = memoryview(raw)
     for bits in (wbits, -zlib.MAX_WBITS) if wbits == zlib.MAX_WBITS else (wbits,):
-        out, rest = b"", raw
+        parts, size, pos, members = [], 0, 0, 0
         try:
-            while True:
+            while not (members and (bits != gzip_bits or view[pos:pos + 2] != b"\x1f\x8b")):
                 d = zlib.decompressobj(bits)
-                try:
-                    out += d.decompress(rest, cap + 1 - len(out))
-                except zlib.error:
-                    if out and bits == gzip_bits:   # trailing bytes after a member
-                        break
-                    raise
-                if len(out) > cap or d.unconsumed_tail:
-                    return None, "too_large"
-                if not d.eof:
-                    return None, "bad_encoding"
-                rest = d.unused_data
-                if not rest or bits != gzip_bits:
-                    break
+                while not d.eof:
+                    if pos >= len(view):   # the stream ends early
+                        return None, "bad_encoding"
+                    piece = view[pos:pos + DECODE_FEED_BYTES]
+                    out = d.decompress(piece, cap + 1 - size)
+                    size += len(out)
+                    if size > cap or d.unconsumed_tail:
+                        return None, "too_large"
+                    parts.append(out)
+                    pos += len(piece) - len(d.unused_data)
+                members += 1
         except zlib.error:
             continue
-        return out, "ok"
+        return b"".join(parts), "ok"
     return None, "bad_encoding"
 
 
@@ -1127,6 +1132,8 @@ def _read_capped(resp, cap: int, deadline: Deadline | None = None,
         except urllib3.exceptions.ProtocolError as exc:
             raise requests.exceptions.ChunkedEncodingError(exc) from exc
         except urllib3.exceptions.ReadTimeoutError as exc:
+            if deadline is not None and deadline.expired():   # the socket timeout is the deadline's
+                return None, "timeout"
             raise requests.exceptions.ConnectionError(exc) from exc
         except urllib3.exceptions.SSLError as exc:
             raise requests.exceptions.SSLError(exc) from exc
@@ -1169,7 +1176,7 @@ def _api_get(url, *, headers, params, limiter, deadline: Deadline, openalex: boo
             return None, "deadline"
         r = None
         try:
-            r = _http_get(url, headers=headers, params=params, timeout=deadline.clamp(API_TIMEOUT),
+            r = _http_get(url, headers=headers, params=params, timeout=deadline.clamp(API_TIMEOUT) or 0.1,
                           stream=True)
             if r.status_code == 200:
                 body, why = _read_capped(r, MAX_API_BYTES, deadline)
@@ -1189,11 +1196,15 @@ def _api_get(url, *, headers, params, limiter, deadline: Deadline, openalex: boo
                     return None, "deadline"
                 if openalex_budget_exhausted(r, text=(text or b"").decode("utf-8", "replace")):
                     return None, "budget_exhausted"
-            if (r.status_code == 429 or r.status_code >= 500) and backoff.wait(
-                    attempt, retry_after=parse_retry_after(r.headers.get("Retry-After"))):
-                continue
+            if r.status_code == 429 or r.status_code >= 500:
+                if deadline.expired():
+                    return None, "deadline"
+                if backoff.wait(attempt, retry_after=parse_retry_after(r.headers.get("Retry-After"))):
+                    continue
             return None, f"http_{r.status_code}"
         except requests.RequestException as exc:
+            if deadline.expired():
+                return None, "deadline"
             if attempt < backoff.max_attempts - 1 and backoff.wait(attempt):
                 continue
             return None, f"network:{type(exc).__name__}"
@@ -1241,7 +1252,7 @@ def suggest(identity: dict, deadline: Deadline) -> tuple[list[dict] | None, str 
         headers = {"X-Subscription-Token": key, "Accept": "application/json",
                    "User-Agent": user_agent()}
         r = _http_get(req.url, headers=headers, params=dict(req.params),
-                      timeout=deadline.clamp(API_TIMEOUT), stream=True)
+                      timeout=deadline.clamp(API_TIMEOUT) or 0.1, stream=True)
         if r.status_code != 200:
             return None, f"http_{r.status_code}"
         body, why = _read_capped(r, MAX_API_BYTES, deadline)
@@ -1254,6 +1265,8 @@ def suggest(identity: dict, deadline: Deadline) -> tuple[list[dict] | None, str 
         return [{"url": s.url, "host": s.host, "title": s.title}
                 for s in fs.brave_parse(identity, payload)], None
     except requests.RequestException as exc:
+        if deadline.expired():
+            return None, "timeout"
         # The class name only: a requests message embeds the URL.
         return None, f"network:{type(exc).__name__}"
     except Exception as exc:   # a suggestion never sinks the run

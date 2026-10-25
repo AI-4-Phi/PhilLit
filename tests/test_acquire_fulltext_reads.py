@@ -33,7 +33,7 @@ class Server:
     `pieces` of the body with `gap` seconds between them. Records the
     request it received."""
 
-    def __init__(self, pieces, headers=(), gap=0.0, length=None, chunked=False):
+    def __init__(self, pieces, headers=(), gap=0.0, length=None, chunked=False, raw_tail=None):
         self.sock = socket.socket()
         self.sock.bind(("127.0.0.1", 0))
         self.sock.listen(1)
@@ -43,7 +43,7 @@ class Server:
         head = [b"HTTP/1.1 200 OK", b"Connection: close", *headers]
         head.append(b"Transfer-Encoding: chunked" if chunked else b"Content-Length: %d" % body_len)
         self._head = b"\r\n".join(head) + b"\r\n\r\n"
-        self._pieces, self._gap, self._chunked = pieces, gap, chunked
+        self._pieces, self._gap, self._chunked, self._raw_tail = pieces, gap, chunked, raw_tail
         self._stop = threading.Event()
         self._thread = threading.Thread(target=self._serve, daemon=True)
         self._thread.start()
@@ -58,7 +58,9 @@ class Server:
                     break
                 conn.sendall(b"%x\r\n%s\r\n" % (len(piece), piece) if self._chunked else piece)
                 self._stop.wait(self._gap)
-            if self._chunked and not self._stop.is_set():
+            if self._raw_tail is not None:   # framing as given, then the connection closes
+                conn.sendall(self._raw_tail)
+            elif self._chunked and not self._stop.is_set():
                 conn.sendall(b"0\r\n\r\n")
         except OSError:
             pass
@@ -165,6 +167,26 @@ class TestDecoding:
         (body, why), _ = timed_read(get(srv.url))
         assert (body, why) == (self.BODY, "ok")
 
+    def test_a_corrupt_later_gzip_member_fails_the_body(self, serve):
+        """A truncated PDF must not pass as whole."""
+        bad = bytearray(gzip.compress(self.BODY[500:]))
+        bad[-8] ^= 0xFF   # the member's CRC
+        srv = serve([gzip.compress(self.BODY[:500]) + bytes(bad)], headers=[b"Content-Encoding: gzip"])
+        (body, why), _ = timed_read(get(srv.url))
+        assert (body, why) == (None, "bad_encoding")
+
+    def test_padding_after_an_empty_gzip_member_is_ignored(self, serve):
+        srv = serve([gzip.compress(b"") + b"\0" * 8], headers=[b"Content-Encoding: gzip"])
+        (body, why), _ = timed_read(get(srv.url))
+        assert (body, why) == (b"", "ok")
+
+    def test_many_tiny_gzip_members_decode_in_linear_time(self):
+        empty = gzip.compress(b"", mtime=0)
+        raw = empty * 200_000 + gzip.compress(b"end", mtime=0)   # about 4 MB
+        t0 = time.monotonic()
+        assert af._decode_body(raw, af._ENCODINGS["gzip"], 1 << 20) == (b"end", "ok")
+        assert time.monotonic() - t0 < 10
+
     def test_the_cap_counts_every_gzip_member(self, serve):
         data = gzip.compress(b"a" * 600) + gzip.compress(b"b" * 600)
         srv = serve([data], headers=[b"Content-Encoding: gzip"])
@@ -219,6 +241,24 @@ class TestRefusals:
         with pytest.raises(requests.exceptions.ChunkedEncodingError):
             timed_read(resp)
 
+    @pytest.mark.parametrize("framing", [b"5\r\nhello\r\n", b"5\r\nhel", b"zz\r\n"])
+    def test_a_chunked_body_cut_short_raises_the_requests_error(self, serve, framing):
+        """http.client's chunk parser raises IncompleteRead, never a bare
+        ValueError, for a missing last chunk, a short chunk or a bad size."""
+        srv = serve([], chunked=True, raw_tail=framing)
+        with pytest.raises(requests.exceptions.ChunkedEncodingError):
+            timed_read(get(srv.url))
+
+    def test_a_stall_past_the_deadline_is_a_timeout(self, serve):
+        """The socket timeout is clamped to the deadline, so a server that
+        stops sending times the read out at the deadline: `timeout`, not a
+        network error."""
+        srv = serve([b"x" * 10, b"y" * 10], gap=3.0)
+        resp = af._http_get(srv.url, timeout=af.Deadline(DEADLINE).clamp(30), stream=True)
+        (body, why), took = timed_read(resp, deadline=af.Deadline(DEADLINE))
+        assert (body, why) == (None, "timeout")
+        assert took < DEADLINE + SLACK
+
     def test_a_download_cut_short_is_a_network_reason(self, serve):
         srv = serve([b"%PDF-1.4\n"], length=1000)
         assert af.download_pdf(srv.url, af.Deadline(10)) == (None, "network:ChunkedEncodingError")
@@ -237,6 +277,21 @@ class TestWatchdog:
         assert codes == [1]
         out = capsys.readouterr().out.splitlines()
         assert len(out) == 1 and json.loads(out[0])["error"].startswith("hard_limit: stopped after 0.05 s")
+
+    def test_a_broken_stdout_still_ends_the_process(self, monkeypatch):
+        codes = []
+
+        class Broken:
+            def write(self, text):
+                raise BrokenPipeError
+
+            def flush(self):
+                raise BrokenPipeError
+        monkeypatch.setattr(sys, "stdout", Broken())
+        monkeypatch.setattr(af, "_exit", codes.append)
+        with pytest.raises(BrokenPipeError):   # the fake exit returns; the real one never does
+            af._Watchdog(0.05)._fire()
+        assert codes == [1]
 
     def test_finish_before_the_limit_stops_it(self, monkeypatch, capsys):
         codes = []
