@@ -1108,7 +1108,7 @@ class TestZotero:
 # ---------------------------------------------------------------------------
 
 class TestApostropheCandidates:
-    """Candidate selection drops apostrophes as `identity_ok` does (PL-28)."""
+    """Candidate selection drops apostrophes as `identity_ok` does."""
 
     def test_zotero_item_title_matches_either_apostrophe(self):
         item = {"data": {"itemType": "journalArticle", "title": "Categorizing Variants of Goodhart\u2019s Law",

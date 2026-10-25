@@ -257,7 +257,7 @@ class TestIdentityRuleA:
 
 
 class TestIdentityMatching:
-    """The shapes the 2026-10-24 run rejected fail-closed (PL-28)."""
+    """Shapes a 2026-10-24 headless run rejected fail-closed, all right works."""
 
     WIRE = {"doi": None, "title": "Categorizing Wireheading in Partially Embedded Agents",
             "surname": "Majha", "year": "2019"}
@@ -348,7 +348,7 @@ class TestIdentityMatching:
                  "year": "2018"}
         assert ft.fold("Goodhart's Law") == "goodhart s law"
         assert ft.match_fold("Goodhart's Law") == "goodharts law"
-        # The values the code before PL-28 gives (fulltext.py at 7c2144d).
+        # The values the code before matching dropped apostrophes gives (fulltext.py at 7c2144d).
         assert ft.canonical_identity(ident) == "t:categorizing variants of goodharts law|o neill|2018"
         assert ft.slug_for(ident) == "t-o_neill-2018-categorizing-variants-f501e559b4d2"
 

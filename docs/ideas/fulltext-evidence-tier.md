@@ -114,7 +114,7 @@ evidence.
   documents); the same with the surname limited to pages 1-2 (68%, 3
   wrong); the title-page rule plus the year for titles of 3 words or fewer
   (65%, 0 wrong; books lose most, since a reprint's year differs).
-- **Identity bar, revised (PL-28):** the DOI work's title fallback also
+- **Identity bar, revised:** the DOI work's title fallback also
   needs the phrase within the first 600 characters of a page, with the
   surname on that page (it let CVs and citing papers through); a no-DOI
   phrase needs 2 words ("Data" matched unrelated PDFs); matching drops

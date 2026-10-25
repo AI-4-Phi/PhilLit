@@ -1,4 +1,4 @@
-"""The one owner of full-text source logic (PL-27): request building and
+"""The one owner of full-text source logic: request building and
 response parsing for OpenAlex, Semantic Scholar and Brave, the licence kinds
 and the rule-15 order, imported by `acquire_fulltext.py` and phillit-service,
 which each send the requests with their own client and credentials.
@@ -10,7 +10,7 @@ author is skipped while its siblings are kept.
 The dataclasses are frozen shallowly: a nested dict (`Request.params`,
 `Location.matched`) is the caller's not to mutate. Each location gets its
 own copy of `matched`.
-Residual, accepted under PL-28: a different work by the same first author
+Residual, accepted: a different work by the same first author
 whose title extends the identity's phrase ("Causal Abstraction and Its
 Critics") still passes the title-route match (measured 0 of 50).
 """

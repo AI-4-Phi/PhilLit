@@ -268,7 +268,7 @@ def test_title_parse_gives_each_location_its_own_matched():
 
 
 def test_title_parse_same_author_extension_residual():
-    """The PL-28 residual, asserted so a later fix shows up here: a DIFFERENT
+    """The accepted residual, asserted so a later fix shows up here: a DIFFERENT
     work by the same first author whose title extends the identity's phrase
     word-boundedly still matches (measured 0 of 50, mostly CS/ML)."""
     i = ident(None, "Causal Abstraction", "Geiger")

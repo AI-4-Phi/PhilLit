@@ -1,4 +1,4 @@
-# More full-text sources (PL-27)
+# More full-text sources
 
 **Problem.** `EVIDENCE-FULLTEXT` reaches few gap entries, and no OA source
 tries a work without a DOI. Measured 2026-10-24 on 240 works
