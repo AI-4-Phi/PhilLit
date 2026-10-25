@@ -43,7 +43,7 @@ MAX_SUGGESTIONS = 3
 SUGGESTION_TITLE_MAX = 200
 SUGGESTION_URL_MAX = 2000
 
-_DOI_SHAPE = re.compile(r"10\.\d+/.+", re.S)
+DOI_SHAPE = re.compile(r"10\.\d+/.+", re.S)
 _NOT_SEARCH_CHAR = re.compile(r"[^\w\s'-]|_")
 
 
@@ -106,7 +106,7 @@ def key_phrase(identity) -> str:
 def _doi(identity) -> str:
     value = identity.get("doi") if isinstance(identity, dict) else None
     doi = normalize_doi(value) if isinstance(value, str) else ""
-    return doi if _DOI_SHAPE.fullmatch(doi) else ""
+    return doi if DOI_SHAPE.fullmatch(doi) else ""
 
 
 # ----------------------------------------------------------------- requests

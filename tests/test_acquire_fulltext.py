@@ -508,13 +508,17 @@ class TestSourceOrder:
         assert rows["s2"] == {"source": "s2", "outcome": "no_doi"}
         assert http.calls == []
 
-    def test_a_doi_the_builders_refuse_is_no_doi(self, http, workdir, capsys):
-        """`_doi_ok` admits `10.abc/x`; the request builders do not, so the
-        work has no DOI for the open-access step (and no request is sent)."""
-        code, data = run_json(capsys, workdir, "--doi", "10.abc/x")
-        rows = {t["source"]: t["outcome"] for t in data["tried"]}
-        assert rows["openalex"] == "no_doi" and rows["s2"] == "no_doi"
-        assert http.calls == []
+    def test_a_doi_of_another_shape_is_refused(self, http, workdir, capsys):
+        """One DOI shape (`fs.DOI_SHAPE`): `10.abc/x` is not a DOI to the CLI,
+        and a gap entry carrying it is a work without a DOI, so its PDF meets
+        the no-DOI rule, not the DOI rule's title fallback."""
+        with pytest.raises(SystemExit) as exc:
+            af.main([str(workdir), "--doi", "10.abc/x"])
+        assert exc.value.code == 2
+        assert "not a DOI" in capsys.readouterr().err
+        (workdir / "literature-domain-1.bib").write_text(bib_entry("odd", doi="10.abc/x"), encoding="utf-8")
+        cands, _ = af.gap_candidates(workdir, 1, title_route=True)
+        assert [(k, ident["doi"]) for _, k, ident in cands] == [("odd", None)]
 
     def test_s2_publisher_copy_beats_openalex_author_copy(self, http, workdir, capsys):
         """Rule 15: a publisher copy before a self-archived one, whichever

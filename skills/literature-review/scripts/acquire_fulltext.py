@@ -439,7 +439,10 @@ def _on(value: str | None) -> bool:
 
 
 def _doi_ok(doi: str) -> bool:
-    return doi.startswith("10.") and "/" in doi
+    """A normalized DOI of the one shape every source accepts
+    (`fs.DOI_SHAPE`); any other is treated as no DOI, so its PDF meets the
+    no-DOI rule rather than the DOI rule's weaker title fallback."""
+    return bool(fs.DOI_SHAPE.fullmatch(doi))
 
 
 # --------------------------------------------------------------------------
