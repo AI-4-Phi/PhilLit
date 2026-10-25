@@ -4,6 +4,7 @@ title: 'Full-text sources follow-ups: test breadth and small robustness items'
 status: Later
 assignee: []
 created_date: '2026-10-25 01:26'
+updated_date: '2026-10-25 01:38'
 labels: []
 dependencies: []
 type: guard
@@ -29,3 +30,9 @@ Items:
 
 Trigger: a full-text bug report, or the next change to acquire_fulltext.py.
 <!-- SECTION:DESCRIPTION:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+From the PL-27 final fix wave: the --gaps worst case can approach the 600 s Bash ceiling (a fetch-pass download or API call can end about 60 s past 420, then up to about 60 s or more of Brave suggestions). Rare (needs stalled reads) and partly older than PL-27. Fix: bound the suggestion budget by total elapsed time, e.g. min(SUGGESTION_SECONDS, 520 - elapsed). This item is a Delivery risk for headless runs; bring it forward if a gap pass is ever seen near 600 s.
+<!-- SECTION:NOTES:END -->
