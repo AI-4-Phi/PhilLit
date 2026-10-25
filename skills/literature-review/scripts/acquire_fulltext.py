@@ -130,7 +130,11 @@ the body must start `%PDF-`; only the User-Agent is sent (no API key ever
 reaches a PDF host). Local files (Zotero, folder, `--pdf`): a 200 MB cap.
 A metadata answer (OpenAlex, Semantic Scholar, Brave) is read streaming
 within `MAX_API_BYTES` (5 MB); a larger one is `unavailable`, detail
-`too_large` (for Brave, the failed call `too_large`).
+`too_large` (for Brave, the failed call `too_large`). It is read within
+the deadline too, checked per chunk: an OpenAlex or Semantic Scholar body
+still arriving after the fetch deadline makes that API's row `deadline`
+(for Brave, the failed call `timeout`). A malformed `Content-Length`
+(not 1-20 ASCII digits) is ignored, and the streaming cap still applies.
 
 SUGGESTIONS. A work the sources and the service left `not_found` or
 `rejected` (or, in `--gaps`, `not_attempted`) gets one Brave web search when
@@ -145,11 +149,15 @@ work, so it never takes time from a fetch, and the limiter wait, the
 call's timeout and the body read are clamped to it (no call starts with
 less than `SUGGESTION_MIN_SECONDS` left after the limiter's spacing).
 Residuals: the limiter's real wait can exceed its spacing when other
-processes queue on it (it caps a queue at 10 spacings, 15 s), and the
-body read checks the budget per chunk, so one stalled socket read can run
-for the timeout set when the call started (at most `API_TIMEOUT`, 30 s);
-either can overrun the budget by that much (about 420 + 60 + 15 + 30 s in
-`--gaps`, under the 600 s Bash ceiling).
+processes queue on it (it caps a queue at 10 spacings, 15 s); and a
+call's timeout, the time left when it starts (at most `API_TIMEOUT`,
+30 s), bounds each socket operation, not the call: the connect, the
+headers and the one chunk read in flight can each take up to that time
+(the body read checks the budget between chunks), so a call started with
+T seconds left can end up to 2T past the budget. Timing of `--gaps`: about
+420 s of fetch work, then at most about 60 s of suggestions; at worst,
+with a contended limiter wait (15 s) and that overrun (2 x 30 s), about
+555 s, still under the 600 s Bash ceiling.
 
 OUTCOMES. Single-work mode prints one JSON object `{status, slug, source,
 tried}`, within a 420 s deadline (`SINGLE_DEADLINE`, the Bash ceiling is
@@ -207,8 +215,8 @@ Then, with a Brave key, every `not_found`, `rejected` or `not_attempted`
 entry gets `suggestions` (see SUGGESTIONS), once per work: a `same_work_as`
 row never does, so only the first row carries them. They have their own
 budget after the fetch work: at most `MAX_SUGGESTION_QUERIES` (40) HTTP
-attempts within `SUGGESTION_SECONDS` (60), so the call stays under
-420 + 60 s. An entry the cap or the time does not reach, or whose call
+attempts within `SUGGESTION_SECONDS` (60), so the pass takes about
+420 + 60 s (at worst about 555 s: see SUGGESTIONS). An entry the cap or the time does not reach, or whose call
 failed, carries no `suggestions` field; both are counted in one `warnings`
 line, `suggestions: N not asked (cap or time), M failed`, when either is
 non-zero. It writes the run report and prints a one-line JSON summary with
@@ -314,7 +322,7 @@ SINGLE_DEADLINE = 420
 SERVICE_WAIT_MARGIN = 20   # seconds of the deadline kept for validating arrivals
 ARRIVAL_CHECK_SECONDS = 1.0   # and this much more per identity sent
 MAX_SUGGESTION_QUERIES = 40   # Brave calls per gap pass, after the fetch deadline
-SUGGESTION_SECONDS = 60        # their own budget in a gap pass (420 + 60 s in all)
+SUGGESTION_SECONDS = 60        # their own budget in a gap pass (about 420 + 60 s in all; see SUGGESTIONS)
 SINGLE_SUGGESTION_SECONDS = 20  # and in single-work mode (one call)
 SUGGESTION_MIN_SECONDS = 1.0   # no call starts with less than this left
 SUGGEST_STATUSES = ("not_found", "rejected", "not_attempted")   # the outcomes that get links
@@ -403,8 +411,8 @@ def download_pdf(url: str, deadline: Deadline) -> tuple[bytes | None, str]:
             break
         if resp.status_code != 200:
             return None, f"http_{resp.status_code}"
-        declared = resp.headers.get("Content-Length")
-        if declared and str(declared).isdigit() and int(declared) > MAX_DOWNLOAD_BYTES:
+        declared = _declared_length(resp)
+        if declared is not None and declared > MAX_DOWNLOAD_BYTES:
             return None, "too_large"
         chunks, total, head_ok = [], 0, False
         for chunk in resp.iter_content(chunk_size=65536):
@@ -988,14 +996,31 @@ def _licensed(lic, policy: str | None) -> bool:
     return policy == "open" and (lic.startswith("oa:") or lic == "upload")
 
 
+def _declared_length(resp) -> int | None:
+    """The response's Content-Length as an int, or None when it is missing
+    or malformed (not 1-20 ASCII digits): a malformed header is ignored and
+    the streaming cap still applies. `isdigit` alone admits `²`, which
+    `int` refuses."""
+    declared = resp.headers.get("Content-Length")
+    if not isinstance(declared, str):
+        return None
+    declared = declared.strip()
+    if not (declared.isascii() and declared.isdecimal() and len(declared) <= 20):
+        return None
+    try:
+        return int(declared)
+    except ValueError:
+        return None
+
+
 def _read_capped(resp, cap: int, deadline: Deadline | None = None) -> tuple[bytes | None, str]:
     """A streamed body of at most `cap` bytes, or (None, "too_large"): a
     declared Content-Length over the cap is refused before reading. With a
     `deadline`, (None, "timeout") for a chunk that arrives after its end,
     checked per chunk: a request timeout bounds each socket read, not the
     whole body."""
-    declared = resp.headers.get("Content-Length")
-    if declared and str(declared).isdigit() and int(declared) > cap:
+    declared = _declared_length(resp)
+    if declared is not None and declared > cap:
         return None, "too_large"
     chunks, total = [], 0
     for chunk in resp.iter_content(chunk_size=65536):
@@ -1013,8 +1038,9 @@ def _read_capped(resp, cap: int, deadline: Deadline | None = None) -> tuple[byte
 def _api_get(url, *, headers, params, limiter, deadline: Deadline, openalex: bool):
     """(json | None, reason): a metadata call with a short retry on 429/5xx.
     The answer is read streaming within MAX_API_BYTES (`too_large` past it,
-    never retried), then decoded: the caller contract of `fulltext_sources`'
-    parse functions, which take decoded JSON."""
+    never retried) and within `deadline` (a body still arriving after its
+    end is `deadline`, never retried), then decoded: the caller contract of
+    `fulltext_sources`' parse functions, which take decoded JSON."""
     backoff = ExponentialBackoff(max_attempts=3, max_delay=10.0)
     for attempt in range(backoff.max_attempts):
         if deadline.expired():
@@ -1025,9 +1051,9 @@ def _api_get(url, *, headers, params, limiter, deadline: Deadline, openalex: boo
             r = _http_get(url, headers=headers, params=params, timeout=deadline.clamp(API_TIMEOUT) or 0.1,
                           stream=True)
             if r.status_code == 200:
-                body, why = _read_capped(r, MAX_API_BYTES)
+                body, why = _read_capped(r, MAX_API_BYTES, deadline)
                 if body is None:
-                    return None, why
+                    return None, "deadline" if why == "timeout" else why
                 try:
                     return json.loads(body), "ok"
                 except (ValueError, RecursionError):
@@ -1878,7 +1904,11 @@ def identity_from_report(workdir: Path, spec: str) -> dict:
     refused). A `same_work_as` row is refused: it shares the first row's slug,
     which does not prove the barrier binds THIS row's raw values."""
     domain, sep, key = spec.partition("/")
-    if not sep or not domain.strip().isdigit() or not key:
+    domain = domain.strip()
+    # ASCII digits only, and short: `isdigit` admits `²`, which `int` refuses,
+    # and `int` refuses a string of more than 4,300 digits.
+    if (not sep or not key or not (domain.isascii() and domain.isdecimal())
+            or len(domain) > 6):
         raise GapEntryError(f"--gap-entry wants DOMAIN/KEY (e.g. 1/gardner2019), got: {spec}")
     rerun = "run the gap pass again (--gaps --domains N)"
     try:
@@ -1886,21 +1916,24 @@ def identity_from_report(workdir: Path, spec: str) -> dict:
         entries = report["entries"]
     except FileNotFoundError:
         raise GapEntryError(f"no gap-pass report at {REPORT_REL}: {rerun}") from None
-    except (OSError, ValueError, KeyError, TypeError) as exc:
+    except (OSError, ValueError, KeyError, TypeError, RecursionError) as exc:
         raise GapEntryError(f"the gap-pass report is unreadable ({type(exc).__name__}): {rerun}") from None
+    if not (isinstance(entries, list)
+            and all(isinstance(e, dict) and isinstance(e.get("tried"), list) for e in entries)):
+        raise GapEntryError(f"the gap-pass report is malformed (entries): {rerun}")
     domain = str(int(domain))
-    rows = [e for e in entries if isinstance(e, dict)
-            and str(e.get("domain")) == domain and e.get("key") == key]
+    rows = [e for e in entries if str(e.get("domain")) == domain and e.get("key") == key]
     if not rows:
         raise GapEntryError(f"the gap-pass report has no entry {domain}/{key}: {rerun} if the entry is new")
     if len(rows) > 1:
         raise GapEntryError(f"the gap-pass report has {len(rows)} rows for {domain}/{key}: "
                             f"{rerun} after making the keys unique")
     row = rows[0]
-    if any(str(t.get("outcome") or "").startswith("same_work_as:")
-           for t in row.get("tried") or [] if isinstance(t, dict)):
+    marker = next((str(t.get("outcome")) for t in row["tried"] if isinstance(t, dict)
+                   and str(t.get("outcome") or "").startswith("same_work_as:")), None)
+    if marker is not None:
         raise GapEntryError(f"{domain}/{key} is the same work as an earlier entry "
-                            f"({row['tried'][0]['outcome']}): hand the PDF over for that entry")
+                            f"({marker}): hand the PDF over for that entry")
     if not row.get("slug"):
         raise GapEntryError(f"{domain}/{key} has no usable identity (outcome {row.get('outcome')}): "
                             "nothing to store it under")

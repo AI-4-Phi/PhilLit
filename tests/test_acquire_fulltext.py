@@ -597,6 +597,54 @@ class TestSourceOrder:
         assert rows["s2"] == {"source": "s2", "outcome": "unavailable", "detail": ["too_large"]}
         assert http.urls().count(OA_URL) == 1   # an oversize answer is not retried
 
+    def test_a_trickling_api_answer_stops_at_the_deadline(self, http, workdir, capsys, monkeypatch):
+        """A metadata body still arriving after the fetch deadline is cut at
+        the first late chunk: the API's row is `deadline` (not retried), and
+        the other API is still reported."""
+        now = [0.0]
+        monkeypatch.setattr(af, "_clock", lambda: now[0])
+        body = b'{"locations": [' + b" " * 1000 + b"]}"
+
+        def trickle():
+            for b in body:
+                now[0] += 1
+                yield bytes([b])
+        http.add(OA_URL, FakeResponse(chunks=trickle()))
+        http.add(S2_URL, FakeResponse(payload={"openAccessPdf": None}))
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert code == 0 and data["status"] == "not_found"
+        assert now[0] <= af.SINGLE_DEADLINE + 1
+        rows = {t["source"]: t for t in data["tried"]}
+        assert rows["openalex"]["outcome"] == "deadline"
+        assert rows["s2"]["outcome"] == "deadline"
+        assert http.urls().count(OA_URL) == 1
+
+    def test_api_get_maps_a_late_body_to_deadline(self, http, monkeypatch):
+        now = [0.0]
+        monkeypatch.setattr(af, "_clock", lambda: now[0])
+
+        def late():
+            yield b"{"
+            now[0] += 50
+            yield b"}"
+        http.add(OA_URL, FakeResponse(chunks=late()))
+        assert af._api_get(OA_URL, headers={}, params={}, limiter=NoLimiter(),
+                           deadline=af.Deadline(10), openalex=True) == (None, "deadline")
+
+    @pytest.mark.parametrize("declared", ["\u00b2", "1" * 40, "12a", "-5", " "])
+    def test_a_malformed_content_length_is_ignored(self, declared):
+        resp = FakeResponse(body=b'{"ok": 1}', headers={"Content-Length": declared})
+        assert af._read_capped(resp, 100) == (b'{"ok": 1}', "ok")
+        big = FakeResponse(chunks=[b"x" * 60, b"y" * 60], headers={"Content-Length": declared})
+        assert af._read_capped(big, 100) == (None, "too_large")   # the streaming cap still applies
+
+    def test_a_malformed_content_length_reaches_the_api_row_normally(self, http, workdir, capsys):
+        http.add(OA_URL, FakeResponse(payload=oa_payload([]), headers={"Content-Length": "\u00b2"}))
+        http.add(S2_URL, FakeResponse(payload={}, headers={"Content-Length": "9" * 40}))
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        rows = {t["source"]: t for t in data["tried"]}
+        assert code == 0 and rows["openalex"]["outcome"] == rows["s2"]["outcome"] == "not_found"
+
     def test_an_api_answer_too_deep_to_decode_is_bad_json(self, http, workdir, capsys):
         http.add(OA_URL, FakeResponse(body=b"[" * 100_000))
         code, data = run_json(capsys, workdir, "--doi", DOI)
@@ -1210,6 +1258,12 @@ class TestDownload:
         http.add("https://a.example/big", FakeResponse(body=b"%PDF-", headers={"Content-Length": "1000"}))
         assert af.download_pdf("https://a.example/big", af.Deadline(None)) == (None, "too_large")
 
+    @pytest.mark.parametrize("declared", ["\u00b2", "1" * 40])
+    def test_malformed_declared_length_ignored(self, http, declared):
+        http.add("https://a.example/x", FakeResponse(body=b"%PDF-1.4 body",
+                                                      headers={"Content-Length": declared}))
+        assert af.download_pdf("https://a.example/x", af.Deadline(None)) == (b"%PDF-1.4 body", "ok")
+
     def test_body_must_start_pdf(self, http):
         http.add("https://a.example/page", FakeResponse(body=b"<!doctype html><html>"))
         assert af.download_pdf("https://a.example/page", af.Deadline(None)) == (None, "not_pdf")
@@ -1788,12 +1842,18 @@ class TestGapEntry:
     def test_gap_entry_needs_pdf_and_excludes_identity_flags(self, http, workdir, capsys, monkeypatch, tmp_path):
         self._gap_pass(workdir, capsys, monkeypatch)
         pdf = self._pdf(tmp_path)
+        # Each message is one only the --gap-entry code prints: argparse's own
+        # usage line and its "unrecognized arguments" error would pass a
+        # looser check with the option absent.
         for extra in (["--doi", DOI], ["--title", "T"], ["--author", "A"], ["--year", "2001"]):
-            self._usage_error(workdir, capsys, "--pdf", pdf, "--gap-entry", "1/latex", *extra)
-        assert "--pdf" in self._usage_error(workdir, capsys, "--gap-entry", "1/latex")
-        self._usage_error(workdir, capsys, "--pdf", pdf, "--gap-entry", "1/latex", "--gaps", "--domains", "1")
-        self._usage_error(workdir, capsys, "--pdf", pdf, "--gap-entry", "1/latex", "--domains", "1")
-        self._usage_error(workdir, capsys, "--pdf", pdf, "--gap-entry", "nokey")
+            err = self._usage_error(workdir, capsys, "--pdf", pdf, "--gap-entry", "1/latex", *extra)
+            assert "takes its identity from the gap-pass report" in err
+        assert "--gap-entry needs --pdf PATH" in self._usage_error(workdir, capsys, "--gap-entry", "1/latex")
+        for extra in (["--gaps", "--domains", "1"], ["--domains", "1"]):
+            err = self._usage_error(workdir, capsys, "--pdf", pdf, "--gap-entry", "1/latex", *extra)
+            assert "cannot go with --gaps or --domains" in err
+        err = self._usage_error(workdir, capsys, "--pdf", pdf, "--gap-entry", "nokey")
+        assert "wants DOMAIN/KEY" in err
         assert self._store_files(workdir) == []
 
     def test_gap_entry_ignores_current_admission_settings(self, http, workdir, capsys, monkeypatch, tmp_path):
@@ -1811,8 +1871,46 @@ class TestGapEntry:
         self._gap_pass(workdir, capsys, monkeypatch)
         before = self._store_files(workdir)
         err = self._usage_error(workdir, capsys, "--pdf", self._pdf(tmp_path), "--gap-entry", "1/nope")
-        assert "1/nope" in err and self._store_files(workdir) == before
-        self._usage_error(workdir, capsys, "--pdf", self._pdf(tmp_path), "--gap-entry", "2/latex")
+        assert "the gap-pass report has no entry 1/nope" in err and self._store_files(workdir) == before
+        err = self._usage_error(workdir, capsys, "--pdf", self._pdf(tmp_path), "--gap-entry", "2/latex")
+        assert "the gap-pass report has no entry 2/latex" in err and self._store_files(workdir) == before
+
+    def test_gap_entry_with_another_works_pdf_is_rejected(self, http, workdir, capsys, monkeypatch,
+                                                         tmp_path):
+        self._gap_pass(workdir, capsys, monkeypatch)
+        before = self._store_files(workdir)
+        p = tmp_path / "wrong.pdf"
+        p.write_bytes(other_pdf())
+        code, data = run_json(capsys, workdir, "--pdf", p, "--gap-entry", "1/latex")
+        assert code == 0 and data["status"] == "rejected"
+        assert data["tried"][-1]["source"] == "user"
+        assert self._store_files(workdir) == before
+
+    @pytest.mark.parametrize("damage", [
+        lambda rep: rep.update(entries=None),
+        lambda rep: rep.update(entries=5),
+        lambda rep: rep["entries"][0].update(tried="x"),
+        lambda rep: rep["entries"].append("not a row"),
+    ])
+    def test_gap_entry_malformed_report_is_a_usage_error(self, http, workdir, capsys, monkeypatch,
+                                                         tmp_path, damage):
+        self._gap_pass(workdir, capsys, monkeypatch)
+        before = self._store_files(workdir)
+        rp = workdir / af.REPORT_REL
+        rep = json.loads(rp.read_text(encoding="utf-8"))
+        damage(rep)
+        rp.write_text(json.dumps(rep), encoding="utf-8")
+        err = self._usage_error(workdir, capsys, "--pdf", self._pdf(tmp_path), "--gap-entry", "1/latex")
+        assert "malformed" in err and "run the gap pass again" in err
+        assert self._store_files(workdir) == before
+
+    @pytest.mark.parametrize("domain", ["\u00b2", "\u0661", "1" * 5000])
+    def test_gap_entry_non_ascii_or_long_domain_is_a_usage_error(self, http, workdir, capsys,
+                                                                monkeypatch, tmp_path, domain):
+        self._gap_pass(workdir, capsys, monkeypatch)
+        err = self._usage_error(workdir, capsys, "--pdf", self._pdf(tmp_path),
+                                "--gap-entry", f"{domain}/latex")
+        assert "wants DOMAIN/KEY" in err
 
     def test_gap_entry_several_rows(self, http, workdir, capsys, monkeypatch, tmp_path):
         self._gap_pass(workdir, capsys, monkeypatch)
@@ -2236,6 +2334,57 @@ class TestService:
         identity = af.make_identity(None, raw_title, raw_surname, YEAR)
         assert ident == {"key": ft.canonical_identity(identity), "doi": None, "title": raw_title,
                          "surname": raw_surname, "year": YEAR}
+
+    LTITLE = "Justified {H}arm and the Ethics of Defensive Action"
+    LSURNAME = "M{\\\"u}ller"
+
+    def _latex_identity(self):
+        return af.make_identity(None, self.LTITLE, self.LSURNAME, YEAR)
+
+    def _gone(self, store, slug):
+        return not (store / f"{slug}.pdf").exists() and not (store / f"{slug}.json").exists()
+
+    def test_found_no_doi_latex_identity_is_stored_under_the_raw_fields(self, http, workdir, capsys,
+                                                                       service):
+        service.answer({None: {"status": "found",
+                               "pdf": work_pdf(author="Hans M\u00fcller", doi=None)}})
+        code, data = run_json(capsys, workdir, "--title", self.LTITLE, "--author", self.LSURNAME,
+                              "--year", YEAR)
+        assert code == 0 and data["status"] == "acquired"
+        assert _service_tried(data)["outcome"] == "acquired"
+        [req] = _request_files(service)
+        [sent] = json.loads(req.read_text(encoding="utf-8"))["identities"]
+        rec = ft.validate_record(workdir / ft.STORE_REL, data["slug"])
+        assert isinstance(rec, ft.Record)
+        raw = {"doi": None, "title": self.LTITLE, "surname": self.LSURNAME, "year": YEAR}
+        assert rec.identity == raw == {k: sent[k] for k in raw}
+        assert data["slug"] == ft.slug_for(self._latex_identity())
+
+    def test_found_no_doi_latex_identity_with_another_works_pdf_is_removed(self, http, workdir,
+                                                                          capsys, service):
+        service.answer({None: {"status": "found", "pdf": other_pdf()}})
+        code, data = run_json(capsys, workdir, "--title", self.LTITLE, "--author", self.LSURNAME,
+                              "--year", YEAR)
+        assert code == 0 and data["status"] == "rejected"
+        tried = _service_tried(data)
+        assert tried["outcome"] == "rejected" and tried["detail"][0].startswith("identity_failed:")
+        assert self._gone(workdir / ft.STORE_REL, data["slug"])
+
+    def test_a_rejected_no_doi_copy_leaves_its_doi_batchmate_alone(self, http, workdir, capsys,
+                                                                  service):
+        service.answer({None: {"status": "found", "pdf": other_pdf()},
+                        DOI: {"status": "found", "pdf": work_pdf()}})
+        nodoi, withdoi = self._latex_identity(), af.make_identity(DOI, TITLE, SURNAME, YEAR)
+        a, b = ft.slug_for(nodoi), ft.slug_for(withdoi)
+        store = workdir / ft.STORE_REL
+        settings = af.settings_from_env(False, None, 1)
+        settings.request_dir = service.request_dir
+        res = af.service_fetch(store, [(a, nodoi, None), (b, withdoi, None)],
+                               settings, af.Deadline(None), "gaps")
+        [req] = _request_files(service)
+        assert len(json.loads(req.read_text(encoding="utf-8"))["identities"]) == 2
+        assert res[a].outcome == "rejected" and self._gone(store, a)
+        assert res[b].outcome == "acquired" and isinstance(ft.validate_record(store, b), ft.Record)
 
     @pytest.mark.parametrize("status, detail, outcome, details", [
         ("none", None, "not_found", []),
@@ -2883,6 +3032,26 @@ class TestSuggestions:
         assert len(first["suggestions"]) == 2 and "suggestions" not in dup
         assert dup["outcome"] == "not_found"
         assert json.loads(out)["suggested"] == 1
+
+    def test_same_work_as_marker_skips_a_duplicate_whose_first_row_was_declined(
+            self, http, workdir, capsys, monkeypatch):
+        """Needs the `same_work_as` marker, not the asked-slug set: the first
+        row (a one-word title) is declined by `brave_request`, so its slug is
+        never asked, while the duplicate (same DOI, an admissible title) would
+        be asked without the marker."""
+        monkeypatch.setenv("BRAVE_API_KEY", "brave-key")
+        http.add(BRAVE, brave_ok())
+        (workdir / "literature-domain-1.bib").write_text(
+            bib_entry("short", doi=DOI, title="Introduction")
+            + bib_entry("full", doi=DOI), encoding="utf-8")
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        first, dup = gap_report(workdir)["entries"]
+        assert fs.brave_request({k: first[k] for k in ("doi", "title", "surname", "year")}) is None
+        assert fs.brave_request({k: dup[k] for k in ("doi", "title", "surname", "year")}) is not None
+        assert dup["slug"] == first["slug"]
+        assert dup["tried"][0]["outcome"] == "same_work_as:1/short"
+        assert brave_calls(http) == []
+        assert "suggestions" not in first and "suggestions" not in dup
 
     def test_suggested_counts_only_nonempty(self, http, workdir, capsys, monkeypatch):
         monkeypatch.setenv("BRAVE_API_KEY", "brave-key")
