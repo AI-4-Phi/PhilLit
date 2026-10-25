@@ -124,7 +124,8 @@ def http(monkeypatch, tmp_path):
     # load_dotenv(override=True) writes into os.environ behind monkeypatch.
     saved = dict(os.environ)
     for k in list(os.environ):
-        if k.startswith("PHILLIT_") or k in ("S2_API_KEY", "OPENALEX_API_KEY", "OPENALEX_EMAIL"):
+        if k.startswith("PHILLIT_") or k in ("S2_API_KEY", "OPENALEX_API_KEY", "OPENALEX_EMAIL",
+                                              "BRAVE_API_KEY"):
             del os.environ[k]
     ws = tmp_path / "ws"
     ws.mkdir()
@@ -2468,3 +2469,387 @@ class TestService:
         assert data["status"] == "acquired" and data["source"] == "user"
         assert data["tried"] == [{"source": "user", "outcome": "acquired"}]
         assert _request_files(service) == []
+
+
+# ---------------------------------------------------------------------------
+# Brave suggestions: candidate links for works left without a full text
+# ---------------------------------------------------------------------------
+
+BRAVE = fs.BRAVE_WEB_SEARCH
+GOOD_LINKS = ["https://a.example/paper.pdf", "https://b.example/gardner.pdf"]
+
+
+def brave_payload(items):
+    return {"web": {"results": [{"url": u, "title": t} for u, t in items]}}
+
+
+def brave_ok():
+    """Two usable results and one on an excluded host."""
+    return FakeResponse(payload=brave_payload(
+        [(GOOD_LINKS[0], TITLE), ("https://philpapers.org/archive/GARJH.pdf", TITLE),
+         (GOOD_LINKS[1], f"{TITLE} (preprint)")]))
+
+
+def brave_calls(http):
+    return [c for c in http.calls if c["url"] == BRAVE]
+
+
+def gap_report(workdir):
+    return json.loads((workdir / af.REPORT_REL).read_text(encoding="utf-8"))
+
+
+def write_gap_bib(workdir, n, prefix="k"):
+    (workdir / "literature-domain-1.bib").write_text(
+        "".join(bib_entry(f"{prefix}{i}", doi=f"10.1/w{i}") for i in range(n)), encoding="utf-8")
+
+
+class ClampLimiter:
+    """A limiter that says how long it may wait, and records whether it was asked."""
+    min_interval = 1.5
+
+    def __init__(self):
+        self.waits = 0
+
+    def wait(self):
+        self.waits += 1
+        return 0.0
+
+
+class TestSuggestions:
+    # Single-work mode.
+
+    def test_single_not_found_gets_suggestions(self, http, workdir, capsys, monkeypatch):
+        monkeypatch.setenv("BRAVE_API_KEY", "brave-key")
+        http.add(BRAVE, brave_ok())
+        code, data = run_json(capsys, workdir, *_full_args())
+        assert code == 0 and data["status"] == "not_found"
+        assert data["suggestions"] == [
+            {"url": GOOD_LINKS[0], "host": "a.example", "title": TITLE},
+            {"url": GOOD_LINKS[1], "host": "b.example", "title": f"{TITLE} (preprint)"}]
+        assert "suggestions_error" not in data
+        [call] = brave_calls(http)
+        assert call["params"]["q"].endswith("filetype:pdf")
+
+    def test_no_brave_call_when_acquired_or_exists(self, http, workdir, capsys, monkeypatch):
+        monkeypatch.setenv("BRAVE_API_KEY", "brave-key")
+        http.add(BRAVE, brave_ok())
+        http.add(OA_URL, FakeResponse(payload=oa_payload([("https://oa.example/a.pdf", "cc-by")])))
+        http.add("https://oa.example/a.pdf", FakeResponse(body=work_pdf()))
+        code, data = run_json(capsys, workdir, *_full_args())
+        assert data["status"] == "acquired" and "suggestions" not in data
+        code, data = run_json(capsys, workdir, *_full_args())
+        assert data["status"] == "exists" and "suggestions" not in data
+        assert brave_calls(http) == []
+
+    def test_single_doi_only_is_not_asked(self, http, workdir, capsys, monkeypatch):
+        monkeypatch.setenv("BRAVE_API_KEY", "brave-key")
+        http.add(BRAVE, brave_ok())
+        code, data = run_json(capsys, workdir, "--doi", DOI)
+        assert data["status"] == "not_found"
+        assert "suggestions" not in data and "suggestions_error" not in data
+        assert brave_calls(http) == []
+
+    def test_single_without_brave_key_has_no_field(self, http, workdir, capsys):
+        http.add(BRAVE, brave_ok())
+        code, data = run_json(capsys, workdir, *_full_args())
+        assert data["status"] == "not_found"
+        assert "suggestions" not in data and "suggestions_error" not in data
+        assert brave_calls(http) == []
+
+    def test_single_brave_failure_is_a_field_not_a_crash(self, http, workdir, capsys, monkeypatch):
+        monkeypatch.setenv("BRAVE_API_KEY", "brave-key")
+        http.add(BRAVE, FakeResponse(500))
+        code, data = run_json(capsys, workdir, *_full_args())
+        assert code == 0 and data["status"] == "not_found"
+        assert data["suggestions_error"] == "http_500" and "suggestions" not in data
+        assert len(brave_calls(http)) == 1   # one attempt, no retry
+
+    def test_single_user_pdf_gets_no_suggestions(self, http, workdir, capsys, tmp_path, monkeypatch):
+        """A rejected hand-over is the end of the suggestion loop, not a new search."""
+        monkeypatch.setenv("BRAVE_API_KEY", "brave-key")
+        http.add(BRAVE, brave_ok())
+        p = tmp_path / "wrong.pdf"
+        p.write_bytes(other_pdf())
+        code, data = run_json(capsys, workdir, *_full_args(), "--pdf", p)
+        assert data["status"] == "rejected" and "suggestions" not in data
+        assert brave_calls(http) == []
+
+    def test_suggestion_never_downloads(self, http, workdir, capsys, monkeypatch):
+        monkeypatch.setenv("BRAVE_API_KEY", "brave-key")
+        http.add(BRAVE, brave_ok())
+        code, data = run_json(capsys, workdir, *_full_args())
+        assert [s["url"] for s in data["suggestions"]] == GOOD_LINKS
+        write_gap_bib(workdir, 2)
+        run(capsys, workdir, "--gaps", "--domains", "1")
+        assert all(e.get("suggestions") for e in gap_report(workdir)["entries"])
+        calls = brave_calls(http)
+        assert len(calls) == 3
+        for c in calls:
+            assert c["headers"]["X-Subscription-Token"] == "brave-key"
+            assert c["headers"]["Accept"] == "application/json"
+            assert c["headers"]["User-Agent"]
+        fetched = http.urls()
+        assert not any(link in u for u in fetched for link in GOOD_LINKS)
+        assert not any("philpapers" in u for u in fetched)
+
+    def test_brave_key_never_reaches_another_host(self, http, workdir, capsys, monkeypatch):
+        monkeypatch.setenv("BRAVE_API_KEY", "brave-key")
+        http.add(BRAVE, brave_ok())
+        run_json(capsys, workdir, *_full_args())
+        for c in http.calls:
+            if c["url"] != BRAVE:
+                assert "X-Subscription-Token" not in c["headers"]
+
+    # suggest() itself.
+
+    def test_suggest_not_asked_without_a_request(self, http, monkeypatch):
+        monkeypatch.setenv("BRAVE_API_KEY", "brave-key")
+        one_word = af.make_identity(None, "Harm", SURNAME, YEAR)
+        assert af.suggest(one_word, af.Deadline(20)) == (None, None)
+        monkeypatch.delenv("BRAVE_API_KEY")
+        assert af.suggest(af.make_identity(DOI, TITLE, SURNAME, YEAR), af.Deadline(20)) == (None, None)
+        assert http.calls == []
+
+    def test_limiter_wait_is_clamped_to_the_budget(self, http, monkeypatch):
+        monkeypatch.setenv("BRAVE_API_KEY", "brave-key")
+        http.add(BRAVE, brave_ok())
+        now = [0.0]
+        monkeypatch.setattr(af, "_clock", lambda: now[0])
+        limiter = ClampLimiter()
+        monkeypatch.setattr(af, "get_limiter", lambda *a, **k: limiter)
+        ident = af.make_identity(DOI, TITLE, SURNAME, YEAR)
+        # 2 s left, a 1.5 s wait and a 1 s minimum: skipped, never waited.
+        assert af.suggest(ident, af.Deadline(2)) == (None, "deadline")
+        assert limiter.waits == 0 and http.calls == []
+        sugg, why = af.suggest(ident, af.Deadline(5))
+        assert why is None and len(sugg) == 2 and limiter.waits == 1
+        # A contended wait (longer than its spacing) that leaves under 1 s: no call.
+        slow = ClampLimiter()
+        slow.wait = lambda: now.__setitem__(0, now[0] + 3.0)
+        monkeypatch.setattr(af, "get_limiter", lambda *a, **k: slow)
+        assert af.suggest(ident, af.Deadline(3.5)) == (None, "deadline")
+        assert len(http.calls) == 1
+
+    def test_slow_body_read_stops_at_the_budget(self, http, monkeypatch):
+        monkeypatch.setenv("BRAVE_API_KEY", "brave-key")
+        now = [0.0]
+        monkeypatch.setattr(af, "_clock", lambda: now[0])
+        body = json.dumps(brave_payload([(GOOD_LINKS[0], TITLE)])).encode("utf-8")
+
+        def trickle():
+            for b in body:
+                now[0] += 1
+                yield bytes([b])
+        http.add(BRAVE, FakeResponse(chunks=trickle()))
+        sugg, why = af.suggest(af.make_identity(DOI, TITLE, SURNAME, YEAR), af.Deadline(20))
+        assert (sugg, why) == (None, "timeout")
+        assert now[0] <= 21
+
+    # --gaps.
+
+    def test_gaps_report_carries_raw_identity(self, http, workdir, capsys):
+        (workdir / "literature-domain-1.bib").write_text(
+            bib_entry("raw", title="{M}oral {L}uck in {K}ant", author="van Fraassen, Bas and Doe, J.")
+            + bib_entry("d", doi=DOI), encoding="utf-8")
+        (workdir / "literature-domain-2.bib").write_text(bib_entry("d2", doi=DOI), encoding="utf-8")
+        write_env("PHILLIT_FULLTEXT_REPOSITORY_DIR=/nonexistent\n")   # admits the no-DOI entry
+        run(capsys, workdir, "--gaps", "--domains", "2")
+        entries = gap_report(workdir)["entries"]
+        ident = {k: entries[0][k] for k in ("doi", "title", "surname", "year")}
+        assert ident == {"doi": None, "title": "{M}oral {L}uck in {K}ant",
+                         "surname": "van Fraassen", "year": YEAR}
+        for e in entries[1:]:   # the same_work_as row too
+            assert (e["doi"], e["title"], e["surname"], e["year"]) == (DOI, TITLE, SURNAME, YEAR)
+        assert all("suggestions" not in e for e in entries)   # Brave off: not asked
+
+    def test_gaps_suggestions_include_not_attempted(self, http, workdir, capsys, monkeypatch):
+        monkeypatch.setenv("BRAVE_API_KEY", "brave-key")
+        http.add(BRAVE, brave_ok())
+        now = [0.0]
+        monkeypatch.setattr(af, "_clock", lambda: now[0])
+        write_gap_bib(workdir, 4)
+
+        def slow_folder(identity, settings, deadline):
+            now[0] += 200
+            return af.SourceResult("folder", "not_found")
+        monkeypatch.setitem(af._SOURCES, "folder", slow_folder)
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        entries = gap_report(workdir)["entries"]
+        assert [e["outcome"] for e in entries] == ["not_found"] * 3 + ["not_attempted"]
+        assert all(len(e["suggestions"]) == 2 for e in entries)
+        assert json.loads(out)["suggested"] == 4
+
+    def test_two_not_attempted_rows_of_one_work_ask_once(self, http, workdir, capsys, monkeypatch):
+        monkeypatch.setenv("BRAVE_API_KEY", "brave-key")
+        http.add(BRAVE, brave_ok())
+        now = [0.0]
+        monkeypatch.setattr(af, "_clock", lambda: now[0])
+        (workdir / "literature-domain-1.bib").write_text(
+            bib_entry("first", doi="10.1/slow") + bib_entry("a", doi=DOI), encoding="utf-8")
+        (workdir / "literature-domain-2.bib").write_text(bib_entry("b", doi=DOI), encoding="utf-8")
+
+        def slow_folder(identity, settings, deadline):
+            now[0] += af.GAPS_DEADLINE + 1
+            return af.SourceResult("folder", "not_found")
+        monkeypatch.setitem(af._SOURCES, "folder", slow_folder)
+        run(capsys, workdir, "--gaps", "--domains", "2")
+        entries = gap_report(workdir)["entries"]
+        assert [e["outcome"] for e in entries] == ["not_found", "not_attempted", "not_attempted"]
+        assert len(brave_calls(http)) == 2
+        assert "suggestions" in entries[1] and "suggestions" not in entries[2]
+
+    @pytest.mark.parametrize("step, expected_calls, not_asked", [(0.0, 40, 5), (2.0, 30, 15)])
+    def test_suggestion_budget_is_separate_and_bounded(self, http, workdir, capsys, monkeypatch,
+                                                       step, expected_calls, not_asked):
+        """At most MAX_SUGGESTION_QUERIES calls, within SUGGESTION_SECONDS
+        that start after the fetch work: with 2 s per call the pass stops
+        at 60 s."""
+        assert (af.MAX_SUGGESTION_QUERIES, af.SUGGESTION_SECONDS) == (40, 60)
+        monkeypatch.setenv("BRAVE_API_KEY", "brave-key")
+        now = [0.0]
+        monkeypatch.setattr(af, "_clock", lambda: now[0])
+        starts = []
+
+        def answer(url, params):
+            starts.append(now[0])
+            now[0] += step
+            return brave_ok()
+        http.add(BRAVE, answer)
+        write_gap_bib(workdir, 45)
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        summary = json.loads(out)
+        assert summary["counts"] == {"not_found": 45}
+        assert len(starts) == expected_calls
+        assert now[0] <= af.SUGGESTION_SECONDS
+        assert summary["suggested"] == expected_calls
+        assert summary["warnings"] == [f"suggestions: {not_asked} not asked (cap or time), 0 failed"]
+        entries = gap_report(workdir)["entries"]
+        assert [("suggestions" in e) for e in entries] == [True] * expected_calls + [False] * not_asked
+
+    @pytest.mark.parametrize("brave_on", [False, True])
+    def test_service_wait_bound_unchanged_by_brave(self, http, workdir, capsys, service, monkeypatch,
+                                                   brave_on):
+        if brave_on:
+            monkeypatch.setenv("BRAVE_API_KEY", "brave-key")
+        http.add(BRAVE, brave_ok())
+        seen = []
+        real = af._wait_bound
+
+        def record(deadline, n_sent):
+            seen.append((deadline.end, n_sent))
+            return real(deadline, n_sent)
+        monkeypatch.setattr(af, "_wait_bound", record)
+        write_gap_bib(workdir, 2)
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        assert seen == [(float(af.GAPS_DEADLINE), 2), (float(af.GAPS_DEADLINE), 2)]
+        assert len(brave_calls(http)) == (2 if brave_on else 0)
+        # The suggestions start after the service wait, not inside it.
+        assert service.clock[0] >= af.GAPS_DEADLINE - af.SERVICE_WAIT_MARGIN - 2
+
+    def test_summary_line_counts_suggested(self, http, workdir, capsys, monkeypatch):
+        monkeypatch.setenv("BRAVE_API_KEY", "brave-key")
+        http.add(BRAVE, brave_ok())
+        write_gap_bib(workdir, 3)
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        assert len(out.strip().splitlines()) == 1
+        summary = json.loads(out)
+        assert summary["suggested"] == 3 and summary["warnings"] == []
+        assert gap_report(workdir)["suggested"] == 3
+
+    def test_summary_line_suggested_zero_without_brave(self, http, workdir, capsys):
+        write_gap_bib(workdir, 2)
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        assert json.loads(out)["suggested"] == 0
+        assert brave_calls(http) == []
+
+    def test_same_work_as_rows_get_no_suggestions(self, http, workdir, capsys, monkeypatch):
+        monkeypatch.setenv("BRAVE_API_KEY", "brave-key")
+        http.add(BRAVE, brave_ok())
+        for i in (1, 2):
+            (workdir / f"literature-domain-{i}.bib").write_text(bib_entry(f"g{i}", doi=DOI),
+                                                                encoding="utf-8")
+        code, out = run(capsys, workdir, "--gaps", "--domains", "2")
+        first, dup = gap_report(workdir)["entries"]
+        assert len(brave_calls(http)) == 1
+        assert len(first["suggestions"]) == 2 and "suggestions" not in dup
+        assert dup["outcome"] == "not_found"
+        assert json.loads(out)["suggested"] == 1
+
+    def test_suggested_counts_only_nonempty(self, http, workdir, capsys, monkeypatch):
+        monkeypatch.setenv("BRAVE_API_KEY", "brave-key")
+        http.add(BRAVE, FakeResponse(payload=brave_payload(
+            [("https://c.example/x.pdf", "Something Else Entirely")])))
+        write_gap_bib(workdir, 1)
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        [entry] = gap_report(workdir)["entries"]
+        assert entry["suggestions"] == []
+        summary = json.loads(out)
+        assert summary["suggested"] == 0 and summary["warnings"] == []
+
+    def test_rejected_entry_gets_suggestions(self, http, workdir, capsys, monkeypatch):
+        monkeypatch.setenv("BRAVE_API_KEY", "brave-key")
+        http.add(BRAVE, brave_ok())
+        http.add(OA_URL, FakeResponse(payload=oa_payload([("https://oa.example/a.pdf", "cc-by")])))
+        http.add("https://oa.example/a.pdf", FakeResponse(body=other_pdf()))
+        (workdir / "literature-domain-1.bib").write_text(bib_entry("r", doi=DOI), encoding="utf-8")
+        run(capsys, workdir, "--gaps", "--domains", "1")
+        [entry] = gap_report(workdir)["entries"]
+        assert entry["outcome"] == "rejected" and len(entry["suggestions"]) == 2
+        code, data = run_json(capsys, workdir, *_full_args())
+        assert data["status"] == "rejected" and len(data["suggestions"]) == 2
+
+    def test_failed_brave_calls_counted_in_warning(self, http, workdir, capsys, monkeypatch):
+        monkeypatch.setenv("BRAVE_API_KEY", "brave-key")
+        http.add(BRAVE, FakeResponse(500))
+        write_gap_bib(workdir, 2)
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        assert code == 0
+        summary = json.loads(out)
+        assert summary["warnings"] == ["suggestions: 0 not asked (cap or time), 2 failed"]
+        assert summary["suggested"] == 0
+        assert all("suggestions" not in e for e in gap_report(workdir)["entries"])
+        assert len(brave_calls(http)) == 2   # one attempt per entry, no retry
+
+    def test_a_crashing_post_pass_is_a_warning(self, http, workdir, capsys, monkeypatch):
+        monkeypatch.setenv("BRAVE_API_KEY", "brave-key")
+
+        def boom(identity):
+            raise RuntimeError("kaput")
+        monkeypatch.setattr(af.fs, "brave_request", boom)
+        write_gap_bib(workdir, 1)
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        assert code == 0
+        summary = json.loads(out)
+        assert summary["counts"] == {"not_found": 1}
+        assert summary["warnings"] == ["suggestions: error:RuntimeError"]
+
+    @pytest.mark.parametrize("step, starts_expected, warning", [
+        (25.0, [0.0, 25.0, 50.0], "suggestions: 2 not asked (cap or time), 1 failed"),
+        (29.75, [0.0, 29.75], "suggestions: 3 not asked (cap or time), 0 failed")])
+    def test_slow_brave_never_passes_the_budget(self, http, workdir, capsys, monkeypatch,
+                                                step, starts_expected, warning):
+        """Each call's timeout is clamped to what is left: a call that would
+        run past the budget times out at it; with under 1 s left none starts."""
+        import requests
+        monkeypatch.setenv("BRAVE_API_KEY", "brave-key")
+        now = [0.0]
+        monkeypatch.setattr(af, "_clock", lambda: now[0])
+        inner = af._http_get
+        starts, timeouts = [], []
+
+        def timed(url, **kw):
+            if url == BRAVE:
+                starts.append(now[0])
+                timeouts.append(kw["timeout"])
+                now[0] += min(step, kw["timeout"])
+                if kw["timeout"] < step:
+                    raise requests.Timeout("slow")
+                return brave_ok()
+            return inner(url, **kw)
+        monkeypatch.setattr(af, "_http_get", timed)
+        write_gap_bib(workdir, 5)
+        code, out = run(capsys, workdir, "--gaps", "--domains", "1")
+        assert starts == starts_expected
+        assert now[0] <= af.SUGGESTION_SECONDS
+        assert all(start + t <= af.SUGGESTION_SECONDS for start, t in zip(starts, timeouts))
+        assert json.loads(out)["warnings"] == [warning]

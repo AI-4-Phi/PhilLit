@@ -127,14 +127,35 @@ DOWNLOADS. http(s) only, re-checked on every redirect hop (at most 5,
 followed by hand); 30 s per download; a 60 MB cap enforced while streaming;
 the body must start `%PDF-`; only the User-Agent is sent (no API key ever
 reaches a PDF host). Local files (Zotero, folder, `--pdf`): a 200 MB cap.
-A metadata answer (OpenAlex, Semantic Scholar) is read streaming within
-`MAX_API_BYTES` (5 MB); a larger one is `unavailable`, detail `too_large`.
+A metadata answer (OpenAlex, Semantic Scholar, Brave) is read streaming
+within `MAX_API_BYTES` (5 MB); a larger one is `unavailable`, detail
+`too_large` (for Brave, the failed call `too_large`).
+
+SUGGESTIONS. A work the sources and the service left `not_found` or
+`rejected` (or, in `--gaps`, `not_attempted`) gets one Brave web search when
+`BRAVE_API_KEY` is set, under every policy (`suggest`; the query and the
+filtering are `fulltext_sources.brave_request`/`brave_parse`, which may
+decline an identity without a 2-word main title or a surname: not asked).
+Its up to 3 links are for the user to check and hand over (`--pdf`):
+nothing is ever downloaded or stored from a suggestion, and the Brave key
+goes to Brave only. Each call is one HTTP attempt (a 429 or 5xx is a failed
+call, never retried); its budget is a `Deadline` started after the fetch
+work, so it never takes time from a fetch, and the limiter wait, the
+call's timeout and the body read are clamped to it (no call starts with
+less than `SUGGESTION_MIN_SECONDS` left after the limiter's spacing).
+Residual: the limiter's real wait can exceed its spacing when other
+processes queue on it (it caps a queue at 10 spacings, 15 s), so a
+contended wait can overrun the budget by that much.
 
 OUTCOMES. Single-work mode prints one JSON object `{status, slug, source,
 tried}`, within a 420 s deadline (`SINGLE_DEADLINE`, the Bash ceiling is
-600 s); `status` is `acquired`, `exists` (a valid record for this identity
-is already stored), `not_found` (no PDF was obtained), `rejected` (a PDF
-was obtained and none passed extraction and the identity check) or
+600 s), plus, for a `not_found` or `rejected` work when Brave is asked
+(never with `--pdf`), `suggestions: [{url, host, title}]` (empty when Brave
+found none) or `suggestions_error: <reason>` for a failed call, within
+another `SINGLE_SUGGESTION_SECONDS` (20 s); `status` is `acquired`,
+`exists` (a valid record for this identity is already stored),
+`not_found` (no PDF was obtained), `rejected` (a PDF was obtained and
+none passed extraction and the identity check) or
 `refused` (`slug_collision`: a sidecar under the stem names another
 identity, and nothing is overwritten; `path_too_long`: the store path
 would exceed the Windows limit; `unlicensed_remove_failed:<error>`: a
@@ -176,8 +197,19 @@ Scholar while the service channel is off) per entry, each entry decided or
 found there stored at once, then one service request for the entries still
 open, then a wait bounded by the pass deadline. Entries not reached are
 `not_attempted`; an entry whose work an earlier entry already tried is
-`same_work_as` that entry and takes its final outcome. It writes the run
-report and prints a one-line JSON summary with counts per outcome.
+`same_work_as` that entry and takes its final outcome. Each report entry
+carries the stored identity (`doi`, `title`, `surname`, `year`, raw).
+Then, with a Brave key, every `not_found`, `rejected` or `not_attempted`
+entry gets `suggestions` (see SUGGESTIONS), once per work: a `same_work_as`
+row never does, so only the first row carries them. They have their own
+budget after the fetch work: at most `MAX_SUGGESTION_QUERIES` (40) HTTP
+attempts within `SUGGESTION_SECONDS` (60), so the call stays under
+420 + 60 s. An entry the cap or the time does not reach, or whose call
+failed, carries no `suggestions` field; both are counted in one `warnings`
+line, `suggestions: N not asked (cap or time), M failed`, when either is
+non-zero. It writes the run report and prints a one-line JSON summary with
+counts per outcome and `suggested`, the number of entries with a non-empty
+`suggestions` list.
 
 IDENTITY FORMS (the barrier's binding contract). `--gaps` stores the
 entry's RAW title, `bib_identity.first_author_surname(author, editor)` and
@@ -265,6 +297,11 @@ GAPS_DEADLINE = 420
 SINGLE_DEADLINE = 420
 SERVICE_WAIT_MARGIN = 20   # seconds of the deadline kept for validating arrivals
 ARRIVAL_CHECK_SECONDS = 1.0   # and this much more per identity sent
+MAX_SUGGESTION_QUERIES = 40   # Brave calls per gap pass, after the fetch deadline
+SUGGESTION_SECONDS = 60        # their own budget in a gap pass (420 + 60 s in all)
+SINGLE_SUGGESTION_SECONDS = 20  # and in single-work mode (one call)
+SUGGESTION_MIN_SECONDS = 1.0   # no call starts with less than this left
+SUGGEST_STATUSES = ("not_found", "rejected", "not_attempted")   # the outcomes that get links
 INDEX_BUDGET_GAPS = 60
 INDEX_BUDGET_SINGLE = 20
 MAX_WALK_FILES = 50_000
@@ -935,14 +972,19 @@ def _licensed(lic, policy: str | None) -> bool:
     return policy == "open" and (lic.startswith("oa:") or lic == "upload")
 
 
-def _read_capped(resp, cap: int) -> tuple[bytes | None, str]:
+def _read_capped(resp, cap: int, deadline: Deadline | None = None) -> tuple[bytes | None, str]:
     """A streamed body of at most `cap` bytes, or (None, "too_large"): a
-    declared Content-Length over the cap is refused before reading."""
+    declared Content-Length over the cap is refused before reading. With a
+    `deadline`, (None, "timeout") for a chunk that arrives after its end,
+    checked per chunk: a request timeout bounds each socket read, not the
+    whole body."""
     declared = resp.headers.get("Content-Length")
     if declared and str(declared).isdigit() and int(declared) > cap:
         return None, "too_large"
     chunks, total = [], 0
     for chunk in resp.iter_content(chunk_size=65536):
+        if deadline is not None and deadline.left() < 0:   # arrived after the end
+            return None, "timeout"
         if not chunk:
             continue
         total += len(chunk)
@@ -999,6 +1041,59 @@ def _brave_on() -> bool:
     """Whether a Brave Search key is set, read now (after `.env` loads):
     non-empty once stripped."""
     return bool(os.environ.get("BRAVE_API_KEY", "").strip())
+
+
+def suggest(identity: dict, deadline: Deadline) -> tuple[list[dict] | None, str | None]:
+    """Candidate PDF links from one Brave web search, for the user to check
+    and hand over; nothing is downloaded from them. (None, None): not asked
+    (no BRAVE_API_KEY, read now, or `fs.brave_request` declines the
+    identity), and no HTTP call. (None, "deadline"): skipped, too little of
+    `deadline` left for the limiter's spacing plus SUGGESTION_MIN_SECONDS,
+    and no HTTP call. ([{url, host, title}], None): Brave answered (the list
+    may be empty). (None, reason): the one HTTP attempt failed (`http_<n>`,
+    `network:<error>`, `timeout`, `too_large`, `bad_json`, `error:<error>`);
+    a 429 or 5xx is never retried. The limiter wait and the call's timeout
+    are both clamped to `deadline`, and so is the body read."""
+    key = os.environ.get("BRAVE_API_KEY", "").strip()
+    req = fs.brave_request(identity) if key else None
+    if req is None:
+        return None, None
+    r = None
+    try:
+        limiter = get_limiter("brave")
+        # The limiter sleeps by itself and says nothing in advance: wait
+        # only when its spacing still leaves a call's minimum.
+        if deadline.left() < getattr(limiter, "min_interval", 0.0) + SUGGESTION_MIN_SECONDS:
+            return None, "deadline"
+        limiter.wait()
+        if deadline.left() < SUGGESTION_MIN_SECONDS:
+            return None, "deadline"
+        headers = {"X-Subscription-Token": key, "Accept": "application/json",
+                   "User-Agent": user_agent()}
+        r = _http_get(req.url, headers=headers, params=dict(req.params),
+                      timeout=deadline.clamp(API_TIMEOUT), stream=True)
+        if r.status_code != 200:
+            return None, f"http_{r.status_code}"
+        body, why = _read_capped(r, MAX_API_BYTES, deadline)
+        if body is None:
+            return None, why
+        try:
+            payload = json.loads(body)
+        except (ValueError, RecursionError):
+            return None, "bad_json"
+        return [{"url": s.url, "host": s.host, "title": s.title}
+                for s in fs.brave_parse(identity, payload)], None
+    except requests.RequestException as exc:
+        # The class name only: a requests message embeds the URL.
+        return None, f"network:{type(exc).__name__}"
+    except Exception as exc:   # a suggestion never sinks the run
+        return None, f"error:{type(exc).__name__}"
+    finally:
+        if r is not None:
+            try:
+                r.close()
+            except Exception:
+                pass
 
 
 def _title_route_on() -> bool:
@@ -1528,13 +1623,24 @@ def finish(attempt: Attempt, service: SourceResult | None) -> dict:
 
 def acquire_one(workdir: Path, identity: dict, settings: Settings, deadline: Deadline,
                 pdf_path: str | None = None) -> dict:
-    """Run the single-work pipeline; returns {status, slug, source, tried}."""
+    """Run the single-work pipeline; returns {status, slug, source, tried},
+    plus `suggestions` or `suggestions_error` when the sources left the work
+    `not_found` or `rejected` and Brave was asked (never for `--pdf`: a
+    hand-over ends the suggestion loop). The suggestion budget starts after
+    the fetch work, so it never takes time from a fetch."""
     attempt = begin(workdir, identity, settings, deadline, pdf_path)
     service = None
     if attempt.open and pdf_path is None:
         service = service_fetch(attempt.store, [(attempt.slug, identity, attempt.invalid)], settings,
                                 deadline, "single")[attempt.slug]
-    return finish(attempt, service)
+    out = finish(attempt, service)
+    if pdf_path is None and out["status"] in SUGGEST_STATUSES:
+        found, why = suggest(identity, Deadline(SINGLE_SUGGESTION_SECONDS))
+        if found is not None:
+            out["suggestions"] = found
+        elif why is not None:
+            out["suggestions_error"] = why
+    return out
 
 
 # --------------------------------------------------------------------------
@@ -1595,6 +1701,44 @@ def _folder_warnings(settings: Settings) -> list[str]:
     return out
 
 
+def _suggest_gaps(entries: list[dict]) -> list[str]:
+    """The suggestion post-pass, after the fetch work: every row left
+    `not_found`, `rejected` or `not_attempted` gets a Brave search, once per
+    work (a `same_work_as` row, or a later row of a slug already asked, is
+    skipped, so only the first row carries the links), within its own
+    budget: at most MAX_SUGGESTION_QUERIES HTTP attempts in
+    SUGGESTION_SECONDS. A row the module declines (`fs.brave_request` None)
+    is neither asked nor counted. Rows the cap or the time does not reach,
+    and failed calls, carry no `suggestions` field; the warning line counts
+    them (none when both are 0)."""
+    budget = Deadline(SUGGESTION_SECONDS)
+    asked, calls, not_asked, failed = set(), 0, 0, 0
+    for row in entries:
+        if (row.get("outcome") not in SUGGEST_STATUSES or row.get("slug") is None
+                or row["slug"] in asked
+                or any(str(t.get("outcome", "")).startswith("same_work_as:") for t in row["tried"])):
+            continue
+        identity = {k: row.get(k) for k in ("doi", "title", "surname", "year")}
+        if fs.brave_request(identity) is None:
+            continue
+        asked.add(row["slug"])
+        if calls >= MAX_SUGGESTION_QUERIES:
+            not_asked += 1
+            continue
+        found, why = suggest(identity, budget)
+        if found is None and why in (None, "deadline"):   # `suggest` skipped it for time
+            not_asked += 1
+            continue
+        calls += 1
+        if found is None:
+            failed += 1
+        else:
+            row["suggestions"] = found
+    if not (not_asked or failed):
+        return []
+    return [f"suggestions: {not_asked} not asked (cap or time), {failed} failed"]
+
+
 def run_gaps(workdir: Path, n_domains: int, settings: Settings) -> dict:
     started = _clock()
     deadline = Deadline(GAPS_DEADLINE)
@@ -1609,7 +1753,7 @@ def run_gaps(workdir: Path, n_domains: int, settings: Settings) -> dict:
 
     entries, by_slug, attempts, duplicates = [], {}, [], []
     for domain, key, ident in cands:
-        row = {"domain": domain, "key": key}
+        row = {"domain": domain, "key": key, **ident}   # the raw stored identity
         try:
             slug = ft.slug_for(ident)
         except ValueError:
@@ -1655,6 +1799,10 @@ def run_gaps(workdir: Path, n_domains: int, settings: Settings) -> dict:
             crashed(row, exc)
     for row, first in duplicates:
         row.update(outcome=first["outcome"], source=first["source"])
+    try:   # a suggestion never sinks the pass
+        suggestion_warnings = _suggest_gaps(entries) if _brave_on() else []
+    except Exception as exc:
+        suggestion_warnings = [f"suggestions: error:{type(exc).__name__}"]
     counts: dict[str, int] = {}
     for e in entries:
         counts[e["outcome"]] = counts.get(e["outcome"], 0) + 1
@@ -1668,7 +1816,7 @@ def run_gaps(workdir: Path, n_domains: int, settings: Settings) -> dict:
         src = by_slug.get(e["slug"], e)
         errors.append({"entry": f"{e['domain']}/{e['key']}",
                        "reason": src["tried"][0]["outcome"] if src["tried"] else "error"})
-    warnings = _folder_warnings(settings)
+    warnings = _folder_warnings(settings) + suggestion_warnings
     report = {"schema": 1, "status": "done_with_errors" if errors else "done",
               "generated_at": _now_iso(), "deadline_seconds": GAPS_DEADLINE,
               "elapsed_seconds": round(_clock() - started, 1),
@@ -1678,8 +1826,9 @@ def run_gaps(workdir: Path, n_domains: int, settings: Settings) -> dict:
                           "folder": "on" if settings.pdf_dir is not None and not settings.licensed_only else "off",
                           "repository": "on" if settings.repository_dir is not None else "off",
                           "service": "on" if settings.request_dir is not None else "off"},
-              "domains": domains, "candidates": len(entries), "counts": counts, "errors": errors, "warnings": warnings,
-              "entries": entries}
+              "domains": domains, "candidates": len(entries), "counts": counts,
+              "suggested": sum(1 for e in entries if e.get("suggestions")),
+              "errors": errors, "warnings": warnings, "entries": entries}
     path = workdir / REPORT_REL
     path.parent.mkdir(parents=True, exist_ok=True)
     ft.write_text_atomic(path, json.dumps(report, indent=2, ensure_ascii=False) + "\n")
@@ -1736,7 +1885,8 @@ def main(argv=None) -> int:
             report = run_gaps(workdir, args.domains, settings)
             # One line, as the barrier prints its summary (escaped ASCII).
             print(json.dumps({"status": report["status"], "candidates": report["candidates"],
-                              "counts": report["counts"], "errors": report["errors"],
+                              "counts": report["counts"], "suggested": report["suggested"],
+                              "errors": report["errors"],
                               "warnings": report["warnings"],
                               "report": REPORT_REL}))
             return 0
