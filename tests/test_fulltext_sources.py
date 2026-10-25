@@ -633,3 +633,33 @@ def test_import_is_pure(tmp_path):
                           cwd=tmp_path, env=env, capture_output=True, text=True,
                           encoding="utf-8")
     assert proc.returncode == 0, proc.stderr
+
+
+# --------------------------------------------------------------- apostrophes
+
+GOODHART = ident(None, "Categorizing Variants of Goodhart's Law", "Manheim", "2018")
+
+
+@pytest.mark.parametrize("display", ["Categorizing Variants of Goodhart’s Law",
+                                     "Categorizing Variants of Goodhart's Law"])
+def test_title_parse_matches_either_apostrophe(display):
+    rec = work(display, [first("David Manheim")], [oa_loc("https://arxiv.org/pdf/g.pdf")])
+    assert [l.url for l in fs.openalex_title_parse(GOODHART, {"results": [rec]})] == \
+        ["https://arxiv.org/pdf/g.pdf"]
+
+
+def test_title_parse_matches_an_apostrophe_surname():
+    i = ident(None, "Socialism, Associations and the Market", "O'Neill", "1994")
+    rec = work("Socialism, associations and the market", [first("John O’Neill")],
+               [oa_loc("https://x.org/s.pdf")])
+    assert len(fs.openalex_title_parse(i, {"results": [rec]})) == 1
+
+
+def test_brave_parse_matches_either_apostrophe():
+    out = fs.brave_parse(GOODHART, brave(("Categorizing Variants of Goodhart’s Law",
+                                          "https://a.org/g.pdf")))
+    assert [s.url for s in out] == ["https://a.org/g.pdf"]
+
+
+def test_key_phrase_drops_apostrophes_as_identity_ok_does():
+    assert fs.key_phrase(GOODHART) == "categorizing variants of goodharts law"

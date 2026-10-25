@@ -711,7 +711,7 @@ def _item_surname(data: dict) -> str:
 
 
 def _surname_eq(a: str, b: str) -> bool:
-    fa, fb = ft.fold(a), ft.fold(b)
+    fa, fb = ft.match_fold(a), ft.match_fold(b)
     if not fa or not fb:
         return False
     return fa == fb or fa.split()[-1] == fb.split()[-1]
@@ -730,10 +730,10 @@ def zotero_item_matches(item: dict, identity: dict) -> bool:
     title = ft.clean_bibtex_str(identity.get("title") or "")
     surname = ft.clean_bibtex_str(identity.get("surname") or "")
     year = same_work_year(identity.get("year"))
-    phrase = ft.title_phrase_cut(title)
+    phrase = ft.title_phrase_cut(ft.drop_apostrophes(title))
     if not (phrase and surname and year):
         return False
-    return (ft.fold(data.get("title") or "").startswith(phrase)
+    return (ft.match_fold(data.get("title") or "").startswith(phrase)
             and _surname_eq(_item_surname(data), surname)
             and _item_year(item) == year)
 
@@ -965,12 +965,16 @@ class FolderIndex:
         """DOI matches, then file-name surname matches, then page-head title
         matches; each group by path; no repeats."""
         doi = normalize_doi(identity.get("doi") or "")
-        surname = ft.fold(ft.clean_bibtex_str(identity.get("surname") or ""))
+        raw_surname = ft.clean_bibtex_str(identity.get("surname") or "")
+        surnames = {s for s in (ft.fold(raw_surname), ft.match_fold(raw_surname)) if s}
         title = ft.clean_bibtex_str(identity.get("title") or "")
-        phrases = {p for p in (ft.title_phrase(title), ft.title_phrase_cut(title)) if p}
+        # Heads are cached `fold`ed (INDEX_SCHEMA), where a page's straight
+        # apostrophe is a space and a curly one is gone: look for both forms.
+        phrases = {p for t in ft.apostrophe_forms(title)
+                   for p in (ft.title_phrase(t), ft.title_phrase_cut(t)) if p}
         by_doi = sorted(r for r, e in self.entries.items() if doi and doi in (e.get("dois") or []))
         by_name = [r for r in self.files
-                   if surname and f" {surname} " in f" {_name_words(Path(r).name)} "]
+                   if any(f" {s} " in f" {_name_words(Path(r).name)} " for s in surnames)]
         by_head = sorted(r for r, e in self.entries.items()
                          if any(p in h for h in (e.get("heads") or []) for p in phrases))
         out, seen, present = [], set(), set(self.files)

@@ -22,7 +22,7 @@ from dataclasses import dataclass
 from urllib.parse import quote, urlsplit
 
 # `normalize_doi` is bib_identity's, bound through fulltext (an alias).
-from fulltext import fold, normalize_doi, title_phrase_cut
+from fulltext import drop_apostrophes, fold, match_fold, normalize_doi, title_phrase_cut
 from generate_bibliography import clean_bibtex_str
 from web_evidence import excluded_host
 
@@ -96,9 +96,10 @@ def main_title(identity) -> str:
 
 
 def key_phrase(identity) -> str:
-    """The identity's cut phrase, or "" when it has fewer than 2 words (too
-    weak a key: an empty phrase is a prefix of every title)."""
-    phrase = title_phrase_cut(_decoded(identity, "title"))
+    """The identity's cut phrase, apostrophes dropped as `identity_ok` drops
+    them, or "" when it has fewer than 2 words (too weak a key: an empty
+    phrase is a prefix of every title)."""
+    phrase = title_phrase_cut(drop_apostrophes(_decoded(identity, "title")))
     return phrase if len(phrase.split()) >= 2 else ""
 
 
@@ -278,10 +279,10 @@ def _matches(phrase: str, surname: str, record: dict) -> bool:
     name = record.get("display_name")
     if not isinstance(name, str):
         return False
-    title = fold(name)
+    title = match_fold(name)
     if not (title == phrase or title.startswith(phrase + " ")):
         return False
-    return any(f" {surname} " in f" {fold(n)} "
+    return any(f" {surname} " in f" {match_fold(n)} "
                for n in _first_author_names(record.get("authorships")))
 
 
@@ -291,7 +292,7 @@ def openalex_title_parse(identity, payload) -> list[Location]:
     if not isinstance(payload, dict) or not isinstance(payload.get("results"), list):
         return []
     phrase = key_phrase(identity)
-    surname = fold(_decoded(identity, "surname"))
+    surname = match_fold(_decoded(identity, "surname"))
     if not phrase or not surname:
         return []
     out = []
@@ -364,7 +365,7 @@ def brave_parse(identity, payload) -> list[Suggestion]:
         except ValueError:
             continue
         title = _clean_title(title)
-        if not host or f" {phrase} " not in f" {fold(title)} ":
+        if not host or f" {phrase} " not in f" {match_fold(title)} ":
             continue
         seen.add(url)
         out.append(Suggestion(url=url, host=host, title=title[:SUGGESTION_TITLE_MAX]))

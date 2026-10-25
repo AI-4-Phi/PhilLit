@@ -861,9 +861,9 @@ class TestTitleRoute:
         http.add(WORKS_URL, FakeResponse(payload={"results": [title_record(
             title="AI and M\u00fcller's Problem", first_author="Hans M\u00fcller",
             pdfs=[(url, "cc-by")])]}))
-        # The fixture's font extracts `'` as a curly quote, which the fold
-        # drops ("mullers"); the page prints the folded form instead.
-        http.add(url, FakeResponse(body=work_pdf(title="AI and Muller s Problem", author="Hans Muller",
+        # The fixture's font extracts `'` as a curly quote; matching drops
+        # either form ("mullers").
+        http.add(url, FakeResponse(body=work_pdf(title="AI and Muller's Problem", author="Hans Muller",
                                                  doi=None)))
         code, data = run_json(capsys, workdir, *_no_doi_args(title=raw_title, author=raw_surname))
         assert data["status"] == "acquired"
@@ -1102,6 +1102,26 @@ class TestZotero:
 # ---------------------------------------------------------------------------
 # PDF folder and its index
 # ---------------------------------------------------------------------------
+
+class TestApostropheCandidates:
+    """Candidate selection drops apostrophes as `identity_ok` does (PL-28)."""
+
+    def test_zotero_item_title_matches_either_apostrophe(self):
+        item = {"data": {"itemType": "journalArticle", "title": "Categorizing Variants of Goodhart\u2019s Law",
+                         "creators": [{"creatorType": "author", "lastName": "O\u2019Neill"}],
+                         "date": "2018"}}
+        ident = af.make_identity(None, "Categorizing Variants of Goodhart's Law", "O'Neill", "2018")
+        assert af.zotero_item_matches(item, ident)
+
+    @pytest.mark.parametrize("head", ["categorizing variants of goodharts law manheim",
+                                      "categorizing variants of goodhart s law manheim"])
+    def test_folder_heads_match_either_apostrophe(self, tmp_path, head):
+        idx = af.FolderIndex.__new__(af.FolderIndex)
+        idx.entries = {"a.pdf": {"dois": [], "heads": [head]}}
+        idx.files = ["a.pdf"]
+        for title in ("Categorizing Variants of Goodhart's Law", "Categorizing Variants of Goodhart\u2019s Law"):
+            assert idx.candidates(af.make_identity(None, title, "Manheim", "2018")) == ["a.pdf"]
+
 
 class TestFolder:
     def _folder(self, tmp_path, files):
