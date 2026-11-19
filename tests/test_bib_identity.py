@@ -555,3 +555,55 @@ class TestProseSurnameIsTheOwner:
         # check_evidence documents editor-only invisibility as a residual.
         assert bi.first_author_prose_surname("") == ""
         assert bi.first_author_surname("", "Roe, Rick") == "Roe"
+
+
+class TestSubtitleVariants:
+    """PL-33: one work entered with and without its subtitle. The boundary is
+    fulltext.title_phrase_cut's (first `:`, `?` or `.`, head of at least two
+    words), so the year-letter pass and the full-text identity check agree on
+    what "differs only by a subtitle" means."""
+
+    def test_main_title_key_cuts_at_the_first_subtitle_mark(self):
+        assert bi.main_title_key(
+            "Algorithms and Autonomy: The Ethics of Automated Decision Systems"
+        ) == "algorithms and autonomy"
+        assert bi.main_title_key("Can Machines Think? A Reply") == "can machines think"
+
+    def test_main_title_key_needs_a_two_word_head(self):
+        assert bi.main_title_key("Ethics: A Very Short Introduction") == \
+            bi.title_key("Ethics: A Very Short Introduction")
+        assert bi.main_title_key("St. Augustine and the Will") == \
+            bi.title_key("St. Augustine and the Will")
+
+    def test_main_title_key_of_a_title_without_subtitle_is_its_title_key(self):
+        assert bi.main_title_key("{Algorithms} and Autonomy") == "algorithms and autonomy"
+        assert bi.main_title_key("") == ""
+
+    def test_short_and_subtitled_titles_are_variants_either_way(self):
+        short = "Algorithms and Autonomy"
+        long_ = "Algorithms and Autonomy: The Ethics of Automated Decision Systems"
+        assert bi.titles_differ_by_subtitle(short, long_)
+        assert bi.titles_differ_by_subtitle(long_, short)
+
+    def test_equal_titles_are_not_a_subtitle_pair(self):
+        assert not bi.titles_differ_by_subtitle("A Title Here", "A Title: Here")
+
+    def test_two_different_subtitles_are_not_variants(self):
+        assert not bi.titles_differ_by_subtitle("Autonomy Matters: A Defence",
+                                                "Autonomy Matters: A Critique")
+
+    def test_a_word_prefix_without_a_subtitle_mark_is_not_a_variant(self):
+        assert not bi.titles_differ_by_subtitle("Ethics and Politics",
+                                                "Ethics and Politics of Data")
+
+    def test_a_one_word_main_title_is_not_a_variant(self):
+        assert not bi.titles_differ_by_subtitle("Ethics", "Ethics: A Very Short Introduction")
+
+    def test_key_level_form_agrees_with_the_raw_form(self):
+        short = "Algorithms and Autonomy"
+        long_ = "Algorithms and Autonomy: The Ethics of Automated Decision Systems"
+        assert bi.subtitle_variant_keys(
+            bi.title_key(short), bi.main_title_key(short),
+            bi.title_key(long_), bi.main_title_key(long_))
+        assert not bi.subtitle_variant_keys(
+            bi.title_key(short), None, bi.title_key(long_), None)

@@ -1605,6 +1605,7 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                 fields = se.parse_entry_fields(chunk)
                 suffix_inputs.append({
                     "id": (i, header[1]),
+                    "key": header[1],
                     "author": fields.get("author", ""),
                     "editor": fields.get("editor", ""),
                     "year": fields.get("year", ""),

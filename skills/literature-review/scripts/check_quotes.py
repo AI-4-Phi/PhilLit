@@ -228,7 +228,8 @@ def license_status(key: str, info: dict, report: dict, workdir: Path):
     """(text, None) when the watched entry's text is licensed now, else
     (None, why). The authorizing blob: same key in any domain bib,
     `fulltext_verified is True`, slug equal to the one `fulltext_file` names,
-    `identity_matches`, and the text's hash equal to the blob's."""
+    `identity_matches` (given the text, for its same-work re-check), and the
+    text's hash equal to the blob's."""
     fields = info["fields"]
     if info["tier"] != TIER_FULLTEXT:
         return None, f"not {TIER_FULLTEXT} now ({info['tier'] or 'unstamped'})"
@@ -239,6 +240,18 @@ def license_status(key: str, info: dict, report: dict, workdir: Path):
     if not m or not ft.SLUG_RE.match(m.group(1)) or len(m.group(1)) > ft.STEM_MAX:
         return None, "malformed fulltext_file"
     slug = m.group(1)
+    path = workdir / ft.STORE_REL / f"{slug}.txt"
+    # Read before the identity check: a survivor that is the same work in
+    # another dress (a gained DOI, a subtitle variant) matches only by
+    # re-running the identity check on this text (identity_matches).
+    text, read_error = None, None
+    if not path.is_file():
+        read_error = "text missing"
+    else:
+        try:
+            text = ft.read_text(path)
+        except (OSError, UnicodeDecodeError):
+            read_error = "text unreadable"
     candidates = []
     for blobs in report.get("attestations", {}).values():
         blob = blobs.get(key) if isinstance(blobs, dict) else None
@@ -246,18 +259,13 @@ def license_status(key: str, info: dict, report: dict, workdir: Path):
             continue
         if blob.get("fulltext_verified") is not True or blob.get("fulltext_slug") != slug:
             continue
-        if not ft.identity_matches(blob.get("fulltext_identity"), fields):
+        if not ft.identity_matches(blob.get("fulltext_identity"), fields, text=text):
             continue
         candidates.append(blob)
     if not candidates:
         return None, "no authorizing attestation"
-    path = workdir / ft.STORE_REL / f"{slug}.txt"
-    if not path.is_file():
-        return None, "text missing"
-    try:
-        text = ft.read_text(path)
-    except (OSError, UnicodeDecodeError):
-        return None, "text unreadable"
+    if read_error:
+        return None, read_error
     digest = ft.text_sha256(text)
     if not any(b.get("fulltext_text_sha256") == digest for b in candidates):
         return None, "text hash differs"
