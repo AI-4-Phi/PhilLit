@@ -25,3 +25,10 @@ dev = [
     "pytest-timeout>=2.0.0",
     "coverage>=7.0.0",
 ]
+
+[tool.uv]
+# Resolve only package versions published before this date (supply-chain
+# guard). It also outranks a user-level exclude-newer, which would otherwise
+# make `uv run --locked` in bin/phillit-run fail (PL-41). Move the date forward,
+# then run `uv lock --upgrade`, to upgrade dependencies.
+exclude-newer = "2026-11-12T00:00:00Z"

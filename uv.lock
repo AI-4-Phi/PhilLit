@@ -2,6 +2,9 @@ version = 1
 revision = 5
 requires-python = ">=3.10"
 
+[options]
+exclude-newer = "2026-11-12T00:00:00Z"
+
 [[package]]
 name = "application-file-scanner"
 version = "0.6.4"

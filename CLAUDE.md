@@ -189,7 +189,7 @@ Convention: `<Area>: short description` (e.g. `Hooks: ...`, `Docs: ...`, `Deps: 
 When adding a new Python package import:
 
 1. **`pyproject.toml`** — add the package to `dependencies`.
-2. **`uv.lock`** — regenerate with `uv lock`.
+2. **`uv.lock`** — regenerate with `uv lock`. `[tool.uv] exclude-newer` in `pyproject.toml` pins a fixed cutoff date (supply-chain guard; it also keeps a user-level `exclude-newer` from breaking `--locked`): a version published after it cannot resolve, so move the date forward first when you need one.
 3. **`skills/philosophy-research/scripts/check_setup.py`** — add to `required_packages` only if the package is specific to the philosophy-research skill.
 
 The wrapper's `uv run --locked` installs the full locked dependency set, so there is no separate per-package check in the bootstrap to update.
