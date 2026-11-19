@@ -87,9 +87,11 @@ or carries a retraction, withdrawal or removal of its own is dropped
 record cannot be read is dropped too (`notice_unverified`, the pass turns
 partial): fail closed.
 
-An arXiv preprint is stamped `preprint` from its own fields with no request
-(`preprint_arxiv`): no `journal`, and an arXiv DOI, archiveprefix arXiv
-with an eprint, or a howpublished naming arXiv.
+An arXiv preprint with no DOI or only an arXiv DOI is stamped `preprint`
+from its own fields with no request (`preprint_arxiv`): no `journal`, and
+an arXiv DOI, archiveprefix arXiv with an eprint, or a howpublished naming
+arXiv. An entry with any other DOI is looked up, and only CrossRef's
+posted-content preprint subtype stamps it.
 PHILLIT_STATUS_NOTICE=off (or 0/false/no; an unrecognized value too) skips
 the pass with a reason; the test suite runs with it off.
 
@@ -247,20 +249,26 @@ def _first(value):
     return value if isinstance(value, str) else ""
 
 
-_TRAILING_MARKER_RE = re.compile(r"^(.*\S) (\d{1,2})$")
+_TRAILING_MARKER_RE = re.compile(r"^(.*\S) ([1-9])$")
+# Record types whose titles carry a footnote marker (chapters in edited
+# volumes); never journal articles or whole books.
+_CHAPTER_TYPES = frozenset({"book-chapter", "book-section", "book-part",
+                            "reference-entry"})
 
 
-def _titles_match(bib_title: str, cr_title: str) -> bool:
+def _titles_match(bib_title: str, cr_title: str, cr_type: str = "") -> bool:
     a, b = _cut_mark(bib_title), _cut_mark(cr_title)
     ka, kb = title_key(a), title_key(b)
     if not ka or not kb:
         return False
     if ka == kb or titles_differ_by_subtitle(a, b):
         return True
-    # A footnote marker CrossRef keeps on the title ("Filter bubbles and
-    # digital echo chambers 1", 10.4324/9781003004431-10): one trailing
-    # standalone 1-2 digit token, and only when the bib title itself does
-    # not end in a number.
+    # A footnote marker CrossRef keeps on a chapter title ("Filter bubbles
+    # and digital echo chambers 1", 10.4324/9781003004431-10): one trailing
+    # standalone digit 1-9, on a chapter-like record only, and only when the
+    # bib title itself does not end in a number.
+    if (cr_type or "").strip().lower() not in _CHAPTER_TYPES:
+        return False
     m = _TRAILING_MARKER_RE.match(kb)
     return bool(m and m.group(1) == ka and not ka.split()[-1].isdigit())
 
@@ -342,7 +350,10 @@ def identity_matches(fields: dict, record: dict, entry_type=None,
         if not _types_compatible(entry_type, record):
             return False
         if role == "editor":
-            bib_name = first_author_surname(fields.get("author") or "", fields.get("editor") or "")
+            # The bib's own editor when it names one; its author only when it
+            # has no editor field.
+            bib_name = first_author_surname(
+                (fields.get("editor") or "").strip() or (fields.get("author") or ""), "")
         else:
             bib_name = first_author_surname(fields.get("author") or "", "")
         bib_surname = _surname_key(bib_name)
@@ -355,7 +366,8 @@ def identity_matches(fields: dict, record: dict, entry_type=None,
         sub = decode_crossref_title(_first(record.get("subtitle")))
         if main and sub:
             candidates.append(f"{main}: {sub}")
-        return any(_titles_match(bib_title, c) for c in candidates if c)
+        return any(_titles_match(bib_title, c, record.get("type") or "")
+                   for c in candidates if c)
     except Exception:
         return False
 
@@ -582,16 +594,25 @@ def _arxiv_preprint(fields: dict) -> bool:
 _RESCINDED_TITLE_RE = re.compile(r"^\s*(?:rescinded|retracted|withdrawn|removed)\s*:",
                                  re.IGNORECASE)
 _RESCINDING_TYPES = frozenset({"retraction", "withdrawal", "removal"})
+_RESCINDING_RELATION_RE = re.compile(r"^is_(?:retracted|withdrawn|removed)_by$")
 
 
 def _notice_rescinded(record: dict) -> bool:
     """Has the notice itself been rescinded? Its title says so
     ("RESCINDED: Editorial Expression of Concern", 10.1126/science.aej2383),
-    or CrossRef lists a retraction, withdrawal or removal of it."""
+    or CrossRef lists a retraction, withdrawal or removal of it -- as an
+    `updated-by` item, or under `relation` (is-retracted-by,
+    is-withdrawn-by, is-removed-by)."""
     if _RESCINDED_TITLE_RE.match(decode_crossref_title(_first(record.get("title")))):
         return True
-    return any(isinstance(u, dict) and fold_token(u.get("type")) in _RESCINDING_TYPES
-               for u in record.get("updated-by") or [])
+    if any(isinstance(u, dict) and fold_token(u.get("type")) in _RESCINDING_TYPES
+           for u in record.get("updated-by") or []):
+        return True
+    relation = record.get("relation")
+    if isinstance(relation, dict):
+        return any(_RESCINDING_RELATION_RE.match(fold_token(k)) and v
+                   for k, v in relation.items())
+    return False
 
 
 def lookup_status(entries: dict, deadline: float):
@@ -610,19 +631,19 @@ def lookup_status(entries: dict, deadline: float):
     try:
         wanted: dict[str, list] = {}
         etypes: dict = {}
-        arxiv: set = set()
         for label, entry in (entries or {}).items():
             fields = (entry or {})["fields"] or {}
             doi, why = request_doi(fields.get("doi"))
             if entry.get("evidence_none"):
                 if why != "no-doi" or _arxiv_preprint(fields):
                     doi, why = None, "evidence-none"
-            elif _arxiv_preprint(fields):
-                arxiv.add(label)
-                if doi is None:
-                    report["entries"][label] = "stamped"
-                    values[label] = format_items({(PREPRINT, None)})
-                    continue
+            elif why in ("no-doi", "arxiv") and _arxiv_preprint(fields):
+                # Local only when the entry has no DOI or an arXiv DOI: a
+                # CrossRef DOI is looked up and CrossRef says what it is.
+                report["entries"][label] = "stamped"
+                values[label] = format_items({(PREPRINT, None)})
+                report["preprint_arxiv"] += 1
+                continue
             if doi is None:
                 report["entries"][label] = f"not_requested:{why}"
                 if why == "arxiv":
@@ -722,16 +743,6 @@ def lookup_status(entries: dict, deadline: float):
             else:
                 report["entries"][label] = empty_state
 
-        # arXiv preprints by their own fields that also carry a CrossRef DOI:
-        # the preprint item joins whatever the lookup found.
-        for label in arxiv:
-            if report["entries"].get(label) in ("stamped",) and label in values:
-                values[label] = format_items(set(parse_items(values[label])) | {(PREPRINT, None)})
-            elif report["entries"].get(label) in (
-                    "checked_none", "not_found", "identity_mismatch", "identity_unverifiable"):
-                values[label] = format_items({(PREPRINT, None)})
-                report["entries"][label] = "stamped"
-        report["preprint_arxiv"] = sum(1 for label in arxiv if label in values)
         # Every DOI whose forward query answered but whose reverse query did
         # not, whatever its entry state: notices only the reverse query finds
         # were never checked, so the pass is partial even when every entry
@@ -780,6 +791,12 @@ def settle(report: dict) -> None:
                       "type or malformed notice DOI; see unmapped_types)")
     if report["splice_failed"]:
         causes.append(f"{report['splice_failed']} stamp(s) did not land (splice failed)")
+    # Not a failure, so never a cause; but `complete` must not hide it.
+    if report["late_promotion"]:
+        report["note"] = (f"{report['late_promotion']} eligible entries not checked "
+                          "(late promotion)")
+    else:
+        report.pop("note", None)
     parts = [r for r in [report.get("stop_reason"), *causes] if r]
     if parts:
         report["status"] = "partial"

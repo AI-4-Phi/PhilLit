@@ -659,7 +659,7 @@ def test_the_notice_link_stays_in_its_sentence(tmp_path):
 
 
 def test_status_lines_carry_the_override_tag(tmp_path):
-    (tmp_path / "r.md").write_text("Costello (2024) published an erratum. Wang (2019) shows X.",
+    (tmp_path / "r.md").write_text("Costello (2024) published an erratum. Wang (2019) shows a result.",
                                    encoding="utf-8")
     (tmp_path / "b.bib").write_text(BIB_STATUS, encoding="utf-8")
     (tmp_path / "o.md").write_text(
@@ -687,7 +687,7 @@ def test_retracted_cited_lists_each_citing_sentence(tmp_path):
 
 def test_status_counts_in_the_summary(tmp_path):
     import json
-    out = _run(tmp_path, "Costello (2024) published an erratum. Wang (2019) shows X.",
+    out = _run(tmp_path, "Costello (2024) published an erratum. Wang (2019) shows a result.",
                BIB_STATUS).stdout
     summary = json.loads(out.rsplit("CHECK-SUMMARY: ", 1)[1])
     assert summary["status_claim"] == 1 and summary["retracted_cited"] == 1
@@ -715,13 +715,13 @@ def test_partially_retracted_needs_a_partial_stamp(tmp_path):
 
 def test_a_status_word_in_the_next_sentence_is_attributed_to_the_cite(tmp_path):
     """P9: anaphora. The following sentence cites nothing itself."""
-    lines = _status_lines(tmp_path, "Costello (2024) argues X. The article was later retracted.")
+    lines = _status_lines(tmp_path, "Costello (2024) argues a thesis. The article was later retracted.")
     assert any(l.startswith("CHECK status-claim: costello2024durably (retraction)")
                and "later retracted" in l for l in lines)
 
 
 def test_a_next_sentence_with_its_own_cite_is_not_attributed_back(tmp_path):
-    lines = _status_lines(tmp_path, "Costello (2024) argues X. Wang (2019) has been retracted.")
+    lines = _status_lines(tmp_path, "Costello (2024) argues a thesis. Wang (2019) has been retracted.")
     assert not any("costello2024durably" in l for l in lines if "status-claim" in l)
 
 
@@ -759,15 +759,15 @@ def test_retracted_cited_keeps_a_page_locator_sentence_whole(tmp_path):
 
 
 def test_the_unit_reaches_two_following_sentences(tmp_path):
-    md = "Costello (2024) argues X. Many agree. The article was later retracted."
+    md = "Costello (2024) argues a thesis. Many agree. The article was later retracted."
     assert any(l.startswith("CHECK status-claim: costello2024durably (retraction)")
                for l in _status_lines(tmp_path, md))
-    md = "Costello (2024) argues X. Many agree. Few dissent. It was retracted."
+    md = "Costello (2024) argues a thesis. Many agree. Few dissent. It was retracted."
     assert not any("status-claim" in l for l in _status_lines(tmp_path, md))
 
 
 def test_the_unit_reaches_one_preceding_sentence(tmp_path):
-    md = "This work was later retracted. Costello (2024) had argued X."
+    md = "This work was later retracted. Costello (2024) had argued a thesis."
     assert any(l.startswith("CHECK status-claim: costello2024durably (retraction)")
                for l in _status_lines(tmp_path, md))
 
@@ -816,3 +816,41 @@ def test_status_link_counted_in_the_summary(tmp_path):
 def test_status_items_is_the_grammar_check_evidence_uses():
     import status_items
     assert check_evidence.status_categories is status_items.categories
+
+
+def test_the_former_is_resolved_per_status_sentence(tmp_path):
+    """D5: "the former" in the second sentence does not narrow the first."""
+    bib = """@article{smith2020a,
+  author = {Smith, Ann},
+  title = {A},
+  year = {2020},
+  status_notice = {retraction 10.1000/r; correction 10.1000/c},
+  keywords = {EVIDENCE-ABSTRACT}
+}
+
+@article{jones2021b,
+  author = {Jones, Bo},
+  title = {B},
+  year = {2021},
+  keywords = {EVIDENCE-ABSTRACT}
+}"""
+    md = ("Smith (2020) and Jones (2021) were retracted. "
+          "The former also has a correction notice.")
+    out = _run(tmp_path, md, bib).stdout
+    lines = [l for l in out.splitlines() if l.startswith("CHECK status-claim")]
+    assert any(l.startswith("CHECK status-claim: jones2021b (retraction") for l in lines)
+    assert not any("(correction" in l for l in lines)
+
+
+def test_initials_do_not_end_a_sentence(tmp_path):
+    """D6: "J. S. Mill" keeps the disclosure in the citing work's unit."""
+    md = "Wang (2019) discusses J. S. Mill. This work has been retracted."
+    lines = [l for l in _status_lines(tmp_path, md) if "retracted-cited" in l]
+    assert lines and "J. S. Mill. This work has been retracted." in lines[0]
+
+
+def test_a_lowercase_start_stays_one_sentence(tmp_path):
+    """D6, documented: a stop before a lowercase word is not a boundary."""
+    md = "Costello (2024) argues a thesis. then it was retracted."
+    lines = [l for l in _status_lines(tmp_path, md) if "status-claim" in l]
+    assert lines and lines[0].endswith("Costello (2024) argues a thesis. then it was retracted.")

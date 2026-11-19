@@ -339,3 +339,27 @@ def test_a_stamp_on_an_entry_demoted_to_none_is_dropped(tmp_path, crossref, monk
     assert rep["stamped"] == {}
     printed = json.loads(capsys.readouterr().out.strip().splitlines()[-1])["status_notice"]
     assert printed["entries"] == {"literature-domain-1.bib:gerlich2025ai": "dropped:demoted"}
+
+
+def test_late_promotion_carries_a_note(tmp_path, crossref, monkeypatch, capsys):
+    """D7: `complete` never hides an eligible entry that was not checked."""
+    real = eb.se.compute_tier
+    calls = {"n": 0}
+
+    def provisional_none(etype, fields, att):
+        calls["n"] += 1
+        return eb.se.TIER_NONE if calls["n"] == 1 else real(etype, fields, att)
+    monkeypatch.setattr(eb.se, "compute_tier", provisional_none)
+    rd = _review(tmp_path, GERLICH_BIB)
+    assert eb.execute(rd, 1) == 0
+    note = "1 eligible entries not checked (late promotion)"
+    assert _report(rd)["status_notice"]["note"] == note
+    printed = json.loads(capsys.readouterr().out.strip().splitlines()[-1])["status_notice"]
+    assert printed["status"] == "complete" and printed["note"] == note
+
+
+def test_no_note_without_late_promotion(tmp_path, crossref, capsys):
+    rd = _review(tmp_path, GERLICH_BIB)
+    assert eb.execute(rd, 1) == 0
+    assert "note" not in _report(rd)["status_notice"]
+    assert "note" not in json.loads(capsys.readouterr().out.strip().splitlines()[-1])["status_notice"]

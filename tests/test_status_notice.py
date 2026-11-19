@@ -1073,12 +1073,10 @@ def test_a_trailing_footnote_number_on_the_crossref_title_matches(monkeypatch):
 
 
 def test_the_trailing_number_rule_is_narrow(monkeypatch):
-    rec = _gerlich_with(author=[{"family": "Smith"}], title=["Essays 2"])
-    assert not _identity({"author": "Smith, J.", "title": "Essays 1"}, rec)
-    rec = _gerlich_with(author=[{"family": "Smith"}], title=["Essays 123"])
-    assert not _identity({"author": "Smith, J.", "title": "Essays"}, rec)
-    rec = _gerlich_with(author=[{"family": "Smith"}], title=["Essays 1 2"])
-    assert not _identity({"author": "Smith, J.", "title": "Essays 1"}, rec)
+    for title, bib in (("Essays 2", "Essays 1"), ("Essays 123", "Essays"),
+                       ("Essays 1 2", "Essays 1")):
+        rec = _gerlich_with(author=[{"family": "Smith"}], title=[title], type="book-chapter")
+        assert not _identity({"author": "Smith, J.", "title": bib}, rec)
 
 
 def test_an_edited_book_matches_on_its_editors(monkeypatch):
@@ -1103,3 +1101,65 @@ def test_no_authors_and_no_editors_stays_unverifiable():
     assert sn.identity_check({"author": "Coons, C.", "title": "Manipulation"},
                              rec, "book") == "unverifiable"
 
+
+# ---------------------------------------------------------------------------
+# Review of the delta since ce80a01
+# ---------------------------------------------------------------------------
+
+def test_a_notice_retracted_through_its_relation_is_dropped(monkeypatch):
+    """D1: CrossRef's `relation` can carry the retraction of a notice."""
+    notice = {"DOI": "10.1000/n1", "type": "journal-article", "title": ["Correction"],
+              "relation": {"is-retracted-by": [{"id": "10.1000/r", "id-type": "doi",
+                                                "asserted-by": "subject"}]}}
+    fake = _with_updates([{"DOI": "10.1000/n1", "type": "correction", "source": "publisher"}])
+    fake.records = [r for r in fake.records if r["DOI"] != "10.1000/n1"] + [notice]
+    values, report, _ = _run(monkeypatch, {"s": _e(STERELNY)}, fake)
+    assert values == {} and report["notice_rescinded"] == 1
+
+
+def test_an_unrelated_relation_keeps_the_notice(monkeypatch):
+    notice = {"DOI": "10.1000/n1", "type": "journal-article", "title": ["Correction"],
+              "relation": {"is-referenced-by": [{"id": "10.1000/x", "id-type": "doi"}]}}
+    fake = _with_updates([{"DOI": "10.1000/n1", "type": "correction", "source": "publisher"}])
+    fake.records = [r for r in fake.records if r["DOI"] != "10.1000/n1"] + [notice]
+    values, _r, _ = _run(monkeypatch, {"s": _e(STERELNY)}, fake)
+    assert values == {"s": "correction 10.1000/n1"}
+
+
+def test_arxiv_fields_with_a_published_doi_get_no_local_preprint(monkeypatch):
+    """D2: the non-arXiv DOI resolves to a journal article."""
+    fields = {"author": "Gerlich, Michael", "title": GERLICH["title"],
+              "doi": "10.1000/published", "archiveprefix": "arXiv", "eprint": "2101.00001"}
+    rec = dict(_record("10.3390/soc15010006"), DOI="10.1000/published", **{"updated-by": []})
+    values, report, _ = _run(monkeypatch, {"x": _e(fields, etype="article")},
+                             FakeCrossRef(records=[rec], notices=[]))
+    assert values == {}
+    assert report["entries"]["x"] == "checked_none" and report["preprint_arxiv"] == 0
+
+
+def test_a_bib_editor_is_compared_to_the_crossref_editor(monkeypatch):
+    """D3: with an editor field the bib's first editor is compared, never its author."""
+    rec = {"DOI": "10.1000/ed", "type": "edited-book", "title": ["Manipulation"],
+           "editor": [{"family": "Smith", "sequence": "first"}]}
+    assert sn.identity_check({"author": "Smith, A.", "editor": "Doe, J.",
+                              "title": "Manipulation"}, rec, "book") == "mismatch"
+    assert sn.identity_check({"author": "Doe, J.", "editor": "Smith, A.",
+                              "title": "Manipulation"}, rec, "book") == "match"
+    assert sn.identity_check({"author": "Smith, A.", "title": "Manipulation"},
+                             rec, "book") == "match"
+
+
+@pytest.mark.parametrize("cr_type", ["journal-article", "book", "monograph"])
+def test_a_trailing_digit_never_matches_outside_a_chapter(cr_type):
+    """D4."""
+    rec = _gerlich_with(author=[{"family": "Smith"}], title=["Ethics 2"], type=cr_type)
+    assert not _identity({"author": "Smith, J.", "title": "Ethics"}, rec)
+
+
+def test_a_trailing_digit_matches_a_chapter_only_for_1_to_9():
+    rec = _gerlich_with(author=[{"family": "Smith"}], title=["Ethics 2"], type="book-chapter")
+    assert _identity({"author": "Smith, J.", "title": "Ethics"}, rec)
+    for marker in ("0", "12"):
+        rec = _gerlich_with(author=[{"family": "Smith"}], title=[f"Ethics {marker}"],
+                            type="book-chapter")
+        assert not _identity({"author": "Smith, J.", "title": "Ethics"}, rec)

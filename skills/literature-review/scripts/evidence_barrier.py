@@ -1174,6 +1174,8 @@ def _status_summary(rep) -> dict:
               "unresolved", "late_promotion", "identity_unverifiable", "dropped_demoted",
               "notice_rescinded", "notice_unverified", "preprint_arxiv"):
         out[k] = rep.get(k, 0)
+    if rep.get("note"):
+        out["note"] = rep["note"]
     out["unmapped_types"] = rep.get("unmapped_types") or {}
     out["ignored_types"] = rep.get("ignored_types") or {}
     out["sources"] = rep.get("sources") or {}
