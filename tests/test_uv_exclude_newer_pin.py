@@ -3,8 +3,13 @@
 A user-level or environment exclude-newer otherwise changes uv's resolution
 options, and `uv run --locked` in bin/phillit-run refuses the lock.
 """
+import os
 import re
+import shutil
+import subprocess
 from pathlib import Path
+
+import pytest
 
 ROOT = Path(__file__).parent.parent
 
@@ -23,6 +28,27 @@ def test_pyproject_pin_matches_lock():
     assert _pin((ROOT / "uv.lock").read_text(encoding="utf-8"), "options") == pin
 
 
-def test_wrapper_drops_environment_exclude_newer():
-    wrapper = (ROOT / "bin" / "phillit-run").read_text(encoding="utf-8")
-    assert "-u UV_EXCLUDE_NEWER " in wrapper and "-u UV_EXCLUDE_NEWER_PACKAGE" in wrapper
+def test_wrapper_drops_environment_exclude_newer(tmp_path):
+    # Run the real wrapper against a fake uv that records the env it receives.
+    fake = tmp_path / "uv"
+    fake.write_text("#!/bin/sh\nenv > \"$PROBE_OUT\"\n", encoding="utf-8")
+    fake.chmod(0o755)
+    out = tmp_path / "env.txt"
+    env = dict(os.environ, PHILLIT_UV=str(fake), PROBE_OUT=str(out),
+               UV_EXCLUDE_NEWER="3 days", UV_EXCLUDE_NEWER_PACKAGE="x=3 days")
+    subprocess.run(["bash", str(ROOT / "bin" / "phillit-run"), "x.py"], env=env, check=True)
+    seen = out.read_text(encoding="utf-8").splitlines()
+    assert not any(line.startswith("UV_EXCLUDE_NEWER") for line in seen)
+    assert any(line.startswith("UV_PROJECT_ENVIRONMENT=") for line in seen)
+
+
+@pytest.mark.skipif(shutil.which("uv") is None, reason="uv not installed")
+def test_lock_stays_valid_under_a_user_level_relative_cutoff(tmp_path):
+    # The reported failure: a user uv.toml with exclude-newer = "7 days".
+    (tmp_path / "uv").mkdir()
+    (tmp_path / "uv" / "uv.toml").write_text('exclude-newer = "7 days"\n', encoding="utf-8")
+    env = {k: v for k, v in os.environ.items() if not k.startswith("UV_")}
+    env["XDG_CONFIG_HOME"] = str(tmp_path)
+    r = subprocess.run(["uv", "lock", "--check", "--offline", "--project", str(ROOT)],
+                       env=env, capture_output=True, text=True)
+    assert r.returncode == 0, r.stderr

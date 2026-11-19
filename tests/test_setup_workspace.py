@@ -614,7 +614,17 @@ def test_rerun_removes_mode_setup_wrote_into_a_file_it_created(tmp_path, capsys)
 
 def test_rerun_removes_mode_the_backup_proves_setup_added(tmp_path):
     backup = json.dumps({"permissions": {"allow": ["Read"]}})
-    assert _mode_after_rerun(tmp_path, LEGACY, backup) is None
+    ws, plugin_root = _legacy_ws(tmp_path, dict(LEGACY, allow=["Read", "Custom(x)"]), backup)
+    other = {"model": "opus"}
+    path = ws / ".claude" / "settings.json"
+    data = json.loads(path.read_text(encoding="utf-8")); data.update(other)
+    path.write_text(json.dumps(data), encoding="utf-8")
+    assert sw.apply(workspace=ws, plugin_root=plugin_root, dry_run=False) == 0
+    after = json.loads(path.read_text(encoding="utf-8"))
+    assert "defaultMode" not in after["permissions"]
+    assert "Custom(x)" in after["permissions"]["allow"]      # user rules kept
+    assert after["model"] == "opus"                          # other settings kept
+    assert (ws / ".claude" / "settings.json.bak").read_text(encoding="utf-8") == backup
 
 
 def test_rerun_keeps_mode_the_user_set_before_setup(tmp_path):
