@@ -691,3 +691,46 @@ def test_status_counts_in_the_summary(tmp_path):
                BIB_STATUS).stdout
     summary = json.loads(out.rsplit("CHECK-SUMMARY: ", 1)[1])
     assert summary["status_claim"] == 1 and summary["retracted_cited"] == 1
+
+
+# Review round 2 (PL-39)
+
+def test_partial_must_directly_modify_the_retraction_word(tmp_path):
+    """P8: "partial" elsewhere in the sentence does not qualify it."""
+    lines = _status_lines(tmp_path, "Lee (2020) discusses partial agreement and has been retracted.")
+    assert any("status-claim: lee2020part (retraction)" in l for l in lines)
+    assert not any("status-claim" in l for l in _status_lines(
+        tmp_path, "Lee (2020) has been partially retracted."))
+    assert not any("status-claim" in l for l in _status_lines(
+        tmp_path, "Lee (2020) has been partially and quietly retracted."))
+
+
+def test_partially_retracted_needs_a_partial_stamp(tmp_path):
+    """P8: a retraction-only stamp does not license "partially retracted"."""
+    lines = _status_lines(tmp_path, "Wang (2019) has been partially retracted.")
+    assert any("status-claim: wang2019down (partial_retraction)" in l for l in lines)
+    assert not any("status-claim" in l for l in _status_lines(
+        tmp_path, "Wang (2019) has been retracted."))
+
+
+def test_a_status_word_in_the_next_sentence_is_attributed_to_the_cite(tmp_path):
+    """P9: anaphora. The following sentence cites nothing itself."""
+    lines = _status_lines(tmp_path, "Costello (2024) argues X. The article was later retracted.")
+    assert any(l.startswith("CHECK status-claim: costello2024durably (retraction)")
+               and "later retracted" in l for l in lines)
+
+
+def test_a_next_sentence_with_its_own_cite_is_not_attributed_back(tmp_path):
+    lines = _status_lines(tmp_path, "Costello (2024) argues X. Wang (2019) has been retracted.")
+    assert not any("costello2024durably" in l for l in lines if "status-claim" in l)
+
+
+def test_retracted_cited_prints_each_sentence_in_full(tmp_path):
+    """P10: no 120-character cut."""
+    long = ("Wang (2019) reports a mechanism linking a long noncoding RNA to "
+            "migration, invasion, tumour growth and autophagy in gastric cancer "
+            "cells, through the PI3K pathway, which this paragraph now describes at length.")
+    assert len(long) > 160
+    lines = [l for l in _status_lines(tmp_path, long) if "retracted-cited" in l]
+    assert lines and lines[0].endswith(long)
+

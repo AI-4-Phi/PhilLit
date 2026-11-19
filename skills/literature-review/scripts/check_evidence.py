@@ -306,20 +306,54 @@ def cite_sentences(md: str, positions: list[int], stop: str = _ANY_STOP) -> list
 _STATUS_WORDS = (
     ("correction", re.compile(
         r"\b(?:corrections?|corrected|erratum|errata|corrigend(?:um|a))\b", re.I)),
-    ("retraction", re.compile(r"\bretract(?:ed|ion)\b", re.I)),
     ("withdrawal", re.compile(r"\b(?:withdrawn|withdrawal)\b", re.I)),
     ("expression_of_concern", re.compile(r"\bexpression\s+of\s+concern\b", re.I)),
     ("preprint", re.compile(r"\bpreprints?\b", re.I)),
 )
-_PARTIAL_RE = re.compile(r"\bpartial(?:ly)?\b", re.I)
+_RETRACT_RE = re.compile(r"\bretract(?:ed|ion)\b", re.I)
+# "partial(ly)" qualifies a retraction word only when it directly modifies
+# it: at most two words between ("partially retracted", "partial
+# retraction", "partially and quietly retracted"), never "partial agreement
+# and has been retracted".
+_PARTIAL_BEFORE_RE = re.compile(r"\bpartial(?:ly)?\s+(?:\w+\s+){0,2}\Z", re.I)
 _RETRACTED_CATEGORIES = ("retraction", "partial_retraction", "withdrawal")
 
 
-def _status_licensed(stamped: set, category: str, sentence: str) -> bool:
-    if category in stamped:
-        return True
-    return (category == "retraction" and "partial_retraction" in stamped
-            and bool(_PARTIAL_RE.search(sentence)))
+def _status_categories_in(text: str) -> list[str]:
+    """The status categories a text's words claim, in a fixed order. A
+    retraction word is `partial_retraction` when "partial(ly)" directly
+    modifies it, else `retraction`; each licenses only its own stamp."""
+    found = [cat for cat, word_re in _STATUS_WORDS if word_re.search(text)]
+    for m in _RETRACT_RE.finditer(text):
+        cat = ("partial_retraction" if _PARTIAL_BEFORE_RE.search(text[:m.start()])
+               else "retraction")
+        if cat not in found:
+            found.append(cat)
+    order = ("retraction", "partial_retraction", "withdrawal",
+             "expression_of_concern", "correction", "preprint")
+    return sorted(found, key=order.index)
+
+
+def _span_at(md: str, pos: int, stop: str) -> tuple[int, int]:
+    """(start, end) of the sentence around pos, whitespace trimmed."""
+    start = 0
+    for m in re.finditer(stop, md[:pos]):
+        start = m.end()
+    end_m = re.search(stop, md[pos:])
+    end = pos + end_m.end() if end_m else len(md)
+    while start < end and md[start].isspace():
+        start += 1
+    return start, end
+
+
+def _next_span(md: str, end: int, stop: str) -> tuple[int, int] | None:
+    """The sentence right after `end` in the same paragraph, if any."""
+    gap = re.match(r"\s*", md[end:]).group(0)
+    if "\n\n" in gap or end + len(gap) >= len(md):
+        return None
+    start = end + len(gap)
+    m = re.search(stop, md[start:])
+    return start, (start + m.end() if m else len(md))
 
 
 def status_checks(md: str, entries: dict,
@@ -327,29 +361,34 @@ def status_checks(md: str, entries: dict,
     """(status-claim lines, retracted-cited lines). `entries` maps key to
     {"positions": cite positions, "status": status_notice categories}.
 
-    status-claim: a sentence citing an entry holds a status word whose
-    category that entry's `status_notice` lacks; one line per sentence and
+    status-claim: a sentence citing an entry -- together with the sentence
+    right after it when that one cites nothing itself ("Costello (2024)
+    argues X. The article was later retracted.") -- holds a status word
+    whose category that entry's `status_notice` lacks; one line per unit and
     category, naming every cited entry that lacks it and, after "licensed:",
-    the ones in the sentence whose field has it. retracted-cited: one
-    line per cited entry stamped retraction, partial_retraction or
-    withdrawal, listing the sentences that cite it, so the orchestrator can
-    confirm each discloses the status."""
-    by_sentence: dict[str, list[str]] = {}
+    the ones whose field has it. retracted-cited: one line per cited entry
+    stamped retraction, partial_retraction or withdrawal, listing in full
+    the sentences that cite it, so the orchestrator can confirm each
+    discloses the status."""
+    by_span: dict[tuple[int, int], list[str]] = {}
     for key, info in entries.items():
-        for sentence in cite_sentences(md, info["positions"], _SPACED_STOP):
-            by_sentence.setdefault(sentence, []).append(key)
+        for pos in info["positions"]:
+            keys = by_span.setdefault(_span_at(md, pos, _SPACED_STOP), [])
+            if key not in keys:
+                keys.append(key)
+    citing_starts = {start for start, _end in by_span}
     claims = []
-    for sentence, keys in by_sentence.items():
-        for category, word_re in _STATUS_WORDS:
-            if not word_re.search(sentence):
-                continue
-            lacking = [k for k in keys
-                       if not _status_licensed(entries[k]["status"], category, sentence)]
+    for (start, end), keys in sorted(by_span.items()):
+        nxt = _next_span(md, end, _SPACED_STOP)
+        unit_end = nxt[1] if nxt and nxt[0] not in citing_starts else end
+        unit = md[start:unit_end].strip()
+        for category in _status_categories_in(unit):
+            lacking = [k for k in keys if category not in entries[k]["status"]]
             if lacking:
                 licensed = [k for k in keys if k not in lacking]
                 also = f"; licensed: {', '.join(licensed)}" if licensed else ""
                 claims.append(f"CHECK status-claim: {', '.join(lacking)} ({category}{also}): "
-                              f"{_ascii(sentence[:120])}{_tag(keys, override_keys)}")
+                              f"{_ascii(unit)}{_tag(keys, override_keys)}")
     cited = []
     for key, info in entries.items():
         cats = [c for c in _RETRACTED_CATEGORIES if c in info["status"]]
@@ -357,7 +396,7 @@ def status_checks(md: str, entries: dict,
             continue
         sentences = cite_sentences(md, info["positions"], _SPACED_STOP)
         cited.append(f"CHECK retracted-cited: {key} ({', '.join(cats)}): "
-                     + " | ".join(_ascii(s[:120]) for s in sentences)
+                     + " | ".join(_ascii(s) for s in sentences)
                      + _tag([key], override_keys))
     return claims, cited
 
