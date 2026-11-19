@@ -1,9 +1,10 @@
 ---
 id: PL-37
 title: Writers infer authors' gendered pronouns from their names
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-11-17T11:20:00Z'
+updated_date: '2026-11-19T09:29:00Z'
 labels:
   - agents
 dependencies: []

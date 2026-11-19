@@ -1,9 +1,10 @@
 ---
 id: PL-41
 title: Global uv exclude-newer breaks the locked wrapper
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-11-19T09:22:00Z'
+updated_date: '2026-11-19T09:25:00Z'
 labels: []
 dependencies: []
 type: bug
