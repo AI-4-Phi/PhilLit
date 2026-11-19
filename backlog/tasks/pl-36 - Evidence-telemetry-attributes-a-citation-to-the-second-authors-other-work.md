@@ -1,9 +1,10 @@
 ---
 id: PL-36
 title: Evidence telemetry attributes a citation to the second author's other work
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-11-17T11:20:00Z'
+updated_date: '2026-11-19T09:37:00Z'
 labels: []
 dependencies: []
 type: bug

@@ -174,6 +174,17 @@ _PROCESS_LANGUAGE_RE = re.compile(
 # the English word "evidence").
 _EVIDENCE_TOKEN_RE = re.compile(r"\bEVIDENCE-[A-Z]+\b")
 
+# Gendered pronouns in a paragraph that cites a work (PL-37). Writers must not
+# infer an author's pronoun from a name; the paragraph is the unit because the
+# pronoun usually sits in the sentence after the citation ("Danaher (2018)
+# argues ... He then ..."). A hypothetical "she" next to a citation also
+# fires: WARN-only, the orchestrator reads it.
+_GENDERED_PRONOUN_RE = re.compile(
+    r"\b(?:he|she|him|her|his|hers|himself|herself)\b", re.IGNORECASE)
+# A citation's year inside parentheses: "(Danaher 2018)", "Danaher (2018a, 4)".
+_CITED_YEAR_RE = re.compile(r"\([^()]*\b(?:1[5-9]|20)\d\d[a-z]?\b[^()]*\)")
+_REFS_HEADING_RE = re.compile(r"^\s*#{1,6}\s+References\s*$", re.IGNORECASE)
+
 
 def check_prose_quality(text: str) -> list[str]:
     """Return WARN-level advisories about prose-quality issues.
@@ -183,7 +194,8 @@ def check_prose_quality(text: str) -> list[str]:
     (2) in-prose "Section N(.M)" cross-references, (3) H2 headings ending in a
     parenthesized Title-Case meta-label, (4) workflow language in review
     prose (orchestrator, writer notes, research brief, EVIDENCE-* tokens,
-    ...). Fenced code blocks and heading lines are exempt from the prose
+    ...), (5) gendered pronouns in a paragraph that cites a work, before the
+    References. Fenced code blocks and heading lines are exempt from the prose
     checks.
     """
     warnings: list[str] = []
@@ -232,6 +244,56 @@ def check_prose_quality(text: str) -> list[str]:
                 f"line {lineno}: workflow language in review prose: rewrite "
                 f"for the reader ('{phrase}') (WARN)"
             )
+    return warnings + _pronoun_warnings(text)
+
+
+def _pronoun_warnings(text: str) -> list[str]:
+    """Gendered pronouns in a paragraph that cites a work, before the References.
+
+    A paragraph is a run of non-blank prose lines, so a hard-wrapped paragraph
+    ("Danaher (2018) argues X.\nHe then ...") is one unit. Headings and fenced
+    blocks end a paragraph and are never checked.
+    """
+    warnings: list[str] = []
+    para: list[str] = []
+    start = 0
+
+    def flush():
+        joined = " ".join(para)
+        if para and _CITED_YEAR_RE.search(joined):
+            pronouns = [m.group(0) for m in _GENDERED_PRONOUN_RE.finditer(joined)]
+            if pronouns:
+                found = ", ".join(dict.fromkeys(p.lower() for p in pronouns))
+                warnings.append(
+                    f"line {start}: gendered pronoun in a paragraph that cites "
+                    f"a work ({found}) - if it refers to a cited author and no "
+                    f"text the review was given uses it for that author, use "
+                    f"the surname or 'they' (WARN)"
+                )
+        para.clear()
+
+    in_fence = False
+    for lineno, line in enumerate(text.splitlines(), start=1):
+        stripped = line.lstrip()
+        if stripped.startswith("```") or stripped.startswith("~~~"):
+            flush()
+            in_fence = not in_fence
+            continue
+        if in_fence:
+            continue
+        if stripped.startswith("#"):
+            flush()
+            if _REFS_HEADING_RE.match(line):
+                break
+            continue
+        if not stripped:
+            flush()
+            continue
+        if not para:
+            start = lineno
+        para.append(line)
+    else:
+        flush()
     return warnings
 
 

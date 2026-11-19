@@ -44,5 +44,13 @@ script="$1"; shift
 
 # --no-dev: bundled scripts never need the dev (test) group, so the per-install
 # venv stays lean. Developers still get dev deps via `uv sync` / `uv run --locked pytest`.
-exec env UV_PROJECT_ENVIRONMENT="${HOME}/.venvs/phillit-plugin-${KEY}" \
-  "$UV" run --locked --no-dev --project "$ROOT" "$ROOT/$script" "$@"
+# --exclude-newer <pyproject pin>: a user's cutoff (uv.toml, UV_CONFIG_FILE or
+# UV_EXCLUDE_NEWER) changes the resolution options and fails --locked (PL-41).
+# The command-line flag outranks all of them and leaves the rest of the user's
+# uv config (indexes) in force. The -u pair drops the env forms as well.
+PIN=""
+[ -f "$ROOT/pyproject.toml" ] && PIN="$(sed -n 's/^exclude-newer[[:space:]]*=[[:space:]]*"\([^"]*\)".*/\1/p' "$ROOT/pyproject.toml" | head -n 1)"
+set -- "$ROOT/$script" "$@"
+if [ -n "$PIN" ]; then set -- --exclude-newer "$PIN" "$@"; fi
+exec env -u UV_EXCLUDE_NEWER -u UV_EXCLUDE_NEWER_PACKAGE UV_PROJECT_ENVIRONMENT="${HOME}/.venvs/phillit-plugin-${KEY}" \
+  "$UV" run --locked --no-dev --project "$ROOT" "$@"

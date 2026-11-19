@@ -171,3 +171,66 @@ def test_process_language_warn_never_changes_exit_code(tmp_path, capsys):
     out = capsys.readouterr().out
     assert "WARN prose-quality:" in out and "workflow language" in out
     assert not rc
+
+
+# --- Gendered pronouns near citations (PL-37) -------------------------------
+
+def _pronoun_warnings(text):
+    return [w for w in lint_md.check_prose_quality(text) if "gendered pronoun" in w]
+
+
+def test_pronoun_after_citation_in_same_paragraph_warns():
+    # The 2026-11-17 shape: the pronoun sits in the sentence after the cite.
+    text = "Danaher (2018) argues that offloading erodes skill. He then extends it to autonomy."
+    (w,) = _pronoun_warnings(text)
+    assert "line 1" in w and "(he)" in w
+
+
+def test_pronouns_are_listed_once_each():
+    text = "On her account (Zagzebski 2012, 4), she grounds authority in trust; her view, she says, ..."
+    (w,) = _pronoun_warnings(text)
+    assert "(her, she)" in w
+
+
+def test_paragraph_without_citation_is_silent():
+    assert _pronoun_warnings("A believer who trusts her doctor need not check what she is told.") == []
+
+
+def test_neutral_reference_is_silent():
+    assert _pronoun_warnings("Danaher (2018) argues X. They then extend it; the paper's claim is Y.") == []
+
+
+def test_words_containing_pronouns_are_silent():
+    # Whole words only: "the", "here", "hiss", "heroic", "shepherd".
+    assert _pronoun_warnings("Here the shepherd's heroic claim (Smith 2020) stands.") == []
+
+
+def test_references_section_is_exempt():
+    text = "Intro.\n\n## References\n\nDoe, Jane. 2019. *Her Body and Other Parties*. New York: Graywolf (2019)."
+    assert _pronoun_warnings(text) == []
+
+
+def test_headings_and_fences_are_exempt():
+    text = "## What She Said (2019)\n\n```\nShe said (Doe 2019)\n```\n"
+    assert _pronoun_warnings(text) == []
+
+
+def test_pronoun_warning_never_changes_exit_code(tmp_path):
+    f = tmp_path / "r.md"
+    f.write_text("# Review\n\nDanaher (2018) argues X. He adds Y.\n", encoding="utf-8")
+    assert lint_md.main([str(f)]) == lint_md.lint_markdown(str(f))
+
+
+def test_hard_wrapped_paragraph_warns_once_at_its_first_line():
+    text = "Intro.\n\nDanaher (2018) argues that offloading erodes skill.\nHe then extends it.\n"
+    (w,) = _pronoun_warnings(text)
+    assert w.startswith("line 3:")
+
+
+def test_pronoun_in_the_next_paragraph_is_silent():
+    assert _pronoun_warnings("Danaher (2018) argues X.\n\nShe objects.\n") == []
+
+
+def test_warning_names_the_supplied_text_exception():
+    (w,) = _pronoun_warnings("Danaher (2018) argues X. He adds Y.")
+    assert "no text the review was given uses it" in w

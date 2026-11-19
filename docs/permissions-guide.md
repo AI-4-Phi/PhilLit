@@ -4,11 +4,7 @@ This document explains PhilLit's permission rules — merged into your workspace
 
 ## Permission Structure
 
-### Default Mode
-```json
-"defaultMode": "default"
-```
-Prompts for approval on first use of each tool per session. Standard security mode.
+PhilLit sets no `defaultMode`: the permission mode is your choice. A mode in the workspace's project settings would outrank your own `~/.claude/settings.json`, and the rules below avoid repeated prompts in any mode that respects them.
 
 ### Deny Rules (Highest Priority)
 ```json

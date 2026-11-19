@@ -20,6 +20,9 @@ live, 2026-07-28 A/B run + 2026-08-02 gate-(b) validation run):
 - Matches inside References-entry TITLES: a cited work whose title names
   another work ("A Critical Assessment of Levins's ... (1966)") reads as a
   prose cite of the named work.
+- Co-author positions are skipped: a surname right after "<Name> and " or
+  "<Name> & " is not a cite of that author's own work. A middle author in a
+  three-name list ("Susser, Roessler, and Nissenbaum") still matches.
 - Editor-only entries are INVISIBLE: rc_surname reads the author field, so
   an entry with only `editor` gets no surname and is skipped entirely --
   neither its violations nor its none-cites can ever be flagged.
@@ -144,6 +147,17 @@ _LOW_TRUST_TIERS = (se.TIER_EXISTENCE, se.TIER_NONE, None)
 rc_surname = get_author_last_name
 
 
+# A surname right after "<Capitalized> and " or "<Capitalized> & " is a later
+# author of someone else's citation: "Dunn and Risko (2016)" cites Dunn's work,
+# not Risko's own 2016 paper (PL-36). The rule follows
+# generate_bibliography, whose co-author position never cites the second name.
+_COAUTHOR_BEFORE_RE = re.compile(r"[A-ZÀ-Þ][\w'’À-ÿ-]*,?\s+(?:and|&)\s+\Z")
+
+
+def _coauthor_position(md: str, pos: int) -> bool:
+    return bool(_COAUTHOR_BEFORE_RE.search(md[max(0, pos - 80):pos]))
+
+
 def find_cites(md: str, surname: str, year: str, suffix: str = "") -> list[int]:
     """Positions (in md) of surname occurrences within 60 chars of year.
 
@@ -195,6 +209,7 @@ def find_cites(md: str, surname: str, year: str, suffix: str = "") -> list[int]:
     if not surname or not re.fullmatch(r"\d{4}", year or ""):
         return []
     surname_re = re.compile(rf"\b{re.escape(surname)}\b")
+    own = [m for m in surname_re.finditer(md) if not _coauthor_position(md, m.start())]
 
     if not suffix:
         bare_year_re = re.compile(rf"(?<!\d){re.escape(year)}(?!\d)")
@@ -202,7 +217,7 @@ def find_cites(md: str, surname: str, year: str, suffix: str = "") -> list[int]:
         if not year_positions:
             return []
         positions = []
-        for m in surname_re.finditer(md):
+        for m in own:
             start = max(0, m.start() - _MATCH_WINDOW)
             end = min(len(md), m.end() + _MATCH_WINDOW)
             if any(start <= yp <= end for yp in year_positions):
@@ -235,7 +250,7 @@ def find_cites(md: str, surname: str, year: str, suffix: str = "") -> list[int]:
     qualifying_positions = [m.start() for m in qualifying_re.finditer(md)]
     if not qualifying_positions:
         return []
-    surname_matches = list(surname_re.finditer(md))
+    surname_matches = own
     hits = set()
     for yp in qualifying_positions:
         nearby = [m for m in surname_matches

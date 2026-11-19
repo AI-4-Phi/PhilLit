@@ -1,9 +1,10 @@
 ---
 id: PL-40
 title: Setup overrides the user's permission mode
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-11-17T13:00:00Z'
+updated_date: '2026-11-19T09:25:00Z'
 labels:
   - test-run
 dependencies: []

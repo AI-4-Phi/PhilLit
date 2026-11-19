@@ -490,3 +490,46 @@ def test_override_flag_without_value_is_usage_error(tmp_path):
                         str(tmp_path / "b.bib"), "--overrides"],
                        capture_output=True, text=True)
     assert r.returncode == 1 and "Usage" in r.stdout
+
+
+# --- Co-author positions (PL-36) ---------------------------------------------
+
+BIB_RISKO = """@article{risko2016cognitiveoffloading,
+  author = {Risko, Evan F. and Gilbert, Sam J.},
+  title = {Cognitive Offloading},
+  year = {2016},
+  keywords = {EVIDENCE-EXISTENCE}
+}
+
+@article{dunn2016metacognitiveoffloading,
+  author = {Dunn, Timothy L. and Risko, Evan F.},
+  title = {Toward a Metacognitive Account of Cognitive Offloading},
+  year = {2016},
+  keywords = {EVIDENCE-ABSTRACT}
+}"""
+
+
+@pytest.mark.parametrize("cite", ["Dunn and Risko (2016)", "Dunn & Risko (2016)",
+                                  "(Dunn and Risko 2016)", "Dunn, and Risko (2016)"])
+def test_second_author_position_is_not_a_cite_of_their_own_work(cite):
+    md = f"{cite} argue that offloading is metacognitively guided."
+    assert check_evidence.find_cites(md, "Risko", "2016") == []
+    assert check_evidence.find_cites(md, "Dunn", "2016") != []
+
+
+def test_first_author_position_still_cites():
+    md = "Risko and Gilbert (2016) argue that offloading is common."
+    assert check_evidence.find_cites(md, "Risko", "2016") == [0]
+
+
+def test_lowercase_and_before_surname_still_cites():
+    # "and" after an ordinary word is not an author list.
+    md = "Offloading is common and Risko (2016) argues it is rational."
+    assert check_evidence.find_cites(md, "Risko", "2016") != []
+
+
+def test_no_false_reporting_verb_check_for_second_author(tmp_path):
+    md = ("# R\n\nDunn and Risko (2016) argue that offloading is guided by "
+          "metacognition.\n")
+    r = _run(tmp_path, md, BIB_RISKO)
+    assert "risko2016cognitiveoffloading" not in r.stdout

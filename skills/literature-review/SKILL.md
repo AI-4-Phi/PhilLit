@@ -470,7 +470,7 @@ A resume that starts at step 8 cannot reproduce the split's `SPLIT-*` lines, ded
      "[workdir]/literature-review-[project-name].md"
    ```
 
-   Fix any reported issues before proceeding. A `workflow language in review prose` warning means a sentence may talk about the workflow (the orchestrator, the request, the outline, tiers, notes) instead of the literature. Read the sentence: one that is about the literature and only shares a word ("the orchestrator of the plot, on Aristotle's account") stays as it is. Otherwise rewrite it for the reader, keeping any disclosure in a reader-facing form ("this review did not verify that account"). The References section is now in scope for linting — verify no false positives from italicized journal names, DOI URLs, or other bibliography formatting.
+   Fix any reported issues before proceeding. A `workflow language in review prose` warning means a sentence may talk about the workflow (the orchestrator, the request, the outline, tiers, notes) instead of the literature. Read the sentence: one that is about the literature and only shares a word ("the orchestrator of the plot, on Aristotle's account") stays as it is. Otherwise rewrite it for the reader, keeping any disclosure in a reader-facing form ("this review did not verify that account"). A `gendered pronoun in a paragraph that cites a work` warning: if the pronoun refers to a cited author and no text the review was given uses it for that author, replace it with the surname or "they". A pronoun for anyone else (a hypothetical agent, a character) stays. The References section is now in scope for linting — verify no false positives from italicized journal names, DOI URLs, or other bibliography formatting.
 
    The linter also verifies every in-text author-year citation resolves to a
    References entry (ERROR + nonzero exit otherwise, printed as
@@ -623,12 +623,9 @@ reviews/[project-name]/
        --bibliography="[workdir]/literature-[project-name].bib" \
        && echo "Converted to DOCX: literature-review-[project-name].docx"
      if command -v lualatex &> /dev/null; then
-       pandoc "[workdir]/literature-review-[project-name].md" \
-         --from markdown \
-         --pdf-engine=lualatex \
-         -V geometry:margin=1in -V fontsize=11pt \
-         --output "[workdir]/literature-review-[project-name].pdf" \
-         && echo "Converted to PDF: literature-review-[project-name].pdf"
+       bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/build_pdf.py \
+         "[workdir]/literature-review-[project-name].md" \
+         "[workdir]/literature-review-[project-name].pdf"
      else
        echo "lualatex not installed, skipping PDF conversion"
      fi
@@ -637,7 +634,7 @@ reviews/[project-name]/
    fi
    ```
 
-   A failed PDF build (for example a missing LaTeX package) is not a failed review: mention it in the final summary and continue.
+   A failed PDF build (for example a missing LaTeX package) is not a failed review: mention it in the final summary and continue. `build_pdf.py` tries wide-coverage fonts in turn so that characters such as Greek letters survive. A `WARN pdf-missing-characters` line means the PDF still lacks the characters it names: copy that line verbatim into the final summary, and point the reader to the Markdown and DOCX files, which keep them.
 
    **Important:** Use the full `[workdir]` paths (not bare filenames). Do NOT use `&&/||` chaining for this check, as Pandoc errors would trigger the wrong fallback message.
 
@@ -719,7 +716,7 @@ Output status updates directly as text (visible to user in real-time):
 | **Delivery split** | `Split delivery: track record, annotated bib, research notes` |
 | **Cleanup** | `Moving intermediate files -> intermediate_files/` |
 | **DOCX conversion** | `Converted to DOCX: literature-review-[project-name].docx` |
-| **PDF conversion** | `Converted to PDF: literature-review-[project-name].pdf` |
+| **PDF conversion** | `Converted to PDF: literature-review-[project-name].pdf (font: [font])` |
 | **Publish** | `Published to reviews/[project-name]/` |
 | **Workflow complete** | `Literature review complete: reviews/[project-name]/literature-review-[project-name].md ([wordcount])` |
 | **Source issues (if any)** | `⚠️ Source issues: [aggregated list from domain researchers]` |

@@ -14,7 +14,14 @@ def test_merge_into_empty_adds_all_rules():
     assert "Skill(phillit:literature-review)" in merged["allow"]
     assert "Bash(sudo *)" in merged["deny"]
     assert "Bash(rm *)" in merged["ask"]
-    assert merged["defaultMode"] == "default"
+
+
+def test_merge_never_adds_default_mode():
+    # The permission mode is the user's choice (PL-40): a project-level
+    # defaultMode outranks the user's own settings, so setup must not write one.
+    assert "defaultMode" not in RULES
+    assert "defaultMode" not in sw.merge_permissions({}, RULES)
+    assert "defaultMode" not in sw.merge_permissions({"allow": ["Read"]}, RULES)
 
 
 def test_ledger_write_denied_and_ordered_before_the_reviews_allow():
@@ -577,3 +584,73 @@ def test_skill_documents_both_consent_questions_and_the_flags():
     for needle in ("--probe-zotero", "--check-pdf-dir", "PHILLIT_ZOTERO=on", "PHILLIT_PDF_DIR",
                    "Allow other applications on this computer to communicate with Zotero"):
         assert needle in skill, needle
+
+
+def _legacy_ws(tmp_path, perms, backup=None, marker=True):
+    plugin_root = tmp_path / "plugin"; plugin_root.mkdir()
+    (plugin_root / ".env.example").write_text("", encoding="utf-8")
+    ws = tmp_path / "ws"; (ws / ".claude").mkdir(parents=True)
+    if marker:
+        (ws / ".phillit").mkdir()
+    (ws / ".claude" / "settings.json").write_text(json.dumps({"permissions": perms}), encoding="utf-8")
+    if backup is not None:
+        (ws / ".claude" / "settings.json.bak").write_text(backup, encoding="utf-8")
+    return ws, plugin_root
+
+
+def _mode_after_rerun(tmp_path, perms, backup=None, marker=True):
+    ws, plugin_root = _legacy_ws(tmp_path, perms, backup, marker)
+    assert sw.apply(workspace=ws, plugin_root=plugin_root, dry_run=False) == 0
+    data = json.loads((ws / ".claude" / "settings.json").read_text(encoding="utf-8"))
+    return data["permissions"].get("defaultMode")
+
+
+LEGACY = dict(RULES, defaultMode="default")
+
+
+def test_rerun_removes_mode_setup_wrote_into_a_file_it_created(tmp_path, capsys):
+    # No backup: setup created the file, so the "default" is setup's (PL-40).
+    assert _mode_after_rerun(tmp_path, LEGACY) is None
+    assert "earlier PhilLit setup wrote" in capsys.readouterr().out
+
+
+def test_rerun_removes_mode_the_backup_proves_setup_added(tmp_path):
+    backup = json.dumps({"permissions": {"allow": ["Read"]}})
+    ws, plugin_root = _legacy_ws(tmp_path, dict(LEGACY, allow=["Read", "Custom(x)"]), backup)
+    other = {"model": "opus"}
+    path = ws / ".claude" / "settings.json"
+    data = json.loads(path.read_text(encoding="utf-8")); data.update(other)
+    path.write_text(json.dumps(data), encoding="utf-8")
+    assert sw.apply(workspace=ws, plugin_root=plugin_root, dry_run=False) == 0
+    after = json.loads(path.read_text(encoding="utf-8"))
+    assert "defaultMode" not in after["permissions"]
+    assert "Custom(x)" in after["permissions"]["allow"]      # user rules kept
+    assert after["model"] == "opus"                          # other settings kept
+    assert (ws / ".claude" / "settings.json.bak").read_text(encoding="utf-8") == backup
+
+
+def test_rerun_keeps_mode_the_user_set_before_setup(tmp_path):
+    backup = json.dumps({"permissions": {"defaultMode": "default"}})
+    assert _mode_after_rerun(tmp_path, LEGACY, backup) == "default"
+
+
+def test_rerun_keeps_mode_when_backup_is_unreadable(tmp_path):
+    assert _mode_after_rerun(tmp_path, LEGACY, "{not json") == "default"
+
+
+def test_rerun_never_touches_a_mode_other_than_default(tmp_path):
+    assert _mode_after_rerun(tmp_path, dict(RULES, defaultMode="auto")) == "auto"
+
+
+def test_dry_run_reports_the_mode_removal_without_writing(tmp_path, capsys):
+    ws, plugin_root = _legacy_ws(tmp_path, LEGACY)
+    before = (ws / ".claude" / "settings.json").read_text(encoding="utf-8")
+    assert sw.apply(workspace=ws, plugin_root=plugin_root, dry_run=True) == 0
+    assert "Would remove" in capsys.readouterr().out
+    assert (ws / ".claude" / "settings.json").read_text(encoding="utf-8") == before
+
+
+def test_first_setup_keeps_a_mode_the_user_already_set(tmp_path):
+    # No .phillit marker: setup never ran here, so the "default" is the user's,
+    # even though there is no backup yet.
+    assert _mode_after_rerun(tmp_path, {"defaultMode": "default"}, marker=False) == "default"

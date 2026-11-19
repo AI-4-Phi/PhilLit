@@ -1,9 +1,10 @@
 ---
 id: PL-38
 title: PDF build drops characters the default font lacks
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-11-17T11:20:00Z'
+updated_date: '2026-11-19T09:36:00Z'
 labels: []
 dependencies: []
 type: bug

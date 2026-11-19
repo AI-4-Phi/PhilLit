@@ -239,6 +239,12 @@ Write to specified filename:
 **Poor** (list-like):
 > Many philosophers have written about this (Frankfurt 1971; Dennett 1984; Fischer and Ravizza 1998).
 
+### Referring to Authors (REQUIRED)
+
+Refer to a cited author by surname, or to the work as "the paper", "the book" or "the authors". Never infer a pronoun from a name: a wrong guess misgenders a real person. Use "he", "she", "his" or "her" for an author only where a text you were given uses that pronoun for that author; otherwise repeat the surname or use "they".
+
+- ❌ "Danaher (2018) argues that offloading erodes skill. He then ..." → ✓ "Danaher (2018) argues that offloading erodes skill, and then ..."
+
 ### Paragraph Structure
 
 - **Opening**: Topic sentence (what this paragraph does)
@@ -284,6 +290,7 @@ Before submitting:
 ✅ **Narrative flow**: Coherent story throughout?
 ✅ **Connection to project**: Relevance clear throughout?
 ✅ **No References section**: Section ends with prose, not a bibliography?
+✅ **Author pronouns**: No he, she, his or her for a cited author unless a text you were given uses it for that author?
 ✅ **Source check**: The REQUIRED source check ran, one support line per claim, and every claim about what a work says is in that work's licensed text?
 
 ### Pitfalls to Avoid
@@ -312,7 +319,6 @@ Ready for next section.
 - **Analytical depth**: Emphasize insight over coverage
 - **Reading BibTeX**: Parse for citation data; take arguments from the tier-licensed text (the full text a `fulltext_file` field names, abstract, context field, or — for `EVIDENCE-WEB` only — the note). At every other tier the note licenses no content claim: it may inform relevance and placement only
 - **Citation format**: (Author Year) in prose, Chicago author-date. Parentheses hold only author, year, and locator — never process notes or reliability caveats; qualify a source in the prose instead.
-- **Pronouns for authors**: refer to an author by surname. Never infer a pronoun from a name; use a gendered pronoun only where a text you were given uses it for that author, and otherwise repeat the surname or use "they"
 - **Cross-reference by title, not number**: Refer to other sections by title or subject ("the section on expert testimony"), never by number ("Section 3.3") — section numbers are assigned at display time and won't match what you type.
 - **No LaTeX in prose**: Use real Unicode typography — curly quotes (" " ' '), em dash (—), en dash (–), plain ampersand (&). Never emit LaTeX markup (backtick/apostrophe quote pairs, `--`/`---` dashes, `\&`).
 - **Follow the outline**: Outline specifies word targets and paper counts. Word targets are guidance: run shorter or longer where the material warrants, but keep to a length the user set
