@@ -325,9 +325,16 @@ def lookup_venue(name: str, params: dict, headers: dict,
     "no flag", so a backoff loop would buy nothing and cost the barrier time.
     """
     try:
-        get_limiter("openalex").wait()
-        if deadline is not None and time.monotonic() >= deadline:
-            return None, "deadline"
+        if deadline is None:
+            get_limiter("openalex").wait()
+        else:
+            # Bounded by the time left (PL-39): a slot past the deadline is
+            # never waited for.
+            left = deadline - time.monotonic()
+            if left <= 0 or get_limiter("openalex").wait(max_seconds=left) is None:
+                return None, "deadline"
+            if time.monotonic() >= deadline:
+                return None, "deadline"
         response = requests.get(
             OPENALEX_SOURCES_URL,
             params={**params,

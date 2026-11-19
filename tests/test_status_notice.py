@@ -59,7 +59,7 @@ WANG = {"author": "Wang, Yuan and Zhang, Li",
 
 
 class _NoWait:
-    def wait(self):
+    def wait(self, max_seconds=None):
         return 0.0
 
     def record(self):
@@ -116,8 +116,11 @@ def _run(monkeypatch, entries, fake=None, deadline=None):
     return values, report, fake
 
 
-def _e(fields, none=False):
-    return {"fields": fields, "evidence_none": none}
+def _e(fields, none=False, etype=None):
+    entry = {"fields": fields, "evidence_none": none}
+    if etype is not None:
+        entry["entry_type"] = etype
+    return entry
 
 
 # ---------------------------------------------------------------------------
@@ -132,11 +135,18 @@ def test_every_mapped_type_token_is_one_crossref_emits():
         "expression_of_concern", "correction", "erratum", "corrigendum"}
 
 
-def test_case_and_hyphen_variants_stay_unmapped():
-    """Exact tokens only: `Retraction`, `Erratum`, `expression-of-concern`
-    exist in CrossRef but are counted as unmapped, never guessed at."""
-    for tok in ("Retraction", "Erratum", "Corrigendum", "expression-of-concern"):
-        assert tok not in sn.TYPE_CATEGORY
+def test_case_and_hyphen_variants_map_to_the_seven():
+    """CrossRef emits `Retraction`, `Erratum`, `Corrigendum` and
+    `expression-of-concern` too (facet fixture): same meaning, same item."""
+    emitted = set(_load("facet")["message"]["facets"]["update-type"]["values"])
+    for tok, cat in (("Retraction", "retraction"), ("Erratum", "correction"),
+                     ("Corrigendum", "correction"),
+                     ("expression-of-concern", "expression_of_concern"),
+                     (" Partial-Retraction ", "partial_retraction")):
+        assert sn.category_of(tok) == cat
+    assert {"Retraction", "Erratum", "Corrigendum", "expression-of-concern"} <= emitted
+    assert sn.category_of("new_version") is None
+    assert sn.category_of("retration") is None
 
 
 def test_erratum_and_corrigendum_map_to_correction():
@@ -222,7 +232,8 @@ def test_self_referential_correction_or_concern_stays_malformed(monkeypatch, tok
     values, report, _ = _run(monkeypatch, {"s": _e(STERELNY)}, fake)
     assert values == {}
     assert report["malformed"] == 1
-    assert report["entries"]["s"] == "checked_none"
+    assert report["entries"]["s"] == "unresolved"
+    assert report["status"] == "partial" and "could not map" in report["reason"]
 
 
 def test_self_referential_reverse_hit_for_a_retraction_is_accepted(monkeypatch):
@@ -349,6 +360,8 @@ def test_reverse_hit_with_unmapped_type_is_counted_not_stamped(monkeypatch):
     values, report, _ = _run(monkeypatch, {"s": _e(STERELNY)}, answer)
     assert values == {}
     assert report["unmapped_types"] == {"new_version": 1}
+    assert report["entries"]["s"] == "unresolved"
+    assert report["status"] == "partial" and report["reason"]
 
 
 def test_41_dois_make_two_forward_requests(monkeypatch):
@@ -475,10 +488,20 @@ def test_unmapped_and_malformed_items_counted_not_stamped(monkeypatch):
         {"type": "correction"},
     ])
     values, report, _ = _run(monkeypatch, {"s": _e(STERELNY)}, fake)
-    assert values == {}
-    assert report["unmapped_types"] == {"new_version": 1, "Retraction": 1}
+    assert values == {"s": "retraction 10.1000/cap"}
+    assert report["unmapped_types"] == {"new_version": 1}
     assert report["malformed"] == 5
-    assert report["entries"]["s"] == "checked_none"
+    assert report["entries"]["s"] == "stamped"
+    assert report["unresolved"] == 1
+    assert report["status"] == "partial" and "could not map" in report["reason"]
+
+
+def test_an_unmappable_relation_alone_is_unresolved_not_checked_none(monkeypatch):
+    fake = _with_updates([{"DOI": "10.1000/nv", "type": "new_version", "source": "publisher"}])
+    values, report, _ = _run(monkeypatch, {"s": _e(STERELNY)}, fake)
+    assert values == {}
+    assert report["entries"]["s"] == "unresolved"
+    assert report["status"] == "partial" and "could not map" in report["reason"]
 
 
 # ---------------------------------------------------------------------------
@@ -585,7 +608,7 @@ def test_deadline_rechecked_after_the_limiter_wait(monkeypatch):
     monkeypatch.setattr(sn.time, "monotonic", lambda: clock["t"])
 
     class SlowLimiter(_NoWait):
-        def wait(self):
+        def wait(self, max_seconds=None):
             clock["t"] += 50.0
             return 50.0
     monkeypatch.setattr(sn, "get_limiter", lambda *a, **k: SlowLimiter())
@@ -698,3 +721,163 @@ def test_switched_on_or_blank_runs(monkeypatch, value):
     monkeypatch.setenv("PHILLIT_STATUS_NOTICE", value)
     values, _r, _ = _run(monkeypatch, {"g": _e(GERLICH)})
     assert values == {"g": "correction 10.3390/soc15090252"}
+
+
+# ---------------------------------------------------------------------------
+# Review round 2
+# ---------------------------------------------------------------------------
+
+@pytest.mark.parametrize("bib_author,cr_family", [
+    ("Lopez, Ana", "Garcia Lopez"),
+    ("Garcia Lopez, Ana", "Lopez"),
+    ("Sterelny, Kim", "Brown Sterelny"),
+])
+def test_surname_last_token_is_not_enough(bib_author, cr_family):
+    """P1: a shared last word is two different surnames."""
+    rec = _gerlich_with(author=[{"family": cr_family, "sequence": "first"}])
+    assert not _identity(dict(GERLICH, author=bib_author), rec)
+
+
+@pytest.mark.parametrize("bib_author,cr_family", [
+    ("van der Linden, Sander", "Linden"),
+    ("van der Linden, Sander", "van der Linden"),
+    ("Linden, Sander van der", "van der Linden"),
+    ("de Beauvoir, Simone", "Beauvoir"),
+    ("von Wright, Georg Henrik", "Von Wright"),
+])
+def test_leading_particles_are_removed_before_the_exact_compare(bib_author, cr_family):
+    rec = _gerlich_with(author=[{"family": cr_family, "sequence": "first"}])
+    assert _identity(dict(GERLICH, author=bib_author), rec)
+
+
+def test_particle_is_only_removed_from_the_front():
+    rec = _gerlich_with(author=[{"family": "Lopez", "sequence": "first"}])
+    assert not _identity(dict(GERLICH, author="{Lopez de la Garza}, Ana"), rec)
+
+
+@pytest.mark.parametrize("etype,cr_type,ok", [
+    ("book", "book-chapter", False),
+    ("book", "journal-article", False),
+    ("article", "book", False),
+    ("incollection", "book", False),
+    ("incollection", "monograph", False),
+    ("book", "book", True),
+    ("incollection", "book-chapter", True),
+    ("article", "journal-article", True),
+    ("misc", "posted-content", True),
+])
+def test_entry_type_must_be_compatible(monkeypatch, etype, cr_type, ok):
+    """P2: same author and title, only the type differs."""
+    rec = dict(_record("10.3390/soc15010006"), type=cr_type)
+    fake = FakeCrossRef(records=[rec], notices=[])
+    values, report, _ = _run(monkeypatch, {"g": _e(GERLICH, etype=etype)}, fake)
+    assert report["entries"]["g"] == ("stamped" if ok else "identity_mismatch")
+    assert bool(values) is ok
+
+
+def test_markup_inside_a_word_is_removed_without_a_space():
+    """P13: `<i>Bio</i>logy` is one word; tags between words keep them apart."""
+    assert sn.decode_crossref_title("The <i>Bio</i>logy of Mind") == "The Biology of Mind"
+    assert sn.decode_crossref_title("Kant<br/>Hegel") == "Kant Hegel"
+    assert sn.decode_crossref_title("Mind <i>and</i> World") == "Mind and World"
+
+
+def test_limiter_wait_that_would_cross_the_deadline_is_not_taken(monkeypatch):
+    """P6: the wait is bounded by the time left; a wait past it is refused,
+    nothing is sent, and the entry is `deadline`."""
+    asked = []
+
+    class Busy(_NoWait):
+        def wait(self, max_seconds=None):
+            asked.append(max_seconds)
+            return None   # the next slot is past max_seconds
+    monkeypatch.setattr(sn, "get_limiter", lambda *a, **k: Busy())
+    values, report, fake = _run(monkeypatch, {"g": _e(GERLICH)},
+                                deadline=sn.time.monotonic() + 5)
+    assert fake.calls == []
+    assert asked and 0 < asked[0] <= 5
+    assert report["entries"]["g"] == "deadline"
+    assert report["status"] == "partial"
+
+
+def test_failed_reverse_on_a_not_found_entry_is_partial(monkeypatch):
+    """P11: forward answers with nothing, reverse fails: the pass says so."""
+    missing = {"author": "Nobody, A.", "title": "Unknown", "doi": "10.9999/none"}
+    fake = FakeCrossRef(records=[], notices=[],
+                        fail=lambda k, d: (503, None) if k == "updates" else None)
+    _v, report, _ = _run(monkeypatch, {"m": _e(missing)}, fake)
+    assert report["entries"]["m"] == "not_found"
+    assert report["status"] == "partial" and "reverse" in report["reason"]
+
+
+def test_failed_reverse_on_an_identity_mismatch_is_partial(monkeypatch):
+    wrong = dict(GERLICH, author="Smith, A.", title="Another Paper")
+    fake = FakeCrossRef(fail=lambda k, d: (503, None) if k == "updates" else None)
+    _v, report, _ = _run(monkeypatch, {"w": _e(wrong)}, fake)
+    assert report["entries"]["w"] == "identity_mismatch"
+    assert report["status"] == "partial" and "reverse" in report["reason"]
+
+
+def test_late_promotion_state_makes_the_pass_partial():
+    """P7: the barrier marks an entry it did not look up but later
+    promoted; settle() then explains it."""
+    report = sn.empty_report()
+    report["entries"]["x"] = "not_checked:late-promotion"
+    sn.settle(report)
+    assert report["status"] == "partial" and "promoted" in report["reason"]
+    assert report["late_promotion"] == 1
+
+
+def test_list_queries_use_crossrefs_list_rate(monkeypatch):
+    """Measured live 2026-11-19: the reverse query right after the forward
+    one drew HTTP 429 at the shared 0.05 s CrossRef interval. /works filter
+    queries are list queries, which CrossRef's public pool allows about once
+    a second."""
+    import rate_limiter
+    assert rate_limiter.get_limiter("crossref_list").min_interval >= 1.0
+    names = []
+    monkeypatch.setattr(sn, "get_limiter", lambda name, *a, **k: (names.append(name), _NoWait())[1])
+    _run(monkeypatch, {"s": _e(STERELNY)}, FakeCrossRef(records=[], notices=[]))
+    assert names == ["crossref_list"]
+
+
+def _answers(*replies):
+    calls = []
+
+    def answer(params):
+        calls.append(params["filter"].split(":", 1)[0])
+        reply = replies[min(len(calls), len(replies)) - 1]
+        return reply if reply is not None else (200, {"message": {"total-results": 0, "items": []}})
+    return answer, calls
+
+
+def test_a_429_is_retried_once_after_its_retry_after(monkeypatch):
+    slept = []
+    monkeypatch.setattr(sn.time, "sleep", lambda s: slept.append(s))
+    answer, calls = _answers((429, None, {"Retry-After": "2"}), None, None)
+    monkeypatch.setattr(sn, "_http_get", answer)
+    values, report = sn.lookup_status({"s": _e(STERELNY)}, sn.time.monotonic() + 100)
+    assert calls == ["doi", "doi", "updates"]
+    assert slept == [2.0]
+    assert report["entries"]["s"] == "not_found"
+
+
+def test_a_second_429_is_an_error(monkeypatch):
+    monkeypatch.setattr(sn.time, "sleep", lambda s: None)
+    answer, calls = _answers((429, None, {}), (429, None, {}), None)
+    monkeypatch.setattr(sn, "_http_get", answer)
+    _v, report = sn.lookup_status({"s": _e(STERELNY)}, sn.time.monotonic() + 100)
+    assert calls[:2] == ["doi", "doi"]
+    assert report["entries"]["s"] == "error"
+    assert report["status"] == "partial"
+
+
+def test_a_retry_after_past_the_deadline_is_not_waited_for(monkeypatch):
+    slept = []
+    monkeypatch.setattr(sn.time, "sleep", lambda s: slept.append(s))
+    answer, calls = _answers((429, None, {"Retry-After": "60"}), None)
+    monkeypatch.setattr(sn, "_http_get", answer)
+    _v, report = sn.lookup_status({"s": _e(STERELNY)}, sn.time.monotonic() + 5)
+    assert slept == [] and calls == ["doi"]
+    assert report["entries"]["s"] == "deadline"
+

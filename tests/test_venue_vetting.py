@@ -23,7 +23,7 @@ def _no_real_rate_limiting(monkeypatch):
     # forbidden by this suite's test discipline. The return value is unused
     # by lookup_venue, so a no-op stand-in is safe everywhere.
     class _NoWaitLimiter:
-        def wait(self):
+        def wait(self, max_seconds=None):
             return 0.0
     monkeypatch.setattr(vv, "get_limiter", lambda *a, **k: _NoWaitLimiter())
 
@@ -986,9 +986,10 @@ class TestTimeBounds:
         # this test anticipated must not raise StopIteration far from this
         # assertion -- the default keeps every over-read safely past the
         # deadline instead.
-        # Three reads before the first lookup: the clock start, the check
-        # before the limiter wait and the recheck after it (PL-39).
-        clock = iter([0.0, 1.0, 2.0])
+        # Four reads before the first lookup: the clock start, the loop's
+        # check, the time left that bounds the limiter wait, and the recheck
+        # after it (PL-39).
+        clock = iter([0.0, 1.0, 2.0, 3.0])
         monkeypatch.setattr(vv.time, "monotonic", lambda: next(clock, vv.PASS_DEADLINE_SECONDS + 1))
         result = vv.vet_venues(["Journal A", "Journal B", "Journal C"])
         assert len(calls) == 1  # only the first venue's lookup happened before the deadline
@@ -1011,6 +1012,26 @@ class TestTimeBounds:
         assert result["capped"] == ["journal a", "journal b"]
         assert "deadline" in result["reason"]
 
+    def test_a_limiter_slot_past_the_deadline_is_never_waited_for(self, monkeypatch, isolated_cache):
+        """PL-39 P6: the wait is bounded by the time left; a refused wait
+        (None) sends nothing and lands in `capped` with the deadline reason."""
+        monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
+        asked = []
+
+        class Busy:
+            def wait(self, max_seconds=None):
+                asked.append(max_seconds)
+                return None
+        monkeypatch.setattr(vv, "get_limiter", lambda *a, **k: Busy())
+        calls = []
+        monkeypatch.setattr(vv.requests, "get",
+                             lambda *a, **k: (calls.append(1), FakeResponse(payload={"results": []}))[1])
+        result = vv.vet_venues(["Journal A"], deadline=vv.time.monotonic() + 5)
+        assert calls == []
+        assert asked and 0 < asked[0] <= 5
+        assert result["capped"] == ["journal a"] and result["looked_up"] == 0
+        assert "deadline" in result["reason"]
+
     def test_deadline_rechecked_after_the_limiter_wait(self, monkeypatch, isolated_cache):
         """The limiter wait can itself cross the deadline: then no request is
         sent, the venue lands in `capped`, and nothing counts as a lookup or
@@ -1020,7 +1041,7 @@ class TestTimeBounds:
         monkeypatch.setattr(vv.time, "monotonic", lambda: clock["t"])
 
         class SlowLimiter:
-            def wait(self):
+            def wait(self, max_seconds=None):
                 clock["t"] += 50.0
                 return 50.0
         monkeypatch.setattr(vv, "get_limiter", lambda *a, **k: SlowLimiter())
