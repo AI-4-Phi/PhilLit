@@ -1,0 +1,323 @@
+{
+ "status": "ok",
+ "message-type": "work-list",
+ "message-version": "1.0.0",
+ "message": {
+  "facets": {},
+  "total-results": 2,
+  "items": [
+   {
+    "indexed": {
+     "date-parts": [
+      [
+       2026,
+       11,
+       17
+      ]
+     ],
+     "date-time": "2026-11-17T17:50:26Z",
+     "timestamp": 1794937826404,
+     "version": "4.9.1"
+    },
+    "reference-count": 0,
+    "publisher": "Oxford University Press",
+    "isbn-type": [
+     {
+      "value": "9780199338207",
+      "type": "print"
+     }
+    ],
+    "content-domain": {
+     "domain": [],
+     "crossmark-restriction": false
+    },
+    "published-print": {
+     "date-parts": [
+      [
+       2014,
+       8,
+       1
+      ]
+     ]
+    },
+    "DOI": "10.1093/acprof:oso/9780199338207.001.0001",
+    "type": "edited-book",
+    "created": {
+     "date-parts": [
+      [
+       2014,
+       8,
+       21
+      ]
+     ],
+     "date-time": "2014-08-21T09:21:09Z",
+     "timestamp": 1408612869000
+    },
+    "source": "Crossref",
+    "is-referenced-by-count": 70,
+    "title": [
+     "Manipulation"
+    ],
+    "prefix": "10.1093",
+    "member": "286",
+    "deposited": {
+     "date-parts": [
+      [
+       2022,
+       8,
+       2
+      ]
+     ],
+     "date-time": "2022-08-02T22:33:26Z",
+     "timestamp": 1659479606000
+    },
+    "score": 0.0,
+    "resource": {
+     "primary": {
+      "URL": "https://academic.oup.com/book/4870"
+     }
+    },
+    "subtitle": [
+     "Theory and Practice"
+    ],
+    "editor": [
+     {
+      "given": "Christian",
+      "family": "Coons",
+      "sequence": "first",
+      "affiliation": [],
+      "role": [
+       {
+        "vocabulary": "crossref",
+        "role": "editor"
+       }
+      ]
+     },
+     {
+      "given": "Michael",
+      "family": "Weber",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+       {
+        "vocabulary": "crossref",
+        "role": "editor"
+       }
+      ]
+     }
+    ],
+    "issued": {
+     "date-parts": [
+      [
+       2014,
+       8,
+       1
+      ]
+     ]
+    },
+    "ISBN": [
+     "9780199338207"
+    ],
+    "references-count": 0,
+    "URL": "https://doi.org/10.1093/acprof:oso/9780199338207.001.0001",
+    "relation": {
+     "has-part": [
+      {
+       "id-type": "doi",
+       "id": "https://doi.org/10.1093/acprof:oso/9780199338207.003.0003",
+       "asserted-by": "subject"
+      },
+      {
+       "id-type": "doi",
+       "id": "https://doi.org/10.1093/acprof:oso/9780199338207.003.0009",
+       "asserted-by": "subject"
+      },
+      {
+       "id-type": "doi",
+       "id": "https://doi.org/10.1093/acprof:oso/9780199338207.003.0002",
+       "asserted-by": "subject"
+      },
+      {
+       "id-type": "doi",
+       "id": "https://doi.org/10.1093/acprof:oso/9780199338207.003.0008",
+       "asserted-by": "subject"
+      },
+      {
+       "id-type": "doi",
+       "id": "https://doi.org/10.1093/acprof:oso/9780199338207.003.0004",
+       "asserted-by": "subject"
+      },
+      {
+       "id-type": "doi",
+       "id": "https://doi.org/10.1093/acprof:oso/9780199338207.003.0010",
+       "asserted-by": "subject"
+      },
+      {
+       "id-type": "doi",
+       "id": "https://doi.org/10.1093/acprof:oso/9780199338207.003.0007",
+       "asserted-by": "subject"
+      },
+      {
+       "id-type": "doi",
+       "id": "https://doi.org/10.1093/acprof:oso/9780199338207.003.0005",
+       "asserted-by": "subject"
+      },
+      {
+       "id-type": "doi",
+       "id": "https://doi.org/10.1093/acprof:oso/9780199338207.003.0011",
+       "asserted-by": "subject"
+      },
+      {
+       "id-type": "doi",
+       "id": "https://doi.org/10.1093/acprof:oso/9780199338207.003.0001",
+       "asserted-by": "subject"
+      },
+      {
+       "id-type": "doi",
+       "id": "https://doi.org/10.1093/acprof:oso/9780199338207.003.0006",
+       "asserted-by": "subject"
+      }
+     ]
+    },
+    "published": {
+     "date-parts": [
+      [
+       2014,
+       8,
+       1
+      ]
+     ]
+    }
+   },
+   {
+    "indexed": {
+     "date-parts": [
+      [
+       2026,
+       11,
+       14
+      ]
+     ],
+     "date-time": "2026-11-14T13:44:49Z",
+     "timestamp": 1794663889683,
+     "version": "4.9.1"
+    },
+    "edition-number": "1",
+    "reference-count": 1,
+    "publisher": "Routledge",
+    "isbn-type": [
+     {
+      "value": "9781003004431",
+      "type": "electronic"
+     }
+    ],
+    "content-domain": {
+     "domain": [],
+     "crossmark-restriction": false
+    },
+    "published-print": {
+     "date-parts": [
+      [
+       2021,
+       3,
+       23
+      ]
+     ]
+    },
+    "DOI": "10.4324/9781003004431-10",
+    "type": "book-chapter",
+    "created": {
+     "date-parts": [
+      [
+       2021,
+       2,
+       13
+      ]
+     ],
+     "date-time": "2021-02-13T00:17:50Z",
+     "timestamp": 1613175470000
+    },
+    "page": "92-100",
+    "source": "Crossref",
+    "is-referenced-by-count": 29,
+    "title": [
+     "Filter bubbles and digital echo chambers 1"
+    ],
+    "prefix": "10.4324",
+    "author": [
+     {
+      "given": "Judith",
+      "family": "M\u00f6ller",
+      "sequence": "first",
+      "affiliation": [],
+      "role": [
+       {
+        "vocabulary": "crossref",
+        "role": "author"
+       }
+      ]
+     }
+    ],
+    "member": "301",
+    "container-title": [
+     "The Routledge Companion to Media Disinformation and Populism"
+    ],
+    "language": "en",
+    "deposited": {
+     "date-parts": [
+      [
+       2021,
+       4,
+       2
+      ]
+     ],
+     "date-time": "2021-04-02T11:34:24Z",
+     "timestamp": 1617363264000
+    },
+    "score": 0.0,
+    "resource": {
+     "primary": {
+      "URL": "https://www.taylorfrancis.com/books/9781000346749/chapters/10.4324/9781003004431-10"
+     }
+    },
+    "issued": {
+     "date-parts": [
+      [
+       2021,
+       3,
+       23
+      ]
+     ]
+    },
+    "ISBN": [
+     "9781003004431"
+    ],
+    "references-count": 1,
+    "URL": "https://doi.org/10.4324/9781003004431-10",
+    "relation": {
+     "is-part-of": [
+      {
+       "id-type": "doi",
+       "id": "https://doi.org/10.4324/9781003004431",
+       "asserted-by": "object"
+      }
+     ]
+    },
+    "published": {
+     "date-parts": [
+      [
+       2021,
+       3,
+       23
+      ]
+     ]
+    }
+   }
+  ],
+  "items-per-page": 50,
+  "query": {
+   "start-index": 0,
+   "search-terms": null
+  }
+ }
+}

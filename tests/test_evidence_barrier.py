@@ -1282,7 +1282,7 @@ def _raise_on_field(field_name):
 
 def _fake_vet(flagged=(), status="complete", seen=None):
     """A vet_venues stand-in. `flagged` holds NORMALIZED venue names."""
-    def _vet(names):
+    def _vet(names, deadline=None):
         if seen is not None:
             seen.append(list(names))
         return {"status": status, "reason": None, "looked_up": len(names),
@@ -1321,7 +1321,7 @@ def test_venue_vetting_failure_never_fails_the_barrier(tmp_path, monkeypatch):
     _domain(rd, 1, TWO_VENUE_BIB, cleaning=_cleaning(1, {}),
             enrichment=_enrichment(1))
 
-    def boom(names):
+    def boom(names, deadline=None):
         raise RuntimeError("openalex down")
 
     monkeypatch.setattr(evidence_barrier.vv, "vet_venues", boom)
@@ -1469,7 +1469,7 @@ def test_non_serializable_vet_venues_return_never_fails_the_barrier(
     rd = tmp_path / "review"
     _domain(rd, 1, TWO_VENUE_BIB, cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
     bad = {"status": "complete", "verdicts": {}, "evidence": {"x": object()}}
-    monkeypatch.setattr(evidence_barrier.vv, "vet_venues", lambda names: bad)
+    monkeypatch.setattr(evidence_barrier.vv, "vet_venues", lambda names, deadline=None: bad)
     assert evidence_barrier.execute(rd, 1) == 0          # NOT a failed run
     report = _report(rd)
     assert report["status"] in ("complete", "degraded")
@@ -1509,7 +1509,7 @@ def test_non_dict_vet_venues_return_with_no_journals_never_fails_the_barrier(
   year = {1962}
 }"""
     _domain(rd, 1, book_only, cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
-    monkeypatch.setattr(evidence_barrier.vv, "vet_venues", lambda names: None)
+    monkeypatch.setattr(evidence_barrier.vv, "vet_venues", lambda names, deadline=None: None)
     assert evidence_barrier.execute(rd, 1) == 0          # NOT a failed run
     report = _report(rd)
     assert report["status"] in ("complete", "degraded")
@@ -2134,7 +2134,9 @@ def test_derived_fields_are_invisible_to_compute_tier(tmp_path, monkeypatch):
     assert "venue_status = {low-visibility}" in content
     assert "year_suffix = {a}" in content and "year_suffix = {b}" in content
 
-    assert len(seen_fields) == 2, seen_fields
+    # Two entries, each tiered twice: provisionally for the status pass
+    # (PL-39), then finally in the stamping loop.
+    assert len(seen_fields) == 4, seen_fields
     for fields in seen_fields:
         assert "venue_status" not in fields
         assert "year_suffix" not in fields

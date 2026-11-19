@@ -3524,3 +3524,15 @@ class TestLoneLetterWarning:
 
 def gb_find(prose, db):
     return generate_bibliography.find_cited_entries(prose, db)
+
+
+
+def test_status_notice_is_never_rendered():
+    """PL-39: the barrier's status field is documentation for writers, never
+    part of a References line."""
+    entry = _make_entry(
+        "article", authors=["Gerlich, Michael"], title="AI Tools in Society",
+        journal="Societies", year="2025", doi="10.3390/soc15010006",
+        status_notice="correction 10.3390/soc15090252")
+    result = format_entry(entry, "gerlich2025ai")
+    assert "soc15090252" not in result and "correction" not in result.lower()

@@ -101,7 +101,7 @@ class RateLimiter:
         f.write(str(timestamp))
         f.flush()
 
-    def wait(self) -> float:
+    def wait(self, max_seconds: Optional[float] = None) -> Optional[float]:
         """
         Block until it's safe to make a request. Call BEFORE each API request.
 
@@ -112,8 +112,13 @@ class RateLimiter:
         Under concurrent load, processes queue in order: if N processes contend,
         the Nth process waits approximately N * min_interval seconds.
 
+        `max_seconds` bounds the wait for a caller with a deadline: when the
+        next free slot is further away than that, nothing is reserved, nothing
+        is slept, and the call returns None. Without it the call always waits.
+
         Returns:
-            The number of seconds waited (0 if no wait was needed)
+            The number of seconds waited (0 if no wait was needed), or None
+            when the wait would have exceeded `max_seconds`.
         """
         with open(self.lock_file, "a+") as f:
             if HAS_FCNTL:
@@ -132,6 +137,13 @@ class RateLimiter:
             wait_time = 0.0
             if elapsed < self.min_interval:
                 wait_time = self.min_interval - elapsed
+
+            if max_seconds is not None and wait_time > max_seconds:
+                # Refused: no reservation, so later callers do not queue
+                # behind a slot this caller will never use.
+                if HAS_FCNTL:
+                    fcntl.flock(f, fcntl.LOCK_UN)
+                return None
 
             # Reserve the time slot: write projected request time BEFORE releasing
             # the lock, so the next process sees this reservation and queues behind it.
@@ -273,6 +285,10 @@ LIMITERS = {
     "semantic_scholar_unauth": lambda: RateLimiter("semantic_scholar_unauth", 3.0),
     "brave": lambda: RateLimiter("brave", 1.5),
     "crossref": lambda: RateLimiter("crossref", 0.05),  # 50/sec but conservative
+    # /works filter (list) queries: CrossRef's public pool allows about one a
+    # second, and two at the single-record interval drew HTTP 429 (measured
+    # 2026-11-19, the barrier's status_notice pass).
+    "crossref_list": lambda: RateLimiter("crossref_list", 1.0),
     "openalex": lambda: RateLimiter("openalex", 0.11),  # 10/sec
     "arxiv": lambda: RateLimiter("arxiv", 3.0),
     "sep_fetch": lambda: RateLimiter("sep_fetch", 5.0),  # robots.txt crawl-delay: 5 (was 1.0)

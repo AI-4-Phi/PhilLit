@@ -192,15 +192,24 @@ def _no_ambient_openalex_key():
     """
     saved = os.environ.pop("OPENALEX_API_KEY", None)
     saved_flag = os.environ.pop("PHILLIT_VET_VENUES", None)
+    # The barrier's CrossRef status pass (PL-39) has no key gate, so every
+    # subprocess-driven barrier test with a verified DOI would query the live
+    # API. Off for the whole session; the tests that exercise the pass delete
+    # the variable and install a fake transport.
+    saved_status = os.environ.get("PHILLIT_STATUS_NOTICE")
+    os.environ["PHILLIT_STATUS_NOTICE"] = "off"
     try:
         yield
     finally:
         os.environ.pop("OPENALEX_API_KEY", None)
         os.environ.pop("PHILLIT_VET_VENUES", None)
+        os.environ.pop("PHILLIT_STATUS_NOTICE", None)
         if saved is not None:
             os.environ["OPENALEX_API_KEY"] = saved
         if saved_flag is not None:
             os.environ["PHILLIT_VET_VENUES"] = saved_flag
+        if saved_status is not None:
+            os.environ["PHILLIT_STATUS_NOTICE"] = saved_status
 
 
 @pytest.fixture(autouse=True)

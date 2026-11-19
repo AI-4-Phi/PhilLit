@@ -176,11 +176,13 @@ skills/literature-review/
     ├── normalize_headings.py             # Normalize section/subsection heading numbering
     ├── dedupe_bib.py                     # Deduplicate and merge BibTeX (re-stamps tiers via --evidence-report)
     ├── enrich_bibliography.py            # Batch abstract resolution for BibTeX
-    ├── evidence_barrier.py               # Phase 3-to-4 barrier: validate, acquire SEP/IEP context, vet venues, letter collisions, group reprints (same_work_group), gate web sources, corroborate abstracts, verify full texts, stamp EVIDENCE-* tiers, re-point the cleaning ledger's binding
+    ├── evidence_barrier.py               # Phase 3-to-4 barrier: validate, acquire SEP/IEP context, look up publication status (status_notice), vet venues, letter collisions, group reprints (same_work_group), gate web sources, corroborate abstracts, verify full texts, stamp EVIDENCE-* tiers, re-point the cleaning ledger's binding
     ├── resolve_context.py                # Mechanical SEP/IEP context acquisition (barrier helper)
     ├── stamp_evidence.py                 # Evidence-tier computation and stamping (barrier helper)
     ├── bib_fields.py                     # Depth-counting scanner: locates field values in raw BibTeX text for every value read, edit and strip in this directory
     ├── venue_vetting.py                  # OpenAlex venue check behind venue_status (barrier helper, venue vetting)
+    ├── status_notice.py                  # CrossRef correction/retraction/preprint lookup behind status_notice (barrier helper; shares venue vetting's window)
+    ├── status_items.py                   # The status_notice value grammar (leaf module; status_notice and check_evidence alias it)
     ├── year_suffix.py                    # Chicago a/b assignment over work identity (barrier helper, Chicago a/b disambiguation)
     ├── abstract_usability.py             # Is an abstract usable as evidence? (barrier helper, the screen behind EVIDENCE-ABSTRACT)
     ├── web_evidence.py                   # URL extraction, capture checks, existence (barrier helper, the EVIDENCE-WEB gate; owns the excluded-host policy — SEP + mirrors, IEP, NDPR, PhilPapers — which never earn EVIDENCE-WEB)

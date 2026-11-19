@@ -291,6 +291,13 @@ def _bare_series(s: str) -> bool:
     return _TRAIL_NUM.sub("", s).strip() in _KNOWN_SERIES
 
 
+# The one shape a normalized DOI must have to count as a DOI. Its consumers
+# (the full-text tier via `fulltext.DOI_SHAPE`, an alias, and the barrier's
+# CrossRef status lookup) treat any other value (`none`, `forthcoming`,
+# `10.1234`) as no DOI. A prefix may be subdivided: 10.1000.10/abc.
+DOI_SHAPE = re.compile(r"10\.\d+(?:\.\d+)*/\S+")
+
+
 def normalize_doi(doi: str) -> str:
     """Normalize DOI for comparison."""
     if not doi:

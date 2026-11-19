@@ -123,6 +123,34 @@ flagged, not evaluated, or vetting did not run" (vetting needs a free
 `OPENALEX_API_KEY` and can be switched off with `PHILLIT_VET_VENUES=0`).
 Agents must never write this field by hand.
 
+### Status Notice Field (barrier-stamped)
+
+`status_notice = {<item>; <item>; ...}` is added by the evidence barrier
+(Phase 3→4) when CrossRef lists an update relation for the entry's own DOI,
+or the DOI is a CrossRef preprint. Items: `retraction <doi>`,
+`partial_retraction <doi>`, `withdrawal <doi>`, `expression_of_concern <doi>`,
+`correction <doi>` (CrossRef correction, erratum or corrigendum) and
+`preprint`, where `<doi>` is the notice's DOI (for a retraction or
+withdrawal issued in place, the article's own DOI). `preprint` comes from
+CrossRef (a posted-content preprint) or, with no network call, from the
+entry's own fields: no `journal`, and an arXiv DOI (`10.48550/`),
+`archiveprefix = {arXiv}` with an `eprint`, or a `howpublished` naming arXiv.
+Each notice's own CrossRef record is read too, and an item whose notice was
+rescinded or retracted (or could not be read) is dropped. Only entries with a DOI,
+not at `EVIDENCE-NONE`, whose CrossRef record matches their first author (or,
+for a book CrossRef records by its editors, first editor) and title are
+looked up; arXiv DOIs are not. Absence means "no status fact is
+licensed for this entry in this run", never "no notice exists" (the
+`status_notice` object in `evidence_report.json` says per entry why).
+`PHILLIT_STATUS_NOTICE=0` switches the lookup off. The synthesis writer
+states a status only from this field, in fixed wording (see
+`agents/synthesis-writer.md`). Agents must never write this field by hand.
+
+**One rule for barrier-stamped metadata facts** (`venue_status`,
+`status_notice`): they license the metadata fact only, never content. A
+`status_notice` licenses that a notice exists, not what it changed or why; a
+`venue_status` says how visible the venue is, not how good the work is.
+
 ### Year Suffix Field (engine-stamped)
 
 `year_suffix = {a}` is added by the evidence barrier (Phase 3→4) when one

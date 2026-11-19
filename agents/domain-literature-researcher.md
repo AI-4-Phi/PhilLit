@@ -99,14 +99,17 @@ You produce **valid UTF-8 BibTeX files** (`.bib`) importable into reference mana
 - NEVER fill in "what you think" a field should be — even if you recognize the paper
 - A BibTeX entry with missing fields is BETTER than one with hallucinated data
 - Use `@misc` type if no venue information is available from any source
-- Never write a `venue_status`, `year_suffix`, `same_work_group`, or `fulltext_file` field yourself
+- Never write a `venue_status`, `year_suffix`, `same_work_group`, `fulltext_file` or `status_notice` field yourself
   — the evidence
   barrier owns them and re-derives them from scratch on every run, like the
   `EVIDENCE-*` tiers. `venue_status` comes from OpenAlex after Phase 3;
   `year_suffix` is the Chicago a/b letter, assigned across all domains at once;
   `same_work_group` names entries that look like one work reprinted, grouped
   across all domains at once; `fulltext_file` names a work's full text, which
-  the barrier writes only after checking the PDF against the entry.
+  the barrier writes only after checking the PDF against the entry;
+  `status_notice` records a correction, retraction or preprint status the
+  barrier verified at CrossRef. Such a status found elsewhere goes in the
+  note at most: it licenses nothing in the review.
   A hand-written value is either stripped or, if the stripper cannot reach it,
   overwritten and reported as untrusted.
 

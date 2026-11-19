@@ -445,6 +445,24 @@ class TestSameKeySubtitleVariants:
             s = ys.assign_suffixes(list(perm))["suffixes"]
             assert sorted(s.values()) == ["a", "b", "c"]
 
+    def test_three_title_keys_under_one_key_stay_apart_without_dois(self):
+        """A bare title beside two different subtitles, no DOI anywhere: the
+        DOI filter has nothing to see, so only the two-title-key rule keeps
+        "A: X" and "A: Y" from becoming one work."""
+        res = ys.assign_suffixes([
+            self.k((1, "r"), "r", self.SHORT),
+            self.k((2, "r"), "r", self.SHORT + ": Ethics"),
+            self.k((3, "r"), "r", self.SHORT + ": Politics")])["suffixes"]
+        assert res[(2, "r")] != res[(3, "r")]
+
+    def test_two_dois_under_one_key_stay_apart(self):
+        """Same key, a bare title and its subtitle, but each copy has its own
+        DOI: two works, whatever the trial partition says."""
+        res = ys.assign_suffixes([
+            self.k((1, "r"), "r", self.SHORT, doi="10.1/one"),
+            self.k((2, "r"), "r", self.LONG, doi="10.1/two")])["suffixes"]
+        assert res[(1, "r")] != res[(2, "r")]
+
     def test_merges_that_together_join_conflicting_dois_are_all_rejected(self):
         """Each key's merge is safe alone, but the two DOI-less short copies
         are one work (same fallback key), so applying both would put

@@ -1,0 +1,55 @@
+{
+ "status": "ok",
+ "message-type": "work-list",
+ "message-version": "1.0.0",
+ "message": {
+  "facets": {
+   "update-type": {
+    "value-count": 34,
+    "values": {
+     "correction": 218704,
+     "erratum": 119286,
+     "retraction": 81692,
+     "new_version": 45370,
+     "new_edition": 10924,
+     "corrigendum": 8895,
+     "expression_of_concern": 4475,
+     "withdrawal": 3422,
+     "addendum": 1769,
+     "removal": 706,
+     "clarification": 509,
+     "err": 191,
+     "corrected": 54,
+     "corrected-article": 38,
+     "article": 21,
+     "comment": 13,
+     "Erratum": 11,
+     "expression-of-concern": 6,
+     "Corrigendum": 5,
+     "publisher-note": 4,
+     "unknown": 3,
+     "Retraction": 3,
+     "sample_update": 2,
+     "partial_retraction": 2,
+     "this_is_some_update_23": 1,
+     "tg-report": 1,
+     "retration": 1,
+     "retracion": 1,
+     "print": 1,
+     "point-counterpoint": 1,
+     "interesting_update": 1,
+     "correspondence": 1,
+     "book-review": 1,
+     "68818": 1
+    }
+   }
+  },
+  "total-results": 489771,
+  "items": [],
+  "items-per-page": 0,
+  "query": {
+   "start-index": 0,
+   "search-terms": null
+  }
+ }
+}

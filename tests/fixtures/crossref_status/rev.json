@@ -1,0 +1,914 @@
+{
+ "status": "ok",
+ "message-type": "work-list",
+ "message-version": "1.0.0",
+ "message": {
+  "facets": {},
+  "total-results": 4,
+  "items": [
+   {
+    "indexed": {
+     "date-parts": [
+      [
+       2026,
+       5,
+       4
+      ]
+     ],
+     "date-time": "2026-05-04T06:36:05Z",
+     "timestamp": 1777876565236,
+     "version": "3.51.4"
+    },
+    "update-to": [
+     {
+      "DOI": "10.1177/1758835919874651",
+      "type": "retraction",
+      "label": "Retraction",
+      "source": "retraction-watch",
+      "updated": {
+       "date-parts": [
+        [
+         2021,
+         12,
+         15
+        ]
+       ],
+       "date-time": "2021-12-15T00:00:00Z",
+       "timestamp": 1639526400000
+      },
+      "record-id": "34999"
+     },
+     {
+      "DOI": "10.1177/1758835919874651",
+      "type": "retraction",
+      "label": "Retraction",
+      "source": "publisher",
+      "updated": {
+       "date-parts": [
+        [
+         2021,
+         12,
+         15
+        ]
+       ],
+       "date-time": "2021-12-15T00:00:00Z",
+       "timestamp": 1639526400000
+      }
+     }
+    ],
+    "reference-count": 0,
+    "publisher": "SAGE Publications",
+    "license": [
+     {
+      "start": {
+       "date-parts": [
+        [
+         2021,
+         1,
+         1
+        ]
+       ],
+       "date-time": "2021-01-01T00:00:00Z",
+       "timestamp": 1609459200000
+      },
+      "content-version": "unspecified",
+      "delay-in-days": 0,
+      "URL": "https://creativecommons.org/licenses/by-nc/4.0/"
+     }
+    ],
+    "content-domain": {
+     "domain": [
+      "journals.sagepub.com"
+     ],
+     "crossmark-restriction": true
+    },
+    "short-container-title": [
+     "Ther Adv Med Oncol"
+    ],
+    "published-print": {
+     "date-parts": [
+      [
+       2021,
+       1
+      ]
+     ]
+    },
+    "DOI": "10.1177/17588359211061903",
+    "type": "journal-article",
+    "created": {
+     "date-parts": [
+      [
+       2021,
+       12,
+       15
+      ]
+     ],
+     "date-time": "2021-12-15T04:47:01Z",
+     "timestamp": 1639543621000
+    },
+    "update-policy": "https://doi.org/10.1177/sage-journals-update-policy",
+    "source": "Crossref",
+    "is-referenced-by-count": 0,
+    "title": [
+     "Retraction notice: Downregulation of long noncoding RNA LINC01419 inhibits cell migration, invasion, and tumor growth and promotes autophagy via inactivation of the PI3K/Akt1/mTOR pathway in gastric cancer."
+    ],
+    "prefix": "10.1177",
+    "volume": "13",
+    "member": "179",
+    "published-online": {
+     "date-parts": [
+      [
+       2021,
+       12,
+       15
+      ]
+     ]
+    },
+    "container-title": [
+     "Therapeutic Advances in Medical Oncology"
+    ],
+    "language": "en",
+    "link": [
+     {
+      "URL": "https://journals.sagepub.com/doi/pdf/10.1177/17588359211061903",
+      "content-type": "application/pdf",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+     },
+     {
+      "URL": "https://journals.sagepub.com/doi/full-xml/10.1177/17588359211061903",
+      "content-type": "application/xml",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+     },
+     {
+      "URL": "https://journals.sagepub.com/doi/pdf/10.1177/17588359211061903",
+      "content-type": "unspecified",
+      "content-version": "vor",
+      "intended-application": "similarity-checking"
+     }
+    ],
+    "deposited": {
+     "date-parts": [
+      [
+       2026,
+       4,
+       30
+      ]
+     ],
+     "date-time": "2026-04-30T22:26:36Z",
+     "timestamp": 1777587996000
+    },
+    "score": 0.0,
+    "resource": {
+     "primary": {
+      "URL": "https://journals.sagepub.com/doi/10.1177/17588359211061903"
+     }
+    },
+    "issued": {
+     "date-parts": [
+      [
+       2021,
+       1
+      ]
+     ]
+    },
+    "references-count": 0,
+    "alternative-id": [
+     "10.1177/17588359211061903"
+    ],
+    "URL": "https://doi.org/10.1177/17588359211061903",
+    "ISSN": [
+     "1758-8359",
+     "1758-8359"
+    ],
+    "issn-type": [
+     {
+      "value": "1758-8359",
+      "type": "print"
+     },
+     {
+      "value": "1758-8359",
+      "type": "electronic"
+     }
+    ],
+    "published": {
+     "date-parts": [
+      [
+       2021,
+       1
+      ]
+     ]
+    },
+    "article-number": "17588359211061903"
+   },
+   {
+    "indexed": {
+     "date-parts": [
+      [
+       2026,
+       4,
+       8
+      ]
+     ],
+     "date-time": "2026-04-08T05:03:01Z",
+     "timestamp": 1775624581124,
+     "version": "3.50.1"
+    },
+    "update-to": [
+     {
+      "DOI": "10.1016/j.lungcan.2003.10.006",
+      "type": "expression_of_concern",
+      "label": "Expression of concern",
+      "source": "publisher",
+      "updated": {
+       "date-parts": [
+        [
+         2026,
+         5,
+         1
+        ]
+       ],
+       "date-time": "2026-05-01T00:00:00Z",
+       "timestamp": 1777593600000
+      }
+     }
+    ],
+    "reference-count": 0,
+    "publisher": "Elsevier BV",
+    "license": [
+     {
+      "start": {
+       "date-parts": [
+        [
+         2026,
+         5,
+         1
+        ]
+       ],
+       "date-time": "2026-05-01T00:00:00Z",
+       "timestamp": 1777593600000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+     },
+     {
+      "start": {
+       "date-parts": [
+        [
+         2026,
+         5,
+         1
+        ]
+       ],
+       "date-time": "2026-05-01T00:00:00Z",
+       "timestamp": 1777593600000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/legal/tdmrep-license"
+     },
+     {
+      "start": {
+       "date-parts": [
+        [
+         2026,
+         5,
+         1
+        ]
+       ],
+       "date-time": "2026-05-01T00:00:00Z",
+       "timestamp": 1777593600000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-017"
+     },
+     {
+      "start": {
+       "date-parts": [
+        [
+         2026,
+         5,
+         1
+        ]
+       ],
+       "date-time": "2026-05-01T00:00:00Z",
+       "timestamp": 1777593600000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-037"
+     },
+     {
+      "start": {
+       "date-parts": [
+        [
+         2026,
+         5,
+         1
+        ]
+       ],
+       "date-time": "2026-05-01T00:00:00Z",
+       "timestamp": 1777593600000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-012"
+     },
+     {
+      "start": {
+       "date-parts": [
+        [
+         2026,
+         5,
+         1
+        ]
+       ],
+       "date-time": "2026-05-01T00:00:00Z",
+       "timestamp": 1777593600000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-029"
+     },
+     {
+      "start": {
+       "date-parts": [
+        [
+         2026,
+         5,
+         1
+        ]
+       ],
+       "date-time": "2026-05-01T00:00:00Z",
+       "timestamp": 1777593600000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-004"
+     }
+    ],
+    "content-domain": {
+     "domain": [
+      "clinicalkey.com",
+      "clinicalkey.com.au",
+      "clinicalkey.es",
+      "clinicalkey.fr",
+      "clinicalkey.jp",
+      "lungcancerjournal.info",
+      "elsevier.com",
+      "sciencedirect.com"
+     ],
+     "crossmark-restriction": true
+    },
+    "short-container-title": [
+     "Lung Cancer"
+    ],
+    "published-print": {
+     "date-parts": [
+      [
+       2026,
+       5
+      ]
+     ]
+    },
+    "DOI": "10.1016/j.lungcan.2026.109332",
+    "type": "journal-article",
+    "created": {
+     "date-parts": [
+      [
+       2026,
+       2,
+       13
+      ]
+     ],
+     "date-time": "2026-02-13T16:07:42Z",
+     "timestamp": 1770998862000
+    },
+    "page": "109332",
+    "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+    "source": "Crossref",
+    "is-referenced-by-count": 0,
+    "special_numbering": "C",
+    "title": [
+     "Expression of concern for \u201c\u2018Recoverin as a paraneoplastic antigen in lung cancer: the occurrence of anti-recoverin autoantibodies in sera and recoverin in tumors\u2019 by Pavel P Philippov\u201d. [Lung Cancer 44(2) (2004) 193\u2013198, https://doi.org/10.1016/j.lungcan.2003.10.006]"
+    ],
+    "prefix": "10.1016",
+    "volume": "215",
+    "member": "78",
+    "container-title": [
+     "Lung Cancer"
+    ],
+    "language": "en",
+    "link": [
+     {
+      "URL": "https://api.elsevier.com/content/article/PII:S0169500226000760?httpAccept=text/xml",
+      "content-type": "text/xml",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+     },
+     {
+      "URL": "https://api.elsevier.com/content/article/PII:S0169500226000760?httpAccept=text/plain",
+      "content-type": "text/plain",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+     }
+    ],
+    "deposited": {
+     "date-parts": [
+      [
+       2026,
+       4,
+       8
+      ]
+     ],
+     "date-time": "2026-04-08T04:24:38Z",
+     "timestamp": 1775622278000
+    },
+    "score": 0.0,
+    "resource": {
+     "primary": {
+      "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0169500226000760"
+     }
+    },
+    "issued": {
+     "date-parts": [
+      [
+       2026,
+       5
+      ]
+     ]
+    },
+    "references-count": 0,
+    "alternative-id": [
+     "S0169500226000760"
+    ],
+    "URL": "https://doi.org/10.1016/j.lungcan.2026.109332",
+    "ISSN": [
+     "0169-5002"
+    ],
+    "issn-type": [
+     {
+      "value": "0169-5002",
+      "type": "print"
+     }
+    ],
+    "published": {
+     "date-parts": [
+      [
+       2026,
+       5
+      ]
+     ]
+    },
+    "assertion": [
+     {
+      "value": "Elsevier",
+      "name": "publisher",
+      "label": "This article is maintained by"
+     },
+     {
+      "value": "Expression of concern for \u201c\u2018Recoverin as a paraneoplastic antigen in lung cancer: the occurrence of anti-recoverin autoantibodies in sera and recoverin in tumors\u2019 by Pavel P Philippov\u201d. [Lung Cancer 44(2) (2004) 193\u2013198, https://doi.org/10.1016/j.lungcan.2003.10.006]",
+      "name": "articletitle",
+      "label": "Article Title"
+     },
+     {
+      "value": "Lung Cancer",
+      "name": "journaltitle",
+      "label": "Journal Title"
+     },
+     {
+      "value": "https://doi.org/10.1016/j.lungcan.2026.109332",
+      "name": "articlelink",
+      "label": "CrossRef DOI link to publisher maintained version"
+     },
+     {
+      "value": "https://doi.org/10.1016/j.lungcan.2003.10.006",
+      "name": "associatedlink",
+      "label": "CrossRef DOI link to the associated document"
+     },
+     {
+      "value": "simple-article",
+      "name": "content_type",
+      "label": "Content Type"
+     },
+     {
+      "value": "\u00a9 2026 Elsevier B.V. All rights are reserved, including those for text and data mining, AI training, and similar technologies.",
+      "name": "copyright",
+      "label": "Copyright"
+     }
+    ],
+    "article-number": "109332"
+   },
+   {
+    "indexed": {
+     "date-parts": [
+      [
+       2025,
+       12,
+       30
+      ]
+     ],
+     "date-time": "2025-12-30T22:48:47Z",
+     "timestamp": 1767134927965,
+     "version": "build-2238731810"
+    },
+    "update-to": [
+     {
+      "DOI": "10.1002/14651858.cd009522",
+      "type": "withdrawal",
+      "label": "Withdrawal",
+      "source": "publisher",
+      "updated": {
+       "date-parts": [
+        [
+         2021,
+         11,
+         2
+        ]
+       ],
+       "date-time": "2021-11-02T00:00:00Z",
+       "timestamp": 1635811200000
+      }
+     }
+    ],
+    "reference-count": 0,
+    "publisher": "Wiley",
+    "issue": "11",
+    "content-domain": {
+     "domain": [
+      "wiley.com",
+      "cochranelibrary.com"
+     ],
+     "crossmark-restriction": true
+    },
+    "DOI": "10.1002/14651858.cd009522.pub2",
+    "type": "journal-article",
+    "created": {
+     "date-parts": [
+      [
+       2021,
+       11,
+       2
+      ]
+     ],
+     "date-time": "2021-11-02T17:37:24Z",
+     "timestamp": 1635874644000
+    },
+    "update-policy": "https://doi.org/10.1002/crossmark_policy",
+    "source": "Crossref",
+    "is-referenced-by-count": 0,
+    "title": [
+     "Adefovir dipivoxil versus other antiviral drugs for chronic hepatitis B"
+    ],
+    "prefix": "10.1002",
+    "volume": "2021",
+    "author": [
+     {
+      "given": "Basile",
+      "family": "Njei",
+      "sequence": "additional",
+      "affiliation": [
+       {
+        "name": "Section of Digestive Diseases and Investigative Medicine; Yale University School of Medicine; New Haven Connecticut USA"
+       }
+      ],
+      "role": [
+       {
+        "role": "author",
+        "vocabulary": "crossref"
+       }
+      ]
+     },
+     {
+      "given": "Sushil K",
+      "family": "Garg",
+      "sequence": "additional",
+      "affiliation": [
+       {
+        "name": "Division of Gastroenterology and Hepatology; Mayo Clinic College of Medicine; Rochester MN USA"
+       }
+      ],
+      "role": [
+       {
+        "role": "author",
+        "vocabulary": "crossref"
+       }
+      ]
+     },
+     {
+      "given": "Saurabh",
+      "family": "Sethi",
+      "sequence": "additional",
+      "affiliation": [
+       {
+        "name": "Beth Israel Deaconess Medical Center; Boston MA USA"
+       }
+      ],
+      "role": [
+       {
+        "role": "author",
+        "vocabulary": "crossref"
+       }
+      ]
+     },
+     {
+      "given": "Eugene J",
+      "family": "Kongnyuy",
+      "sequence": "additional",
+      "affiliation": [
+       {
+        "name": "Reproductive Health Solutions; Salisbury UK"
+       }
+      ],
+      "role": [
+       {
+        "role": "author",
+        "vocabulary": "crossref"
+       }
+      ]
+     }
+    ],
+    "member": "311",
+    "published-online": {
+     "date-parts": [
+      [
+       2021,
+       11,
+       2
+      ]
+     ]
+    },
+    "container-title": [
+     "Cochrane Database of Systematic Reviews"
+    ],
+    "language": "en",
+    "deposited": {
+     "date-parts": [
+      [
+       2021,
+       11,
+       16
+      ]
+     ],
+     "date-time": "2021-11-16T03:17:19Z",
+     "timestamp": 1637032639000
+    },
+    "score": 0.0,
+    "resource": {
+     "primary": {
+      "URL": "http://doi.wiley.com/10.1002/14651858.CD009522.pub2"
+     }
+    },
+    "editor": [
+     {
+      "name": "Cochrane Hepato-Biliary Group",
+      "sequence": "first",
+      "affiliation": [],
+      "role": [
+       {
+        "role": "editor",
+        "vocabulary": "crossref"
+       }
+      ]
+     }
+    ],
+    "issued": {
+     "date-parts": [
+      [
+       2021,
+       11,
+       2
+      ]
+     ]
+    },
+    "references-count": 0,
+    "journal-issue": {
+     "issue": "11",
+     "published-online": {
+      "date-parts": [
+       [
+        2021,
+        11
+       ]
+      ]
+     }
+    },
+    "URL": "https://doi.org/10.1002/14651858.cd009522.pub2",
+    "ISSN": [
+     "1465-1858"
+    ],
+    "issn-type": [
+     {
+      "value": "1465-1858",
+      "type": "electronic"
+     }
+    ],
+    "published": {
+     "date-parts": [
+      [
+       2021,
+       11,
+       2
+      ]
+     ]
+    }
+   },
+   {
+    "indexed": {
+     "date-parts": [
+      [
+       2026,
+       11,
+       18
+      ]
+     ],
+     "date-time": "2026-11-18T18:30:12Z",
+     "timestamp": 1795026612890,
+     "version": "4.10.2"
+    },
+    "update-to": [
+     {
+      "DOI": "10.3390/soc15010006",
+      "type": "correction",
+      "label": "Correction",
+      "source": "publisher",
+      "updated": {
+       "date-parts": [
+        [
+         2025,
+         1,
+         3
+        ]
+       ],
+       "date-time": "2025-01-03T00:00:00Z",
+       "timestamp": 1735862400000
+      }
+     }
+    ],
+    "reference-count": 1,
+    "publisher": "MDPI AG",
+    "issue": "9",
+    "license": [
+     {
+      "start": {
+       "date-parts": [
+        [
+         2025,
+         9,
+         10
+        ]
+       ],
+       "date-time": "2025-09-10T00:00:00Z",
+       "timestamp": 1757462400000
+      },
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "URL": "https://creativecommons.org/licenses/by/4.0/"
+     }
+    ],
+    "content-domain": {
+     "domain": [
+      "www.mdpi.com"
+     ],
+     "crossmark-restriction": true
+    },
+    "short-container-title": [
+     "Societies"
+    ],
+    "abstract": "<jats:p>Error in Table [...]</jats:p>",
+    "DOI": "10.3390/soc15090252",
+    "type": "journal-article",
+    "created": {
+     "date-parts": [
+      [
+       2025,
+       9,
+       10
+      ]
+     ],
+     "date-time": "2025-09-10T14:14:55Z",
+     "timestamp": 1757513695000
+    },
+    "page": "252",
+    "update-policy": "https://doi.org/10.3390/mdpi_crossmark_policy",
+    "source": "Crossref",
+    "is-referenced-by-count": 28,
+    "title": [
+     "Correction: Gerlich, M. AI Tools in Society: Impacts on Cognitive Offloading and the Future of Critical Thinking. Societies 2025, 15, 6"
+    ],
+    "prefix": "10.3390",
+    "volume": "15",
+    "author": [
+     {
+      "ORCID": "https://orcid.org/0000-0003-4033-4403",
+      "authenticated-orcid": false,
+      "given": "Michael",
+      "family": "Gerlich",
+      "sequence": "first",
+      "affiliation": [
+       {
+        "name": "Center for Strategic Corporate Foresight and Sustainability, SBS Swiss Business School, 8302 Kloten-Zurich, Switzerland"
+       }
+      ],
+      "role": [
+       {
+        "vocabulary": "crossref",
+        "role": "author"
+       }
+      ]
+     }
+    ],
+    "member": "1968",
+    "published-online": {
+     "date-parts": [
+      [
+       2025,
+       9,
+       10
+      ]
+     ]
+    },
+    "container-title": [
+     "Societies"
+    ],
+    "language": "en",
+    "link": [
+     {
+      "URL": "https://www.mdpi.com/2075-4698/15/9/252/pdf",
+      "content-type": "unspecified",
+      "content-version": "vor",
+      "intended-application": "similarity-checking"
+     }
+    ],
+    "deposited": {
+     "date-parts": [
+      [
+       2025,
+       9,
+       10
+      ]
+     ],
+     "date-time": "2025-09-10T14:22:25Z",
+     "timestamp": 1757514145000
+    },
+    "score": 0.0,
+    "resource": {
+     "primary": {
+      "URL": "https://www.mdpi.com/2075-4698/15/9/252"
+     }
+    },
+    "issued": {
+     "date-parts": [
+      [
+       2025,
+       9,
+       10
+      ]
+     ]
+    },
+    "references-count": 1,
+    "journal-issue": {
+     "issue": "9",
+     "published-online": {
+      "date-parts": [
+       [
+        2025,
+        9
+       ]
+      ]
+     }
+    },
+    "alternative-id": [
+     "soc15090252"
+    ],
+    "URL": "https://doi.org/10.3390/soc15090252",
+    "ISSN": [
+     "2075-4698"
+    ],
+    "issn-type": [
+     {
+      "value": "2075-4698",
+      "type": "electronic"
+     }
+    ],
+    "published": {
+     "date-parts": [
+      [
+       2025,
+       9,
+       10
+      ]
+     ]
+    }
+   }
+  ],
+  "items-per-page": 50,
+  "query": {
+   "start-index": 0,
+   "search-terms": null
+  }
+ }
+}

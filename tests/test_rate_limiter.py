@@ -619,3 +619,34 @@ def test_user_agent_empty_env_falls_back_at_call_time(monkeypatch):
         "Mozilla/5.0 (compatible; PhiloResearchBot/1.0; "
         "+https://github.com/AI-4-Phi/PhilLit)"
     )
+
+
+class TestBoundedWait:
+    """PL-39 P6: wait(max_seconds=...) never waits past a caller's deadline."""
+
+    def test_a_slot_within_the_bound_is_waited_for(self, tmp_path, monkeypatch):
+        monkeypatch.setattr(RateLimiter, "LOCK_DIR", tmp_path)
+        limiter = RateLimiter("bounded_ok", 0.05)
+        assert limiter.wait(max_seconds=10) is not None
+        assert limiter.wait(max_seconds=10) is not None
+
+    def test_a_slot_past_the_bound_is_refused_and_not_reserved(self, tmp_path, monkeypatch):
+        monkeypatch.setattr(RateLimiter, "LOCK_DIR", tmp_path)
+        slept = []
+        monkeypatch.setattr("rate_limiter.time.sleep", lambda s: slept.append(s))
+        limiter = RateLimiter("bounded_far", 30.0)
+        assert limiter.wait() == 0.0                      # first slot: now
+        before = limiter.lock_file.read_text()
+        assert limiter.wait(max_seconds=1.0) is None       # next slot is ~30 s away
+        assert slept == []                                 # never slept
+        assert limiter.lock_file.read_text() == before     # never reserved
+
+    def test_no_bound_keeps_the_old_behaviour(self, tmp_path, monkeypatch):
+        monkeypatch.setattr(RateLimiter, "LOCK_DIR", tmp_path)
+        slept = []
+        monkeypatch.setattr("rate_limiter.time.sleep", lambda s: slept.append(s))
+        limiter = RateLimiter("bounded_none", 30.0)
+        limiter.wait()
+        waited = limiter.wait()
+        assert waited > 0 and slept == [waited]
+

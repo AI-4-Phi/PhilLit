@@ -23,7 +23,7 @@ def _no_real_rate_limiting(monkeypatch):
     # forbidden by this suite's test discipline. The return value is unused
     # by lookup_venue, so a no-op stand-in is safe everywhere.
     class _NoWaitLimiter:
-        def wait(self):
+        def wait(self, max_seconds=None):
             return 0.0
     monkeypatch.setattr(vv, "get_limiter", lambda *a, **k: _NoWaitLimiter())
 
@@ -506,7 +506,7 @@ class TestVetVenues:
         monkeypatch.setenv("PHILLIT_VET_VENUES", "true")
         seen = {}
 
-        def fake_lookup(name, params, headers):
+        def fake_lookup(name, params, headers, deadline=None):
             seen["called"] = True
             return {"schema_version": vv.RECORD_SCHEMA_VERSION, "resolved": False,
                     "fetched_at": time.time()}, "ok"
@@ -612,7 +612,7 @@ class TestVetVenues:
         monkeypatch.setenv("OPENALEX_API_KEY", "sekret")
         seen = {}
 
-        def fake_lookup(name, params, headers):
+        def fake_lookup(name, params, headers, deadline=None):
             seen["params"] = params
             seen["headers"] = headers
             return {"schema_version": vv.RECORD_SCHEMA_VERSION, "resolved": False,
@@ -812,7 +812,7 @@ class TestHonestStatusAndErrors:
         # lookup_venue broke that contract -- it must be treated as an
         # unresolved lookup, same as an "error" outcome.
         monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
-        monkeypatch.setattr(vv, "lookup_venue", lambda name, params, headers: (None, "ok"))
+        monkeypatch.setattr(vv, "lookup_venue", lambda name, params, headers, deadline=None: (None, "ok"))
         result = vv.vet_venues(["Some Journal"])
         assert result["status"] == "partial"
         assert result["lookup_errors"] == 1
@@ -986,7 +986,10 @@ class TestTimeBounds:
         # this test anticipated must not raise StopIteration far from this
         # assertion -- the default keeps every over-read safely past the
         # deadline instead.
-        clock = iter([0.0, 1.0])
+        # Four reads before the first lookup: the clock start, the loop's
+        # check, the time left that bounds the limiter wait, and the recheck
+        # after it (PL-39).
+        clock = iter([0.0, 1.0, 2.0, 3.0])
         monkeypatch.setattr(vv.time, "monotonic", lambda: next(clock, vv.PASS_DEADLINE_SECONDS + 1))
         result = vv.vet_venues(["Journal A", "Journal B", "Journal C"])
         assert len(calls) == 1  # only the first venue's lookup happened before the deadline
@@ -994,6 +997,62 @@ class TestTimeBounds:
         assert result["skipped_cap"] == 2
         assert result["status"] == "partial"
         assert "deadline" in result["reason"]  # distinguishable from a lookup-cap stop
+
+    def test_an_explicit_deadline_replaces_the_passs_own(self, monkeypatch, isolated_cache):
+        """PL-39: the barrier's metadata phase hands one absolute deadline to
+        the status pass and then to vet_venues, so a slow status pass shrinks
+        venue vetting's share instead of adding a second 120 s window."""
+        monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
+        calls = []
+        monkeypatch.setattr(vv.requests, "get",
+                             lambda *a, **k: (calls.append(1), FakeResponse(payload={"results": []}))[1])
+        result = vv.vet_venues(["Journal A", "Journal B"],
+                               deadline=vv.time.monotonic() - 1)
+        assert calls == []
+        assert result["capped"] == ["journal a", "journal b"]
+        assert "deadline" in result["reason"]
+
+    def test_a_limiter_slot_past_the_deadline_is_never_waited_for(self, monkeypatch, isolated_cache):
+        """PL-39 P6: the wait is bounded by the time left; a refused wait
+        (None) sends nothing and lands in `capped` with the deadline reason."""
+        monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
+        asked = []
+
+        class Busy:
+            def wait(self, max_seconds=None):
+                asked.append(max_seconds)
+                return None
+        monkeypatch.setattr(vv, "get_limiter", lambda *a, **k: Busy())
+        calls = []
+        monkeypatch.setattr(vv.requests, "get",
+                             lambda *a, **k: (calls.append(1), FakeResponse(payload={"results": []}))[1])
+        result = vv.vet_venues(["Journal A"], deadline=vv.time.monotonic() + 5)
+        assert calls == []
+        assert asked and 0 < asked[0] <= 5
+        assert result["capped"] == ["journal a"] and result["looked_up"] == 0
+        assert "deadline" in result["reason"]
+
+    def test_deadline_rechecked_after_the_limiter_wait(self, monkeypatch, isolated_cache):
+        """The limiter wait can itself cross the deadline: then no request is
+        sent, the venue lands in `capped`, and nothing counts as a lookup or
+        an error."""
+        monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
+        clock = {"t": 0.0}
+        monkeypatch.setattr(vv.time, "monotonic", lambda: clock["t"])
+
+        class SlowLimiter:
+            def wait(self, max_seconds=None):
+                clock["t"] += 50.0
+                return 50.0
+        monkeypatch.setattr(vv, "get_limiter", lambda *a, **k: SlowLimiter())
+        calls = []
+        monkeypatch.setattr(vv.requests, "get",
+                             lambda *a, **k: (calls.append(1), FakeResponse(payload={"results": []}))[1])
+        result = vv.vet_venues(["Journal A"], deadline=30.0)
+        assert calls == []
+        assert result["capped"] == ["journal a"]
+        assert result["looked_up"] == 0 and result["lookup_errors"] == 0
+        assert result["status"] == "partial" and "deadline" in result["reason"]
 
     def test_cache_hits_do_not_count_against_deadline(self, monkeypatch, isolated_cache):
         # Populate the cache for one venue via a real lookup, then re-run
