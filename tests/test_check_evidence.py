@@ -639,7 +639,7 @@ def test_a_multi_cite_sentence_names_every_unlicensed_work(tmp_path):
     lines = [l for l in _status_lines(tmp_path, md) if "status-claim" in l]
     assert len(lines) == 1
     assert lines[0].startswith(
-        "CHECK status-claim: bastani2025gen, costello2024durably "
+        "CHECK status-claim: costello2024durably, bastani2025gen "
         "(retraction; licensed: wang2019down): ")
 
 
@@ -734,3 +734,85 @@ def test_retracted_cited_prints_each_sentence_in_full(tmp_path):
     lines = [l for l in _status_lines(tmp_path, long) if "retracted-cited" in l]
     assert lines and lines[0].endswith(long)
 
+
+# Review round 3 (PL-39)
+
+def _link_lines(tmp_path, md):
+    return [l for l in _run(tmp_path, md, BIB_STATUS).stdout.splitlines()
+            if l.startswith("CHECK status-link")]
+
+
+def test_a_page_locator_does_not_end_the_sentence(tmp_path):
+    """Z1 and Z2: "p. 12" is not a boundary; "the former" names the first
+    of exactly two cited works."""
+    md = "Costello (2024, p. 12) and Bastani (2025) agree; the former was corrected."
+    lines = [l for l in _status_lines(tmp_path, md) if "status-claim" in l]
+    assert len(lines) == 1
+    assert lines[0].startswith("CHECK status-claim: costello2024durably (correction): ")
+    assert "bastani2025gen" not in lines[0].split(":", 2)[1]
+
+
+def test_retracted_cited_keeps_a_page_locator_sentence_whole(tmp_path):
+    lines = [l for l in _status_lines(tmp_path, "Wang (2019, p. 12) reports a mechanism.")
+             if "retracted-cited" in l]
+    assert lines and lines[0].endswith("Wang (2019, p. 12) reports a mechanism.")
+
+
+def test_the_unit_reaches_two_following_sentences(tmp_path):
+    md = "Costello (2024) argues X. Many agree. The article was later retracted."
+    assert any(l.startswith("CHECK status-claim: costello2024durably (retraction)")
+               for l in _status_lines(tmp_path, md))
+    md = "Costello (2024) argues X. Many agree. Few dissent. It was retracted."
+    assert not any("status-claim" in l for l in _status_lines(tmp_path, md))
+
+
+def test_the_unit_reaches_one_preceding_sentence(tmp_path):
+    md = "This work was later retracted. Costello (2024) had argued X."
+    assert any(l.startswith("CHECK status-claim: costello2024durably (retraction)")
+               for l in _status_lines(tmp_path, md))
+
+
+def test_the_latter_names_the_last_of_two(tmp_path):
+    md = "Costello (2024) and Wang (2019) agree. The latter was retracted."
+    assert not any("status-claim" in l for l in _status_lines(tmp_path, md))
+    md = "Costello (2024) and Wang (2019) agree. The former was retracted."
+    lines = [l for l in _status_lines(tmp_path, md) if "status-claim" in l]
+    assert len(lines) == 1 and lines[0].startswith(
+        "CHECK status-claim: costello2024durably (retraction): ")
+
+
+def test_status_link_fires_when_the_first_statement_lacks_the_doi(tmp_path):
+    """Z6: a licensed status statement without its notice link."""
+    assert any(l.startswith("CHECK status-link: wang2019down (retraction)")
+               for l in _link_lines(tmp_path, "Wang (2019): this work has been retracted."))
+    assert _link_lines(tmp_path, "Wang (2019): this work has been retracted "
+                       "(https://doi.org/10.1177/17588359211061903).") == []
+    assert _link_lines(tmp_path, "A correction notice for this work has been published "
+                       "(10.3390/soc15090252) (Gerlich 2025).") == []
+    assert _link_lines(tmp_path, "Bastani (2025) is a preprint.") == []
+
+
+def test_status_link_only_for_the_first_mention(tmp_path):
+    md = ("Wang (2019): this work has been retracted "
+          "(https://doi.org/10.1177/17588359211061903). Later, Wang (2019) is "
+          "cited again as retracted.")
+    assert _link_lines(tmp_path, md) == []
+
+
+def test_retracted_cited_includes_a_following_disclosure(tmp_path):
+    """Z10."""
+    md = ("Wang (2019) reports a mechanism. This work has been retracted "
+          "(https://doi.org/10.1177/17588359211061903).")
+    lines = [l for l in _status_lines(tmp_path, md) if "retracted-cited" in l]
+    assert lines and "This work has been retracted" in lines[0]
+
+
+def test_status_link_counted_in_the_summary(tmp_path):
+    import json
+    out = _run(tmp_path, "Wang (2019): this work has been retracted.", BIB_STATUS).stdout
+    assert json.loads(out.rsplit("CHECK-SUMMARY: ", 1)[1])["status_link"] == 1
+
+
+def test_status_items_is_the_grammar_check_evidence_uses():
+    import status_items
+    assert check_evidence.status_categories is status_items.categories

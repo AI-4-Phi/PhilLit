@@ -303,7 +303,12 @@ Never advance to a next step in this phase before completing the current step.
    lookup (corrections, retractions, preprints). A non-`complete` status
    carries a `reason`: mention it once in the final summary (`skipped`:
    `PHILLIT_STATUS_NOTICE` switched it off; `partial`: some entries were not
-   checked, or carry a CrossRef relation it could not map). The printed
+   checked, or carry a CrossRef relation it could not map). Per-entry states
+   besides `stamped` and `checked_none`: `not_found`, `identity_mismatch`,
+   `identity_unverifiable` (CrossRef's record has no title or authors),
+   `unresolved`, `error`, `deadline`, `splice_failed`, `not_requested:*`,
+   `not_checked:late-promotion` (promoted past EVIDENCE-NONE after the
+   lookup; expected, not a failure) and `dropped:demoted`. The printed
    summary lists only the entries that need a look; the full per-entry map
    is the `status_notice` object in `intermediate_files/json/evidence_report.json`.
    Writers may state only stamped status facts, so nothing else needs doing.
@@ -519,7 +524,7 @@ A resume that starts at step 8 cannot reproduce the split's `SPLIT-*` lines, ded
 
    (After step 8 the overrides file is at `[workdir]/intermediate_files/tier-overrides.md`.) Include every `CHECK` line **verbatim** in the final summary (they are telemetry, not blockers). A work cited under a tier override may raise a `CHECK` line, which then ends in `[user-requested override]`: keep it, and say beside it that the user asked for the work — never summarize, count, or gloss them: a live run's summary once reported four findings as "two minor notes", which hid a do-not-cite violation from the user.
 
-   Two lines concern publication status. `CHECK status-claim` names works cited in a sentence with a status word (correction, retraction, withdrawal, expression of concern, preprint) their `status_notice` field does not license. `CHECK retracted-cited` lists every sentence citing a retracted or withdrawn work: confirm each of those sentences, or the passage around it, states the status, and say in the final summary which do not.
+   Three lines concern publication status. `CHECK status-claim` names works cited near a status word (correction, retraction, withdrawal, expression of concern, preprint) their `status_notice` field does not license. `CHECK status-link` names a licensed status statement whose notice link is missing at its first mention. `CHECK retracted-cited` lists every sentence citing a retracted or withdrawn work: confirm each of those sentences, or the passage around it, states the status, and say in the final summary which do not.
 
    **Quotation gate (REQUIRED, right after the telemetry checker)**: run
 

@@ -30,6 +30,13 @@ live, 2026-07-28 A/B run + 2026-08-02 gate-(b) validation run):
 - Editor-only entries are INVISIBLE: rc_surname reads the author field, so
   an entry with only `editor` gets no surname and is skipped entirely --
   neither its violations nor its none-cites can ever be flagged.
+- Status words are matched as words, not senses: "a correction of Kant's
+  argument" or "the withdrawal of troops" in a sentence citing a work raises
+  `status-claim` for it. A unit (the citing sentence, one non-citing
+  sentence before it, two after) can also attribute a status word to every
+  work it cites; only "the former" / "the latter" with exactly two cited
+  works narrow it, so "Smith (2020) cites Jones (2019), whose paper was
+  retracted" names Smith too.
 """
 from __future__ import annotations
 
@@ -43,8 +50,9 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 import stamp_evidence as se
 from enrich_bibliography import get_author_last_name  # noqa: E402 - same directory
-# The status_notice value grammar has one owner, the barrier's lookup module.
-from status_notice import categories as status_categories  # noqa: E402
+# The status_notice value grammar's one owner, a leaf module (aliases).
+from status_items import categories as status_categories  # noqa: E402
+from status_items import parse_items as status_items_of  # noqa: E402
 
 _MATCH_WINDOW = 60  # mirrors generate_bibliography._MATCH_WINDOW
 
@@ -274,8 +282,11 @@ _ANY_STOP = r"[.!?]"
 # otherwise cut the status word off from the cite.
 # "et al.", "e.g.", "i.e." and "cf." never end one either: multi-author
 # empirical work, where notices cluster, is cited "Costello et al. (2024)".
+# A stop ends a status sentence only when whitespace and then an uppercase
+# letter, an opening quote or a bracket follow, or the text ends: "(2024,
+# p. 12)" and "pp. 4-5" never cut a sentence.
 _SPACED_STOP = (r"(?<!\bet al)(?<!\be\.g)(?<!\bi\.e)(?<!\bcf)"
-                r"[.!?](?=\s|$)")
+                r"[.!?](?=\s+[A-Z\"'\u201c\u2018(\[]|\s*\Z)")
 
 
 def _sentence_at(md: str, pos: int, stop: str = _ANY_STOP) -> str:
@@ -356,49 +367,123 @@ def _next_span(md: str, end: int, stop: str) -> tuple[int, int] | None:
     return start, (start + m.end() if m else len(md))
 
 
-def status_checks(md: str, entries: dict,
-                  override_keys: set | None = None) -> tuple[list[str], list[str]]:
-    """(status-claim lines, retracted-cited lines). `entries` maps key to
-    {"positions": cite positions, "status": status_notice categories}.
+def _prev_span(md: str, start: int, stop: str) -> tuple[int, int] | None:
+    """The sentence right before `start` in the same paragraph, if any."""
+    head = md[:start]
+    gap = head[len(head.rstrip()):]
+    end = start - len(gap)
+    if end <= 0 or "\n\n" in gap:
+        return None
+    span = _span_at(md, end - 1, stop)
+    para = md.rfind("\n\n", 0, end)
+    first = max(span[0], para + 2 if para >= 0 else 0)
+    while first < end and md[first].isspace():
+        first += 1
+    return (first, end) if first < end else None
 
-    status-claim: a sentence citing an entry -- together with the sentence
-    right after it when that one cites nothing itself ("Costello (2024)
-    argues X. The article was later retracted.") -- holds a status word
-    whose category that entry's `status_notice` lacks; one line per unit and
-    category, naming every cited entry that lacks it and, after "licensed:",
-    the ones whose field has it. retracted-cited: one line per cited entry
-    stamped retraction, partial_retraction or withdrawal, listing in full
-    the sentences that cite it, so the orchestrator can confirm each
-    discloses the status."""
-    by_span: dict[tuple[int, int], list[str]] = {}
+
+_FORMER_RE = re.compile(r"\bthe\s+former\b", re.I)
+_LATTER_RE = re.compile(r"\bthe\s+latter\b", re.I)
+
+
+def _units(md: str, entries: dict) -> list[tuple[str, list[str], str]]:
+    """(unit text, cited keys in order of first mention, citing sentence) per
+    citing sentence. A unit is the citing sentence, the ONE non-citing
+    sentence right before it, and up to TWO consecutive non-citing sentences
+    right after it, all within its paragraph."""
+    by_span: dict[tuple[int, int], dict[str, int]] = {}
     for key, info in entries.items():
         for pos in info["positions"]:
-            keys = by_span.setdefault(_span_at(md, pos, _SPACED_STOP), [])
-            if key not in keys:
-                keys.append(key)
-    citing_starts = {start for start, _end in by_span}
-    claims = []
-    for (start, end), keys in sorted(by_span.items()):
-        nxt = _next_span(md, end, _SPACED_STOP)
-        unit_end = nxt[1] if nxt and nxt[0] not in citing_starts else end
-        unit = md[start:unit_end].strip()
-        for category in _status_categories_in(unit):
-            lacking = [k for k in keys if category not in entries[k]["status"]]
+            seen = by_span.setdefault(_span_at(md, pos, _SPACED_STOP), {})
+            seen[key] = min(pos, seen.get(key, pos))
+    starts = {a for a, _b in by_span}
+    out = []
+    for (start, end), first_pos in sorted(by_span.items()):
+        keys = sorted(first_pos, key=first_pos.get)
+        lo = start
+        prev = _prev_span(md, start, _SPACED_STOP)
+        if prev and prev[0] not in starts:
+            lo = prev[0]
+        hi = end
+        for _ in range(2):
+            nxt = _next_span(md, hi, _SPACED_STOP)
+            if not nxt or nxt[0] in starts:
+                break
+            hi = nxt[1]
+        out.append((md[lo:hi].strip(), keys, md[start:end].strip()))
+    return out
+
+
+def _addressed(unit: str, keys: list[str]) -> list[str]:
+    """"The former" / "the latter" with exactly two cited works narrow a
+    status word to the first / the last of them."""
+    if len(keys) != 2:
+        return keys
+    former, latter = bool(_FORMER_RE.search(unit)), bool(_LATTER_RE.search(unit))
+    if former and not latter:
+        return keys[:1]
+    if latter and not former:
+        return keys[1:]
+    return keys
+
+
+def _has_link(text: str, doi: str) -> bool:
+    return doi.lower() in text.lower()
+
+
+def status_checks(md: str, entries: dict,
+                  override_keys: set | None = None):
+    """(status-claim lines, retracted-cited lines, status-link lines).
+    `entries` maps key to {"positions": cite positions, "status": its
+    status_notice categories, "items": its (category, notice DOI) items}.
+
+    status-claim: a unit (see `_units`) holds a status word whose category a
+    work it cites -- narrowed by "the former" / "the latter" -- lacks; one
+    line per unit and category, naming every such work and, after
+    "licensed:", the ones whose field has it. status-link: a licensed status
+    statement whose unit lacks the notice DOI (as a link or bare), when no
+    earlier text names it either (the link is due on first mention).
+    retracted-cited: one line per cited entry stamped retraction,
+    partial_retraction or withdrawal, listing in full each citing sentence,
+    extended through the unit's following sentences when the disclosure
+    sits there, so the orchestrator can confirm each discloses the status."""
+    claims, links = [], []
+    disclosed: dict[str, list[str]] = {}
+    for unit, keys, citing in _units(md, entries):
+        cats = _status_categories_in(unit)
+        named = _addressed(unit, keys)
+        for category in cats:
+            lacking = [k for k in named if category not in entries[k]["status"]]
             if lacking:
-                licensed = [k for k in keys if k not in lacking]
+                licensed = [k for k in named if k not in lacking]
                 also = f"; licensed: {', '.join(licensed)}" if licensed else ""
                 claims.append(f"CHECK status-claim: {', '.join(lacking)} ({category}{also}): "
                               f"{_ascii(unit)}{_tag(keys, override_keys)}")
+            for k in named:
+                for cat, doi in entries[k].get("items") or []:
+                    if cat != category or not doi:
+                        continue
+                    if _has_link(unit, doi) or _has_link(md[:md.find(unit)], doi):
+                        continue
+                    links.append(f"CHECK status-link: {k} ({category}): {_ascii(unit)}"
+                                 f"{_tag([k], override_keys)}")
+        tail = unit[unit.find(citing) + len(citing):] if citing in unit else ""
+        shown = citing
+        if tail and any(c in _RETRACTED_CATEGORIES for c in _status_categories_in(tail)):
+            shown = unit[unit.find(citing):]
+        for k in keys:
+            disclosed.setdefault(k, [])
+            if shown not in disclosed[k]:
+                disclosed[k].append(shown)
     cited = []
     for key, info in entries.items():
         cats = [c for c in _RETRACTED_CATEGORIES if c in info["status"]]
-        if not cats:
+        if not cats or key not in disclosed:
             continue
-        sentences = cite_sentences(md, info["positions"], _SPACED_STOP)
         cited.append(f"CHECK retracted-cited: {key} ({', '.join(cats)}): "
-                     + " | ".join(_ascii(s) for s in sentences)
+                     + " | ".join(_ascii(x) for x in disclosed[key])
                      + _tag([key], override_keys))
-    return claims, cited
+    return claims, cited, links
 
 
 def _tag(keys, override_keys) -> str:
@@ -488,17 +573,19 @@ def main() -> int:
         entries[key] = {
             "tier": tier, "surname": surname, "year": year, "suffix": suffix,
             "status": status_categories(fields.get("status_notice")),
+            "items": status_items_of(fields.get("status_notice")),
         }
 
     counts = {"unstamped": 0, "none_cited": 0, "reporting_verb": 0,
-              "status_claim": 0, "retracted_cited": 0}
+              "status_claim": 0, "retracted_cited": 0, "status_link": 0}
     cited_status = {}
 
     for key, info in entries.items():
         positions = find_cites(md, info["surname"], info["year"], info["suffix"])
         if not positions:
             continue
-        cited_status[key] = {"positions": positions, "status": info["status"]}
+        cited_status[key] = {"positions": positions, "status": info["status"],
+                             "items": info["items"]}
         tier = info["tier"]
         tag = _OVERRIDE_TAG if key in override_keys else ""
         if tier is None:
@@ -518,10 +605,11 @@ def main() -> int:
                     print(f"CHECK reporting-verb: {key} ({label}): {snippet}{tag}")
                     counts["reporting_verb"] += 1
 
-    claims, retracted = status_checks(md, cited_status, override_keys)
-    for line in claims + retracted:
+    claims, retracted, links = status_checks(md, cited_status, override_keys)
+    for line in claims + links + retracted:
         print(line)
     counts["status_claim"], counts["retracted_cited"] = len(claims), len(retracted)
+    counts["status_link"] = len(links)
 
     print("CHECK-SUMMARY: " + json.dumps(counts))
     return 0
