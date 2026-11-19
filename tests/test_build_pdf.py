@@ -35,37 +35,46 @@ def _fake_run(outcomes):
 def test_first_clean_font_wins_and_later_fonts_are_not_tried(tmp_path):
     run, calls = _fake_run({"A": (0, WARN_BETA), "B": (0, ""), "C": (0, "")})
     pdf = tmp_path / "r.pdf"
-    font, missing = bp.build(tmp_path / "r.md", pdf, fonts=("A", "B", "C", None),
-                             available=lambda f: True, run=run)
+    font, missing = bp.build(tmp_path / "r.md", pdf, fonts=("A", "B", "C", None), run=run)
     assert (font, missing) == ("B", {})
     assert calls == ["A", "B"]
     assert pdf.read_text(encoding="utf-8") == "pdf by B"
-    assert sorted(p.name for p in tmp_path.iterdir()) == ["r.pdf"]   # no try files left
+    assert sorted(p.name for p in tmp_path.iterdir()) == ["r.pdf"]   # no temp dir left
 
 
-def test_unavailable_fonts_are_skipped_and_default_is_last_resort(tmp_path):
-    run, calls = _fake_run({None: (0, WARN_BETA)})
-    font, missing = bp.build(tmp_path / "r.md", tmp_path / "r.pdf", fonts=("A", None),
-                             available=lambda f: False, run=run)
+def test_a_font_that_fails_to_build_falls_through_to_the_default(tmp_path):
+    run, calls = _fake_run({"A": (43, "! Package fontspec Error: The font cannot be found."),
+                            None: (0, WARN_BETA)})
+    font, missing = bp.build(tmp_path / "r.md", tmp_path / "r.pdf", fonts=("A", None), run=run)
     assert font is None and sum(missing.values()) == 1
-    assert calls == [None]
+    assert calls == ["A", None]
+
+
+def test_unparsed_missing_character_is_not_clean():
+    got = bp.parse_missing("Missing character: There is no x in font foo!\n")
+    assert got == {("?", "unparsed"): 1}
+
+
+def test_pandoc_that_cannot_start_is_a_failed_build(tmp_path, monkeypatch):
+    def boom(*a, **k):
+        raise FileNotFoundError("pandoc")
+    monkeypatch.setattr(bp.subprocess, "run", boom)
+    assert bp.run_pandoc(["pandoc"])[0] == 1
+    assert bp.build(tmp_path / "r.md", tmp_path / "r.pdf", fonts=(None,)) is None
 
 
 def test_keeps_the_build_with_fewest_losses(tmp_path):
     run, _ = _fake_run({"A": (0, WARN_BETA * 5), "B": (0, WARN_BETA), None: (0, WARN_BETA * 9)})
     pdf = tmp_path / "r.pdf"
-    font, missing = bp.build(tmp_path / "r.md", pdf, fonts=("A", "B", None),
-                             available=lambda f: True, run=run)
+    font, missing = bp.build(tmp_path / "r.md", pdf, fonts=("A", "B", None), run=run)
     assert font == "B" and pdf.read_text(encoding="utf-8") == "pdf by B"
 
 
 def test_failed_builds_fall_through_and_all_failed_is_none(tmp_path):
     run, _ = _fake_run({"A": (43, "! LaTeX Error"), None: (0, "")})
-    assert bp.build(tmp_path / "r.md", tmp_path / "r.pdf", fonts=("A", None),
-                    available=lambda f: True, run=run)[0] is None
+    assert bp.build(tmp_path / "r.md", tmp_path / "r.pdf", fonts=("A", None), run=run)[0] is None
     run, _ = _fake_run({"A": (43, "x"), None: (43, "x")})
-    assert bp.build(tmp_path / "r.md", tmp_path / "s.pdf", fonts=("A", None),
-                    available=lambda f: True, run=run) is None
+    assert bp.build(tmp_path / "r.md", tmp_path / "s.pdf", fonts=("A", None), run=run) is None
     assert not (tmp_path / "s.pdf").exists()
 
 

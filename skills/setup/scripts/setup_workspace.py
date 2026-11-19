@@ -101,15 +101,18 @@ def merge_permissions(existing: dict, rules: dict) -> dict:
     return merged
 
 
-def setup_wrote_default_mode(perms: dict, backup_path: Path) -> bool:
-    """True when `perms["defaultMode"]` is provably the "default" an earlier setup wrote.
+def setup_wrote_default_mode(perms: dict, backup_path: Path, setup_ran_before: bool) -> bool:
+    """True when `perms["defaultMode"]` is the "default" an earlier setup wrote.
 
     Setup before PL-40 added "defaultMode": "default" when the file set no mode.
-    It backs up a pre-existing file before its first change, so the key is
-    setup's when there is no backup (setup created the file) or when the backup
-    has no defaultMode. A backup it cannot read proves nothing: keep the key.
+    Evidence, not proof: setup must have run here before (its .phillit marker
+    predates this run), and it backs up a pre-existing file before its first
+    change, so the key is setup's when there is no backup (setup created the
+    file) or when the backup has no defaultMode. A backup it cannot read
+    proves nothing: keep the key. Accepted residual: a user who added
+    "default" after setup's first backup loses it, and the setup output says so.
     """
-    if perms.get("defaultMode") != "default":
+    if not setup_ran_before or perms.get("defaultMode") != "default":
         return False
     if not backup_path.exists():
         return True
@@ -179,7 +182,8 @@ def apply(workspace: Path, plugin_root: Path, dry_run: bool) -> int:
         return 2
 
     merged_perms = merge_permissions(existing_settings.get("permissions", {}), PHILLIT_RULES)
-    dropped_mode = setup_wrote_default_mode(merged_perms, settings_path.with_suffix(".json.bak"))
+    dropped_mode = setup_wrote_default_mode(merged_perms, settings_path.with_suffix(".json.bak"),
+                                            setup_ran_before=(workspace / ".phillit").is_dir())
     if dropped_mode:
         del merged_perms["defaultMode"]
     new_settings = dict(existing_settings)

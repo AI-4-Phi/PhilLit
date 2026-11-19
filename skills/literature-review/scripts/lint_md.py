@@ -200,7 +200,6 @@ def check_prose_quality(text: str) -> list[str]:
     """
     warnings: list[str] = []
     in_fence = False
-    in_refs = False
     for lineno, line in enumerate(text.splitlines(), start=1):
         stripped = line.lstrip()
         if stripped.startswith("```") or stripped.startswith("~~~"):
@@ -210,8 +209,6 @@ def check_prose_quality(text: str) -> list[str]:
             continue
 
         if stripped.startswith("#"):
-            if _REFS_HEADING_RE.match(line):
-                in_refs = True
             m = _H2_META_LABEL_RE.match(line)
             if m:
                 warnings.append(
@@ -247,16 +244,56 @@ def check_prose_quality(text: str) -> list[str]:
                 f"line {lineno}: workflow language in review prose: rewrite "
                 f"for the reader ('{phrase}') (WARN)"
             )
+    return warnings + _pronoun_warnings(text)
 
-        if not in_refs and _CITED_YEAR_RE.search(line):
-            pronouns = [m.group(0) for m in _GENDERED_PRONOUN_RE.finditer(line)]
+
+def _pronoun_warnings(text: str) -> list[str]:
+    """Gendered pronouns in a paragraph that cites a work, before the References.
+
+    A paragraph is a run of non-blank prose lines, so a hard-wrapped paragraph
+    ("Danaher (2018) argues X.\nHe then ...") is one unit. Headings and fenced
+    blocks end a paragraph and are never checked.
+    """
+    warnings: list[str] = []
+    para: list[str] = []
+    start = 0
+
+    def flush():
+        joined = " ".join(para)
+        if para and _CITED_YEAR_RE.search(joined):
+            pronouns = [m.group(0) for m in _GENDERED_PRONOUN_RE.finditer(joined)]
             if pronouns:
                 found = ", ".join(dict.fromkeys(p.lower() for p in pronouns))
                 warnings.append(
-                    f"line {lineno}: gendered pronoun in a paragraph that cites "
-                    f"a work ({found}) - if it refers to a cited author, use "
+                    f"line {start}: gendered pronoun in a paragraph that cites "
+                    f"a work ({found}) - if it refers to a cited author and no "
+                    f"text the review was given uses it for that author, use "
                     f"the surname or 'they' (WARN)"
                 )
+        para.clear()
+
+    in_fence = False
+    for lineno, line in enumerate(text.splitlines(), start=1):
+        stripped = line.lstrip()
+        if stripped.startswith("```") or stripped.startswith("~~~"):
+            flush()
+            in_fence = not in_fence
+            continue
+        if in_fence:
+            continue
+        if stripped.startswith("#"):
+            flush()
+            if _REFS_HEADING_RE.match(line):
+                break
+            continue
+        if not stripped:
+            flush()
+            continue
+        if not para:
+            start = lineno
+        para.append(line)
+    else:
+        flush()
     return warnings
 
 

@@ -219,3 +219,18 @@ def test_pronoun_warning_never_changes_exit_code(tmp_path):
     f = tmp_path / "r.md"
     f.write_text("# Review\n\nDanaher (2018) argues X. He adds Y.\n", encoding="utf-8")
     assert lint_md.main([str(f)]) == lint_md.lint_markdown(str(f))
+
+
+def test_hard_wrapped_paragraph_warns_once_at_its_first_line():
+    text = "Intro.\n\nDanaher (2018) argues that offloading erodes skill.\nHe then extends it.\n"
+    (w,) = _pronoun_warnings(text)
+    assert w.startswith("line 3:")
+
+
+def test_pronoun_in_the_next_paragraph_is_silent():
+    assert _pronoun_warnings("Danaher (2018) argues X.\n\nShe objects.\n") == []
+
+
+def test_warning_names_the_supplied_text_exception():
+    (w,) = _pronoun_warnings("Danaher (2018) argues X. He adds Y.")
+    assert "no text the review was given uses it" in w

@@ -586,18 +586,20 @@ def test_skill_documents_both_consent_questions_and_the_flags():
         assert needle in skill, needle
 
 
-def _legacy_ws(tmp_path, perms, backup=None):
+def _legacy_ws(tmp_path, perms, backup=None, marker=True):
     plugin_root = tmp_path / "plugin"; plugin_root.mkdir()
     (plugin_root / ".env.example").write_text("", encoding="utf-8")
     ws = tmp_path / "ws"; (ws / ".claude").mkdir(parents=True)
+    if marker:
+        (ws / ".phillit").mkdir()
     (ws / ".claude" / "settings.json").write_text(json.dumps({"permissions": perms}), encoding="utf-8")
     if backup is not None:
         (ws / ".claude" / "settings.json.bak").write_text(backup, encoding="utf-8")
     return ws, plugin_root
 
 
-def _mode_after_rerun(tmp_path, perms, backup=None):
-    ws, plugin_root = _legacy_ws(tmp_path, perms, backup)
+def _mode_after_rerun(tmp_path, perms, backup=None, marker=True):
+    ws, plugin_root = _legacy_ws(tmp_path, perms, backup, marker)
     assert sw.apply(workspace=ws, plugin_root=plugin_root, dry_run=False) == 0
     data = json.loads((ws / ".claude" / "settings.json").read_text(encoding="utf-8"))
     return data["permissions"].get("defaultMode")
@@ -646,3 +648,9 @@ def test_dry_run_reports_the_mode_removal_without_writing(tmp_path, capsys):
     assert sw.apply(workspace=ws, plugin_root=plugin_root, dry_run=True) == 0
     assert "Would remove" in capsys.readouterr().out
     assert (ws / ".claude" / "settings.json").read_text(encoding="utf-8") == before
+
+
+def test_first_setup_keeps_a_mode_the_user_already_set(tmp_path):
+    # No .phillit marker: setup never ran here, so the "default" is the user's,
+    # even though there is no backup yet.
+    assert _mode_after_rerun(tmp_path, {"defaultMode": "default"}, marker=False) == "default"
