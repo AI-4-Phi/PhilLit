@@ -78,8 +78,8 @@ the groups where suppression actually cost letters; `suppressed_singletons`
 holds groups the assigner left unlettered that held at most ONE work, which
 Chicago would not have lettered anyway (disambiguation starts at two).
 Measured over the real barrier input (42 delivered reviews, 4,582 domain-bib
-entries; before the citekey axis 2b existed): 8 records in `suppressed` against 98 in `suppressed_singletons`,
-every one of the latter an `identity_conflict` raised by a duplicate pair
+entries; before the citekey axis 2b existed): 8 records in `suppressed`
+against 98 in `suppressed_singletons`, every one of the latter an `identity_conflict` raised by a duplicate pair
 that spells one author two ways. Nothing is discarded -- an operator who
 wants everything reads both lists -- but a count of `suppressed` alone, which
 is what a console summary shows, now counts only actionable groups.
@@ -111,8 +111,8 @@ return), and every string in it is chosen by value rather than by arrival:
 `authors` is the lexicographically smallest spelling among the copies that
 name the group, because those copies routinely disagree about how to write
 one name. Shuffling the real corpus (42 reviews x 5 orderings, measured
-before axis 2b) changed nothing in either; before, three reviews flipped the `authors` string of a
-suppression record. But `works` remains the best-effort floor described
+before axis 2b) changed nothing in either; before, three reviews flipped
+the `authors` string of a suppression record. But `works` remains the best-effort floor described
 above, since a suppressed group never receives a canonical partition to
 count -- so treat a report number as telemetry and a letter as a guarantee.
 """
@@ -387,7 +387,13 @@ def assign_suffixes(entries: list[dict]) -> dict:
     #    no conflict). A bare title beside two different subtitles is three
     #    title keys and merges nothing. Decisions are taken against the
     #    partition as the axes above left it and applied afterwards, so no
-    #    cluster's decision depends on the order clusters are visited.
+    #    cluster's decision depends on the order clusters are visited. Each
+    #    merge being safe alone is not enough: two keys' merges can share a
+    #    work (two DOI-less copies under different keys with one fallback
+    #    key) and together join two conflicting DOIs. So the proposed final
+    #    partition is checked too, and every proposal feeding a combined
+    #    component with more than one DOI is dropped -- all of them, which
+    #    depends only on the SET of proposals, never on their order.
     key_clusters: dict = {}
     for ent in usable:
         if ent.get("key"):
@@ -408,6 +414,17 @@ def assign_suffixes(entries: list[dict]) -> dict:
                    for a in cluster for b in cluster):
             continue
         key_merges.append(roots)
+    trial = _Union()
+    for roots in key_merges:
+        for root in roots[1:]:
+            trial.union(roots[0], root)
+    trial_dois: dict = {}
+    for roots in key_merges:
+        for root in roots:
+            trial_dois.setdefault(trial.find(root), set()).update(
+                doi_set_of.get(root, set()))
+    key_merges = [roots for roots in key_merges
+                  if len(trial_dois[trial.find(roots[0])]) <= 1]
     for roots in key_merges:
         merged = set()
         for root in roots:

@@ -91,7 +91,7 @@ _hook_dir = str(Path(__file__).resolve().parent.parent.parent.parent / "hooks")
 sys.path.insert(0, _hook_dir)
 from bib_identity import (  # noqa: E402
     first_author_surname, main_title_key, normalize_doi, same_work_key, same_work_year,
-    subtitle_variant_keys)
+    split_author_list, subtitle_variant_keys, title_key)
 
 sys.path.remove(_hook_dir)
 _here = str(Path(__file__).resolve().parent)
@@ -504,14 +504,27 @@ def entry_identity(fields: Mapping) -> dict:
     `check_quotes.py` compare: the normalized DOI or None; the year-less
     `same_work_key` (title, first-author surname) as a list or None; the
     `same_work_year`; and `main_key`, the title's `main_title_key` (None
-    without a work key), which only the subtitle-variant re-check in
-    `identity_matches` reads. `fields` holds RAW values (`parse_entry_fields`)."""
+    without a work key), and `authors`, every author's surname folded the
+    way the work key folds the first one (None without a work key), which
+    only the same-work re-check in `identity_matches` reads. `fields` holds
+    RAW values (`parse_entry_fields`)."""
     surname = first_author_surname(fields.get("author") or "", fields.get("editor") or "")
     key = same_work_key(fields.get("title") or "", surname)
     return {"doi": normalize_doi(fields.get("doi") or "") or None,
             "work_key": list(key) if key else None,
             "year": same_work_year(fields.get("year")),
-            "main_key": main_title_key(fields.get("title") or "") if key else None}
+            "main_key": main_title_key(fields.get("title") or "") if key else None,
+            "authors": _author_keys(fields) if key else None}
+
+
+def _author_keys(fields: Mapping) -> list[str] | None:
+    """Folded surname per name of the author list (editors when there is no
+    author), split by `bib_identity.split_author_list` and parsed by
+    `first_author_surname` one name at a time; None when a name yields no
+    surname."""
+    field = (fields.get("author") or "").strip() or (fields.get("editor") or "").strip()
+    keys = [title_key(first_author_surname(name, "")) for name in split_author_list(field)]
+    return keys if keys and all(keys) else None
 
 
 def pages_from_text(text: str) -> list[str]:
@@ -527,7 +540,8 @@ def identity_matches(blob_identity, fields: Mapping, text: str | None = None) ->
     counts as equal) matches. Otherwise, only when the stored `text` is
     given, the entry may be the same work in another dress (PL-33: a merge
     survivor carrying the DOI, or the title with or without its subtitle):
-    same first-author surname and year, the stored DOI absent or equal to
+    same author list (`authors`; a blob without it gets no widening) and
+    year, the stored DOI absent or equal to
     the entry's, the titles equal or `subtitle_variant_keys` (which needs
     the stored `main_key`, so a blob written before it existed relates no
     subtitle variant), AND `identity_ok` passing on the text's pages against
@@ -553,6 +567,12 @@ def identity_matches(blob_identity, fields: Mapping, text: str | None = None) ->
     if text is None or not isinstance(stored_key, list) or len(stored_key) != 2:
         return False
     if stored_key[1] != now["work_key"][1] or not now["year"] or stored_year != now["year"]:
+        return False
+    # The whole author list, not just the first surname: a blob written
+    # before `authors` existed gets no widening (fail closed).
+    stored_authors = blob_identity.get("authors")
+    if (not isinstance(stored_authors, list) or not now["authors"]
+            or stored_authors != now["authors"]):
         return False
     if stored_doi is not None and stored_doi != now["doi"]:
         return False
