@@ -280,8 +280,8 @@ def test_late_promotion_is_not_checked_and_partial(tmp_path, crossref, monkeypat
     assert rep["stamps"]["literature-domain-1.bib"]["gerlich2025ai"] == "EVIDENCE-EXISTENCE"
     state = rep["status_notice"]["entries"]["literature-domain-1.bib:gerlich2025ai"]
     assert state == "not_checked:late-promotion"
-    assert rep["status_notice"]["status"] == "partial"
-    assert "promoted" in rep["status_notice"]["reason"]
+    assert rep["status_notice"]["status"] == "complete"     # Z4
+    assert rep["status_notice"]["late_promotion"] == 1
     assert "status_notice" not in _bib(rd)
 
 
@@ -304,3 +304,37 @@ def test_printed_summary_carries_the_diagnostic_counts(tmp_path, crossref, capsy
     assert printed["arxiv_skipped"] == 1
     assert printed["entries"] == {"literature-domain-1.bib:arx2021x": "not_requested:arxiv"}
 
+
+def test_late_promotion_shows_in_the_printed_entries(tmp_path, crossref, monkeypatch, capsys):
+    real = eb.se.compute_tier
+    calls = {"n": 0}
+
+    def provisional_none(etype, fields, att):
+        calls["n"] += 1
+        return eb.se.TIER_NONE if calls["n"] == 1 else real(etype, fields, att)
+    monkeypatch.setattr(eb.se, "compute_tier", provisional_none)
+    rd = _review(tmp_path, GERLICH_BIB)
+    assert eb.execute(rd, 1) == 0
+    printed = json.loads(capsys.readouterr().out.strip().splitlines()[-1])["status_notice"]
+    assert printed["entries"] == {
+        "literature-domain-1.bib:gerlich2025ai": "not_checked:late-promotion"}
+
+
+def test_a_stamp_on_an_entry_demoted_to_none_is_dropped(tmp_path, crossref, monkeypatch, capsys):
+    """Z8: looked up at a real tier, NONE at the final tier: no field, and
+    the state says so."""
+    real = eb.se.compute_tier
+    calls = {"n": 0}
+
+    def demote_later(etype, fields, att):
+        calls["n"] += 1
+        return real(etype, fields, att) if calls["n"] == 1 else eb.se.TIER_NONE
+    monkeypatch.setattr(eb.se, "compute_tier", demote_later)
+    rd = _review(tmp_path, GERLICH_BIB)
+    assert eb.execute(rd, 1) == 0
+    assert "status_notice" not in _bib(rd)
+    rep = _report(rd)["status_notice"]
+    assert rep["entries"]["literature-domain-1.bib:gerlich2025ai"] == "dropped:demoted"
+    assert rep["stamped"] == {}
+    printed = json.loads(capsys.readouterr().out.strip().splitlines()[-1])["status_notice"]
+    assert printed["entries"] == {"literature-domain-1.bib:gerlich2025ai": "dropped:demoted"}

@@ -1171,7 +1171,7 @@ def _status_summary(rep) -> dict:
     out["stamped"] = rep.get("stamped") or {}
     for k in ("looked_up", "not_found", "identity_mismatch", "errors", "deadline",
               "malformed", "splice_failed", "arxiv_skipped", "reverse_unchecked",
-              "unresolved", "late_promotion"):
+              "unresolved", "late_promotion", "identity_unverifiable", "dropped_demoted"):
         out[k] = rep.get(k, 0)
     out["unmapped_types"] = rep.get("unmapped_types") or {}
     out["ignored_types"] = rep.get("ignored_types") or {}
@@ -1967,7 +1967,7 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                 # carry a status fact onto an EVIDENCE-NONE entry.
                 label = f"{bib_name}:{key}"
                 if tier == se.TIER_NONE:
-                    status_report["entries"][label] = "not_requested:evidence-none"
+                    status_report["entries"][label] = "dropped:demoted"
                     sn.settle(status_report)
                 else:
                     pre_sn = chunk
