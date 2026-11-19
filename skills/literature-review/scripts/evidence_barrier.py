@@ -309,8 +309,8 @@ CORROBORATION_DEADLINE = "corroboration_deadline"
 # caveat venue_vetting states about REQUEST_TIMEOUT.
 CORROBORATION_MAX_CONSECUTIVE_ERRORS = 3
 CORROBORATION_PASS_DEADLINE_SECONDS = 180.0
-# The pass may also run until this long after the barrier STARTED, whichever
-# ends later (PL-31): a fixed 180 s stranded a large review's last domains,
+# The barrier's pass runs until this long after the barrier STARTED (PL-31),
+# replacing the 180 s window above: that stranded a large review's last domains,
 # and a re-run stranded the same tail. The probes are rate-bound (about 0.7
 # candidates per second, Semantic Scholar's interval dominating), so a long
 # pass is slow, not stuck. The ceiling leaves venue vetting (its deadline plus
@@ -323,10 +323,11 @@ CORROBORATION_RUN_CEILING_SECONDS = 300.0
 class _CorroborationBudget:
     """Wall-clock deadline + consecutive-error breaker for one barrier run.
 
-    The window ends at the LATER of two times: the pass's own
-    deadline_seconds after its first probe, and, when `run_start` is given,
-    CORROBORATION_RUN_CEILING_SECONDS after the barrier started (PL-31). The
-    first clock starts LAZILY, on the first probe this pass is actually asked
+    With `run_start` (the barrier always passes it), the window ends
+    CORROBORATION_RUN_CEILING_SECONDS after the barrier started (PL-31): a
+    hard stop that keeps the later passes inside the Bash limit, however
+    late the first probe comes. Without it, the window is deadline_seconds
+    from the first probe, and that clock starts LAZILY, on the first probe this pass is actually asked
     to allow, rather than at construction. State the bound exactly, because
     it is narrower than it looks: corroboration and the heal fetches share
     one per-entry loop, so the lazy start shields only the work that PRECEDES
@@ -376,13 +377,17 @@ class _CorroborationBudget:
         if self.stopped:
             return False
         if self._deadline is None:
-            # The later of: the pass's own window from its first probe, and
-            # the run-wide ceiling (PL-31). Read the constant at call time.
-            self._deadline = time.monotonic() + self.deadline_seconds
+            # With a run start, the window ends at the run-wide ceiling
+            # (PL-31): later than the old 180 s for a large review, and a hard
+            # stop for a late first probe, so the passes after this one still
+            # fit the Bash limit. Read the constant at call time.
             if self.run_start is not None:
-                self._deadline = max(
-                    self._deadline,
-                    self.run_start + CORROBORATION_RUN_CEILING_SECONDS)
+                self._deadline = self.run_start + CORROBORATION_RUN_CEILING_SECONDS
+            else:
+                self._deadline = time.monotonic() + self.deadline_seconds
+            if time.monotonic() >= self._deadline:
+                self.stopped = True
+                return False
             return True
         if time.monotonic() >= self._deadline:
             self.stopped = True

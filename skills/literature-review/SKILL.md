@@ -301,8 +301,7 @@ Never advance to a next step in this phase before completing the current step.
 
    The summary's `abstract_corroboration` key reports the abstract check,
    which re-fetches one abstract per candidate entry. It is bounded by time
-   (until 300 s after the barrier started, or 180 s after its first probe,
-   whichever is later) and by 3 consecutive failures. Surface it once, for
+   (until 300 s after the barrier started) and by 3 consecutive failures. Surface it once, for
    the same reason as the venue check above. A non-zero
    `corroboration_deadline` count means one of those bounds stopped the pass
    early, so those entries carry a lower tier this run. Read it with the
