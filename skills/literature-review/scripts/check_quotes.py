@@ -19,7 +19,8 @@ barrier verified:
 - `FIX page`: a page locator given with the citation names no `[[page N]]`
   page the quoted words sit on (fix: drop or correct the locator, never cut
   the quote). An article's own unnumbered first page, which
-  `fulltext.lead_page` admits from the entry's `pages` field, stays a
+  `fulltext.lead_page` admits from the entry's `pages` and `abstract`
+  fields, stays a
   `[[sheet N]]` block, but its implied number is also accepted.
 - `WARN cap`: above 40 words in one quotation, above 150 words per work
   (works grouped across keys and slugs: same work key, or same DOI).
@@ -523,13 +524,13 @@ def trailing_locator(masked: str, close: int) -> list[tuple] | None:
 # --------------------------------------------------------------------------
 
 def _match_quote(quote: str, sources):
-    """Try every source (key, kind, text, page map, bib `pages` field);
-    (hits, form_error). hits: [(key, kind, text, occurrences)] for each
-    source holding the quote."""
+    """Try every source (key, kind, text, page map, lead evidence: the bib
+    `pages` and decoded `abstract` fields); (hits, form_error). hits: [(key,
+    kind, text, occurrences)] for each source holding the quote."""
     hits, form_error = [], None
-    for key, kind, text, pm, bib_pages in sources:
+    for key, kind, text, pm, (bib_pages, abstract) in sources:
         try:
-            occ = ft.locate_quote_all(quote, text, pm, bib_pages=bib_pages)
+            occ = ft.locate_quote_all(quote, text, pm, bib_pages=bib_pages, abstract=abstract)
         except ft.QuoteFormError as e:
             form_error = form_error or e
             continue
@@ -612,10 +613,11 @@ def run(md: str, bib_text: str, report: dict, workdir: Path) -> tuple[list[str],
     # The page map each licensed text's markers carry, computed once per key.
     page_maps = {k: ft.page_map_from_text(text) for k, (text, _why) in licence.items()
                  if text is not None}
-    # The bib `pages` field anchors an article's own unnumbered first page
-    # (ft.lead_page): quotable, and its implied number an accepted locator.
-    bib_pages = {k: entries[k]["fields"].get("pages") for k in page_maps}
-    leads = {k: ft.lead_page(pm, bib_pages[k]) for k, pm in page_maps.items()}
+    # The bib `pages` and `abstract` fields anchor an article's own unnumbered
+    # first page (ft.lead_page): quotable, its implied number an accepted locator.
+    lead_ev = {k: (entries[k]["fields"].get("pages"),
+                   _decoded(entries[k]["fields"].get("abstract") or "")) for k in page_maps}
+    leads = {k: ft.lead_page(licence[k][0], pm, *lead_ev[k]) for k, pm in page_maps.items()}
     para_starts = [a for a, _ in paras]
     groups = _union_groups(sorted(watched), entries)
     group_words: dict[str, int] = {}
@@ -627,7 +629,7 @@ def run(md: str, bib_text: str, report: dict, workdir: Path) -> tuple[list[str],
               "warn_uncited": 0, "warn_uncited_fulltext": 0}
     # Only citable works: citing one the gate cannot resolve would leave the
     # line in place on every rerun.
-    uncited_sources = [(k, "fulltext", licence[k][0], page_maps[k], bib_pages[k])
+    uncited_sources = [(k, "fulltext", licence[k][0], page_maps[k], lead_ev[k])
                        for k in sorted(watched)
                        if licence[k][0] is not None and entries[k]["citable"]]
 
@@ -698,12 +700,12 @@ def run(md: str, bib_text: str, report: dict, workdir: Path) -> tuple[list[str],
                 lines.append(f'FAIL licence-lost: {k} ({licence[k][1]}): "{shown}" {where}')
                 counts["fail_licence_lost"] += 1
 
-        sources = [(k, "fulltext", licence[k][0], page_maps[k], bib_pages[k]) for k in wkeys
+        sources = [(k, "fulltext", licence[k][0], page_maps[k], lead_ev[k]) for k in wkeys
                    if licence[k][0] is not None]
         for k in keys:
             info = entries[k]
             if info["tier"] == TIER_ABSTRACT and info["fields"].get("abstract"):
-                sources.append((k, "abstract", _decoded(info["fields"]["abstract"]), None, None))
+                sources.append((k, "abstract", _decoded(info["fields"]["abstract"]), None, (None, None)))
         if not sources:
             report_lost()
             continue   # nothing licensed to check against: licence-lost fails
