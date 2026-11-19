@@ -393,6 +393,22 @@ def merge_entries(entry1: str, entry2: str) -> tuple[str, str, int]:
         base = _insert_field_text(base, "fulltext_file", loser_ft)
         reason += ", copied fulltext_file from loser"
 
+    # The barrier's `status_notice` (PL-39) is NOT carried: it was derived
+    # for the survivor's own DOI and identity, so the survivor keeps its own
+    # field as is and a loser's is dropped -- copying one up could put a
+    # retraction on a different record. A loser whose field differed is
+    # named, so the dropped status fact is never silent.
+    winner_sn = (_field(base, "status_notice").value.strip()
+                 if _field(base, "status_notice") is not None else "")
+    loser_sn = (_field(loser_text, "status_notice").value.strip()
+                if _field(loser_text, "status_notice") is not None else "")
+    if loser_sn and loser_sn != winner_sn:
+        print(
+            f"  [STATUS] '{_entry_key(entry1 if winner == 1 else entry2)}' keeps "
+            f"status_notice '{winner_sn or 'none'}'; dropped '{loser_sn or 'none'}' "
+            f"from '{_entry_key(loser_text)}'",
+            file=sys.stderr)
+
     return base, reason, winner
 
 

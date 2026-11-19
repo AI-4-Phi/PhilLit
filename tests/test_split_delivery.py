@@ -384,3 +384,19 @@ def test_fulltext_file_is_an_engine_field():
     reference manager."""
     assert "fulltext_file" in sd.ENGINE_FIELDS
     assert len(sd.ENGINE_FIELDS) == 9
+
+
+
+STATUS_ENTRY = ENTRY.replace(
+    "  doi = {10.12660/rda.v279.2020.82914},\n",
+    "  doi = {10.12660/rda.v279.2020.82914},\n"
+    "  status_notice = {correction 10.1000/notice},\n")
+
+
+def test_status_notice_is_kept_in_both_bibs():
+    """PL-39: the field is a licensed fact for readers, not engine
+    bookkeeping, so neither delivered bib strips it."""
+    assert "status_notice" not in sd.ENGINE_FIELDS
+    for out in (sd.track_record_entry(STATUS_ENTRY), sd.annotated_entry(STATUS_ENTRY, DEFS)):
+        e = _entries(out)["waldron2020separation"].fields
+        assert e["status_notice"] == "correction 10.1000/notice"
