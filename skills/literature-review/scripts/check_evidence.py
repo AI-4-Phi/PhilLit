@@ -3,7 +3,11 @@
 Post-hoc, non-blocking scan of the assembled review against its merged
 bibliography: flags citations whose entry carries no evidence-tier stamp,
 citations of EVIDENCE-NONE entries, and reporting-verb sentences attached to
-low-trust tiers (EXISTENCE, NONE, or unstamped). This is telemetry only --
+low-trust tiers (EXISTENCE, NONE, or unstamped), and (PL-39) status words
+-- correction, retraction, withdrawal, expression of concern, preprint -- in
+a sentence citing an entry whose barrier-stamped `status_notice` lacks that
+category (`status-claim`), plus every cited retracted or withdrawn entry
+with the sentences citing it (`retracted-cited`). This is telemetry only --
 it always exits 0 (except on usage error) and never blocks anything.
 
 Known flag/miss shapes for the human adjudicating the output (all observed
@@ -39,6 +43,8 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 import stamp_evidence as se
 from enrich_bibliography import get_author_last_name  # noqa: E402 - same directory
+# The status_notice value grammar has one owner, the barrier's lookup module.
+from status_notice import categories as status_categories  # noqa: E402
 
 _MATCH_WINDOW = 60  # mirrors generate_bibliography._MATCH_WINDOW
 
@@ -261,25 +267,91 @@ def find_cites(md: str, surname: str, year: str, suffix: str = "") -> list[int]:
     return sorted(hits)
 
 
-def _sentence_at(md: str, pos: int) -> str:
+_ANY_STOP = r"[.!?]"
+# The status checks end a sentence only at a stop followed by whitespace or
+# the end: the writer contract puts a notice link (https://doi.org/10.x/y)
+# inside the very sentence that states the status, and its dots would
+# otherwise cut the status word off from the cite.
+_SPACED_STOP = r"[.!?](?=\s|$)"
+
+
+def _sentence_at(md: str, pos: int, stop: str = _ANY_STOP) -> str:
     """Slice of md between the nearest sentence boundaries around pos."""
     start = 0
-    for m in re.finditer(r"[.!?]", md[:pos]):
+    for m in re.finditer(stop, md[:pos]):
         start = m.end()
-    end_m = re.search(r"[.!?]", md[pos:])
+    end_m = re.search(stop, md[pos:])
     end = pos + end_m.end() if end_m else len(md)
     return md[start:end].strip()
 
 
-def cite_sentences(md: str, positions: list[int]) -> list[str]:
+def cite_sentences(md: str, positions: list[int], stop: str = _ANY_STOP) -> list[str]:
     seen = set()
     out = []
     for pos in positions:
-        sentence = _sentence_at(md, pos)
+        sentence = _sentence_at(md, pos, stop)
         if sentence not in seen:
             seen.add(sentence)
             out.append(sentence)
     return out
+
+
+# PL-39 status words, by the `status_notice` category that licenses them.
+# Whole words, not stems: "incorrect", "corrects course" and "withdraws the
+# objection" are ordinary prose. A partial_retraction item licenses a
+# retraction word only with "partial(ly)" in the same sentence.
+_STATUS_WORDS = (
+    ("correction", re.compile(
+        r"\b(?:corrections?|corrected|erratum|errata|corrigend(?:um|a))\b", re.I)),
+    ("retraction", re.compile(r"\bretract(?:ed|ion)\b", re.I)),
+    ("withdrawal", re.compile(r"\b(?:withdrawn|withdrawal)\b", re.I)),
+    ("expression_of_concern", re.compile(r"\bexpression\s+of\s+concern\b", re.I)),
+    ("preprint", re.compile(r"\bpreprints?\b", re.I)),
+)
+_PARTIAL_RE = re.compile(r"\bpartial(?:ly)?\b", re.I)
+_RETRACTED_CATEGORIES = ("retraction", "partial_retraction", "withdrawal")
+
+
+def _status_licensed(stamped: set, category: str, sentence: str) -> bool:
+    if category in stamped:
+        return True
+    return (category == "retraction" and "partial_retraction" in stamped
+            and bool(_PARTIAL_RE.search(sentence)))
+
+
+def status_checks(md: str, entries: dict) -> tuple[list[str], list[str]]:
+    """(status-claim lines, retracted-cited lines). `entries` maps key to
+    {"positions": cite positions, "status": status_notice categories}.
+
+    status-claim: a sentence citing an entry holds a status word whose
+    category that entry's `status_notice` lacks; one line per sentence and
+    category, naming every cited entry that lacks it. retracted-cited: one
+    line per cited entry stamped retraction, partial_retraction or
+    withdrawal, listing the sentences that cite it, so the orchestrator can
+    confirm each discloses the status."""
+    by_sentence: dict[str, list[str]] = {}
+    for key, info in entries.items():
+        for sentence in cite_sentences(md, info["positions"], _SPACED_STOP):
+            by_sentence.setdefault(sentence, []).append(key)
+    claims = []
+    for sentence, keys in by_sentence.items():
+        for category, word_re in _STATUS_WORDS:
+            if not word_re.search(sentence):
+                continue
+            lacking = [k for k in keys
+                       if not _status_licensed(entries[k]["status"], category, sentence)]
+            if lacking:
+                claims.append(f"CHECK status-claim: {', '.join(lacking)} ({category}): "
+                              f"{_ascii(sentence[:120])}")
+    cited = []
+    for key, info in entries.items():
+        cats = [c for c in _RETRACTED_CATEGORIES if c in info["status"]]
+        if not cats:
+            continue
+        sentences = cite_sentences(md, info["positions"], _SPACED_STOP)
+        cited.append(f"CHECK retracted-cited: {key} ({', '.join(cats)}): "
+                     + " | ".join(_ascii(s[:120]) for s in sentences))
+    return claims, cited
 
 
 _OVERRIDE_PREFIX = "Tier override (user request):"
@@ -364,14 +436,18 @@ def main() -> int:
         tier = matches[-1] if matches else None  # last match wins
         entries[key] = {
             "tier": tier, "surname": surname, "year": year, "suffix": suffix,
+            "status": status_categories(fields.get("status_notice")),
         }
 
-    counts = {"unstamped": 0, "none_cited": 0, "reporting_verb": 0}
+    counts = {"unstamped": 0, "none_cited": 0, "reporting_verb": 0,
+              "status_claim": 0, "retracted_cited": 0}
+    cited_status = {}
 
     for key, info in entries.items():
         positions = find_cites(md, info["surname"], info["year"], info["suffix"])
         if not positions:
             continue
+        cited_status[key] = {"positions": positions, "status": info["status"]}
         tier = info["tier"]
         tag = _OVERRIDE_TAG if key in override_keys else ""
         if tier is None:
@@ -390,6 +466,11 @@ def main() -> int:
                     snippet = _ascii(sentence[:120])
                     print(f"CHECK reporting-verb: {key} ({label}): {snippet}{tag}")
                     counts["reporting_verb"] += 1
+
+    claims, retracted = status_checks(md, cited_status)
+    for line in claims + retracted:
+        print(line)
+    counts["status_claim"], counts["retracted_cited"] = len(claims), len(retracted)
 
     print("CHECK-SUMMARY: " + json.dumps(counts))
     return 0
