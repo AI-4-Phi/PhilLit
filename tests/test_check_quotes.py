@@ -53,9 +53,11 @@ def rendered_text(confirm=True):
 
 
 def bib_entry(key, *, year, doi=None, tier="EVIDENCE-FULLTEXT", slug=None, title="Animal Liberation",
-              author="Singer, Peter", abstract=None):
+              author="Singer, Peter", abstract=None, pages=None):
     lines = [f"@book{{{key},", f"  author = {{{author}}},", f"  title = {{{title}}},",
              f"  year = {{{year}}},"]
+    if pages:
+        lines.append(f"  pages = {{{pages}}},")
     if doi:
         lines.append(f"  doi = {{{doi}}},")
     if abstract:
@@ -84,13 +86,13 @@ class Fix:
 
     def add_fulltext(self, key, *, year, doi=None, text=None, bib="literature-domain-1.bib",
                      tier="EVIDENCE-FULLTEXT", title="Animal Liberation", author="Singer, Peter",
-                     write_blob=True, abstract=None):
+                     write_blob=True, abstract=None, pages=None):
         identity = {"doi": doi, "title": title, "surname": author.split(",")[0], "year": year}
         slug = ft.slug_for(identity)
         text = rendered_text() if text is None else text
         ft.write_text_atomic(self.store / f"{slug}.txt", text)
         entry = bib_entry(key, year=year, doi=doi, tier=tier, slug=slug, title=title, author=author,
-                          abstract=abstract)
+                          abstract=abstract, pages=pages)
         self.entries.append(entry)
         if write_blob:
             self.add_blob(bib, key, slug, text, entry)
@@ -650,3 +652,58 @@ class TestCli:
                         str(fx.workdir), "--evidence-report", str(tmp_path / "report.json")])
         err = capsys.readouterr().err
         assert code == 2 and "crashed: RuntimeError: boom" in err and len(err.strip().splitlines()) == 1
+
+
+# ---------------------------------------------------------------------------
+# An article's own unnumbered first page (PL-32)
+# ---------------------------------------------------------------------------
+
+LEAD_FIRST = ("Abstract. Minds are scaffolded by the tools and social practices\n"
+              "around them rather than extended into them.")
+LEAD_COVER = "Downloaded from the university repository on the first of May"
+LEAD_REST = ["the second printed page of the article goes on here",
+             "a third printed page with more of the same argument"]
+
+
+class TestLeadPage:
+    def fix(self, tmp_path, pages, numbers, bib_pages):
+        text = ft.render_text(pages, ft.PageMap(tuple(numbers)))
+        f = Fix(tmp_path)
+        f.add_fulltext("sterelny2010", year="2010", doi="10.1000/minds.2010", text=text,
+                       title="Minds: extended or scaffolded?", author="Sterelny, Kim",
+                       pages=bib_pages)
+        return f
+
+    def test_quote_from_the_unnumbered_first_page_passes(self, tmp_path, capsys):
+        f = self.fix(tmp_path, [LEAD_FIRST] + LEAD_REST, (None, 466, 467), "465--484")
+        code, lines, _ = f.run(doc(
+            'Sterelny (2010) argues that "minds are scaffolded by the tools and social practices".'),
+            capsys)
+        assert (code, lines) == (0, [])
+
+    def test_inferred_first_page_is_an_accepted_locator(self, tmp_path, capsys):
+        f = self.fix(tmp_path, [LEAD_FIRST] + LEAD_REST, (None, 466, 467), "465--484")
+        quote = '"minds are scaffolded by the tools and social practices"'
+        assert f.run(doc(f"Minds are {quote} (Sterelny 2010, 465)."), capsys)[:2] == (0, [])
+        code, lines, _ = f.run(doc(f"Minds are {quote} (Sterelny 2010, 466)."), capsys)
+        assert lines[0].startswith(
+            'FIX page: sterelny2010: drop or correct the locator "466" (quote on: sheet 1)')
+
+    def test_without_a_matching_bib_start_the_sheet_stays_unquotable(self, tmp_path, capsys):
+        f = self.fix(tmp_path, [LEAD_FIRST] + LEAD_REST, (None, 466, 467), "466--484")
+        code, lines, _ = f.run(doc(
+            'Sterelny (2010) argues that "minds are scaffolded by the tools and social practices".'),
+            capsys)
+        assert code == 1 and lines[0].startswith("FAIL verbatim: sterelny2010")
+
+    def test_cover_sheet_before_a_confirmed_first_page_stays_unquotable(self, tmp_path, capsys):
+        f = self.fix(tmp_path, [LEAD_COVER] + LEAD_REST, (None, 465, 466), "465--484")
+        code, lines, _ = f.run(doc(
+            'Sterelny (2010) notes it was "downloaded from the university repository".'), capsys)
+        assert code == 1 and lines[0].startswith("FAIL verbatim: sterelny2010")
+
+    def test_uncited_quote_from_the_first_page_is_named(self, tmp_path, capsys):
+        f = self.fix(tmp_path, [LEAD_FIRST] + LEAD_REST, (None, 466, 467), "465--484")
+        code, lines, _ = f.run(doc(
+            'Some say "minds are scaffolded by the tools and social practices" today.'), capsys)
+        assert lines[0].startswith("WARN uncited-fulltext:") and "sterelny2010 (sheet 1)" in lines[0]
