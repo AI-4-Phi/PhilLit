@@ -952,6 +952,68 @@ def test_real_tracked_pdf():
     assert [k for k, _ in ft.MARKER_RE.findall(text)] == ["sheet"] * 25
 
 
+FIRST = "Abstract. Minds are scaffolded by the tools and\nsocial practices around them, not extended."
+COVER = "Downloaded from the university repository on 1 May 2020"
+LATER = ["the second printed page of the article goes on",
+         "a third printed page with more of the argument"]
+
+
+class TestLeadPage:
+    """An article's own unnumbered first page (PL-32): the one sheet directly
+    before the first confirmed page is quotable when its implied number is
+    the bib `pages` start."""
+
+    def _make(self, pages, numbers):
+        pm = ft.PageMap(tuple(numbers))
+        return ft.render_text(pages, pm), pm
+
+    def test_unnumbered_first_page_quotable_with_bib_start(self):
+        text, pm = self._make([FIRST] + LATER, (None, 466, 467))
+        assert ft.lead_page(pm, "465--484") == (0, 465)
+        spans = ft.locate_quote("Minds are scaffolded by the tools", text, pm, bib_pages="465--484")
+        assert spans is not None
+        assert ft.span_pages(text, spans) == [("sheet", 1)]
+        assert ft.locate_quote("Minds are scaffolded by the tools", text, pm) is None
+
+    def test_cover_before_a_confirmed_first_page_stays_excluded(self):
+        text, pm = self._make([COVER] + LATER, (None, 465, 466))
+        assert ft.lead_page(pm, "465--484") is None
+        assert ft.locate_quote("from the university repository", text, pm, bib_pages="465--484") is None
+
+    def test_cover_then_unnumbered_first_page(self):
+        text, pm = self._make([COVER, FIRST] + LATER, (None, None, 466, 467))
+        assert ft.lead_page(pm, "465--484") == (1, 465)
+        assert ft.locate_quote("Minds are scaffolded by the tools", text, pm, bib_pages="465--484")
+        assert ft.locate_quote("from the university repository", text, pm, bib_pages="465--484") is None
+
+    def test_no_or_mismatched_bib_start_admits_nothing(self):
+        text, pm = self._make([FIRST] + LATER, (None, 466, 467))
+        for field in (None, "", "465", "466--484", "464--484", "xii--xx"):
+            assert ft.lead_page(pm, field) is None, field
+            assert ft.locate_quote("Minds are scaffolded by the tools", text, pm,
+                                   bib_pages=field) is None, field
+
+    def test_first_confirmed_page_one_admits_nothing(self):
+        text, pm = self._make([COVER] + LATER, (None, 1, 2))
+        assert ft.lead_page(pm, "0--20") is None
+        assert ft.lead_page(pm, "1--20") is None
+
+    def test_article_number_start_one(self):
+        text, pm = self._make([FIRST] + LATER, (None, 2, 3))
+        assert ft.lead_page(pm, "e12345") == (0, 1)
+        assert ft.locate_quote("Minds are scaffolded by the tools", text, pm, bib_pages="e12345")
+
+    def test_only_the_directly_preceding_sheet(self):
+        text, pm = self._make([FIRST, COVER] + LATER, (None, None, 467, 468))
+        assert ft.lead_page(pm, "465--484") is None
+        assert ft.locate_quote("Minds are scaffolded by the tools", text, pm, bib_pages="465--484") is None
+
+    def test_no_page_map_or_first_page_confirmed(self):
+        assert ft.lead_page(None, "465--484") is None
+        assert ft.lead_page(ft.PageMap((465, 466)), "465--484") is None
+        assert ft.lead_page(ft.PageMap((None, None)), "465--484") is None
+
+
 def test_loads_by_path_without_pythonpath(tmp_path):
     code = (
         "import importlib.util\n"
