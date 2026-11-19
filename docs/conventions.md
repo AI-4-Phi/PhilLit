@@ -130,7 +130,8 @@ Agents must never write this field by hand.
 or the DOI is a CrossRef preprint. Items: `retraction <doi>`,
 `partial_retraction <doi>`, `withdrawal <doi>`, `expression_of_concern <doi>`,
 `correction <doi>` (CrossRef correction, erratum or corrigendum) and
-`preprint`, where `<doi>` is the notice's own DOI. Only entries with a DOI,
+`preprint`, where `<doi>` is the notice's DOI (for a retraction or
+withdrawal issued in place, the article's own DOI). Only entries with a DOI,
 not at `EVIDENCE-NONE`, whose CrossRef record matches their first author and
 title are looked up; arXiv DOIs are not. Absence means "no status fact is
 licensed for this entry in this run", never "no notice exists" (the

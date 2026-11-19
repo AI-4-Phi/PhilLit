@@ -180,19 +180,61 @@ def test_retracted_title_prefix_does_not_break_identity(monkeypatch):
     assert values == {"d1:wang": "retraction 10.1177/17588359211061903"}
 
 
-def test_self_referential_springer_retraction_is_malformed(monkeypatch):
-    """Springer's in-place retraction names the article's own DOI as the
-    notice. By the spec that item is malformed and nothing is stamped (a
-    measured residual, reported)."""
+def test_springer_in_place_retraction_is_stamped_with_the_articles_own_doi(monkeypatch):
+    """Springer retracts in place: `updated-by` names the article's own DOI
+    (recorded fixture 10.1007/s11277-021-09072-0, sources retraction-watch
+    and publisher). That is real CrossRef practice for retractions, so the
+    item is stamped with the entry's own DOI as the notice."""
     she = {"author": "She, Xu",
            "title": "Deep Reinforcement Learning-Based Smart Manufacturing",
            "doi": "10.1007/s11277-021-09072-0", "year": "2021"}
     rec = _record("10.1007/s11277-021-09072-0")
     she["title"] = sn.decode_crossref_title(rec["title"][0])[len("RETRACTED ARTICLE: "):]
     values, report, _ = _run(monkeypatch, {"d1:she": _e(she)})
+    assert values == {"d1:she": "retraction 10.1007/s11277-021-09072-0"}
+    assert report["entries"]["d1:she"] == "stamped"
+    assert report["malformed"] == 0
+    assert report["sources"] == {"publisher": 1, "retraction-watch": 1}
+
+
+@pytest.mark.parametrize("token,item", [
+    ("retraction", "retraction 10.1007/s11097-010-9174-y"),
+    ("partial_retraction", "partial_retraction 10.1007/s11097-010-9174-y"),
+    ("withdrawal", "withdrawal 10.1007/s11097-010-9174-y"),
+])
+def test_in_place_retractions_and_withdrawals_are_accepted(monkeypatch, token, item):
+    """Both partial_retraction records CrossRef holds are self-referential
+    (measured 2026-11-19, e.g. 10.29328/journal.jcmhs.1001023)."""
+    fake = _with_updates([{"DOI": "10.1007/S11097-010-9174-Y", "type": token,
+                           "source": "publisher"}])
+    values, report, _ = _run(monkeypatch, {"s": _e(STERELNY)}, fake)
+    assert values == {"s": item}
+    assert report["malformed"] == 0
+
+
+@pytest.mark.parametrize("token", ["correction", "erratum", "corrigendum",
+                                   "expression_of_concern"])
+def test_self_referential_correction_or_concern_stays_malformed(monkeypatch, token):
+    """A correction or expression of concern that names the article itself
+    is not a notice."""
+    fake = _with_updates([{"DOI": "10.1007/s11097-010-9174-y", "type": token,
+                           "source": "publisher"}])
+    values, report, _ = _run(monkeypatch, {"s": _e(STERELNY)}, fake)
     assert values == {}
-    assert report["malformed"] >= 1
-    assert report["entries"]["d1:she"] == "checked_none"
+    assert report["malformed"] == 1
+    assert report["entries"]["s"] == "checked_none"
+
+
+def test_self_referential_reverse_hit_for_a_retraction_is_accepted(monkeypatch):
+    """The reverse query returns the in-place record itself (its update-to
+    names its own DOI): the same item, deduplicated."""
+    rec = dict(_record("10.1007/s11097-010-9174-y"))
+    rec["update-to"] = [{"DOI": "10.1007/s11097-010-9174-y", "type": "retraction"}]
+
+    def answer(params):
+        return 200, {"message": {"total-results": 1, "items": [rec]}}
+    values, _r, _ = _run(monkeypatch, {"s": _e(STERELNY)}, answer)
+    assert values == {"s": "retraction 10.1007/s11097-010-9174-y"}
 
 
 def test_expression_of_concern_and_withdrawal(monkeypatch):
@@ -428,7 +470,7 @@ def test_unmapped_and_malformed_items_counted_not_stamped(monkeypatch):
         {"DOI": "10.1000/cap", "type": "Retraction", "source": "publisher"},
         {"DOI": "10.1000/semi;colon", "type": "retraction", "source": "publisher"},
         {"DOI": "10.1000/white space", "type": "retraction", "source": "publisher"},
-        {"DOI": "10.1007/S11097-010-9174-Y", "type": "retraction", "source": "publisher"},
+        {"DOI": "10.1007/S11097-010-9174-Y", "type": "correction", "source": "publisher"},
         {"DOI": "", "type": "correction", "source": "publisher"},
         {"type": "correction"},
     ])

@@ -551,6 +551,8 @@ def test_writer_and_planner_know_the_status_notice_rule():
     writer = (REPO_ROOT / "agents" / "synthesis-writer.md").read_text(encoding="utf-8")
     assert "## Publication Status (REQUIRED)" in writer
     assert "a correction notice for this article has been published" in writer
+    assert "the publisher has retracted the article (https://doi.org/<doi>)" in writer
+    assert "publishers retract in place" in writer
     assert 'never "retracted" alone' in writer
     assert "never \"not peer reviewed\"" in writer
     assert "Never state a status from a note" in writer

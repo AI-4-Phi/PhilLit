@@ -46,11 +46,13 @@ sides: CrossRef renames the retracted article itself that way (measured on
 10.1177/1758835919874651 and 10.1007/s11277-021-09072-0), and without the
 cut the most important category never matched.
 
-A notice DOI that is not of DOI_SHAPE, holds `;` or whitespace, or equals
-the entry's own DOI is skipped and counted `malformed`. Springer's in-place
-retraction (10.1007/s11277-021-09072-0) names the article's own DOI as its
-notice, so it is never stamped; both `partial_retraction` records CrossRef
-holds are self-referential the same way (measured residual).
+A notice DOI that is not of DOI_SHAPE or holds `;` or whitespace is skipped
+and counted `malformed`. A notice DOI equal to the entry's own DOI is
+accepted for retraction, partial_retraction and withdrawal, which publishers
+issue in place: Springer's retraction of 10.1007/s11277-021-09072-0 names the
+article itself, and both `partial_retraction` records CrossRef holds do the
+same (measured 2026-11-19). The item then carries the entry's own DOI. For a
+correction or expression of concern, self-reference stays `malformed`.
 
 Bounds: the caller's absolute `deadline` (shared with venue vetting) is
 checked before the rate-limiter wait and again after it, so at most one
@@ -158,13 +160,22 @@ def request_doi(raw) -> tuple[str | None, str | None]:
     return doi, None
 
 
-def _notice_doi(raw, entry_doi: str) -> str | None:
+# Categories whose notice may be the article itself: publishers retract and
+# withdraw IN PLACE (Springer's "RETRACTED ARTICLE" record names its own DOI;
+# both partial_retraction records CrossRef holds do too, measured
+# 2026-11-19). A correction or expression of concern naming itself is not a
+# notice, so self-reference stays malformed there.
+SELF_NOTICE_CATEGORIES = frozenset({"retraction", "partial_retraction", "withdrawal"})
+
+
+def _notice_doi(raw, entry_doi: str, category: str) -> str | None:
     """The notice DOI, normalized, or None when it is malformed."""
     if not isinstance(raw, str):
         return None
     doi = normalize_doi(raw)
-    if (not DOI_SHAPE.fullmatch(doi) or ";" in doi or re.search(r"\s", raw.strip())
-            or doi == entry_doi):
+    if not DOI_SHAPE.fullmatch(doi) or ";" in doi or re.search(r"\s", raw.strip()):
+        return None
+    if doi == entry_doi and category not in SELF_NOTICE_CATEGORIES:
         return None
     return doi
 
@@ -371,7 +382,7 @@ def _entry_items(doi: str, record: dict, notices: list, reverse_ok: bool, report
         if category is None:
             unmapped.add((str(token), str(raw)))
             continue
-        notice = _notice_doi(raw, doi)
+        notice = _notice_doi(raw, doi, category)
         if notice is None:
             malformed.add((category, str(raw)))
             continue
