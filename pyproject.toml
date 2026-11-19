@@ -14,7 +14,7 @@ dependencies = [
     "pymarkdownlnt>=0.9.0",
     "pyyaml>=6.0",
     "python-dotenv>=0.19.0",
-    "pypdf>=4.0.0",
+    "pypdf>=4.0.0,<7",  # 6.x: phillit-service pins the engine's pypdf; identity ratios depend on the extractor
 ]
 
 [dependency-groups]
