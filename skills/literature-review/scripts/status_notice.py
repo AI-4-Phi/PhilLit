@@ -44,6 +44,13 @@ requested DOI). HTTP 400/414, or a response with fewer items than its
 after its Retry-After when that fits the deadline. Results are mapped by
 normalized DOI only.
 
+Per-entry states (ENTRY_STATES): stamped, checked_none, not_found,
+identity_mismatch, identity_unverifiable (the record has no title or no
+author array), unresolved, error, deadline, splice_failed, the
+not_requested:* reasons, and two the barrier sets after the lookup:
+not_checked:late-promotion (counted, not a failure) and dropped:demoted (a
+value withheld because the final tier is EVIDENCE-NONE).
+
 The forward record must match the entry before anything is stamped: a
 compatible type (a @book never matches a chapter or article record, nor a
 part a book record), the same first-author surname (folded, leading
@@ -87,6 +94,9 @@ _here = str(Path(__file__).resolve().parent)
 sys.path.insert(0, _here)
 import venue_vetting as _vv  # noqa: E402  (also puts philosophy-research/scripts on sys.path)
 from generate_bibliography import clean_bibtex_str  # noqa: E402
+# The value grammar's one owner (a leaf module); aliases, never copies.
+from status_items import (  # noqa: E402,F401
+    CATEGORY_ORDER, PREPRINT, categories, format_items, parse_items)
 
 sys.path.remove(_here)
 _hook_dir = str(Path(__file__).resolve().parent.parent.parent.parent / "hooks")
@@ -103,7 +113,7 @@ from rate_limiter import get_limiter  # noqa: E402
 FIELD = "status_notice"
 REQUEST_TIMEOUT = _vv.REQUEST_TIMEOUT
 CROSSREF_WORKS_URL = "https://api.crossref.org/works"
-BATCH_SIZE = 40
+BATCH_SIZE = 80   # the 400/414 split handles a URL CrossRef finds too long
 ROWS = 1000
 MAX_CONSECUTIVE_ERRORS = 3
 ARXIV_PREFIX = "10.48550/"
@@ -117,9 +127,6 @@ TYPE_CATEGORY = {
     "erratum": "correction",
     "corrigendum": "correction",
 }
-PREPRINT = "preprint"
-
-
 def fold_token(token) -> str:
     """A CrossRef update type folded for matching: case and hyphens."""
     return token.strip().lower().replace("-", "_") if isinstance(token, str) else ""
@@ -148,9 +155,8 @@ def category_of(token) -> str | None:
     return TYPE_CATEGORY.get(fold_token(token))
 
 
-CATEGORY_ORDER = ("retraction", "partial_retraction", "withdrawal",
-                  "expression_of_concern", "correction", PREPRINT)
 ENTRY_STATES = ("stamped", "checked_none", "not_found", "identity_mismatch",
+                "identity_unverifiable", "dropped:demoted",
                 "not_requested:no-doi", "not_requested:evidence-none",
                 "not_requested:arxiv", "not_requested:invalid-doi",
                 "unresolved", "error", "deadline", "splice_failed",
@@ -167,27 +173,6 @@ _RETRACTED_MARK_RE = re.compile(
 # ---------------------------------------------------------------------------
 # Value grammar
 # ---------------------------------------------------------------------------
-
-def parse_items(value) -> list[tuple[str, str | None]]:
-    """(category, notice DOI or None) per `; `-separated item, in order."""
-    out = []
-    for part in (value or "").split(";"):
-        words = part.split()
-        if not words:
-            continue
-        out.append((words[0], words[1] if len(words) > 1 else None))
-    return out
-
-
-def categories(value) -> set[str]:
-    return {cat for cat, _doi in parse_items(value)}
-
-
-def format_items(items) -> str:
-    rank = {c: n for n, c in enumerate(CATEGORY_ORDER)}
-    ordered = sorted(set(items), key=lambda it: (rank[it[0]], it[1] or ""))
-    return "; ".join(cat if doi is None else f"{cat} {doi}" for cat, doi in ordered)
-
 
 # ---------------------------------------------------------------------------
 # DOIs and identity
@@ -296,6 +281,21 @@ def _crossref_first_surname(record: dict) -> str:
         return ""
     first = next((a for a in authors if a.get("sequence") == "first"), authors[0])
     return first.get("family") or first.get("name") or ""
+
+
+def identity_check(fields: dict, record: dict, entry_type=None) -> str:
+    """"match", "mismatch", or "unverifiable" when the CrossRef record has
+    no title or no author array to compare (a type conflict is a mismatch
+    whatever else the record holds). Never raises."""
+    try:
+        if not _types_compatible(entry_type, record):
+            return "mismatch"
+        if (not decode_crossref_title(_first(record.get("title"))).strip()
+                or not [a for a in (record.get("author") or []) if isinstance(a, dict)]):
+            return "unverifiable"
+        return "match" if identity_matches(fields, record, entry_type) else "mismatch"
+    except Exception:
+        return "mismatch"
 
 
 def identity_matches(fields: dict, record: dict, entry_type=None) -> bool:
@@ -426,7 +426,12 @@ class _Pass:
                     half = len(chunk) // 2
                     queue[0:0] = [chunk[:half], chunk[half:]]
                 else:
+                    # A DOI CrossRef still rejects alone counts toward the
+                    # breaker like any failed request.
                     state[chunk[0]] = "error"
+                    self.consecutive_errors += 1
+                    if self.consecutive_errors >= MAX_CONSECUTIVE_ERRORS:
+                        self.stop = "error"
             elif outcome == "error":
                 state.update({d: "error" for d in chunk})
                 self.consecutive_errors += 1
@@ -467,6 +472,7 @@ def empty_report() -> dict:
             "errors": 0, "deadline": 0, "unmapped_types": {}, "sources": {},
             "malformed": 0, "splice_failed": 0, "reverse_unchecked": 0,
             "unresolved": 0, "late_promotion": 0, "ignored_types": {},
+            "identity_unverifiable": 0, "dropped_demoted": 0,
             "entries": {}}
 
 
@@ -576,8 +582,11 @@ def lookup_status(entries: dict, deadline: float):
                 if record is None:
                     report["entries"][label] = "not_found"
                     continue
-                if not identity_matches(fields, record, etypes.get(label)):
-                    report["entries"][label] = "identity_mismatch"
+                verdict = identity_check(fields, record, etypes.get(label))
+                if verdict != "match":
+                    report["entries"][label] = ("identity_unverifiable"
+                                                if verdict == "unverifiable"
+                                                else "identity_mismatch")
                     continue
                 items, unresolved = _entry_items(doi, record, rev_items, rstate == "ok", report)
                 if unresolved:
@@ -620,6 +629,8 @@ def settle(report: dict) -> None:
     report["deadline"] = states.count("deadline")
     report["splice_failed"] = states.count("splice_failed")
     report["late_promotion"] = states.count("not_checked:late-promotion")
+    report["identity_unverifiable"] = states.count("identity_unverifiable")
+    report["dropped_demoted"] = states.count("dropped:demoted")
     causes = []
     if report["errors"]:
         causes.append(f"{report['errors']} entr{'y' if report['errors'] == 1 else 'ies'} "
@@ -634,9 +645,6 @@ def settle(report: dict) -> None:
         causes.append(f"{report['unresolved']} entr{'y' if report['unresolved'] == 1 else 'ies'} "
                       "with a CrossRef update relation PhilLit could not map (unmapped "
                       "type or malformed notice DOI; see unmapped_types)")
-    if report["late_promotion"]:
-        causes.append(f"{report['late_promotion']} entr{'y' if report['late_promotion'] == 1 else 'ies'} "
-                      "promoted past EVIDENCE-NONE after the lookup, so never checked")
     if report["splice_failed"]:
         causes.append(f"{report['splice_failed']} stamp(s) did not land (splice failed)")
     parts = [r for r in [report.get("stop_reason"), *causes] if r]

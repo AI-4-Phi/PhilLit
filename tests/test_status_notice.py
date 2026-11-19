@@ -364,14 +364,15 @@ def test_reverse_hit_with_unmapped_type_is_counted_not_stamped(monkeypatch):
     assert report["status"] == "partial" and report["reason"]
 
 
-def test_41_dois_make_two_forward_requests(monkeypatch):
+def test_161_dois_make_three_forward_requests(monkeypatch):
+    """Z3: chunks of 80; the 400/414 split already handles a long URL."""
     entries = {f"k{n}": _e({"author": "Doe, J.", "title": f"Work {n}",
-                            "doi": f"10.1000/w{n}"}) for n in range(41)}
+                            "doi": f"10.1000/w{n}"}) for n in range(161)}
     _v, report, fake = _run(monkeypatch, entries, FakeCrossRef(records=[], notices=[]))
     fwd = [c for c in fake.calls if c[0] == "doi"]
-    assert [len(d) for _k, d in fwd] == [40, 1]
-    assert len([c for c in fake.calls if c[0] == "updates"]) == 2
-    assert report["not_found"] == 41
+    assert [len(d) for _k, d in fwd] == [80, 80, 1]
+    assert len([c for c in fake.calls if c[0] == "updates"]) == 3
+    assert report["not_found"] == 161
 
 
 def test_duplicate_dois_sent_once(monkeypatch):
@@ -818,13 +819,12 @@ def test_failed_reverse_on_an_identity_mismatch_is_partial(monkeypatch):
     assert report["status"] == "partial" and "reverse" in report["reason"]
 
 
-def test_late_promotion_state_makes_the_pass_partial():
-    """P7: the barrier marks an entry it did not look up but later
-    promoted; settle() then explains it."""
+def test_late_promotion_is_counted_but_keeps_the_pass_complete():
+    """Z4: a late promotion is expected barrier behaviour, not a failure."""
     report = sn.empty_report()
     report["entries"]["x"] = "not_checked:late-promotion"
     sn.settle(report)
-    assert report["status"] == "partial" and "promoted" in report["reason"]
+    assert report["status"] == "complete" and report["reason"] is None
     assert report["late_promotion"] == 1
 
 
@@ -922,3 +922,42 @@ def test_ignored_relation_beside_a_stamp_keeps_the_pass_complete(monkeypatch):
     assert values == {"s": "retraction 10.1000/r"}
     assert report["status"] == "complete"
 
+
+def test_empty_title_or_no_author_is_unverifiable(monkeypatch):
+    """Z5: a record that cannot be compared is not a mismatch."""
+    for rec in (dict(_record("10.3390/soc15010006"), title=[]),
+                {k: v for k, v in _record("10.3390/soc15010006").items() if k != "author"}):
+        values, report, _ = _run(monkeypatch, {"g": _e(GERLICH)},
+                                 FakeCrossRef(records=[rec], notices=_items("rev")))
+        assert values == {}
+        assert report["entries"]["g"] == "identity_unverifiable"
+        assert report["identity_unverifiable"] == 1 and report["identity_mismatch"] == 0
+
+
+def test_single_doi_400s_trip_the_breaker(monkeypatch):
+    """Z11: a DOI that alone still draws 400 counts toward the breaker."""
+    entries = {f"k{n}": _e({"author": "Doe, J.", "title": f"W {n}",
+                            "doi": f"10.1000/w{n}"}) for n in range(8)}
+    fake = FakeCrossRef(records=[], notices=[], fail=lambda k, d: (400, None))
+    _v, report, fake = _run(monkeypatch, entries, fake)
+    singles = [c for c in fake.calls if len(c[1]) == 1]
+    assert len(singles) == sn.MAX_CONSECUTIVE_ERRORS
+    assert set(report["entries"].values()) == {"error"}
+    assert "consecutive" in report["reason"]
+
+
+def test_value_grammar_lives_in_a_leaf_module():
+    """Z9: one owner with no network import; status_notice aliases it."""
+    import subprocess
+    import status_items
+    assert sn.parse_items is status_items.parse_items
+    assert sn.categories is status_items.categories
+    assert sn.format_items is status_items.format_items
+    assert sn.CATEGORY_ORDER is status_items.CATEGORY_ORDER
+    out = subprocess.run(
+        [sys.executable, "-c",
+         "import sys; sys.path.insert(0, sys.argv[1]); import status_items; "
+         "print(sorted(m for m in ('requests', 'venue_vetting', 'rate_limiter', "
+         "'evidence_barrier') if m in sys.modules))", str(SCRIPTS)],
+        capture_output=True, text=True)
+    assert out.stdout.strip() == "[]", out.stderr

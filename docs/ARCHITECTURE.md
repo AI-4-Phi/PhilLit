@@ -182,6 +182,7 @@ skills/literature-review/
     ├── bib_fields.py                     # Depth-counting scanner: locates field values in raw BibTeX text for every value read, edit and strip in this directory
     ├── venue_vetting.py                  # OpenAlex venue check behind venue_status (barrier helper, venue vetting)
     ├── status_notice.py                  # CrossRef correction/retraction/preprint lookup behind status_notice (barrier helper; shares venue vetting's window)
+    ├── status_items.py                   # The status_notice value grammar (leaf module; status_notice and check_evidence alias it)
     ├── year_suffix.py                    # Chicago a/b assignment over work identity (barrier helper, Chicago a/b disambiguation)
     ├── abstract_usability.py             # Is an abstract usable as evidence? (barrier helper, the screen behind EVIDENCE-ABSTRACT)
     ├── web_evidence.py                   # URL extraction, capture checks, existence (barrier helper, the EVIDENCE-WEB gate; owns the excluded-host policy — SEP + mirrors, IEP, NDPR, PhilPapers — which never earn EVIDENCE-WEB)
