@@ -306,6 +306,8 @@ Never advance to a next step in this phase before completing the current step.
    checked, or carry a CrossRef relation it could not map). Per-entry states
    besides `stamped` and `checked_none`: `not_found`, `identity_mismatch`,
    `identity_unverifiable` (CrossRef's record has no title or authors),
+   `notice_rescinded` (the only notice was itself rescinded),
+   `notice_unverified` (the notice's own record could not be read),
    `unresolved`, `error`, `deadline`, `splice_failed`, `not_requested:*`,
    `not_checked:late-promotion` (promoted past EVIDENCE-NONE after the
    lookup; expected, not a failure) and `dropped:demoted`. The printed

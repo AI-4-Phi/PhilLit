@@ -131,9 +131,15 @@ or the DOI is a CrossRef preprint. Items: `retraction <doi>`,
 `partial_retraction <doi>`, `withdrawal <doi>`, `expression_of_concern <doi>`,
 `correction <doi>` (CrossRef correction, erratum or corrigendum) and
 `preprint`, where `<doi>` is the notice's DOI (for a retraction or
-withdrawal issued in place, the article's own DOI). Only entries with a DOI,
-not at `EVIDENCE-NONE`, whose CrossRef record matches their first author and
-title are looked up; arXiv DOIs are not. Absence means "no status fact is
+withdrawal issued in place, the article's own DOI). `preprint` comes from
+CrossRef (a posted-content preprint) or, with no network call, from the
+entry's own fields: no `journal`, and an arXiv DOI (`10.48550/`),
+`archiveprefix = {arXiv}` with an `eprint`, or a `howpublished` naming arXiv.
+Each notice's own CrossRef record is read too, and an item whose notice was
+rescinded or retracted (or could not be read) is dropped. Only entries with a DOI,
+not at `EVIDENCE-NONE`, whose CrossRef record matches their first author (or,
+for a book CrossRef records by its editors, first editor) and title are
+looked up; arXiv DOIs are not. Absence means "no status fact is
 licensed for this entry in this run", never "no notice exists" (the
 `status_notice` object in `evidence_report.json` says per entry why).
 `PHILLIT_STATUS_NOTICE=0` switches the lookup off. The synthesis writer
