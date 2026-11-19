@@ -252,6 +252,11 @@ def _is_capitalized_midsentence(text: str, m) -> bool:
     the surname He in "Padmakumar and He (2023)" or "Li, He, and Huang"."""
     if not m.group(0)[0].isupper():
         return False
+    # A sentence-initial surname in an author list or citation: "He and Yang
+    # (2025)", "He et al. (2024)", "He (2023)".
+    if re.match(r"\s+(?:and|&)\s+[A-Z]|\s+et al\.|\s*\(\s*(?:1[5-9]|20)\d\d",
+                text[m.end():]):
+        return True
     before = text[:m.start()].rstrip()
     return bool(before) and before[-1] not in ".!?:\"'\u201c\u2018\u201e\u00ab\u00bb\u2039\u203a([*_-\u2014\u2013"
 
