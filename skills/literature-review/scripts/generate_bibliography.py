@@ -2198,6 +2198,67 @@ def warn_same_work_cited(cited: list) -> None:
               "one work or distinguish the editions explicitly", file=sys.stderr)
 
 
+def warn_lone_letters(cited: list, bib_data) -> None:
+    """[LETTER] advisory: a cited lettered work whose same-author-year
+    letters do not survive as a packed run a, b, ... (PL-35).
+
+    The barrier letters over the whole bibliography, and this script then
+    drops uncited siblings, so the review can cite "Matheson (2024b)" and
+    list "2024b" with no 2024a. Print-only, by design. Removing or moving
+    the letter is NOT done here: the letter is the only token separating two
+    solo works by one author, so a prose rewrite to "Matheson (2024)" is
+    undone by the next run of this script (the letterless cite matches both
+    lettered entries and the dropped sibling comes back), and
+    check_evidence.find_cites counts a bare year as citing EVERY lettered
+    entry, so the dropped sibling would read as cited downstream. A
+    rendered-only or prose-only re-lettering (b, c -> a, b) is worse: on a
+    re-run the prose "2024a" meets the bib's old "a" and the other work is
+    kept with lint passing. A real fix needs persisted state; see PL-35.
+
+    Grouping: lettered bib entries sharing year and a variant-intersecting
+    first-author surname. A group whose letters are not distinct (two
+    lettered signature groups, e.g. two authors sharing a surname) cannot be
+    read this way and is skipped."""
+    groups: list[list[tuple]] = []  # [(key, variants, year, letter)]
+    for key, entry in bib_data.entries.items():
+        letter = _entry_suffix(entry)
+        persons = entry.persons.get("author") or entry.persons.get("editor") or []
+        year = _get_field(entry, "year")
+        if not letter or not persons or not year:
+            continue
+        surname = _get_full_surname(persons[0])
+        variants = ascii_variants(surname) or frozenset({surname.lower()})
+        rec = (key, variants, year, letter)
+        hits = [g for g in groups if g[0][2] == year
+                and any(variants & r[1] for r in g)]
+        for g in hits[1:]:
+            hits[0].extend(g)
+            groups.remove(g)
+        if hits:
+            hits[0].append(rec)
+        else:
+            groups.append([rec])
+    cited_keys = {k for k, _e in cited}
+    for g in groups:
+        letters = [r[3] for r in g]
+        if len(g) < 2 or len(set(letters)) != len(letters):
+            continue
+        kept = sorted((r for r in g if r[0] in cited_keys), key=lambda r: r[3])
+        if not kept:
+            continue
+        packed = [chr(ord("a") + i) for i in range(len(kept))]
+        if len(kept) >= 2 and [r[3] for r in kept] == packed:
+            continue
+        year = g[0][2]
+        print("  [LETTER] cited " + ", ".join(
+                  _ascii(r[0]) + " (" + _ascii(year + r[3]) + ")" for r in kept)
+              + " but not " + ", ".join(
+                  _ascii(r[0]) + " (" + _ascii(year + r[3]) + ")"
+                  for r in g if r[0] not in cited_keys)
+              + ": the year letters no longer run a, b, ... - left as is;"
+              " report this line in the final summary", file=sys.stderr)
+
+
 def generate_references(entries: list[tuple[str, object]]) -> str:
     """Format cited entries as a ## References section."""
     # Sort by first author surname, then year
@@ -2314,6 +2375,10 @@ def main():
         warn_same_work_cited(cited)
     except Exception as e:
         print(f"  [SAME-WORK] advisory failed: {e}", file=sys.stderr)
+    try:
+        warn_lone_letters(cited, bib_data)
+    except Exception as e:
+        print(f"  [LETTER] advisory failed: {e}", file=sys.stderr)
 
     # Log matched entries
     for key, _entry in sorted(cited, key=lambda x: x[0]):

@@ -3413,3 +3413,74 @@ def test_imports_without_the_implicit_script_directory():
                        capture_output=True, text=True, encoding="utf-8")
     assert "ModuleNotFoundError" not in r.stderr, r.stderr
     assert "Usage" in r.stdout + r.stderr
+
+
+# =============================================================================
+# PL-35: a cited letter whose same-author-year siblings were all dropped
+# =============================================================================
+
+MATHESON_BIB = """@book{matheson2024philosophy, author = {Matheson, Jonathan},
+  title = {Philosophy of Epistemic Autonomy}, publisher = {X}, year = {2024},
+  year_suffix = {a}}
+
+@book{matheson2024why, author = {Matheson, Jonathan},
+  title = {Why Think for Yourself?}, publisher = {Y}, year = {2024},
+  year_suffix = {b}}
+
+@book{matheson2024third, author = {Matheson, Jonathan},
+  title = {Zeal}, publisher = {Z}, year = {2024}, year_suffix = {c}}"""
+
+
+class TestLoneLetterWarning:
+    """The generator drops an uncited lettered sibling but cannot drop its
+    letter: the prose was written against it, and a stateless prose rewrite
+    is undone by the next step-4 run. So it reports the gap instead."""
+
+    def _run(self, prose, capsys):
+        from pybtex.database import parse_string
+        db = parse_string(MATHESON_BIB, "bibtex")
+        cited = gb_find(prose, db)
+        capsys.readouterr()
+        generate_bibliography.warn_lone_letters(cited, db)
+        return capsys.readouterr().err
+
+    def test_a_lone_b_is_reported(self, capsys):
+        err = self._run("Matheson (2024b) argues X.", capsys)
+        assert "[LETTER]" in err
+        assert "matheson2024why" in err
+        assert "2024b" in err
+
+    def test_a_gap_is_reported(self, capsys):
+        err = self._run("Matheson (2024a) and Matheson (2024c) differ.", capsys)
+        assert "[LETTER]" in err
+        assert "2024c" in err
+
+    def test_a_packed_prefix_is_silent(self, capsys):
+        assert "[LETTER]" not in self._run(
+            "Matheson (2024a) and Matheson (2024b) differ.", capsys)
+
+    def test_all_cited_is_silent(self, capsys):
+        assert "[LETTER]" not in self._run(
+            "Matheson (2024a; 2024b; 2024c) differ.", capsys)
+
+    def test_unlettered_bib_is_silent(self, capsys):
+        from pybtex.database import parse_string
+        db = parse_string(SUSSER_BIB, "bibtex")
+        cited = gb_find("Susser (2019) argues.", db)
+        generate_bibliography.warn_lone_letters(cited, db)
+        assert "[LETTER]" not in capsys.readouterr().err
+
+    def test_main_prints_it_and_leaves_the_prose_alone(self, tmp_path, monkeypatch, capsys):
+        review = tmp_path / "r.md"
+        review.write_text("Matheson (2024b) argues X.\n", encoding="utf-8")
+        bib = tmp_path / "b.bib"
+        bib.write_text(MATHESON_BIB, encoding="utf-8")
+        monkeypatch.setattr(sys, "argv", ["g", str(review), str(bib)])
+        generate_bibliography.main()
+        assert "[LETTER]" in capsys.readouterr().err
+        assert review.read_text(encoding="utf-8").startswith(
+            "Matheson (2024b) argues X.")
+
+
+def gb_find(prose, db):
+    return generate_bibliography.find_cited_entries(prose, db)
