@@ -550,11 +550,12 @@ def test_writer_and_planner_know_the_status_notice_rule():
     `status_notice`, in fixed wording, never from a note."""
     writer = (REPO_ROOT / "agents" / "synthesis-writer.md").read_text(encoding="utf-8")
     assert "## Publication Status (REQUIRED)" in writer
-    assert "a correction notice for this article has been published" in writer
-    for wording in ('"the article has been retracted (https://doi.org/<doi>)"',
-                    '"the article has been partially retracted (https://doi.org/<doi>)"',
-                    '"the article has been withdrawn (https://doi.org/<doi>)"',
-                    '"an expression of concern has been issued about it (https://doi.org/<doi>)"'):
+    assert "this article" not in writer and "the article has been" not in writer
+    for wording in ('"a correction notice for this work has been published (https://doi.org/<doi>)"',
+                    '"this work has been retracted (https://doi.org/<doi>)"',
+                    '"this work has been partially retracted (https://doi.org/<doi>)"',
+                    '"this work has been withdrawn (https://doi.org/<doi>)"',
+                    '"an expression of concern has been issued about this work (https://doi.org/<doi>)"'):
         assert wording in writer
     # The stamp does not record who acted (sources include retraction-watch).
     assert "the publisher has" not in writer
