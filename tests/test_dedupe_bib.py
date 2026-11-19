@@ -2343,9 +2343,10 @@ class TestFulltextRestamp:
         assert "fulltext/a.txt" in merged and "fulltext/b.txt" not in merged
         assert "[FULLTEXT] conflict" in capsys.readouterr().err
 
-    def test_a_winner_that_gains_a_doi_drops_fulltext_loudly(self, tmp_path, capsys):
+    def test_a_gained_doi_whose_recheck_fails_drops_fulltext_loudly(self, tmp_path, capsys):
         """Title pass: the no-DOI FULLTEXT copy wins (abstract) and the union
-        brings in the loser's DOI -- the verified identity no longer holds."""
+        brings in the loser's DOI. The identity changed, so the text must
+        pass the identity check again; this text does not carry the title."""
         bibs = {"literature-domain-1.bib": self._entry("gardner2019a", ff=self.FF, abstract=True),
                 "literature-domain-2.bib": self._entry("gardner2019b", doi="10.1/harm")}
         merged, cap, _ = self._run(tmp_path, capsys, bibs,
@@ -2463,6 +2464,12 @@ class TestFulltextSurvivesSubtitleVariantMerge:
 
     def test_reverse_direction_keeps_fulltext(self, tmp_path, capsys):
         merged = self._run(tmp_path, self.LONG, "10.1017/9781108895057", self.SHORT)
+        assert "EVIDENCE-FULLTEXT" in merged
+        assert "[FULLTEXT-LOST]" not in capsys.readouterr().out
+
+    def test_a_gained_doi_under_the_same_title_keeps_fulltext(self, tmp_path, capsys):
+        merged = self._run(tmp_path, self.LONG, "10.1017/9781108895057", self.LONG)
+        assert "doi = {10.1017/9781108895057}" in merged
         assert "EVIDENCE-FULLTEXT" in merged
         assert "[FULLTEXT-LOST]" not in capsys.readouterr().out
 

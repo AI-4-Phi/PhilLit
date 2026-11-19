@@ -78,7 +78,7 @@ the groups where suppression actually cost letters; `suppressed_singletons`
 holds groups the assigner left unlettered that held at most ONE work, which
 Chicago would not have lettered anyway (disambiguation starts at two).
 Measured over the real barrier input (42 delivered reviews, 4,582 domain-bib
-entries): 8 records in `suppressed` against 98 in `suppressed_singletons`,
+entries; before the citekey axis 2b existed): 8 records in `suppressed` against 98 in `suppressed_singletons`,
 every one of the latter an `identity_conflict` raised by a duplicate pair
 that spells one author two ways. Nothing is discarded -- an operator who
 wants everything reads both lists -- but a count of `suppressed` alone, which
@@ -110,8 +110,8 @@ promise. Its ordering is fixed (records are emitted in sorted key order, and
 return), and every string in it is chosen by value rather than by arrival:
 `authors` is the lexicographically smallest spelling among the copies that
 name the group, because those copies routinely disagree about how to write
-one name. Shuffling the real corpus (42 reviews x 5 orderings) now changes
-nothing in either; before, three reviews flipped the `authors` string of a
+one name. Shuffling the real corpus (42 reviews x 5 orderings, measured
+before axis 2b) changed nothing in either; before, three reviews flipped the `authors` string of a
 suppression record. But `works` remains the best-effort floor described
 above, since a suppressed group never receives a canonical partition to
 count -- so treat a report number as telemetry and a letter as a guarantee.

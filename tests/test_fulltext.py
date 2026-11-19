@@ -1027,9 +1027,25 @@ class TestIdentityMatchesSubtitleVariant:
         other = "[[sheet 1]]\nSomething Else Entirely\nBy Someone\n"
         assert not ft.identity_matches(ft.entry_identity(self.LONG), self.SHORT, text=other)
 
-    def test_another_doi_on_page_one_refuses_a_gained_doi(self):
+    def test_a_no_doi_record_is_re_verified_by_rule_a(self):
+        """Title spread over the first sheet the way the PL-33 Cambridge PDF
+        prints it: the full title's first 6 words never stand together, so
+        the DOI rule would refuse the subtitled survivor; rule A, which
+        verified the record, accepts it."""
+        text = ("[[sheet 1]]\nALGORITHMS\nALGORITHMS\nAND\nAND\nAUTONOMY\nAUTONOMY\n"
+                "THE ETHICS OF AUTOMATED\nALAN RUBEL, CLINTON CASTRO AND ADAM PHAM\n"
+                "DECISION SYSTEMS\n[[sheet 2]]\nalgorithms and autonomy\nAlan Rubel is\n")
+        short_no_doi = {k: v for k, v in self.SHORT.items() if k != "doi"}
+        survivor = dict(self.LONG, doi="10.1017/9781108895057")
+        assert ft.identity_matches(ft.entry_identity(short_no_doi), survivor, text=text)
+
+    def test_a_doi_record_is_re_verified_by_the_doi_rule(self):
+        with_doi = dict(self.LONG, doi="10.1017/9781108895057")
+        # Same DOI, short title: the DOI string is absent and page 1 names
+        # another DOI, so the DOI rule refuses.
         text = self.TEXT.replace("Alan Rubel,", "doi:10.9999/other Alan Rubel,")
-        assert not ft.identity_matches(ft.entry_identity(self.LONG), self.SHORT, text=text)
+        assert not ft.identity_matches(ft.entry_identity(with_doi), self.SHORT, text=text)
+        assert ft.identity_matches(ft.entry_identity(with_doi), self.SHORT, text=self.TEXT)
 
     def test_a_different_subtitle_refuses(self):
         fields = dict(self.LONG, title="Algorithms and Autonomy: A Different Book")

@@ -531,10 +531,12 @@ def identity_matches(blob_identity, fields: Mapping, text: str | None = None) ->
     the entry's, the titles equal or `subtitle_variant_keys` (which needs
     the stored `main_key`, so a blob written before it existed relates no
     subtitle variant), AND `identity_ok` passing on the text's pages against
-    the entry itself -- the DOI rule when the entry has a DOI, rule A when
-    not. A stored DOI the entry lacks never matches: the DOI rule accepts on
-    the DOI string alone and never checked the title. An entry with no work
-    key never matches."""
+    the entry's title and surname under the rule that verified the text
+    (the DOI rule for a DOI record, rule A for a no-DOI record, also when
+    the entry gained a DOI: rule A has no `other_doi_page1` guard, the
+    residual accepted with it). A stored DOI the entry lacks never matches:
+    the DOI rule accepts on the DOI string alone and never checked the
+    title. An entry with no work key never matches."""
     if not isinstance(blob_identity, Mapping):
         return False
     now = entry_identity(fields)
@@ -558,8 +560,13 @@ def identity_matches(blob_identity, fields: Mapping, text: str | None = None) ->
             stored_key[0], blob_identity.get("main_key"),
             now["work_key"][0], now["main_key"]):
         return False
+    # The rule that verified the text: the DOI rule for a DOI record, rule A
+    # for a no-DOI one, even when the survivor gained a DOI. Measured on the
+    # PL-33 PDF (a Cambridge book, DOI on sheet 6, title spread over sheet 1
+    # in repeated words): rule A passes both titles, the DOI rule only the
+    # short one, since it reads pages 1-3 and the full title's first 6 words.
     ok, _why = identity_ok(pages_from_text(text), {
-        "doi": now["doi"],
+        "doi": stored_doi,
         "title": fields.get("title") or "",
         "surname": first_author_surname(fields.get("author") or "",
                                         fields.get("editor") or ""),
