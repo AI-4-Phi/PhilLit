@@ -1149,7 +1149,7 @@ def _status_pass(domains, parsed, atts, context_values, healed, deadline):
                 label = f"{d['bib_name']}:{key}"
                 labels[label] = (i, key)
                 entries[label] = {
-                    "fields": fields,
+                    "fields": fields, "entry_type": etype,
                     "evidence_none": se.compute_tier(etype, fields, att) == se.TIER_NONE}
         values, report = sn.lookup_status(entries, deadline)
         # Round-trip for the same reason venue vetting does: a stray value
@@ -1170,8 +1170,16 @@ def _status_summary(rep) -> dict:
         out["reason"] = rep["reason"]
     out["stamped"] = rep.get("stamped") or {}
     for k in ("looked_up", "not_found", "identity_mismatch", "errors", "deadline",
-              "malformed", "splice_failed"):
+              "malformed", "splice_failed", "arxiv_skipped", "reverse_unchecked",
+              "unresolved", "late_promotion"):
         out[k] = rep.get(k, 0)
+    out["unmapped_types"] = rep.get("unmapped_types") or {}
+    out["sources"] = rep.get("sources") or {}
+    # Only the entries that need a look; the full map is in the report.
+    out["entries"] = {k: v for k, v in (rep.get("entries") or {}).items()
+                      if v not in ("stamped", "checked_none")
+                      and not v.startswith(("not_requested:no-doi",
+                                            "not_requested:evidence-none"))}
     return out
 
 
@@ -1942,6 +1950,14 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                     # policy forbids.
                     chunk = pre_sw
                     same_work_splice_failed.append(f"{bib_name}:{key}")
+            sn_label = f"{bib_name}:{key}"
+            if (tier != se.TIER_NONE and isinstance(status_report.get("entries"), dict)
+                    and status_report["entries"].get(sn_label) == "not_requested:evidence-none"):
+                # Promoted past EVIDENCE-NONE by a pass that runs after the
+                # metadata phase (web, full text): never looked up, and the
+                # report must say so rather than call it evidence-none (P7).
+                status_report["entries"][sn_label] = "not_checked:late-promotion"
+                sn.settle(status_report)
             sn_value = status_values.get((i, key))
             if sn_value:
                 # Spliced AFTER compute_tier like venue_status, and gated on

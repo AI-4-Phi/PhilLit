@@ -248,3 +248,59 @@ def test_metadata_window_stays_inside_the_pinned_budget():
              + vv.REQUEST_TIMEOUT + eb.FULLTEXT_PASS_SECONDS)
     assert after <= eb.FULLTEXT_RUN_CEILING_SECONDS < 600
     assert sn.REQUEST_TIMEOUT == vv.REQUEST_TIMEOUT
+
+
+def test_the_barrier_passes_the_entry_type(tmp_path, crossref, monkeypatch):
+    """P2: the lookup can only check type compatibility if it gets the type."""
+    seen = {}
+    real = eb.sn.lookup_status
+
+    def spy(entries, deadline):
+        seen.update(entries)
+        return real(entries, deadline)
+    monkeypatch.setattr(eb.sn, "lookup_status", spy)
+    rd = _review(tmp_path, GERLICH_BIB)
+    assert eb.execute(rd, 1) == 0
+    assert seen["literature-domain-1.bib:gerlich2025ai"]["entry_type"] == "article"
+
+
+def test_late_promotion_is_not_checked_and_partial(tmp_path, crossref, monkeypatch):
+    """P7: an entry NONE at the metadata phase but promoted later is never
+    looked up; the report says so instead of calling it evidence-none."""
+    real = eb.se.compute_tier
+    calls = {"n": 0}
+
+    def provisional_none(etype, fields, att):
+        calls["n"] += 1
+        return eb.se.TIER_NONE if calls["n"] == 1 else real(etype, fields, att)
+    monkeypatch.setattr(eb.se, "compute_tier", provisional_none)
+    rd = _review(tmp_path, GERLICH_BIB)
+    assert eb.execute(rd, 1) == 0
+    rep = _report(rd)
+    assert rep["stamps"]["literature-domain-1.bib"]["gerlich2025ai"] == "EVIDENCE-EXISTENCE"
+    state = rep["status_notice"]["entries"]["literature-domain-1.bib:gerlich2025ai"]
+    assert state == "not_checked:late-promotion"
+    assert rep["status_notice"]["status"] == "partial"
+    assert "promoted" in rep["status_notice"]["reason"]
+    assert "status_notice" not in _bib(rd)
+
+
+def test_printed_summary_carries_the_diagnostic_counts(tmp_path, crossref, capsys):
+    """P12: the operator line shows what the report holds, and only the
+    entries that need a look."""
+    arxiv = STERELNY_BIB.replace("sterelny2010minds", "arx2021x").replace(
+        "10.1007/s11097-010-9174-y", "10.48550/arXiv.2101.00001")
+    rd = _review(tmp_path, GERLICH_BIB + "\n\n" + STERELNY_BIB + "\n\n" + arxiv,
+                 entries=dict(VERIFIED, arx2021x={
+                     "api_matched": True, "verified_identifier": "doi",
+                     "verified_identifier_value": "10.48550/arxiv.2101.00001",
+                     "entry_type": "article"}))
+    assert eb.execute(rd, 1) == 0
+    printed = json.loads(capsys.readouterr().out.strip().splitlines()[-1])["status_notice"]
+    for key in ("unmapped_types", "sources", "arxiv_skipped", "reverse_unchecked",
+                "unresolved", "late_promotion"):
+        assert key in printed
+    assert printed["sources"] == {"publisher": 1}
+    assert printed["arxiv_skipped"] == 1
+    assert printed["entries"] == {"literature-domain-1.bib:arx2021x": "not_requested:arxiv"}
+

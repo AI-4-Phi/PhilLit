@@ -303,8 +303,10 @@ Never advance to a next step in this phase before completing the current step.
    lookup (corrections, retractions, preprints). A non-`complete` status
    carries a `reason`: mention it once in the final summary (`skipped`:
    `PHILLIT_STATUS_NOTICE` switched it off; `partial`: some entries were not
-   checked). Writers may state only stamped status facts, so nothing else
-   needs doing.
+   checked, or carry a CrossRef relation it could not map). The printed
+   summary lists only the entries that need a look; the full per-entry map
+   is the `status_notice` object in `intermediate_files/json/evidence_report.json`.
+   Writers may state only stamped status facts, so nothing else needs doing.
 
    The summary's `abstract_corroboration` key reports the abstract check,
    which re-fetches one abstract per candidate entry. It is bounded by time
