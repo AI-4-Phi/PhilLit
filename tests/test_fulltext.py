@@ -1014,6 +1014,26 @@ class TestLeadPage:
         assert ft.lead_page(ft.PageMap((None, None)), "465--484") is None
 
 
+class TestLeadPageGuards:
+    """The page-number rule's guards (PL-32 review round)."""
+
+    def test_numbered_preceding_page_not_admitted(self):
+        assert ft.lead_page(ft.PageMap((999, 466, 467)), "465--484") is None
+
+    def test_article_page_two_back_not_admitted(self):
+        # Sheet 0 would imply 465 only if sheet 1 were numbered 466; it is a sheet.
+        assert ft.lead_page(ft.PageMap((None, None, 467, 468)), "465--484") is None
+
+    def test_residual_cover_of_a_pdf_missing_its_first_page_is_admitted(self):
+        # Accepted residual (fulltext.py QUOTES): the number fits, nothing else
+        # tells this cover from the article's first page. What passes is
+        # still the PDF's own text.
+        text = ft.render_text([COVER] + LATER, ft.PageMap((None, 466, 467)))
+        pm = ft.page_map_from_text(text)
+        assert ft.lead_page(pm, "465--484") == (0, 465)
+        assert ft.locate_quote("from the university repository", text, pm, bib_pages="465--484")
+
+
 def test_loads_by_path_without_pythonpath(tmp_path):
     code = (
         "import importlib.util\n"

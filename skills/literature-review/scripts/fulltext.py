@@ -73,11 +73,16 @@ material is not the work's text. One exception (`lead_page`): an article
 whose own first page carries no detected number (an abstract page) gets that
 page back when it directly precedes the first confirmed page and its implied
 number is the bib `pages` start; it stays a `[[sheet K]]` block, and
-check_quotes accepts the implied number as its locator. Residuals, accepted
-because what becomes quotable is still the PDF's real text (a passing quote
-is verbatim, never fabricated): a bib start one page too low, or a PDF that
-lacks the article's first page, admits a cover sheet that sits there. The module is pure apart from the
-explicit file helpers (`read_text`, `file_text_sha256`, `write_text_atomic`, `validate_record`).
+check_quotes accepts the implied number as its locator. Measured on the
+2026-11-17 cognitive-autonomy-ai review: it admitted 3 of 3 real first pages
+(Sterelny p.465, Danaher p.245, Christman p.143, whose JSTOR cover sheet
+implies 142 and stayed out) and no cover. A rule that also required the bib
+abstract on the page admitted none of them: 8 of the 9 full-text entries
+had no bib abstract, and Christman's first page prints none. Residuals,
+accepted because what becomes quotable is still the PDF's real text (a
+passing quote is verbatim, never fabricated): a bib start one page too low,
+or a PDF that lacks the article's first page, admits a cover sheet that sits
+there. The module is pure apart from the explicit file helpers (`read_text`, `file_text_sha256`, `write_text_atomic`, `validate_record`).
 """
 
 import bisect
@@ -950,7 +955,7 @@ def lead_page(page_map: PageMap | None, bib_pages: str | None) -> tuple[int, int
     if page_map is None or not page_map.confirmed:
         return None
     first = page_map.confirmed[0]
-    if first < 1:
+    if first < 1 or page_map.numbers[first - 1] is not None:
         return None
     implied = page_map.numbers[first] - 1
     start = _pages_start(bib_pages or "")
