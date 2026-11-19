@@ -638,8 +638,40 @@ def test_a_multi_cite_sentence_names_every_unlicensed_work(tmp_path):
     md = "Two studies were later retracted (Costello 2024; Bastani 2025; Wang 2019)."
     lines = [l for l in _status_lines(tmp_path, md) if "status-claim" in l]
     assert len(lines) == 1
-    assert "costello2024durably" in lines[0] and "bastani2025gen" in lines[0]
-    assert "wang2019down" not in lines[0]
+    assert lines[0].startswith(
+        "CHECK status-claim: bastani2025gen, costello2024durably "
+        "(retraction; licensed: wang2019down): ")
+
+
+def test_et_al_does_not_end_the_status_sentence(tmp_path):
+    lines = _status_lines(tmp_path, "Costello et al. (2024) later published an erratum.")
+    assert any(l.startswith("CHECK status-claim: costello2024durably (correction)")
+               for l in lines)
+    lines = _status_lines(tmp_path, "Wang et al. (2019) report a mechanism. Others agree.")
+    retracted = [l for l in lines if "retracted-cited" in l]
+    assert retracted and "Wang et al. (2019) report a mechanism." in retracted[0]
+
+
+def test_the_notice_link_stays_in_its_sentence(tmp_path):
+    md = ("A correction notice for this article has been published "
+          "(https://doi.org/10.3390/soc15090252) (Gerlich 2025).")
+    assert not any("status-claim" in l for l in _status_lines(tmp_path, md))
+
+
+def test_status_lines_carry_the_override_tag(tmp_path):
+    (tmp_path / "r.md").write_text("Costello (2024) published an erratum. Wang (2019) shows X.",
+                                   encoding="utf-8")
+    (tmp_path / "b.bib").write_text(BIB_STATUS, encoding="utf-8")
+    (tmp_path / "o.md").write_text(
+        "Tier override (user request): costello2024durably, wang2019down (EVIDENCE-ABSTRACT)\n",
+        encoding="utf-8")
+    out = subprocess.run([sys.executable, str(CHECKER), str(tmp_path / "r.md"),
+                          str(tmp_path / "b.bib"), "--overrides", str(tmp_path / "o.md")],
+                         capture_output=True, text=True).stdout
+    lines = [l for l in out.splitlines()
+             if l.startswith(("CHECK status-claim", "CHECK retracted-cited"))]
+    assert len(lines) == 2
+    assert all(l.endswith("[user-requested override]") for l in lines)
 
 
 def test_retracted_cited_lists_each_citing_sentence(tmp_path):

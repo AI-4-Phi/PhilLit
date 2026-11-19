@@ -585,6 +585,17 @@ def test_reverse_failure_keeps_forward_items_but_reports_partial(monkeypatch):
     assert report["status"] == "partial"
 
 
+def test_a_failed_reverse_query_is_partial_even_when_everything_stamped(monkeypatch):
+    """Measured live 2026-11-19: one transient failure on the reverse query.
+    The forward items still stamp, but the pass must say what went unchecked."""
+    fake = FakeCrossRef(fail=lambda k, d: (503, None) if k == "updates" else None)
+    values, report, _ = _run(monkeypatch, {"g": _e(GERLICH)}, fake)
+    assert values == {"g": "correction 10.3390/soc15090252"}
+    assert report["entries"] == {"g": "stamped"}
+    assert report["reverse_unchecked"] == 1
+    assert report["status"] == "partial" and "reverse" in report["reason"]
+
+
 def test_request_params_carry_polite_pool_and_no_select(monkeypatch):
     monkeypatch.setenv("CROSSREF_MAILTO", "ops@example.org")
     seen = []

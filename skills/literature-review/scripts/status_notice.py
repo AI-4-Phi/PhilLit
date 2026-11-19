@@ -344,7 +344,8 @@ def empty_report() -> dict:
             "looked_up": 0, "stamped": {},
             "not_found": 0, "identity_mismatch": 0, "arxiv_skipped": 0,
             "errors": 0, "deadline": 0, "unmapped_types": {}, "sources": {},
-            "malformed": 0, "splice_failed": 0, "entries": {}}
+            "malformed": 0, "splice_failed": 0, "reverse_unchecked": 0,
+            "entries": {}}
 
 
 def _bump(d: dict, key: str) -> None:
@@ -454,6 +455,14 @@ def lookup_status(entries: dict, deadline: float):
                     report["entries"][label] = rstate
                 else:
                     report["entries"][label] = "checked_none"
+        # A stamped entry whose reverse query did not answer: its forward
+        # items still stamp (each is verified), but notices only the reverse
+        # query finds were never checked, so the pass is partial even when
+        # every entry reads "stamped".
+        report["reverse_unchecked"] = sum(
+            1 for d in distinct
+            if rev_state.get(d, "error") != "ok"
+            and any(report["entries"].get(lbl) == "stamped" for lbl, _f in wanted[d]))
         if run.stop == "error":
             report["stop_reason"] = (f"stopped after {MAX_CONSECUTIVE_ERRORS} consecutive "
                                      "CrossRef request errors")
@@ -480,6 +489,9 @@ def settle(report: dict) -> None:
     if report["deadline"]:
         causes.append(f"{report['deadline']} entr{'y' if report['deadline'] == 1 else 'ies'} "
                       "not checked (shared metadata deadline passed)")
+    if report.get("reverse_unchecked"):
+        causes.append(f"{report['reverse_unchecked']} DOI(s) checked without the "
+                      "reverse CrossRef query (request error or deadline)")
     if report["splice_failed"]:
         causes.append(f"{report['splice_failed']} stamp(s) did not land (splice failed)")
     parts = [r for r in [report.get("stop_reason"), *causes] if r]

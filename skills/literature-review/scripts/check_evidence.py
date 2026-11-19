@@ -272,7 +272,10 @@ _ANY_STOP = r"[.!?]"
 # the end: the writer contract puts a notice link (https://doi.org/10.x/y)
 # inside the very sentence that states the status, and its dots would
 # otherwise cut the status word off from the cite.
-_SPACED_STOP = r"[.!?](?=\s|$)"
+# "et al.", "e.g.", "i.e." and "cf." never end one either: multi-author
+# empirical work, where notices cluster, is cited "Costello et al. (2024)".
+_SPACED_STOP = (r"(?<!\bet al)(?<!\be\.g)(?<!\bi\.e)(?<!\bcf)"
+                r"[.!?](?=\s|$)")
 
 
 def _sentence_at(md: str, pos: int, stop: str = _ANY_STOP) -> str:
@@ -319,13 +322,15 @@ def _status_licensed(stamped: set, category: str, sentence: str) -> bool:
             and bool(_PARTIAL_RE.search(sentence)))
 
 
-def status_checks(md: str, entries: dict) -> tuple[list[str], list[str]]:
+def status_checks(md: str, entries: dict,
+                  override_keys: set | None = None) -> tuple[list[str], list[str]]:
     """(status-claim lines, retracted-cited lines). `entries` maps key to
     {"positions": cite positions, "status": status_notice categories}.
 
     status-claim: a sentence citing an entry holds a status word whose
     category that entry's `status_notice` lacks; one line per sentence and
-    category, naming every cited entry that lacks it. retracted-cited: one
+    category, naming every cited entry that lacks it and, after "licensed:",
+    the ones in the sentence whose field has it. retracted-cited: one
     line per cited entry stamped retraction, partial_retraction or
     withdrawal, listing the sentences that cite it, so the orchestrator can
     confirm each discloses the status."""
@@ -341,8 +346,10 @@ def status_checks(md: str, entries: dict) -> tuple[list[str], list[str]]:
             lacking = [k for k in keys
                        if not _status_licensed(entries[k]["status"], category, sentence)]
             if lacking:
-                claims.append(f"CHECK status-claim: {', '.join(lacking)} ({category}): "
-                              f"{_ascii(sentence[:120])}")
+                licensed = [k for k in keys if k not in lacking]
+                also = f"; licensed: {', '.join(licensed)}" if licensed else ""
+                claims.append(f"CHECK status-claim: {', '.join(lacking)} ({category}{also}): "
+                              f"{_ascii(sentence[:120])}{_tag(keys, override_keys)}")
     cited = []
     for key, info in entries.items():
         cats = [c for c in _RETRACTED_CATEGORIES if c in info["status"]]
@@ -350,8 +357,13 @@ def status_checks(md: str, entries: dict) -> tuple[list[str], list[str]]:
             continue
         sentences = cite_sentences(md, info["positions"], _SPACED_STOP)
         cited.append(f"CHECK retracted-cited: {key} ({', '.join(cats)}): "
-                     + " | ".join(_ascii(s[:120]) for s in sentences))
+                     + " | ".join(_ascii(s[:120]) for s in sentences)
+                     + _tag([key], override_keys))
     return claims, cited
+
+
+def _tag(keys, override_keys) -> str:
+    return _OVERRIDE_TAG if override_keys and any(k in override_keys for k in keys) else ""
 
 
 _OVERRIDE_PREFIX = "Tier override (user request):"
@@ -467,7 +479,7 @@ def main() -> int:
                     print(f"CHECK reporting-verb: {key} ({label}): {snippet}{tag}")
                     counts["reporting_verb"] += 1
 
-    claims, retracted = status_checks(md, cited_status)
+    claims, retracted = status_checks(md, cited_status, override_keys)
     for line in claims + retracted:
         print(line)
     counts["status_claim"], counts["retracted_cited"] = len(claims), len(retracted)
