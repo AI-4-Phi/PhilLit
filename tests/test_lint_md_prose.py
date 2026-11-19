@@ -6,6 +6,8 @@ the 2026-07-17 production test review.
 """
 
 import sys
+
+import pytest
 from pathlib import Path
 
 SCRIPTS_DIR = Path(__file__).parent.parent / "skills" / "literature-review" / "scripts"
@@ -234,3 +236,15 @@ def test_pronoun_in_the_next_paragraph_is_silent():
 def test_warning_names_the_supplied_text_exception():
     (w,) = _pronoun_warnings("Danaher (2018) argues X. He adds Y.")
     assert "no text the review was given uses it" in w
+
+
+@pytest.mark.parametrize("text", [
+    "Padmakumar and He (2023) come closest to separating the two.",
+    "Li, He, and Huang (2026), with 99 EFL students, found a gain.",
+])
+def test_surname_he_mid_sentence_is_silent(text):
+    assert _pronoun_warnings(text) == []
+
+
+def test_sentence_initial_he_still_warns():
+    assert len(_pronoun_warnings("Danaher (2018) argues X. He adds Y.")) == 1
