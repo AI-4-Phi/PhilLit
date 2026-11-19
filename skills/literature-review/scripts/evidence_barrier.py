@@ -58,6 +58,13 @@ try:
 except Exception:  # optional pass -- never block the accuracy gate
     vv = None
 
+# The CrossRef publication-status pass (`status_notice`, PL-39). Optional
+# like venue vetting: a broken import costs the field, never the gate.
+try:
+    import status_notice as sn
+except Exception:
+    sn = None
+
 # The full-text library (EVIDENCE-FULLTEXT). Guarded like venue_vetting: the
 # tier is an UPGRADE, so a broken import must cost the tier (reported as
 # `pass_error`), never the accuracy gate.
@@ -578,19 +585,21 @@ def _corroboration_summary(report: dict) -> dict:
 
 
 _DERIVED_FIELDS = frozenset({"venue_status", "year_suffix", "urldate",
-                             "archiveurl", "same_work_group", "fulltext_file"})
+                             "archiveurl", "same_work_group", "fulltext_file",
+                             "status_notice"})
 
 
 def _strip_derived_fields(entry_text: str) -> str:
     """Remove every pre-existing derived field.
 
-    The barrier OWNS all six (venue_status, year_suffix, urldate,
-    archiveurl, same_work_group and fulltext_file): each is re-derived from
-    scratch on every run -- venue_status from OpenAlex, year_suffix from the
-    current union of every domain bibliography, urldate from the capture's
-    retrieved_at, archiveurl from the archive lookup, same_work_group from
-    the current union's title/surname grouping and fulltext_file from this
-    run's full-text pass -- so a value already in the file is
+    The barrier OWNS all seven (venue_status, year_suffix, urldate,
+    archiveurl, same_work_group, fulltext_file and status_notice): each is
+    re-derived from scratch on every run -- venue_status from OpenAlex,
+    year_suffix from the current union of every domain bibliography, urldate
+    from the capture's retrieved_at, archiveurl from the archive lookup,
+    same_work_group from the current union's title/surname grouping,
+    fulltext_file from this run's full-text pass and status_notice from
+    CrossRef -- so a value already in the file is
     either stale or hand-written, and both must go before this run decides.
     Without this, a flag or letter survives a later run that had no API key,
     or whose domain set changed -- a false discredit or a wrong letter that
@@ -654,6 +663,9 @@ _SAME_WORK_FIELD_RE = re.compile(r"\bsame_work_group\s*=", re.IGNORECASE)
 # fulltext_file: the same verified-took splice (a presence COUNTER, which
 # _derived_field_took pairs with a field parse; not a field locator).
 _FULLTEXT_FIELD_RE = re.compile(r"\bfulltext_file\s*=", re.IGNORECASE)
+
+# status_notice: the same verified-took splice (a presence COUNTER).
+_STATUS_NOTICE_FIELD_RE = re.compile(r"\bstatus_notice\s*=", re.IGNORECASE)
 
 
 def _derived_field_took(chunk: str, pre_splice: str, field: str, intended: str,
@@ -1103,6 +1115,61 @@ def _fulltext_pass(review_dir: Path, domains: dict, parsed: dict, atts: dict,
     return plan, texts, report
 
 
+def _status_pass(domains, parsed, atts, context_values, healed, deadline):
+    """The CrossRef status lookup over every entry: ((i, key) -> field
+    value, report). Gated on the tier known HERE, before the web and
+    full-text passes (they run after the metadata phase, which the PL-31
+    budget order fixes): an entry only those passes promote counts as
+    not_requested:evidence-none. Never raises: an optional pass."""
+    if sn is None:
+        return {}, {"status": "skipped", "reason": "status_notice module unavailable",
+                    "entries": {}, "stamped": {}}
+    labels = {}
+    try:
+        entries = {}
+        for i, d in domains.items():
+            for chunk in parsed[i]:
+                header = se.entry_header(chunk)
+                if not header:
+                    continue
+                etype, key = header
+                fields = dict(se.parse_entry_fields(chunk))
+                cv = context_values.get((i, key))
+                if cv:
+                    fields[cv[0]] = cv[1]
+                h = healed.get((i, key))
+                if h:
+                    fields["abstract"], fields["abstract_source"] = h
+                att = atts[i].get(key) or se.EntryAttestation()
+                label = f"{d['bib_name']}:{key}"
+                labels[label] = (i, key)
+                entries[label] = {
+                    "fields": fields,
+                    "evidence_none": se.compute_tier(etype, fields, att) == se.TIER_NONE}
+        values, report = sn.lookup_status(entries, deadline)
+        # Round-trip for the same reason venue vetting does: a stray value
+        # must demote to the error path here, not escape execute()'s dump.
+        report = json.loads(json.dumps(report))
+        return {labels[k]: v for k, v in values.items() if k in labels}, report
+    except Exception as exc:
+        report = sn.empty_report()
+        report["status"] = "partial"
+        report["reason"] = f"status pass failed: {type(exc).__name__}"
+        return {}, report
+
+
+def _status_summary(rep) -> dict:
+    rep = rep if isinstance(rep, dict) else {}
+    out = {"status": rep.get("status", "not-run")}
+    if rep.get("reason"):
+        out["reason"] = rep["reason"]
+    out["stamped"] = rep.get("stamped") or {}
+    for k in ("looked_up", "not_found", "identity_mismatch", "errors", "deadline",
+              "malformed", "splice_failed"):
+        out[k] = rep.get(k, 0)
+    return out
+
+
 def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
     """Pure planning pass: returns (report, outputs, text_outputs) with NO
     file mutation, on every path.
@@ -1221,6 +1288,14 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
         chunks = [rc.strip_context_fields(_strip_derived_fields(c))
                   if se.entry_header(c) else c
                   for c in se.split_entries(d["bib"].read_text(encoding="utf-8"))]
+        # A status_notice licenses a status sentence in the prose, so one the
+        # barrier did not derive must never reach a writer: if the strip
+        # ever missed one, fail the run rather than ship it.
+        for c in chunks:
+            if se.entry_header(c) and "status_notice" in se.parse_entry_fields(c):
+                raise RuntimeError(
+                    f"status_notice survived the strip in {d['bib_name']}:"
+                    f"{se.entry_header(c)[1]}")
         parsed[i] = chunks
         atts[i] = {}
         c_entries = (d["cleaning"] or {}).get("entries", {})
@@ -1327,6 +1402,19 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
             atts[i][key].context_written = True
             context_values[(i, key)] = (res["field"], res["value"])
 
+    # The metadata phase: ONE window of vv.PASS_DEADLINE_SECONDS for two
+    # passes, the CrossRef status lookup first and venue vetting second, both
+    # given the same ABSOLUTE deadline. A slow status pass therefore shrinks
+    # venue vetting's share instead of adding a window, and the PL-31 budget
+    # (one pass deadline plus one request timeout) still holds: each pass
+    # rechecks the deadline after its rate-limiter wait, so at most one
+    # request of either service runs past it.
+    metadata_deadline = time.monotonic() + (
+        vv.PASS_DEADLINE_SECONDS if vv is not None else 120.0)
+    status_values, status_report = _status_pass(
+        domains, parsed, atts, context_values, healed, metadata_deadline)
+    report["status_notice"] = status_report
+
     # Venue vetting. A PLUMBING pass inside a fail-closed gate --
     # it must never turn a reviewable run into a failed one, so everything is
     # wrapped and every failure means "no flags".
@@ -1343,7 +1431,8 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                 journal = (se.parse_entry_fields(chunk).get("journal") or "").strip()
                 if journal:
                     venue_names[(i, header[1])] = journal
-        venue_report = vv.vet_venues(sorted(set(venue_names.values())))
+        venue_report = vv.vet_venues(sorted(set(venue_names.values())),
+                                     deadline=metadata_deadline)
         for ik, journal in venue_names.items():
             if venue_report["verdicts"].get(vv.normalize_venue_name(journal)):
                 venue_flags[ik] = vv.STATUS_LOW_VISIBILITY
@@ -1848,6 +1937,27 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                     # policy forbids.
                     chunk = pre_sw
                     same_work_splice_failed.append(f"{bib_name}:{key}")
+            sn_value = status_values.get((i, key))
+            if sn_value:
+                # Spliced AFTER compute_tier like venue_status, and gated on
+                # the FINAL tier: the lookup was gated on the tier known at
+                # the metadata phase, and a demotion since then must not
+                # carry a status fact onto an EVIDENCE-NONE entry.
+                label = f"{bib_name}:{key}"
+                if tier == se.TIER_NONE:
+                    status_report["entries"][label] = "not_requested:evidence-none"
+                    sn.settle(status_report)
+                else:
+                    pre_sn = chunk
+                    chunk = _stamp_optional_field(chunk, "status_notice", sn_value)
+                    took = _derived_field_took(chunk, pre_sn, "status_notice",
+                                               sn_value, _STATUS_NOTICE_FIELD_RE)
+                    if not took:
+                        # Revert, then report: a duplicate field would cost
+                        # all of Phase 6; a silent loss is what the gate
+                        # policy forbids.
+                        chunk = pre_sn
+                    sn.record_stamp(status_report, label, sn_value, took)
             gate = web_gates.get((i, key))
             if gate:
                 # Spliced AFTER compute_tier for the same reason venue_status
@@ -2244,6 +2354,9 @@ def execute(review_dir: Path, n_domains: int, debug: bool = False) -> int:
         # forbids -- the report names the entries, this line makes the rate
         # visible without opening it.
         "abstract_corroboration": _corroboration_summary(report),
+        # The status pass (PL-39): what reached the bib, by item category,
+        # and why the rest was not checked. `reason` whenever not complete.
+        "status_notice": _status_summary(report.get("status_notice")),
         "venue_vetting": {
             "status": (report.get("venue_vetting") or {}).get("status", "not-run"),
             "flagged_entries": (report.get("venue_vetting") or {}).get("flagged_entries", 0),

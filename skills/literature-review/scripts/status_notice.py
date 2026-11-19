@@ -461,11 +461,11 @@ def lookup_status(entries: dict, deadline: float):
         report["status"] = "partial"
         report["stop_reason"] = f"unexpected error while {stage}: {type(exc).__name__}"
     finally:
-        _settle(report)
+        settle(report)
     return values, report
 
 
-def _settle(report: dict) -> None:
+def settle(report: dict) -> None:
     """Recount the entry states and make a non-complete status explain itself."""
     states = list(report["entries"].values())
     report["not_found"] = states.count("not_found")
@@ -500,4 +500,4 @@ def record_stamp(report: dict, label: str, value: str, took: bool) -> None:
             _bump(report["stamped"], cat)
     else:
         report["entries"][label] = "splice_failed"
-    _settle(report)
+    settle(report)

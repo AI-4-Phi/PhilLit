@@ -506,7 +506,7 @@ class TestVetVenues:
         monkeypatch.setenv("PHILLIT_VET_VENUES", "true")
         seen = {}
 
-        def fake_lookup(name, params, headers):
+        def fake_lookup(name, params, headers, deadline=None):
             seen["called"] = True
             return {"schema_version": vv.RECORD_SCHEMA_VERSION, "resolved": False,
                     "fetched_at": time.time()}, "ok"
@@ -612,7 +612,7 @@ class TestVetVenues:
         monkeypatch.setenv("OPENALEX_API_KEY", "sekret")
         seen = {}
 
-        def fake_lookup(name, params, headers):
+        def fake_lookup(name, params, headers, deadline=None):
             seen["params"] = params
             seen["headers"] = headers
             return {"schema_version": vv.RECORD_SCHEMA_VERSION, "resolved": False,
@@ -812,7 +812,7 @@ class TestHonestStatusAndErrors:
         # lookup_venue broke that contract -- it must be treated as an
         # unresolved lookup, same as an "error" outcome.
         monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
-        monkeypatch.setattr(vv, "lookup_venue", lambda name, params, headers: (None, "ok"))
+        monkeypatch.setattr(vv, "lookup_venue", lambda name, params, headers, deadline=None: (None, "ok"))
         result = vv.vet_venues(["Some Journal"])
         assert result["status"] == "partial"
         assert result["lookup_errors"] == 1
@@ -986,7 +986,9 @@ class TestTimeBounds:
         # this test anticipated must not raise StopIteration far from this
         # assertion -- the default keeps every over-read safely past the
         # deadline instead.
-        clock = iter([0.0, 1.0])
+        # Three reads before the first lookup: the clock start, the check
+        # before the limiter wait and the recheck after it (PL-39).
+        clock = iter([0.0, 1.0, 2.0])
         monkeypatch.setattr(vv.time, "monotonic", lambda: next(clock, vv.PASS_DEADLINE_SECONDS + 1))
         result = vv.vet_venues(["Journal A", "Journal B", "Journal C"])
         assert len(calls) == 1  # only the first venue's lookup happened before the deadline
@@ -994,6 +996,42 @@ class TestTimeBounds:
         assert result["skipped_cap"] == 2
         assert result["status"] == "partial"
         assert "deadline" in result["reason"]  # distinguishable from a lookup-cap stop
+
+    def test_an_explicit_deadline_replaces_the_passs_own(self, monkeypatch, isolated_cache):
+        """PL-39: the barrier's metadata phase hands one absolute deadline to
+        the status pass and then to vet_venues, so a slow status pass shrinks
+        venue vetting's share instead of adding a second 120 s window."""
+        monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
+        calls = []
+        monkeypatch.setattr(vv.requests, "get",
+                             lambda *a, **k: (calls.append(1), FakeResponse(payload={"results": []}))[1])
+        result = vv.vet_venues(["Journal A", "Journal B"],
+                               deadline=vv.time.monotonic() - 1)
+        assert calls == []
+        assert result["capped"] == ["journal a", "journal b"]
+        assert "deadline" in result["reason"]
+
+    def test_deadline_rechecked_after_the_limiter_wait(self, monkeypatch, isolated_cache):
+        """The limiter wait can itself cross the deadline: then no request is
+        sent, the venue lands in `capped`, and nothing counts as a lookup or
+        an error."""
+        monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
+        clock = {"t": 0.0}
+        monkeypatch.setattr(vv.time, "monotonic", lambda: clock["t"])
+
+        class SlowLimiter:
+            def wait(self):
+                clock["t"] += 50.0
+                return 50.0
+        monkeypatch.setattr(vv, "get_limiter", lambda *a, **k: SlowLimiter())
+        calls = []
+        monkeypatch.setattr(vv.requests, "get",
+                             lambda *a, **k: (calls.append(1), FakeResponse(payload={"results": []}))[1])
+        result = vv.vet_venues(["Journal A"], deadline=30.0)
+        assert calls == []
+        assert result["capped"] == ["journal a"]
+        assert result["looked_up"] == 0 and result["lookup_errors"] == 0
+        assert result["status"] == "partial" and "deadline" in result["reason"]
 
     def test_cache_hits_do_not_count_against_deadline(self, monkeypatch, isolated_cache):
         # Populate the cache for one venue via a real lookup, then re-run
