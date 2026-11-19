@@ -1,9 +1,10 @@
 ---
 id: PL-42
 title: Writers skip the per-claim support lines of the source check
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-11-19T15:35:00Z'
+updated_date: '2026-11-19T17:16:00Z'
 labels:
   - agents
   - test-run
