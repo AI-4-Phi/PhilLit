@@ -1,0 +1,201 @@
+{
+ "status": "ok",
+ "message-type": "work-list",
+ "message-version": "1.0.0",
+ "message": {
+  "facets": {},
+  "total-results": 1,
+  "items": [
+   {
+    "institution": [
+     {
+      "name": "Research Square"
+     }
+    ],
+    "indexed": {
+     "date-parts": [
+      [
+       2024,
+       11,
+       8
+      ]
+     ],
+     "date-time": "2024-11-08T05:28:01Z",
+     "timestamp": 1731043681325,
+     "version": "3.28.0"
+    },
+    "posted": {
+     "date-parts": [
+      [
+       2024,
+       9,
+       9
+      ]
+     ]
+    },
+    "group-title": "In Review",
+    "reference-count": 37,
+    "publisher": "Springer Science and Business Media LLC",
+    "license": [
+     {
+      "start": {
+       "date-parts": [
+        [
+         2024,
+         9,
+         9
+        ]
+       ],
+       "date-time": "2024-09-09T00:00:00Z",
+       "timestamp": 1725840000000
+      },
+      "content-version": "unspecified",
+      "delay-in-days": 0,
+      "URL": "https://creativecommons.org/licenses/by/4.0/"
+     }
+    ],
+    "content-domain": {
+     "domain": [],
+     "crossmark-restriction": false
+    },
+    "accepted": {
+     "date-parts": [
+      [
+       2024,
+       8,
+       1
+      ]
+     ]
+    },
+    "abstract": "<title>Abstract</title>\n        <p>Objectives\n This cross-sectional study investigated the construct validity and reliability of a Thai-language version of the Brief Illness Perception Questionnaire (Thai-BIPQ) and its association with health in ankylosing spondylitis (AS) patients, as measured by the ASAS\u2013Health Index (ASAS-HI)\nMethods\n AS patients receiving treatment at Siriraj Hospital were recruited. Reliability was assessed using Cronbach\u2019s alpha coefficient and the intraclass correlation coefficient (ICC). Construct validity was determined by Spearman correlation with the Ankylosing Spondylitis Disease Activity Score (ASDAS), ASAS-HI, and Hospital Anxiety and Depression Scale (HADS). Linear regression was used to analyze the associations between the ASAS-HI (dependent variable) and the Thai-BIPQ (independent variable).\nResults\n We recruited 61 patients, 63.9% male, with a mean age of 47.9 years and a mean disease duration of 16 years. The median Thai-BIPQ score was 2. Cronbach\u2019s alpha was 0.53 but increased to 0.73 after deleting the items \u201ctimeline,\u201d \u201ctreatment control,\u201d and \u201ccoherence.\u201d The ICC was 0.95 with no missing data. The Thai-BIPQ showed moderate correlations with the ASDAS, ASAS-HI, and HADS (Spearman\u2019s rho 0.44\u20130.56). According to multivariate regression, Thai-BIPQ (<italic>P</italic>\u2009=\u20090.006) and ASDAS\u2009\u2265\u20092.1 (<italic>P</italic>\u2009&lt;\u20090.001) were positively associated with the ASAS-HI.\nConclusions\n The Thai-BIPQ is a valid, reliable, and feasible tool for evaluating illness perception in AS patients. Low disease activity and positive illness perception are associated with better functionality and health. Further research is necessary to explore strategies for modifying illness perceptions in AS patients.</p>",
+    "DOI": "10.21203/rs.3.rs-4840802/v1",
+    "type": "posted-content",
+    "created": {
+     "date-parts": [
+      [
+       2024,
+       9,
+       9
+      ]
+     ],
+     "date-time": "2024-09-09T15:37:14Z",
+     "timestamp": 1725896234000
+    },
+    "source": "Crossref",
+    "is-referenced-by-count": 0,
+    "title": [
+     "Construct validity and reliability of the Thai version of the Brief Illness Perception Questionnaire and its association with overall functioning and health in patients with ankylosing spondylitis"
+    ],
+    "prefix": "10.21203",
+    "author": [
+     {
+      "given": "Praveena",
+      "family": "Chiowchanwisawakit",
+      "sequence": "first",
+      "affiliation": [
+       {
+        "name": "Faculty of Medicine Siriraj Hospital, Mahidol University"
+       }
+      ],
+      "role": [
+       {
+        "role": "author",
+        "vocabulary": "crossref"
+       }
+      ]
+     },
+     {
+      "given": "Woraphat",
+      "family": "Ratta-apha",
+      "sequence": "additional",
+      "affiliation": [
+       {
+        "name": "Faculty of Medicine Siriraj Hospital, Mahidol University"
+       }
+      ],
+      "role": [
+       {
+        "role": "author",
+        "vocabulary": "crossref"
+       }
+      ]
+     },
+     {
+      "given": "Nutwara",
+      "family": "Meannui",
+      "sequence": "additional",
+      "affiliation": [
+       {
+        "name": "Faculty of Medicine Siriraj Hospital, Mahidol University"
+       }
+      ],
+      "role": [
+       {
+        "role": "author",
+        "vocabulary": "crossref"
+       }
+      ]
+     }
+    ],
+    "member": "297",
+    "link": [
+     {
+      "URL": "https://www.researchsquare.com/article/rs-4840802/v1",
+      "content-type": "text/html",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+     },
+     {
+      "URL": "https://www.researchsquare.com/article/rs-4840802/v1.html",
+      "content-type": "unspecified",
+      "content-version": "vor",
+      "intended-application": "similarity-checking"
+     }
+    ],
+    "deposited": {
+     "date-parts": [
+      [
+       2024,
+       11,
+       7
+      ]
+     ],
+     "date-time": "2024-11-07T21:08:48Z",
+     "timestamp": 1731013728000
+    },
+    "score": 0.0,
+    "resource": {
+     "primary": {
+      "URL": "https://www.researchsquare.com/article/rs-4840802/v1"
+     }
+    },
+    "issued": {
+     "date-parts": [
+      [
+       2024,
+       9,
+       9
+      ]
+     ]
+    },
+    "references-count": 37,
+    "URL": "https://doi.org/10.21203/rs.3.rs-4840802/v1",
+    "published": {
+     "date-parts": [
+      [
+       2024,
+       9,
+       9
+      ]
+     ]
+    },
+    "subtype": "preprint"
+   }
+  ],
+  "items-per-page": 50,
+  "query": {
+   "start-index": 0,
+   "search-terms": null
+  }
+ }
+}
