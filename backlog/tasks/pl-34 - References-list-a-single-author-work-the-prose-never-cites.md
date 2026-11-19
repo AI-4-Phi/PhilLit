@@ -1,9 +1,10 @@
 ---
 id: PL-34
 title: References list a single-author work the prose never cites
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-11-17T11:20:00Z'
+updated_date: '2026-11-19T10:53:00Z'
 labels: []
 dependencies: []
 type: bug

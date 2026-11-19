@@ -1,9 +1,10 @@
 ---
 id: PL-35
 title: References show a year letter whose sibling was dropped
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-11-17T11:20:00Z'
+updated_date: '2026-11-19T10:53:00Z'
 labels: []
 dependencies: []
 type: bug
