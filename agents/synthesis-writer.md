@@ -203,7 +203,7 @@ Run this after drafting and before you report the section complete. Do not skip 
 
 1. Find every sentence that says what a cited work argues, finds, shows, reports, quotes or discusses — in any form, including a clause or phrase whose truth depends on what the work says ("Sand's challenge to Rescher").
 2. Count what one work says about another work as a claim about the CITING work: "Sand (2020) quotes Rescher at length" must be in Sand's licensed text. A claim about work B taken from work A may appear only in A's voice, with A's citation ("on Sand's report, Rescher denies ..."), never as a characterization of B in its own right, and it is checked against A's entry, under A's citekey.
-3. For each claim, write one line in your reply (never in the section file): `<citekey> | <licensed field> | "<the words in that field that support the claim>"`. The licensed field, by tier: `fulltext_file` (`EVIDENCE-FULLTEXT`: copy the words from the text file it names, never a `[[...]]` marker line); `abstract` (`EVIDENCE-ABSTRACT`); `sep_context`/`iep_context` (`EVIDENCE-CONTEXT`); `note` (`EVIDENCE-WEB` only, under the web-span drop rule in the tier section); `title` (`EVIDENCE-EXISTENCE`, or a tier override with no description); `user's description` (a tier override with one). Copy the quoted words character for character from that field: no paraphrase inside the quotation marks, no ellipsis joining distant words. If you cannot copy words that say what the sentence says, not merely share its topic, the claim is unsupported. A support line naming `note` for an entry that is not `EVIDENCE-WEB` is invalid, however specific the note is.
+3. For each claim, write one line in your reply (never in the section file), however many claims the section has — a count without its lines means the check did not run, and the orchestrator sends the section back: `<citekey> | <licensed field> | "<the words in that field that support the claim>"`. The licensed field, by tier: `fulltext_file` (`EVIDENCE-FULLTEXT`: copy the words from the text file it names, never a `[[...]]` marker line); `abstract` (`EVIDENCE-ABSTRACT`); `sep_context`/`iep_context` (`EVIDENCE-CONTEXT`); `note` (`EVIDENCE-WEB` only, under the web-span drop rule in the tier section); `title` (`EVIDENCE-EXISTENCE`, or a tier override with no description); `user's description` (a tier override with one). Copy the quoted words character for character from that field: no paraphrase inside the quotation marks, no ellipsis joining distant words. If you cannot copy words that say what the sentence says, not merely share its topic, the claim is unsupported. A support line naming `note` for an entry that is not `EVIDENCE-WEB` is invalid, however specific the note is.
 4. A claim you cannot quote support for: cut it, or narrow it to what the quoted words say. Never keep it because it is plausible or because the note says it. Where a cut leaves the passage resting on nothing, rewrite the passage so it no longer needs the claim; never say instead that the literature lacks support.
 5. The check covers the final text: run it again on any passage you rewrote.
 6. Name every cut and every narrowing in your completion message, one per line: `Unsupported, cut: <citekey> — <the claim>` or `Narrowed: <citekey> — <the claim> -> <what remains>`.
@@ -328,6 +328,10 @@ Statistics:
 - Papers cited: [N papers]
 - Source check: [N] claims checked, [M] cut or narrowed
 - Unsupported, cut: / Narrowed: [one line each; or "none"]
+
+Support lines (REQUIRED, one per claim, N lines):
+<citekey> | <licensed field> | "<the words that support the claim>"
+...
 
 File: synthesis-section-[N].md
 Ready for next section.
