@@ -186,15 +186,15 @@ Say that a work was corrected, retracted, withdrawn, met an expression of concer
 | Item | Write |
 |---|---|
 | `correction <doi>` | "a correction notice for this article has been published (https://doi.org/<doi>)" |
-| `retraction <doi>` | "the publisher has retracted the article (https://doi.org/<doi>)" |
-| `partial_retraction <doi>` | "the publisher has partially retracted the article (https://doi.org/<doi>)" (never "retracted" alone) |
-| `withdrawal <doi>` | "the publisher has withdrawn the article (https://doi.org/<doi>)" |
-| `expression_of_concern <doi>` | "the publisher has issued an expression of concern about it (https://doi.org/<doi>)" |
+| `retraction <doi>` | "the article has been retracted (https://doi.org/<doi>)" |
+| `partial_retraction <doi>` | "the article has been partially retracted (https://doi.org/<doi>)" (never "retracted" alone) |
+| `withdrawal <doi>` | "the article has been withdrawn (https://doi.org/<doi>)" |
+| `expression_of_concern <doi>` | "an expression of concern has been issued about it (https://doi.org/<doi>)" |
 | `preprint` | "a preprint" (never "not peer reviewed"; no link needed) |
 
 - Give the link (https://doi.org/<doi>) on first mention. For a retraction or withdrawal the `<doi>` may be the article's own DOI (publishers retract in place): use it as given.
 - When you cite a work whose `status_notice` has `retraction`, `partial_retraction` or `withdrawal`, state that status in the sentence that cites it.
-- Never say what a notice changed, why a work was retracted, or that its findings are wrong.
+- Never say who issued a notice, what it changed, why a work was retracted, or that its findings are wrong.
 - Never state a status from a note, an abstract, the outline or your prompt. No `status_notice` item: no status statement.
 
 ## Source Check (REQUIRED)

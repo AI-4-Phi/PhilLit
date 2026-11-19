@@ -551,7 +551,13 @@ def test_writer_and_planner_know_the_status_notice_rule():
     writer = (REPO_ROOT / "agents" / "synthesis-writer.md").read_text(encoding="utf-8")
     assert "## Publication Status (REQUIRED)" in writer
     assert "a correction notice for this article has been published" in writer
-    assert "the publisher has retracted the article (https://doi.org/<doi>)" in writer
+    for wording in ('"the article has been retracted (https://doi.org/<doi>)"',
+                    '"the article has been partially retracted (https://doi.org/<doi>)"',
+                    '"the article has been withdrawn (https://doi.org/<doi>)"',
+                    '"an expression of concern has been issued about it (https://doi.org/<doi>)"'):
+        assert wording in writer
+    # The stamp does not record who acted (sources include retraction-watch).
+    assert "the publisher has" not in writer
     assert "publishers retract in place" in writer
     assert 'never "retracted" alone' in writer
     assert "never \"not peer reviewed\"" in writer
@@ -560,3 +566,6 @@ def test_writer_and_planner_know_the_status_notice_rule():
     planner = (REPO_ROOT / "agents" / "synthesis-planner.md").read_text(encoding="utf-8")
     assert "**Handling `status_notice`**" in planner
     assert "notes license no status fact" in planner
+    rule = planner.split("**Handling `status_notice`**", 1)[1].split("\n\n", 1)[0]
+    for item in ("`retraction`", "`partial_retraction`", "`withdrawal`"):
+        assert item in rule.split("as support", 1)[0]
