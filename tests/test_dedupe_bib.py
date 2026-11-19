@@ -2513,3 +2513,54 @@ class TestFulltextSurvivesSubtitleVariantMerge:
         merged = self._run(tmp_path, self.SHORT, "10.1017/9781108895057", self.LONG)
         assert "EVIDENCE-FULLTEXT" in merged
         assert False in calls and True in calls
+
+
+
+# ---------------------------------------------------------------------------
+# status_notice (PL-39): derived for the survivor's own DOI, never unioned
+# ---------------------------------------------------------------------------
+
+class TestStatusNoticeMerge:
+    def _entry(self, key, notice=None, abstract=False, importance="Medium"):
+        lines = [f"@article{{{key},",
+                 "  author = {Gerlich, Michael},",
+                 "  title = {AI Tools in Society},",
+                 "  journal = {Societies},",
+                 "  doi = {10.3390/soc15010006},",
+                 "  year = {2025},"]
+        if abstract:
+            lines.append("  abstract = {An abstract long enough to count as one.},")
+        if notice:
+            lines.append(f"  status_notice = {{{notice}}},")
+        lines.append(f"  keywords = {{ai, {importance}}}")
+        return "\n".join(lines) + "\n}"
+
+    def test_survivor_keeps_its_own_field(self, capsys):
+        winner = self._entry("a", notice="correction 10.3390/soc15090252", abstract=True)
+        loser = self._entry("b", notice="correction 10.3390/soc15090252")
+        merged, _reason, w = merge_entries(winner, loser)
+        assert w == 1
+        assert merged.count("status_notice") == 1
+        assert "correction 10.3390/soc15090252" in merged
+        assert "[STATUS]" not in capsys.readouterr().err
+
+    def test_loser_field_never_copied_up(self, capsys):
+        winner = self._entry("a", abstract=True)
+        loser = self._entry("b", notice="retraction 10.1000/r")
+        merged, _reason, w = merge_entries(winner, loser)
+        assert w == 1
+        assert "status_notice" not in merged
+        err = capsys.readouterr().err
+        assert "[STATUS]" in err and "'b'" in err
+
+    def test_differing_fields_keep_the_survivors_and_warn(self, capsys):
+        winner = self._entry("a", notice="preprint", abstract=True)
+        loser = self._entry("b", notice="retraction 10.1000/r")
+        merged, _reason, w = merge_entries(winner, loser)
+        assert "status_notice = {preprint}" in merged
+        assert "10.1000/r" not in merged
+        assert "[STATUS]" in capsys.readouterr().err
+
+    def test_status_notice_is_not_a_substantive_union_field(self):
+        import dedupe_bib
+        assert "status_notice" not in dedupe_bib._SUBSTANTIVE_FIELDS

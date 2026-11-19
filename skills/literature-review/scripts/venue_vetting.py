@@ -120,11 +120,14 @@ MAX_LOOKUPS_PER_RUN = 80
 # 80 cold names at a 30s timeout is 40 minutes inside the workflow's slowest
 # step -- both bounds stop a pass early rather than let it run that long.
 MAX_CONSECUTIVE_ERRORS = 3
-# The deadline is checked BEFORE each lookup, not around it, so it bounds
-# the LOOP, not the pass: one in-flight request can still take up to
-# REQUEST_TIMEOUT (30s, defined below) after the deadline is hit. Worst-case
-# wall time for a pass is therefore PASS_DEADLINE_SECONDS + REQUEST_TIMEOUT,
-# not PASS_DEADLINE_SECONDS alone.
+# The deadline is checked before each lookup's rate-limiter wait AND again
+# after it, right before the request, so it bounds the LOOP, not the pass:
+# one in-flight request can still take up to REQUEST_TIMEOUT (30s, defined
+# below) after the deadline is hit. Worst-case wall time for a pass is
+# therefore PASS_DEADLINE_SECONDS + REQUEST_TIMEOUT, not PASS_DEADLINE_SECONDS
+# alone. The barrier runs ONE metadata window of this length for two passes
+# (status_notice, then venue vetting): it passes vet_venues an absolute
+# `deadline`, and the at-most-one late request is then either service's.
 PASS_DEADLINE_SECONDS = 120.0
 # A stale CLEAR verdict costs a miss (tolerable); a stale FLAG keeps
 # discrediting a venue that has since joined DOAJ, gone core, or grown past
@@ -305,7 +308,8 @@ def _sanitize_for_filter(name: str) -> str:
     return re.sub(r"\s+", " ", s).strip()
 
 
-def lookup_venue(name: str, params: dict, headers: dict) -> tuple[dict | None, str]:
+def lookup_venue(name: str, params: dict, headers: dict,
+                 deadline: float | None = None) -> tuple[dict | None, str]:
     """One OpenAlex `sources` query. Returns (record|None, outcome).
 
     outcome: "ok" (record is authoritative, resolved or not),
@@ -313,13 +317,24 @@ def lookup_venue(name: str, params: dict, headers: dict) -> tuple[dict | None, s
              seconds to midnight UTC, so retrying burns the rest of the day),
              "auth_error" (caller must stop -- the key is missing or invalid,
              so every remaining lookup would fail identically),
-             "error" (transport/HTTP; caller treats the venue as unknown).
+             "error" (transport/HTTP; caller treats the venue as unknown),
+             "deadline" (the rate-limiter wait crossed `deadline`; no
+             request was sent).
 
     ONE attempt, deliberately: this is a plumbing pass whose failure mode is
     "no flag", so a backoff loop would buy nothing and cost the barrier time.
     """
     try:
-        get_limiter("openalex").wait()
+        if deadline is None:
+            get_limiter("openalex").wait()
+        else:
+            # Bounded by the time left (PL-39): a slot past the deadline is
+            # never waited for.
+            left = deadline - time.monotonic()
+            if left <= 0 or get_limiter("openalex").wait(max_seconds=left) is None:
+                return None, "deadline"
+            if time.monotonic() >= deadline:
+                return None, "deadline"
         response = requests.get(
             OPENALEX_SOURCES_URL,
             params={**params,
@@ -377,7 +392,7 @@ def _vetting_mode() -> str:
     return "invalid"
 
 
-def vet_venues(names) -> dict:
+def vet_venues(names, deadline: float | None = None) -> dict:
     """Resolve every distinct venue name and apply the rule. Never raises.
 
     Gated on PHILLIT_VET_VENUES (default when unset: run iff OPENALEX_API_KEY
@@ -392,6 +407,10 @@ def vet_venues(names) -> dict:
     stripping punctuation before the query changes what OpenAlex's fuzzy
     search ranks. The cache key and the exact-match target stay normalized
     regardless of which raw spelling was queried.
+
+    `deadline` is an absolute time.monotonic() value; the barrier passes the
+    one it shares with the status pass. Standalone, the pass makes its own,
+    PASS_DEADLINE_SECONDS from when the lookups start.
     """
     result = {"status": "complete", "reason": None, "looked_up": 0,
               "cache_hits": 0, "skipped_cap": 0, "flagged": [],
@@ -449,7 +468,8 @@ def vet_venues(names) -> dict:
                                     "so it does not spend the unauthenticated search budget")
             return result
 
-        deadline = time.monotonic() + PASS_DEADLINE_SECONDS
+        if deadline is None:
+            deadline = time.monotonic() + PASS_DEADLINE_SECONDS
         consecutive_errors = 0
 
         stage = "vetting venues"
@@ -469,7 +489,11 @@ def vet_venues(names) -> dict:
                     if result["reason"] is None:
                         result["reason"] = f"lookup cap ({MAX_LOOKUPS_PER_RUN}) reached"
                     continue
-                if time.monotonic() >= deadline:
+                outcome = None
+                if time.monotonic() < deadline:
+                    record, outcome = lookup_venue(raw_by_key[venue], params, headers,
+                                                   deadline=deadline)
+                if outcome in (None, "deadline"):
                     result["skipped_cap"] += 1
                     result["capped"].append(venue)
                     if result["reason"] is None:
@@ -477,7 +501,6 @@ def vet_venues(names) -> dict:
                             f"pass deadline ({PASS_DEADLINE_SECONDS}s) exceeded "
                             f"after {result['looked_up']} lookups")
                     continue
-                record, outcome = lookup_venue(raw_by_key[venue], params, headers)
                 result["looked_up"] += 1  # a real request was made, win or lose
                 if outcome == "budget_exhausted":
                     result["status"] = "budget_exhausted"

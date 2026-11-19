@@ -159,7 +159,7 @@ def test_researcher_told_not_to_write_any_derived_field():
     text = (REPO_ROOT / "agents" / "domain-literature-researcher.md").read_text(
         encoding="utf-8")
     assert ("Never write a `venue_status`, `year_suffix`, `same_work_group`, "
-            "or `fulltext_file` field yourself") in text
+            "`fulltext_file` or `status_notice` field yourself") in text
     # And the reason, not just the prohibition -- a bare ban invites a
     # researcher to treat it as style rather than correctness.
     assert "re-derives them from scratch on every run" in text
@@ -543,3 +543,30 @@ def test_fulltext_tier_reaches_every_prompt_that_must_act_on_it():
     planner = (REPO_ROOT / "agents" / "synthesis-planner.md").read_text(encoding="utf-8")
     assert "`EVIDENCE-FULLTEXT`, `EVIDENCE-ABSTRACT`" in planner
     assert "(`FULLTEXT`, `ABSTRACT`, `CONTEXT`, `WEB`)" in planner
+
+
+def test_writer_and_planner_know_the_status_notice_rule():
+    """PL-39: status facts reach the prose only from the barrier's
+    `status_notice`, in fixed wording, never from a note."""
+    writer = (REPO_ROOT / "agents" / "synthesis-writer.md").read_text(encoding="utf-8")
+    assert "## Publication Status (REQUIRED)" in writer
+    assert "this article" not in writer and "the article has been" not in writer
+    for wording in ('"a correction notice for this work has been published (https://doi.org/<doi>)"',
+                    '"this work has been retracted (https://doi.org/<doi>)"',
+                    '"this work has been partially retracted (https://doi.org/<doi>)"',
+                    '"this work has been withdrawn (https://doi.org/<doi>)"',
+                    '"an expression of concern has been issued about this work (https://doi.org/<doi>)"'):
+        assert wording in writer
+    # The stamp does not record who acted (sources include retraction-watch).
+    assert "the publisher has" not in writer
+    assert "publishers retract in place" in writer
+    assert 'never "retracted" alone' in writer
+    assert "never \"not peer reviewed\"" in writer
+    assert "Never state a status from a note" in writer
+    assert "**Publication status**" in writer.split("## Quality Standards", 1)[1]
+    planner = (REPO_ROOT / "agents" / "synthesis-planner.md").read_text(encoding="utf-8")
+    assert "**Handling `status_notice`**" in planner
+    assert "notes license no status fact" in planner
+    rule = planner.split("**Handling `status_notice`**", 1)[1].split("\n\n", 1)[0]
+    for item in ("`retraction`", "`partial_retraction`", "`withdrawal`"):
+        assert item in rule.split("as support", 1)[0]

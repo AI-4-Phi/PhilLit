@@ -409,6 +409,8 @@ def assign_suffixes(entries: list[dict]) -> dict:
         for root in roots:
             dois |= doi_set_of.get(root, set())
         if len(dois) > 1:
+            # An early exit only: the trial-partition DOI filter below would
+            # reject this merge anyway (a test cannot tell the two apart).
             continue
         if not any(titles_differ_by_subtitle(a.get("title") or "", b.get("title") or "")
                    for a in cluster for b in cluster):
