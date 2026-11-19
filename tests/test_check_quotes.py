@@ -650,3 +650,21 @@ class TestCli:
                         str(fx.workdir), "--evidence-report", str(tmp_path / "report.json")])
         err = capsys.readouterr().err
         assert code == 2 and "crashed: RuntimeError: boom" in err and len(err.strip().splitlines()) == 1
+
+
+def test_subtitle_variant_survivor_with_a_gained_doi_is_licensed(tmp_path, capsys):
+    """PL-33: the blob was verified for the subtitled, DOI-less copy; the
+    merged bib holds the short-title DOI copy. Same work, so the text still
+    licenses quotes."""
+    f = Fix(tmp_path)
+    long_title = "Animal Liberation: A New Ethics for Our Treatment of Animals"
+    text = "[[sheet 1]]\n" + long_title + "\nPeter Singer\n" + rendered_text()
+    slug, text, _entry = f.add_fulltext("singer1975", year="1975", doi="10.1000/al.1975",
+                                        text=text, write_blob=False)
+    verified = bib_entry("singer1975", year="1975", slug=slug, title=long_title)
+    f.add_blob("literature-domain-6.bib", "singer1975", slug, text, verified)
+    code, lines, s = f.run(doc(
+        'Singer (1975) holds that "the capacity for suffering is the vital characteristic".'),
+        capsys)
+    assert (code, lines) == (0, [])
+    assert s["fulltext_attributed"] == 1

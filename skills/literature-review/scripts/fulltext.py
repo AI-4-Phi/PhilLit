@@ -90,7 +90,8 @@ from typing import Mapping, Optional
 _hook_dir = str(Path(__file__).resolve().parent.parent.parent.parent / "hooks")
 sys.path.insert(0, _hook_dir)
 from bib_identity import (  # noqa: E402
-    first_author_surname, normalize_doi, same_work_key, same_work_year)
+    first_author_surname, main_title_key, normalize_doi, same_work_key, same_work_year,
+    subtitle_variant_keys)
 
 sys.path.remove(_hook_dir)
 _here = str(Path(__file__).resolve().parent)
@@ -502,28 +503,68 @@ def entry_identity(fields: Mapping) -> dict:
     attestation blob stores (`fulltext_identity`) and dedupe and
     `check_quotes.py` compare: the normalized DOI or None; the year-less
     `same_work_key` (title, first-author surname) as a list or None; the
-    `same_work_year`. `fields` holds RAW values (`parse_entry_fields`)."""
+    `same_work_year`; and `main_key`, the title's `main_title_key` (None
+    without a work key), which only the subtitle-variant re-check in
+    `identity_matches` reads. `fields` holds RAW values (`parse_entry_fields`)."""
     surname = first_author_surname(fields.get("author") or "", fields.get("editor") or "")
     key = same_work_key(fields.get("title") or "", surname)
     return {"doi": normalize_doi(fields.get("doi") or "") or None,
             "work_key": list(key) if key else None,
-            "year": same_work_year(fields.get("year"))}
+            "year": same_work_year(fields.get("year")),
+            "main_key": main_title_key(fields.get("title") or "") if key else None}
 
 
-def identity_matches(blob_identity, fields: Mapping) -> bool:
-    """Does a stored `fulltext_identity` still describe this entry? Exact
-    equality on all three parts (DOI both absent counts as equal); an entry
-    with no work key never matches."""
+def pages_from_text(text: str) -> list[str]:
+    """The page texts of a rendered text, marker lines removed, in order: the
+    input `identity_ok` re-runs on when only the stored text is at hand."""
+    return [text[start:end] for _kind, _n, start, end in page_blocks(text)]
+
+
+def identity_matches(blob_identity, fields: Mapping, text: str | None = None) -> bool:
+    """Does a stored `fulltext_identity` still describe this entry?
+
+    Exact equality on DOI, work key and year (DOI absent on both sides
+    counts as equal) matches. Otherwise, only when the stored `text` is
+    given, the entry may be the same work in another dress (PL-33: a merge
+    survivor carrying the DOI, or the title with or without its subtitle):
+    same first-author surname and year, the stored DOI absent or equal to
+    the entry's, the titles equal or `subtitle_variant_keys` (which needs
+    the stored `main_key`, so a blob written before it existed relates no
+    subtitle variant), AND `identity_ok` passing on the text's pages against
+    the entry itself -- the DOI rule when the entry has a DOI, rule A when
+    not. A stored DOI the entry lacks never matches: the DOI rule accepts on
+    the DOI string alone and never checked the title. An entry with no work
+    key never matches."""
     if not isinstance(blob_identity, Mapping):
         return False
     now = entry_identity(fields)
     if now["work_key"] is None:
         return False
-    stored = {"doi": blob_identity.get("doi"), "work_key": blob_identity.get("work_key"),
-              "year": blob_identity.get("year")}
-    if isinstance(stored["work_key"], tuple):
-        stored["work_key"] = list(stored["work_key"])
-    return stored == now
+    stored_key = blob_identity.get("work_key")
+    if isinstance(stored_key, tuple):
+        stored_key = list(stored_key)
+    stored_doi = blob_identity.get("doi")
+    stored_year = blob_identity.get("year")
+    if (stored_doi == now["doi"] and stored_key == now["work_key"]
+            and stored_year == now["year"]):
+        return True
+    if text is None or not isinstance(stored_key, list) or len(stored_key) != 2:
+        return False
+    if stored_key[1] != now["work_key"][1] or not now["year"] or stored_year != now["year"]:
+        return False
+    if stored_doi is not None and stored_doi != now["doi"]:
+        return False
+    if stored_key[0] != now["work_key"][0] and not subtitle_variant_keys(
+            stored_key[0], blob_identity.get("main_key"),
+            now["work_key"][0], now["main_key"]):
+        return False
+    ok, _why = identity_ok(pages_from_text(text), {
+        "doi": now["doi"],
+        "title": fields.get("title") or "",
+        "surname": first_author_surname(fields.get("author") or "",
+                                        fields.get("editor") or ""),
+        "year": fields.get("year") or ""})
+    return ok
 
 
 def canonical_identity(identity: Mapping) -> str:

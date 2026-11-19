@@ -131,7 +131,9 @@ author has two or more works in the same year, following Chicago 15.18. The
 rejected by the `\d{4}` guards in `check_evidence.py` and `resolve_context.py`.
 References render `2010a`; in-text citations must carry the same letter.
 Letters are assigned once per run, over all domain bibliographies at once, so
-the same work carries the same letter in every domain. They are packed
+the same work carries the same letter in every domain. Copies under one
+citekey with the same authors and year whose titles differ only by a subtitle
+(and whose DOIs do not conflict) count as one work. They are packed
 `a`, `b`, `c` with no gaps, and the barrier strips and re-derives them on every
 run — so if the bibliography changes between runs, a work's letter can change.
 That is safe within a review, because assignment happens at the Phase 3→4
@@ -160,7 +162,9 @@ stored PDF. Each page opens with a marker line: `[[page N]]` when the page
 carries the printed number the entry's `pages` field predicts, otherwise
 `[[sheet N]]` (the PDF's page index, never a citable page). Dedupe carries the
 field into a merged entry and keeps the tier only when the text still hashes
-as the barrier recorded and the merged entry is the same work; otherwise it
+as the barrier recorded and the merged entry is the same work: the identity
+the barrier verified, or one that only gained a DOI or adds or drops a
+subtitle and passes the identity check again on the stored text. Otherwise it
 prints `[FULLTEXT-LOST]`. The annotated bib strips it. Agents must never write
 this field by hand.
 

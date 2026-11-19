@@ -996,3 +996,67 @@ def test_identity_ok_decodes_latex_in_raw_bib_values():
     work = {"doi": None, "title": "{\\\"U}ber die {Grundlagen}: Studien", "surname": "M{\\\"u}ller", "year": "1990"}
     pages = ["Über die Grundlagen\nHans Müller\n" + "body text " * 30]
     assert ft.identity_ok(pages, work) == (True, "title_head")
+
+
+class TestIdentityMatchesSubtitleVariant:
+    """PL-33: a merge survivor that is the same work as the verified entry
+    under a subtitle-variant title, or with a DOI gained, keeps the text when
+    `identity_ok` re-passes on the stored text against the survivor."""
+
+    LONG = {"title": "Algorithms and Autonomy: The Ethics of Automated Decision Systems",
+            "author": "Rubel, Alan and Castro, Clinton and Pham, Adam", "year": "2021"}
+    SHORT = {"title": "Algorithms and Autonomy",
+             "author": "Rubel, Alan and Castro, Clinton and Pham, Adam", "year": "2021",
+             "doi": "10.1017/9781108895057"}
+    TEXT = ("[[sheet 1]]\nAlgorithms and Autonomy\nThe Ethics of Automated Decision Systems\n"
+            "Alan Rubel, Clinton Castro and Adam Pham\n[[sheet 2]]\nChapter one.\n")
+
+    def test_entry_identity_carries_the_main_title_key(self):
+        assert ft.entry_identity(self.LONG)["main_key"] == "algorithms and autonomy"
+
+    def test_short_doi_survivor_of_a_long_title_record_matches_with_the_text(self):
+        ident = ft.entry_identity(self.LONG)
+        assert not ft.identity_matches(ident, self.SHORT)            # no text: exact only
+        assert ft.identity_matches(ident, self.SHORT, text=self.TEXT)
+
+    def test_reverse_direction_matches(self):
+        short_no_doi = {k: v for k, v in self.SHORT.items() if k != "doi"}
+        assert ft.identity_matches(ft.entry_identity(short_no_doi), self.LONG, text=self.TEXT)
+
+    def test_text_that_is_not_the_work_refuses(self):
+        other = "[[sheet 1]]\nSomething Else Entirely\nBy Someone\n"
+        assert not ft.identity_matches(ft.entry_identity(self.LONG), self.SHORT, text=other)
+
+    def test_another_doi_on_page_one_refuses_a_gained_doi(self):
+        text = self.TEXT.replace("Alan Rubel,", "doi:10.9999/other Alan Rubel,")
+        assert not ft.identity_matches(ft.entry_identity(self.LONG), self.SHORT, text=text)
+
+    def test_a_different_subtitle_refuses(self):
+        fields = dict(self.LONG, title="Algorithms and Autonomy: A Different Book")
+        assert not ft.identity_matches(ft.entry_identity(self.LONG), fields, text=self.TEXT)
+
+    def test_a_doi_lost_or_changed_refuses(self):
+        with_doi = dict(self.LONG, doi="10.1017/9781108895057")
+        ident = ft.entry_identity(with_doi)
+        assert not ft.identity_matches(ident, self.LONG, text=self.TEXT)
+        assert not ft.identity_matches(ident, dict(self.SHORT, doi="10.1/other"),
+                                       text=self.TEXT)
+
+    def test_year_or_author_change_refuses(self):
+        ident = ft.entry_identity(self.LONG)
+        assert not ft.identity_matches(ident, dict(self.SHORT, year="2020"), text=self.TEXT)
+        assert not ft.identity_matches(ident, dict(self.SHORT, author="Castro, Clinton"),
+                                       text=self.TEXT)
+
+    def test_a_record_without_main_key_matches_no_subtitle_variant(self):
+        ident = ft.entry_identity(self.LONG)
+        del ident["main_key"]
+        assert not ft.identity_matches(ident, self.SHORT, text=self.TEXT)
+        # ... but a DOI gained under the same title still re-verifies.
+        assert ft.identity_matches(ident, dict(self.LONG, doi="10.1017/9781108895057"),
+                                   text=self.TEXT)
+
+    def test_pages_from_text_splits_at_markers(self):
+        assert ft.pages_from_text(self.TEXT) == [
+            "Algorithms and Autonomy\nThe Ethics of Automated Decision Systems\n"
+            "Alan Rubel, Clinton Castro and Adam Pham\n", "Chapter one.\n"]

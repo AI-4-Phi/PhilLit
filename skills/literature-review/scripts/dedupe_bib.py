@@ -895,19 +895,18 @@ def restamp_merged(
         None,
     )
     capture_cache: dict = {}
-    text_hash_cache: dict = {}
+    text_cache: dict = {}
 
-    def _text_hash(slug):
-        """sha256 of the stored text, read the one way every verifier reads
-        it (fulltext.file_text_sha256: text mode, UTF-8, universal newlines,
-        never raw bytes), or None when unreadable."""
-        if slug not in text_hash_cache:
+    def _stored_text(slug):
+        """The stored text, read the one way every verifier reads it
+        (fulltext.read_text: text mode, UTF-8, universal newlines, never raw
+        bytes), or None when unreadable."""
+        if slug not in text_cache:
             try:
-                text_hash_cache[slug] = ft.file_text_sha256(
-                    review_dir / ft.STORE_REL / f"{slug}.txt")
+                text_cache[slug] = ft.read_text(review_dir / ft.STORE_REL / f"{slug}.txt")
             except (OSError, UnicodeDecodeError, ValueError):
-                text_hash_cache[slug] = None
-        return text_hash_cache[slug]
+                text_cache[slug] = None
+        return text_cache[slug]
 
     def _fulltext_check(blob, fields):
         """(claimed, ok, reason) for the blob's EVIDENCE-FULLTEXT attestation
@@ -916,7 +915,11 @@ def restamp_merged(
         True`; the merged `fulltext_file` names the blob slug's text; that
         text's hash equals the blob's; and the merged identity still is the
         one the barrier verified (fulltext.identity_matches). A merge that
-        adds or changes a DOI, title, first author or year drops it."""
+        changes the first author or year, changes or drops a DOI, or changes
+        the title other than by a subtitle drops it. A survivor that only
+        gained a DOI or differs by a subtitle (PL-33, the same work under one
+        key) keeps it when identity_matches re-runs the identity check on the
+        stored text against the merged entry and it passes."""
         if not blob or blob.get("fulltext_verified") is not True:
             return False, False, None
         if ft is None:
@@ -928,12 +931,12 @@ def restamp_merged(
             return True, False, f"fulltext_file does not name {slug}.txt"
         if review_dir is None:
             return True, False, "text store not locatable from the report path"
-        actual = _text_hash(slug)
-        if actual is None:
+        text = _stored_text(slug)
+        if text is None:
             return True, False, f"{slug}.txt missing or unreadable"
-        if actual != blob.get("fulltext_text_sha256"):
+        if ft.text_sha256(text) != blob.get("fulltext_text_sha256"):
             return True, False, f"{slug}.txt changed since the barrier (hash differs)"
-        if not ft.identity_matches(blob.get("fulltext_identity"), fields):
+        if not ft.identity_matches(blob.get("fulltext_identity"), fields, text=text):
             return True, False, "identity changed in the merge (DOI, title, author or year)"
         return True, True, None
 

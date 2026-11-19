@@ -2402,3 +2402,84 @@ class TestFulltextRestamp:
         deduplicate_bib(inputs, out, evidence_report=report)
         assert "EVIDENCE-FULLTEXT" not in out.read_text(encoding="utf-8")
         assert "[FULLTEXT-LOST]" not in capsys.readouterr().out
+
+
+class TestFulltextSurvivesSubtitleVariantMerge:
+    """PL-33, the Rubel shape: one key in two domains, the DOI copy with the
+    short title wins the merge, the other copy (subtitle, no DOI) carries the
+    verified full text. The survivor is the same work, so the tier stays."""
+
+    AUTH = "Rubel, Alan and Castro, Clinton and Pham, Adam"
+    SHORT = "Algorithms and Autonomy"
+    LONG = "Algorithms and Autonomy: The Ethics of Automated Decision Systems"
+    TEXT = ("[[sheet 1]]\nAlgorithms and Autonomy\nThe Ethics of Automated Decision Systems\n"
+            "Alan Rubel, Clinton Castro and Adam Pham\n[[sheet 2]]\nChapter one.\n")
+
+    def _entry(self, title, *, doi=None, ff=None, abstract=False):
+        lines = ["@book{rubel2021algorithms,", f"  author = {{{self.AUTH}}},",
+                 f"  title = {{{title}}},", "  year = {2021},"]
+        if doi:
+            lines.append(f"  doi = {{{doi}}},")
+        if ff:
+            lines.append(f"  fulltext_file = {{{ff}}},")
+        if abstract:
+            lines.append("  abstract = {A sufficiently long abstract to count as present.},")
+        lines += ["  keywords = {autonomy, High}", "}"]
+        return "\n".join(lines) + "\n"
+
+    def _run(self, tmp_path, winner_title, winner_doi, ft_title, ft_doi=None):
+        import fulltext as ft
+        import stamp_evidence as se
+        rd = tmp_path / "review"
+        store = rd / "intermediate_files" / "fulltext"
+        store.mkdir(parents=True)
+        ij = rd / "intermediate_files" / "json"
+        ij.mkdir(parents=True)
+        slug = ft.slug_for({"doi": ft_doi, "title": ft_title, "surname": "Rubel",
+                            "year": "2021"})
+        (store / f"{slug}.txt").write_text(self.TEXT, encoding="utf-8")
+        d4 = self._entry(winner_title, doi=winner_doi, abstract=True)
+        d6 = self._entry(ft_title, doi=ft_doi, ff=f"intermediate_files/fulltext/{slug}.txt")
+        (rd / "literature-domain-4.bib").write_text(d4, encoding="utf-8")
+        (rd / "literature-domain-6.bib").write_text(d6, encoding="utf-8")
+        blob = {**TestEvidenceRestamp.NO_ATT, "web_gate_passed": False, "web_url": None,
+                "fulltext_verified": True, "fulltext_slug": slug,
+                "fulltext_text_sha256": ft.text_sha256(self.TEXT),
+                "fulltext_identity": ft.entry_identity(se.parse_entry_fields(d6))}
+        report = ij / "evidence_report.json"
+        report.write_text(json.dumps({"schema_version": 2, "attestations": {
+            "literature-domain-6.bib": {"rubel2021algorithms": blob}}}), encoding="utf-8")
+        out = rd / "literature-all.bib"
+        deduplicate_bib([rd / "literature-domain-4.bib", rd / "literature-domain-6.bib"],
+                        out, evidence_report=report)
+        return out.read_text(encoding="utf-8")
+
+    def test_rubel_shape_keeps_fulltext(self, tmp_path, capsys):
+        merged = self._run(tmp_path, self.SHORT, "10.1017/9781108895057", self.LONG)
+        out = capsys.readouterr().out
+        assert "doi = {10.1017/9781108895057}" in merged
+        assert "EVIDENCE-FULLTEXT" in merged
+        assert "[FULLTEXT-LOST]" not in out
+
+    def test_reverse_direction_keeps_fulltext(self, tmp_path, capsys):
+        merged = self._run(tmp_path, self.LONG, "10.1017/9781108895057", self.SHORT)
+        assert "EVIDENCE-FULLTEXT" in merged
+        assert "[FULLTEXT-LOST]" not in capsys.readouterr().out
+
+    def test_a_different_subtitle_still_loses_it(self, tmp_path, capsys):
+        merged = self._run(tmp_path, self.SHORT + ": A Different Book",
+                           "10.1017/9781108895057", self.LONG)
+        assert "EVIDENCE-FULLTEXT" not in merged
+        assert "[FULLTEXT-LOST] rubel2021algorithms: identity changed" in capsys.readouterr().out
+
+    def test_a_stored_doi_the_survivor_lacks_still_loses_it(self, tmp_path, capsys):
+        merged = self._run(tmp_path, self.SHORT, None, self.LONG,
+                           ft_doi="10.1017/9781108895057")
+        assert "EVIDENCE-FULLTEXT" not in merged
+        assert "[FULLTEXT-LOST]" in capsys.readouterr().out
+
+    def test_a_stored_doi_the_survivor_contradicts_still_loses_it(self, tmp_path, capsys):
+        merged = self._run(tmp_path, self.SHORT, "10.1/other", self.LONG,
+                           ft_doi="10.1017/9781108895057")
+        assert "EVIDENCE-FULLTEXT" not in merged
+        assert "[FULLTEXT-LOST]" in capsys.readouterr().out

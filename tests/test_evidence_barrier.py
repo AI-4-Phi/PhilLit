@@ -1601,6 +1601,36 @@ def test_same_work_in_two_domains_gets_the_same_letter(tmp_path):
     assert letter1 == letter2
 
 
+RUBEL_D4 = """@book{rubel2021algorithms,
+  author = {Rubel, Alan and Castro, Clinton and Pham, Adam},
+  title = {Algorithms and Autonomy},
+  publisher = {Cambridge University Press},
+  doi = {10.1017/9781108895057},
+  year = {2021}
+}"""
+
+RUBEL_D6 = """@book{rubel2021algorithms,
+  author = {Rubel, Alan and Castro, Clinton and Pham, Adam},
+  title = {Algorithms and Autonomy: The Ethics of Automated Decision Systems},
+  publisher = {Cambridge University Press},
+  year = {2021}
+}"""
+
+
+def test_one_key_with_and_without_subtitle_is_one_work(tmp_path):
+    """PL-33: the copies once got 'a' and 'b'; dedupe then merged them on
+    the key and printed a [SUFFIX] conflict."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    rd = tmp_path / "review"
+    _domain(rd, 1, RUBEL_D4, cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
+    _domain(rd, 2, RUBEL_D6, cleaning=_cleaning(2, {}), enrichment=_enrichment(2))
+    assert evidence_barrier.execute(rd, 2) == 0
+    for i in (1, 2):
+        assert "year_suffix" not in (rd / f"literature-domain-{i}.bib").read_text(
+            encoding="utf-8")
+
+
 def test_single_work_year_gets_no_suffix(tmp_path):
     sys.path.insert(0, str(SCRIPTS_DIR))
     import evidence_barrier
