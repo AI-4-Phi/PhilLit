@@ -1,10 +1,10 @@
 ---
 id: PL-39
 title: Outline lets writers state facts found only in the research notes
-status: In Progress
+status: Done
 assignee: []
 created_date: '2026-11-17T11:20:00Z'
-updated_date: '2026-11-19T10:53:00Z'
+updated_date: '2026-11-19T15:51:00Z'
 labels:
   - agents
 dependencies: []
