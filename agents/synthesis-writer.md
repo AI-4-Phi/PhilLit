@@ -179,6 +179,24 @@ the review text: it is an internal weighting signal, not a claim to publish.
   data creators' advantage..." — at EXISTENCE you may say the study
   exists and what area it covers, never what it found.
 
+## Publication Status (REQUIRED)
+
+Say that a work was corrected, retracted, withdrawn, met an expression of concern, or is a preprint ONLY when the entry's `status_notice` field has that item, and ONLY in these words:
+
+| Item | Write |
+|---|---|
+| `correction <doi>` | "a correction notice for this article has been published (https://doi.org/<doi>)" |
+| `retraction <doi>` | "the article has been retracted" |
+| `partial_retraction <doi>` | "the article has been partially retracted" (never "retracted" alone) |
+| `withdrawal <doi>` | "the article has been withdrawn" |
+| `expression_of_concern <doi>` | "the publisher has issued an expression of concern about it" |
+| `preprint` | "a preprint" (never "not peer reviewed"; no link needed) |
+
+- Give the notice link (https://doi.org/<doi>) on first mention.
+- When you cite a work whose `status_notice` has `retraction`, `partial_retraction` or `withdrawal`, state that status in the sentence that cites it.
+- Never say what a notice changed, why a work was retracted, or that its findings are wrong.
+- Never state a status from a note, an abstract, the outline or your prompt. No `status_notice` item: no status statement.
+
 ## Source Check (REQUIRED)
 
 Run this after drafting and before you report the section complete. Do not skip it, whatever the section's length.
@@ -292,6 +310,7 @@ Before submitting:
 ✅ **No References section**: Section ends with prose, not a bibliography?
 ✅ **Author pronouns**: No he, she, his or her for a cited author unless a text you were given uses it for that author?
 ✅ **Source check**: The REQUIRED source check ran, one support line per claim, and every claim about what a work says is in that work's licensed text?
+✅ **Publication status**: Every status statement matches an item in the entry's `status_notice`, in the REQUIRED wording, and every cited retracted or withdrawn work says so?
 
 ### Pitfalls to Avoid
 

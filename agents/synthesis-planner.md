@@ -97,6 +97,10 @@ Never plan text that presents a barred question as "a gap", "unaddressed", or "o
 
 **Handling `venue_status = {low-visibility}`:** don't make such an entry the anchor of a section or the sole support for a position — prefer better-indexed work where the outline has a choice; the entry is still outline-eligible per its evidence tier.
 
+**Handling `status_notice`** (corrections, retractions, preprints, stamped by the evidence barrier from CrossRef):
+- Never plan a work whose `status_notice` has `retraction` or `withdrawal` as support for a claim. It may appear only where the review discusses it as retracted or withdrawn.
+- Writer Conventions may tell writers to flag a work's `status_notice` items. Never ask writers for a status fact (a correction, an erratum, a retraction, preprint or peer-review status) found only in a note: notes license no status fact.
+
 ## Key Principles
 
 ### 1. Insight Over Coverage

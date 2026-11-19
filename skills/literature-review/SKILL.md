@@ -299,6 +299,13 @@ Never advance to a next step in this phase before completing the current step.
    happens alongside a barrier failure already caught by the nonzero-exit
    rule above.
 
+   The summary's `status_notice` key reports the CrossRef publication-status
+   lookup (corrections, retractions, preprints). A non-`complete` status
+   carries a `reason`: mention it once in the final summary (`skipped`:
+   `PHILLIT_STATUS_NOTICE` switched it off; `partial`: some entries were not
+   checked). Writers may state only stamped status facts, so nothing else
+   needs doing.
+
    The summary's `abstract_corroboration` key reports the abstract check,
    which re-fetches one abstract per candidate entry. It is bounded by time
    (until 300 s after the barrier started) and by 3 consecutive failures. Surface it once, for
@@ -509,6 +516,8 @@ A resume that starts at step 8 cannot reproduce the split's `SPLIT-*` lines, ded
    ```
 
    (After step 8 the overrides file is at `[workdir]/intermediate_files/tier-overrides.md`.) Include every `CHECK` line **verbatim** in the final summary (they are telemetry, not blockers). A work cited under a tier override may raise a `CHECK` line, which then ends in `[user-requested override]`: keep it, and say beside it that the user asked for the work — never summarize, count, or gloss them: a live run's summary once reported four findings as "two minor notes", which hid a do-not-cite violation from the user.
+
+   Two lines concern publication status. `CHECK status-claim` names works cited in a sentence with a status word (correction, retraction, withdrawal, expression of concern, preprint) their `status_notice` field does not license. `CHECK retracted-cited` lists every sentence citing a retracted or withdrawn work: confirm each of those sentences, or the passage around it, states the status, and say in the final summary which do not.
 
    **Quotation gate (REQUIRED, right after the telemetry checker)**: run
 
