@@ -2490,3 +2490,26 @@ class TestFulltextSurvivesSubtitleVariantMerge:
                            ft_doi="10.1017/9781108895057")
         assert "EVIDENCE-FULLTEXT" not in merged
         assert "[FULLTEXT-LOST]" in capsys.readouterr().out
+
+    def _spy(self, monkeypatch):
+        import fulltext as ft
+        calls = []
+        real = ft.identity_matches
+
+        def spy(blob, fields, text=None):
+            calls.append(text is not None)
+            return real(blob, fields, text=text)
+        monkeypatch.setattr(ft, "identity_matches", spy)
+        return calls
+
+    def test_an_exact_identity_never_hands_over_the_text(self, tmp_path, capsys, monkeypatch):
+        calls = self._spy(monkeypatch)
+        merged = self._run(tmp_path, self.LONG, None, self.LONG)
+        assert "EVIDENCE-FULLTEXT" in merged
+        assert calls and not any(calls)
+
+    def test_the_text_is_read_only_for_the_same_work_recheck(self, tmp_path, capsys, monkeypatch):
+        calls = self._spy(monkeypatch)
+        merged = self._run(tmp_path, self.SHORT, "10.1017/9781108895057", self.LONG)
+        assert "EVIDENCE-FULLTEXT" in merged
+        assert False in calls and True in calls

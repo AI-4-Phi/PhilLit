@@ -1138,3 +1138,16 @@ class TestIdentityMatchesSubtitleVariant:
         assert ft.pages_from_text(self.TEXT) == [
             "Algorithms and Autonomy\nThe Ethics of Automated Decision Systems\n"
             "Alan Rubel, Clinton Castro and Adam Pham\n", "Chapter one.\n"]
+
+    def test_entry_identity_carries_the_author_surnames(self):
+        assert ft.entry_identity(self.LONG)["authors"] == ["rubel", "castro", "pham"]
+
+    def test_a_different_author_list_refuses_the_widening(self):
+        survivor = dict(self.SHORT, author="Rubel, Alan and Other, Someone")
+        assert not ft.identity_matches(ft.entry_identity(self.LONG), survivor, text=self.TEXT)
+
+    def test_a_record_without_authors_gets_no_widening(self):
+        ident = ft.entry_identity(self.LONG)
+        del ident["authors"]
+        assert not ft.identity_matches(ident, self.SHORT, text=self.TEXT)
+        assert ft.identity_matches(ident, self.LONG)   # exact still matches

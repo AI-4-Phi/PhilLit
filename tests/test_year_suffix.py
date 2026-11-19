@@ -444,3 +444,32 @@ class TestSameKeySubtitleVariants:
         for perm in itertools.permutations(entries):
             s = ys.assign_suffixes(list(perm))["suffixes"]
             assert sorted(s.values()) == ["a", "b", "c"]
+
+    def test_merges_that_together_join_conflicting_dois_are_all_rejected(self):
+        """Each key's merge is safe alone, but the two DOI-less short copies
+        are one work (same fallback key), so applying both would put
+        10.1/one and 10.1/two in one work. Both are refused, in every
+        order."""
+        entries = [self.k((1, "r"), "r", self.SHORT),
+                   self.k((2, "s"), "s", self.SHORT),
+                   self.k((3, "r"), "r", self.LONG, doi="10.1/one"),
+                   self.k((4, "s"), "s", self.LONG, doi="10.1/two")]
+        results = set()
+        for perm in itertools.permutations(entries):
+            s = ys.assign_suffixes(list(perm))["suffixes"]
+            assert s[(3, "r")] != s[(4, "s")]
+            assert s[(1, "r")] == s[(2, "s")]
+            assert s[(1, "r")] not in (s[(3, "r")], s[(4, "s")])
+            results.add(tuple(sorted(s.items())))
+        assert len(results) == 1
+
+    def test_a_rejected_merge_leaves_an_unrelated_safe_merge_alone(self):
+        entries = [self.k((1, "r"), "r", self.SHORT),
+                   self.k((2, "s"), "s", self.SHORT),
+                   self.k((3, "r"), "r", self.LONG, doi="10.1/one"),
+                   self.k((4, "s"), "s", self.LONG, doi="10.1/two"),
+                   self.k((5, "t"), "t", "Zebra Things"),
+                   self.k((6, "t"), "t", "Zebra Things: A Subtitle", doi="10.1/three")]
+        for perm in itertools.permutations(entries):
+            s = ys.assign_suffixes(list(perm))["suffixes"]
+            assert s[(5, "t")] == s[(6, "t")]
