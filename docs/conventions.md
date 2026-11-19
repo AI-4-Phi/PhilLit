@@ -164,8 +164,10 @@ carries the printed number the entry's `pages` field predicts, otherwise
 field into a merged entry and keeps the tier only when the text still hashes
 as the barrier recorded and the merged entry is the same work: the identity
 the barrier verified, or one that only gained a DOI or adds or drops a
-subtitle and passes the identity check again on the stored text. Otherwise it
-prints `[FULLTEXT-LOST]`. The annotated bib strips it. Agents must never write
+subtitle, has the same author list, and passes the identity check again on
+the stored text. That allowance needs a barrier report from 0.5.49 or later
+(it records the author list); an older report gets exact matching only.
+Otherwise it prints `[FULLTEXT-LOST]`. The annotated bib strips it. Agents must never write
 this field by hand.
 
 ### Field Grounding — CRITICAL

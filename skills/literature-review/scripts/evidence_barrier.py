@@ -308,9 +308,14 @@ CORROBORATION_DEADLINE = "corroboration_deadline"
 # deadline plus one full corroboration, not the deadline alone -- the same
 # caveat venue_vetting states about REQUEST_TIMEOUT.
 CORROBORATION_MAX_CONSECUTIVE_ERRORS = 3
+# Used only when no run start is given (a standalone budget, as in tests);
+# the barrier always passes one and uses the run-wide ceiling below.
 CORROBORATION_PASS_DEADLINE_SECONDS = 180.0
 # The barrier's pass runs until this long after the barrier STARTED (PL-31),
-# replacing the 180 s window above: that stranded a large review's last domains,
+# replacing the 180 s window above. The run clock also counts the work before
+# the first probe (parsing, heals), which the old lazy clock did not, so a
+# review with slow pre-work probes for less than 180 s; the 180 s window
+# stranded a large review's last domains,
 # and a re-run stranded the same tail. The probes are rate-bound (about 0.7
 # candidates per second, Semantic Scholar's interval dominating), so a long
 # pass is slow, not stuck. The ceiling leaves venue vetting (its deadline plus
