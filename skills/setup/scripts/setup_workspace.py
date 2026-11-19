@@ -33,8 +33,12 @@ ENV_KEYS = ("S2_API_KEY", "CROSSREF_MAILTO", "OPENALEX_EMAIL", "BRAVE_API_KEY", 
 # File permission checks match Edit(path) rules only — Edit rules cover all
 # file-editing tools (Write, Edit, NotebookEdit). A Write(path) rule is never
 # consulted and triggers a startup warning (verified in Claude Code 2.1.210).
+#
+# No "defaultMode": the permission mode is the user's choice, and project
+# settings outrank the user's own ~/.claude/settings.json, so a mode written
+# here would silently override it. These rules avoid repeated prompts in any
+# mode that respects them.
 PHILLIT_RULES = {
-    "defaultMode": "default",
     "deny": [
         "Bash(sudo *)", "Bash(dd *)", "Bash(mkfs *)",
         # The evidence-tier attestation authority: hand-writing a ledger record
@@ -62,6 +66,9 @@ PHILLIT_RULES = {
     ],
     "ask": ["Bash(rm *)", "Bash(rmdir *)"],
 }
+
+DROPPED_MODE_NOTE = ('Removed "defaultMode": "default", which an earlier PhilLit setup wrote; '
+                     "this workspace now uses your own permission mode.")
 
 # Rules earlier PhilLit versions shipped that must be removed on re-setup.
 # Only PhilLit's own rules go here — user-authored rules are never touched.
@@ -91,10 +98,29 @@ def merge_permissions(existing: dict, rules: dict) -> dict:
     for key in ("allow", "deny", "ask"):
         union = _union(existing.get(key, []), rules.get(key, []))
         merged[key] = [r for r in union if r not in OBSOLETE_RULES.get(key, [])]
-    # Only set defaultMode if the user has not chosen one.
-    if "defaultMode" not in merged and "defaultMode" in rules:
-        merged["defaultMode"] = rules["defaultMode"]
     return merged
+
+
+def setup_wrote_default_mode(perms: dict, backup_path: Path) -> bool:
+    """True when `perms["defaultMode"]` is provably the "default" an earlier setup wrote.
+
+    Setup before PL-40 added "defaultMode": "default" when the file set no mode.
+    It backs up a pre-existing file before its first change, so the key is
+    setup's when there is no backup (setup created the file) or when the backup
+    has no defaultMode. A backup it cannot read proves nothing: keep the key.
+    """
+    if perms.get("defaultMode") != "default":
+        return False
+    if not backup_path.exists():
+        return True
+    try:
+        backup = json.loads(backup_path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return False
+    if not isinstance(backup, dict):
+        return False
+    backup_perms = backup.get("permissions", {})
+    return isinstance(backup_perms, dict) and "defaultMode" not in backup_perms
 
 
 def scaffold_env(example: Path, env_path: Path) -> list[str]:
@@ -153,6 +179,9 @@ def apply(workspace: Path, plugin_root: Path, dry_run: bool) -> int:
         return 2
 
     merged_perms = merge_permissions(existing_settings.get("permissions", {}), PHILLIT_RULES)
+    dropped_mode = setup_wrote_default_mode(merged_perms, settings_path.with_suffix(".json.bak"))
+    if dropped_mode:
+        del merged_perms["defaultMode"]
     new_settings = dict(existing_settings)
     new_settings["permissions"] = merged_perms
 
@@ -162,6 +191,8 @@ def apply(workspace: Path, plugin_root: Path, dry_run: bool) -> int:
     if dry_run:
         print("DRY RUN - would create .phillit/, scaffold .env, and write:")
         print(json.dumps(new_settings, indent=2))
+        if dropped_mode:
+            print(DROPPED_MODE_NOTE.replace("Removed", "Would remove", 1))
         if not missing:
             print("All API keys already set in the environment; would skip .env.")
         elif inherited:
@@ -194,6 +225,8 @@ def apply(workspace: Path, plugin_root: Path, dry_run: bool) -> int:
         if settings_path.exists() and not backup_path.exists():
             shutil.copyfile(settings_path, backup_path)
         _atomic_write_json(settings_path, new_settings)
+        if dropped_mode:
+            print(DROPPED_MODE_NOTE)
     return 0
 
 
