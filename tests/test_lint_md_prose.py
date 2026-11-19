@@ -254,3 +254,17 @@ def test_sentence_initial_he_still_warns():
 def test_pronoun_after_any_quote_or_dash_still_warns(opener):
     text = f"Danaher (2018) argues: {opener}Her argument is novel."
     assert len(_pronoun_warnings(text)) == 1
+
+
+
+@pytest.mark.parametrize("text", [
+    "He and Yang (2025) report a gain in essay scores.",
+    "He et al. (2024) report a gain.",
+    "Intro. He (2023) reports a gain.",
+])
+def test_sentence_initial_surname_he_in_a_citation_is_silent(text):
+    assert _pronoun_warnings(text) == []
+
+
+def test_sentence_initial_pronoun_and_a_lowercase_word_still_warns():
+    assert len(_pronoun_warnings("Danaher (2018) argues X. He and others agree.")) == 1

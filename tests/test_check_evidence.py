@@ -854,3 +854,16 @@ def test_a_lowercase_start_stays_one_sentence(tmp_path):
     md = "Costello (2024) argues a thesis. then it was retracted."
     lines = [l for l in _status_lines(tmp_path, md) if "status-claim" in l]
     assert lines and lines[0].endswith("Costello (2024) argues a thesis. then it was retracted.")
+
+
+
+def test_references_section_is_not_scanned(tmp_path):
+    md = ("# R\n\nFine (2020) argues for a view.\n\n## References\n\n"
+          "Kuhn, Thomas S. 1962. The Structure of Scientific Revolutions. Kuhn (1962) argues.\n")
+    r = _run(tmp_path, md)
+    assert "kuhn1962structure" not in r.stdout
+
+
+def test_prose_only_cuts_at_the_references_heading():
+    assert check_evidence.prose_only("a\n\n## References\n\nb") == "a\n\n"
+    assert check_evidence.prose_only("no heading") == "no heading"

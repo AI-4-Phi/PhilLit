@@ -21,9 +21,8 @@ live, 2026-07-28 A/B run + 2026-08-02 gate-(b) validation run):
   letters own the underlying defect).
 - Self-reference FPs: "as argued in the section on X" trips the verb match
   whenever a low-tier surname/year sits within the window.
-- Matches inside References-entry TITLES: a cited work whose title names
-  another work ("A Critical Assessment of Levins's ... (1966)") reads as a
-  prose cite of the named work.
+- The References section is not scanned (prose_only): its entries are not
+  citations.
 - Co-author positions are skipped: a surname right after "<Name> and " or
   "<Name> & " is not a cite of that author's own work. A middle author in a
   three-name list ("Susser, Roessler, and Nissenbaum") still matches.
@@ -556,6 +555,16 @@ def _ascii(text: str) -> str:
     return text.encode("ascii", "replace").decode("ascii")
 
 
+_REFS_HEADING_RE = re.compile(r"^#{1,6}[ \t]+References[ \t]*$", re.MULTILINE | re.IGNORECASE)
+
+
+def prose_only(md: str) -> str:
+    """The review up to its References heading: References entries are not
+    citations, and adjacent entries read as one sentence citing two works."""
+    m = _REFS_HEADING_RE.search(md)
+    return md[:m.start()] if m else md
+
+
 def main() -> int:
     usage = ("check_evidence.py <review.md> <merged.bib> "
              "[--overrides <tier-overrides.md>]")
@@ -570,7 +579,7 @@ def main() -> int:
             raise
         print(f"Usage: {usage}")
         return 1
-    md = Path(args.review).read_text(encoding="utf-8")
+    md = prose_only(Path(args.review).read_text(encoding="utf-8"))
     bib_content = Path(args.bib).read_text(encoding="utf-8")
     override_keys = _load_override_keys(args.overrides)
 
