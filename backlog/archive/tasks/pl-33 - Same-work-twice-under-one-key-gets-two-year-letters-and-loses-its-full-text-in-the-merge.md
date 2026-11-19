@@ -3,10 +3,10 @@ id: PL-33
 title: >-
   Same work twice under one key gets two year letters and loses its full text in
   the merge
-status: In Progress
+status: Done
 assignee: []
 created_date: '2026-11-17T11:20:00Z'
-updated_date: '2026-11-19T10:53:00Z'
+updated_date: '2026-11-19T13:00:00Z'
 labels:
   - barrier
 dependencies: []

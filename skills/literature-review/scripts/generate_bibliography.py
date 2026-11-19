@@ -880,6 +880,14 @@ def _record_has_author_list(rec: dict, names: tuple, year: str) -> bool:
                for n, p in zip(names, persons))
 
 
+# "Clark, Menary, and Sutton (2010) each defend ..." names three authors'
+# separate works even when a trio record also exists: a distributive word
+# right after the citation keeps the list rejected (keep-all).
+_DISTRIBUTIVE_AFTER_RE = re.compile(
+    r"[^.;:!?]{0,40}?\b(?:each|respectively|individually|separately|independently)\b",
+    re.IGNORECASE)
+
+
 def _corroborated_list(review_text: str, m, records) -> tuple:
     """The 3+ author list `m` closes (_strict_author_list), but only when
     some matched bib record has EXACTLY that author list in EVERY year the
@@ -893,7 +901,12 @@ def _corroborated_list(review_text: str, m, records) -> tuple:
     both stay keep-all. A corroborated list names the one work whose authors
     those are, which is how the co-author list discriminates a
     same-surname-year group. Never a suffix of the walked list: accepting a
-    suffix would silence the peeled leading name's mention.
+    suffix would silence the peeled leading name's mention. Two residuals: a
+    list longer than _LIST_LOOKBACK is walked only within the window, so its
+    walked part is a suffix of the prose list; and a distributive reading
+    the guard words do not cover ("Clark, Menary, and Sutton (2010) defend
+    their own versions") with a matching trio record drops the solo works,
+    printed as [COLLISION] dropped for the orchestrator to resolve.
 
     The two-author "A & B (2019)" is deliberately NOT read here; see
     _rejected_span_surnames for why that parse was declined. And a list
@@ -901,7 +914,7 @@ def _corroborated_list(review_text: str, m, records) -> tuple:
     own groups (_resolve_collisions reads that from the "and" form only).
     """
     names = _strict_author_list(review_text, m)
-    if not names:
+    if not names or _DISTRIBUTIVE_AFTER_RE.match(review_text, m.end()):
         return ()
     years = [m.group("year")] + [y for y, _s in
                                  _continuation_years(review_text[m.end():])]
@@ -2386,7 +2399,7 @@ def main():
     try:
         warn_lone_letters(cited, bib_data)
     except Exception as e:
-        print(f"  [LETTER] advisory failed: {e}", file=sys.stderr)
+        print(f"  [LETTER-ERROR] advisory failed: {e}", file=sys.stderr)
 
     # Log matched entries
     for key, _entry in sorted(cited, key=lambda x: x[0]):

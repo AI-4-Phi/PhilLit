@@ -2620,6 +2620,27 @@ class TestCorroboratedAuthorList:
             == ["susser2019invisible", "susser2019technology"]
         assert "[COLLISION] dropped" not in capsys.readouterr().err
 
+    @pytest.mark.parametrize("word", ["each", "respectively", "independently"])
+    def test_a_distributive_list_stays_keep_all(self, word, capsys):
+        assert self._cited(
+            f"Susser, Roessler, and Nissenbaum (2019) {word} define manipulation.") \
+            == ["susser2019invisible", "susser2019technology"]
+        assert "[COLLISION] dropped" not in capsys.readouterr().err
+
+    def test_a_list_with_two_years_keeps_both_coauthored_works(self):
+        """A continuation instance copies the list instance, list_names
+        included, so "(2019, 2020)" resolves both trio works and nothing
+        crashes in _resolve_collisions."""
+        bib = SUSSER_BIB + """
+
+@article{susser2020online,
+  author = {Susser, Daniel and Roessler, Beate and Nissenbaum, Helen},
+  title = {Online Manipulation}, journal = {Georgetown Law Technology Review},
+  year = {2020}}"""
+        assert self._cited(
+            "Susser, Roessler, and Nissenbaum (2019, 2020) define manipulation.",
+            bib) == ["susser2019technology", "susser2020online"]
+
     def test_a_joint_possessive_is_one_citation(self, capsys):
         assert self._cited(
             "Susser, Roessler, and Nissenbaum's (2019) account differs.") \
