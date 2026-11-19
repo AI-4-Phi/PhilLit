@@ -460,6 +460,7 @@ A resume that starts at step 8 cannot reproduce the split's `SPLIT-*` lines, ded
    - Format references in Chicago Author-Date style from BibTeX metadata only
    - Deduplicate entries with the same DOI
    - Append (or replace) a `## References` section at the end of the review
+   - Print a `[COLLISION] ambiguous: ... - all kept, possible phantom references` line (stderr) when works share an author surname and year and the prose does not say which one it cites. Nothing later checks these lines, so resolve each one here. Read the sentences that cite that author and year, and the titles and authors of the entries the line names. If the prose cites only one of them, make that citation name it unambiguously: give the full author list ("Susser, Roessler, and Nissenbaum (2019)"), the year letter, or "et al." for three or more authors. Then re-run this step. Never delete the References line by hand, because the next run of this step brings it back. If the prose really cites every work the line names, leave it. Name each line you could not resolve in the final summary.
 
    Any later re-run of this step (after a prose fix, also after step 7) uses `literature-[project-name].bib` or `intermediate_files/literature-[project-name]-merged.bib`, never `literature-[project-name]-annotated.bib`: the annotated bib lacks the `year_suffix` field, so the References would lose their year letters. The script refuses the annotated bib.
 

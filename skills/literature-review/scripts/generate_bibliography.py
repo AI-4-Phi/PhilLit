@@ -791,16 +791,116 @@ def _strip_possessive(s: str) -> str:
     return s
 
 
-def _parser_verdicts(review_text: str):
-    """Yield (match, rejected) for every _CITE_INSTANCE_RE match.
+def _parser_verdicts(review_text: str, records=()):
+    """Yield (match, rejected, author_list) for every _CITE_INSTANCE_RE match.
 
     One scanner, so the parser's ACCEPTED half (_citation_instances) and its
     REJECTED half (_unresolvable_mentions) cannot drift apart: a future
     rejection rule added here reaches both, and a citation can never be
     simultaneously absent from the instances and absent from the mentions.
+
+    author_list is non-empty only for a match the guard rejected that is in
+    fact the tail of a CORROBORATED 3+ author list (_corroborated_list). Such
+    a match is yielded as accepted (rejected=False), so it leaves the
+    bare-mention net and becomes a "list" instance. Without `records` nothing
+    can corroborate, and every verdict is the historic one.
     """
     for m in _CITE_INSTANCE_RE.finditer(review_text):
-        yield m, bool(_NON_INITIAL_PRECEDING_RE.search(review_text[:m.start()]))
+        rejected = bool(_NON_INITIAL_PRECEDING_RE.search(review_text[:m.start()]))
+        names = ()
+        if rejected and records:
+            names = _corroborated_list(review_text, m, records)
+            if names:
+                rejected = False
+        yield m, rejected, names
+
+
+def _strict_author_list(review_text: str, m) -> tuple:
+    """The author list a REJECTED match `m` closes, when the text has the
+    exact shape of one citation of 3+ authors: "A, B, and C (2019)",
+    "A, B and C", "A, B, & C", "A, B & C" - every link a comma except the
+    last, which is "and" or "&". () for any other shape, including a year in
+    mid-list ("See Clark, Menary (2010), and Sutton", which stays ambiguous).
+
+    Shape only. It says nothing about whether the names are ONE work's
+    authors - "See Floridi, Susser, Roessler, and Nissenbaum (2019)" has the
+    shape and is not one citation; _corroborated_list decides that against
+    the bib. The walk-back is _rejected_span_surnames' own (same pattern, same
+    lookback), so the two read a list the same way.
+    """
+    if m.group("etal"):
+        return ()
+    head = review_text[max(0, m.start() - _LIST_LOOKBACK):m.start()]
+    walked = []  # (name, branch), nearest first
+    while True:
+        pm = _NON_INITIAL_PRECEDING_RE.search(head)
+        if not pm:
+            break
+        if pm.group("conj_name"):
+            walked.append((pm.group("conj_name"), "conj"))
+        else:
+            walked.append((pm.group("comma_name"), "comma"))
+        head = head[:pm.start()]
+    if not walked:
+        return ()
+    if m.group("second"):
+        # The final "and" is inside the match: every walked link is a comma.
+        if any(b != "comma" for _n, b in walked):
+            return ()
+        tail = [m.group("surname"), m.group("second")]
+    else:
+        # The final "and"/"&" precedes the match: it is the nearest link,
+        # and every earlier link is a comma.
+        if walked[0][1] != "conj" or any(b != "comma" for _n, b in walked[1:]):
+            return ()
+        tail = [m.group("surname")]
+    names = [n for n, _b in reversed(walked)] + tail
+    if len(names) < 3:
+        return ()
+    return tuple(_strip_possessive(n) for n in names)
+
+
+def _record_has_author_list(rec: dict, names: tuple, year: str) -> bool:
+    """Is `names` exactly this record's author list in `year` - same length,
+    every position's surname variant-intersecting?"""
+    if rec["year"] != year:
+        return False
+    persons = _persons_of(rec)
+    if len(persons) != len(names):
+        return False
+    return all(ascii_variants(n) & ascii_variants(_get_full_surname(p))
+               for n, p in zip(names, persons))
+
+
+def _corroborated_list(review_text: str, m, records) -> tuple:
+    """The 3+ author list `m` closes (_strict_author_list), but only when
+    some matched bib record has EXACTLY that author list in EVERY year the
+    citation gives (head and continuations); () otherwise (PL-34).
+
+    Corroboration is what makes accepting the list safe. An uncorroborated
+    list keeps the historic rejected verdict, so every name it carries stays
+    a bare mention protecting its group: "Clark's, Menary's, and Sutton's
+    (2010) accounts differ" (three authors' separate works) and a list with
+    an extra leading name ("See Floridi, Susser, Roessler, and Nissenbaum")
+    both stay keep-all. A corroborated list names the one work whose authors
+    those are, which is how the co-author list discriminates a
+    same-surname-year group. Never a suffix of the walked list: accepting a
+    suffix would silence the peeled leading name's mention.
+
+    The two-author "A & B (2019)" is deliberately NOT read here; see
+    _rejected_span_surnames for why that parse was declined. And a list
+    instance never counts as second-position evidence against its co-authors'
+    own groups (_resolve_collisions reads that from the "and" form only).
+    """
+    names = _strict_author_list(review_text, m)
+    if not names:
+        return ()
+    years = [m.group("year")] + [y for y, _s in
+                                 _continuation_years(review_text[m.end():])]
+    for year in years:
+        if not any(_record_has_author_list(r, names, year) for r in records):
+            return ()
+    return names
 
 
 def _continuation_years(tail: str) -> list[tuple[str, str]]:
@@ -903,7 +1003,7 @@ def _rejected_span_surnames(review_text: str, m) -> list[str]:
     return out
 
 
-def _unresolvable_mentions(review_text: str) -> list[dict]:
+def _unresolvable_mentions(review_text: str, records=()) -> list[dict]:
     """Citations of a surname+year that the parser saw and REJECTED, carrying
     no Chicago letter. Each: {"surname_variants", "surname", "year"}.
 
@@ -957,7 +1057,7 @@ def _unresolvable_mentions(review_text: str) -> list[dict]:
     measured above, which costs collision resolution.
     """
     out = []
-    for m, rejected in _parser_verdicts(review_text):
+    for m, rejected, _names in _parser_verdicts(review_text, records):
         if not rejected:
             continue
         surnames = _rejected_span_surnames(review_text, m)
@@ -976,11 +1076,14 @@ def _unresolvable_mentions(review_text: str) -> list[dict]:
     return out
 
 
-def _citation_instances(review_text: str) -> list[dict]:
+def _citation_instances(review_text: str, records=()) -> list[dict]:
     """Parse author-year citation instances from the ORIGINAL text.
     Each: {"surname_variants", "form", "second_text", "first_text", "year",
-    "suffix", "continuation"}.
-    form: 'solo' | 'and' | 'etal'. second_text may be a multiword particled
+    "suffix", "continuation", "list_names"}.
+    form: 'solo' | 'and' | 'etal' | 'list'. 'list' is a 3+ author list that
+    a record in `records` corroborates (_corroborated_list); list_names holds
+    its surnames, first author first, and is () for every other form.
+    second_text may be a multiword particled
     surname - compared whole-to-whole against candidate second-surname
     variants, never tokenized; first_text is the raw leading token ('' when
     absent) and is applied only when informative (see candidate rule).
@@ -994,11 +1097,15 @@ def _citation_instances(review_text: str) -> list[dict]:
     (C1: _NON_INITIAL_PRECEDING_RE) are rejected outright and contribute no
     instance - see that regex's docstring for why."""
     out = []
-    for m, rejected in _parser_verdicts(review_text):
+    for m, rejected, names in _parser_verdicts(review_text, records):
         if rejected:
             continue
         surname = _strip_possessive(m.group("surname"))
-        if m.group("etal"):
+        if names:
+            # The match bound at a non-initial name; the instance belongs to
+            # the list's FIRST author, like every other first-position form.
+            surname, form, second = names[0], "list", ""
+        elif m.group("etal"):
             form, second = "etal", ""
         elif m.group("second"):
             form, second = "and", _strip_possessive(m.group("second"))
@@ -1013,6 +1120,7 @@ def _citation_instances(review_text: str) -> list[dict]:
             # The Chicago letter the PROSE carries, "" when none.
             "suffix": (m.group("suffix") or ""),
             "continuation": False,
+            "list_names": names,
         })
         # One surname, several years: "Menary (2006, 2010, 2013)", "Wiens
         # (2015a; 2015b)" -- the shape 8 of 32 delivered reviews already use.
@@ -1539,9 +1647,9 @@ def _resolve_collisions(records: list[dict], review_text: str,
             keep.append(members[0])
             continue
         if instances is None:
-            instances = _citation_instances(review_text)
+            instances = _citation_instances(review_text, records)
             sighted = _sighted_letters(review_text)
-            unresolvable = _unresolvable_mentions(review_text)
+            unresolvable = _unresolvable_mentions(review_text, records)
         member_variants = frozenset().union(*(r["_variants"] for r in members))
         # A letterless citation of THIS group's author-year that the parser
         # rejected. It names the group without saying which member, so it is
@@ -1653,7 +1761,12 @@ def _resolve_collisions(records: list[dict], review_text: str,
                     continue
                 persons = _persons_of(rec)
                 n = len(persons)
-                if inst["form"] == "etal" and n >= 3:
+                if inst["form"] == "list":
+                    # The exact author list (PL-34). A list never sets
+                    # second_pos_seen above: that branch reads "and" only.
+                    if _record_has_author_list(rec, inst["list_names"], year):
+                        cands.append(rec)
+                elif inst["form"] == "etal" and n >= 3:
                     cands.append(rec)
                 elif inst["form"] == "and" and n == 2 and (
                         ascii_variants(inst["second_text"])
