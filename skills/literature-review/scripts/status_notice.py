@@ -22,10 +22,11 @@ tests/fixtures/crossref_status/facet.json): all seven mapped tokens occur.
 CrossRef also emits case and hyphen variants of them (`Erratum` 11 records,
 `expression-of-concern` 6, `Corrigendum` 5, `Retraction` 3), so a token is
 case- and hyphen-folded before the exact match (`category_of`). A relation
-whose token still maps to nothing (`new_version`, `addendum`, a misspelling),
-or a mapped one with a malformed notice DOI, is never stamped and never read
-as "no notice": the entry is `unresolved` (unless other items stamp) and the
-pass is partial.
+whose token is a known non-status type (KNOWN_NON_STATUS: `new_version`,
+`addendum`, ...) is ignored and counted in `ignored_types`. Any other token
+that maps to nothing, or a mapped one with a malformed notice DOI, is never
+stamped and never read as "no notice": the entry is `unresolved` (unless
+other items stamp) and the pass is partial.
 
 Who is looked up: entries with a DOI of `bib_identity.DOI_SHAPE` whose tier
 is not EVIDENCE-NONE. Not sent: arXiv DOIs (`10.48550/`, DataCite, not in
@@ -119,6 +120,23 @@ TYPE_CATEGORY = {
 PREPRINT = "preprint"
 
 
+def fold_token(token) -> str:
+    """A CrossRef update type folded for matching: case and hyphens."""
+    return token.strip().lower().replace("-", "_") if isinstance(token, str) else ""
+
+
+# CrossRef update types that are NOT publication-status events, folded.
+# Pinned from the facet fixture (every token CrossRef emitted 2026-11-19):
+# versions and editions, additions and clarifications, and genre labels some
+# publishers deposit as update types. Ignored and counted in `ignored_types`.
+# Every other unmapped token -- `removal`, `err`, `corrected`,
+# `publisher_note`, `unknown`, misspellings, test junk -- may hide a status
+# event, so it stays `unresolved`.
+KNOWN_NON_STATUS = frozenset({
+    "new_version", "new_edition", "addendum", "clarification", "comment",
+    "correspondence", "book_review", "point_counterpoint", "print"})
+
+
 def category_of(token) -> str | None:
     """The category of a CrossRef update type: case and hyphens folded, then
     an exact match to the seven tokens above. CrossRef emits `Retraction`,
@@ -127,7 +145,7 @@ def category_of(token) -> str | None:
     nothing."""
     if not isinstance(token, str):
         return None
-    return TYPE_CATEGORY.get(token.strip().lower().replace("-", "_"))
+    return TYPE_CATEGORY.get(fold_token(token))
 
 
 CATEGORY_ORDER = ("retraction", "partial_retraction", "withdrawal",
@@ -448,7 +466,8 @@ def empty_report() -> dict:
             "not_found": 0, "identity_mismatch": 0, "arxiv_skipped": 0,
             "errors": 0, "deadline": 0, "unmapped_types": {}, "sources": {},
             "malformed": 0, "splice_failed": 0, "reverse_unchecked": 0,
-            "unresolved": 0, "late_promotion": 0, "entries": {}}
+            "unresolved": 0, "late_promotion": 0, "ignored_types": {},
+            "entries": {}}
 
 
 def _bump(d: dict, key: str) -> None:
@@ -461,7 +480,7 @@ def _entry_items(doi: str, record: dict, notices: list, reverse_ok: bool, report
     that maps to no category, or a mapped one with a malformed notice DOI).
     Counts unmapped types, sources and malformed items once per distinct
     relation."""
-    items, unmapped, malformed, sourced = set(), set(), set(), set()
+    items, unmapped, malformed, sourced, ignored = set(), set(), set(), set(), set()
     relations = []   # (type token, raw notice doi, source)
     for u in record.get("updated-by") or []:
         if isinstance(u, dict):
@@ -474,7 +493,10 @@ def _entry_items(doi: str, record: dict, notices: list, reverse_ok: bool, report
     for token, raw, source in relations:
         category = category_of(token)
         if category is None:
-            unmapped.add((str(token), str(raw)))
+            if fold_token(token) in KNOWN_NON_STATUS:
+                ignored.add((fold_token(token), str(raw)))
+            else:
+                unmapped.add((str(token), str(raw)))
             continue
         notice = _notice_doi(raw, doi, category)
         if notice is None:
@@ -485,6 +507,8 @@ def _entry_items(doi: str, record: dict, notices: list, reverse_ok: bool, report
             sourced.add((category, notice, source))
     for token, _raw in unmapped:
         _bump(report["unmapped_types"], token)
+    for token, _raw in ignored:
+        _bump(report["ignored_types"], token)
     report["malformed"] += len(malformed)
     for _c, _n, source in sourced:
         _bump(report["sources"], source)

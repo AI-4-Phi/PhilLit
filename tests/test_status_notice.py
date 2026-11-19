@@ -352,14 +352,14 @@ def test_reverse_hit_counts_only_when_update_to_names_the_requested_doi(monkeypa
 def test_reverse_hit_with_unmapped_type_is_counted_not_stamped(monkeypatch):
     rec = dict(_record("10.1007/s11097-010-9174-y"))
     nv = {"DOI": "10.1000/new-version", "update-to": [
-        {"DOI": "10.1007/s11097-010-9174-y", "type": "new_version"}]}
+        {"DOI": "10.1007/s11097-010-9174-y", "type": "removal"}]}
 
     def answer(params):
         items = [rec] if params["filter"].startswith("doi:") else [nv]
         return 200, {"message": {"total-results": 1, "items": items}}
     values, report, _ = _run(monkeypatch, {"s": _e(STERELNY)}, answer)
     assert values == {}
-    assert report["unmapped_types"] == {"new_version": 1}
+    assert report["unmapped_types"] == {"removal": 1}
     assert report["entries"]["s"] == "unresolved"
     assert report["status"] == "partial" and report["reason"]
 
@@ -479,7 +479,7 @@ def test_items_sorted_deduped_and_joined(monkeypatch):
 
 def test_unmapped_and_malformed_items_counted_not_stamped(monkeypatch):
     fake = _with_updates([
-        {"DOI": "10.1000/nv", "type": "new_version", "source": "publisher"},
+        {"DOI": "10.1000/nv", "type": "removal", "source": "publisher"},
         {"DOI": "10.1000/cap", "type": "Retraction", "source": "publisher"},
         {"DOI": "10.1000/semi;colon", "type": "retraction", "source": "publisher"},
         {"DOI": "10.1000/white space", "type": "retraction", "source": "publisher"},
@@ -489,7 +489,7 @@ def test_unmapped_and_malformed_items_counted_not_stamped(monkeypatch):
     ])
     values, report, _ = _run(monkeypatch, {"s": _e(STERELNY)}, fake)
     assert values == {"s": "retraction 10.1000/cap"}
-    assert report["unmapped_types"] == {"new_version": 1}
+    assert report["unmapped_types"] == {"removal": 1}
     assert report["malformed"] == 5
     assert report["entries"]["s"] == "stamped"
     assert report["unresolved"] == 1
@@ -497,7 +497,7 @@ def test_unmapped_and_malformed_items_counted_not_stamped(monkeypatch):
 
 
 def test_an_unmappable_relation_alone_is_unresolved_not_checked_none(monkeypatch):
-    fake = _with_updates([{"DOI": "10.1000/nv", "type": "new_version", "source": "publisher"}])
+    fake = _with_updates([{"DOI": "10.1000/nv", "type": "removal", "source": "publisher"}])
     values, report, _ = _run(monkeypatch, {"s": _e(STERELNY)}, fake)
     assert values == {}
     assert report["entries"]["s"] == "unresolved"
@@ -880,4 +880,45 @@ def test_a_retry_after_past_the_deadline_is_not_waited_for(monkeypatch):
     _v, report = sn.lookup_status({"s": _e(STERELNY)}, sn.time.monotonic() + 5)
     assert slept == [] and calls == ["doi"]
     assert report["entries"]["s"] == "deadline"
+
+
+def test_known_non_status_tokens_are_pinned_against_the_facet():
+    """Every pinned non-status token is one CrossRef emits (after the fold),
+    and none is a status category."""
+    emitted = {sn.fold_token(t) for t in
+               _load("facet")["message"]["facets"]["update-type"]["values"]}
+    assert sn.KNOWN_NON_STATUS <= emitted
+    assert not sn.KNOWN_NON_STATUS & set(sn.TYPE_CATEGORY)
+    assert sn.KNOWN_NON_STATUS == {
+        "new_version", "new_edition", "addendum", "clarification", "comment",
+        "correspondence", "book_review", "point_counterpoint", "print"}
+
+
+@pytest.mark.parametrize("token", ["new_version", "New-Edition", "addendum", "clarification"])
+def test_a_non_status_relation_is_ignored_not_unresolved(monkeypatch, token):
+    fake = _with_updates([{"DOI": "10.1000/nv", "type": token, "source": "publisher"}])
+    values, report, _ = _run(monkeypatch, {"s": _e(STERELNY)}, fake)
+    assert values == {}
+    assert report["entries"]["s"] == "checked_none"
+    assert report["ignored_types"] == {sn.fold_token(token): 1}
+    assert report["unmapped_types"] == {} and report["unresolved"] == 0
+    assert report["status"] == "complete" and report["reason"] is None
+
+
+@pytest.mark.parametrize("token", ["removal", "err", "publisher-note", "unknown", "retration"])
+def test_a_token_in_neither_set_is_unresolved(monkeypatch, token):
+    fake = _with_updates([{"DOI": "10.1000/x", "type": token, "source": "publisher"}])
+    _v, report, _ = _run(monkeypatch, {"s": _e(STERELNY)}, fake)
+    assert report["entries"]["s"] == "unresolved"
+    assert report["ignored_types"] == {}
+    assert report["status"] == "partial" and "could not map" in report["reason"]
+
+
+def test_ignored_relation_beside_a_stamp_keeps_the_pass_complete(monkeypatch):
+    fake = _with_updates([
+        {"DOI": "10.1000/r", "type": "retraction", "source": "publisher"},
+        {"DOI": "10.1000/nv", "type": "new_version", "source": "publisher"}])
+    values, report, _ = _run(monkeypatch, {"s": _e(STERELNY)}, fake)
+    assert values == {"s": "retraction 10.1000/r"}
+    assert report["status"] == "complete"
 

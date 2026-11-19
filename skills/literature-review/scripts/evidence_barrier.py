@@ -1174,6 +1174,7 @@ def _status_summary(rep) -> dict:
               "unresolved", "late_promotion"):
         out[k] = rep.get(k, 0)
     out["unmapped_types"] = rep.get("unmapped_types") or {}
+    out["ignored_types"] = rep.get("ignored_types") or {}
     out["sources"] = rep.get("sources") or {}
     # Only the entries that need a look; the full map is in the report.
     out["entries"] = {k: v for k, v in (rep.get("entries") or {}).items()

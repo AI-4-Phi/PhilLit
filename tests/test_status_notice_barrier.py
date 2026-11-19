@@ -297,7 +297,7 @@ def test_printed_summary_carries_the_diagnostic_counts(tmp_path, crossref, capsy
                      "entry_type": "article"}))
     assert eb.execute(rd, 1) == 0
     printed = json.loads(capsys.readouterr().out.strip().splitlines()[-1])["status_notice"]
-    for key in ("unmapped_types", "sources", "arxiv_skipped", "reverse_unchecked",
+    for key in ("unmapped_types", "ignored_types", "sources", "arxiv_skipped", "reverse_unchecked",
                 "unresolved", "late_promotion"):
         assert key in printed
     assert printed["sources"] == {"publisher": 1}
