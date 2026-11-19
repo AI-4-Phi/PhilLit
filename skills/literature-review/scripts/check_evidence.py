@@ -36,7 +36,11 @@ live, 2026-07-28 A/B run + 2026-08-02 gate-(b) validation run):
   sentence before it, two after) can also attribute a status word to every
   work it cites; only "the former" / "the latter" with exactly two cited
   works narrow it, so "Smith (2020) cites Jones (2019), whose paper was
-  retracted" names Smith too.
+  retracted" names Smith too. "The former" / "the latter" narrow only the
+  sentence that holds the status word.
+- Sentence ends for the status checks: a stop before a lowercase word, after
+  a single capital (an initial, "J. S. Mill"; also "Plan B."), or inside
+  "et al.", "e.g.", "i.e.", "cf." or a page locator is not one.
 """
 from __future__ import annotations
 
@@ -284,8 +288,12 @@ _ANY_STOP = r"[.!?]"
 # empirical work, where notices cluster, is cited "Costello et al. (2024)".
 # A stop ends a status sentence only when whitespace and then an uppercase
 # letter, an opening quote or a bracket follow, or the text ends: "(2024,
-# p. 12)" and "pp. 4-5" never cut a sentence.
-_SPACED_STOP = (r"(?<!\bet al)(?<!\be\.g)(?<!\bi\.e)(?<!\bcf)"
+# p. 12)" and "pp. 4-5" never cut a sentence. A single capital before the
+# stop is an initial ("J. S. Mill"), never a sentence end. Accepted
+# consequences: a sentence that starts lowercase after a stop ("... then it
+# was retracted.") is read as part of the one before, and so is one after a
+# sentence ending in a single capital ("Plan B. It was retracted.").
+_SPACED_STOP = (r"(?<!\bet al)(?<!\be\.g)(?<!\bi\.e)(?<!\bcf)(?<!\b[A-Z])"
                 r"[.!?](?=\s+[A-Z\"'\u201c\u2018(\[]|\s*\Z)")
 
 
@@ -427,6 +435,16 @@ def _addressed(unit: str, keys: list[str]) -> list[str]:
     return keys
 
 
+def _split_sentences(text: str) -> list[str]:
+    out, start = [], 0
+    for m in re.finditer(_SPACED_STOP, text):
+        out.append(text[start:m.end()].strip())
+        start = m.end()
+    if text[start:].strip():
+        out.append(text[start:].strip())
+    return out
+
+
 def _has_link(text: str, doi: str) -> bool:
     return doi.lower() in text.lower()
 
@@ -451,8 +469,16 @@ def status_checks(md: str, entries: dict,
     disclosed: dict[str, list[str]] = {}
     for unit, keys, citing in _units(md, entries):
         cats = _status_categories_in(unit)
-        named = _addressed(unit, keys)
+        sentences = _split_sentences(unit)
         for category in cats:
+            # "The former" / "the latter" narrow only the sentence that
+            # holds the status word, never the whole unit.
+            named = []
+            for sentence in sentences:
+                if category in _status_categories_in(sentence):
+                    named += [k for k in _addressed(sentence, keys) if k not in named]
+            if not named:   # the word straddles a split; fall back to the unit
+                named = _addressed(unit, keys)
             lacking = [k for k in named if category not in entries[k]["status"]]
             if lacking:
                 licensed = [k for k in named if k not in lacking]
