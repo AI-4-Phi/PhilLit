@@ -661,19 +661,17 @@ class TestCli:
 LEAD_FIRST = ("Abstract. Minds are scaffolded by the tools and social practices\n"
               "around them rather than extended into them.")
 LEAD_COVER = "Downloaded from the university repository on the first of May"
-LEAD_ABSTRACT = ("Minds are scaffolded by the tools and social practices around them "
-                 "rather than extended into them.")
 LEAD_REST = ["the second printed page of the article goes on here",
              "a third printed page with more of the same argument"]
 
 
 class TestLeadPage:
-    def fix(self, tmp_path, pages, numbers, bib_pages, abstract=LEAD_ABSTRACT):
+    def fix(self, tmp_path, pages, numbers, bib_pages):
         text = ft.render_text(pages, ft.PageMap(tuple(numbers)))
         f = Fix(tmp_path)
         f.add_fulltext("sterelny2010", year="2010", doi="10.1000/minds.2010", text=text,
                        title="Minds: extended or scaffolded?", author="Sterelny, Kim",
-                       pages=bib_pages, abstract=abstract)
+                       pages=bib_pages)
         return f
 
     def test_quote_from_the_unnumbered_first_page_passes(self, tmp_path, capsys):
@@ -709,16 +707,3 @@ class TestLeadPage:
         code, lines, _ = f.run(doc(
             'Some say "minds are scaffolded by the tools and social practices" today.'), capsys)
         assert lines[0].startswith("WARN uncited-fulltext:") and "sterelny2010 (sheet 1)" in lines[0]
-
-    def test_without_a_bib_abstract_the_sheet_stays_unquotable(self, tmp_path, capsys):
-        f = self.fix(tmp_path, [LEAD_FIRST] + LEAD_REST, (None, 466, 467), "465--484", abstract=None)
-        code, lines, _ = f.run(doc(
-            'Sterelny (2010) argues that "minds are scaffolded by the tools and social practices".'),
-            capsys)
-        assert code == 1 and lines[0].startswith("FAIL verbatim: sterelny2010")
-
-    def test_cover_of_a_pdf_missing_its_first_page_stays_unquotable(self, tmp_path, capsys):
-        f = self.fix(tmp_path, [LEAD_COVER] + LEAD_REST, (None, 466, 467), "465--484")
-        code, lines, _ = f.run(doc(
-            'Sterelny (2010) notes it was "downloaded from the university repository".'), capsys)
-        assert code == 1 and lines[0].startswith("FAIL verbatim: sterelny2010")

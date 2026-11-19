@@ -70,13 +70,19 @@ with an index map back to rendered offsets so the verbatim and page checks
 cannot disagree. With a confirmed map only the span from the first to the
 last confirmed page is quotable: a cover sheet, front matter or appended
 material is not the work's text. One exception (`lead_page`): an article
-whose own first page carries no detected number gets that page back when it
-is unnumbered, directly precedes the first confirmed page, its implied number
-is the bib `pages` start, and it holds the opening words of the bib
-abstract; it stays a `[[sheet K]]` block, and check_quotes accepts the
-implied number as its locator. Still not admitted: a first page with no
-abstract on it (or an entry with no bib abstract). The module is pure apart from the
-explicit file helpers (`read_text`, `file_text_sha256`, `write_text_atomic`, `validate_record`).
+whose own first page carries no detected number (an abstract page) gets that
+page back when it directly precedes the first confirmed page and its implied
+number is the bib `pages` start; it stays a `[[sheet K]]` block, and
+check_quotes accepts the implied number as its locator. Measured on the
+2026-11-17 cognitive-autonomy-ai review: it admitted 3 of 3 real first pages
+(Sterelny p.465, Danaher p.245, Christman p.143, whose JSTOR cover sheet
+implies 142 and stayed out) and no cover. A rule that also required the bib
+abstract on the page admitted none of them: 8 of the 9 full-text entries
+had no bib abstract, and Christman's first page prints none. Residuals,
+accepted because what becomes quotable is still the PDF's real text (a
+passing quote is verbatim, never fabricated): a bib start one page too low,
+or a PDF that lacks the article's first page, admits a cover sheet that sits
+there. The module is pure apart from the explicit file helpers (`read_text`, `file_text_sha256`, `write_text_atomic`, `validate_record`).
 """
 
 import bisect
@@ -870,37 +876,14 @@ def _part_patterns(quote: str, literal: bool = False) -> list[re.Pattern]:
     return pats
 
 
-LEAD_ABSTRACT_WORDS = 8
-
-
-def _holds_abstract_opening(block: str, abstract: str | None) -> bool:
-    """Whether the page text holds the first LEAD_ABSTRACT_WORDS words of the
-    bib abstract, under the quote fold (`_part_patterns`, `_fold_map`)."""
-    words = (abstract or "").split()
-    if len(words) < LEAD_ABSTRACT_WORDS:
-        return False
-    try:
-        pats = _part_patterns(" ".join(words[:LEAD_ABSTRACT_WORDS]), literal=True)
-    except QuoteFormError:
-        return False
-    if len(pats) != 1:
-        return False
-    folded, starts, ends = _fold_map(block)
-    return bool(_match_all(pats, folded, starts, ends, 0, len(block)))
-
-
-def lead_page(text: str, page_map: PageMap | None, bib_pages: str | None,
-              abstract: str | None) -> tuple[int, int] | None:
+def lead_page(page_map: PageMap | None, bib_pages: str | None) -> tuple[int, int] | None:
     """(index, implied number) of the article's own unnumbered first page, or
-    None. Admitted only with positive evidence on both counts: the page
-    directly before the first confirmed page carries no number, and the
-    number the map implies for it (first confirmed number - 1, at least 1)
-    is the start the bib `pages` field commits to (`_pages_start`); AND the
-    page holds the opening of the entry's bib abstract. A repository cover
-    sheet implies start - 1 before a confirmed first page, and holds no
-    abstract where the PDF lacks the first page; anything two or more pages
-    back stays out. Not admitted either: a first page with no abstract on
-    it, or an entry with no bib abstract."""
+    None. Admitted only with positive evidence: the page directly before the
+    first confirmed page carries no number, and the number the map implies
+    for it (first confirmed number - 1, at least 1) is the start the bib
+    `pages` field commits to (`_pages_start`). A repository cover sheet
+    before a confirmed first page implies start - 1 and stays out; so does
+    anything two or more pages back."""
     if page_map is None or not page_map.confirmed:
         return None
     first = page_map.confirmed[0]
@@ -910,24 +893,18 @@ def lead_page(text: str, page_map: PageMap | None, bib_pages: str | None,
     start = _pages_start(bib_pages or "")
     if implied < 1 or start is None or implied != start:
         return None
-    blocks = page_blocks(text)
-    if len(blocks) != len(page_map.numbers):
-        raise ValueError("page map length differs from the text's page markers")
-    _kind, _num, lo, hi = blocks[first - 1]
-    if not _holds_abstract_opening(text[lo:hi], abstract):
-        return None
     return first - 1, implied
 
 
 def _quotable_range(text: str, page_map: PageMap | None,
-                    bib_pages: str | None = None, abstract: str | None = None) -> tuple[int, int]:
+                    bib_pages: str | None = None) -> tuple[int, int]:
     if page_map is None or not page_map.confirmed:
         return 0, len(text)
     blocks = page_blocks(text)
     if len(blocks) != len(page_map.numbers):
         raise ValueError("page map length differs from the text's page markers")
     conf = page_map.confirmed
-    lead = lead_page(text, page_map, bib_pages, abstract)
+    lead = lead_page(page_map, bib_pages)
     lo = blocks[lead[0]][2] if lead is not None else blocks[conf[0]][2]
     return lo, blocks[conf[-1]][3]
 
@@ -958,8 +935,7 @@ def _match_all(pats: list[re.Pattern], folded: str, starts, ends, lo: int, hi: i
 
 
 def locate_quote_all(quote: str, text: str, page_map: PageMap | None = None, *,
-                     bib_pages: str | None = None,
-                     abstract: str | None = None) -> list[list[tuple[int, int]]]:
+                     bib_pages: str | None = None) -> list[list[tuple[int, int]]]:
     """Every occurrence of the quote in the rendered text, each a list of
     (start, end) rendered offsets, one per ellipsis part. Raises
     QuoteBracketError / QuoteEllipsisError.
@@ -973,7 +949,7 @@ def locate_quote_all(quote: str, text: str, page_map: PageMap | None = None, *,
     if variants[0][-1:] in (".", ","):
         variants.append(variants[0][:-1])
     folded, starts, ends = _fold_map(text)
-    lo, hi = _quotable_range(text, page_map, bib_pages, abstract)
+    lo, hi = _quotable_range(text, page_map, bib_pages)
     modes = [True, False] if ("[" in quote or "]" in quote) else [False]
     for literal in modes:
         for v in variants:
@@ -987,14 +963,13 @@ def locate_quote_all(quote: str, text: str, page_map: PageMap | None = None, *,
 
 
 def locate_quote(quote: str, text: str, page_map: PageMap | None = None, *,
-                 bib_pages: str | None = None,
-                 abstract: str | None = None) -> list[tuple[int, int]] | None:
+                 bib_pages: str | None = None) -> list[tuple[int, int]] | None:
     """The first occurrence of the quote: a (start, end) rendered-offset span
     per ellipsis part, or None. When `page_map` has confirmed pages, only the
     span from the first to the last confirmed page is quotable, plus the
     article's own unnumbered first page that `lead_page` admits from the
-    entry's `bib_pages` and `abstract` fields."""
-    found = locate_quote_all(quote, text, page_map, bib_pages=bib_pages, abstract=abstract)
+    entry's `bib_pages` field."""
+    found = locate_quote_all(quote, text, page_map, bib_pages=bib_pages)
     return found[0] if found else None
 
 

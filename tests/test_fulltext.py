@@ -953,94 +953,85 @@ def test_real_tracked_pdf():
 
 
 FIRST = "Abstract. Minds are scaffolded by the tools and\nsocial practices around them, not extended."
-ABSTRACT = "Minds are scaffolded by the tools and social practices around them, not extended."
-FIRST_NO_ABSTRACT = "Minds: extended or scaffolded?\nKim Sterelny\nThe world made mental, an introduction."
 COVER = "Downloaded from the university repository on 1 May 2020"
 LATER = ["the second printed page of the article goes on",
          "a third printed page with more of the argument"]
-QUOTE = "Minds are scaffolded by the tools"
 
 
 class TestLeadPage:
-    """An article's own unnumbered first page (PL-32): the one unnumbered
-    sheet directly before the first confirmed page is quotable when its
-    implied number is the bib `pages` start AND it holds the opening of the
-    entry's bib abstract."""
+    """An article's own unnumbered first page (PL-32): the one sheet directly
+    before the first confirmed page is quotable when its implied number is
+    the bib `pages` start."""
 
     def _make(self, pages, numbers):
         pm = ft.PageMap(tuple(numbers))
         return ft.render_text(pages, pm), pm
 
-    def test_unnumbered_first_page_with_the_abstract_is_quotable(self):
+    def test_unnumbered_first_page_quotable_with_bib_start(self):
         text, pm = self._make([FIRST] + LATER, (None, 466, 467))
-        assert ft.lead_page(text, pm, "465--484", ABSTRACT) == (0, 465)
-        spans = ft.locate_quote(QUOTE, text, pm, bib_pages="465--484", abstract=ABSTRACT)
+        assert ft.lead_page(pm, "465--484") == (0, 465)
+        spans = ft.locate_quote("Minds are scaffolded by the tools", text, pm, bib_pages="465--484")
         assert spans is not None
         assert ft.span_pages(text, spans) == [("sheet", 1)]
-        assert ft.locate_quote(QUOTE, text, pm) is None
+        assert ft.locate_quote("Minds are scaffolded by the tools", text, pm) is None
 
     def test_cover_before_a_confirmed_first_page_stays_excluded(self):
         text, pm = self._make([COVER] + LATER, (None, 465, 466))
-        assert ft.lead_page(text, pm, "465--484", ABSTRACT) is None
-        assert ft.locate_quote("from the university repository", text, pm,
-                               bib_pages="465--484", abstract=ABSTRACT) is None
-
-    def test_cover_of_a_pdf_missing_its_first_page_stays_excluded(self):
-        # The number fits (466 - 1 == 465), but the sheet holds no abstract.
-        text, pm = self._make([COVER] + LATER, (None, 466, 467))
-        assert ft.lead_page(text, pm, "465--484", ABSTRACT) is None
-        assert ft.locate_quote("from the university repository", text, pm,
-                               bib_pages="465--484", abstract=ABSTRACT) is None
-
-    def test_first_page_without_abstract_text_not_admitted(self):
-        text, pm = self._make([FIRST_NO_ABSTRACT] + LATER, (None, 466, 467))
-        assert ft.lead_page(text, pm, "465--484", ABSTRACT) is None
-
-    def test_no_abstract_or_a_short_one_admits_nothing(self):
-        text, pm = self._make([FIRST] + LATER, (None, 466, 467))
-        for abstract in (None, "", "Minds are scaffolded by the"):
-            assert ft.lead_page(text, pm, "465--484", abstract) is None, abstract
-
-    def test_numbered_preceding_page_not_admitted(self):
-        text, pm = self._make([FIRST] + LATER, (999, 466, 467))
-        assert ft.lead_page(text, pm, "465--484", ABSTRACT) is None
+        assert ft.lead_page(pm, "465--484") is None
+        assert ft.locate_quote("from the university repository", text, pm, bib_pages="465--484") is None
 
     def test_cover_then_unnumbered_first_page(self):
         text, pm = self._make([COVER, FIRST] + LATER, (None, None, 466, 467))
-        assert ft.lead_page(text, pm, "465--484", ABSTRACT) == (1, 465)
-        kw = {"bib_pages": "465--484", "abstract": ABSTRACT}
-        assert ft.locate_quote(QUOTE, text, pm, **kw)
-        assert ft.locate_quote("from the university repository", text, pm, **kw) is None
+        assert ft.lead_page(pm, "465--484") == (1, 465)
+        assert ft.locate_quote("Minds are scaffolded by the tools", text, pm, bib_pages="465--484")
+        assert ft.locate_quote("from the university repository", text, pm, bib_pages="465--484") is None
 
     def test_no_or_mismatched_bib_start_admits_nothing(self):
         text, pm = self._make([FIRST] + LATER, (None, 466, 467))
         for field in (None, "", "465", "466--484", "464--484", "xii--xx"):
-            assert ft.lead_page(text, pm, field, ABSTRACT) is None, field
-            assert ft.locate_quote(QUOTE, text, pm, bib_pages=field, abstract=ABSTRACT) is None, field
+            assert ft.lead_page(pm, field) is None, field
+            assert ft.locate_quote("Minds are scaffolded by the tools", text, pm,
+                                   bib_pages=field) is None, field
 
     def test_first_confirmed_page_one_admits_nothing(self):
-        text, pm = self._make([FIRST] + LATER, (None, 1, 2))
-        assert ft.lead_page(text, pm, "0--20", ABSTRACT) is None
-        assert ft.lead_page(text, pm, "1--20", ABSTRACT) is None
+        text, pm = self._make([COVER] + LATER, (None, 1, 2))
+        assert ft.lead_page(pm, "0--20") is None
+        assert ft.lead_page(pm, "1--20") is None
 
     def test_article_number_start_one(self):
         text, pm = self._make([FIRST] + LATER, (None, 2, 3))
-        assert ft.lead_page(text, pm, "e12345", ABSTRACT) == (0, 1)
-        assert ft.locate_quote(QUOTE, text, pm, bib_pages="e12345", abstract=ABSTRACT)
+        assert ft.lead_page(pm, "e12345") == (0, 1)
+        assert ft.locate_quote("Minds are scaffolded by the tools", text, pm, bib_pages="e12345")
 
     def test_only_the_directly_preceding_sheet(self):
         text, pm = self._make([FIRST, COVER] + LATER, (None, None, 467, 468))
-        assert ft.lead_page(text, pm, "465--484", ABSTRACT) is None
-        assert ft.locate_quote(QUOTE, text, pm, bib_pages="465--484", abstract=ABSTRACT) is None
-
-    def test_abstract_on_a_later_page_does_not_count(self):
-        text, pm = self._make([COVER, FIRST, LATER[1]], (None, 466, 467))
-        assert ft.lead_page(text, pm, "465--484", ABSTRACT) is None
+        assert ft.lead_page(pm, "465--484") is None
+        assert ft.locate_quote("Minds are scaffolded by the tools", text, pm, bib_pages="465--484") is None
 
     def test_no_page_map_or_first_page_confirmed(self):
-        text, pm = self._make([FIRST] + LATER, (None, 466, 467))
-        assert ft.lead_page(text, None, "465--484", ABSTRACT) is None
-        assert ft.lead_page(text, ft.PageMap((None, None, None)), "465--484", ABSTRACT) is None
+        assert ft.lead_page(None, "465--484") is None
+        assert ft.lead_page(ft.PageMap((465, 466)), "465--484") is None
+        assert ft.lead_page(ft.PageMap((None, None)), "465--484") is None
+
+
+class TestLeadPageGuards:
+    """The page-number rule's guards (PL-32 review round)."""
+
+    def test_numbered_preceding_page_not_admitted(self):
+        assert ft.lead_page(ft.PageMap((999, 466, 467)), "465--484") is None
+
+    def test_article_page_two_back_not_admitted(self):
+        # Sheet 0 would imply 465 only if sheet 1 were numbered 466; it is a sheet.
+        assert ft.lead_page(ft.PageMap((None, None, 467, 468)), "465--484") is None
+
+    def test_residual_cover_of_a_pdf_missing_its_first_page_is_admitted(self):
+        # Accepted residual (fulltext.py QUOTES): the number fits, nothing else
+        # tells this cover from the article's first page. What passes is
+        # still the PDF's own text.
+        text = ft.render_text([COVER] + LATER, ft.PageMap((None, 466, 467)))
+        pm = ft.page_map_from_text(text)
+        assert ft.lead_page(pm, "465--484") == (0, 465)
+        assert ft.locate_quote("from the university repository", text, pm, bib_pages="465--484")
 
 
 def test_loads_by_path_without_pythonpath(tmp_path):
