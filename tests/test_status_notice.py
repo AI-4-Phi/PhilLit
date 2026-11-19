@@ -47,8 +47,9 @@ def _record(doi, name="fwd"):
 GERLICH = {"author": "Gerlich, Michael",
            "title": "{AI} Tools in Society: Impacts on Cognitive Offloading and "
                     "the Future of Critical Thinking",
-           "doi": "10.3390/soc15010006", "year": "2025"}
+           "journal": "Societies", "doi": "10.3390/soc15010006", "year": "2025"}
 STERELNY = {"author": "Sterelny, Kim", "title": "Minds: Extended or Scaffolded?",
+            "journal": "Phenomenology and the Cognitive Sciences",
             "doi": "10.1007/s11097-010-9174-y", "year": "2010"}
 WANG = {"author": "Wang, Yuan and Zhang, Li",
         "title": "Downregulation of long noncoding {RNA} {LINC01419} inhibits cell "
@@ -79,7 +80,9 @@ class FakeCrossRef:
     optionally shuffled, and records every request."""
 
     def __init__(self, records=None, notices=None, shuffle=False, fail=None):
-        self.records = records if records is not None else _items("fwd") + _items("fwd_preprint")
+        # The notices' own records too: the pass reads each notice (R1).
+        self.records = (records if records is not None
+                        else _items("fwd") + _items("fwd_preprint") + _items("rev"))
         self.notices = notices if notices is not None else _items("rev")
         self.shuffle = shuffle
         self.fail = fail or (lambda kind, dois: None)
@@ -343,7 +346,9 @@ def test_reverse_hit_counts_only_when_update_to_names_the_requested_doi(monkeypa
 
     def answer(params):
         if params["filter"].startswith("doi:"):
-            return 200, {"message": {"total-results": 1, "items": [rec]}}
+            want = params["filter"].lower()
+            items = [r for r in (rec, named) if r["DOI"].lower() in want]
+            return 200, {"message": {"total-results": len(items), "items": items}}
         return 200, {"message": {"total-results": 2, "items": [other, named]}}
     values, _r, _ = _run(monkeypatch, {"s": _e(STERELNY)}, answer)
     assert values == {"s": "correction 10.1000/notice-named"}
@@ -448,7 +453,10 @@ def test_truncated_response_is_never_checked_none(monkeypatch):
 def _with_updates(updates, base="10.1007/s11097-010-9174-y"):
     rec = dict(_record(base))
     rec["updated-by"] = updates
-    return FakeCrossRef(records=[rec], notices=[])
+    # A plain record for each notice, so the notice check (R1) reads it.
+    notices = [{"DOI": u["DOI"], "type": "journal-article", "title": ["Notice"]}
+               for u in updates if isinstance(u.get("DOI"), str) and u["DOI"].strip()]
+    return FakeCrossRef(records=[rec] + notices, notices=[])
 
 
 @pytest.mark.parametrize("token,item", [
@@ -770,7 +778,7 @@ def test_particle_is_only_removed_from_the_front():
 def test_entry_type_must_be_compatible(monkeypatch, etype, cr_type, ok):
     """P2: same author and title, only the type differs."""
     rec = dict(_record("10.3390/soc15010006"), type=cr_type)
-    fake = FakeCrossRef(records=[rec], notices=[])
+    fake = FakeCrossRef(records=[rec, _record("10.3390/soc15090252")], notices=[])
     values, report, _ = _run(monkeypatch, {"g": _e(GERLICH, etype=etype)}, fake)
     assert report["entries"]["g"] == ("stamped" if ok else "identity_mismatch")
     assert bool(values) is ok
@@ -961,3 +969,137 @@ def test_value_grammar_lives_in_a_leaf_module():
          "'evidence_barrier') if m in sys.modules))", str(SCRIPTS)],
         capture_output=True, text=True)
     assert out.stdout.strip() == "[]", out.stderr
+
+
+# ---------------------------------------------------------------------------
+# Validation run 2026-11-19 (cognitive-autonomy-ai)
+# ---------------------------------------------------------------------------
+
+COSTELLO = {"author": "Costello, Thomas H. and Pennycook, Gordon and Rand, David G.",
+            "title": "Durably reducing conspiracy beliefs through dialogues with {AI}",
+            "doi": "10.1126/science.adq1814", "year": "2024"}
+
+
+def test_a_rescinded_notice_is_dropped(monkeypatch):
+    """R1: Science rescinded its expression of concern (the notice's own
+    record is titled "RESCINDED: Editorial Expression of Concern"). The
+    correction stays: its notice record is a plain correction."""
+    recs = _items("fwd_costello") + [{"DOI": "10.1126/science.aem1178",
+                                      "type": "journal-article",
+                                      "title": ["Erratum for the Research Article"]}]
+    values, report, _ = _run(monkeypatch, {"c": _e(COSTELLO)},
+                             FakeCrossRef(records=recs, notices=[]))
+    assert values == {"c": "correction 10.1126/science.aem1178"}
+    assert report["notice_rescinded"] == 1
+
+
+def test_an_entry_whose_only_notice_is_rescinded_says_so(monkeypatch):
+    rec = dict(_record("10.1126/science.adq1814", "fwd_costello"))
+    rec["updated-by"] = [u for u in rec["updated-by"] if u["type"] == "expression_of_concern"]
+    notice = _record("10.1126/science.aej2383", "fwd_costello")
+    values, report, _ = _run(monkeypatch, {"c": _e(COSTELLO)},
+                             FakeCrossRef(records=[rec, notice], notices=[]))
+    assert values == {}
+    assert report["entries"]["c"] == "notice_rescinded"
+    assert report["status"] == "complete"
+
+
+def test_a_notice_retracted_by_an_update_is_dropped(monkeypatch):
+    notice = {"DOI": "10.1000/n1", "type": "journal-article", "title": ["Correction"],
+              "updated-by": [{"DOI": "10.1000/n2", "type": "Removal"}]}
+    fake = _with_updates([{"DOI": "10.1000/n1", "type": "correction", "source": "publisher"}])
+    fake.records = [r for r in fake.records if r["DOI"] != "10.1000/n1"] + [notice]
+    values, report, _ = _run(monkeypatch, {"s": _e(STERELNY)}, fake)
+    assert values == {} and report["notice_rescinded"] == 1
+
+
+def test_a_notice_whose_record_cannot_be_read_is_dropped(monkeypatch):
+    """R1, fail closed: no notice record, no item; the pass is partial."""
+    rec = dict(_record("10.1007/s11097-010-9174-y"))
+    rec["updated-by"] = [{"DOI": "10.1000/unreadable", "type": "retraction",
+                          "source": "publisher"}]
+    values, report, _ = _run(monkeypatch, {"s": _e(STERELNY)},
+                             FakeCrossRef(records=[rec], notices=[]))
+    assert values == {}
+    assert report["entries"]["s"] == "notice_unverified"
+    assert report["notice_unverified"] == 1
+    assert report["status"] == "partial" and "notice" in report["reason"]
+
+
+def test_in_place_notices_are_not_requeried(monkeypatch):
+    she = {"author": "She, Xu", "doi": "10.1007/s11277-021-09072-0",
+           "title": "Deep Reinforcement Learning-Based Smart Manufacturing Plants "
+                    "with a Novel Digital Twin Training Model"}
+    values, _r, fake = _run(monkeypatch, {"s": _e(she)})
+    assert values == {"s": "retraction 10.1007/s11277-021-09072-0"}
+    assert [c for c in fake.calls if c[0] == "doi"] == [("doi", ["10.1007/s11277-021-09072-0"])]
+
+
+@pytest.mark.parametrize("fields", [
+    {"author": "Doe, J.", "title": "T", "doi": "10.48550/arXiv.2101.00001"},
+    {"author": "Doe, J.", "title": "T", "archiveprefix": "arXiv", "eprint": "2101.00001"},
+    {"author": "Doe, J.", "title": "T", "howpublished": "arXiv preprint"},
+    {"author": "Doe, J.", "title": "T", "howpublished": "arXiv:2603.02960 (preprint)"},
+])
+def test_arxiv_preprint_stamped_without_a_request(monkeypatch, fields):
+    """R2."""
+    values, report, fake = _run(monkeypatch, {"x": _e(fields, etype="misc")})
+    assert values == {"x": "preprint"} and fake.calls == []
+    assert report["entries"]["x"] == "stamped" and report["preprint_arxiv"] == 1
+
+
+def test_a_journal_article_with_an_eprint_is_not_a_preprint(monkeypatch):
+    fields = {"author": "Doe, J.", "title": "T", "journal": "Mind",
+              "archiveprefix": "arXiv", "eprint": "2101.00001",
+              "doi": "10.48550/arXiv.2101.00001"}
+    values, report, _ = _run(monkeypatch, {"x": _e(fields)})
+    assert values == {} and report["entries"]["x"] == "not_requested:arxiv"
+
+
+def test_arxiv_rule_needs_a_real_tier(monkeypatch):
+    fields = {"author": "Doe, J.", "title": "T", "howpublished": "arXiv preprint"}
+    values, report, _ = _run(monkeypatch, {"x": _e(fields, none=True)})
+    assert values == {} and report["entries"]["x"] == "not_requested:evidence-none"
+
+
+def test_a_trailing_footnote_number_on_the_crossref_title_matches(monkeypatch):
+    """R3: 10.4324/9781003004431-10 is titled "... echo chambers 1"."""
+    moller = {"author": "M{\\\"o}ller, Judith", "doi": "10.4324/9781003004431-10",
+              "title": "Filter bubbles and digital echo chambers"}
+    rec = _record("10.4324/9781003004431-10", "fwd_recall")
+    assert sn.decode_crossref_title(rec["title"][0]).endswith(" 1")
+    assert _identity(moller, rec)
+    assert sn.identity_check(moller, rec, "incollection") == "match"
+
+
+def test_the_trailing_number_rule_is_narrow(monkeypatch):
+    rec = _gerlich_with(author=[{"family": "Smith"}], title=["Essays 2"])
+    assert not _identity({"author": "Smith, J.", "title": "Essays 1"}, rec)
+    rec = _gerlich_with(author=[{"family": "Smith"}], title=["Essays 123"])
+    assert not _identity({"author": "Smith, J.", "title": "Essays"}, rec)
+    rec = _gerlich_with(author=[{"family": "Smith"}], title=["Essays 1 2"])
+    assert not _identity({"author": "Smith, J.", "title": "Essays 1"}, rec)
+
+
+def test_an_edited_book_matches_on_its_editors(monkeypatch):
+    """R4: CrossRef records 10.1093/acprof:oso/9780199338207.001.0001 by its
+    editors only; the bib @book lists them as author."""
+    coons = {"author": "Coons, Christian and Weber, Michael", "title": "Manipulation",
+             "doi": "10.1093/acprof:oso/9780199338207.001.0001"}
+    rec = _record("10.1093/acprof:oso/9780199338207.001.0001", "fwd_recall")
+    assert not rec.get("author") and rec["editor"]
+    assert sn.identity_check(coons, rec, "book") == "match"
+    assert sn.identity_check(dict(coons, author="Smith, A."), rec, "book") == "mismatch"
+    assert sn.identity_check({"editor": "Coons, Christian", "title": "Manipulation"},
+                             rec, "incollection") == "mismatch"   # type conflict
+    assert sn.identity_check({"editor": "Coons, Christian", "title": "Manipulation"},
+                             rec, None) == "match"
+    assert sn.identity_check(coons, rec, "article") == "mismatch"
+
+
+def test_no_authors_and_no_editors_stays_unverifiable():
+    rec = {k: v for k, v in _record("10.1093/acprof:oso/9780199338207.001.0001",
+                                    "fwd_recall").items() if k != "editor"}
+    assert sn.identity_check({"author": "Coons, C.", "title": "Manipulation"},
+                             rec, "book") == "unverifiable"
+

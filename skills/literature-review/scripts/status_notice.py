@@ -45,8 +45,9 @@ after its Retry-After when that fits the deadline. Results are mapped by
 normalized DOI only.
 
 Per-entry states (ENTRY_STATES): stamped, checked_none, not_found,
-identity_mismatch, identity_unverifiable (the record has no title or no
-author array), unresolved, error, deadline, splice_failed, the
+identity_mismatch, identity_unverifiable (the record has no title and no
+author or, for a book, editor array), notice_rescinded, notice_unverified,
+unresolved, error, deadline, splice_failed, the
 not_requested:* reasons, and two the barrier sets after the lookup:
 not_checked:late-promotion (counted, not a failure) and dropped:demoted (a
 value withheld because the final tier is EVIDENCE-NONE).
@@ -76,6 +77,19 @@ Bounds: the caller's absolute `deadline` (shared with venue vetting) is
 checked before the rate-limiter wait and again after it, so at most one
 request runs past it (REQUEST_TIMEOUT). MAX_CONSECUTIVE_ERRORS failed
 requests stop the pass. No caching: status is re-fetched every run.
+
+Each notice DOI (other than an in-place one, which names the article
+itself) is then looked up with the same batching, limiter and deadline. An
+item whose notice record is titled RESCINDED:/RETRACTED:/WITHDRAWN:/REMOVED:
+or carries a retraction, withdrawal or removal of its own is dropped
+(`notice_rescinded`; measured on Science's rescinded expression of concern
+10.1126/science.aej2383 for Costello et al. 2024). An item whose notice
+record cannot be read is dropped too (`notice_unverified`, the pass turns
+partial): fail closed.
+
+An arXiv preprint is stamped `preprint` from its own fields with no request
+(`preprint_arxiv`): no `journal`, and an arXiv DOI, archiveprefix arXiv
+with an eprint, or a howpublished naming arXiv.
 PHILLIT_STATUS_NOTICE=off (or 0/false/no; an unrecognized value too) skips
 the pass with a reason; the test suite runs with it off.
 
@@ -156,7 +170,8 @@ def category_of(token) -> str | None:
 
 
 ENTRY_STATES = ("stamped", "checked_none", "not_found", "identity_mismatch",
-                "identity_unverifiable", "dropped:demoted",
+                "identity_unverifiable", "dropped:demoted", "notice_rescinded",
+                "notice_unverified",
                 "not_requested:no-doi", "not_requested:evidence-none",
                 "not_requested:arxiv", "not_requested:invalid-doi",
                 "unresolved", "error", "deadline", "splice_failed",
@@ -232,12 +247,22 @@ def _first(value):
     return value if isinstance(value, str) else ""
 
 
+_TRAILING_MARKER_RE = re.compile(r"^(.*\S) (\d{1,2})$")
+
+
 def _titles_match(bib_title: str, cr_title: str) -> bool:
     a, b = _cut_mark(bib_title), _cut_mark(cr_title)
     ka, kb = title_key(a), title_key(b)
     if not ka or not kb:
         return False
-    return ka == kb or titles_differ_by_subtitle(a, b)
+    if ka == kb or titles_differ_by_subtitle(a, b):
+        return True
+    # A footnote marker CrossRef keeps on the title ("Filter bubbles and
+    # digital echo chambers 1", 10.4324/9781003004431-10): one trailing
+    # standalone 1-2 digit token, and only when the bib title itself does
+    # not end in a number.
+    m = _TRAILING_MARKER_RE.match(kb)
+    return bool(m and m.group(1) == ka and not ka.split()[-1].isdigit())
 
 
 # Lowercase name particles, removed from the FRONT of a folded surname only,
@@ -275,8 +300,8 @@ def _types_compatible(entry_type, record: dict) -> bool:
     return True
 
 
-def _crossref_first_surname(record: dict) -> str:
-    authors = [a for a in (record.get("author") or []) if isinstance(a, dict)]
+def _crossref_first_surname(record: dict, role: str = "author") -> str:
+    authors = [a for a in (record.get(role) or []) if isinstance(a, dict)]
     if not authors:
         return ""
     first = next((a for a in authors if a.get("sequence") == "first"), authors[0])
@@ -290,15 +315,25 @@ def identity_check(fields: dict, record: dict, entry_type=None) -> str:
     try:
         if not _types_compatible(entry_type, record):
             return "mismatch"
-        if (not decode_crossref_title(_first(record.get("title"))).strip()
-                or not [a for a in (record.get("author") or []) if isinstance(a, dict)]):
+        has = lambda role: any(isinstance(a, dict) for a in (record.get(role) or []))  # noqa: E731
+        if not decode_crossref_title(_first(record.get("title"))).strip():
+            return "unverifiable"
+        if not has("author"):
+            # An edited book CrossRef records by its editors (10.1093/acprof:
+            # oso/9780199338207.001.0001): compare editors when the entry is a
+            # @book or names editors itself.
+            if has("editor") and ((entry_type or "").strip().lower() == "book"
+                                  or (fields.get("editor") or "").strip()):
+                return ("match" if identity_matches(fields, record, entry_type, role="editor")
+                        else "mismatch")
             return "unverifiable"
         return "match" if identity_matches(fields, record, entry_type) else "mismatch"
     except Exception:
         return "mismatch"
 
 
-def identity_matches(fields: dict, record: dict, entry_type=None) -> bool:
+def identity_matches(fields: dict, record: dict, entry_type=None,
+                     role: str = "author") -> bool:
     """Is the CrossRef forward record this entry? First-author surname
     (bib_identity's rule; authors only, so an editor-only book never
     matches), title equal or a subtitle variant, and a compatible entry type
@@ -306,8 +341,12 @@ def identity_matches(fields: dict, record: dict, entry_type=None) -> bool:
     try:
         if not _types_compatible(entry_type, record):
             return False
-        bib_surname = _surname_key(first_author_surname(fields.get("author") or "", ""))
-        cr_surname = _surname_key(_crossref_first_surname(record))
+        if role == "editor":
+            bib_name = first_author_surname(fields.get("author") or "", fields.get("editor") or "")
+        else:
+            bib_name = first_author_surname(fields.get("author") or "", "")
+        bib_surname = _surname_key(bib_name)
+        cr_surname = _surname_key(_crossref_first_surname(record, role))
         if not bib_surname or bib_surname != cr_surname:
             return False
         bib_title = clean_bibtex_str(fields.get("title") or "")
@@ -473,6 +512,7 @@ def empty_report() -> dict:
             "malformed": 0, "splice_failed": 0, "reverse_unchecked": 0,
             "unresolved": 0, "late_promotion": 0, "ignored_types": {},
             "identity_unverifiable": 0, "dropped_demoted": 0,
+            "notice_rescinded": 0, "notice_unverified": 0, "preprint_arxiv": 0,
             "entries": {}}
 
 
@@ -523,6 +563,37 @@ def _entry_items(doi: str, record: dict, notices: list, reverse_ok: bool, report
     return items, len(unmapped) + len(malformed)
 
 
+def _arxiv_preprint(fields: dict) -> bool:
+    """An arXiv preprint by its own fields, with no network call: no
+    `journal`, and an arXiv DOI, or archiveprefix arXiv with an eprint, or
+    howpublished naming arXiv. A journal article that also lists an eprint
+    is not a preprint."""
+    if (fields.get("journal") or "").strip():
+        return False
+    doi = normalize_doi(fields.get("doi") or "")
+    if doi.startswith(ARXIV_PREFIX):
+        return True
+    if ((fields.get("archiveprefix") or "").strip().lower() == "arxiv"
+            and (fields.get("eprint") or "").strip()):
+        return True
+    return "arxiv" in (fields.get("howpublished") or "").lower()
+
+
+_RESCINDED_TITLE_RE = re.compile(r"^\s*(?:rescinded|retracted|withdrawn|removed)\s*:",
+                                 re.IGNORECASE)
+_RESCINDING_TYPES = frozenset({"retraction", "withdrawal", "removal"})
+
+
+def _notice_rescinded(record: dict) -> bool:
+    """Has the notice itself been rescinded? Its title says so
+    ("RESCINDED: Editorial Expression of Concern", 10.1126/science.aej2383),
+    or CrossRef lists a retraction, withdrawal or removal of it."""
+    if _RESCINDED_TITLE_RE.match(decode_crossref_title(_first(record.get("title")))):
+        return True
+    return any(isinstance(u, dict) and fold_token(u.get("type")) in _RESCINDING_TYPES
+               for u in record.get("updated-by") or [])
+
+
 def lookup_status(entries: dict, deadline: float):
     """Look up every eligible entry. `entries` maps a label (the barrier uses
     "<bib>:<key>") to {"fields": parsed fields, "evidence_none": bool,
@@ -539,11 +610,19 @@ def lookup_status(entries: dict, deadline: float):
     try:
         wanted: dict[str, list] = {}
         etypes: dict = {}
+        arxiv: set = set()
         for label, entry in (entries or {}).items():
             fields = (entry or {})["fields"] or {}
             doi, why = request_doi(fields.get("doi"))
-            if why != "no-doi" and entry.get("evidence_none"):
-                doi, why = None, "evidence-none"
+            if entry.get("evidence_none"):
+                if why != "no-doi" or _arxiv_preprint(fields):
+                    doi, why = None, "evidence-none"
+            elif _arxiv_preprint(fields):
+                arxiv.add(label)
+                if doi is None:
+                    report["entries"][label] = "stamped"
+                    values[label] = format_items({(PREPRINT, None)})
+                    continue
             if doi is None:
                 report["entries"][label] = f"not_requested:{why}"
                 if why == "arxiv":
@@ -566,6 +645,7 @@ def lookup_status(entries: dict, deadline: float):
             rev_state.update(state)
 
         stage = "mapping results"
+        pending: dict = {}
         records = {}
         for item in fwd_items:
             d = normalize_doi(item.get("DOI") or "") if isinstance(item.get("DOI"), str) else ""
@@ -591,17 +671,67 @@ def lookup_status(entries: dict, deadline: float):
                 items, unresolved = _entry_items(doi, record, rev_items, rstate == "ok", report)
                 if unresolved:
                     report["unresolved"] += 1
-                if items:
-                    values[label] = format_items(items)
-                    report["entries"][label] = "stamped"
-                elif rstate != "ok":
-                    report["entries"][label] = rstate
+                if rstate != "ok":
+                    empty_state = rstate
                 elif unresolved:
                     # Not "checked_none": CrossRef lists a relation this pass
                     # could not read, which may be a status fact.
-                    report["entries"][label] = "unresolved"
+                    empty_state = "unresolved"
                 else:
-                    report["entries"][label] = "checked_none"
+                    empty_state = "checked_none"
+                pending[label] = (doi, items, empty_state)
+
+        # The notices themselves: a notice can be rescinded (Science's
+        # "RESCINDED: Editorial Expression of Concern" on Costello et al.
+        # 2024). Fail closed: an item whose notice record is not read is
+        # dropped. In-place items name the article itself, whose record the
+        # forward query already matched, so they are not re-queried.
+        stage = "checking the notices"
+        notice_dois = sorted({n for d, items, _s in pending.values()
+                              for _c, n in items if n and n != d})
+        notice_items, notice_state = [], {}
+        for start in range(0, len(notice_dois), BATCH_SIZE):
+            got, state = run.query("doi", notice_dois[start:start + BATCH_SIZE])
+            notice_items += got
+            notice_state.update(state)
+        notice_records = {}
+        for item in notice_items:
+            d = normalize_doi(item.get("DOI") or "") if isinstance(item.get("DOI"), str) else ""
+            if d in notice_state:
+                notice_records.setdefault(d, item)
+        for label, (doi, items, empty_state) in pending.items():
+            kept, rescinded, unverified = set(), 0, 0
+            for cat, n in items:
+                if not n or n == doi:
+                    kept.add((cat, n))
+                elif notice_state.get(n) != "ok" or n not in notice_records:
+                    unverified += 1
+                elif _notice_rescinded(notice_records[n]):
+                    rescinded += 1
+                else:
+                    kept.add((cat, n))
+            report["notice_rescinded"] += rescinded
+            report["notice_unverified"] += unverified
+            if kept:
+                values[label] = format_items(kept)
+                report["entries"][label] = "stamped"
+            elif unverified:
+                report["entries"][label] = "notice_unverified"
+            elif rescinded:
+                report["entries"][label] = "notice_rescinded"
+            else:
+                report["entries"][label] = empty_state
+
+        # arXiv preprints by their own fields that also carry a CrossRef DOI:
+        # the preprint item joins whatever the lookup found.
+        for label in arxiv:
+            if report["entries"].get(label) in ("stamped",) and label in values:
+                values[label] = format_items(set(parse_items(values[label])) | {(PREPRINT, None)})
+            elif report["entries"].get(label) in (
+                    "checked_none", "not_found", "identity_mismatch", "identity_unverifiable"):
+                values[label] = format_items({(PREPRINT, None)})
+                report["entries"][label] = "stamped"
+        report["preprint_arxiv"] = sum(1 for label in arxiv if label in values)
         # Every DOI whose forward query answered but whose reverse query did
         # not, whatever its entry state: notices only the reverse query finds
         # were never checked, so the pass is partial even when every entry
@@ -641,6 +771,9 @@ def settle(report: dict) -> None:
     if report.get("reverse_unchecked"):
         causes.append(f"{report['reverse_unchecked']} DOI(s) checked without the "
                       "reverse CrossRef query (request error or deadline)")
+    if report.get("notice_unverified"):
+        causes.append(f"{report['notice_unverified']} notice item(s) dropped because "
+                      "the notice's own CrossRef record could not be read")
     if report.get("unresolved"):
         causes.append(f"{report['unresolved']} entr{'y' if report['unresolved'] == 1 else 'ies'} "
                       "with a CrossRef update relation PhilLit could not map (unmapped "

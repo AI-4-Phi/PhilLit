@@ -1,0 +1,465 @@
+{
+ "status": "ok",
+ "message-type": "work-list",
+ "message-version": "1.0.0",
+ "message": {
+  "facets": {},
+  "total-results": 2,
+  "items": [
+   {
+    "indexed": {
+     "date-parts": [
+      [
+       2026,
+       11,
+       19
+      ]
+     ],
+     "date-time": "2026-11-19T14:27:09Z",
+     "timestamp": 1795098429969,
+     "version": "4.10.3"
+    },
+    "reference-count": 89,
+    "publisher": "American Association for the Advancement of Science (AAAS)",
+    "issue": "6714",
+    "content-domain": {
+     "domain": [
+      "www.science.org"
+     ],
+     "crossmark-restriction": true
+    },
+    "short-container-title": [
+     "Science"
+    ],
+    "published-print": {
+     "date-parts": [
+      [
+       2024,
+       9,
+       13
+      ]
+     ]
+    },
+    "abstract": "<jats:p>Conspiracy theory beliefs are notoriously persistent. Influential hypotheses propose that they fulfill important psychological needs, thus resisting counterevidence. Yet previous failures in correcting conspiracy beliefs may be due to counterevidence being insufficiently compelling and tailored. To evaluate this possibility, we leveraged developments in generative artificial intelligence and engaged 2044 conspiracy believers in personalized evidence-based dialogues with GPT-4 Turbo. The intervention reduced conspiracy belief by ~20%. The effect remained 2 months later, generalized across a wide range of conspiracy theories, and occurred even among participants with deeply entrenched beliefs. Although the dialogues focused on a single conspiracy, they nonetheless diminished belief in unrelated conspiracies and shifted conspiracy-related behavioral intentions. These findings suggest that many conspiracy theory believers can revise their views if presented with sufficiently compelling evidence.</jats:p>",
+    "DOI": "10.1126/science.adq1814",
+    "type": "journal-article",
+    "created": {
+     "date-parts": [
+      [
+       2024,
+       9,
+       12
+      ]
+     ],
+     "date-time": "2024-09-12T14:00:07Z",
+     "timestamp": 1726149607000
+    },
+    "update-policy": "https://doi.org/10.34133/aaas_crossmark",
+    "source": "Crossref",
+    "is-referenced-by-count": 350,
+    "title": [
+     "Durably reducing conspiracy beliefs through dialogues with AI"
+    ],
+    "prefix": "10.1126",
+    "volume": "385",
+    "author": [
+     {
+      "ORCID": "https://orcid.org/0000-0002-5188-3881",
+      "authenticated-orcid": true,
+      "given": "Thomas H.",
+      "family": "Costello",
+      "sequence": "first",
+      "affiliation": [
+       {
+        "name": "Sloan School of Management, Massachusetts Institute of Technology, Cambridge, MA, USA."
+       },
+       {
+        "name": "Department of Psychology, American University, Washington, DC, USA."
+       }
+      ],
+      "role": [
+       {
+        "vocabulary": "crossref",
+        "role": "author"
+       }
+      ]
+     },
+     {
+      "ORCID": "https://orcid.org/0000-0003-1344-6143",
+      "authenticated-orcid": true,
+      "given": "Gordon",
+      "family": "Pennycook",
+      "sequence": "additional",
+      "affiliation": [
+       {
+        "name": "Department of Psychology, Cornell University, Ithaca, NY, USA."
+       }
+      ],
+      "role": [
+       {
+        "vocabulary": "crossref",
+        "role": "author"
+       }
+      ]
+     },
+     {
+      "ORCID": "https://orcid.org/0000-0001-8975-2783",
+      "authenticated-orcid": true,
+      "given": "David G.",
+      "family": "Rand",
+      "sequence": "additional",
+      "affiliation": [
+       {
+        "name": "Sloan School of Management, Massachusetts Institute of Technology, Cambridge, MA, USA."
+       }
+      ],
+      "role": [
+       {
+        "vocabulary": "crossref",
+        "role": "author"
+       }
+      ]
+     }
+    ],
+    "member": "221",
+    "updated-by": [
+     {
+      "DOI": "10.1126/science.aej2383",
+      "type": "expression_of_concern",
+      "label": "Expression of concern",
+      "source": "publisher",
+      "updated": {
+       "date-parts": [
+        [
+         2026,
+         6,
+         11
+        ]
+       ],
+       "date-time": "2026-06-11T00:00:00Z",
+       "timestamp": 1781136000000
+      }
+     },
+     {
+      "DOI": "10.1126/science.aem1178",
+      "type": "correction",
+      "label": "Correction",
+      "source": "publisher",
+      "updated": {
+       "date-parts": [
+        [
+         2026,
+         10,
+         22
+        ]
+       ],
+       "date-time": "2026-10-22T00:00:00Z",
+       "timestamp": 1792627200000
+      }
+     }
+    ],
+    "container-title": [
+     "Science"
+    ],
+    "language": "en",
+    "link": [
+     {
+      "URL": "https://www.science.org/doi/pdf/10.1126/science.adq1814",
+      "content-type": "unspecified",
+      "content-version": "vor",
+      "intended-application": "similarity-checking"
+     }
+    ],
+    "deposited": {
+     "date-parts": [
+      [
+       2026,
+       10,
+       22
+      ]
+     ],
+     "date-time": "2026-10-22T18:05:11Z",
+     "timestamp": 1792692311000
+    },
+    "score": 0.0,
+    "resource": {
+     "primary": {
+      "URL": "https://www.science.org/doi/10.1126/science.adq1814"
+     }
+    },
+    "issued": {
+     "date-parts": [
+      [
+       2024,
+       9,
+       13
+      ]
+     ]
+    },
+    "references-count": 89,
+    "journal-issue": {
+     "issue": "6714",
+     "published-print": {
+      "date-parts": [
+       [
+        2024,
+        9,
+        13
+       ]
+      ]
+     }
+    },
+    "alternative-id": [
+     "10.1126/science.adq1814"
+    ],
+    "URL": "https://doi.org/10.1126/science.adq1814",
+    "relation": {
+     "is-supplemented-by": [
+      {
+       "id-type": "doi",
+       "id": "10.1126/science.aeg5828",
+       "asserted-by": "subject"
+      }
+     ]
+    },
+    "ISSN": [
+     "0036-8075",
+     "1095-9203"
+    ],
+    "issn-type": [
+     {
+      "value": "0036-8075",
+      "type": "print"
+     },
+     {
+      "value": "1095-9203",
+      "type": "electronic"
+     }
+    ],
+    "published": {
+     "date-parts": [
+      [
+       2024,
+       9,
+       13
+      ]
+     ]
+    },
+    "assertion": [
+     {
+      "value": "2024-05-01",
+      "order": 0,
+      "name": "received",
+      "label": "Received",
+      "group": {
+       "name": "publication_history",
+       "label": "Publication History"
+      }
+     },
+     {
+      "value": "2024-07-18",
+      "order": 2,
+      "name": "accepted",
+      "label": "Accepted",
+      "group": {
+       "name": "publication_history",
+       "label": "Publication History"
+      }
+     },
+     {
+      "value": "2024-09-13",
+      "order": 3,
+      "name": "published",
+      "label": "Published",
+      "group": {
+       "name": "publication_history",
+       "label": "Publication History"
+      }
+     }
+    ],
+    "article-number": "eadq1814"
+   },
+   {
+    "indexed": {
+     "date-parts": [
+      [
+       2026,
+       11,
+       17
+      ]
+     ],
+     "date-time": "2026-11-17T17:50:26Z",
+     "timestamp": 1794937826010,
+     "version": "4.9.1"
+    },
+    "reference-count": 1,
+    "publisher": "American Association for the Advancement of Science (AAAS)",
+    "issue": "6803",
+    "content-domain": {
+     "domain": [
+      "www.science.org"
+     ],
+     "crossmark-restriction": true
+    },
+    "short-container-title": [
+     "Science"
+    ],
+    "published-print": {
+     "date-parts": [
+      [
+       2026,
+       6,
+       11
+      ]
+     ]
+    },
+    "DOI": "10.1126/science.aej2383",
+    "type": "journal-article",
+    "created": {
+     "date-parts": [
+      [
+       2026,
+       6,
+       11
+      ]
+     ],
+     "date-time": "2026-06-11T18:01:19Z",
+     "timestamp": 1781200879000
+    },
+    "page": "1131-1131",
+    "update-policy": "https://doi.org/10.34133/aaas_crossmark",
+    "source": "Crossref",
+    "is-referenced-by-count": 1,
+    "title": [
+     "RESCINDED: Editorial Expression of Concern"
+    ],
+    "prefix": "10.1126",
+    "volume": "392",
+    "author": [
+     {
+      "given": "H. Holden",
+      "family": "Thorp",
+      "sequence": "first",
+      "affiliation": [],
+      "role": [
+       {
+        "vocabulary": "crossref",
+        "role": "author"
+       }
+      ]
+     }
+    ],
+    "member": "221",
+    "container-title": [
+     "Science"
+    ],
+    "language": "en",
+    "link": [
+     {
+      "URL": "https://www.science.org/doi/full/10.1126/science.aej2383",
+      "content-type": "unspecified",
+      "content-version": "vor",
+      "intended-application": "similarity-checking"
+     }
+    ],
+    "deposited": {
+     "date-parts": [
+      [
+       2026,
+       10,
+       22
+      ]
+     ],
+     "date-time": "2026-10-22T18:00:28Z",
+     "timestamp": 1792692028000
+    },
+    "score": 0.0,
+    "resource": {
+     "primary": {
+      "URL": "https://www.science.org/doi/10.1126/science.aej2383"
+     }
+    },
+    "editor": [
+     {
+      "given": "H. Holden",
+      "family": "Thorp",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+       {
+        "vocabulary": "crossref",
+        "role": "editor"
+       }
+      ]
+     }
+    ],
+    "issued": {
+     "date-parts": [
+      [
+       2026,
+       6,
+       11
+      ]
+     ]
+    },
+    "references-count": 1,
+    "journal-issue": {
+     "issue": "6803",
+     "published-print": {
+      "date-parts": [
+       [
+        2026,
+        6,
+        11
+       ]
+      ]
+     }
+    },
+    "alternative-id": [
+     "10.1126/science.aej2383"
+    ],
+    "URL": "https://doi.org/10.1126/science.aej2383",
+    "ISSN": [
+     "0036-8075",
+     "1095-9203"
+    ],
+    "issn-type": [
+     {
+      "value": "0036-8075",
+      "type": "print"
+     },
+     {
+      "value": "1095-9203",
+      "type": "electronic"
+     }
+    ],
+    "published": {
+     "date-parts": [
+      [
+       2026,
+       6,
+       11
+      ]
+     ]
+    },
+    "assertion": [
+     {
+      "value": "2026-06-11",
+      "order": 3,
+      "name": "published",
+      "label": "Published",
+      "group": {
+       "name": "publication_history",
+       "label": "Publication History"
+      }
+     }
+    ]
+   }
+  ],
+  "items-per-page": 50,
+  "query": {
+   "start-index": 0,
+   "search-terms": null
+  }
+ }
+}
