@@ -174,6 +174,17 @@ _PROCESS_LANGUAGE_RE = re.compile(
 # the English word "evidence").
 _EVIDENCE_TOKEN_RE = re.compile(r"\bEVIDENCE-[A-Z]+\b")
 
+# Gendered pronouns in a paragraph that cites a work (PL-37). Writers must not
+# infer an author's pronoun from a name; the paragraph is the unit because the
+# pronoun usually sits in the sentence after the citation ("Danaher (2018)
+# argues ... He then ..."). A hypothetical "she" next to a citation also
+# fires: WARN-only, the orchestrator reads it.
+_GENDERED_PRONOUN_RE = re.compile(
+    r"\b(?:he|she|him|her|his|hers|himself|herself)\b", re.IGNORECASE)
+# A citation's year inside parentheses: "(Danaher 2018)", "Danaher (2018a, 4)".
+_CITED_YEAR_RE = re.compile(r"\([^()]*\b(?:1[5-9]|20)\d\d[a-z]?\b[^()]*\)")
+_REFS_HEADING_RE = re.compile(r"^\s*#{1,6}\s+References\s*$", re.IGNORECASE)
+
 
 def check_prose_quality(text: str) -> list[str]:
     """Return WARN-level advisories about prose-quality issues.
@@ -183,11 +194,13 @@ def check_prose_quality(text: str) -> list[str]:
     (2) in-prose "Section N(.M)" cross-references, (3) H2 headings ending in a
     parenthesized Title-Case meta-label, (4) workflow language in review
     prose (orchestrator, writer notes, research brief, EVIDENCE-* tokens,
-    ...). Fenced code blocks and heading lines are exempt from the prose
+    ...), (5) gendered pronouns in a paragraph that cites a work, before the
+    References. Fenced code blocks and heading lines are exempt from the prose
     checks.
     """
     warnings: list[str] = []
     in_fence = False
+    in_refs = False
     for lineno, line in enumerate(text.splitlines(), start=1):
         stripped = line.lstrip()
         if stripped.startswith("```") or stripped.startswith("~~~"):
@@ -197,6 +210,8 @@ def check_prose_quality(text: str) -> list[str]:
             continue
 
         if stripped.startswith("#"):
+            if _REFS_HEADING_RE.match(line):
+                in_refs = True
             m = _H2_META_LABEL_RE.match(line)
             if m:
                 warnings.append(
@@ -232,6 +247,16 @@ def check_prose_quality(text: str) -> list[str]:
                 f"line {lineno}: workflow language in review prose: rewrite "
                 f"for the reader ('{phrase}') (WARN)"
             )
+
+        if not in_refs and _CITED_YEAR_RE.search(line):
+            pronouns = [m.group(0) for m in _GENDERED_PRONOUN_RE.finditer(line)]
+            if pronouns:
+                found = ", ".join(dict.fromkeys(p.lower() for p in pronouns))
+                warnings.append(
+                    f"line {lineno}: gendered pronoun in a paragraph that cites "
+                    f"a work ({found}) - if it refers to a cited author, use "
+                    f"the surname or 'they' (WARN)"
+                )
     return warnings
 
 
