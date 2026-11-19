@@ -358,3 +358,118 @@ class TestWholeGroupSuppression:
         assert res["suffixes"] == {}
         assert any(g["authors"] == "Menary, Richard" and g["year"] == "2010"
                    for g in res["suppressed"])
+
+
+class TestSameKeySubtitleVariants:
+    """PL-33: one citekey, same authors and year, titles differing only by a
+    subtitle, is ONE work -- dedupe's first pass merges same-key copies, so
+    lettering them apart printed a [SUFFIX] conflict and broke a letter."""
+
+    SHORT = "Algorithms and Autonomy"
+    LONG = "Algorithms and Autonomy: The Ethics of Automated Decision Systems"
+    AUTH = "Rubel, Alan and Castro, Clinton and Pham, Adam"
+
+    def k(self, eid, key, title, doi="", year="2021", author=None):
+        ent = e(eid, author or self.AUTH, year, title, doi=doi)
+        ent["key"] = key
+        return ent
+
+    def test_rubel_copies_are_one_work_with_no_letter(self):
+        res = ys.assign_suffixes([
+            self.k((4, "rubel2021algorithms"), "rubel2021algorithms", self.SHORT,
+                   doi="10.1017/9781108895057"),
+            self.k((6, "rubel2021algorithms"), "rubel2021algorithms", self.LONG),
+        ])
+        assert res["suffixes"] == {}
+        assert res["groups"] == []
+
+    def test_rubel_copies_share_one_letter_beside_a_sibling(self):
+        entries = [
+            self.k((4, "r"), "r", self.SHORT, doi="10.1017/9781108895057"),
+            self.k((6, "r"), "r", self.LONG),
+            self.k((1, "r2"), "r2", "Zebra Ethics"),
+        ]
+        for perm in itertools.permutations(entries):
+            s = ys.assign_suffixes(list(perm))["suffixes"]
+            assert s[(4, "r")] == s[(6, "r")] == "a"
+            assert s[(1, "r2")] == "b"
+
+    def test_different_keys_stay_two_works(self):
+        s = ys.assign_suffixes([
+            self.k(1, "a", self.SHORT), self.k(2, "b", self.LONG)])["suffixes"]
+        assert sorted(s.values()) == ["a", "b"]
+
+    def test_no_key_given_keeps_the_old_behaviour(self):
+        s = ys.assign_suffixes([e(1, self.AUTH, "2021", self.SHORT),
+                                e(2, self.AUTH, "2021", self.LONG)])["suffixes"]
+        assert sorted(s.values()) == ["a", "b"]
+
+    def test_conflicting_dois_stay_two_works(self):
+        s = ys.assign_suffixes([
+            self.k(1, "r", self.SHORT, doi="10.1/one"),
+            self.k(2, "r", self.LONG, doi="10.1/two")])["suffixes"]
+        assert sorted(s.values()) == ["a", "b"]
+
+    def test_two_different_subtitles_stay_two_works(self):
+        s = ys.assign_suffixes([
+            self.k(1, "r", "Autonomy Matters: A Defence"),
+            self.k(2, "r", "Autonomy Matters: A Critique")])["suffixes"]
+        assert sorted(s.values()) == ["a", "b"]
+
+    def test_a_word_prefix_is_not_a_subtitle(self):
+        s = ys.assign_suffixes([
+            self.k(1, "r", "Ethics and Politics"),
+            self.k(2, "r", "Ethics and Politics of Data")])["suffixes"]
+        assert sorted(s.values()) == ["a", "b"]
+
+    def test_a_different_year_or_author_list_never_merges(self):
+        res = ys.assign_suffixes([
+            self.k(1, "r", self.SHORT), self.k(2, "r", self.LONG, author="Rubel, Alan")])
+        assert res["conflicts"] == [] and res["suffixes"] == {}
+        # Merging across years would make one work with two years, an
+        # identity conflict that suppresses both groups' letters.
+        res = ys.assign_suffixes([
+            self.k(1, "r", self.SHORT), self.k(2, "r", self.LONG, year="2020"),
+            self.k(3, "q", "Other Work"), self.k(4, "q2", "Other Work Two", year="2020")])
+        assert res["conflicts"] == []
+        assert sorted(res["suffixes"]) == [1, 2, 3, 4]
+
+    def test_a_bare_title_between_two_subtitles_merges_nothing(self):
+        """'A' with no DOI, 'A: X' and 'A: Y' under one key: which subtitled
+        work the bare copy is cannot be told, so nothing merges -- in every
+        input order."""
+        entries = [self.k(1, "r", self.SHORT),
+                   self.k(2, "r", self.SHORT + ": X Part", doi="10.1/one"),
+                   self.k(3, "r", self.SHORT + ": Y Part", doi="10.1/two")]
+        for perm in itertools.permutations(entries):
+            s = ys.assign_suffixes(list(perm))["suffixes"]
+            assert sorted(s.values()) == ["a", "b", "c"]
+
+    def test_merges_that_together_join_conflicting_dois_are_all_rejected(self):
+        """Each key's merge is safe alone, but the two DOI-less short copies
+        are one work (same fallback key), so applying both would put
+        10.1/one and 10.1/two in one work. Both are refused, in every
+        order."""
+        entries = [self.k((1, "r"), "r", self.SHORT),
+                   self.k((2, "s"), "s", self.SHORT),
+                   self.k((3, "r"), "r", self.LONG, doi="10.1/one"),
+                   self.k((4, "s"), "s", self.LONG, doi="10.1/two")]
+        results = set()
+        for perm in itertools.permutations(entries):
+            s = ys.assign_suffixes(list(perm))["suffixes"]
+            assert s[(3, "r")] != s[(4, "s")]
+            assert s[(1, "r")] == s[(2, "s")]
+            assert s[(1, "r")] not in (s[(3, "r")], s[(4, "s")])
+            results.add(tuple(sorted(s.items())))
+        assert len(results) == 1
+
+    def test_a_rejected_merge_leaves_an_unrelated_safe_merge_alone(self):
+        entries = [self.k((1, "r"), "r", self.SHORT),
+                   self.k((2, "s"), "s", self.SHORT),
+                   self.k((3, "r"), "r", self.LONG, doi="10.1/one"),
+                   self.k((4, "s"), "s", self.LONG, doi="10.1/two"),
+                   self.k((5, "t"), "t", "Zebra Things"),
+                   self.k((6, "t"), "t", "Zebra Things: A Subtitle", doi="10.1/three")]
+        for perm in itertools.permutations(entries):
+            s = ys.assign_suffixes(list(perm))["suffixes"]
+            assert s[(5, "t")] == s[(6, "t")]

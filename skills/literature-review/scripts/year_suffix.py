@@ -7,10 +7,15 @@ and the writers are what must carry it into the prose.
 The unit of assignment is a WORK, not a bib entry: the same paper routinely
 appears in two domain bibs under different citation keys, and giving those
 copies different letters would break every sentence written against the other
-copy. Work identity is exactly `dedupe_bib`'s: same normalized DOI, or same
+copy. Work identity follows `dedupe_bib`'s: same normalized DOI, or same
 `bib_identity.fallback_key` (title/year/surname), with dedupe's own refusal to
 merge across CONFLICTING non-empty DOI values. Sharing the identity rule is
-what keeps the Phase 6 merge and this pass from disagreeing.
+what keeps the Phase 6 merge and this pass from disagreeing. Dedupe's first
+pass also merges every pair of copies that share a citekey; this pass takes
+only the safe part of that (an entry's optional `key`): one key, one author
+signature and year, titles differing only by a subtitle, no conflicting DOIs
+(axis 2b in `assign_suffixes`). Same-key copies outside that rule are still
+lettered apart and dedupe still reports their [SUFFIX] conflict.
 
 Groups are formed on (author signature, year), where the signature carries a
 first INITIAL per author. Two different people with the same surname but a
@@ -73,8 +78,8 @@ the groups where suppression actually cost letters; `suppressed_singletons`
 holds groups the assigner left unlettered that held at most ONE work, which
 Chicago would not have lettered anyway (disambiguation starts at two).
 Measured over the real barrier input (42 delivered reviews, 4,582 domain-bib
-entries): 8 records in `suppressed` against 98 in `suppressed_singletons`,
-every one of the latter an `identity_conflict` raised by a duplicate pair
+entries; before the citekey axis 2b existed): 8 records in `suppressed`
+against 98 in `suppressed_singletons`, every one of the latter an `identity_conflict` raised by a duplicate pair
 that spells one author two ways. Nothing is discarded -- an operator who
 wants everything reads both lists -- but a count of `suppressed` alone, which
 is what a console summary shows, now counts only actionable groups.
@@ -105,9 +110,9 @@ promise. Its ordering is fixed (records are emitted in sorted key order, and
 return), and every string in it is chosen by value rather than by arrival:
 `authors` is the lexicographically smallest spelling among the copies that
 name the group, because those copies routinely disagree about how to write
-one name. Shuffling the real corpus (42 reviews x 5 orderings) now changes
-nothing in either; before, three reviews flipped the `authors` string of a
-suppression record. But `works` remains the best-effort floor described
+one name. Shuffling the real corpus (42 reviews x 5 orderings, measured
+before axis 2b) changed nothing in either; before, three reviews flipped
+the `authors` string of a suppression record. But `works` remains the best-effort floor described
 above, since a suppressed group never receives a canonical partition to
 count -- so treat a report number as telemetry and a letter as a guarantee.
 """
@@ -119,7 +124,8 @@ from pathlib import Path
 _hook_dir = Path(__file__).resolve().parent.parent.parent.parent / "hooks"
 sys.path.insert(0, str(_hook_dir))
 from bib_identity import (fallback_key, first_author_surname,  # noqa: E402
-                          normalize_doi, split_author_list, title_key)
+                          normalize_doi, split_author_list, title_key,
+                          titles_differ_by_subtitle)
 
 sys.path.pop(0)
 
@@ -231,6 +237,10 @@ def assign_suffixes(entries: list[dict]) -> dict:
     work totals are deliberately NOT returned: `len(suffixes)` and
     `sum(g["works"] for g in groups)` are the same numbers, and a second copy
     of a derived count is a thing to keep in sync for nothing.
+
+    Each entry is a dict with `id`, `author`, `editor`, `year`, `title`,
+    `doi` and an optional `key` (its citekey; only the citekey axis reads it,
+    so a caller that sends none gets no same-key merging).
 
     Entries with no usable author signature or no 4-digit year are skipped
     entirely -- they can never be cited author-year anyway -- UNLESS a
@@ -364,6 +374,64 @@ def assign_suffixes(entries: list[dict]) -> dict:
                           authors_hint=ent.get("author") or ent.get("editor") or "")
             # Components with distinct non-empty DOIs and no bridge stay
             # separate, matching dedupe's refusal -- nothing further to do.
+
+    # 2b. Citekey axis (PL-33): dedupe's FIRST pass merges copies that share
+    #    a citekey, whatever their titles, so two copies of one work under one
+    #    key, one with its subtitle and one without, must be one work here
+    #    too -- lettered apart, dedupe printed a [SUFFIX] conflict and kept
+    #    one letter for prose written against the other. Kept tight, because
+    #    a key collision between two DIFFERENT works is real: same key, same
+    #    author signature and year (the cluster), EXACTLY two distinct title
+    #    keys related by `titles_differ_by_subtitle`, and at most one DOI
+    #    across the components (a DOI on one copy and none on the other is
+    #    no conflict). A bare title beside two different subtitles is three
+    #    title keys and merges nothing. Decisions are taken against the
+    #    partition as the axes above left it and applied afterwards, so no
+    #    cluster's decision depends on the order clusters are visited. Each
+    #    merge being safe alone is not enough: two keys' merges can share a
+    #    work (two DOI-less copies under different keys with one fallback
+    #    key) and together join two conflicting DOIs. So the proposed final
+    #    partition is checked too, and every proposal feeding a combined
+    #    component with more than one DOI is dropped -- all of them, which
+    #    depends only on the SET of proposals, never on their order.
+    key_clusters: dict = {}
+    for ent in usable:
+        if ent.get("key"):
+            key_clusters.setdefault((ent["key"], ent["_sig"], ent["_year"]), []).append(ent)
+    key_merges = []
+    for cluster in key_clusters.values():
+        if len({title_key(ent.get("title") or "") for ent in cluster}) != 2:
+            continue
+        roots = sorted({uf.find(ent["id"]) for ent in cluster}, key=repr)
+        if len(roots) < 2:
+            continue
+        dois: set = set()
+        for root in roots:
+            dois |= doi_set_of.get(root, set())
+        if len(dois) > 1:
+            continue
+        if not any(titles_differ_by_subtitle(a.get("title") or "", b.get("title") or "")
+                   for a in cluster for b in cluster):
+            continue
+        key_merges.append(roots)
+    trial = _Union()
+    for roots in key_merges:
+        for root in roots[1:]:
+            trial.union(roots[0], root)
+    trial_dois: dict = {}
+    for roots in key_merges:
+        for root in roots:
+            trial_dois.setdefault(trial.find(root), set()).update(
+                doi_set_of.get(root, set()))
+    key_merges = [roots for roots in key_merges
+                  if len(trial_dois[trial.find(roots[0])]) <= 1]
+    for roots in key_merges:
+        merged = set()
+        for root in roots:
+            merged |= doi_set_of.get(uf.find(root), set())
+        for root in roots[1:]:
+            uf.union(roots[0], root)
+        doi_set_of[uf.find(roots[0])] = merged
 
     works: dict = {}
     for ent in usable:

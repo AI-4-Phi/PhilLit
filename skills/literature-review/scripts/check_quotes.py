@@ -18,7 +18,9 @@ barrier verified:
   ABSTRACT entries), or is written in a form the matcher refuses.
 - `FIX page`: a page locator given with the citation names no `[[page N]]`
   page the quoted words sit on (fix: drop or correct the locator, never cut
-  the quote).
+  the quote). An article's own unnumbered first page, which
+  `fulltext.lead_page` admits from the entry's `pages` field, stays a
+  `[[sheet N]]` block, but its implied number is also accepted.
 - `WARN cap`: above 40 words in one quotation, above 150 words per work
   (works grouped across keys and slugs: same work key, or same DOI).
 - `WARN uncited-fulltext`: a quoted span of 4 words or more with no citation
@@ -226,7 +228,8 @@ def license_status(key: str, info: dict, report: dict, workdir: Path):
     """(text, None) when the watched entry's text is licensed now, else
     (None, why). The authorizing blob: same key in any domain bib,
     `fulltext_verified is True`, slug equal to the one `fulltext_file` names,
-    `identity_matches`, and the text's hash equal to the blob's."""
+    `identity_matches` (given the text, for its same-work re-check), and the
+    text's hash equal to the blob's."""
     fields = info["fields"]
     if info["tier"] != TIER_FULLTEXT:
         return None, f"not {TIER_FULLTEXT} now ({info['tier'] or 'unstamped'})"
@@ -237,6 +240,18 @@ def license_status(key: str, info: dict, report: dict, workdir: Path):
     if not m or not ft.SLUG_RE.match(m.group(1)) or len(m.group(1)) > ft.STEM_MAX:
         return None, "malformed fulltext_file"
     slug = m.group(1)
+    path = workdir / ft.STORE_REL / f"{slug}.txt"
+    # Read before the identity check: a survivor that is the same work in
+    # another dress (a gained DOI, a subtitle variant) matches only by
+    # re-running the identity check on this text (identity_matches).
+    text, read_error = None, None
+    if not path.is_file():
+        read_error = "text missing"
+    else:
+        try:
+            text = ft.read_text(path)
+        except (OSError, UnicodeDecodeError):
+            read_error = "text unreadable"
     candidates = []
     for blobs in report.get("attestations", {}).values():
         blob = blobs.get(key) if isinstance(blobs, dict) else None
@@ -244,18 +259,13 @@ def license_status(key: str, info: dict, report: dict, workdir: Path):
             continue
         if blob.get("fulltext_verified") is not True or blob.get("fulltext_slug") != slug:
             continue
-        if not ft.identity_matches(blob.get("fulltext_identity"), fields):
+        if not ft.identity_matches(blob.get("fulltext_identity"), fields, text=text):
             continue
         candidates.append(blob)
     if not candidates:
         return None, "no authorizing attestation"
-    path = workdir / ft.STORE_REL / f"{slug}.txt"
-    if not path.is_file():
-        return None, "text missing"
-    try:
-        text = ft.read_text(path)
-    except (OSError, UnicodeDecodeError):
-        return None, "text unreadable"
+    if read_error:
+        return None, read_error
     digest = ft.text_sha256(text)
     if not any(b.get("fulltext_text_sha256") == digest for b in candidates):
         return None, "text hash differs"
@@ -521,12 +531,13 @@ def trailing_locator(masked: str, close: int) -> list[tuple] | None:
 # --------------------------------------------------------------------------
 
 def _match_quote(quote: str, sources):
-    """Try every source; (hits, form_error). hits: [(key, kind, text,
-    occurrences)] for each source holding the quote."""
+    """Try every source (key, kind, text, page map, bib `pages` field);
+    (hits, form_error). hits: [(key, kind, text, occurrences)] for each
+    source holding the quote."""
     hits, form_error = [], None
-    for key, kind, text, pm in sources:
+    for key, kind, text, pm, bib_pages in sources:
         try:
-            occ = ft.locate_quote_all(quote, text, pm)
+            occ = ft.locate_quote_all(quote, text, pm, bib_pages=bib_pages)
         except ft.QuoteFormError as e:
             form_error = form_error or e
             continue
@@ -609,6 +620,10 @@ def run(md: str, bib_text: str, report: dict, workdir: Path) -> tuple[list[str],
     # The page map each licensed text's markers carry, computed once per key.
     page_maps = {k: ft.page_map_from_text(text) for k, (text, _why) in licence.items()
                  if text is not None}
+    # The bib `pages` field anchors an article's own unnumbered first page
+    # (ft.lead_page): quotable, and its implied number an accepted locator.
+    bib_pages = {k: entries[k]["fields"].get("pages") for k in page_maps}
+    leads = {k: ft.lead_page(pm, bib_pages[k]) for k, pm in page_maps.items()}
     para_starts = [a for a, _ in paras]
     groups = _union_groups(sorted(watched), entries)
     group_words: dict[str, int] = {}
@@ -620,7 +635,8 @@ def run(md: str, bib_text: str, report: dict, workdir: Path) -> tuple[list[str],
               "warn_uncited": 0, "warn_uncited_fulltext": 0}
     # Only citable works: citing one the gate cannot resolve would leave the
     # line in place on every rerun.
-    uncited_sources = [(k, "fulltext", licence[k][0], page_maps[k]) for k in sorted(watched)
+    uncited_sources = [(k, "fulltext", licence[k][0], page_maps[k], bib_pages[k])
+                       for k in sorted(watched)
                        if licence[k][0] is not None and entries[k]["citable"]]
 
     def line_no(pos: int) -> int:
@@ -690,12 +706,12 @@ def run(md: str, bib_text: str, report: dict, workdir: Path) -> tuple[list[str],
                 lines.append(f'FAIL licence-lost: {k} ({licence[k][1]}): "{shown}" {where}')
                 counts["fail_licence_lost"] += 1
 
-        sources = [(k, "fulltext", licence[k][0], page_maps[k]) for k in wkeys
+        sources = [(k, "fulltext", licence[k][0], page_maps[k], bib_pages[k]) for k in wkeys
                    if licence[k][0] is not None]
         for k in keys:
             info = entries[k]
             if info["tier"] == TIER_ABSTRACT and info["fields"].get("abstract"):
-                sources.append((k, "abstract", _decoded(info["fields"]["abstract"]), None))
+                sources.append((k, "abstract", _decoded(info["fields"]["abstract"]), None, None))
         if not sources:
             report_lost()
             continue   # nothing licensed to check against: licence-lost fails
@@ -730,12 +746,19 @@ def run(md: str, bib_text: str, report: dict, workdir: Path) -> tuple[list[str],
             pmap = page_maps[k]
             if pmap is not None:
                 marker_pages.update(n for n in pmap.numbers if n is not None)
+            if leads[k] is not None:
+                marker_pages.add(leads[k][1])
         for lkeys, items in locs:
-            touched_all = [t for k in lkeys if k in ft_hits
-                           for occ_spans in ft_hits[k][1]
-                           for t in ft.span_pages(ft_hits[k][0], occ_spans)]
+            touched_by = [(k, t) for k in lkeys if k in ft_hits
+                          for occ_spans in ft_hits[k][1]
+                          for t in ft.span_pages(ft_hits[k][0], occ_spans)]
+            touched_all = [t for _k, t in touched_by]
             desc = ", ".join(f"{kind} {n}" for kind, n in dict.fromkeys(touched_all)) or "none"
             nums = [n for kind, n in touched_all if kind == "page"]
+            # The admitted first page stays a sheet in the report (that is its
+            # marker), but its implied number is a correct locator.
+            nums += [leads[k][1] for k, (kind, n) in touched_by
+                     if kind == "sheet" and leads[k] is not None and n == leads[k][0] + 1]
             label = ", ".join(lkeys)
             for item in items:
                 kind, raw = item[0], _ascii(item[-1])

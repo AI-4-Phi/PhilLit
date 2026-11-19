@@ -300,16 +300,19 @@ Never advance to a next step in this phase before completing the current step.
    rule above.
 
    The summary's `abstract_corroboration` key reports the abstract check,
-   which re-fetches one abstract per candidate entry and is bounded at 180 s
-   and 3 consecutive failures — surface it once, for the same reason as the
-   venue check above: a non-zero `corroboration_deadline` count means one of those
-   two bounds stopped the pass early, so those entries carry a lower tier
-   this run and a re-run restores it. But a count that REPEATS across runs
-   means the probes themselves are failing rather than the pass merely
-   running long — read it alongside the `transport_failed` and `probe_error`
-   counts beside it and check credentials and connectivity (a missing or
-   invalid `S2_API_KEY`, or an API outage, trips the breaker at the third
-   entry on every run). `probe_unavailable` merges two different causes
+   which re-fetches one abstract per candidate entry. It is bounded by time
+   (until 300 s after the barrier started) and by 3 consecutive failures. Surface it once, for
+   the same reason as the venue check above. A non-zero
+   `corroboration_deadline` count means one of those bounds stopped the pass
+   early, so those entries carry a lower tier this run. Read it with the
+   `transport_failed` and `probe_error` counts beside it:
+   - Errors non-zero: the probes are failing. Check credentials and
+     connectivity (a missing or invalid `S2_API_KEY`, or an API outage,
+     trips the breaker at the third entry on every run), then re-run.
+   - Errors zero: the review has more candidates than the time bound fits
+     (about 0.7 per second). A re-run strands the same entries, so do not
+     re-run for this. Report the count in the final summary: those works
+     stay citable, without claims about what they argue. `probe_unavailable` merges two different causes
    instead — a claimed source outside the allowlist, which can never earn
    the tier, and one this environment cannot ask (claimed `core` with no
    `CORE_API_KEY` set — which demotes every claimed-core entry in a keyless
@@ -460,6 +463,8 @@ A resume that starts at step 8 cannot reproduce the split's `SPLIT-*` lines, ded
    - Format references in Chicago Author-Date style from BibTeX metadata only
    - Deduplicate entries with the same DOI
    - Append (or replace) a `## References` section at the end of the review
+   - Print a `[COLLISION] ambiguous: ... - all kept, possible phantom references` line (stderr) when works share an author surname and year and the prose does not say which one it cites. Nothing later checks these lines, so resolve each one here. Read the sentences that cite that author and year, and the titles and authors of the entries the line names. If the prose cites only one of them, make that citation name it unambiguously: give the full author list ("Susser, Roessler, and Nissenbaum (2019)"), the year letter, or "et al." for three or more authors. Then re-run this step. Never delete the References line by hand, because the next run of this step brings it back. If the prose really cites every work the line names, leave it. Name each line you could not resolve in the final summary.
+   - Print a `[LETTER] cited ... but not ...` line (stderr) when the review cites a lettered work ("2024b") whose same-author-year siblings were left out, so its letters no longer run a, b, .... Do not change the letter in the prose, the bib or the References: the next run of this step would undo a prose change and keep the wrong work. Quote every such line verbatim in the final summary.
 
    Any later re-run of this step (after a prose fix, also after step 7) uses `literature-[project-name].bib` or `intermediate_files/literature-[project-name]-merged.bib`, never `literature-[project-name]-annotated.bib`: the annotated bib lacks the `year_suffix` field, so the References would lose their year letters. The script refuses the annotated bib.
 

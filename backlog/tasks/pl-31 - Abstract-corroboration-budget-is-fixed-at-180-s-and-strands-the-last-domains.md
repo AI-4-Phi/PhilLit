@@ -1,9 +1,10 @@
 ---
 id: PL-31
 title: Abstract corroboration budget is fixed at 180 s and strands the last domains
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-11-17T11:16:00Z'
+updated_date: '2026-11-19T13:00:00Z'
 labels:
   - barrier
   - test-run

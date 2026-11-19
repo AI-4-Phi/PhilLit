@@ -2532,6 +2532,158 @@ class TestRecoveredNamesAreStrippedOfPossessives:
         assert [m["surname"] for m in got] == ["Clark", "Menary", "Sutton"]
 
 
+# =============================================================================
+# PL-34: a 3+ author list a bib record corroborates names exactly one work
+# =============================================================================
+
+SUSSER_BIB = """@article{susser2019invisible, author = {Susser, Daniel},
+  title = {Invisible Influence}, journal = {AIES}, year = {2019}}
+
+@article{susser2019technology,
+  author = {Susser, Daniel and Roessler, Beate and Nissenbaum, Helen},
+  title = {Technology, Autonomy, and Manipulation},
+  journal = {Internet Policy Review}, year = {2019}}"""
+
+
+class TestCorroboratedAuthorList:
+    """The 2026-11-17 production case. The prose cited only "Susser,
+    Roessler, and Nissenbaum (2019)"; the parser bound at Roessler, rejected
+    the fragment, and the recovered bare mention of Susser 2019 kept the
+    uncited single-author sibling as a possible phantom."""
+
+    def _cited(self, prose, bib_text=SUSSER_BIB):
+        from pybtex.database import parse_string
+        db = parse_string(bib_text, "bibtex")
+        return sorted(k for k, _ in
+                      generate_bibliography.find_cited_entries(prose, db))
+
+    @pytest.mark.parametrize("cite", [
+        "Susser, Roessler, and Nissenbaum (2019)",
+        "Susser, Roessler and Nissenbaum (2019)",
+        "Susser, Roessler, & Nissenbaum (2019)",
+        "Susser, Roessler & Nissenbaum (2019)",
+        "(Susser, Roessler, and Nissenbaum 2019)",
+    ])
+    def test_the_full_list_drops_the_solo_sibling(self, cite, capsys):
+        assert self._cited(cite + " define manipulation.") \
+            == ["susser2019technology"]
+        err = capsys.readouterr().err
+        assert "[COLLISION] dropped susser2019invisible" in err
+        assert "possible phantom" not in err
+
+    def test_the_solo_citation_still_keeps_the_solo_work(self):
+        assert self._cited(
+            "Susser (2019) argues X. Susser, Roessler, and Nissenbaum (2019)"
+            " define manipulation.") \
+            == ["susser2019invisible", "susser2019technology"]
+
+    def test_an_uncorroborated_list_keeps_all(self, capsys):
+        # No record has the author list "Susser, Smith, Nissenbaum": the list
+        # names something the bib cannot identify, so nothing is dropped.
+        assert self._cited(
+            "Susser, Smith, and Nissenbaum (2019) define manipulation.") \
+            == ["susser2019invisible", "susser2019technology"]
+        assert "[COLLISION] dropped" not in capsys.readouterr().err
+
+    def test_a_list_with_an_extra_leading_name_keeps_all(self, capsys):
+        # The walk-back can peel a name that is not part of the citation;
+        # only the WHOLE recovered list may corroborate, never a suffix of it.
+        assert self._cited(
+            "See Floridi, Susser, Roessler, and Nissenbaum (2019).") \
+            == ["susser2019invisible", "susser2019technology"]
+        assert "[COLLISION] dropped" not in capsys.readouterr().err
+
+    def test_year_mid_list_stays_rejected(self, capsys):
+        # "See Clark, Menary (2010), and Sutton" is ambiguous between one
+        # list and three separate citations: it must stay a bare mention.
+        assert self._cited(
+            "Menary (2010a) argues X. See Clark, Menary (2010), and Sutton",
+            MENARY_BIB) == ["menary2010cognitive", "menary2010extended"]
+
+    def test_possessive_list_without_a_record_stays_protective(self):
+        # Three separate authors' accounts, not a co-authored work: no record
+        # corroborates the list, so every name stays a bare mention.
+        got = generate_bibliography._unresolvable_mentions(
+            "Clark's, Menary's, and Sutton's (2010) accounts differ.")
+        assert [m["surname"] for m in got] == ["Clark", "Menary", "Sutton"]
+
+    @pytest.mark.parametrize("prose", [
+        "Susser's, Roessler's, and Nissenbaum's (2019) accounts differ.",
+        "Susser’s, Roessler’s, and Nissenbaum’s (2019) accounts differ.",
+        "Susser's, Roessler, and Nissenbaum (2019) differ.",
+        "Susser, Roessler's, & Nissenbaum (2019) differ.",
+    ])
+    def test_a_possessive_non_final_name_keeps_all(self, prose, capsys):
+        # Separate possessives name separate authors' accounts, not one
+        # co-authored work, even when a record has exactly that author list.
+        assert self._cited(prose) \
+            == ["susser2019invisible", "susser2019technology"]
+        assert "[COLLISION] dropped" not in capsys.readouterr().err
+
+    @pytest.mark.parametrize("word", ["each", "respectively", "independently"])
+    def test_a_distributive_list_stays_keep_all(self, word, capsys):
+        assert self._cited(
+            f"Susser, Roessler, and Nissenbaum (2019) {word} define manipulation.") \
+            == ["susser2019invisible", "susser2019technology"]
+        assert "[COLLISION] dropped" not in capsys.readouterr().err
+
+    def test_a_list_with_two_years_keeps_both_coauthored_works(self):
+        """A continuation instance copies the list instance, list_names
+        included, so "(2019, 2020)" resolves both trio works and nothing
+        crashes in _resolve_collisions."""
+        bib = SUSSER_BIB + """
+
+@article{susser2020online,
+  author = {Susser, Daniel and Roessler, Beate and Nissenbaum, Helen},
+  title = {Online Manipulation}, journal = {Georgetown Law Technology Review},
+  year = {2020}}"""
+        assert self._cited(
+            "Susser, Roessler, and Nissenbaum (2019, 2020) define manipulation.",
+            bib) == ["susser2019technology", "susser2020online"]
+
+    def test_a_joint_possessive_is_one_citation(self, capsys):
+        assert self._cited(
+            "Susser, Roessler, and Nissenbaum's (2019) account differs.") \
+            == ["susser2019technology"]
+        assert "[COLLISION] dropped susser2019invisible" in capsys.readouterr().err
+
+    def test_a_corroborated_list_leaves_the_bare_mention_net(self):
+        from pybtex.database import parse_string
+        db = parse_string(SUSSER_BIB, "bibtex")
+        prose = "Susser, Roessler, and Nissenbaum (2019) define manipulation."
+        records = _collect_matches(prose, db)
+        assert generate_bibliography._unresolvable_mentions(prose, records) == []
+        insts = generate_bibliography._citation_instances(prose, records)
+        assert [(i["form"], i["year"]) for i in insts] == [("list", "2019")]
+        # Without records nothing can corroborate: the old behaviour.
+        assert [m["surname"] for m in
+                generate_bibliography._unresolvable_mentions(prose)] \
+            == ["Susser", "Roessler", "Nissenbaum"]
+
+    def test_a_tail_year_without_a_record_keeps_the_old_behaviour(self, capsys):
+        # Every year of a multi-year list must be corroborated, or the whole
+        # citation stays a rejected (protective) mention.
+        assert self._cited(
+            "Susser, Roessler, and Nissenbaum (2019, 2020) define it.") \
+            == ["susser2019invisible", "susser2019technology"]
+        assert "[COLLISION] dropped" not in capsys.readouterr().err
+
+    def test_a_list_never_counts_as_second_position_evidence(self, capsys):
+        # Roessler-first works in 2019 are not cited by the Susser list, but
+        # the list must not license dropping them either (same reason the
+        # two-author "&" parse was declined).
+        bib = SUSSER_BIB + """
+
+@article{roessler2019a, author = {Roessler, Beate}, title = {Privacy One},
+  journal = {Mind}, year = {2019}}
+
+@article{roessler2019b, author = {Roessler, Beate}, title = {Privacy Two},
+  journal = {Mind}, year = {2019}}"""
+        got = self._cited(
+            "Susser, Roessler, and Nissenbaum (2019) define manipulation.", bib)
+        assert "roessler2019a" in got and "roessler2019b" in got
+
+
 def test_title_key_possessive_folds_to_space():
     """The surname conjunct tokenizes prose via title_key; a curly
     possessive must fold to 'surname s', not 'surnames' -- three fixtures
@@ -3301,3 +3453,74 @@ def test_imports_without_the_implicit_script_directory():
                        capture_output=True, text=True, encoding="utf-8")
     assert "ModuleNotFoundError" not in r.stderr, r.stderr
     assert "Usage" in r.stdout + r.stderr
+
+
+# =============================================================================
+# PL-35: a cited letter whose same-author-year siblings were all dropped
+# =============================================================================
+
+MATHESON_BIB = """@book{matheson2024philosophy, author = {Matheson, Jonathan},
+  title = {Philosophy of Epistemic Autonomy}, publisher = {X}, year = {2024},
+  year_suffix = {a}}
+
+@book{matheson2024why, author = {Matheson, Jonathan},
+  title = {Why Think for Yourself?}, publisher = {Y}, year = {2024},
+  year_suffix = {b}}
+
+@book{matheson2024third, author = {Matheson, Jonathan},
+  title = {Zeal}, publisher = {Z}, year = {2024}, year_suffix = {c}}"""
+
+
+class TestLoneLetterWarning:
+    """The generator drops an uncited lettered sibling but cannot drop its
+    letter: the prose was written against it, and a stateless prose rewrite
+    is undone by the next step-4 run. So it reports the gap instead."""
+
+    def _run(self, prose, capsys):
+        from pybtex.database import parse_string
+        db = parse_string(MATHESON_BIB, "bibtex")
+        cited = gb_find(prose, db)
+        capsys.readouterr()
+        generate_bibliography.warn_lone_letters(cited, db)
+        return capsys.readouterr().err
+
+    def test_a_lone_b_is_reported(self, capsys):
+        err = self._run("Matheson (2024b) argues X.", capsys)
+        assert "[LETTER]" in err
+        assert "matheson2024why" in err
+        assert "2024b" in err
+
+    def test_a_gap_is_reported(self, capsys):
+        err = self._run("Matheson (2024a) and Matheson (2024c) differ.", capsys)
+        assert "[LETTER]" in err
+        assert "2024c" in err
+
+    def test_a_packed_prefix_is_silent(self, capsys):
+        assert "[LETTER]" not in self._run(
+            "Matheson (2024a) and Matheson (2024b) differ.", capsys)
+
+    def test_all_cited_is_silent(self, capsys):
+        assert "[LETTER]" not in self._run(
+            "Matheson (2024a; 2024b; 2024c) differ.", capsys)
+
+    def test_unlettered_bib_is_silent(self, capsys):
+        from pybtex.database import parse_string
+        db = parse_string(SUSSER_BIB, "bibtex")
+        cited = gb_find("Susser (2019) argues.", db)
+        generate_bibliography.warn_lone_letters(cited, db)
+        assert "[LETTER]" not in capsys.readouterr().err
+
+    def test_main_prints_it_and_leaves_the_prose_alone(self, tmp_path, monkeypatch, capsys):
+        review = tmp_path / "r.md"
+        review.write_text("Matheson (2024b) argues X.\n", encoding="utf-8")
+        bib = tmp_path / "b.bib"
+        bib.write_text(MATHESON_BIB, encoding="utf-8")
+        monkeypatch.setattr(sys, "argv", ["g", str(review), str(bib)])
+        generate_bibliography.main()
+        assert "[LETTER]" in capsys.readouterr().err
+        assert review.read_text(encoding="utf-8").startswith(
+            "Matheson (2024b) argues X.")
+
+
+def gb_find(prose, db):
+    return generate_bibliography.find_cited_entries(prose, db)

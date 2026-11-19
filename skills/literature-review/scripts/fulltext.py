@@ -67,8 +67,22 @@ encoded UTF-8; every reader reads in text mode with encoding='utf-8'
 
 QUOTES (`locate_quote`): one fold, applied identically to quote and text,
 with an index map back to rendered offsets so the verbatim and page checks
-cannot disagree. Pure apart from the explicit file helpers
-(`read_text`, `file_text_sha256`, `write_text_atomic`, `validate_record`).
+cannot disagree. With a confirmed map only the span from the first to the
+last confirmed page is quotable: a cover sheet, front matter or appended
+material is not the work's text. One exception (`lead_page`): an article
+whose own first page carries no detected number (an abstract page) gets that
+page back when it directly precedes the first confirmed page and its implied
+number is the bib `pages` start; it stays a `[[sheet K]]` block, and
+check_quotes accepts the implied number as its locator. Measured on the
+2026-11-17 cognitive-autonomy-ai review: it admitted 3 of 3 real first pages
+(Sterelny p.465, Danaher p.245, Christman p.143, whose JSTOR cover sheet
+implies 142 and stayed out) and no cover. A rule that also required the bib
+abstract on the page admitted none of them: 8 of the 9 full-text entries
+had no bib abstract, and Christman's first page prints none. Residuals,
+accepted because what becomes quotable is still the PDF's real text (a
+passing quote is verbatim, never fabricated): a bib start one page too low,
+or a PDF that lacks the article's first page, admits a cover sheet that sits
+there. The module is pure apart from the explicit file helpers (`read_text`, `file_text_sha256`, `write_text_atomic`, `validate_record`).
 """
 
 import bisect
@@ -90,7 +104,8 @@ from typing import Mapping, Optional
 _hook_dir = str(Path(__file__).resolve().parent.parent.parent.parent / "hooks")
 sys.path.insert(0, _hook_dir)
 from bib_identity import (  # noqa: E402
-    first_author_surname, normalize_doi, same_work_key, same_work_year)
+    first_author_surname, main_title_key, normalize_doi, same_work_key, same_work_year,
+    split_author_list, subtitle_variant_keys, title_key)
 
 sys.path.remove(_hook_dir)
 _here = str(Path(__file__).resolve().parent)
@@ -502,28 +517,95 @@ def entry_identity(fields: Mapping) -> dict:
     attestation blob stores (`fulltext_identity`) and dedupe and
     `check_quotes.py` compare: the normalized DOI or None; the year-less
     `same_work_key` (title, first-author surname) as a list or None; the
-    `same_work_year`. `fields` holds RAW values (`parse_entry_fields`)."""
+    `same_work_year`; and `main_key`, the title's `main_title_key` (None
+    without a work key), and `authors`, every author's surname folded the
+    way the work key folds the first one (None without a work key), which
+    only the same-work re-check in `identity_matches` reads. `fields` holds
+    RAW values (`parse_entry_fields`)."""
     surname = first_author_surname(fields.get("author") or "", fields.get("editor") or "")
     key = same_work_key(fields.get("title") or "", surname)
     return {"doi": normalize_doi(fields.get("doi") or "") or None,
             "work_key": list(key) if key else None,
-            "year": same_work_year(fields.get("year"))}
+            "year": same_work_year(fields.get("year")),
+            "main_key": main_title_key(fields.get("title") or "") if key else None,
+            "authors": _author_keys(fields) if key else None}
 
 
-def identity_matches(blob_identity, fields: Mapping) -> bool:
-    """Does a stored `fulltext_identity` still describe this entry? Exact
-    equality on all three parts (DOI both absent counts as equal); an entry
-    with no work key never matches."""
+def _author_keys(fields: Mapping) -> list[str] | None:
+    """Folded surname per name of the author list (editors when there is no
+    author), split by `bib_identity.split_author_list` and parsed by
+    `first_author_surname` one name at a time; None when a name yields no
+    surname."""
+    field = (fields.get("author") or "").strip() or (fields.get("editor") or "").strip()
+    keys = [title_key(first_author_surname(name, "")) for name in split_author_list(field)]
+    return keys if keys and all(keys) else None
+
+
+def pages_from_text(text: str) -> list[str]:
+    """The page texts of a rendered text, marker lines removed, in order: the
+    input `identity_ok` re-runs on when only the stored text is at hand."""
+    return [text[start:end] for _kind, _n, start, end in page_blocks(text)]
+
+
+def identity_matches(blob_identity, fields: Mapping, text: str | None = None) -> bool:
+    """Does a stored `fulltext_identity` still describe this entry?
+
+    Exact equality on DOI, work key and year (DOI absent on both sides
+    counts as equal) matches. Otherwise, only when the stored `text` is
+    given, the entry may be the same work in another dress (PL-33: a merge
+    survivor carrying the DOI, or the title with or without its subtitle):
+    same author list (`authors`; a blob without it gets no widening) and
+    year, the stored DOI absent or equal to
+    the entry's, the titles equal or `subtitle_variant_keys` (which needs
+    the stored `main_key`, so a blob written before it existed relates no
+    subtitle variant), AND `identity_ok` passing on the text's pages against
+    the entry's title and surname under the rule that verified the text
+    (the DOI rule for a DOI record, rule A for a no-DOI record, also when
+    the entry gained a DOI: rule A has no `other_doi_page1` guard, the
+    residual accepted with it). A stored DOI the entry lacks never matches:
+    the DOI rule accepts on the DOI string alone and never checked the
+    title. An entry with no work key never matches."""
     if not isinstance(blob_identity, Mapping):
         return False
     now = entry_identity(fields)
     if now["work_key"] is None:
         return False
-    stored = {"doi": blob_identity.get("doi"), "work_key": blob_identity.get("work_key"),
-              "year": blob_identity.get("year")}
-    if isinstance(stored["work_key"], tuple):
-        stored["work_key"] = list(stored["work_key"])
-    return stored == now
+    stored_key = blob_identity.get("work_key")
+    if isinstance(stored_key, tuple):
+        stored_key = list(stored_key)
+    stored_doi = blob_identity.get("doi")
+    stored_year = blob_identity.get("year")
+    if (stored_doi == now["doi"] and stored_key == now["work_key"]
+            and stored_year == now["year"]):
+        return True
+    if text is None or not isinstance(stored_key, list) or len(stored_key) != 2:
+        return False
+    if stored_key[1] != now["work_key"][1] or not now["year"] or stored_year != now["year"]:
+        return False
+    # The whole author list, not just the first surname: a blob written
+    # before `authors` existed gets no widening (fail closed).
+    stored_authors = blob_identity.get("authors")
+    if (not isinstance(stored_authors, list) or not now["authors"]
+            or stored_authors != now["authors"]):
+        return False
+    if stored_doi is not None and stored_doi != now["doi"]:
+        return False
+    if stored_key[0] != now["work_key"][0] and not subtitle_variant_keys(
+            stored_key[0], blob_identity.get("main_key"),
+            now["work_key"][0], now["main_key"]):
+        return False
+    # The rule that verified the text: the DOI rule for a DOI record, rule A
+    # for a no-DOI one, even when the survivor gained a DOI. Measured on the
+    # PL-33 PDF (a Cambridge book, DOI on sheet 6, title spread over sheet 1
+    # in repeated words): rule A passes both titles, the DOI rule only the
+    # short one, since it reads pages 1-3 and the full title's first 6 words.
+    ok, _why = identity_ok(pages_from_text(text), {
+        "doi": stored_doi,
+        "title": fields.get("title") or "",
+        "surname": first_author_surname(fields.get("author") or "",
+                                        fields.get("editor") or ""),
+        "year": fields.get("year") or ""})
+    return ok
 
 
 def canonical_identity(identity: Mapping) -> str:
@@ -862,14 +944,37 @@ def _part_patterns(quote: str, literal: bool = False) -> list[re.Pattern]:
     return pats
 
 
-def _quotable_range(text: str, page_map: PageMap | None) -> tuple[int, int]:
+def lead_page(page_map: PageMap | None, bib_pages: str | None) -> tuple[int, int] | None:
+    """(index, implied number) of the article's own unnumbered first page, or
+    None. Admitted only with positive evidence: the page directly before the
+    first confirmed page carries no number, and the number the map implies
+    for it (first confirmed number - 1, at least 1) is the start the bib
+    `pages` field commits to (`_pages_start`). A repository cover sheet
+    before a confirmed first page implies start - 1 and stays out; so does
+    anything two or more pages back."""
+    if page_map is None or not page_map.confirmed:
+        return None
+    first = page_map.confirmed[0]
+    if first < 1 or page_map.numbers[first - 1] is not None:
+        return None
+    implied = page_map.numbers[first] - 1
+    start = _pages_start(bib_pages or "")
+    if implied < 1 or start is None or implied != start:
+        return None
+    return first - 1, implied
+
+
+def _quotable_range(text: str, page_map: PageMap | None,
+                    bib_pages: str | None = None) -> tuple[int, int]:
     if page_map is None or not page_map.confirmed:
         return 0, len(text)
     blocks = page_blocks(text)
     if len(blocks) != len(page_map.numbers):
         raise ValueError("page map length differs from the text's page markers")
     conf = page_map.confirmed
-    return blocks[conf[0]][2], blocks[conf[-1]][3]
+    lead = lead_page(page_map, bib_pages)
+    lo = blocks[lead[0]][2] if lead is not None else blocks[conf[0]][2]
+    return lo, blocks[conf[-1]][3]
 
 
 def _match_all(pats: list[re.Pattern], folded: str, starts, ends, lo: int, hi: int):
@@ -897,7 +1002,8 @@ def _match_all(pats: list[re.Pattern], folded: str, starts, ends, lo: int, hi: i
     return results
 
 
-def locate_quote_all(quote: str, text: str, page_map: PageMap | None = None) -> list[list[tuple[int, int]]]:
+def locate_quote_all(quote: str, text: str, page_map: PageMap | None = None, *,
+                     bib_pages: str | None = None) -> list[list[tuple[int, int]]]:
     """Every occurrence of the quote in the rendered text, each a list of
     (start, end) rendered offsets, one per ellipsis part. Raises
     QuoteBracketError / QuoteEllipsisError.
@@ -911,7 +1017,7 @@ def locate_quote_all(quote: str, text: str, page_map: PageMap | None = None) -> 
     if variants[0][-1:] in (".", ","):
         variants.append(variants[0][:-1])
     folded, starts, ends = _fold_map(text)
-    lo, hi = _quotable_range(text, page_map)
+    lo, hi = _quotable_range(text, page_map, bib_pages)
     modes = [True, False] if ("[" in quote or "]" in quote) else [False]
     for literal in modes:
         for v in variants:
@@ -924,11 +1030,14 @@ def locate_quote_all(quote: str, text: str, page_map: PageMap | None = None) -> 
     return []
 
 
-def locate_quote(quote: str, text: str, page_map: PageMap | None = None) -> list[tuple[int, int]] | None:
+def locate_quote(quote: str, text: str, page_map: PageMap | None = None, *,
+                 bib_pages: str | None = None) -> list[tuple[int, int]] | None:
     """The first occurrence of the quote: a (start, end) rendered-offset span
     per ellipsis part, or None. When `page_map` has confirmed pages, only the
-    span from the first to the last confirmed page is quotable."""
-    found = locate_quote_all(quote, text, page_map)
+    span from the first to the last confirmed page is quotable, plus the
+    article's own unnumbered first page that `lead_page` admits from the
+    entry's `bib_pages` field."""
+    found = locate_quote_all(quote, text, page_map, bib_pages=bib_pages)
     return found[0] if found else None
 
 

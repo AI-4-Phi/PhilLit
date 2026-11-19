@@ -952,6 +952,88 @@ def test_real_tracked_pdf():
     assert [k for k, _ in ft.MARKER_RE.findall(text)] == ["sheet"] * 25
 
 
+FIRST = "Abstract. Minds are scaffolded by the tools and\nsocial practices around them, not extended."
+COVER = "Downloaded from the university repository on 1 May 2020"
+LATER = ["the second printed page of the article goes on",
+         "a third printed page with more of the argument"]
+
+
+class TestLeadPage:
+    """An article's own unnumbered first page (PL-32): the one sheet directly
+    before the first confirmed page is quotable when its implied number is
+    the bib `pages` start."""
+
+    def _make(self, pages, numbers):
+        pm = ft.PageMap(tuple(numbers))
+        return ft.render_text(pages, pm), pm
+
+    def test_unnumbered_first_page_quotable_with_bib_start(self):
+        text, pm = self._make([FIRST] + LATER, (None, 466, 467))
+        assert ft.lead_page(pm, "465--484") == (0, 465)
+        spans = ft.locate_quote("Minds are scaffolded by the tools", text, pm, bib_pages="465--484")
+        assert spans is not None
+        assert ft.span_pages(text, spans) == [("sheet", 1)]
+        assert ft.locate_quote("Minds are scaffolded by the tools", text, pm) is None
+
+    def test_cover_before_a_confirmed_first_page_stays_excluded(self):
+        text, pm = self._make([COVER] + LATER, (None, 465, 466))
+        assert ft.lead_page(pm, "465--484") is None
+        assert ft.locate_quote("from the university repository", text, pm, bib_pages="465--484") is None
+
+    def test_cover_then_unnumbered_first_page(self):
+        text, pm = self._make([COVER, FIRST] + LATER, (None, None, 466, 467))
+        assert ft.lead_page(pm, "465--484") == (1, 465)
+        assert ft.locate_quote("Minds are scaffolded by the tools", text, pm, bib_pages="465--484")
+        assert ft.locate_quote("from the university repository", text, pm, bib_pages="465--484") is None
+
+    def test_no_or_mismatched_bib_start_admits_nothing(self):
+        text, pm = self._make([FIRST] + LATER, (None, 466, 467))
+        for field in (None, "", "465", "466--484", "464--484", "xii--xx"):
+            assert ft.lead_page(pm, field) is None, field
+            assert ft.locate_quote("Minds are scaffolded by the tools", text, pm,
+                                   bib_pages=field) is None, field
+
+    def test_first_confirmed_page_one_admits_nothing(self):
+        text, pm = self._make([COVER] + LATER, (None, 1, 2))
+        assert ft.lead_page(pm, "0--20") is None
+        assert ft.lead_page(pm, "1--20") is None
+
+    def test_article_number_start_one(self):
+        text, pm = self._make([FIRST] + LATER, (None, 2, 3))
+        assert ft.lead_page(pm, "e12345") == (0, 1)
+        assert ft.locate_quote("Minds are scaffolded by the tools", text, pm, bib_pages="e12345")
+
+    def test_only_the_directly_preceding_sheet(self):
+        text, pm = self._make([FIRST, COVER] + LATER, (None, None, 467, 468))
+        assert ft.lead_page(pm, "465--484") is None
+        assert ft.locate_quote("Minds are scaffolded by the tools", text, pm, bib_pages="465--484") is None
+
+    def test_no_page_map_or_first_page_confirmed(self):
+        assert ft.lead_page(None, "465--484") is None
+        assert ft.lead_page(ft.PageMap((465, 466)), "465--484") is None
+        assert ft.lead_page(ft.PageMap((None, None)), "465--484") is None
+
+
+class TestLeadPageGuards:
+    """The page-number rule's guards (PL-32 review round)."""
+
+    def test_numbered_preceding_page_not_admitted(self):
+        assert ft.lead_page(ft.PageMap((999, 466, 467)), "465--484") is None
+
+    def test_article_page_two_back_not_admitted(self):
+        # Sheet 0 would imply 465 only if sheet 1 were numbered 466; it is a sheet.
+        assert ft.lead_page(ft.PageMap((None, None, 467, 468)), "465--484") is None
+
+    def test_residual_cover_of_a_pdf_missing_its_first_page_is_admitted(self):
+        # Accepted residual (fulltext.py QUOTES): the number fits, nothing else
+        # tells this cover from the article's first page. What passes is
+        # still the PDF's own text.
+        text = ft.render_text([COVER] + LATER, ft.PageMap((None, 466, 467)))
+        pm = ft.page_map_from_text(text)
+        assert ft.lead_page(pm, "465--484") == (0, 465)
+        assert ft.locate_quote("from the university repository", text, pm, bib_pages="465--484")
+
+
 def test_loads_by_path_without_pythonpath(tmp_path):
     code = (
         "import importlib.util\n"
@@ -996,3 +1078,96 @@ def test_identity_ok_decodes_latex_in_raw_bib_values():
     work = {"doi": None, "title": "{\\\"U}ber die {Grundlagen}: Studien", "surname": "M{\\\"u}ller", "year": "1990"}
     pages = ["Über die Grundlagen\nHans Müller\n" + "body text " * 30]
     assert ft.identity_ok(pages, work) == (True, "title_head")
+
+
+class TestIdentityMatchesSubtitleVariant:
+    """PL-33: a merge survivor that is the same work as the verified entry
+    under a subtitle-variant title, or with a DOI gained, keeps the text when
+    `identity_ok` re-passes on the stored text against the survivor."""
+
+    LONG = {"title": "Algorithms and Autonomy: The Ethics of Automated Decision Systems",
+            "author": "Rubel, Alan and Castro, Clinton and Pham, Adam", "year": "2021"}
+    SHORT = {"title": "Algorithms and Autonomy",
+             "author": "Rubel, Alan and Castro, Clinton and Pham, Adam", "year": "2021",
+             "doi": "10.1017/9781108895057"}
+    TEXT = ("[[sheet 1]]\nAlgorithms and Autonomy\nThe Ethics of Automated Decision Systems\n"
+            "Alan Rubel, Clinton Castro and Adam Pham\n[[sheet 2]]\nChapter one.\n")
+
+    def test_entry_identity_carries_the_main_title_key(self):
+        assert ft.entry_identity(self.LONG)["main_key"] == "algorithms and autonomy"
+
+    def test_short_doi_survivor_of_a_long_title_record_matches_with_the_text(self):
+        ident = ft.entry_identity(self.LONG)
+        assert not ft.identity_matches(ident, self.SHORT)            # no text: exact only
+        assert ft.identity_matches(ident, self.SHORT, text=self.TEXT)
+
+    def test_reverse_direction_matches(self):
+        short_no_doi = {k: v for k, v in self.SHORT.items() if k != "doi"}
+        assert ft.identity_matches(ft.entry_identity(short_no_doi), self.LONG, text=self.TEXT)
+
+    def test_text_that_is_not_the_work_refuses(self):
+        other = "[[sheet 1]]\nSomething Else Entirely\nBy Someone\n"
+        assert not ft.identity_matches(ft.entry_identity(self.LONG), self.SHORT, text=other)
+
+    def test_a_no_doi_record_is_re_verified_by_rule_a(self):
+        """Title spread over the first sheet the way the PL-33 Cambridge PDF
+        prints it: the full title's first 6 words never stand together, so
+        the DOI rule would refuse the subtitled survivor; rule A, which
+        verified the record, accepts it."""
+        text = ("[[sheet 1]]\nALGORITHMS\nALGORITHMS\nAND\nAND\nAUTONOMY\nAUTONOMY\n"
+                "THE ETHICS OF AUTOMATED\nALAN RUBEL, CLINTON CASTRO AND ADAM PHAM\n"
+                "DECISION SYSTEMS\n[[sheet 2]]\nalgorithms and autonomy\nAlan Rubel is\n")
+        short_no_doi = {k: v for k, v in self.SHORT.items() if k != "doi"}
+        survivor = dict(self.LONG, doi="10.1017/9781108895057")
+        assert ft.identity_matches(ft.entry_identity(short_no_doi), survivor, text=text)
+
+    def test_a_doi_record_is_re_verified_by_the_doi_rule(self):
+        with_doi = dict(self.LONG, doi="10.1017/9781108895057")
+        # Same DOI, short title: the DOI string is absent and page 1 names
+        # another DOI, so the DOI rule refuses.
+        text = self.TEXT.replace("Alan Rubel,", "doi:10.9999/other Alan Rubel,")
+        assert not ft.identity_matches(ft.entry_identity(with_doi), self.SHORT, text=text)
+        assert ft.identity_matches(ft.entry_identity(with_doi), self.SHORT, text=self.TEXT)
+
+    def test_a_different_subtitle_refuses(self):
+        fields = dict(self.LONG, title="Algorithms and Autonomy: A Different Book")
+        assert not ft.identity_matches(ft.entry_identity(self.LONG), fields, text=self.TEXT)
+
+    def test_a_doi_lost_or_changed_refuses(self):
+        with_doi = dict(self.LONG, doi="10.1017/9781108895057")
+        ident = ft.entry_identity(with_doi)
+        assert not ft.identity_matches(ident, self.LONG, text=self.TEXT)
+        assert not ft.identity_matches(ident, dict(self.SHORT, doi="10.1/other"),
+                                       text=self.TEXT)
+
+    def test_year_or_author_change_refuses(self):
+        ident = ft.entry_identity(self.LONG)
+        assert not ft.identity_matches(ident, dict(self.SHORT, year="2020"), text=self.TEXT)
+        assert not ft.identity_matches(ident, dict(self.SHORT, author="Castro, Clinton"),
+                                       text=self.TEXT)
+
+    def test_a_record_without_main_key_matches_no_subtitle_variant(self):
+        ident = ft.entry_identity(self.LONG)
+        del ident["main_key"]
+        assert not ft.identity_matches(ident, self.SHORT, text=self.TEXT)
+        # ... but a DOI gained under the same title still re-verifies.
+        assert ft.identity_matches(ident, dict(self.LONG, doi="10.1017/9781108895057"),
+                                   text=self.TEXT)
+
+    def test_pages_from_text_splits_at_markers(self):
+        assert ft.pages_from_text(self.TEXT) == [
+            "Algorithms and Autonomy\nThe Ethics of Automated Decision Systems\n"
+            "Alan Rubel, Clinton Castro and Adam Pham\n", "Chapter one.\n"]
+
+    def test_entry_identity_carries_the_author_surnames(self):
+        assert ft.entry_identity(self.LONG)["authors"] == ["rubel", "castro", "pham"]
+
+    def test_a_different_author_list_refuses_the_widening(self):
+        survivor = dict(self.SHORT, author="Rubel, Alan and Other, Someone")
+        assert not ft.identity_matches(ft.entry_identity(self.LONG), survivor, text=self.TEXT)
+
+    def test_a_record_without_authors_gets_no_widening(self):
+        ident = ft.entry_identity(self.LONG)
+        del ident["authors"]
+        assert not ft.identity_matches(ident, self.SHORT, text=self.TEXT)
+        assert ft.identity_matches(ident, self.LONG)   # exact still matches

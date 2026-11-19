@@ -363,7 +363,9 @@ def year_key(value) -> str:
 
 
 def title_key(title: str) -> str:
-    """Unicode-aware, punctuation/subtitle-insensitive title key.
+    """Unicode-aware, punctuation-insensitive title key. A subtitle's colon
+    folds to a space but the subtitle's words still count; `main_title_key`
+    is the key without them.
 
     NFKD-normalize, drop combining marks (accent-insensitive so a bib title
     'Davidovic' matches an API 'Davidovic' spelled with a caron), keep every
@@ -581,6 +583,46 @@ def same_work_year(year) -> str:
     never groups, the fail-safe direction for an advisory."""
     m = _SAME_WORK_YEAR_RE.match(str(year or ""))
     return m.group(1) if m else ""
+
+
+_SUBTITLE_MARK_RE = re.compile(r"[:?.]")
+
+
+def main_title_key(title: str) -> str:
+    """`title_key` of the title before its subtitle: the raw title cut at its
+    first `:`, `?` or `.` when that head keys to at least two words, else
+    the whole title's `title_key`. The boundary and the two-word gate are
+    `fulltext.title_phrase_cut`'s, the rule-A cut the full-text identity
+    check was measured with, so "differs only by a subtitle" means one
+    thing to the year-letter pass and to the full-text tier. Needs the RAW
+    title: `title_key` folds the marks away, so a key cannot be cut."""
+    head = _SUBTITLE_MARK_RE.split(title or "", maxsplit=1)[0]
+    head_key = title_key(head)
+    return head_key if len(head_key.split()) >= 2 else title_key(title or "")
+
+
+def subtitle_variant_keys(full_a: str, main_a: str | None,
+                          full_b: str | None, main_b: str | None) -> bool:
+    """Key-level form of `titles_differ_by_subtitle`: (title_key,
+    main_title_key) per side. True when the keys differ and one side has no
+    subtitle (its main key is its title key) while the other's main key
+    equals it. A missing main key (None) never relates. Two DIFFERENT
+    subtitles ("A: X" / "A: Y") are not variants, and neither is a plain
+    word prefix ("Ethics and Politics" / "Ethics and Politics of Data")."""
+    if not full_a or not full_b or full_a == full_b:
+        return False
+    if not isinstance(main_a, str) or not isinstance(main_b, str):
+        return False
+    return ((main_a == full_a and main_b != full_b and main_b == full_a)
+            or (main_b == full_b and main_a != full_a and main_a == full_b))
+
+
+def titles_differ_by_subtitle(title_a: str, title_b: str) -> bool:
+    """Is one raw title the other with a subtitle added (`main_title_key`)?
+    A comparison, never identity on its own: callers add the author list,
+    year and DOI conditions their merge needs (PL-33)."""
+    return subtitle_variant_keys(title_key(title_a or ""), main_title_key(title_a),
+                                 title_key(title_b or ""), main_title_key(title_b))
 
 
 def fallback_key(title: str, year: str, surname: str) -> tuple[str, str, str] | None:

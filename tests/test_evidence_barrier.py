@@ -1601,6 +1601,36 @@ def test_same_work_in_two_domains_gets_the_same_letter(tmp_path):
     assert letter1 == letter2
 
 
+RUBEL_D4 = """@book{rubel2021algorithms,
+  author = {Rubel, Alan and Castro, Clinton and Pham, Adam},
+  title = {Algorithms and Autonomy},
+  publisher = {Cambridge University Press},
+  doi = {10.1017/9781108895057},
+  year = {2021}
+}"""
+
+RUBEL_D6 = """@book{rubel2021algorithms,
+  author = {Rubel, Alan and Castro, Clinton and Pham, Adam},
+  title = {Algorithms and Autonomy: The Ethics of Automated Decision Systems},
+  publisher = {Cambridge University Press},
+  year = {2021}
+}"""
+
+
+def test_one_key_with_and_without_subtitle_is_one_work(tmp_path):
+    """PL-33: the copies once got 'a' and 'b'; dedupe then merged them on
+    the key and printed a [SUFFIX] conflict."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    rd = tmp_path / "review"
+    _domain(rd, 1, RUBEL_D4, cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
+    _domain(rd, 2, RUBEL_D6, cleaning=_cleaning(2, {}), enrichment=_enrichment(2))
+    assert evidence_barrier.execute(rd, 2) == 0
+    for i in (1, 2):
+        assert "year_suffix" not in (rd / f"literature-domain-{i}.bib").read_text(
+            encoding="utf-8")
+
+
 def test_single_work_year_gets_no_suffix(tmp_path):
     sys.path.insert(0, str(SCRIPTS_DIR))
     import evidence_barrier
@@ -3682,14 +3712,16 @@ def test_an_answer_resets_the_consecutive_error_streak(tmp_path, monkeypatch):
 
 
 def test_the_pass_deadline_stops_the_corroboration_pass(tmp_path, monkeypatch):
-    """The other bound. Checked BEFORE each probe, so it bounds the loop:
-    the first candidate is always probed (that is when the clock starts),
-    and every later one buckets `corroboration_deadline`."""
+    """The other bound. Checked BEFORE each probe, so it bounds the loop.
+    The barrier's window is a hard run-wide ceiling (PL-31), so a window
+    already spent refuses even the first probe and every candidate buckets
+    `corroboration_deadline`."""
     eb_mod = _barrier(monkeypatch)
     # Negative, not 0.0: the deadline must be unambiguously in the past on
     # the second check regardless of clock granularity, so the test states
     # "the budget is already spent" rather than "some time passed".
     monkeypatch.setattr(eb_mod, "CORROBORATION_PASS_DEADLINE_SECONDS", -1.0)
+    monkeypatch.setattr(eb_mod, "CORROBORATION_RUN_CEILING_SECONDS", -1.0)
     keys = ["a2020", "b2020", "c2020"]
     _multi_candidate_domain(tmp_path, keys)
     calls = []
@@ -3697,14 +3729,12 @@ def test_the_pass_deadline_stops_the_corroboration_pass(tmp_path, monkeypatch):
     assert eb_mod.execute(tmp_path, 1) == 0
     report = _report(tmp_path)
     buckets = report["abstract_corroboration"]["literature-domain-1.bib"]
-    assert len(calls) == 1
-    assert [buckets[k]["outcome"] for k in keys] == [
-        "corroborated", "corroboration_deadline", "corroboration_deadline"]
+    assert len(calls) == 0
+    assert [buckets[k]["outcome"] for k in keys] == ["corroboration_deadline"] * 3
     stamps = report["stamps"]["literature-domain-1.bib"]
-    assert stamps["a2020"] == "EVIDENCE-ABSTRACT"      # probed in time
-    assert stamps["b2020"] != "EVIDENCE-ABSTRACT"      # PENDING, re-derivable
+    assert stamps["b2020"] != "EVIDENCE-ABSTRACT"
     summary = eb_mod._corroboration_summary(report)
-    assert summary["corroboration_deadline"] == 2
+    assert summary["corroboration_deadline"] == 3
     assert summary["candidates"] == 3
 
 
@@ -3713,6 +3743,7 @@ def test_the_budget_is_one_per_run_not_one_per_domain(tmp_path, monkeypatch):
     ceiling, so a second domain must not get a fresh allowance."""
     eb_mod = _barrier(monkeypatch)
     monkeypatch.setattr(eb_mod, "CORROBORATION_PASS_DEADLINE_SECONDS", -1.0)
+    monkeypatch.setattr(eb_mod, "CORROBORATION_RUN_CEILING_SECONDS", -1.0)
     import stamp_evidence as se
     for i in (1, 2):
         text = f"Domain {i}'s abstract for the shared-budget test." + _PROSE
@@ -3733,7 +3764,7 @@ def test_the_budget_is_one_per_run_not_one_per_domain(tmp_path, monkeypatch):
     _stub_corroborator(monkeypatch, eb_mod, ("corroborated", "s2"), calls)
     assert eb_mod.execute(tmp_path, 2) == 0
     report = _report(tmp_path)
-    assert len(calls) == 1          # not one per domain
+    assert len(calls) == 0          # no fresh allowance for domain 2
     assert report["abstract_corroboration"]["literature-domain-2.bib"][
         "k2"]["outcome"] == "corroboration_deadline"
 
@@ -3886,6 +3917,62 @@ def test_an_unrecognized_outcome_neither_counts_nor_resets(tmp_path, monkeypatch
     budget.record(eb_mod.eb.MISMATCH)
     assert budget.consecutive_errors == 0     # a real answer does reset
     assert budget.stopped is False
+
+
+
+# --- PL-31: the corroboration window scales to the run, not a fixed 180 s ---
+
+def _budget_with_clock(monkeypatch, eb_mod, start, **kw):
+    clock = {"t": start}
+    monkeypatch.setattr(eb_mod.time, "monotonic", lambda: clock["t"])
+    return eb_mod._CorroborationBudget(**kw), clock
+
+
+def test_window_runs_to_the_run_ceiling_when_that_is_later(monkeypatch):
+    """A large review probes until CORROBORATION_RUN_CEILING_SECONDS after the
+    barrier started, not 180 s after the first probe (PL-31: a 177-candidate
+    review stranded its last two domains at 180 s)."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier as eb_mod
+    budget, clock = _budget_with_clock(monkeypatch, eb_mod, 1000.0, run_start=1000.0)
+    assert budget.allows_probe()                    # first probe at t=0
+    clock["t"] = 1000.0 + 250.0
+    assert budget.allows_probe()                    # past 180 s, inside the ceiling
+    clock["t"] = 1000.0 + eb_mod.CORROBORATION_RUN_CEILING_SECONDS
+    assert not budget.allows_probe()
+
+
+def test_a_late_first_probe_still_stops_at_the_run_ceiling(monkeypatch):
+    """The ceiling is a hard stop: a first probe late in the run gets less
+    than 180 s, so venue vetting and the full-text pass still fit the Bash
+    limit (a later-of rule let a probe at 290 s run to 470 s)."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier as eb_mod
+    budget, clock = _budget_with_clock(monkeypatch, eb_mod, 1000.0, run_start=1000.0)
+    clock["t"] = 1000.0 + 290.0
+    assert budget.allows_probe()
+    clock["t"] = 1000.0 + eb_mod.CORROBORATION_RUN_CEILING_SECONDS
+    assert not budget.allows_probe()
+
+
+def test_a_first_probe_after_the_ceiling_is_refused(monkeypatch):
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier as eb_mod
+    budget, clock = _budget_with_clock(monkeypatch, eb_mod, 1000.0, run_start=1000.0)
+    clock["t"] = 1000.0 + eb_mod.CORROBORATION_RUN_CEILING_SECONDS + 1
+    assert not budget.allows_probe()
+
+
+def test_run_ceiling_leaves_room_for_the_later_passes():
+    """Venue vetting (its deadline plus one request timeout) and the full-text
+    pass still have to fit before the full-text run ceiling, inside the
+    600 s Bash limit SKILL.md runs the barrier under."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier as eb_mod
+    import venue_vetting as vv
+    after = (eb_mod.CORROBORATION_RUN_CEILING_SECONDS + vv.PASS_DEADLINE_SECONDS
+             + vv.REQUEST_TIMEOUT + eb_mod.FULLTEXT_PASS_SECONDS)
+    assert after <= eb_mod.FULLTEXT_RUN_CEILING_SECONDS < 600
 
 
 # ---------------------------------------------------------------------------
