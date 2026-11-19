@@ -297,10 +297,9 @@ CORROBORATION_DEADLINE = "corroboration_deadline"
 # inside a barrier that runs under SKILL.md's single 600 s Bash ceiling,
 # whose documented failure mode is an orphaned barrier leaving every entry
 # EVIDENCE-NONE. Its siblings are bounded at 600 s (resolve_context's
-# article fetches) and 120 s (venue vetting); corroboration gets the
-# smallest of the three because it is the one that scales with the number
-# of ENTRIES rather than the number of articles or venues, and because
-# every candidate it skips is restored on the next run.
+# article fetches) and 120 s (venue vetting). Corroboration is the one that
+# scales with the number of ENTRIES, and a re-run does NOT restore what it
+# skips (each run strands the same tail), hence the run-wide ceiling below.
 #
 # Both bounds are checked BEFORE a probe, so they bound the LOOP, not the
 # pass: one in-flight `corroborate_abstract` call can still run past the
@@ -310,18 +309,30 @@ CORROBORATION_DEADLINE = "corroboration_deadline"
 # caveat venue_vetting states about REQUEST_TIMEOUT.
 CORROBORATION_MAX_CONSECUTIVE_ERRORS = 3
 CORROBORATION_PASS_DEADLINE_SECONDS = 180.0
+# The pass may also run until this long after the barrier STARTED, whichever
+# ends later (PL-31): a fixed 180 s stranded a large review's last domains,
+# and a re-run stranded the same tail. The probes are rate-bound (about 0.7
+# candidates per second, Semantic Scholar's interval dominating), so a long
+# pass is slow, not stuck. The ceiling leaves venue vetting (its deadline plus
+# one request timeout) and the full-text pass room before
+# FULLTEXT_RUN_CEILING_SECONDS, inside SKILL.md's 600 s Bash limit; a test
+# pins that sum.
+CORROBORATION_RUN_CEILING_SECONDS = 300.0
 
 
 class _CorroborationBudget:
     """Wall-clock deadline + consecutive-error breaker for one barrier run.
 
-    The clock starts LAZILY, on the first probe this pass is actually asked
+    The window ends at the LATER of two times: the pass's own
+    deadline_seconds after its first probe, and, when `run_start` is given,
+    CORROBORATION_RUN_CEILING_SECONDS after the barrier started (PL-31). The
+    first clock starts LAZILY, on the first probe this pass is actually asked
     to allow, rather than at construction. State the bound exactly, because
     it is narrower than it looks: corroboration and the heal fetches share
     one per-entry loop, so the lazy start shields only the work that PRECEDES
     the first probe (heals over earlier entries, the parse and ledger reads).
     Every heal after that point runs inside the window and does count against
-    the 180 s, which can stop the pass on candidates a quiet run would have
+    the window, which can stop the pass on candidates a quiet run would have
     probed. That direction is fail-closed -- those candidates bucket
     `corroboration_deadline`, carry a lower tier, and are re-derived on the
     next run -- so it is accepted rather than fixed with a second clock.
@@ -346,7 +357,8 @@ class _CorroborationBudget:
     evidence either way about the network.
     """
 
-    def __init__(self, deadline_seconds=None, max_consecutive_errors=None):
+    def __init__(self, deadline_seconds=None, max_consecutive_errors=None,
+                 run_start=None):
         # Read the module constants at CONSTRUCTION, not import, so a test
         # (or a future caller) can monkeypatch them.
         self.deadline_seconds = (CORROBORATION_PASS_DEADLINE_SECONDS
@@ -355,6 +367,7 @@ class _CorroborationBudget:
         self.max_consecutive_errors = (CORROBORATION_MAX_CONSECUTIVE_ERRORS
                                        if max_consecutive_errors is None
                                        else max_consecutive_errors)
+        self.run_start = run_start
         self._deadline = None
         self.consecutive_errors = 0
         self.stopped = False
@@ -363,7 +376,13 @@ class _CorroborationBudget:
         if self.stopped:
             return False
         if self._deadline is None:
+            # The later of: the pass's own window from its first probe, and
+            # the run-wide ceiling (PL-31). Read the constant at call time.
             self._deadline = time.monotonic() + self.deadline_seconds
+            if self.run_start is not None:
+                self._deadline = max(
+                    self._deadline,
+                    self.run_start + CORROBORATION_RUN_CEILING_SECONDS)
             return True
         if time.monotonic() >= self._deadline:
             self.stopped = True
@@ -1192,7 +1211,7 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
     # One budget per RUN, shared across domains: the bound exists to keep
     # the whole barrier inside SKILL.md's Bash ceiling, and a per-domain
     # budget would multiply by the domain count and bound nothing.
-    corroboration_budget = _CorroborationBudget()
+    corroboration_budget = _CorroborationBudget(run_start=run_start)
     for i, d in domains.items():
         chunks = [rc.strip_context_fields(_strip_derived_fields(c))
                   if se.entry_header(c) else c

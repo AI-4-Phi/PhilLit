@@ -3690,6 +3690,7 @@ def test_the_pass_deadline_stops_the_corroboration_pass(tmp_path, monkeypatch):
     # the second check regardless of clock granularity, so the test states
     # "the budget is already spent" rather than "some time passed".
     monkeypatch.setattr(eb_mod, "CORROBORATION_PASS_DEADLINE_SECONDS", -1.0)
+    monkeypatch.setattr(eb_mod, "CORROBORATION_RUN_CEILING_SECONDS", -1.0)
     keys = ["a2020", "b2020", "c2020"]
     _multi_candidate_domain(tmp_path, keys)
     calls = []
@@ -3713,6 +3714,7 @@ def test_the_budget_is_one_per_run_not_one_per_domain(tmp_path, monkeypatch):
     ceiling, so a second domain must not get a fresh allowance."""
     eb_mod = _barrier(monkeypatch)
     monkeypatch.setattr(eb_mod, "CORROBORATION_PASS_DEADLINE_SECONDS", -1.0)
+    monkeypatch.setattr(eb_mod, "CORROBORATION_RUN_CEILING_SECONDS", -1.0)
     import stamp_evidence as se
     for i in (1, 2):
         text = f"Domain {i}'s abstract for the shared-budget test." + _PROSE
@@ -3886,6 +3888,55 @@ def test_an_unrecognized_outcome_neither_counts_nor_resets(tmp_path, monkeypatch
     budget.record(eb_mod.eb.MISMATCH)
     assert budget.consecutive_errors == 0     # a real answer does reset
     assert budget.stopped is False
+
+
+
+# --- PL-31: the corroboration window scales to the run, not a fixed 180 s ---
+
+def _budget_with_clock(monkeypatch, eb_mod, start, **kw):
+    clock = {"t": start}
+    monkeypatch.setattr(eb_mod.time, "monotonic", lambda: clock["t"])
+    return eb_mod._CorroborationBudget(**kw), clock
+
+
+def test_window_runs_to_the_run_ceiling_when_that_is_later(monkeypatch):
+    """A large review probes until CORROBORATION_RUN_CEILING_SECONDS after the
+    barrier started, not 180 s after the first probe (PL-31: a 177-candidate
+    review stranded its last two domains at 180 s)."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier as eb_mod
+    budget, clock = _budget_with_clock(monkeypatch, eb_mod, 1000.0, run_start=1000.0)
+    assert budget.allows_probe()                    # first probe at t=0
+    clock["t"] = 1000.0 + 250.0
+    assert budget.allows_probe()                    # past 180 s, inside the ceiling
+    clock["t"] = 1000.0 + eb_mod.CORROBORATION_RUN_CEILING_SECONDS
+    assert not budget.allows_probe()
+
+
+def test_window_never_shrinks_below_the_per_pass_floor(monkeypatch):
+    """Work before the first probe (parsing, heals) must not eat the pass's
+    own 180 s: the window is the LATER of the two bounds."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier as eb_mod
+    budget, clock = _budget_with_clock(monkeypatch, eb_mod, 1000.0, run_start=1000.0)
+    clock["t"] = 1000.0 + 290.0                     # first probe late in the run
+    assert budget.allows_probe()
+    clock["t"] = 1000.0 + 290.0 + 179.0
+    assert budget.allows_probe()
+    clock["t"] = 1000.0 + 290.0 + 180.0
+    assert not budget.allows_probe()
+
+
+def test_run_ceiling_leaves_room_for_the_later_passes():
+    """Venue vetting (its deadline plus one request timeout) and the full-text
+    pass still have to fit before the full-text run ceiling, inside the
+    600 s Bash limit SKILL.md runs the barrier under."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier as eb_mod
+    import venue_vetting as vv
+    after = (eb_mod.CORROBORATION_RUN_CEILING_SECONDS + vv.PASS_DEADLINE_SECONDS
+             + vv.REQUEST_TIMEOUT + eb_mod.FULLTEXT_PASS_SECONDS)
+    assert after <= eb_mod.FULLTEXT_RUN_CEILING_SECONDS < 600
 
 
 # ---------------------------------------------------------------------------
