@@ -253,7 +253,7 @@ def _is_capitalized_midsentence(text: str, m) -> bool:
     if not m.group(0)[0].isupper():
         return False
     before = text[:m.start()].rstrip()
-    return bool(before) and before[-1] not in ".!?:\"\u201c\u2018('*_"
+    return bool(before) and before[-1] not in ".!?:\"'\u201c\u2018\u201e\u00ab\u00bb\u2039\u203a([*_-\u2014\u2013"
 
 
 def _pronoun_warnings(text: str) -> list[str]:

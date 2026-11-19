@@ -248,3 +248,9 @@ def test_surname_he_mid_sentence_is_silent(text):
 
 def test_sentence_initial_he_still_warns():
     assert len(_pronoun_warnings("Danaher (2018) argues X. He adds Y.")) == 1
+
+
+@pytest.mark.parametrize("opener", ["\u00ab", "\u201e", "\u2014 ", "[", "'"])
+def test_pronoun_after_any_quote_or_dash_still_warns(opener):
+    text = f"Danaher (2018) argues: {opener}Her argument is novel."
+    assert len(_pronoun_warnings(text)) == 1
