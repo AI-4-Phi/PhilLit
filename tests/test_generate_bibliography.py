@@ -2607,6 +2607,25 @@ class TestCorroboratedAuthorList:
             "Clark's, Menary's, and Sutton's (2010) accounts differ.")
         assert [m["surname"] for m in got] == ["Clark", "Menary", "Sutton"]
 
+    @pytest.mark.parametrize("prose", [
+        "Susser's, Roessler's, and Nissenbaum's (2019) accounts differ.",
+        "Susser’s, Roessler’s, and Nissenbaum’s (2019) accounts differ.",
+        "Susser's, Roessler, and Nissenbaum (2019) differ.",
+        "Susser, Roessler's, & Nissenbaum (2019) differ.",
+    ])
+    def test_a_possessive_non_final_name_keeps_all(self, prose, capsys):
+        # Separate possessives name separate authors' accounts, not one
+        # co-authored work, even when a record has exactly that author list.
+        assert self._cited(prose) \
+            == ["susser2019invisible", "susser2019technology"]
+        assert "[COLLISION] dropped" not in capsys.readouterr().err
+
+    def test_a_joint_possessive_is_one_citation(self, capsys):
+        assert self._cited(
+            "Susser, Roessler, and Nissenbaum's (2019) account differs.") \
+            == ["susser2019technology"]
+        assert "[COLLISION] dropped susser2019invisible" in capsys.readouterr().err
+
     def test_a_corroborated_list_leaves_the_bare_mention_net(self):
         from pybtex.database import parse_string
         db = parse_string(SUSSER_BIB, "bibtex")

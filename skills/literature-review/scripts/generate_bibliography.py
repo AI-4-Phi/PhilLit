@@ -857,6 +857,14 @@ def _strict_author_list(review_text: str, m) -> tuple:
     names = [n for n, _b in reversed(walked)] + tail
     if len(names) < 3:
         return ()
+    # A possessive on any NON-final name ("Susser's, Roessler's, and
+    # Nissenbaum's (2019) accounts") marks separate authors' works, not one
+    # co-authored work, so it is not a list - even when a record happens to
+    # have exactly those authors. Only the joint possessive on the last name
+    # ("Susser, Roessler, and Nissenbaum's (2019) account") stays a list.
+    # Tested on the raw names, before _strip_possessive forgets the marker.
+    if any(_strip_possessive(n) != n for n in names[:-1]):
+        return ()
     return tuple(_strip_possessive(n) for n in names)
 
 
